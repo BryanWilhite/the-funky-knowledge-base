@@ -1,21 +1,5 @@
 {
     "version": "2.0.0",
     "tasks": [
-        {
-            "type": "npm",
-            "script": "build",
-            "path": "funky-kb/",
-            "problemMatcher": [
-                "$tslint5"
-            ]
-        },
-        {
-            "type": "npm",
-            "script": "start",
-            "path": "funky-kb/",
-            "problemMatcher": [
-                "$tslint5"
-            ]
-        }
     ]
 }
