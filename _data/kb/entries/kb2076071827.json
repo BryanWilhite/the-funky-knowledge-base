@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071827,
+    "Title": "WPF XAML: Reading Properties.Settings Data",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-05-15T12:36:01",
+    "ModificationDate": "2007-05-15T12:36:01",
+    "TemplateId": null,
+    "SegmentId": 84,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "<Window\n    x­mlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n    x­mlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\n\n    x­mlns:c=\"clr-namespace:My.WpfApp\"\n\n    x:Class=\"My.WpfApp.Client\"\n\n    Name=\"MyWindow\"\n>\n    <Window.Resources>\n        <ObjectDataProvider\n            x:Key=\"appSettings\"\n            ObjectType=\"{x:Type c:Properties.Settings}\">\n        </ObjectDataProvider>\n    </Window.Resources>\n\n    <Grid>\n        <TextBlock\n            Text=\"{Binding Source={StaticResource appSettings}, Path=Default.Test}\"\n            />\n    </Grid>\n</Window>",
+  "Tag": "kb2076071827"
+}

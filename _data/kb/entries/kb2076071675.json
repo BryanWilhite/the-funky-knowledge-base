@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071675,
+    "Title": "Visual Studio Tools for Office: Flippant Remarks about Office System Word VSTO 1.x Projects",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2005-05-18T16:57:34.663",
+    "ModificationDate": "2005-05-18T16:57:34.663",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": ">>>General:\n\nFor the sake of \"code access security\" put all code into one project. It seems like more of an installation headache to track more than one DLL file. I could be wrong about this but I don't have time to look into this problem. Security problems continue to plague Office and I am not going to get sucked into details that can be made obsolete in a matter of months.\n\n\n>>>Attached Templates:\n\nUnderstand quickly that the auto-generated _StartUp() code-behind Interop event procedure passes only document and application objects from the COM world of Office Word. This implies that the only way to gain access to the template of a document is through its AttachedTemplate property (which is a bit confusing when you are building a VSTO template project). As of this writing, only VB.NET supports the AttachedTemplate property:\n\n    Dim temp As Word.Template = Me.ThisDocument.AttachedTemplate\n\nThe undocumented equivalent line in C# is this:\n\n    Word.Template temp =\n        (Word.Template)this.thisDocument.get_AttachedTemplate();\n\nCarl Franklin would definitely call this C# line \"ugly.\" Note that thisDocument is set during the auto-generated _StartUp() code-behind Interop event procedure.\n\n\n>>>'Bad' MSDN Code:\n\nNow the VB version of the MSDN code sample has this block:\n\n    Private Sub ThisApplication_DocumentBeforeClose(ByVal Doc As Word.Document, _\n        ByRef Cancel As Boolean) Handles ThisApplication.DocumentBeforeClose\n        Cancel = False\n    End Sub\n\nThis effectively 'hides' the need to save changes in documents and templates automated by VSTO. For the programmer that is not comfortable with deciding to save a document or template on behalf of the end user, this revelation can be quite disturbing. This issue becomes known when the programmer tries to add something as simple as a CommandBar to a document or template.\n\n\n>>> CustomizationContext Property Overlooked:\n\nAs of this writing, VSTO 1.x code samples from MSDN betray an ignorance of the CustomizationContext property. Lack of knowledge of this property may cause the developer to save changes to NORMAL.DOT instead of the code-behind template or document. This can inadvertently make VSTO code behave very much like a macro virus. For Word MVP information about this matter please see:\n\n    http://www.word.mvps.org/faqs/macrosvba/AddMenu.htm.\n\n\n>>>Local Variable Woes:\n\nAccessing the enumerator in a Word tables collection (WordTables[i]) yields the 'expected' results (for the expectations of experienced Word VBA programmers). Using a local variable like this:\n\n    Word.Table tbl = WordTables[2];\n\nyields 'unexpected' results.",
+  "Tag": "kb2076071675"
+}

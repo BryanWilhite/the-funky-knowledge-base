@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071844,
+    "Title": "Flippant Remarks about Identifying a Nullable Type",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-06-18T12:09:33",
+    "ModificationDate": "2007-06-18T12:09:33",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Look here, \"How to: Identify a Nullable Type (C# Programming Guide)\":\n\n    http://msdn2.microsoft.com/en-us/library/ms366789(vs.80).aspx\n\n\"You can use the C# typeof operator to create a Type object that represents a Nullable type... The C# is operator also operates on a Nullable's underlying type. Therefore you cannot use is to determine whether a variable is a Nullable type.\"\n\nThe Boolean test:\n\n    if (type.IsGenericType &&\n        type.GetGenericTypeDefinition() == typeof(Nullable<>)) {…}\n",
+  "Tag": "kb2076071844"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 911995361,
+    "Title": "Microsoft Windows NT 4.0: Dial-Up Networking Settings for Netcom Unix Shell",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-11-26T20:07:42",
+    "ModificationDate": "1998-11-26T20:07:42",
+    "TemplateId": null,
+    "SegmentId": 71,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "A Dial-Up Networking Phonebook has been created and stored in my Home Directory. From my Administrator session I select Start > Programs > Accessories > Dial-Up Networking. These are the settings within Dial-Up Networking:\n\nMore > Edit entry and modem properties...\n    Basic > Entry name: \"Netcom\"\n    Basic > Use Telephony dialing properties: (not checked)\n    Basic > Use another port if busy: (not checked)\n    Server > Dial-up server type: \"PPP:...\"\n    Server > Network Protocols > TCP/IP: (checked)\n    Server > Network Protocols > IPX/SPX... : (not checked)\n    Server > Network Protocols > NetBEUI: (not checked)\n    Server > Network Protocols > TCP/IP Settings...\n        Server assigned IP address: (selected)\n        Specify name server addresses\n            > Primary DNS: 199.182.203\n            > Secondary DNS: 199.182.202\n        Use IP header compression: (checked)\n        Use default gateway on remote network: (checked)\n    Server > Enable software compression: (checked)\n    Server > Enable PPP LCP extensions: (not checked)\n    Script > Pop up a terminal window",
+  "Tag": "kb911995361"
+}

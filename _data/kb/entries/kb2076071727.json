@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071727,
+    "Title": "T-SQL: User-Defined Function Structure; Table/Set Form",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-03-19T19:51:58",
+    "ModificationDate": "2007-03-19T19:51:58",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "USE [Database]\nGO\n\nIF OBJECT_ID('fUserDefined') IS NOT NULL \nBEGIN \n    DROP FUNCTION fUserDefined\n    IF OBJECT_ID('fUserDefined') IS NOT NULL\n        PRINT '<<< FAILED DROPPING FUNCTION fUserDefined >>>'\n    ELSE \n        PRINT '<<< DROPPED FUNCTION fUserDefined >>>'\nEND\nGO\n\nCREATE FUNCTION dbo.fUserDefined\n    (\n        @param1 varchar(255) = NULL\n    )\nRETURNS @set TABLE (idx smallint PRIMARY KEY, value varchar(1024))\nAS\nBEGIN\n\n/*\n    Description: \n    Developer: Bryan Wilhite\n\n    INSERT INTO @set (idx, value) VALUES (@idx, @value)\n*/\n\nRETURN\nEND\nGO\n\nGRANT SELECT ON fUserDefined TO public\nGO\n\nIF OBJECT_ID('fUserDefined') IS NOT NULL \n    PRINT '<<< CREATED FUNCTION fUserDefined >>>' \nELSE \n    PRINT '<<< FAILED CREATING FUNCTION fUserDefined >>>' \nGO\n",
+  "Tag": "kb2076071727"
+}

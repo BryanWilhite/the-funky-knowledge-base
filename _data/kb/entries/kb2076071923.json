@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071923,
+    "Title": ".NET 2.0/3.0/3.5: Flippant Remarks about Windows Service Projects in Visual Studio 2005/2008",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-12-18T22:20:32",
+    "ModificationDate": "2007-12-18T22:20:32",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The best approach is to build a Windows Service to also run as a console application. The pattern is described in “Run Windows Service as a console program” here:\n\n    http://tech.einaregilsson.com/2007/08/15/\n        run-windows-service-as-a-console-program/\n\nThis should eliminate much of the problems described in “Debugging Windows Services is a Pain” here:\n\n    http://theimes.com/archive/2006/12/28/\n        Debugging-Windows-Services-is-a-Pain.aspx\n\nWindows services are installed with Installer Tool (Installutil.exe) described here:\n\n    http://msdn2.microsoft.com/en-us/library/50614e95(vs.80).aspx\n\nThere is an Installer tool for one version of .NET up to .NET 3.5:\n\n    %SystemRoot%\\Microsoft.NET\\Framework\\v2.0.50727\\InstallUtil.exe\n\nThis tool will not work on the compiled assembly without running the Add Installer command described in “Creating a Windows Service in .NET” here:\n\n    http://www.developer.com/net/csharp/article.php/10918_2173801_2\n\nIt is also covered by Microsoft under the misleading title “How to create a Setup project for a Windows Service in Visual Basic .NET or in Visual Basic 2005” here:\n\n    http://support.microsoft.com/kb/317421/en-us\n",
+  "Tag": "kb2076071923"
+}

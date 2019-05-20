@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072377,
+    "Title": "Programming Microsoft Dynamics® CRM 4.0; Chapter 3: Communicating with Microsoft CRM APIs; .NET Framework 3.0 Support; p. 52",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2010-05-26T13:40:53",
+    "ModificationDate": "2010-05-26T13:40:53",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Microsoft built Microsoft Dynamics CRM 4.0 against the Microsoft .NET Framework 3.0. Consequently, most developers will build their solutions with Visual Studio 2008 targeted at the .NET Framework 3.0. Technically, you could also build against the .NET Framework 3.5, but then you will need to make sure that the .NET 3.5 Framework is installed on the destination server. Note that the ASP.NET version configured in Internet Information Services (IIS) will probably be 2.0.50727, but this is the run-time version of .NET. The run-time versions of the .NET Framework 3.0 and 3.5 are identical to those of the .NET Framework 2.0, so any code developed with those versions of the .NET framework will run properly on the 2.0.50727 run-time engine.\n",
+  "Tag": "kb2076072377"
+}

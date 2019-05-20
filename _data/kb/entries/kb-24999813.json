@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -24999813,
+    "Title": "Code: RepairCompact()",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-09-09T15:29:49",
+    "ModificationDate": "1999-09-09T15:29:49",
+    "TemplateId": null,
+    "SegmentId": 63,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Function RepairCompact (strDatabase As String) As Integer\n'\n'NOTE: This procedure contains line break characters\n'for readability. These characters are not supported\n'in Access Basic.\n'\n    '\n    'This function repairs databases. It is recommended to compact\n    'them afterwards. Automating the compacting of databases\n    'seems a bit risky but here we are:\n    '\n    Dim strTempFile As String, varReturn As Variant\n\n    On Error GoTo RepairCompact_Err\n    \n    varReturn = SysCmd(SYSCMD_SETSTATUS, \"Looking for \" _\n        & strDatabase & \"...\")\n    \n    If Mid$(strDatabase, InStr(strDatabase, \".\"), 4) = \".MDB\" Then\n        strTempFile = strDatabase\n        Mid$(strTempFile, InStr(strTempFile, \".\"), 4) = \".NEW\"\n    Else\n        MsgBox \"Can't handle the filename of this file.\", 64,_\n            \"Application Services\"\n        varReturn = SysCmd(SYSCMD_CLEARSTATUS)\n        GoTo RepairCompact_Exit\n    End If\n\n    varReturn = SysCmd(SYSCMD_SETSTATUS, \"Repairing \" & _\n        strDatabase & \"...\")\n    \n    DBEngine.RepairDatabase strDatabase\n\n    varReturn = SysCmd(SYSCMD_SETSTATUS, \"Compacting \" & _\n        strDatabase & \"...\")\n    \n    DBEngine.CompactDatabase strDatabase, strTempFile\n    '\n    'Here's the risky but necessary part:\n    '\n    Kill strDatabase: Name strTempFile As strDatabase\n\n    varReturn = SysCmd(SYSCMD_CLEARSTATUS)\n    RepairCompact = True\n\nRepairCompact_Exit:\n    \n    Exit Function\n\nRepairCompact_Err:\n    Select Case Err\n        Case Else\n            MsgBox Err & \": \" & Error$(Err), 16, _\n                \"RepairCompact Error\"\n            m_varReturn = SysCmd(SYSCMD_SETSTATUS, Error$(Err))\n            RepairCompact = False\n            GoTo RepairCompact_Exit\n    End Select\nEnd Function",
+  "Tag": "kb-24999813"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -484742076,
+    "Title": "CSS: Netscape 4.x Browsers and CSS Level 1",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2000-12-19T21:50:20.71",
+    "ModificationDate": "2000-12-19T21:50:20.71",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Netscape Navigator 4.x browsers implement Cascading Style Sheets Level 1 (CSS Level 1) based on an \"explicit simple selector relationship.\" This means that in the following HTML:\n\n    <BODY STYLE=\"font-family: Helvetica, sans-serif;\">\n     This text will appear in the specified BODY style.\n    <TABLE>\n    <TR>\n    <TD>\n        This text will not \"inherit\" the specified BODY style.\n    </TD>\n    </TR>\n    </TABLE>\n    This text is not \"explicitly\" associated with an HTML tag.\n\nThe text inside the TD tags will not inherit the style specified in the BODY tag. This lack of inheritance does not occur in Microsoft Internet Explorer 4.x browsers (3.x as well). The text following the closing TABLE tag \"implicitly\" is part of the BODY markup. In some Netscape 4.x browsers, I have noticed that such a line of text will not appear in the style specified in the BODY tag.\n\nIt was my previous custom to minimize the TR and TD (and P) tags, but, after extensive tests, I find that it is best to use both the opening and closing TR, TD and P tags with style sheets. Hopefully in future versions of the Netscape browsers all of this will be a thing of the past.\n\nAs of now, to use the style in TD that is used in BODY, it must be applied explicitly:\n\n    <BODY STYLE=\"font-family: Helvetica, sans-serif;\">\n     This text will appear in the specified BODY style.\n    <TABLE>\n    <TR>\n    <TD STYLE=\"font-family: Helvetica, sans-serif;\">\n        This text will not \"inherit\" the specified BODY style.\n    </TD>\n    </TR>\n    </TABLE>\n    <P>\n        This text is \"explicitly\" associated with the P tags.\n    </P>\n\nOf course, to actually use style sheets (instead of the inline styles used in this article) we can use the following:\n\n    BODY, P, TD { \"font-family: Helvetica, sans-serif;\" }\n\nwhere the simple selectors BODY, P and TD are grouped.\n\nOne of the worst problems in these Netscape browsers is its strict use of the line-height property. Netscape browsers use the line-height property as an absolute value---not as a minimum value. This means that, if you specify a line-height of 24px for text with a font-size of 17px, any in-line images \"taller\" than 24px will overlap on previous lines of text.",
+  "Tag": "kb-484742076"
+}

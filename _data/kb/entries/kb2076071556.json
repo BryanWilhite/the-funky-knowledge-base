@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071556,
+    "Title": "C# and ASP.NET Code Snippet: Manually Wiring Up Events in Visual Studio.NET 2003",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2004-04-01T18:54:46.4",
+    "ModificationDate": "2004-04-01T18:54:46.4",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "/*\n    This works well when commandHTML is of type=\"submit\" or \"image\".\n    According to the strategies table under \"Handling a Click Event in\n    Client and Server Code\" in \"ASP.NET Server Control Event Model\"\n    under \"Visual Basic and Visual C# Concepts.\"\n*/\nprotected System.Web.UI.WebControls.Button commandServer;\nprotected System.Web.UI.HtmlControls.HtmlInputButton commandHTML;\n\nprivate void commandHTML_ServerClick(object Source, EventArgs e)\n{\n    Response.Write(\"commandHTML_ServerClick\");\n}\nprivate void commandServer_Click(object Source, EventArgs e)\n{\n    Response.Write(\"commandServer_Click\");\n}\nprivate void Page_Load(object sender, System.EventArgs e)\n{\n    commandHTML.ServerClick +=new EventHandler(commandHTML_ServerClick);\n    commandServer.Click +=new EventHandler(commandServer_Click);\n}",
+  "Tag": "kb2076071556"
+}

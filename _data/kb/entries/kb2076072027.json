@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072027,
+    "Title": "Microsoft Word 2007: Flippant Remarks about Building Blocks",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-09-01T21:08:51",
+    "ModificationDate": "2008-09-01T21:08:51",
+    "TemplateId": null,
+    "SegmentId": 85,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "From the Word team: “As mentioned in my first post, building blocks are essentially parts of a document that can be reused. All building blocks are contained in galleries in the UI for easy use. Where are these building blocks stored? The simple answer is that the contents of all building block galleries are stored in templates. Specifically, there are several locations you can save your building block content in: 1. Word's building blocks template 2. Word's Normal template 3. Any custom template…” More of this is here:\n\n    http://blogs.msdn.com/microsoft_office_word/\n        archive/2007/02/20/deploying-building-blocks.aspx\n\nAs of this writing, the preferred choice is to use Building Blocks in the Normal template of the type wdTypeCustomQuickParts. This implies that there are several types of Building Blocks. The enumeration of types is here:\n\n    http://msdn.microsoft.com/en-us/library/bb243303.aspx\n",
+  "Tag": "kb2076072027"
+}

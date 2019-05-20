@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071743,
+    "Title": "C# Code in Cold Storage: A Schema-Based Data Input Wrapper for XML Input",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2006-04-25T12:22:38.657",
+    "ModificationDate": "2006-04-25T12:22:38.657",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "using Songhay.Xml;\nusing System;\nusing System.IO;\nusing System.Xml;\nusing System.Xml.Schema;\n\nnamespace Songhay.Data\n{\n    /// <summary>\n    /// Data input wrapper for XML input.\n    /// </summary>\n    public abstract class XmlDataInput\n    {\n        /// <summary>\n        /// When <c>true</c> the constructor input is valid.\n        /// </summary>\n        public bool IsValid\n        {\n            get { return this._isValid; }\n            set { this._isValid = value; }\n        }\n\n        /// <summary>\n        /// Validation report.\n        /// </summary>\n        public string ValidationMessage\n        {\n            get { return this._validationMessage; }\n            set { this._validationMessage = value; }\n        }\n\n        /// <summary>\n        /// Required validation implementation.\n        /// </summary>\n        /// <param name=\"xpDoc\">\n        /// The <see cref=\"System.Xml.XPath.XPathDocument\"/> to validate.\n        /// </param>\n        protected void Validate(String XmlPostData, String SchemaPath)\n        {\n            XmlReaderSettings settings = new XmlReaderSettings();\n            settings.CheckCharacters = true;\n            settings.ValidationType = ValidationType.Schema;\n            settings.Schemas.Add(null,SchemaPath);\n            settings.ValidationFlags = XmlSchemaValidationFlags.ReportValidationWarnings;\n            settings.ValidationEventHandler +=\n                new ValidationEventHandler(XmlValidationEventHandler);\n\n            this.ValidationMessage = String.Empty;\n            this._isValid = true;\n\n            XmlReader reader =\n                XmlReader.Create(new StringReader(XmlPostData),settings);\n        }\n\n        private void XmlValidationEventHandler(object sender, ValidationEventArgs e)\n        {\n            this._validationMessage =\n                String.Format(\"{0}{1}{2}{1}\",\n                    this._validationMessage,Environment.NewLine,e.Message);\n\n            if (e.Severity == XmlSeverityType.Error)\n            {\n                this._isValid = false;\n\n                if(e.Exception != null)\n                {\n                    this._validationMessage =\n                        String.Format(\"{0}{1}{1}Exception:{1}\",\n                            this._validationMessage,Environment.NewLine);\n                    this._validationMessage =\n                        String.Format(\"{0}{1}    Line Number:{2}{1}\",\n                            this._validationMessage, Environment.NewLine, e.Exception.LineNumber);\n                    this._validationMessage =\n                        String.Format(\"{0}{1}    Line Position:{2}{1}\",\n                            this._validationMessage, Environment.NewLine, e.Exception.LinePosition);\n                    this._validationMessage =\n                        String.Format(\"{0}{1}    Message:{2}{1}\",\n                            this._validationMessage, Environment.NewLine, e.Exception.Message);\n                }\n            }\n        }\n\n        private bool _isValid;\n        private string _validationMessage;\n    }\n}\n",
+  "Tag": "kb2076071743"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -24999961,
+    "Title": "Netcom Shell; Egrep; Reading FTP Transfer Logs",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-06-09T13:42:47",
+    "ModificationDate": "1998-06-09T13:42:47",
+    "TemplateId": null,
+    "SegmentId": 68,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The command \n\negrep 'rasx' /ftp/logs/xferlog\n\nsearches the huge xferlog files for hits to the ftp directory. It is referenced by an alias in my .cshrc file.",
+  "Tag": "kb-24999961"
+}

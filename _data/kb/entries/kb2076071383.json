@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071383,
+    "Title": "Romona Africa 1992: trueSpace Camera Coordinates; Dreadlocks",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2001-04-03T21:20:31.583",
+    "ModificationDate": "2001-04-03T21:20:31.583",
+    "TemplateId": null,
+    "SegmentId": 80,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "0:(0.000,1.750,2.000) (-180.000,0.00,180.000)\n1:(0.000,0.980,2.000)\n2:(0.000,0.980,7.700)",
+  "Tag": "kb2076071383"
+}

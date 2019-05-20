@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072122,
+    "Title": "ASP.NET MVC: “MVC and App_Code folder - ASP.NET Forums”; forums.asp.net",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-04-21T20:44:00",
+    "ModificationDate": "2009-04-21T20:44:00",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "All MVC project by default are Web Application Projects (WAP) instead of Web Site projects. This means that there's no need for an App_Code folder since WAPs always get compiled anyway. That means that all *.cs files in your project will get compiled, as opposed to Web Site projects where only *.cs files in your App_Code folder would get compiled.\n\n[http://forums.asp.net/t/1315143.aspx]\n",
+  "Tag": "kb2076072122"
+}

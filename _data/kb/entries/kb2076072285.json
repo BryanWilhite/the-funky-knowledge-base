@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072285,
+    "Title": "Windows Server 2008: Notes on Moving a Hard Drive to a New Machine; Orphaned SIDs; TAKEOWN.EXE; ICACLS.EXE; Get-Acl; Set-Acl",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-09-28T10:02:03",
+    "ModificationDate": "2009-09-28T10:02:03",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "It is very possible that orphaned SIDs (security IDs for unknown users) will appear when a drive (virtual or physical) is moved to a new machine. What is worse is when the orphaned SID is the owner of the file/folder.\n\nWindows machines updated after the release of Vista have the TAKEOWN command for Administrators. This is the first command to use before any other permissions operations can be done (otherwise you may get strange permission-denied messages, even with root privileges).\n\nTo take ownership of a directory root (c:\\root) and sub folders and files for the Administrators group, this is the form:\n\n    takeown /f c:\\root /a\n\nThe next thing to do is reset all privileges to defaults with the ICACLS command. This is done when you know you have not set any custom permissions on any files in the drive (or when you already have a script to rebuild custom permissions). This reset is important because it should remove all orphaned SIDs and ensure that default inheritance is in place. This is the form:\n\n    icacls c:\\root /reset /t\n\nEvan Anderson at serverfault.com wrote a script to sketch out his view of this procedure:\n\n@echo off\nFOR /D %%i in (*) do (\n    TAKEOWN /f \"%%i\" /r /d y\n    ICACLS \"%%i\" /reset /T\n    ICACLS \"%%i\" /grant:r \"DOMAIN\\%%i\":(OI)(CI)F\n    rem Unremark this line to set the owner to the user, if you like that\n    rem ICACLS \"%%i\" /setowner \"DOMAIN\\%%i\" /T\n)\n\n[http://serverfault.com/questions/45251/\n    script-to-reset-home-directory-permissons-on-a-windows-share]\n\nIcacls on Technet [http://technet.microsoft.com/en-us/library/cc753525%28WS.10%29.aspx].\n\nSome idea of what PowerShell can do about this issue is in “Hey, Scripting Guy! How Can I Use Windows PowerShell to Determine the Owner of a File?” [http://www.microsoft.com/technet/scriptcenter/resources/qanda/apr08/hey0415.mspx].",
+  "Tag": "kb2076072285"
+}

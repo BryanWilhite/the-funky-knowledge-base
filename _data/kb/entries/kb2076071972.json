@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071972,
+    "Title": "Netbeans 5.x/6/x: “The default font size used in menus, dialogs, views, etc. is too small. Can I make it bigger?”; NetBeans Start Up Parameter --fontsize",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-07-01T20:01:59",
+    "ModificationDate": "2008-07-01T20:01:59",
+    "TemplateId": null,
+    "SegmentId": 69,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "From the NetBeans wiki: “You can run NetBeans with the --fontsize <size> option. The default <size> value is 11. You can set it to 12 or even a higher value and see if it works better for you. The --fontsize argument applies to fonts used in menus, dialogs and most components in the IDE.”\n\nFor more details see:\n\n    http://wiki.netbeans.org/FaqFontSize\n",
+  "Tag": "kb2076071972"
+}

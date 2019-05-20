@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071526,
+    "Title": "Windows Server 2003 PROBLEM: 404 Error When Opening http://localhost",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2003-07-31T14:54:09",
+    "ModificationDate": "2003-07-31T14:54:09",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Security, security, security. This is what Windows Server 2003 is all about. A 404 error is thrown for those administrators running ASP pages when the server role is Application Server and ASP.NET is enabled. This error is by design.\n\nTo resolve this problem choose Web Service Extensions in the Internet Information Services (IIS) Manager. In the Extended view of Web Service Extensions select Active Server Pages and click on the Allow button.",
+  "Tag": "kb2076071526"
+}

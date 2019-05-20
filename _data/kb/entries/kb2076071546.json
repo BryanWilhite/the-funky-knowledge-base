@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071546,
+    "Title": "Flash MX ActionScript: Loading Data Across Domains; Macromedia Flash Security Sandbox",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2003-11-23T21:48:57",
+    "ModificationDate": "2003-11-23T21:48:57",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "If you have noticed any Flash \"sandbox\" error messages popping up with the Flash 6 player or greater, then please refer to these TechNote articles:\n\n\"Loading data across domains\" (16520)\nhttp://www.macromedia.com/support/flash/ts/documents/load_xdomain.htm\n\n\"Macromedia Flash Security Sandbox\" (16629)\nhttp://www.macromedia.com/support/flash/ts/documents/security_sandbox.htm",
+  "Tag": "kb2076071546"
+}

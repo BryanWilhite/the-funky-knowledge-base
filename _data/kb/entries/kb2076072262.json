@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072262,
+    "Title": "PHP: “Validating XML files within PHP 4 applications”; Xmllint; Raphael Stolt",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-09-19T22:06:15",
+    "ModificationDate": "2009-09-19T22:06:15",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Today I ran into a small problem, validating import XML data against a DTD(Document Type Definition), and discovered a neat way to solve this without PHP4's own means, as the PHP 4 version on the running system wasn't supporting the DOM XML Functions.\n\nXmllint, a command line XML tool, parses provided XML files and can be used to verify that these files are well formed and are satisfying an associated DTD/XML Schema.\n\nThe following method body shows an example call of the xmllint tool for validating a given XML file against a DTD. The location of the DTD file is wrapped inside a DOCTYPE definition of the import file and will be automatically resolved by xmllint.\n\n<?php\n\n    ...\n\n    function isValidImportFile($filename) {\n\n        if($filename == '' || !$this->isSupposedFiletype($filename, 'xml')) {\n            return false;\n        }\n\n        $xmllintCall =  \"xmllint --valid --noout {$this->_xmlDirectory}{$filename}\";\n\n        exec(escapeshellcmd($xmllintCall), $xmllintOutput, $xmllintFeedback);\n\n        if($xmllintFeedback == '0') {\n            \n            return true;\n            \n        } else {\n        \n            // Maybe log xmllint feedback here for further evaluation.    \n            return false;\n            \n        }\n    }\n\n    ...\n\nIn addition xmllint is also very helpfull when writing custom DTDs or XML Schema, as you get an immediate reply regarding the correctness of the definition rules and their 'impact' on the associated XML files.\n\n[http://raphaelstolt.blogspot.com/2007/04/validating-xml-files-within-php-4.html]\n\n[http://infohost.nmt.edu/tcc/help/xml/lint.html]\n",
+  "Tag": "kb2076072262"
+}

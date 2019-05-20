@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072030,
+    "Title": "Microsoft Outlook 2007: Flippant Remarks about RSS Feed Support",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-09-03T13:00:04",
+    "ModificationDate": "2008-09-03T13:00:04",
+    "TemplateId": null,
+    "SegmentId": 85,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "RSS feed support in Outlook 2007 is not satisfactory. It sucks. There is an article from tech-recipes.com, “Outlook 2007: Remove or Disable RSS Feed Support,” here:\n\n    http://www.tech-recipes.com/rx/\n        2031/outlook_2007_remove_or_disable_rss_feed_support\n\nI recall following the instructions for “Mass Remove Feed Subscriptions from Outlook” and they did not work. I am not blaming the instructions. I am blaming Outlook. Here are the instructions:\n\n1. Click Tools menu and then Options again.\n2. Select the poorly named Mail Setup tab\n3. Click the Data Files button\n4. Click the RSS Feeds tab\n5. Click the first feed and scroll down to the bottom of the feed list\n6. Hold the SHIFT key and click the last feed. All feeds should now be selected.\n7. Click the Remove button\n8. Confirm you want them all deleted.\n\nFormer MVP and Microsoft Employee (as of this writing) Daniel Moth has a more effective way of dealing with this crap:\n\n1. Close Outlook 2007 Beta 2\n2. Launch Outlook 2003 and connect it to the same exchange server\n3. Notice how the RSS Feeds appears as a *regular* folder in Outlook 2003 (it treats it as any other user-created folder)\n4. Delete the “RSS Folder” (obviously you can't do that in O12 as it is special, as the icon indicates)\n\nFor more details, see:\n\n    http://www.danielmoth.com/Blog/2006/08/\n        deleting-all-rss-feeds-in-outlook-2007.html\n",
+  "Tag": "kb2076072030"
+}

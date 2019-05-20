@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071793,
+    "Title": "JavaServer Faces in Action Notes: Chapter 1; Introducing JavaServer Faces; 1.4 Components Everywhere",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-03-05T16:47:51",
+    "ModificationDate": "2007-03-05T16:47:51",
+    "TemplateId": null,
+    "SegmentId": 69,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "1.4 Components Everywhere\n\n\"A software component is a unit of composition with contractually specified interfaces and explicit context dependencies only. A software component can be deployed independently and is subject to composition by third parties [Szyperski].\"\n\n\"In essence, the context is the container for all of the components. A container is a system that hosts components and provides a set of services that allow those components to be manipulated.\"\n\nThis manipulation can be at design time (in the IDE) or runtime (in the application server).\n\n\"A UI component, or control, is a component that provides specific functionality for interacting with an end user. Classic examples include toolbars, buttons, panels, and calendars.\"",
+  "Tag": "kb2076071793"
+}

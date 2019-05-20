@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072224,
+    "Title": "“Convert XElement to XmlNode (and Convert XmlNode to XElement)”; Eric White",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-08-27T18:03:15",
+    "ModificationDate": "2009-08-27T18:03:15",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Sometimes you want to convert an XmlNode to an XElement and back again.  Some programming libraries define methods that take XmlNode objects as parameters.  These libraries also may contain properties and methods that return XmlNode objects.  However, it is more convenient to work with LINQ to XML instead of the classes in System.Xml (XmlDocument, XmlNode, etc.)  This post presents a bit of code to do these conversions.\n\n…\n\nusing System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Xml;\nusing System.Xml.Linq;\n\npublic static class MyExtensions\n{\n    public static XElement GetXElement(this XmlNode node)\n    {\n        XDocument xDoc = new XDocument();\n        using (XmlWriter xmlWriter = xDoc.CreateWriter())\n            node.WriteTo(xmlWriter);\n        return xDoc.Root;\n    }\n\n    public static XmlNode GetXmlNode(this XElement element)\n    {\n        using (XmlReader xmlReader = element.CreateReader())\n        {\n            XmlDocument xmlDoc = new XmlDocument();\n            xmlDoc.Load(xmlReader);\n            return xmlDoc;\n        }\n    }\n}\n\n[http://blogs.msdn.com/ericwhite/archive/2008/12/22/\n    convert-xelement-to-xmlnode-and-convert-xmlnode-to-xelement.aspx]",
+  "Tag": "kb2076072224"
+}

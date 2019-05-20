@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072355,
+    "Title": "WPF: “How Do I Add a Splitter to my WPF Window?”; LearnWPF.com",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2010-03-19T22:39:11",
+    "ModificationDate": "2010-03-19T22:39:11",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "To allow the GridSplitter to resize cells vertically is somewhat non-intuitive as described by Charles Petzold here. The GridSplitter has a ResizeDirection which defaults to Columns but can be set to Rows to allow the splitter to change the height of a row in the grid. To enable the height of row to be resized correctly by the splitter you also need to set the HorizontalAlignment and VerticalAlignment for to align it to the bottom, and across the width of the containing cells. You can also set the Grid.ColumnSpan for the splitter to span across all the cells in the row that it resizes, otherwise the splitter will only fill a single cell.\n\n[http://learnwpf.com/Posts/Post.aspx?postId=fbd8e1ed-dbd4-45c1-9b9c-a8355679f196]",
+  "Tag": "kb2076072355"
+}

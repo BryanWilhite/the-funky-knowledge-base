@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072028,
+    "Title": "Microsoft Word 2007 VBA: RefreshCustomQuickParts()",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-09-01T21:10:11",
+    "ModificationDate": "2008-09-01T21:10:11",
+    "TemplateId": null,
+    "SegmentId": 85,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Public Sub RefreshCustomQuickParts()\n    Dim objRow As Word.Row\n    Dim objCell As Word.Cell\n    Dim strEntryName As String, strCategoryName As String, objEntryRange As Word.Range\n    Dim strMsg As String\n    Dim objNode As Word.XMLNode\n    Dim objContentType As WdBuildingBlockTypes\n    Dim objWordRange As Word.Range\n    Dim i As Integer\n\n    With Application\n        'Check for an active Document:\n        If .Documents.count = 0 Then\n            strMsg = \"Please open a Word Document.\"\n            Call VBA.MsgBox(strMsg, vbInformation + vbOKOnly, .Name)\n            Exit Sub\n        End If\n        \n        'Verify the document with the data:\n        If .ActiveDocument.Name <> \"Custom Quick Parts.docx\" Then\n            strMsg = \"Please open or activate Word Document \"\"Custom Quick Parts.docx.\"\"\"\n            Call VBA.MsgBox(strMsg, vbInformation + vbOKOnly, .Name)\n            Exit Sub\n        End If\n\n        .System.Cursor = wdCursorWait\n\n        strCategoryName = \"Songhay Custom Quick Parts\"\n        \n        For Each objRow In .ActiveDocument.Tables(1).Rows\n            For Each objCell In objRow.Cells\n                With objCell\n                    \n                    Set objNode = .Range.XMLNodes(1)\n                    \n                    If .ColumnIndex = 1 Then\n                        strEntryName = objNode.Text\n                    ElseIf .ColumnIndex = 2 Then\n                        Set objEntryRange = objNode.Range\n                    End If\n                \n                End With\n            Next\n            \n            Call .NormalTemplate.BuildingBlockEntries.Add(strEntryName, wdTypeCustomQuickParts, strCategoryName, objEntryRange)\n\n        Next\n\n        .System.Cursor = wdCursorNormal\n\n        Call VBA.MsgBox(\"Custom Quick Parts refreshed.\", vbInformation + vbOKOnly, .Name)\n    End With\n\nEnd Sub\n\nPublic Sub RefreshCustomQuickPartsClick(ByVal control As IRibbonControl)\n    Call RefreshCustomQuickParts\nEnd Sub\n",
+  "Tag": "kb2076072028"
+}

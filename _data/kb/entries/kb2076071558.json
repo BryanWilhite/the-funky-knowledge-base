@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071558,
+    "Title": "Flash MX ActionScript 1.0/2.0: Code Hints; Suffixes; Flash MX 2004; Dreamweaver MX",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2004-04-08T15:34:23",
+    "ModificationDate": "2004-04-08T15:34:23",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The following summarizes the suffixes that produce code hints in Flash MX and Flash MX 2004. Note that many of these suffixes are documented in Flash MX but do not cause hints to appear (at least in my copy of Flash MX); these hints should also work in Dreamweaver MX. Also note that code hints do not complete variable names (this is what Microsoft may call \"code completion\").\n\n    Array (suffix: _array)\n\n    Button (suffix: _btn)\n\n    Camera (2004 suffix: _cam)\n\n    Camera (suffix: _camera); documentation error?\n\n    Color (suffix: _color); this does not produce hints in my copy of Dreamweaver MX\n\n    ContextMenu (2004 suffix: _cm)\n\n    ContextMenuItem (2004 suffix: _cmi)\n\n    Date (suffix: _date)\n\n    Error (2004 suffix: _err)\n\n    LoadVars (2004 suffix: _lv)\n\n    LocalConnection (2004 suffix: _lc)\n\n    Microphone (suffix: _mic); this does not produce hints in my copy of Flash MX\n\n    MovieClip (suffix: _mc)\n\n    MovieClipLoader (2004 suffix: _mcl)\n\n    PrintJob (2004 suffix: _pj)\n\n    NetConnection (suffix: _connection); documentation error?\n\n    NetConnection (2004 suffix: _nc)\n\n    NetStream (2004 suffix: _ns)\n\n    NetStream (suffix: _stream); documentation error?\n\n    SharedObject (suffix: _so); this does not produce hints in my copy of Flash MX\n\n    Sound (suffix: _sound)\n\n    String (suffix: _str)\n\n    TextField (suffix: _txt)\n\n    TextFormat (suffix: _fmt)\n\n    Video (2004 suffix: _video); this does not produce hints in my copy of Flash MX\n\n    XML (suffix: _xml)\n\n    XMLNode (2004 suffix: _xmlnode)\n\n    XMLSocket (suffix: _xmlsocket)\n\nFINAL NOTE: All of the suffixes marked with \"this does not produce hints in my copy of Flash MX\" work correctly in Flash MX 2004.",
+  "Tag": "kb2076071558"
+}

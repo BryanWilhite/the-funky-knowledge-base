@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072174,
+    "Title": "ASP.NET:  “Visual Studio 2005 Web Application Project Option”; Scott Guthrie in 2005",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-08-09T21:48:51",
+    "ModificationDate": "2009-08-09T21:48:51",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The Visual Studio 2005 Web Application Project Model is a new web project option for Visual Studio 2005 that provides the same conceptual web project approach as VS 2003 (a project file based structure where all code in the project is compiled into a single assembly) but with all the new features of VS 2005 (refactoring, class diagrams, test development, generics, etc) and ASP.NET 2.0 (master pages, data controls, membership/login, role management, Web Parts, personalization, site navigation, themes, etc).\n\n[http://webproject.scottgu.com/Default.aspx]",
+  "Tag": "kb2076072174"
+}

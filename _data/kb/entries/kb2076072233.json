@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072233,
+    "Title": "SOLID: “The Liskov Substitution Principle—Agile Software Development Principles Patterns and Practices”",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-08-28T22:20:40",
+    "ModificationDate": "2009-08-28T22:20:40",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Liskov Substitution Principle\n\n“What is wanted is something like the following substitution property: If for each object o1 of type S there is an object o2 of type T such that for all programs P defined in terms of T, the behavior of P is unchanged when o1 is substituted for o2, then S is a subtype of T. [Liskov88]“\n\nIs it me, or is that painful to read?  Robert Martin puts it a bit simpler:\n\nSubtypes must be substitutable for their base types\n\nThe classic example of this principle in code is inheriting the Square Class from the Rectangle Class.\n\n \nClassic Example of LSP\n\npublic class Rectangle\n{\n    protected int _width;\n    protected int _height;\n    \n    public int Width\n    {\n        get { return _width; }\n    }\n    \n    public int Height\n    {\n        get { return _height; }\n    }\n    \n    public virtual void SetWidth(int width)\n    {\n        _width = width;\n    }\n    \n    public virtual void SetHeight(int height)\n    {\n        _height = height;\n    }\n}\n\npublic class Square: Rectangle\n{\n    public override void SetWidth(int width)\n    {\n        _width = width;\n        _height = width;\n    }\n    \n    public override void SetHeight(int height)\n    {\n        _height = height;\n        _width = height;\n    }\n}\n\n[TestFixture]\npublic class RectangleTests\n{\n    [Test]\n    public void AreaOfRectangle()\n    {\n        Rectangle r = new Square();\n        \n        r.SetWidth(5);\n        r.SetHeight(2);\n        \n        // Will Fail - r is a square and sets\n        // width and height equal to each other.\n        Assert.IsEqual(r.Width * r.Height,10);\n    }\n}\n\nIf you look at the test above, it will fail because a square is being substituted for a rectangle and the area won't be 10 as expected.  It will actually be 4 because “unexpectedly” in this case, both height and width are being set to each other when the width or height is set on a square.  Therefore, if this behavior by Square is unacceptable and unexpected, Square should not be a subclass of Rectangle (at least not coded like this with these expectations anyway).\n\nThis is the whole point of the Liskov Substitution Principle.  It basically wants you to think clearly about the expected behavior and expectations of a class before you derive new classes from it.  It could turn out that when subclasses are substituted for a base class, you may get unexpected results.  This is where unit tests can really be handy.  The unit tests essentially describe and test for the expected behavior of objects (design by contract, if you will).\n\n[http://codebetter.com/blogs/david.hayden/archive/2005/06/11/64477.aspx]",
+  "Tag": "kb2076072233"
+}

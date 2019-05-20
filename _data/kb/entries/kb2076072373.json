@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072373,
+    "Title": "OData C# Code: An Example of Getting Scalar Data Asynchronously",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2010-04-30T16:09:24",
+    "ModificationDate": "2010-04-30T16:09:24",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "var odataContext = new DataServiceContext(this._odataLink);\nodataContext.BeginExecute<long>(new Uri(\"./CustomerCount\", UriKind.Relative),\n    new AsyncCallback(\n    (result) =>\n    {\n        if(!result.IsCompleted) return;\n        this.ListCustomersCount =\n            odataContext.EndExecute<long>(result).FirstOrDefault();\n        this.ListCustomersQuery(pageNumber);\n    }),\n    null);\n",
+  "Tag": "kb2076072373"
+}

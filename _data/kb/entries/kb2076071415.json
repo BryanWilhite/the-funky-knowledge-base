@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071415,
+    "Title": "Microsoft Internet Explorer PROBLEM: Explorer Appears to Stop Responding When Started",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2001-10-28T16:52:49.763",
+    "ModificationDate": "2001-10-28T16:52:49.763",
+    "TemplateId": null,
+    "SegmentId": 68,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Internet Explorer 5.x may appear to stop responding (hang) when opened but the animated globe in the upper-right corner of the browser window may continue to spin and you may receive a \"Detecting proxy settings...\" message in the status bar. This issue can occur if Internet Explorer is trying to locate a proxy server.\n\nIn Internet Explorer 5, Proxy Auto-Discovery is enabled by default, and this feature may make it appear as if Internet Explorer is not responding.\n\nFor more details please see MS KB article Q220902:\n\nhttp://support.microsoft.com/support/kb/articles/q220/9/02.asp",
+  "Tag": "kb2076071415"
+}

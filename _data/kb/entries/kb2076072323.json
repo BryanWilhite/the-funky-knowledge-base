@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072323,
+    "Title": "WPF and WCF: The Decorator Pattern and Dispatcher.CurrentDispatcher",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2010-02-15T11:18:20",
+    "ModificationDate": "2010-02-15T11:18:20",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "/*\n    Push dispatching into the service layer with a decorator pattern.\n*/\n\npublic class MySvcDecorator : IMySvc\n{\n    private readonly IMySvc _mysvc;\n    private readonly Dispatcher _current = Dispatcher.CurrentDispatcher;\n\n    public MySvcDecorator(IMySvc mysvc){//set _mysvc here...;}\n    public Event Action<T> HeyGui;\n    void MySvcEventHandler(T mydata)\n    {\n        Action dispatch = () => { if(HeyGui != null) HeyGui(mydata); }\n        _current.BeginInvoke(DispatcherPriority.DataBind, dispatch);\n    }\n}",
+  "Tag": "kb2076072323"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 910298753,
+    "Title": "VB Code: Synchronizing the DriveListBox with the DirListBox and FileListBox Controls",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-03-01T13:47:44",
+    "ModificationDate": "1999-03-01T13:47:44",
+    "TemplateId": null,
+    "SegmentId": 77,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Private Sub fsDevice_Change()\n    'fsDevice is the DriveListBox.\n    'fsRoot is the DirListBox.\n    'fsFile is the FileListBox.\n    With Me\n        .fsRoot.Path = fsDevice.List(.fsDevice.ListIndex)\n        .fsFile.Path = .fsRoot.Path\n    End With\nEnd Sub\n\nPrivate Sub fsRoot_Change()\n    With Me\n        .fsFile.Path = .fsRoot.Path\n    End With\nEnd Sub",
+  "Tag": "kb910298753"
+}

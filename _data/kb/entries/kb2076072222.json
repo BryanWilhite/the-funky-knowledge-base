@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072222,
+    "Title": "Ubuntu: “How to Clean Up Your Ubuntu Installation”; Faraz Ahmed",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-08-27T13:22:13",
+    "ModificationDate": "2009-08-27T13:22:13",
+    "TemplateId": null,
+    "SegmentId": 73,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Windows installations get messed up pretty easy. If you use Windows for long enough you will find out that the performance of yousystem is not what it used to be, it has become slower. The solution would be to use cleanup tools such as registry cleaner and crap cleaner. Thiswould clean all of the registry problems and delete unneccesary and unwanted files in the temp folder.\n\nWhen I switched over to Ubuntu, I thought I did not have to worry about Temp files and \"crap cleaning\" but it turns out that I was wrong. Although Ubuntu installations handle temporary files way better than Windows does, we still have to clean up our installation from time to time to keep our system running smooth.\n\nCleanup Residual Config Packages\n\nResidual config packages are dependency packages that are left behind after youuninstall n application from your Ubuntu installation. Since we don't need these packages anymore they are just taking up space. Time to get rid of them.\n\nThis feature is already available in Synaptic Package Manger. All you have to do is go to System > Administration > Synaptic Package Manager, when the window opens up, you should see a \"Status\" button on the bottom left hand corner of that window, Click on it. When you click on it you should see options such as \"installed\", \"not installed\", \"Sections\", \"Residual Config\".\n\nClick on Residual Config. You should now see a list of packages on the right. These are the residual config packages. Select all of them and choose Mark for Complete Removal. Once you have done that click on the apply button on the top.\n\nIf you do not see any Residual Config option in the list of synaptic package manager then that means you dont have any in your system. So you dont have to worry about this step then. :)\n\nCleanup Unnecessary Language and Help Files\n\nRemember during the installation of Ubuntu you were asked to select your language from a long list of languages. Well guess what, all those languages and their help files are still in your hard drive and taking up space. Time to remove them.\n\nFor this you need a package called \"localepurge\" you can download it from synaptics package manager. Start up synaptics as mentioned above now for this installation choose sections from the listand in the search type in localpurge when the search finishes click on it and selet mark for installation. Now hit apply.\n\nWhen the download finishes a windows will pop up with a list of abbreviations such as:\n\nen\n\nfr\n\npo\n\nsp\n\nka\n\nFrom the list select your language. If you use English then choose \"en\", if French then choose \"fr\" and so on. Click next and this will delete all those unnecessary languages.\n\nCleanup Partial Packages\n\nWhen we are downloading an application or a package and if for some reason we cancel the download before it has completed then this leaves behind the packages that were downloaded. Since the download was not completed so these packages just sit there unused, taking up space. Time toremove them.\n\nFor this we can use the Terminal with the help of a simple command. You can open up terminal from Applications > Accessories > Terminal. Once there type this command:\n\nsudo apt-get autoclean\n\nPress Enter and you are done.\n\nYour system is now a whole lot cleaner and will perform better than before also. :) \n\n[http://hubpages.com/hub/How-to-Clean-Up-Your-Ubuntu-Installation]",
+  "Tag": "kb2076072222"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072057,
+    "Title": "SharePoint Information Design: “Folders in the file system and SharePoint should be banned”; Michael Reinhart",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-04-22T12:35:21",
+    "ModificationDate": "2009-04-22T12:35:21",
+    "TemplateId": null,
+    "SegmentId": 85,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "“Custom Document Properties are metadata. Being able to manipulate file listings based on their metadata is one of the core pieces of functionality in SharePoint. My opinion? —don’t use folders in the file system OR SharePoint.  In a SharePoint document library, custom document properties can be promoted or demoted to/from the document library’s columns (effectively linking the two). I believe we should use SharePoint, properly describe our documents with Columns (and/or custom properties), and then use custom views to filter and/or group based on these. It gives you the ability to simulate a folder like experience, but it’s important to note that in SharePoint, if you nest documents in folders, this doesn’t work.”\n\n[http://www.specialinvestigations.org/blog/\nFoldersInTheFileSystemAndSharePointShouldBeBanned.aspx]",
+  "Tag": "kb2076072057"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072177,
+    "Title": "“Generic Delegates”; MSDN",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-08-10T20:40:07",
+    "ModificationDate": "2009-08-10T20:40:07",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "A  delegate can define its own type parameters. Code that references the generic delegate can specify the type argument to create a closed constructed type, just like when instantiating a generic class or calling a generic method, as shown in the following example:\n\npublic delegate void Del<T>(T item);\npublic static void Notify(int i) { }\n\nDel<int> m1 = new Del<int>(Notify);\n\nC# version 2.0 has a new feature called method group conversion, which applies to concrete as well as generic delegate types, and enables you to write the previous line with this simplified syntax:\n\nDel<int> m2 = Notify;\n\nDelegates defined within a generic class can use the generic class type parameters in the same way that class methods do.\n\nclass Stack<T>\n{\n    T[] items;\n    int index;\n\n    public delegate void StackDelegate(T[] items);\n}\n\nCode that references the delegate must specify the type argument of the containing class, as follows:\n\nprivate static void DoWork(float[] items) { }\n\npublic static void TestStack()\n{\n    Stack<float> s = new Stack<float>();\n    Stack<float>.StackDelegate d = DoWork;\n}\n\nGeneric delegates are especially useful in defining events based on the typical design pattern because the sender argument can be strongly typed and no longer has to be cast to and from Object.\n\ndelegate void StackEventHandler<T, U>(T sender, U eventArgs);\n\nclass Stack<T>\n{\n    public class StackEventArgs : System.EventArgs { }\n    public event StackEventHandler<Stack<T>, StackEventArgs> stackEvent;\n\n    protected virtual void OnStackChanged(StackEventArgs a)\n    {\n        stackEvent(this, a);\n    }\n}\n\nclass SampleClass\n{\n    public void HandleStackChange<T>(Stack<T> stack, Stack<T>.StackEventArgs args) { }\n}\n\npublic static void Test()\n{\n    Stack<double> s = new Stack<double>();\n    SampleClass o = new SampleClass();\n    s.stackEvent += o.HandleStackChange;\n}\n\n[http://msdn.microsoft.com/en-us/library/sx2bwtw7(VS.80).aspx]\n",
+  "Tag": "kb2076072177"
+}

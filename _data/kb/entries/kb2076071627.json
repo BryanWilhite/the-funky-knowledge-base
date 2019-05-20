@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071627,
+    "Title": "DAZ Studio 0.9.7.8: Alpha Flippant Remarks",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2004-12-23T23:08:32.687",
+    "ModificationDate": "2004-12-23T23:08:32.687",
+    "TemplateId": null,
+    "SegmentId": 62,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "DAZ Studio runs on a smaller memory footprint than Poser 4.x. It feels faster and smoother and it addresses a more \"professional\" amateur market, while Poser is locked in a strange world where a \"friendly\" pictographic interface is superior to a literate one. Poser is a great program but quite inflexible.\n\nDAZ Studio opens data files from Poser 4.x and below. These files can be read directly from the %ProgramFiles%\\Curious Labs\\Poser4 folder where the Runtime folder and POSER.EXE are at the root. This folder will appear in the Content Window after it is specified by the Edit > Preferences > Directories > Poser Content Directories > Add... command.\n\nThe DAZ Studio equivalent of the Conform to... command is the Fit to... command in the Parameters Window.\n\nThe Scene Window is the best way to select parts of an object. It is a first-class window unlike Poser, its tacked on Hierarchy Editor and its Current Figure/Current Element menus.\n",
+  "Tag": "kb2076071627"
+}

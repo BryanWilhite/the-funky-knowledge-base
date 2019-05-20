@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 933407838,
+    "Title": "Start/End of Month Functions basSOM() and basEOM()",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-07-31T09:00:09",
+    "ModificationDate": "1999-07-31T09:00:09",
+    "TemplateId": null,
+    "SegmentId": 76,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Public Function basEOM(TheDate As Date)\n    \n    Dim dtmNextMonth As Date\n    \n    dtmNextMonth = VBA.DateAdd(\"m\", 1, TheDate)\n    '\n    'By subtracting all of the days out of dtmNextMonth\n    'for a given date (TheDate), the last day of the previous \n    'month is returned by the DateValue method\n    'of the VBA object.\n    '\n    basEOM = VBA.DateValue(dtmNextMonth - _ \n        VBA.DatePart(\"d\", dtmNextMonth))\n    \nEnd Function\n\nPublic Function basSOM(TheDate As Date)\n    '\n    'By subtracting all of the days out of TheDate\n    'and adding one, the first day of the month for TheDate\n    'is returned by the DateValue method of the VBA object.\n    '\n    basSOM = VBA.DateValue(TheDate - _\n        DatePart(\"d\", TheDate) + 1)\n\nEnd Function",
+  "Tag": "kb933407838"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071503,
+    "Title": "Visual Studio.NET: MSDN Library Viewer Filters; Help Filters; Custom Filters",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2002-12-19T11:18:26",
+    "ModificationDate": "2002-12-19T11:18:26",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Microsoft is so, so, so helpful. The great thing about this helpful situation is that I haven't bought a shitty technical book for many, many months. The bad thing about this is popularly called information overload.\n\nVisual Studio.NET deals with this information with an updated MSDN Library Viewer. It comes with a Filter editor. By selecting Help > Edit Filters… from the main menu, a whole new world opens up. User-defined filters will appear right along with the default Visual Studio.NET filters in the Help Contents and Index windows.\n\nThese are my custom filters so far:\n\n    SQL Server Reference:\n    (\"TargetOS\"=\"Windows\") OR (\"Technology\"=\"SQLSrv\")\n    OR (\"Locale\"=\"kbEnglish\") OR (\"DevLang\"=\"SQL\" OR \"DevLang\"=\"TSQL\")\n    OR (\"TopicType\"=\"kbArticle\") AND (\"DocSet\"=\"SQL Server\")",
+  "Tag": "kb2076071503"
+}

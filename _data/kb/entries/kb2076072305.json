@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072305,
+    "Title": "GIMP: “Layer to selection”",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-10-10T18:44:01",
+    "ModificationDate": "2009-10-10T18:44:01",
+    "TemplateId": null,
+    "SegmentId": 62,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "You could just use \"Alpha to Selection\" under a layer (right click) and it will give you the same results. Unless your messing with the Alpha layer part of your layer then your plugin would be needed.\n\n[http://registry.gimp.org/node/14663]",
+  "Tag": "kb2076072305"
+}

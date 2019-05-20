@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072239,
+    "Title": "Visual Studio and CodeRush XPress: “Can I change the key bindings on the free version of CodeRush Express for Visual Studio?”; stackoverflow.com",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-09-08T20:40:12",
+    "ModificationDate": "2009-09-08T20:40:12",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The DevExpress guys responded. It's Ctrl+Shift+Alt+O to bring up the options.\n\n[http://stackoverflow.com/questions/459656/can-i-change-the-key-bindings-\n    on-the-free-version-of-coderush-express-for-visual]",
+  "Tag": "kb2076072239"
+}

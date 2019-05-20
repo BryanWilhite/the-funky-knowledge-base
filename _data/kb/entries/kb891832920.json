@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 891832920,
+    "Title": "Windows NT: Paging File Size",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2000-12-24T14:32:13.69",
+    "ModificationDate": "2000-12-24T14:32:13.69",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "In System Properties, under the Performance tab, select Virtual Memory to make sure that Virtual Memory > Initial Size is set to a value that is equal to the amount of physical RAM plus 12 MB. Set Virtual Memory > Maximum Size to a value equal to or greater than the Initial Size.",
+  "Tag": "kb891832920"
+}

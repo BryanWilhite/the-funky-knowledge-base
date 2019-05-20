@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071973,
+    "Title": "NetBeans 5.x/6.x: “What are the NetBeans startup parameters?”",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-07-01T20:06:44",
+    "ModificationDate": "2008-07-01T20:06:44",
+    "TemplateId": null,
+    "SegmentId": 69,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "-h, --help: Print descriptions of common startup parameters.\n\n--jdkhome jdk_home_dir: Use the specified version of the JDK instead of the default JDK.\n\n--cp:p classpath: Prepend the specified classpath to the IDE's classpath. This option is generally not recommended for any purpose.\n\n--cp:a classpath: Append the specified classpath to the IDE's classpath.\n\n-Jjvm_flag: Pass the specified flag directly to the JVM, for example -J-Xmx512m\n\n--laf ui_class_name: Use a given class as the IDE's look and feel.\n\n--fontsize size: Use a given size in points as the basic font size for the IDE user interface.\n\n--locale language[:country[:variant]] : Use the specified locale.\n\n--userdir userdir: Explicitly specify the userdir, which is the location in which user settings are stored.\n\n--open file, --open file:line: Opens the file in the IDE's source editor at the specified line.\n\n[http://wiki.netbeans.org/FaqStartupParameters]\n",
+  "Tag": "kb2076071973"
+}

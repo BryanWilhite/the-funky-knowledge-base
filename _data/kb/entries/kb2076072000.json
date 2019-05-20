@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072000,
+    "Title": "PHP Safe Mode",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-08-24T17:38:54",
+    "ModificationDate": "2008-08-24T17:38:54",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The PHP safe mode is an attempt to solve the shared-server security problem. It is architecturally incorrect to try to solve this problem at the PHP level, but since the alternatives at the web server and OS levels aren't very realistic, many people, especially ISP’s, use safe mode for now.\n\n[http://php.net/features.safe-mode]\n",
+  "Tag": "kb2076072000"
+}

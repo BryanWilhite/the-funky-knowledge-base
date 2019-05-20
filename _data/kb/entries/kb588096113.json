@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 588096113,
+    "Title": "Adobe PageMaker 6.5: Using the 10-Key Pad to Navigate Text",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2001-12-25T23:08:48.587",
+    "ModificationDate": "2001-12-25T23:08:48.587",
+    "TemplateId": null,
+    "SegmentId": 62,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "With the Num Lock key off we have:\n\n1 To the end of the current line  \n2 One line down  \n3 One screen down  \n4 One character to the left  \n6 One character to the right  \n7 To the beginning of the current line  \n8 One line up  \n9 One screen up\n\nCtrl/Command-1 To the end of the current sentence  \nCtrl/Command-2 One paragraph down  \nCtrl/Command-4 One word to the left  \nCtrl/Command-6 One word to the right \nCtrl/Command-7 To the beginning of the current sentence  \nCtrl/Command-8 One paragraph up",
+  "Tag": "kb588096113"
+}

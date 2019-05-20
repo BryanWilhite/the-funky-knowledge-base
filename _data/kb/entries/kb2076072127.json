@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072127,
+    "Title": "MOSS 2007: “Using a Minimal Publishing Site Definition in the field”; Andrew Connell, andrewconnell.com",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-05-11T12:00:30",
+    "ModificationDate": "2009-05-11T12:00:30",
+    "TemplateId": null,
+    "SegmentId": 85,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Earlier this year I blogged about how you don't need to create site definitions. The gist of that post was this:\n\n* Custom site definitions are not very flexible and hard to create/debug.\n* Create lightweight site definitions; in essence copies of Blank Site with a new name & ID, but nothing else.\n* Create Features and staple them to the new site definition you just created.\n* This process allows for effectively changing the site definition down the road via adding/removing stapling Features.\n\nI don't take the same approach as some others who've blogged. Funny... one guy got a ton of feedback for his black/white post on this subject a month or so ago and then rewrite the post. Quite amusing it looks almost identical to mine earlier this year... even the title is very similar!\n\nAt any rate, I still get questions about how I like to create new Publishing sites. Seems people have taken that blog post I did earlier this year along with Ch5 in my book that demonstrates how to create what I call a \"Minimal Publishing Portal\" site definition, and taken these positions a bit too literally. So... let me try to clear it up...\n\nWhen you're creating a new Publishing site, I'd argue that what you want is the Publishing Portal site definition included in the MOSS 2007 installation... EXCEPT you don't want the extra master pages, CSS, images, page layouts, content types and subsites. You want the two site templates Publishing Site & Publishing Site with Workflow and one content type, page layout and page for the homepage of the site... but nothing else.\n\nThat's what I create in my book (note: if you use that site def, make sure you check the book errata for fixes on that chapter and the code). But, I don't use it as is. Instead, I use it as a starting point. For real projects I do the following:\n\n* Create a copy of that Minimal Publishing Portal site definition\n* Give it a new name & ID\n* Optionally (but usually) create a Feature that includes the core branding of the site (master page(s), CSS, images, etc) named something like \"ProjectBranding\" & then create another stapling Feature \"ProjectBrandingStapling\" that attaches the brand to the core site template used as the root template in the Minimal Publishing Portal site definition\n\nThe difference here is that when you look at my environment, you don't see \"Minimal Publishing Portal\" as an option... you only see the site definition(s) I've created that used the Minimal Publishing Portal as a starting point.\n\n[http://www.andrewconnell.com/blog/archive/2008/12/06/Using-a-Minimal-Publishing-Site-Definition-in-the-field.aspx]\n\n[http://andrewconnell.com/blog/archive/2008/02/15/You-dont-need-to-create-site-definitions.aspx]",
+  "Tag": "kb2076072127"
+}

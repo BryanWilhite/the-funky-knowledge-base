@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071825,
+    "Title": "Windows Server 2003 Firewall: the Ports to Open that allow IIS to Receive Requests; Windows Firewall",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-05-06T19:44:00",
+    "ModificationDate": "2007-05-06T19:44:00",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Under Control Panel > Windows Firewall > Exceptions > Programs and Services check File and Printer Sharing. This allows WINS-capable clients to resolve the IP address from the NETBIOS name.\n\nNext choose Windows Firewall > Exceptions > Add Port... and enter TCP:80 for IIS. Also, you may need TCP:22 in case you have OpenSSH installed.\n\nFor further reading, see \"Innovations in Internet Information Services Let You Tightly Guard Secure Data and Server Processes\" here:\n\n    http://msdn.microsoft.com/msdnmag/\n        issues/02/09/securityiniis60/default.aspx\n\nand \"Troubleshooting IIS and ASP.NET Settings Import\" here:\n\n    http://msdn2.microsoft.com/en-us/library/ms182001(VS.80).aspx\n",
+  "Tag": "kb2076071825"
+}

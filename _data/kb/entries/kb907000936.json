@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 907000936,
+    "Title": "VB: Orange County Visual Basic Users Group Seminar; VB 6.0 Data Controls",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-03-01T13:48:06",
+    "ModificationDate": "1999-03-01T13:48:06",
+    "TemplateId": null,
+    "SegmentId": 77,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The ADO Data Control promises to actually be useful in VB 6.0. The control can connect to a database and retrieve or modify data without code. The control only needs ConnectionString and RecordSource properties specified to run.\n\nSeveral VB controls are \"data aware.\" On text boxes, for example, the DataField and DataSource properties are used to bind to the ADO Recordset object. With Combo Box or List Box the properties are DataSource, ListField, DataField, BoundColumn, RowSource, Description, etc. This 6.0 design very much rivals the conveniences available in Microsoft Access.\n\nThe concept of events associated with a VB data control is a new concept. These are are Data Control Events:\n\n    Error\n    WillChangeField\n    FieldChangeComplete\n    WillMove\n    MoveComplete\n    WillChangeRecord\n    RecordChangeComplete\n    WillChangeRecordSet\n    RecordSetChangeComplete\n\n\nMiscellaneous Notes\n\nAt design time with the DataGrid Control, use the Retrieve Fields command to get more columns from the underlying RecordSet.\n\nOption Buttons cannot be bound to and ADO Data Control.\n\nThe Error event of the Data Control allows a centralized Error handler for Data Errors (just like in an Access form). Use Booleans to avoid cascading errors.\n\n\nMiscellaneous Code\n\nTesting an ADO Recordset's EditMode property:\n\n    blnAdding = (adoCtrl.Recordset.EditMode = adEditAdd)\n    If blnAdding Then\n        'Adding a record...\n    Else\n        'Not adding a record...\n    End If\n\nThis form is slightly faster than the If Then structure testing .EditMode directly.\n\nRolling your own record position caption:\n\n    With adoCtrl.Recordset\n        Me.lbl1.Caption = \"Record \" .AbosolutePosition _\n            & \" of \" & .Recordcount\n    End With",
+  "Tag": "kb907000936"
+}

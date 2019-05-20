@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072152,
+    "Title": "Flex/ActionScript 3: “About SWC files” and “Using Runtime Shared Libraries”; Adobe Help Resource Center",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-07-26T17:47:05",
+    "ModificationDate": "2009-07-26T17:47:05",
+    "TemplateId": null,
+    "SegmentId": 84,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "A SWC file is an archive file, sometimes also referred to as a class library, for Flex components and other assets. SWC files contain a SWF file and a catalog.xml file, in addition to properties files and other uncompiled assets such as CSS files. The SWF file implements the compiled component or group of components and includes embedded resources as symbols. Flex applications extract the SWF file from a SWC file and use the SWF file's contents when the application refers to resources in that SWC file. The catalog.xml file lists of the contents of the component package and its individual components.\n\nIn most cases, the symbols defined in the SWF file that are referenced by the application are embedded in the Flex application at compile-time. This is known as static linking. The application compiler only includes those classes that are used by your application, and dependent classes, in the final SWF file.\n\nYou can also dynamically link the contents of SWC files. Dynamic linking is when the entire SWF file is loaded at run time. To achieve dynamic linking of the SWF file, you must use the SWC file as a Runtime Shared Library, or RSL.\n\n[http://livedocs.adobe.com/flex/3/html/help.html?content=compilers_30.html]\n\n\nWhen you want to use a dynamically-linked library, you instruct the compiler to exclude that library's contents from the application SWF file when you compile the application. You must provide link-checking at compile time even though the classes are not going to be included in the final SWF file. At run time, the application loads the entire library into the application SWF file, which can result in slower startup times and greater memory usage.\n\nYou can use the runtime-shared-library-path and runtime-shared-libraries options to specify the location of dynamically-linked libraries.\n\nYou can also use the external-library-path, externs, or load-externs compiler options to specify the files to dynamically link into an application. These options instruct the compiler to exclude classes and libraries from the application, but to check links against them and prepare to load them at run time. The external-library-path option specifies SWC files or directories for dynamic linking. The externs option specifies individual classes or symbols for dynamic linking. The load-externs option specifies an XML file that describes what classes to use for dynamic linking. These options are most often used when externalizing assets from modules so that the module and the application do not contain overlapping class definitions. The runtime-shared-library-path option provides all the arguments to use external libraries as RSLs.\n\n[http://livedocs.adobe.com/flex/3/html/help.html?content=compilers_30.html]",
+  "Tag": "kb2076072152"
+}

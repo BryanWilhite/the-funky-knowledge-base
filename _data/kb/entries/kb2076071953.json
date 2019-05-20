@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071953,
+    "Title": "LINQ to XML: The Equivalent of XPath Assertions; Basic Validation without XSD (schema)",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-03-31T12:11:15",
+    "ModificationDate": "2008-03-31T12:11:15",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "/*\nusing System;\nusing System.Linq;\nusing System.Xml.Linq;\n*/\n\nstring xml = @\"\n<root>\n<one>this one</one>\n<two>this two</two>\n<three>\nthis one <three_5>and a half</three_5>\n</three>\n</root>\n\";\n\nXDocument document = XDocument.Parse( xml );\n\nvar assertions = from n in document.Descendants( \"root\" )\n\n    select new\n    {\n        HasOne = n.Element( \"one\" ),\n        HasTwo = n.Element( \"two\" ),\n        HasThree = n.Element( \"three\" ),\n        HasTen = n.Element( \"ten\" )\n    };\n\n//Verify that there is one root element:\nif ( assertions.Count() == 1 )\n{\n    var test = assertions.First();\n\n    Console.WriteLine( test.HasOne != null );\n    Console.WriteLine( test.HasTwo != null );\n\n    //Search for nested element:\n    if ( test.HasThree != null )\n    {\n        Console.WriteLine( test.HasThree.Element( \"three_5\" ) != null );\n    }\n\n    Console.WriteLine( test.HasTen != null );\n}\n\n/*\n\nConsole output:\n\nTrue\nTrue\nTrue\nFalse\n\n*/\n",
+  "Tag": "kb2076071953"
+}

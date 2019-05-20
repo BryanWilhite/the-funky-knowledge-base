@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071812,
+    "Title": "Hibernate in Action Notes: Chapter 2; Introducing and\nintegrating Hibernate; 2.1 “Hello World” with Hibernate",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-04-09T18:38:56",
+    "ModificationDate": "2007-04-09T18:38:56",
+    "TemplateId": null,
+    "SegmentId": 69,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "2.1 “Hello World” with Hibernate\n\n\"Hibernate applications define persistent classes that are 'mapped' to database tables... Our persistent class can be used in any execution context at all---no special container is needed.\" Hibernate depends on its Session object for its \"context\":\n\n    Session session = getSessionFactory().openSession();\n    Transaction tx = session.beginTransaction();\n    Message message = new Message(\"Hello World\");\n    session.save(message);\n    tx.commit();\n    session.close();\n\nThe Message is defined by:\n\n    package hello;\n    public class Message\n    {\n        /*\n            There is no need to set the id property explicitly.\n            The XML configuration file associates\n            the <generator /> element\n            with this \"identifier property\".\n        */\n        private Long id;\n\n        /*\n            The XML configuration file \"maps\" the private text\n            member to the MESSAGE_TEXT column in the database\n            with the <property /> element.\n        */\n        private String text;\n\n        /*\n            this reference to another Message object is used by\n            the XML configuration in the <many-to-one /> element.\n        */\n        private Message nextMessage;\n\n        //Hibernate requires this private constructor:\n        private Message() {}\n\n        public Message(String text) { this.text = text; }\n\n        public Long getId() { return id; }\n\n        /*\n            Note that setId() is private because\n            of Hibernate (see private id above):\n        */\n        private void setId(Long id) { this.id = id; }\n\n        public String getText() { return this.text; }\n        public void setText(String text) { this.text = text; }\n\n        /*\n            The members below are useful because of Hibernate,\n            its \"cascading save\" feature.\n        */\n        public Message getNextMessage() { return this.nextMessage; }\n        public void setNextMessage(Message this.nextMessage)\n        {\n            this.nextMessage = nextMessage;\n        }\n    }\n\nHibernate recognizes the Message class because of this XML configuration file or \"XML mapping document\":\n\n    <?xml version=\"1.0\"?>\n    <!DOCTYPE hibernate-mapping PUBLIC\n    \"-//Hibernate/Hibernate Mapping DTD//EN\"\n    \"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd\">\n\n    <hibernate-mapping>\n    <class name=\"hello.Message\" table=\"MESSAGES\">\n\n    <id name=\"id\" column=\"MESSAGE_ID\">\n        <generator class=\"increment\"/>\n    </id>\n\n    <property name=\"text\" column=\"MESSAGE_TEXT\"/>\n\n    <many-to-one\n        name=\"nextMessage\"\n        cascade=\"all\"\n        column=\"NEXT_MESSAGE_ID\"/>\n\n    </class>\n    </hibernate-mapping>\n",
+  "Tag": "kb2076071812"
+}

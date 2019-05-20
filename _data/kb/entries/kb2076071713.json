@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071713,
+    "Title": "MCAD/MCSD Notes: Chapter 8, Lesson 5; Providing Secure Communication",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2005-09-23T16:59:50.923",
+    "ModificationDate": "2005-09-23T16:59:50.923",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Lesson 5: Providing Secure Communication\n\nThe purpose of this lesson is to explain how Secure Sockets Layer (SSL) communication is implemented with IIS configuration and URIs.\n\n* \"To provide secure communication across the Internet, IIS supports a standardized means of encrypting and decrypting Web requests and responses.\"\n\nA third-party corporate authority provides an encryption key called a \"server certificate\" for cryptographic communication on the SSL.\n\n* \"The Secure Sockets Layer\" (SSL) is the standard means of ensuring that data sent over the Internet can't be read by others.\"\n\nOne article, \"Enabling SSL in IIS on Windows XP Professional,\" shows how to set up SSL for testing purposes using SSL:\n\n    http://www.somacon.com/p41.php\n\n* \"Because the difference between using http and https is a somewhat obscure distinction for most users to remember, it's important to provide an http entry point for your application that links to the secure (HTTPS) pages.\"\n\nThe Blog post \"Setting up SSL correctly with IIS and ASP.NET\" by Paul Wilson touches upon this matter:\n\n    http://weblogs.asp.net/pwilson/archive/2004/12/23/331455.aspx",
+  "Tag": "kb2076071713"
+}

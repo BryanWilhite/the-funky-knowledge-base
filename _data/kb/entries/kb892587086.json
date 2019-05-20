@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 892587086,
+    "Title": "SQL: The Differences Beteween HAVING and WHERE",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2000-12-24T14:50:17.91",
+    "ModificationDate": "2000-12-24T14:50:17.91",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "When HAVING appears in a SQL statement, this implies that there is a GROUP BY clause in the statement. If WHERE is also in the statement, the WHERE clause creates the first subset. The HAVING clause makes a \"second pass\" after the GROUP BY clause and makes a sub-sub-set.",
+  "Tag": "kb892587086"
+}

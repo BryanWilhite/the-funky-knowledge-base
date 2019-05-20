@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 899348967,
+    "Title": "Microsoft Windows NT 4.0: Selective Backup of the NT Installation",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-11-26T20:08:06",
+    "ModificationDate": "1998-11-26T20:08:06",
+    "TemplateId": null,
+    "SegmentId": 71,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Financial resources do not permit me to have a tape backup system as well as all the other toys I need. It follows that I need to be \"surgical\" when I back up data. The principle driving this surgery is that operating system, application files and even registry entries are not to be worried about. They can easily be replaced on demand, where my core system is the Windows NT operating system, Microsoft Access, Microsoft Money and Microsoft Word---everything else can appear as needed.\n\nWhat is paramount is saving the data created by users (my data). Following the lead of unix directory structures, all of the user data produced by each user will be under one respective directory. Currently, Microsoft does not allow all the data stored per user in %SystemRoot%\\Profiles to be relocated under my special directory. For example, the Address Book or the Favorites folder cannot be moved without a fight. So before back up, I have written CMD scripts to copy the Profiles user data to my central directory.\n\nWith all these words I say, Backing up data per user involves one folder!",
+  "Tag": "kb899348967"
+}

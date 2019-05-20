@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 910209711,
+    "Title": "VB: ADO; Code; Connecting to an Access .MDB File",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-03-01T13:35:15",
+    "ModificationDate": "1999-03-01T13:35:15",
+    "TemplateId": null,
+    "SegmentId": 77,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Public Function basDataConnection(Optional CloseConn = False) As Boolean\n    \n    On Error GoTo basDataConnection_Err\n    \n    If VBA.VarType(CloseConn) <> vbBoolean Then VBA.Err.Raise 450\n    \n    If CloseConn Then\n        If Not m_cnnADO Is Nothing Then\n            m_cnnADO.Close\n            Set m_cnnADO = Nothing\n        End If\n        GoTo basDataConnection_Exit\n    End If\n    \n    basDataConnection = basFileExists(App.Path & c_dbName)\n    If Not basDataConnection Then VBA.Err.Raise 76\n    \n    Set m_cnnADO = New ADODB.Connection\n    With m_cnnADO\n        .Open _\n        ConnectionString:=\"Provider=Microsoft.Jet.OLEDB.3.51;\" _\n            & \"Persist Security Info=False;\" _\n            & \"User ID=Admin;\" _\n            & \"Data Source=\" & VB.App.Path & \"\\DSAPL.mdb;\" _\n            & \"Mode=Share Deny None;\" _\n            & \"Extended Properties=\"\";\" _\n            & \"COUNTRY=0;\" _\n            & \"CP=1252;\" _\n            & \"LANGID=0x0409\"\";\" _\n            & \"Locale Identifier=1033;\" _\n            & \"Jet OLEDB:System database=\"\"\"\";\" _\n            & \"Jet OLEDB:Registry Path=\"\"\"\";\" _\n            & \"Jet OLEDB:Database Password=\"\"\"\";\" _\n            & \"Jet OLEDB:Global Partial Bulk Ops=2\"\n        .CursorLocation = adUseClient\n    End With\nbasDataConnection_Exit:\n    Exit Function\n    \nbasDataConnection_Err:\n    Select Case Err\n        Case 76 'Path not found\n            MsgBox \"The Application Table file \" & c_dbName & \" cannot be found.\", vbCritical\n            basDataConnection = False\n            Resume basDataConnection_Exit\n        Case Else\n            MsgBox Err & \": \" & Err.Description, vbCritical, \"basDataConnection Error\"\n            basDataConnection = False\n            Resume basDataConnection_Exit\n    End Select\n    \nEnd Function",
+  "Tag": "kb910209711"
+}

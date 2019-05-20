@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071965,
+    "Title": "VMware Workstation 5.x: Installing VMware Tools build-91707 with Compilation on Ubuntu 6.06, Kernel 2.6.15-52-386",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-06-20T22:57:45",
+    "ModificationDate": "2008-06-20T22:57:45",
+    "TemplateId": null,
+    "SegmentId": 73,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "For a first-time compilation, these package commands should be run:\n\n    sudo apt-get install build-essential\n\n    sudo apt-get install linux-headers-`uname -r`\n\nwhere uname -r returns 2.6.15-52-386 (as of this writing) so we can also use:\n\n    sudo apt-get install linux-headers-2.6.15-52-386\n\nThis should install C headers for compilation here:\n\n    /usr/src/linux-headers-2.6.15-52-386\n\nWhen prompted for C headers by vmware-install.pl, use this path:\n\n    /usr/src/linux-headers-2.6.15-52-386/include\n\nFrom VMware Workstation select VM > Install VMware Tools... This should mount a CD-ROM such that these commands work:\n\n    cp /cdrom/*.gz /tmp/\n\n    cd /tmp\n\n    tar xvzf VM*.gz\n\n    cd vmware*\n\n    sudo ./vmware-install.pl\n\nVerify that Ubuntu is unpacking the right kernel after boot by examining this file:\n\n    sudo vim /boot/grub/menu.lst\n\nSet the default entry. The default entry should be the first configuration option in the file.\n",
+  "Tag": "kb2076071965"
+}

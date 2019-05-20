@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 906080787,
+    "Title": "Microsoft Money: Tax Reports; Earnings Statement; Group Term Life",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-08-24T19:31:17",
+    "ModificationDate": "1999-08-24T19:31:17",
+    "TemplateId": null,
+    "SegmentId": 81,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "If Microsoft Money reports income that does not reconcile with W2 forms, it is possible that the Group Term Life benefits were not properly accounted for.",
+  "Tag": "kb906080787"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072013,
+    "Title": "Zend Framework: Rewriting with .htaccess",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-08-24T19:40:23",
+    "ModificationDate": "2008-08-24T19:40:23",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Routing requests\n\nAgain, these rules direct all requests to index.php, except specified file types:\n\nRewriteEngine on\nRewriteBase /\nRewriteRule !\\.(js|ico|txt|gif|jpg|png|css)$ index.php\n\nHandling file and directory exceptions\n\nThese rules (used immediately prior to the RewriteRule above) exclude real files and directories from the rewriting and lets them pass through unaffected:\n\nRewriteCond %{REQUEST_FILENAME} !-f\nRewriteCond %{REQUEST_FILENAME} !-d\n\nYou can also simply allow a specified group of files to pass through unaffected by using this line:\n\nRewriteRule  ^(foo|bar).*  - [L]\n\nIn this case, files foo.* and bar.* will be accessed normally.\n\n[http://framework.zend.com/wiki/\n    display/ZFDEV/Configuring+Your+URL+Rewriter]\n\nAlso, see “Blueprint for PHP Applications: Bootstrapping” here:\n\n[http://devzone.zend.com/node/view/id/70]\n",
+  "Tag": "kb2076072013"
+}

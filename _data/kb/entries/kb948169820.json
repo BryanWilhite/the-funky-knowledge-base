@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 948169820,
+    "Title": "Songhay 1/2 CONFIG.SYS lines",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2000-01-17T20:31:20",
+    "ModificationDate": "2000-01-17T20:31:20",
+    "TemplateId": null,
+    "SegmentId": 66,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Config.sys\n\nDOS=HIGH,UMB\n\nDEVICE=c:\\windows\\himem.sys\nrem DEVICE=c:\\windows\\emm386.exe 4096 RAM D=256 I=B000-B7FF\n\nrem for ProMovie Driver\nDEVICE=c:\\windows\\emm386.exe 4096 RAM D=256 I=B000-B7FF noems x=DD00-DDFF\n\n\nFILES=30\nBUFFERS=10\nSTACKS=9,128\nLASTDRIVE=F\n\nrem Creative Labs DOS Compatibility Mode PNP Configuration Manager\nDEVICE=c:\\util\\awe32dos\\ctcm.exe\n\nrem Creative Labs CD-ROM DOS Mode Driver\nDEVICEHIGH=C:\\PROGRA~1\\SBCD\\DOSDRV\\SBIDE.SYS /D:MSCD001 /V /P:168,10,36e\n\nrem DriveSpace Driver (things get weird if these lines are not last!)\nDEVICEHIGH=C:\\WINDOWS\\COMMAND\\DRVSPACE.SYS /MOVE\n\n\n----------------\n\n\nSET PATH=C:\\QTW\\BIN;C:\\WINDOWS;C:\\WINDOWS\\COMMAND;C:\\WINDOWS\\COMMAND\\CDROM;C:\\UTIL;C:\\KMOUSE\n\nrem ON prevents writing to bad sectors...\nVERIFY ON\nprompt $p$g\n\nrem Kensington Mouse Controls\nC:\\KMOUSE\\MOUSE -LC:\\KMOUSE\\VCI.OVL -TCPN\nC:\\KMOUSE\\CONTROL\n\nrem Windows 95 MSCDEX\nC:\\WINDOWS\\COMMAND\\MSCDEX /D:MSCD001 /V /M:8\n\nrem Sound Blaster AWE32 DOS Compatibility Mode\nSET MIDI=SYNTH:1 MAP:E MODE:0\nSET BLASTER=A220 I5 D1 H5 P330 E640 T6 \n\n\n***\n\nrem device=c:\\windows\\himem.sys\n\nrem X-Wing emm386:\nrem device=c:\\windows\\emm386.exe 4096 RAM D=256\n\nrem ProMovie emm386:\nrem device=c:\\windows\\emm386.exe 4096 RAM D=256 noems x=DD00-DDFF\n\nrem DEVICEHIGH=C:\\WINDOWS\\SETVER.EXE",
+  "Tag": "kb948169820"
+}

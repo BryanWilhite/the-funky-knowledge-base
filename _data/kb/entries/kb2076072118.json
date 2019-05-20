@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072118,
+    "Title": "Ubuntu 6.x Firefox PROBLEM: Firefox “Looks up” DNS Information Too Frequently; “Speed Up Firefox web browser,” ubuntugeek.com",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-04-19T10:57:59",
+    "ModificationDate": "2009-04-19T10:57:59",
+    "TemplateId": null,
+    "SegmentId": 73,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "There are approximately two ways to handle this problem: (i) mess about with about:config settings in Firefox itself and (ii) install dnsmasq in Ubuntu.\n\nThese are some of the about:config settings of concern:\n\nnetwork.http.pipelining\n[http://kb.mozillazine.org/Network.http.pipelining]\n\nnetwork.http.pipelining.maxrequests\n\nnetwork.dns.disableIPv6\n[http://kb.mozillazine.org/Network.dns.disableIPv6]\n\nplugin.expose_full_path\n\nnglayout.initialpaint.delay\n\ncontent.notify.backoffcount\n\n\n\nFor an overview of dnsmasq, see “Local DNS Cache for Faster Browsing on Ubuntu Machine”:\n\n    http://www.ubuntugeek.com/\n        local-dns-cache-for-faster-browsing-on-ubuntu-machine.html\n\nFor a more extensive view, see  “Speed Up Firefox web browser”:\n\n    http://www.ubuntugeek.com/speed-up-firefox-web-browser.html\n",
+  "Tag": "kb2076072118"
+}

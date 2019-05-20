@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071734,
+    "Title": "C# Code: Instantiating an XPathDocument() Object from a String",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2006-01-26T15:11:21.707",
+    "ModificationDate": "2006-01-26T15:11:21.707",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "//Instantiating an XPathDocument() Object from a String:\nXPathDocument xsl;\nString xslString;\nxsl = new XPathDocument(new StringReader(xslString));",
+  "Tag": "kb2076071734"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072256,
+    "Title": "RAM: “What does 'nonecc unbuffered' mean for buying a memory upgrade?”; Yahoo! Answers",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-09-19T21:20:02",
+    "ModificationDate": "2009-09-19T21:20:02",
+    "TemplateId": null,
+    "SegmentId": 66,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "ecc and unbuffered is the same thing and ecc means error correction code and the ram has a little code in it that runs all the time and checks for errors ( mostly used in servers and some workstations ) and it usually cost more than non ecc\n\nif yours is just a desktop then most times it will not need ( and some times will not work with) ecc also sometimes they state that the ecc is also edo ( extended data output ) which may not work either in a desktop\n\n[http://answers.yahoo.com/question/index?qid=20080120023001AAq3Fkg]",
+  "Tag": "kb2076072256"
+}

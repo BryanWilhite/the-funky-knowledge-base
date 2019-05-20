@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071656,
+    "Title": "Adobe Acrobat 4.x: Legendary Command Line Arguments; Using Command Lines with Acrobat and Acrobat Reader under Windows",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2005-03-17T18:11:23.243",
+    "ModificationDate": "2005-03-17T18:11:23.243",
+    "TemplateId": null,
+    "SegmentId": 62,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Using Command Lines with Acrobat and Acrobat Reader under Windows\n\nThese are unsupported command lines, but have worked for some developers. There is no documentation for these commands other than what is listed below. You can display and print a PDF file using command lines with Acrobat and Acrobat Reader.\n\nAcroRd32.exe filename - Executes the Reader and displays a file.\nAcroRd32.exe /p filename - Executes the Reader and prints a file.\nAcroRd32.exe /t path printername drivername portname - Initiates Acrobat Reader, prints a file while suppressing the Acrobat print dialog box, then terminates Reader.\n\nThe four parameters of the /t option evaluate to path, printername, drivername, and portname (all strings).\n\nprintername - The name of your printer.\n\ndrivername - Your printer driver's name. Whatever appears in the Driver Used box when you view your printer's properties.\n\nportname - The printer's port. portname cannot contain any \"/\" characters; if it does, output is routed to the default port for that printer.\n\nIf using Acrobat, substitute Acrobat.exe in place of AcroRd32.exe in the command lines. ",
+  "Tag": "kb2076071656"
+}

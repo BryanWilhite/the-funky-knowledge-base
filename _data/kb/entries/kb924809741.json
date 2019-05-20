@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 924809741,
+    "Title": "VB Code: The \"Are You Sure?\" Message Box During Form_Unload",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-04-22T20:40:49",
+    "ModificationDate": "1999-04-22T20:40:49",
+    "TemplateId": null,
+    "SegmentId": 77,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "    Private Sub Form_Unload(Cancel As Integer)\n        '\n        'This sub makes sure the user really wants to quit.\n        'Note the use of the ProductName Property\n        'of the App object of the VB Library.\n        '\n        Cancel = (VBA.MsgBox(\"Are you sure you want \" _\n            & \"to quit?\",  vbYesNo + vbDefaultButton2 + _\n            vbQuestion, VB.App.ProductName) = vbNo)\n    End Sub",
+  "Tag": "kb924809741"
+}

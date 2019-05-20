@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 912283235,
+    "Title": "Initial Idea of a Network Installation",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-11-28T20:08:01",
+    "ModificationDate": "1998-11-28T20:08:01",
+    "TemplateId": null,
+    "SegmentId": 71,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "NIC Cards: 3COM (3C905B-TX-NM) with \"Remote Wake-Up\"; these cards use Twisted Pair (RJ-45) cables (much bigger than the RJ-11 cables used on phones).\n\nHUB: Linksys (Etherfast 100 Base-TXPORT).\n\nSOFTWARE: Use TCP/IP (no DHCP; no WINS); assign arbitrary IP address (200.100.100.10, 200.100.100.20, 200.100.100.30, etc.).\n\nNOTE: A larger network requires a Router---this is beyond the scope and expertise of a developer like myself!",
+  "Tag": "kb912283235"
+}

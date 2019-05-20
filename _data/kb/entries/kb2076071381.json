@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071381,
+    "Title": "T-SQL Code: Another Example of the use of a Cursor; Parsing WebCom Hit Log Files; GetHitsImport",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2001-03-04T10:06:53.94",
+    "ModificationDate": "2001-03-04T10:06:53.94",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "CREATE PROCEDURE GetHitsImport\n    (\n        @errorCount int OUTPUT\n    )\nAS\n\n-- Description: Transforms data in tblLogImport into data for tblLog.\n-- Developer: rasx\n\nDECLARE\n    @logEntry     varchar(1000)\n,   @type         varchar(8)\n,   @date         datetime\n,   @address      varchar(255)\n,   @file         varchar(255)\n,   @entryValid   bit\n,   @charPosStart int\n,   @charPosEnd   int\n,   @srchStr      varchar(255)\n\nSET NOCOUNT ON\n\n-- Record last log entry date.\nINSERT INTO tblLogDates\nSELECT MAX([date]) FROM tblLog\n\nSET @errorCount = 0\n\nDECLARE tblLogImportCursor CURSOR FOR\nSELECT\n    LogEntry\nFROM\n    tblLogImport\n\nOPEN tblLogImportCursor\n\nFETCH NEXT FROM tblLogImportCursor\nINTO @logEntry\n\nWHILE @@FETCH_STATUS = 0\nBEGIN\n    IF LEN(@logEntry) > 0 AND LEFT(@logEntry,1) <> '#'\n    BEGIN\n        SET @entryValid = 1\n        SET @type = LTRIM(SUBSTRING(@logEntry,1,3))\n        SET @date = LTRIM(SUBSTRING(@logEntry,5,19))\n        \n        SET @srchStr = SPACE(1) + '/'\n        EXECUTE GetcharPos\n                @str        = @logEntry\n            ,   @srchstr    = @srchStr\n            ,   @iterations = 0\n            ,   @pos        = @charPosEnd OUTPUT\n        IF @charPosEnd > 25\n        BEGIN\n            SET @address = LTRIM(SUBSTRING(@logEntry,25,@charPosEnd - 25))\n        END\n        ELSE\n        BEGIN\n            SET @entryValid = 0\n            SET @errorCount = @errorCount + 1\n        END\n        \n        SET @charPosStart = @charPosEnd\n        EXECUTE GetcharPos\n                @str        = @logEntry\n            ,   @srchstr    = '.'\n            ,   @iterations = 0\n            ,   @pos        = @charPosEnd OUTPUT\n        \n        SET @charPosEnd = @charPosEnd + 5\n        IF @charPosStart >= @charPosEnd\n        BEGIN\n            EXECUTE GetcharPos\n                    @str        = @logEntry\n                ,   @srchstr    = '/'\n                ,   @iterations = 0\n                ,   @pos        = @charPosEnd OUTPUT\n            SET @charPosEnd = @charPosEnd + 1\n        END\n\n        IF @charPosEnd > @charPosStart\n        BEGIN\n            SET @file = LTRIM(SUBSTRING(@logEntry,@charPosStart,@charPosEnd - @charPosStart))\n        END\n        ELSE\n        BEGIN\n            SET @entryValid = 0\n            SET @errorCount = @errorCount + 1\n        END\n    END\n    ELSE\n    BEGIN\n        SET @entryValid = 0\n        SET @errorCount = @errorCount + 1\n    END\n    \n    IF @entryValid = 1\n    BEGIN\n        INSERT INTO tblLog\n        ([type], [date], address, [file])\n        VALUES(@type, @date, @address, @file)\n    END\n\n    FETCH NEXT FROM tblLogImportCursor\n    INTO @logEntry\nEND\n\nCLOSE tblLogImportCursor\nDEALLOCATE tblLogImportCursor",
+  "Tag": "kb2076071381"
+}

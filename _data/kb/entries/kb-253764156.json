@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -253764156,
+    "Title": "Access to VB: Enums",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2004-05-18T21:38:57.927",
+    "ModificationDate": "2004-05-18T21:38:57.927",
+    "TemplateId": null,
+    "SegmentId": 64,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Enumerated constants are not supported in Access 97. These were introduced in Visual Basic 5.0.",
+  "Tag": "kb-253764156"
+}

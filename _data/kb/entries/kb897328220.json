@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 897328220,
+    "Title": "Code: the \"Are You Sure?\" Message",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-06-08T10:55:14",
+    "ModificationDate": "1998-06-08T10:55:14",
+    "TemplateId": null,
+    "SegmentId": 63,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "'To review the constants used here, review\n'the Access Basic online help for MsgBox.\n    If MsgBox(\"Are you sure?\", 4 + 256 + 32) = 7 Then\n        'Prepare to exit procedure.\n        Exit Sub\n    End If",
+  "Tag": "kb897328220"
+}

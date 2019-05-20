@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071780,
+    "Title": "JavaScript Code: Dom() Class; Abandoned Code",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-01-09T21:38:11",
+    "ModificationDate": "2007-01-09T21:38:11",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "//Bryan Wilhite (rasx@kintespace.com)\n\n//WARNING: this object depends on Sniffer.js!\nDom = function()\n{\n    this.IsMs = (is_ie5_5up || is_opera6up)? true : false\n    this.IsMsMac = (is_mac && is_ie5up)? true : false\n    this.IsMz = is_gecko\n    this.IsSafari = is_safari\n    this.IsSupportedBrowser = (this.IsMs || this.IsMsMac || this.IsMz || this.IsSafari)\n\n    this.GetEventSourceElement = function(e)\n    {\n        if(e == null) return null\n\n        if(this.IsMs) return e.srcElement\n\n        //Based on http://developer.apple.com/internet/javascript/ie5macscripting.html\n        if(this.IsMsMac) return e.target\n\n        if(this.IsMz) return e.currentTarget\n    }\n\n    this.GetEventSourceStyle = function(e)\n    {\n        var o = null\n        if(this.IsMs || this.IsMsMac) o = e.srcElement.style\n        if(this.IsMz) o = e.currentTarget.style\n        return o\n    }\n}\n\nvar dom = new Dom()\n",
+  "Tag": "kb2076071780"
+}

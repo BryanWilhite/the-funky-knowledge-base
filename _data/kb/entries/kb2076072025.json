@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072025,
+    "Title": "Microsft Word 2007: Migration considerations for Word 2007; technet.microsoft.com",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-09-01T20:38:34",
+    "ModificationDate": "2008-09-01T20:38:34",
+    "TemplateId": null,
+    "SegmentId": 85,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Office Word 2007 handles AutoText entries differently than in previous versions of Word. In previous versions of Word, AutoText entries are stored in the Normal.dot template or in user templates. Office Word 2007 replaces the Normal.dot template with the new Normal.dotm template, which supports new file formats and other features in the 2007 Office system and also contains different styles and formatting. Instead of storing AutoText entries in the new Normal.dotm template by default, Office Word 2007 stores the entries as a separate template in the Document Building Blocks directory.\n\n…\n\nCustomizations to previous versions of Word do not automatically migrate to Office Word 2007 during installation. These customizations include:\n \n* Settings\n* Styles\n* Add-ins\n* Macros\n* Toolbars\n* AutoText entries\n* AutoCorrect entries\n\n[http://technet.microsoft.com/en-us/library/cc179177.aspx]",
+  "Tag": "kb2076072025"
+}

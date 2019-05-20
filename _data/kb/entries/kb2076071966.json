@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071966,
+    "Title": "UriBuilder Inserts Multiple Question Marks in Query Strings; C# Cookbook",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-06-25T15:55:08",
+    "ModificationDate": "2008-06-25T15:55:08",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "From Jay Hilyard and Stephen Teilhet (C# Cookbook): “Every time you set the Query property, the UriBuilder class appends a ? to the front of the query string information.” This move should solve the problem:\n\n    Uri u = new Uri(\"http://contoso.com/mypage.html?foo=0\");\n\n    string uriString = u.AbsoluteUri.Replace(u.Query, string.Empty);\n    string queryString = u.Query.Contains(\"?\") ?\n        string.Concat(u.Query.Replace(\"?\",string.Empty), \"&\", \"foo=1\") : \"foo=1\";\n\n    UriBuilder builder = new UriBuilder(uriString);\n    builder.Query = queryString;\n\nNow Jay Hilyard and Stephen Teilhet recommends using a .NET 3.5 extension method pattern to permanently fix the problem:\n\n    public class UriBuilderFix : UriBuilder\n    {\n        public UriBuilderFix() : base()\n        {\n        }\n\n        public new string Query\n        {\n            get\n            {\n                return base.Query;\n            }\n            set\n            {\n                if (!string.IsNullOrEmpty(value))\n                {\n                    if (value[0] == '?')\n                        // trim off the leading ? as the underlying \n                        // UriBuilder class will add one to the \n                        // querystring.  Also prepend ; for additional items\n                        base.Query = value.Substring(1);\n                    else\n                        base.Query = value;\n                }\n                else\n                    base.Query = string.Empty;\n            }\n        }\n    }\n",
+  "Tag": "kb2076071966"
+}

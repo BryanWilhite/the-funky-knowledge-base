@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072290,
+    "Title": "“ASP.NET MVC Controller Overview (C#)”; ",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-10-01T20:09:35",
+    "ModificationDate": "2009-10-01T20:09:35",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Understanding Action Results\n\nA controller action returns something called an action result. An action result is what a controller action returns in response to a browser request.\n\nThe ASP.NET MVC framework supports several types of action results including:\n\n   1. ViewResult – Represents HTML and markup.\n   2. EmptyResult – Represents no result.\n   3. RedirectResult – Represents a redirection to a new URL.\n   4. JsonResult – Represents a JavaScript Object Notation result that can be used in an AJAX application.\n   5. JavaScriptResult – Represents a JavaScript script.\n   6. ContentResult – Represents a text result.\n   7. FileContentResult – Represents a downloadable file (with the binary content).\n   8. FilePathResult – Represents a downloadable file (with a path).\n   9. FileStreamResult – Represents a downloadable file (with a file stream).\n\nAll of these action results inherit from the base ActionResult class.\n\n…you call one of the following methods of the Controller base class:\n\n   1. View – Returns a ViewResult action result.\n   2. Redirect – Returns a RedirectResult action result.\n   3. RedirectToAction – Returns a RedirectToRouteResult action result.\n   4. RedirectToRoute – Returns a RedirectToRouteResult action result.\n   5. Json – Returns a JsonResult action result.\n   6. JavaScriptResult – Returns a JavaScriptResult.\n   7. Content – Returns a ContentResult action result.\n   8. File – Returns a FileContentResult, FilePathResult, or FileStreamResult depending on the parameters passed to the method.\n\nSo, if you want to return a View to the browser, you call the View() method. If you want to redirect the user from one controller action to another, you call the RedirectToAction() method.\n\n[http://www.asp.net/Learn/mvc/tutorial-03-cs.aspx]\n",
+  "Tag": "kb2076072290"
+}

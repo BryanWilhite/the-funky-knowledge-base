@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071586,
+    "Title": "VB.NET and Windows Forms: Flippant Remarks about Using Word Interop to Implement Spell-Checking",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2004-05-20T23:02:42.57",
+    "ModificationDate": "2004-05-20T23:02:42.57",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Please see MSDN article \"Creating a Custom Spell-Checker with Word 2003 and Visual Basic .NET\" last seen here:\n\n    http://www.msdn.microsoft.com/office/understanding/word\n        /articles/default.aspx?pull=/library/en-us\n        /odc_wd2003_ta/html/odc_wdspellchkr.asp\n\nPros:\n\n* You don't have to pay more for a third-party spelling package.\n\n* You don't have to wait for a user-friendly, Windows Forms version of an open source spelling package to get its ASP-centric act together.\n\n* You can use leverage the investment made in custom dictionaries of MS Word.\n\n* Nothing extra to install on machines running MS Office.\n\n\nCons:\n\n* Loading an instance of MS-Word takes several seconds and upwards of 30MB of memory by default. It is best to open Word on a separate thread.\n\n* You can't be sure which version of Office this stuff works on: either Office XP or Office System 2003. You have carry around PIMs (Primary Interop Assemblies) for both.",
+  "Tag": "kb2076071586"
+}

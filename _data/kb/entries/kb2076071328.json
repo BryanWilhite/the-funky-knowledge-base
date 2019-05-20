@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071328,
+    "Title": "VBScript, ADO and ASP: Preventing Error 3001 by Avoiding the Split() Function",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2000-11-07T20:02:00",
+    "ModificationDate": "2000-11-07T20:02:00",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Avoid using the Split() function to pass an array to ADO objects (such as the Command object). Use the Array() function instead. The Split() function and the Array() function both return arrays but they must not be of the same \"type\" (internally?) with respect to ADO.\n\nRecall this issue when faced with this error while using ADO: \"Error 3001: The application is using arguments that are of the wrong type, are out of acceptable range, or are in conflict with one another.\"",
+  "Tag": "kb2076071328"
+}

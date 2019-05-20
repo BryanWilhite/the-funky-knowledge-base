@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071616,
+    "Title": "InfoPath 2003 HowTo: \"How to bind a Rich Text Box control to an element that is returned from a Web service in InfoPath 2003 and Visual Studio .NET (2003)\"; KB ID 826996",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2005-02-17T15:02:04.817",
+    "ModificationDate": "2005-02-17T15:02:04.817",
+    "TemplateId": null,
+    "SegmentId": 85,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "\"This article describes how to bind a Rich Text Box control on a Microsoft Office InfoPath 2003 form to an XML element that is returned from a Web service.\"\n\nFor more information please see:\n\n    http://support.microsoft.com/default.aspx?\n        kbid=826996&product=infopath2003\n\nSee \"Rich Text and Web Services\" also:\n\n    http://msdn.microsoft.com/library/en-us/ipsdk/html/\n        ipsdkRichTextAndWebServices_HV01083592.asp\n\nOne more is \"You cannot automatically submit structured XML data to a Web service in InfoPath 2003\" (applies to InfoPath versions before SP1):\n\n    http://support.microsoft.com/default.aspx?\n        kbid=826989&product=infopath2003",
+  "Tag": "kb2076071616"
+}

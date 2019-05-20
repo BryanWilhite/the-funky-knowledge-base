@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071428,
+    "Title": "Caligari trueSpace 5.1: User Manual Highlights, Chapters 1 through 3",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2004-05-18T21:38:57.867",
+    "ModificationDate": "2004-05-18T21:38:57.867",
+    "TemplateId": null,
+    "SegmentId": 62,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Chapter 1: This is a satisfactory tutorial. No complaints.\n\n\nChapter 2: User Interface\n\n* Make sure that the UI matches that in the manual by loading \"ts5 configuration\" from the Configuration Library.\n\n* Right-click on the New Perspective View Tool to choose a solid or wire frame rendering. This feature applies to all auxiliary windows.\n\n* Click and hold on the Object Tool to show the Global Panel Tool.\n\n* Click and hold on the Draw Object as Solid Tool to show all real-time rendering tools. These options are also available via the Global Panel.\n\n* The View Navigation tools only appear auxiliary windows under the default \"ts5 configuration\" settings. You can add these tools via the repository in the Recycle Bin Tool (right-click on it).\n\n* You can toggle between axes while dragging the edge of the Object Selector by right-clicking.\n\n* Click on the Selector Orientation Sphere to toggle rotation diamonds.\n\n* The Look at Current Object Tool should prove to be very useful.\n\n\nChapter 3: Projects & Libraries\n\n* Almost all end-user customizations are stored in libraries. These libraries can then be \"wrapped up\" into a Project. By default, trueSpace copies pre-existing libraries into the Project folder.\n\n* Share a Library among multiple projects by selecting File > Load > Library...",
+  "Tag": "kb2076071428"
+}

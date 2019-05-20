@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 916184155,
+    "Title": "Notes on Size Constraints of Access Databases",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-01-13T20:32:11",
+    "ModificationDate": "1999-01-13T20:32:11",
+    "TemplateId": null,
+    "SegmentId": 64,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "According to the Microsoft Knowledge Base article Q101316 (\"ACC1x: 'Maximum Size Reached' Error Attempting to Import File\"), Access 1.0 databases had a definite maximum size of 128 megabytes (MB), or 131,072,000 bytes. Access 1.1 databases can reach up to 1 gigabyte (GB) in size.\n\nUnder the Jet 3.5 regime (Access 97), there is the temptation to proclaim that there is no size limit on .MDB files. However the Access 97 online help documents the specifications of .MDB files (search for \"size limits\" in the index). Moreover there is a Jet 3.5 reserved error 3036, \"Database has reached maximum size,\" which implies that there is a size limit.\n\nHere is the official word from Microsoft: the maximum size of Access databases is 1 gigabyte. But Microsoft goes on to say that, \"because your database can include linked tables in other files, its total size is limited only by available storage capacity.\"",
+  "Tag": "kb916184155"
+}

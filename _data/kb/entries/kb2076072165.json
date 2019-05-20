@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072165,
+    "Title": "PHP and WordPress.org: “Exclude Categories from Your RSS Feed”; smashingmagazine.com",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-08-09T09:57:57",
+    "ModificationDate": "2009-08-09T09:57:57",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "First, get the numeric ID of the category you want to exclude. If you don’t know how to get the ID of a particular category, you can learn how here. Once you have the ID of the category you want to exclude from your RSS feed, edit the functions.php file in your theme. Create the file if it doesn’t exist.\n\n    function myFilter($query) {\n        if ($query->is_feed) {\n            $query->set('cat','-5'); //Category ID\n        }\n        return $query;\n    }\n\n    add_filter('pre_get_posts','myFilter');\n\n[http://www.smashingmagazine.com/2008/\n    12/02/10-useful-rss-hacks-for-wordpress/]",
+  "Tag": "kb2076072165"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -463206374,
+    "Title": "ODBC SQL: The Syntax for Stored Procedure Execution",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2000-02-02T00:26:05",
+    "ModificationDate": "2000-02-02T00:26:05",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "{call get_cust_dates(1,19993)}",
+  "Tag": "kb-463206374"
+}

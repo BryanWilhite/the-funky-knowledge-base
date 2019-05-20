@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071895,
+    "Title": "Office Outlook 2003 PROBLEM: Junk Mail Filter Is Not Working",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-10-08T15:56:07",
+    "ModificationDate": "2007-10-08T15:56:07",
+    "TemplateId": null,
+    "SegmentId": 85,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Junk mail filtering does not work by design when Outlook is not running in cached exchange mode. To turn on cached exchange mode:\n\n1. On the Tools menu, click E-Mail Accounts, click View or change existing e-mail accounts, and then click Next.\n\n2. In the Outlook processes e-mail for these accounts in the following order list, click the Exchange Server e-mail account, and then click Change.\n\n3. Under Microsoft Exchange Server, select the Use Cached Exchange Mode check box.\n\n4. Exit and restart Microsoft Outlook.\n\nFor more information, see:\n\n    http://office.microsoft.com/en-us/outlook/HP010223431033.aspx\n",
+  "Tag": "kb2076071895"
+}

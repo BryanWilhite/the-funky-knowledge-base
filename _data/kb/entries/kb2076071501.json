@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071501,
+    "Title": "Flippant Remarks about the Compressor/Limiter Dynamics Processor; Sonic Foundry Wave Hammer, Track Compressor, ACID; EMU APS",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2002-12-11T14:35:17",
+    "ModificationDate": "2002-12-11T14:35:17",
+    "TemplateId": null,
+    "SegmentId": 65,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "In my flippant remarks about EQ (9/23/2000), I insisted that EQ is the most important digital effects tool the desktop audio engineer has. I was wrong. The Compressor/Limiter is the most important digital effects tools the desktop audio engineer has. EQ is a close second.\n\nI have changed my mind after being plagued with \"hot\" mixes in Sonic Foundry ACID where the Master bus levels exceed 0dB and go into the red. In complete (and I do mean complete) ignorance, I sat for hours trying to keep my tracks under control using everything but the right thing: the tool designed specifically for this problem. That tool is the compressor/limiter, often classified under \"dynamics processors.\"\n\nMy obsolete EMU APS manual explains that a compressor works in two steps. First, any input greater than the Threshold is decreased by a specified Ratio. This first step decreases (or \"compresses\") the dynamic range and reduces loudness. The second step is to boost the overall signal level such that quieter portions of the sound are magnified while the louder portions stay below distortion.\n\nTo try to explain this \"specified Ratio,\" my EMU APS Manual states, \"At a ratio of 4:1, 4dB of change in the input signal will produce 1dB of change in the output signal.\" Translating this to the world of Sonic Foundry tools, the 4dB change is with respect to the Threshold setting and the \"change\" leans more toward reduction of loudness than boosting it (which may explain why the Wave Hammer couples the compressor/limiter with a Volume Maximizer).\n\nWhen the Ratio is 8:1 or greater the compression is considered extreme and effectively becomes a limiter. With Sonic Foundry compression, when the compression is infinity to one (Inf:1), this is a hard limiter. With a hard limiter, no input will exceed the Threshold.\n\nI believe that the Volume Maximizer of the Sonic Foundry Wave Hammer tries to deal with problems associated with the second part of the compression process by dealing with distortion of signals around the threshold and boosting quiet passages even more.\n\nAs of this writing I use the Wave Hammer in the Master FX chain for ACID Projects. These are the current presets:\n\nACID Master FX Chain\n    * Used for master mixes.\n    * The Wave Hammer is set as a soft limiter with a -3dB Threshold (8:1 Ratio).\n    * Other parameters are set to deal with percussive peaks above the threshold.\n    * The Volume Maximizer is bypassed.\n\nACID Master FX Sub-Mix Chain\n    * Used for sub mixes (loops for the master mix).\n    * The Wave Hammer is set as a hard limiter with a 0dB Threshold (Inf:1 Ratio).\n    * Other parameters are set to deal with percussive peaks above the threshold.\n    * The Volume Maximizer is bypassed.\n\nObviously, I am using limiters to control hot tracks and not true compression to \"make a track stand out\" that fine art is still beyond my experience and understanding.",
+  "Tag": "kb2076071501"
+}

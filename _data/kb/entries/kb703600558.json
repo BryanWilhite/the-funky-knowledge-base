@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 703600558,
+    "Title": "ASP: Performance Hits When Using the Application Object?",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2002-01-05T08:57:32.133",
+    "ModificationDate": "2002-01-05T08:57:32.133",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Yes. I have heard many many times about not using the Session object for performance and load-balancing reasons, but no one seems to talk about these things when it comes to the Application object.\n\nIn fact, Microsoft demos its VB6 WebClass by plugging it directly into the Application.Contents() collection as an Object variable! (BTW: when I try to do this with a VB ActiveX DLL it fails when loaded a second time but that is another story.) Isn't this a performance hit? This is not a rhetorical question. Tom Baastad answers (from tek-tips.com):\n\n\"The main reason for not using the Application object is that it forces IIS into single thread mode for the time consumed starting with locking the application object, manipulating the variable, etc until the object is unlocked.\"\n\n\"Another potential problem is the scope of an object in application mode, where it has been known to create both memory leaks and weird crashes of the IIS application.\"\n\n\"As a rule of thumb one should open an object on the same page that is being used and close it before that page is exited. This should help you steer clear of the dreaded ASP0115 error that is often associated with objects not being properly closed, etc.\"",
+  "Tag": "kb703600558"
+}

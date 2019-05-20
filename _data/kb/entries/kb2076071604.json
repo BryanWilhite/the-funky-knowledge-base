@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071604,
+    "Title": "VBA Code: Batch Conversion of Files into WordPerfect Format",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2004-08-26T13:37:45.15",
+    "ModificationDate": "2004-08-26T13:37:45.15",
+    "TemplateId": null,
+    "SegmentId": 85,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Sub SaveFolder()\n    Dim FSO As New FileSystemObject\n    Dim Folder As Folder\n    Dim File As File\n    Set Folder = FSO.GetFolder(\"C:\\MyDocs\\\")\n    For Each File In Folder.Files\n        If InStr(1, File.Name, \".wps\") Then _\n            Call FileSaveAs(Folder.Path & \"\\\", File.Name, \".wps\")\n    Next\nEnd Sub\n\nSub FileSaveAs(DirName As String, FileName As String, Extension As String)\n    \n    ChangeFileOpenDirectory DirName\n    \n    Documents.Open _\n        FileName:=\"\"\"\" & FileName & \"\"\"\", _\n        ConfirmConversions:=False, _\n        ReadOnly:=False, _\n        AddToRecentFiles:=False, _\n        PasswordDocument:=\"\", _\n        PasswordTemplate:=\"\", _\n        Revert:=False, _\n        WritePasswordDocument:=\"\", _\n        WritePasswordTemplate:=\"\", _\n        Format:=wdOpenFormatAuto\n\n    'The ActiveDocument.SaveAs() method is hard-coded to format 112.\n    'Use the Application.FileConverters.Item(\"<Index>\").SaveFormat property\n    'for other file formats and a more generic design.\n    '\n    ActiveDocument.SaveAs _\n        FileName:=DirName & Replace(FileName, Extension, \".doc\"), _\n        FileFormat:=112, _\n        LockComments:=False, _\n        Password:=\"\", _\n        AddToRecentFiles:= _\n        True, WritePassword:=\"\", _\n        ReadOnlyRecommended:=False, _\n        EmbedTrueTypeFonts:=False, _\n        SaveNativePictureFormat:=False, _\n        SaveFormsData:=False, _\n        SaveAsAOCELetter:=False\n    \n    ActiveDocument.Close\nEnd Sub\n",
+  "Tag": "kb2076071604"
+}

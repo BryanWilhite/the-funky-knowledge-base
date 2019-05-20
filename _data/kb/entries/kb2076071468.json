@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071468,
+    "Title": "Development Environment: Finding User Interface (UI) Settings and ToolBox Settings",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2005-02-06T01:10:47.873",
+    "ModificationDate": "2005-02-06T01:10:47.873",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "MSKB Article 320851 (\"INFO: Locations for User Customizations in Visual Studio .NET\") summarize managing Visual Studio .NET 2003 custom settings:\n\n    http://support.microsoft.com/default.aspx?scid=kb;EN-US;320851\n\nThis information is updated for version 7.1 of Visual Studio .NET 2003 by Microsoft employee Josh Ledgard here:\n\n    http://blogs.msdn.com/jledgard/archive/2004/02/05/67869.aspx\n\nUser Preferences (such as editor settings) that are different from the default settings are stored at the following registry keys:\n\n    HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\VisualStudio\\7.1\\*\n\nJosh suggests why saving Toolbar settings is important:\n\n\"If [you are] like most people you've created your own custom toolbars or at least moved the default ones around a bit to make more room for your editor. It can take a long time to get this just right since the menus in VS hop around so much in the 2002/2003 release while you are using the product. Assuming you are using the English version of VS your custom menus are saved in the following file:\"\n\n    %USERPROFILE%\\Application Data\n        \\Microsoft\\VisualStudio\\7.1\\1033\\CmdUI.PRF\n\n\"You should be able to move this file from machine to machine. Again, this file is written once VS exits. But this time you just close all instances of VS, replace one with the other, open VS and you should be golden.\"",
+  "Tag": "kb2076071468"
+}

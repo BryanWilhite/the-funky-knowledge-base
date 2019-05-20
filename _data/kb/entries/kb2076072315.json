@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072315,
+    "Title": "CSS 2.1 Summary of Selectors; Pseudo Classes; w3.org",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-10-16T20:27:11",
+    "ModificationDate": "2009-10-16T20:27:11",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Universal selector: *\nMatches any element.\n\nType selectors: E\nMatches any E element (i.e., an element of type E).\n\nDescendant selectors:E F\nMatches any F element that is a descendant of an E element.\n\nChild selectors: E > F\nMatches any F element that is a child of an element E.\n\nThe :first-child pseudo-class: E:first-child\nMatches element E when E is the first child of its parent.\n \t\nThe link pseudo-classes:\n    E:link\n    E:visited \nMatches element E if E is the source anchor of a hyperlink of which the target is not yet visited (:link) or already visited (:visited).\n\nThe dynamic pseudo-classes:\n    E:active\n    E:hover\n    E:focus\nMatches E during certain user actions. \t\n\nThe :lang() pseudo-class: E:lang(c)\nMatches element of type E if it is in (human) language c (the document language specifies how language is determined).\n\nAdjacent selectors: E + F\nMatches any F element immediately preceded by a sibling element E.\n\nAttribute selectors: E[foo]\nMatches any E element with the \"foo\" attribute set (whatever the value).\n\nAttribute selectors: E[foo=\"warning\"]\nMatches any E element whose \"foo\" attribute value is exactly equal to \"warning\".\n\nAttribute selectors: E[foo~=\"warning\"]\nMatches any E element whose \"foo\" attribute value is a list of space-separated values, one of which is exactly equal to \"warning\". \n\nAttribute selectors: E[lang|=\"en\"]\nMatches any E element whose \"lang\" attribute has a hyphen-separated list of values beginning (from the left) with \"en\".\n\nClass selectors: DIV.warning\nLanguage specific. (In HTML, the same as DIV[class~=\"warning\"].)\n\nID selectors: E#myid\nMatches any E element with ID equal to \"myid\".\n\n[http://www.w3.org/TR/CSS2/selector.html]",
+  "Tag": "kb2076072315"
+}

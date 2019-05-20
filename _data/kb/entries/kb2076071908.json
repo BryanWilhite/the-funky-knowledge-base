@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071908,
+    "Title": "GNOME/X: Restart GNOME without rebooting the computer",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-10-29T13:33:49",
+    "ModificationDate": "2007-10-29T13:33:49",
+    "TemplateId": null,
+    "SegmentId": 73,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Save and close all open applications.\n\nUse the Ctrl-Alt-Backspace shortcut keys to restart GNOME.\n\nIf Ctrl-Alt-Backspace is disabled, type\n\n    sudo /etc/init.d/gdm restart\n\nSource: http://linux.about.com/od/ubuntu_doc/a/ubudg10t18.htm\n",
+  "Tag": "kb2076071908"
+}

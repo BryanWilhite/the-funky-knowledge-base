@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072243,
+    "Title": "MOSS: “Programmatically retrieve an InfoPath form from a SharePoint library--?MOSS??|SharePoint???”",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-09-15T17:08:55",
+    "ModificationDate": "2009-09-15T17:08:55",
+    "TemplateId": null,
+    "SegmentId": 85,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The System.Net.WebClient class is good to use when you are only making use of Windows SharePoint Services 3.0 without Forms Server installed. If Forms Server has been installed on top of WSS 3.0, the System.Net.WebClient class will return the contents of the ASP.NET page used by Forms Server to display InfoPath forms instead of the actual XML contents of the form, unless the query string parameter noredirect with a value of true is appended to the URL of the form.\n\n[http://www.mosstec.cn/html/c23/2009-03/183.htm]",
+  "Tag": "kb2076072243"
+}

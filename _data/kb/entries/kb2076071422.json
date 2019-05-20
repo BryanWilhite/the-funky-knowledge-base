@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071422,
+    "Title": "ASP and HTML: Flippant Remarks about IIS Caching",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2001-10-28T19:58:56.08",
+    "ModificationDate": "2001-10-28T19:58:56.08",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "According to its KB article, Microsoft places caching (in the pre-.NET world) in the three contexts: the browser (client), the web server and the proxy server. The code appears with respect to these contexts as HTML:\n\n    <META HTTP-EQUIV=\"PRAGMA CONTENT=\"NO-CACHE\">\n\nas IIS ASP:\n\n    <% Response.Expires = 0 %>\n\nand as Proxy Server ASP:\n\n    <% Response.cachecontrol= \"public\" %>\n\nFor more details and explanations please see Q189409:\n    http://support.microsoft.com/support/kb/articles/Q189/4/09.ASP\n",
+  "Tag": "kb2076071422"
+}

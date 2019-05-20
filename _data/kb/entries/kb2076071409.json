@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071409,
+    "Title": "VB: ADO; Using SQL Wildcards Against Access Databases; Access 2000",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2001-07-23T18:37:36.187",
+    "ModificationDate": "2001-07-23T18:37:36.187",
+    "TemplateId": null,
+    "SegmentId": 77,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "If you should ever have the misfortune of opening an Access database from ADO you will run into problems that Microsoft recognizes as bugs and has even released fixes in response to them. The main problem is trying to use the LIKE predicate and wildcard characters. There are quite a few Microsoft Knowledgebase articles that deal with the problem. Search it yourself.\n\nAs of this writing, there are only two things that effectively deal with this issue: using ADO 2.5 or above and understanding that ADO can use the wildcards (and character string delimiters) for SQL Server on Access databases. Using ADO 2.5 and above implies that you have all of the known bug fixes. Using SQL Server wildcards on Access databases, I assume, is a poorly communicated design goal of the \"ADO team\": the effort in translating ADO, dynamic SQL for Access to SQL Server (and vice versa) is reduced if the wildcards and character string delimiters are the same.\n\nMicrosoft deals with the issue in the most up-to-date detail in \"Intermediate Microsoft Jet SQL for Access 2000\" at:\n\n    http://msdn.microsoft.com/library/en-us/dnacc2k/html/acintsql.asp\n\nAfter a table of possible wildcards, you should find the words, \"The '%' and '_' wildcard characters in the previous table can be executed only through the Jet OLE DB provider and ADO. They will yield an empty result set if used through the Access SQL View user interface.\" This implication here should be clear.\n",
+  "Tag": "kb2076071409"
+}

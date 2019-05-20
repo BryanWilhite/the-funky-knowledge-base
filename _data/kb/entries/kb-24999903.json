@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -24999903,
+    "Title": "Pacrim Syquest 105; Loading Drivers Without Syquest Disks Inserted",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-02-10T15:48:42",
+    "ModificationDate": "1998-02-10T15:48:42",
+    "TemplateId": null,
+    "SegmentId": 66,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The only solution I have is to go ahead and load the Syquest driver in config.sys then disable it in autoexec.bat. ",
+  "Tag": "kb-24999903"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 897010587,
+    "Title": "Microsoft Office: Start Menu Shortcuts",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2002-03-10T09:24:10.763",
+    "ModificationDate": "2002-03-10T09:24:10.763",
+    "TemplateId": null,
+    "SegmentId": 71,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Name: Open Office Document\nPath: \"D:\\Program Files\\Microsoft Office\\Office\\OSA.EXE\" -f\nIcons: D:\\Program Files\\Microsoft Office\\Office\\OSA.EXE\n\nName: New Office Document\nPath: \"D:\\Program Files\\Microsoft Office\\Office\\OSA.EXE\" -n\nIcons: D:\\Program Files\\Microsoft Office\\Office\\OSA.EXE",
+  "Tag": "kb897010587"
+}

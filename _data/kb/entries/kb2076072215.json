@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072215,
+    "Title": "SQL Server: “How to shrink the tempdb database in SQL Server”",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-08-26T17:30:42",
+    "ModificationDate": "2009-08-26T17:30:42",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Method 3 to Shrink Tempdb\n\nUse the command DBCC SHRINKFILE to shrink the individual tempdb files. DBCC SHRINKFILE provides more flexibility than DBCC SHRINKDATABASE because you can use it on a single database file without affecting other files that belong to the same database. DBCC SHRINKFILE receives the target size parameter, which is the desired final size for the database file.\n\nIMPORTANT: You must run DBCC SHRINKFILE command while no other activity occurs in the tempdb database. To make sure that other processes cannot use tempdb while DBCC SHRINKFILE executes, you must restart SQL Server in the single user mode. For more information about DBCC SHRINKFILE, see the Effects of Execution of DBCC SHRINKDATABASE or DBCCSHRINKFILE While Tempdb Is In Use section of this article.\n\n   1. Determine the desired size for the primary data file (tempdb.mdf), the log file (templog.ldf), and/or additional files added to tempdb. Make sure that the space used in the files is less than or equal to the desired target size.\n   2. Connect to SQL Server with Query Analyzer, and then run the following Transact-SQL commands for the specific database files that you need to shrink:\n\n         use tempdb\n         go\n\n         dbcc shrinkfile (tempdev, 'target size in MB')\n         go\n         -- this command shrinks the primary data file\n\n         dbcc shrinkfile (templog, 'target size in MB')\n         go\n         -- this command shrinks the log file, look at the last paragraph.\n      \t\t\t\t\t\t\n\nAn advantage of DBCC SHRINKFILE is that it can reduce the size of a file to a size smaller than its original size. You can issue DBCC SHRINKFILE on any of the data or log files. A limitation of DBCC SHRINKFILE is that you cannot make the database smaller than the size of the model database.\n\nIn SQL Server 7.0 a transaction log shrink is a deferred operation and you must issue a log truncation and backup to help the shrink operation in a database. However, by default, tempdb has the trunc log on chkpt option set ON; therefore, there you do not need to issue a log truncation for that database.\n\n[http://support.microsoft.com/kb/307487]",
+  "Tag": "kb2076072215"
+}

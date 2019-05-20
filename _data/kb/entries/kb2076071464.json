@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071464,
+    "Title": "Sonic Foundry Vegas Video 3.x: Generated Text Media Has Limited Character Set",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2002-04-08T18:05:33.557",
+    "ModificationDate": "2002-04-08T18:05:33.557",
+    "TemplateId": null,
+    "SegmentId": 62,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "It appears that the Text Media Plug-in for Vegas 3.x does not support extended characters like typographic (or smart) quotes and dashes. This must be a bug as the characters display in the FX window but do not appear in Preview or render properly\n\nHowever the \"legacy\" text generators support these characters (even though they do not appear in their respective FX windows).\n",
+  "Tag": "kb2076071464"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071740,
+    "Title": "ASP.NET Code: Saving Form Data in a Click Event",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2006-03-07T11:48:02.967",
+    "ModificationDate": "2006-03-07T11:48:02.967",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "    protected void CmdSave_Click(object sender, EventArgs e)\n    {\n        Response.Clear();\n        Response.ContentType = \"application/octet-stream\";\n        Response.AddHeader(\"Content-Disposition\",\n            @\"attachment; filename=\"\"XmlFile.html\"\"\");\n        Response.Flush();\n        Response.End();\n    }\n\n",
+  "Tag": "kb2076071740"
+}

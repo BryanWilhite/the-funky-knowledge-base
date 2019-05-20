@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072304,
+    "Title": "CSS: “The importance of !important in CSS”; yellowjug.com",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-10-08T13:00:26",
+    "ModificationDate": "2009-10-08T13:00:26",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "When a CSS propriety is specified twice, the browser will commonly use the last one. Let’s see an example:\n\n\n    #main {\n    width:600px;\n    width:800px;\n    }\n\nIn this example the browser will assign width 800 pixels to the #main element.\n\nThe declaration !important can be used in cascading style sheets to give priority to some parameters.\n\n\n    #main {\n    width:600px !important;\n    width:800px;\n    }\n\nIn the example above the browser will give priority to the first declaration and the #main element will be 600 pixels width.\n\nSo, what’s the point?\nInternet Explorer 6 and previous versions simply ignore the declaration !important (while IE 7 supports them) therefore we can take advantage of this issue to design a “browser-based” CSS.\n\nLet’s consider, for example, the CSS proprieties max-width and min-width: these parameters specify a maximum and minimum width of a web element (such as a table or a DIV container). This is a useful feature which allows to create fluid and dynamic layouts that can be displayed correctly both in low resolutions (e.g. 640×480) and in very high resolutions.\nUnfortunately IE 6, among other things, doesn’t even support the max/min width declaration: in order to obtain the same effect under IE6 you can use a proprietary code:\n\n    #main {\n    max-width: 900px;\n    width:expression(document.body.clientWidth > 900? \"900px\": \"auto\" ); /* IE proprietary code */\n    }\n\nIn this example the #main element will be rendered with a maximum width of 900px both in Firefox, Safari, Opera and Internet Explorer.\nPlease note that the proprietary code width:expression is not a valid CSS declaration, so if you decide to adopt it, your stylesheet won’t respect web standards and won’t be validated.\n\nHowever, we can use the !important declaration to avoid non-standard CSS expressions. Here is a “workaround” which allows to use max/min width with smart browsers and specify a fixed width for IE 6 users:\n\n    #main {\n    margin: 0 auto 0;\n    max-width: 900px;\n    min-width: 770px;\n    width:auto !important;\n    width:800px;\n    }\n\nIn the above example (you can see it in action on this website) the declaration !important is used to specify dynamic width attributes to browsers that support them (e.g. Firefox, Netscape, Opera, Safari and IE 7) while the width is fixed to an average value (800 pixels) for IE 6.\nThis doesn’t solve completely the matter, but can be considered as a workaround to improve your fluid layout appearance avoiding non-standard code.\n\n[http://www.yellowjug.com/web-design/the-importance-of-important-in-css/]",
+  "Tag": "kb2076072304"
+}

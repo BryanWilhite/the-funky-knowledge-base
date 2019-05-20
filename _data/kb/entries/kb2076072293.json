@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072293,
+    "Title": "“Prerequisite knowledge for ASP.NET MVC”; stackoverflow.com",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-10-04T19:41:06",
+    "ModificationDate": "2009-10-04T19:41:06",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Here are some topics that you can look up online:\n\nRouting.\n\nThe MVC Pattern.\n\nControllers and Actions.\n\nMapping parameters.\n\nActionResults.\n\nError handling.\n\nAction filtering.\n\nPassing data to a view.\n\nHTML Helpers.\n\nView rendering extensibility.\n\nUsing jQuery with ASP.NET MVC.\n\nBest practice tips for views, controllers, and models.\n\nMVC Anti-patterns.\n\n[http://stackoverflow.com/questions/752035/\n    prerequisite-knowledge-for-asp-net-mvc]",
+  "Tag": "kb2076072293"
+}

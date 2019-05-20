@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 890762873,
+    "Title": "Importing .MBX And .IDX Files From Internet Mail to Outlook Express",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-10-20T19:41:50",
+    "ModificationDate": "1998-10-20T19:41:50",
+    "TemplateId": null,
+    "SegmentId": 68,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "IE4's Outlook Express does not import Windows 95 Internet Mail .MBX and .IDX files directly. It does import the Windows 3.1 files. It may \"automatically\" upgrade the Windows 95 version.\n\nBut in the case of transferring .MBX and .IDX files from an existing Internet Mail installation to Outlook take the following steps.\n\n> Create a new folder in Outlook. When this folder is created, regardless of its name, Outlook will create two files: Folder1.MBX and Folder1.IDX (where the 1 in these file names implies this is the first folder created in Outlook). WARNING: do not select this new folder.\n\n> Find Folder1.MBX and Folder1.IDX on your hard disk and delete these files.\n\n> Find your old IE3.x Internet Mail .IDX and .MDX files. If you made an Internet Mail folder called MyFolder, for example, you would be looking for the files MyFolder.IDX and MyFolder.MDX.\n\n> Rename your Internet Mail files to Folder1.MBX and Folder1.IDX (with respect to their .MBX and .IDX extensions) and place them in the directory Oulook is using to store your folder files, inbox, etc.\n\n> Select your new folder in Outlook. Outlook will display a message telling you that it is \"repairing\" the folder. When the repair is complete your should see your old messages.\n\nIf you need to convert another Internet Mail folder, repeat the steps above looking for Folder2.MBX and Folder2.IDX.\n\nSee the Microsoft KB article \"How to Import Internet Mail Messages into Outlook Express\" (Article ID: Q176523) for more details.",
+  "Tag": "kb890762873"
+}

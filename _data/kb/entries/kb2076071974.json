@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071974,
+    "Title": "Windows 98: “How to Start a Windows 98-Based Computer in Safe Mode”",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-07-01T20:11:31",
+    "ModificationDate": "2008-07-01T20:11:31",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Method 1\n1. Restart your computer.\n2. While your computer restarts, press and hold the CTRL key until the Windows 98 Startup menu is displayed.\n\nNOTE: If you are using the EZDrive tool, press F8 instead of CTRL.\n\n3. Select the Safe Mode menu option from the Startup menu, and then press ENTER.\n\n\nMethod 2\n1. Click Start, point to Programs, point to Accessories, point to System Tools, and then click System Information.\n2. On the Tools menu, click System Configuration Utility.\n3. Click Advanced, and then click to select the Enable Startup Menu check box.\n4. Click OK, click OK, and then restart your computer when you are prompted to do so.\n5. Select the Safe Mode menu option from the Startup menu, and then press ENTER.\n\n[http://support.microsoft.com/kb/180902]\n",
+  "Tag": "kb2076071974"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071930,
+    "Title": "“Installing VMware Tools from the Command Line with the Tar Installer”; http://www.vmware.com/support/ws55/doc/ws_newguest_tools_linux.html#wp1127177",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-12-28T10:35:53",
+    "ModificationDate": "2007-12-28T10:35:53",
+    "TemplateId": null,
+    "SegmentId": 73,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Installing VMware Tools from the Command Line with the Tar Installer\n\nThe first steps are performed on the host, within Workstation menus:\n\n1. Power on the virtual machine.\n\n2. After the guest operating system has started, prepare your virtual machine to install VMware Tools.\n\nChoose VM > Install VMware Tools.\n\nThe remaining steps take place inside the virtual machine.\n\n3. As root (su -), mount the VMware Tools virtual CD-ROM image, change to a working directory (for example, /tmp), uncompress the installer, then unmount the CD-ROM image.\n\nNote: Some Linux distributions automatically mount CD-ROMs. If your distribution uses automounting, do not use the mount and umount commands below. You still must untar the VMware Tools installer to /tmp.\n\nSome Linux distributions use different device names or organize the /dev directory differently. If your CD-ROM drive is not /dev/cdrom or if the mount point for a CD-ROM is not /mnt/cdrom, you must modify the following commands to reflect the conventions used by your distribution.\n\nmount /dev/cdrom /mnt/cdrom\n\ncd /tmp\n\nNote: If you have a previous installation, delete the previous vmware-distrib directory before installing. The default location of this directory is\n/tmp/vmware-tools-distrib.\n\n4. Untar the VMware Tools tar file:\n\ntar zxpf /mnt/cdrom/VMwareTools-5.0.0-<xxxx>.tar.gz\n\numount /dev/cdrom\n\nWhere <xxxx> is the build/revision number of the VMware Workstation release.\n\nNote: If you attempt to install a tar installation over an rpm installation — or the reverse — the installer detects the previous installation and must convert the installer database format before continuing.\n\n5. Run the VMware Tools tar installer:\n\ncd vmware-tools-distrib\n\n./vmware-install.pl\n\nRespond to the configuration questions on the screen. Press Enter to accept the default value.\n\n6. Log off of the root account.\n\nexit\n\n7. Start X and your graphical environment.\n\n8. In an X terminal, launch the VMware Tools background application.\n\nvmware-toolbox &\n\nNote: You may run VMware Tools as root or as a normal user. To shrink virtual disks, you must run VMware Tools as root (su -). ",
+  "Tag": "kb2076071930"
+}

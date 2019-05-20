@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -2037898918,
+    "Title": "T-SQL: Stored Procedure Structure for Microsoft SQL Server 6.5",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-11-19T15:17:20",
+    "ModificationDate": "2007-11-19T15:17:20",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "/*\nThis form is based on what is extracted from SQL Enterprise Manager:\n*/\n\n/*\nObject:  Stored Procedure MyProc\nScript Date: 09/13/1999 8:59:44 AM \n*/\nIF EXISTS\n    (SELECT * FROM sysobjects\n    WHERE id = object_id('MyProc')\n    AND sysstat & 0xf = 4)\nDROP PROCEDURE MyProc\nGO\n\nCREATE PROCEDURE MyProc\n(\n    @param1 float,\n    @param2 datetime,\n    @param3 datetime,\n    @param4 float OUTPUT\n)\nAS\n/*\n    Procedure: MyProc\n\n    Action: Description of MyProc goes here.\n*/\n\n-- Procedure statements go here.\n\nGO\n\n\n/*\nThis is an alternate form using the PRINT statement:\n*/\nIF OBJECT_ID('ProcName') IS NOT NULL\nBEGIN\n    DROP PROCEDURE ProcName\n    IF OBJECT_ID('ProcName') IS NOT NULL\n        PRINT '<<< FAILED DROPPING PROCEDURE ProcName >>>'\n    ELSE\n        PRINT '<<< DROPPED PROCEDURE ProcName >>>'\nEND\n;\n\nCREATE PROCEDURE ProcName\n    (\n        @param1 <datatype> = <default value>\n    ,   @param2 <datatype> = <default value>\n    )\nAS\n\n-- Name:\n-- Description:\n-- Developer:\n\n--Enter procedure here.\n\nGO\n\nGRANT EXECUTE ON ProcName TO public\nGO\n\nIF OBJECT_ID('ProcName') IS NOT NULL\n    PRINT '<<< CREATED PROCEDURE ProcName >>>'\nELSE\n    PRINT '<<< FAILED CREATING PROCEDURE ProcName >>>'\nGO",
+  "Tag": "kb-2037898918"
+}

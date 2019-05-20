@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071692,
+    "Title": "XSLT Markup: Flippant Remarks for Procedural Developers Writing XSL Templates; XSLT variables",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2005-07-21T12:43:11.29",
+    "ModificationDate": "2005-07-21T12:43:11.29",
+    "TemplateId": null,
+    "SegmentId": 84,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "An XSL transformation is an XML document of declarations about how to rearrange the elements and attribute of another, source XML document. An XSL transformation might be seen as a \"type\" that derives from XML in the same way that any class definition ultimately extends the Object type.\n\nAn XSL transformation is made up of templates. Remember they are called \"templates\"; they are not functions. Templates always have a contextual relationship with the source document.\n\nXSLT variables can only be assigned a value once. By chaining together declarations of variables/parameters based on values of other variables you can simulate mutability. It follows that incrementing a variable in the XSL equivalent of the for-next loop is obtained through a template 'chained' to itself (recursion). For more details about this, please see \"Tip: Loop with recursion in XSLT\" at:\n\n    http://www-128.ibm.com/developerworks/xml/library/x-tiploop.html?ca=dnt-626\n\nXSLT variables/parameters are assigned values through their \"select\" attribute. What may not be readily apparent is that the xsl:variable and xsl:param elements can contain templates and/or xsl:template content. This implies that the procedural programming design pattern of assigning a function to a variable can be achieved in XSLT like this:\n\n    <xsl:variable name=\"has_supported_property\">\n        <xsl:choose>\n            <xsl:when test=\"w:rPr/w:b\">true</xsl:when>\n            <xsl:when test=\"w:rPr/w:caps\">true</xsl:when>\n            <xsl:when test=\"w:rPr/w:i\">true</xsl:when>\n            <xsl:when test=\"w:rPr/w:dstrike\">true</xsl:when>\n            <xsl:when test=\"w:rPr/w:smallCaps\">true</xsl:when>\n            <xsl:when test=\"w:rPr/w:strike\">true</xsl:when>\n            <xsl:when test=\"w:rPr/w:u\">true</xsl:when>\n            <xsl:otherwise>false</xsl:otherwise>\n        </xsl:choose>\n    </xsl:variable>\n\nIn procedural terms, the xsl:choose element above is part of an \"anonymous template\" that returns a value to the variable @has_supported_property. Note that contents of the xsl:when and xsl:otherwise elements are \"result tree fragments.\" The example above should include xsl:text elements to really show this. This means that XSLT variables can be assigned fragments of XML.",
+  "Tag": "kb2076071692"
+}

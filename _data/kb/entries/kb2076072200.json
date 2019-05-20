@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072200,
+    "Title": "PHP: readfile() Problem with content-disposition in FireFox",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-08-17T17:18:57",
+    "ModificationDate": "2009-08-17T17:18:57",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "I saw in previous contributed notes that in content-disposition the file is not a quoted-string, there is no problem if the filename have no spaces but if it has in IE it works but in Firefox not. The RFC 2616 puts as an example this: Content-Disposition: attachment; filename=\"fname.ext\" You can see http://www.faqs.org/rfcs/rfc2616.html section \"19.5.1 Content-Disposition\" for more details. The correct header then is this:\n\n    header(\"Content-Disposition: attachment; filename=\\\"$filename\\\"\");\n\n[http://us.php.net/readfile]",
+  "Tag": "kb2076072200"
+}

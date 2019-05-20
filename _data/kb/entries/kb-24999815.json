@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -24999815,
+    "Title": "Code: Shading Alternating Groups of Rows in a Report",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-02-11T13:57:07",
+    "ModificationDate": "1998-02-11T13:57:07",
+    "TemplateId": null,
+    "SegmentId": 63,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The rows produced in the detail (Section(0)) of an MS Access report can be formatted on the fly using code in the Format event of the report. The \"secret\" is the economical use of the modulo function:\n\nSub Detail2_Format (Cancel As Integer, FormatCount As Integer)\n\n    lngCountRows = lngCountRows + 1\n\n    If lngCountRows Mod 5 = 0 Then ShadeRows (YELLOW)\n\n    If lngCountRows Mod 10 = 0 Then ShadeRows (WHITE)\n\nEnd Sub\n\nWhere ShadeRows() is a user-defined procedure that takes the form:\n\nSub ShadeRows (lngColor As Long)\n    Section(0).BackColor = lngColor\n    Me![<control name>].BackColor = lngColor\n    'etc.\nEnd Sub\n\nNote that YELLOW and WHITE are declared as Long datatype constants at the module level:\n\n    Dim lngCountRows As Long\n    Const YELLOW& = 65535\n    Const WHITE& = 16777215",
+  "Tag": "kb-24999815"
+}

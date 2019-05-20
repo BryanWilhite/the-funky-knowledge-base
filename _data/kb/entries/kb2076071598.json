@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071598,
+    "Title": "C# Code in Cold Storage: A \"Strongly-Typed\" DataTable;",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2004-07-09T17:09:34.963",
+    "ModificationDate": "2004-07-09T17:09:34.963",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "\n    /// <summary>\n    /// \n    /// </summary>\n    public class ListControlTable : DataTable,System.Collections.IEnumerable\n    {\n        /// <summary>\n        /// \n        /// </summary>\n        public ListControlTable():base(\"ListControlTable\")\n        {\n            this.InitClass();\n        }\n\n        /// <summary>\n        /// \n        /// </summary>\n        public DataColumn DisplayColumn\n        {\n            get{ return this.Columns[\"displayColumn\"]; }\n        }\n\n        /// <summary>\n        /// \n        /// </summary>\n        public DataColumn ValueColumn\n        {\n            get{ return this.Columns[\"valueColumn\"]; }\n        }\n\n        /// <summary>\n        /// \n        /// </summary>\n        /// <returns></returns>\n        public System.Collections.IEnumerator GetEnumerator() \n        {\n            return this.Rows.GetEnumerator();\n        }\n\n        /// <summary>\n        /// \n        /// </summary>\n        /// <returns></returns>\n        public override DataTable Clone() \n        {\n            ListControlTable cln = (ListControlTable)base.Clone();\n            return cln;\n        }\n\n        /// <summary>\n        /// \n        /// </summary>\n        /// <param name=\"SourceTable\"></param>\n        /// <param name=\"ValueColumn\"></param>\n        /// <param name=\"DisplayColumn\"></param>\n        /// <param name=\"Refill\"></param>\n        /// <param name=\"InsertNull\"></param>\n        /// <param name=\"NullText\"></param>\n        public void Fill(DataTable SourceTable,DataColumn ValueColumn,\n            DataColumn DisplayColumn,bool Refill,bool InsertNull,string NullText)\n        {\n            foreach(DataRow row in SourceTable.Rows)\n            {\n                object[] rowArray = new object[3];\n                rowArray[0] = (row.ItemArray[ValueColumn.Ordinal].Equals(DBNull.Value))\n                    ? 0 : row.ItemArray[ValueColumn.Ordinal];\n                rowArray[1] = row.ItemArray[ValueColumn.Ordinal];\n                rowArray[2] = row.ItemArray[DisplayColumn.Ordinal];\n                if(!Refill) this.Rows.Add(rowArray);\n                else\n                {\n                    this.BeginLoadData();\n                    this.LoadDataRow(rowArray,true);\n                    this.EndLoadData();\n                }\n            }\n\n            if(InsertNull)\n            {\n                DataRow row = this.NewRow();\n                this.Rows.Add(new object[] {0,DBNull.Value,NullText});\n            }\n\n            this.DefaultView.Sort = \"displayColumn\";\n        }\n\n        /// <summary>\n        /// \n        /// </summary>\n        /// <returns></returns>\n        protected override DataTable CreateInstance() \n        {\n            return new ListControlTable();\n        }\n\n        private void InitClass()\n        {\n            this.Columns.Add(new DataColumn(\"valueColumnKey\",typeof(int),\n                null,System.Data.MappingType.Element));\n            this.Columns.Add(new DataColumn(\"valueColumn\",typeof(int),\n                null,System.Data.MappingType.Element));\n            this.Columns.Add(new DataColumn(\"displayColumn\",typeof(string),\n                null,System.Data.MappingType.Element));\n\n            //This is needed for the DataTable.LoadDataRow() method.\n            this.PrimaryKey = new DataColumn[] {this.Columns[\"valueColumnKey\"]};\n        }\n    }\n",
+  "Tag": "kb2076071598"
+}

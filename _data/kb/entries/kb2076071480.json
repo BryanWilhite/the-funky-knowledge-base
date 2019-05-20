@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071480,
+    "Title": "ASP, VBScript and ADO: \"Updating\" an ADO-Generated XML File",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2002-05-28T11:02:52.073",
+    "ModificationDate": "2002-05-28T11:02:52.073",
+    "TemplateId": null,
+    "SegmentId": 84,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "<%@ EnableSessionState=False LANGUAGE=VBScript %>\n<%Option Explicit%>\n<!--#include virtual=\"./INC/ADOVBS.asp\"-->\n<!--#include virtual=\"./INC/Classes/HTMLPage.asp\"-->\n<%\n    Dim objFileSys,vPath\n    Dim objRS,vFieldArray,vArray\n\n    'Get root folder.    \n    Set objFileSys = Server.CreateObject(\"Scripting.FileSystemObject\")\n\n    'Create and disconnect Recordset object.\n    Set objRS = Server.CreateObject(\"ADODB.Recordset\")\n    Set objRS.ActiveConnection = Nothing\n    objRS.CursorType = adOpenKeyset\n    objRS.LockType = adLockOptimistic\n    objRS.CursorLocation = adUseClient\n        \n    vPath = Server.MapPath(\"./\") & \"\\dirADO.xml\"\n    If objFileSys.FileExists(vPath) Then\n        'Strange but true: open the persisted XML file\n        'and then delete it to save a new one.\n        Call objRS.Open(vPath,,,,adCmdFile)\n        objFileSys.DeleteFile(vPath)\n        'This technique is suggested in MS KB article Q245367.\n        'Note: because of this, the IIS Anonymous user must have\n        'Change permissions to the root documents folder.\n        'This creates a security hole and therefore sucks.\n\n        vFieldArray = Array(\"rootFolder\",\"subFolder\",\"fileName\",\"fileDescription\")\n        vArray = Array(\"docs\",\"issues\",\"file.pdf\",\"PDF file\")\n        Call objRS.AddNew(vFieldArray,vArray)\n\n        Call objRS.Update\n    Else\n        Call basCreateRS(objRS)\n        Call objRS.Open\n    End If\n\n    Call objRS.Save(vPath,adPersistXML)\n\n    'Clean up.\n    Call objRS.Close\n    Set objRS = Nothing\n    Set objFileSys = Nothing\n\n    Sub basCreateRS(objRS)\n        'Define Field objects.\n        Call objRS.Fields.Append(\"rootFolder\",adBSTR,256,adFldMayBeNull)\n        Call objRS.Fields.Append(\"subFolder\",adBSTR,256,adFldMayBeNull)\n        Call objRS.Fields.Append(\"fileName\",adBSTR,256,adFldMayBeNull)\n        Call objRS.Fields.Append(\"fileDescription\",adBSTR,1024,adFldMayBeNull)\n    End Sub\n%>",
+  "Tag": "kb2076071480"
+}

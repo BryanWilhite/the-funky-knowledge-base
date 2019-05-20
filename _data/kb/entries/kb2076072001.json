@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072001,
+    "Title": "XML Data Modification Language (XML DML)",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-08-24T17:41:35",
+    "ModificationDate": "2008-08-24T17:41:35",
+    "TemplateId": null,
+    "SegmentId": 84,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The XML Data Modification Language (XML DML) is an extension of the XQuery language. As defined by W3C, the XQuery language lacks the Data Manipulation (DML) part. The XML DML introduced in this topic, and also the XQuery language, provides a fully functional query and data-modification language that you can use against the xml data type.\n\nThe XML DML adds the following case-sensitive keywords to XQuery:\n\n    insert\n    delete\n    replace value of \n\n[http://msdn.microsoft.com/en-us/library/ms177454.aspx]",
+  "Tag": "kb2076072001"
+}

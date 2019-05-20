@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071764,
+    "Title": "MySQL 5.0: Flippant Remote Connection Troubleshooting",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2006-09-25T23:45:21.13",
+    "ModificationDate": "2006-09-25T23:45:21.13",
+    "TemplateId": null,
+    "SegmentId": 73,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "When bind-address in my.cnf is set to a value other than 127.0.0.1 MySQL will receive remote connections.\n\nHowever, this error (1045) implies that you are using a user name that is not mysql.user table:\n\n    Access denied for user foo@192.168.254.64\n\nNow this error (2003) implies that your user name is in the mysql.user table but the Host value is not found in mysql.user.Host:\n\n    Can't connect to MySQL server on '192.168.254.64'\n    Access denied for user\n\nIn the latter case, you can add the name user name for the host 192.168.254.64 or you can leave the Host blank which should direct MySQL to look up the valid host names in the mysql.host table.\n\nIn phpMyAdmin (for Debian and others), the Add New User > Login Information > Host: field provides Use Host Table option.",
+  "Tag": "kb2076071764"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071790,
+    "Title": "JavaServer Faces in Action Notes: Chapter 1; Introducing JavaServer Faces; 1.3.1 Why do we need frameworks?; 1.3.2 She's a Model 2; 1.3.3 JSF, Struts, and other frameworks",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-02-27T16:22:07",
+    "ModificationDate": "2007-02-27T16:22:07",
+    "TemplateId": null,
+    "SegmentId": 69,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "1.3.1 Why do we need frameworks?\n\n\"Forms are just one example of tasks that servlets and JSP don't completely solve. Web applications have to manage a lot of pages and images, and referencing all of those elements within larger applications can become a nightmare if you don't have a central way of managing it.\"\n\n\"Although JSP provides a simple mechanism for creating a dynamic page, it doesn't provide extensive support for composing a page out of smaller, reusable parts. Other fun things that servlets don't handle include internationalization, type conversion, and error handling.\"\n\n\n1.3.2 She's a Model 2\n\nThe MVC analogy: \"When you watch a story on the news, you view a version of reality. ...The news channel is controlling the interaction between the TV program---the view---and the actual event---the model.\"\n\n\"...most frameworks, including JSF, support some variation of the MVC design pattern.\"\n\n\n1.3.3 JSF, Struts, and other frameworks\n\nJava frameworks have a lot of overlap. A lot of this has to do with the \"open\" nature of Java culture, which could easily be mistaken for a state of affairs just short of total chaos.\n\nThere is the idea that JSF and Struts \"compete\" or that JSF replaces Struts. The lead developer of Struts, Craig McClanahan, also played a large role in the development of JSF. For more details see \"Struts Or JSF? Struts And JSF?\" here:\n\n    http://blogs.sun.com/craigmcc/entry/struts_or_jsf_struts_and\n",
+  "Tag": "kb2076071790"
+}

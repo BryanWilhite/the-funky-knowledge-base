@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071479,
+    "Title": "ADSI: Flippant Remarks about Active Directory Services Interface (ADSI)",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2002-12-19T16:52:53",
+    "ModificationDate": "2002-12-19T16:52:53",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "ADSI is for automating networking services as ADO is for automating database systems. I previously thought that ADSI was only for programmatically manipulating Active Directory (AD). I was wrong.\n\nADSI is built into Windows 2000. It is always running by default consequently the GetObject() method is used against ADSI. Microsoft introduces ADSI  in \"Basic ADSI\" which (as of this writing) is located at:\n\n    http://msdn.microsoft.com/library/en-us/\n        netdir/adsi/basic_adsi.asp?frame=true\n\nOne advanced \"tips and tricks\" article is called \"Using ADSI, LDAP, and Network Management Functions With Active Directory\" at:\n\n    http://msdn.microsoft.com/library/en-us/dnactdir/\n        html/BuildingADApps.asp?frame=true\n\nI also found some lengthy code examples at 15seconds.com, the article \"Add to Your ADSI Code Library\" at:\n\n    http://www.15seconds.com/issue/020130.htm\n",
+  "Tag": "kb2076071479"
+}

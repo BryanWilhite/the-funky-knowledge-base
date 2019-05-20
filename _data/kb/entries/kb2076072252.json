@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072252,
+    "Title": "“Silverlight Tip of the Day #58 – Text Wrapping and Line Breaks in TextBlocks”",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-09-17T20:04:51",
+    "ModificationDate": "2009-09-17T20:04:51",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "TextBlocks are a great control to use in Silverlight to display read only text. In Tip of the Day #45 I covered the basic usage of TextBlocks including formatting and text runs.\n\nFor this tip I would like to show you how to make a TextBlock with wrapping text and line breaks.\n\nTo make a TextBlock wrap its text you will need to set TextWrapping =\"Wrap\" on the TextBlock. The following example below shows a TextBlock in a ContentControl that is only 100 pixels wide. With TextWrapping set to “Wrap”, the TextBlock will wrap to a new line each time its contents reach 100 pixels in width.\n\nXAML:\n\n<Canvas Margin=\"10\">\n    <ContentControl Width=\"100\">\n        <TextBlock TextWrapping=\"Wrap\">        \n\n            A lie can travel half way around the world while the truth is putting on its shoes.        \n\n            --Mark Twain\n        </TextBlock>\n    </ContentControl>\n</Canvas>\n\n…\n\nAs you may notice the text above does not include any of the line breaks seen in the XAML. To insert a line break all you need to do is insert a <LineBreak> tag within the text.\n\nExample:\n\n<Canvas Margin=\"10\">\n    <ContentControl Width=\"100\">\n        <TextBlock TextWrapping=\"Wrap\">\n            A lie can travel half way around the world while the truth is putting on its shoes.\n            <LineBreak></LineBreak>\n            <LineBreak></LineBreak>\n            --Mark Twain\n        </TextBlock>\n    </ContentControl>\n\n</Canvas>\n\n[http://blogs.silverlight.net/blogs/msnow/archive/2008/10/09/\n    silverlight-tip-of-the-day-58-text-\n    wrapping-and-line-breaks-in-textblocks.aspx]",
+  "Tag": "kb2076072252"
+}

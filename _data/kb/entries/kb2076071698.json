@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071698,
+    "Title": "Extensible Markup: Flippant Remarks about Typographic Representations in XML",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2005-08-04T10:06:34.463",
+    "ModificationDate": "2005-08-04T10:06:34.463",
+    "TemplateId": null,
+    "SegmentId": 84,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": ">>>The number one rule:\nThe number one rule for me is to trust in glyphs. I used to depend on entities back the HTML 4.x days, but now it's all about Unicode glyphs.\n\n>>>No-break space:\nXML (namely XHTML) will collapse spaces (entered by the spacebar). To avoid this, use Alt+0160 (the no-break space). The no-break space is also the no-collapse space!",
+  "Tag": "kb2076071698"
+}

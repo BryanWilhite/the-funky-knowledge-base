@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 920624328,
+    "Title": "PROBLEM: RecordCount = 1 for a DAO Recordset with More than One Record",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-03-05T09:07:10",
+    "ModificationDate": "1999-03-05T09:07:10",
+    "TemplateId": null,
+    "SegmentId": 64,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "If the .RecordCount property of DAO Recordset is equal to 1 and opens without error, then most likely this Recordset is based on Parameters. In order to get an accurate count you will have to resort to using .MoveLast and .MoveFirst in the following manner:\n\n    With m_rsDAO\n        .MoveLast\n        .MoveFirst\n        m_lngCount = m_rsDAO.RecordCount\n        'etc.\n    End With\n\nThis may be very costly on Recordsets with many rows. If you find this move too expensive, resort to a separate SQL query (or, if you are in a hurry, a Domain Aggregate Function) to return the count.",
+  "Tag": "kb920624328"
+}

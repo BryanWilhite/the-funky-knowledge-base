@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071934,
+    "Title": "WordPress PHP: “WordPress Restore with phpMyAdmin”; http://www.tamba2.org.uk/wordpress/restore/",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-12-28T11:00:39",
+    "ModificationDate": "2007-12-28T11:00:39",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "“If after moving everything you get a blank page when looking at your blog, check your themes. A faulty theme file will cause this blank page.”\n",
+  "Tag": "kb2076071934"
+}

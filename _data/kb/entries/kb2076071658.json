@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071658,
+    "Title": "ASP.NET: Flippant Remarks about View State vs. Session State",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2005-03-22T17:09:01.723",
+    "ModificationDate": "2005-03-22T17:09:01.723",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Flippantly speaking, View State is Session State that does not timeout. It is independent of the server and, as Hilton Giesenow says, \"it uses up more bandwidth but less memory.\" Simultaneously, it is recognized on the server with the same design patterns for Session state.\n\nView State is serialized to the page requested per user and vanishes when the browser closes. See Hilton's Blog, \"ViewState vs Session State vs...\" here:\n\n    http://hiltong.blogspot.com/2004/11/viewstate-vs-session-state-vs.html",
+  "Tag": "kb2076071658"
+}

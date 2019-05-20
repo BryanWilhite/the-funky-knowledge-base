@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072115,
+    "Title": "WSS: Uninstalling Windows Internal Database; technet.microsoft.com; SharePoint",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-03-26T18:29:21",
+    "ModificationDate": "2009-03-26T18:29:21",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "To uninstall Windows Internal Database\n\n1. Open a command shell.\n2. Call msiexec with the correct key for the operating system platform.\n\n    On 32-bit platforms:\n\n    msiexec /x {CEB5780F-1A70-44A9-850F-DE6C4F6AA8FB} callerid=ocsetup.exe\n\n    On 64-bit platforms:\n\n    msiexec /x {BDD79957-5801-4A2D-B09E-852E7FA64D01} callerid=ocsetup.exe\n\n[http://technet.microsoft.com/en-us/library/cc708610.aspx]\n\nSharePoint, Microsoft Windows Server or another Microsoft-based server solution may install by default the Windows Internal Database in the %windir%\\SYSMSI\\SSEE directory.",
+  "Tag": "kb2076072115"
+}

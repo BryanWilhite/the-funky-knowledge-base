@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071659,
+    "Title": "The Microsoft.mshtml Namespace; Accessing the DHTML DOM from C#",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2005-03-26T23:33:49.913",
+    "ModificationDate": "2005-03-26T23:33:49.913",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Martin Tracy wrote a three-page walkthrough for MSDN \"Walkthrough: Accessing the DHTML DOM from C#\" here:\n\n    http://msdn.microsoft.com/library/default.asp?\n        url=/library/en-us/dv_vstechart/html/\n            vsgrfWalkthroughAccessingDHTMLDOMFromC.asp\n\nThis article features the use of the Microsoft.mshtml namespace used to display Internet Explorer in a Windows Form via the COM-based Microsoft Web Browser control (AxSHDocVw). Simultaneously, there are a number of articles on CodeProject.com that also use AxSHDocVw but they do not use the Microsoft.mshtml namespace. These articles are recorded in the kintespace.com Blog here:\n\n    http://www.kintespace.com/rasxlog/index.php?p=84\n\nThese articles are unaware of the Microsoft.mshtml namespace; they feature designs that are quite complex in part because they depend on the use of the IDocHostUIHandler interface. It appears that this interface is used instead of the Microsoft.mshtml namespace. The guidance in the Martin Tracy article should be prioritized before the other articles.",
+  "Tag": "kb2076071659"
+}

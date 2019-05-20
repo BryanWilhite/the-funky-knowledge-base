@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 458984172,
+    "Title": "Serial Copy Management System (SCMS)",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-10-02T10:20:04",
+    "ModificationDate": "1999-10-02T10:20:04",
+    "TemplateId": null,
+    "SegmentId": 65,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "SCMS is an acronym (pronounced \"scums\") standing for Serial Copy Management System. This technology permits only one generation of digital-to-digital copying.\n\nThe following is from Sweetwater Sound (www.sweetwater.com):\n\n\"This nefarious little \"feature\" was designed by the ever-paranoid record labels to prevent evil-doers from digitally cloning CDs. Usually found on the S/PDIF ports of \"consumer\" (was there ever REALLY such a thing?) and \"semi-pro\" DAT recorders, SCMS is a bit flagging system that prevents digital copies from being made of digital copies. This means you can make as many digital copies of your original DAT tapes as you like, but you cannot digitally make copies of any of those copies. Beware of SCMS if you are sending backup DAT copies of your master tapes to a CD duplicator, or a collaborator. They may not be able to digitally transfer your work to another tape or media!\"",
+  "Tag": "kb458984172"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 902521619,
+    "Title": "PROBLEM: The Print Dialog Box Lists the Name of the Report Object and Not a User-Friendly Name",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-08-07T13:36:01",
+    "ModificationDate": "1998-08-07T13:36:01",
+    "TemplateId": null,
+    "SegmentId": 63,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "When a report---say rptSales---is printed, the print dialog may show the user \"Now Printing 'rptSales' to LPT1\" if there is no caption property specified in the report.\n\nThe name rptSales is useful to the developer but not the user! Specify a more user-friendly name for the report by setting the Caption property of the report.",
+  "Tag": "kb902521619"
+}

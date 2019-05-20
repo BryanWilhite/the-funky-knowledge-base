@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 892253368,
+    "Title": "Book: Access 97 Power Programming; Chapter 2 Highlights: \"Making the Switch From Macros to VBA\"",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-10-01T13:41:57",
+    "ModificationDate": "1998-10-01T13:41:57",
+    "TemplateId": null,
+    "SegmentId": 64,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "To promote scalability and portability of custom code within the VBA/VB world, Access macros should be replaced by code modules whenever possible. Macros can be replaced by code modules except in the following cases:\n\nAn AutoExec macro can be used when the database is first opened. Much of the use of such a macro as been replaced by the Tools > Startup... command.\n\nAn AutoKeys macro can create custom key combinations.\n\nWhen Access is used as a DDE server, macros are neeeded.\n\nWhen a user-defined procedure is called from a toolbar, a macro must be called.\n\nA RunCode macro can be used to call VBA routines. The macro allows storing a user-defined procedure in a variable.",
+  "Tag": "kb892253368"
+}

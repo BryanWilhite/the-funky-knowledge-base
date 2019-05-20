@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072164,
+    "Title": "PHP and WordPress.org: “Display Any RSS Feed on Your WordPress Blog”; smashingmagazine.com",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-08-09T09:55:03",
+    "ModificationDate": "2009-08-09T09:55:03",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Many plug-ins can do the job, but they’re not necessary at all. WordPress has a built-in RSS reader that is used, for example, to display news on your dashboard. All you have to do is use it in your theme.\n\n    <?php include_once(ABSPATH.WPINC.'/rss.php');\n    wp_rss('http://feeds.feedburner.com/wprecipes', 3); ?>\n\n[http://www.smashingmagazine.com/2008/\n    12/02/10-useful-rss-hacks-for-wordpress/]",
+  "Tag": "kb2076072164"
+}

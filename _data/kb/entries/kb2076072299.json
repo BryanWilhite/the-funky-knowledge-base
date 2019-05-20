@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072299,
+    "Title": "“SQL Server 2000 Sample Databases”; Northwind and pubs",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-10-06T09:31:53",
+    "ModificationDate": "2009-10-06T09:31:53",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "SQL Server 2000 Sample Databases: Northwind and pubs\n\n[http://code.msdn.microsoft.com/northwind/\n    Release/ProjectReleases.aspx?ReleaseId=1401]",
+  "Tag": "kb2076072299"
+}

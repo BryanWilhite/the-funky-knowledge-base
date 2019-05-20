@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072101,
+    "Title": "tar notes",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-02-06T21:00:41",
+    "ModificationDate": "2009-02-06T21:00:41",
+    "TemplateId": null,
+    "SegmentId": 73,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "To unpack a standard .tar file, use the command\n\n    tar -xvf filename\n\nThe Command options of tar:\n\n    * x: decompress something\n    * t: view contents\n    * v: verbose mode\n    * f: input from a file\n\n…some versions of tar support inbuilt decompression of gzipped tar files. This requires the z option, transforming the command to:\n\n    tar -xvzf filename\n\nTo create a tarball, you can use\n\n    tar cf tarballname.tar files\n\nIf you just want to view the contents of a tar file instead of extracting it: \n\n    tar -tf filename\n\nYou can filter it through gzip or bunzip2 respectively:\n\n    tar -tzf filename\n    tar -tjf filename\n\n[http://wiki.linuxquestions.org/wiki/Tar]\n[http://unixhelp.ed.ac.uk/CGI/man-cgi?tar]\n",
+  "Tag": "kb2076072101"
+}

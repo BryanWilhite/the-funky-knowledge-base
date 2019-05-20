@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071429,
+    "Title": "Macromedia Flash 5: Flippant Remarks about Movie Design; fscommand(); JavaScript; \"Sniffers\"",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2002-12-13T09:47:05",
+    "ModificationDate": "2002-12-13T09:47:05",
+    "TemplateId": null,
+    "SegmentId": 62,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "General:\nA Flash Movie is a hierarchy of one or more Movie Clips controlled (hopefully) by ActionScript. An example of not upholding the design principle behind the previous sentence is to make a Movie with two Key Frames separated by empty frames instead of making a Movie that contains a clip with two frames controlled by ActionScript.\n\nActionScript and JavaScript:\nActionScript in Flash 5 has matured from an afterthought to a version 1.0 nightmare. Flash still has difficulty interacting with HTML pages via fscommand() especially Internet Explorer on the Macintosh. This is detailed in TechNote 13638 (\"Flash and Internet Explorer Issues on the Macintosh Platform\"). What is most surprising is discovering (after many hours of pointless work) is that the getURL() action does not work as expected. This is detailed in TechNote 04157 (\"Using relative URLs with the getURL action\").\n\nThe ActionScript Editor itself needs to at least be as mature as the text editor in the current version HomeSite. As of version 5, it reeks of version 1 \"simplicity.\" HomeSite already has automatic statement completion and other bells and whistles that I eagerly look forward to in Flash. I will never be compelled to upgrade my copy of Flash 5 until I see some serious movement here.\n\nHTML and Flash:\nFlash should support at least one W3C standard version of HTML (hopefully version 4 or even XHTML 1.0). This will allow Dynamic Text boxes to support, say, the STRONG element in addition to the totally bogus B and FONT tags. Supporting the SPAN element may ask too much for what must be an overworked Flash development team: supporting this tag implies that Flash would support Cascading Style Sheets. This request may be answered with, \"Hey, Flash is not a web browser!\" My retort to that would be, License Mozilla's Gecko!\n\nXHTML and Flash:\nA future version of Flash should be able to parse XHTML pages (regardless of linefeeds and carriage returns). This will allow data shown as \"plain HTML\" for browsers not playing Flash to be loaded on the fly into Flash as well as JPEG bitmaps (not GIFs!) promise to dynamically load in FlashMX. This would be the most balanced compromise between building one Flash-only site and building two separate sites for respective Flash and non-Flash users. Macromedia HomeSite already supports XHTML so this shouldn't cost too much.\n\nBrowser Sniffing\nAs of this writing there are three ways to programmatically determine if the browser can play Flash: using JavaScript exclusively, using Flash exclusively or using bits of both. The Flash-exclusive method would be the most attractive but it depends almost entirely upon getURL() working properly. So this leaves the JavaScript method. The best (and most current) JavaScript sniffer I've seen so far is the moock fpi at:\n\n    http://moock.org/webdesign/flash/detection/moockfpi/\n\nMacromedia's own \"kit\" is out of date and does not appear to be actively supported.",
+  "Tag": "kb2076071429"
+}

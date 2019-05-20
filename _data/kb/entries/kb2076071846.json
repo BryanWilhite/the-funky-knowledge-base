@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071846,
+    "Title": "WindowsXP: Removing Group Policy Control of Windows Firewall; Group Policy; gpedit.msc",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-03-09T21:47:44",
+    "ModificationDate": "2009-03-09T21:47:44",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Run the Group Policy snap-in (gpedit.msc). Under Local Computer Policy > Computer Configuration > Administrative Templates > Network > Network Connections > Windows Firewall set \"Protect all network connections\" to Not Configured. Do this for Domain Profile and Standard Profile.\n\nRun gpupdate. This program is described here:\n\n    http://www.microsoft.com/resources/documentation/windows/xp/\n        all/proddocs/en-us/refrgp.mspx?mfr=true\n",
+  "Tag": "kb2076071846"
+}

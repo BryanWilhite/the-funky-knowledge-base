@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -2027653601,
+    "Title": "Code: Procedures for Linked Tables",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-12-12T22:23:25",
+    "ModificationDate": "1999-12-12T22:23:25",
+    "TemplateId": null,
+    "SegmentId": 64,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Public Sub basRenLinkTbls()\n    '\n    'This Sub removes the 'dbo_' prefix from linked Tables.\n    '\n    Dim DAOTblDef As DAO.TableDef\n    \n    With Application\n    \n        For Each DAOTblDef In CurrentDb.TableDefs\n            If VBA.InStr(1, DAOTblDef.Name, \"dbo_\", _\n                vbTextCompare) > 0 Then\n                DAOTblDef.Name = VBA.Mid$(DAOTblDef.Name, 5)\n            End If\n        Next\n        \n        .CurrentDb.TableDefs.Refresh\n        .RefreshDatabaseWindow\n        \n    End With\n\nEnd Sub\n\nPublic Sub basRemoveLinkedTbls()\n    '\n    'This Sub removes all linked Tables where a linked table\n    'is defined as a TableDef with a Connect property.\n    '\n    Dim DAOTblDef As DAO.TableDef\n    \n    With Application\n    \n        For Each DAOTblDef In CurrentDb.TableDefs\n            If VBA.Len(DAOTblDef.Connect) > 0 Then _\n                Call Application.DoCmd.DeleteObject(acTable, _\n                    DAOTblDef.Name)\n        Next\n        \n        .CurrentDb.TableDefs.Refresh\n        .RefreshDatabaseWindow\n        \n    End With\n\nEnd Sub",
+  "Tag": "kb-2027653601"
+}

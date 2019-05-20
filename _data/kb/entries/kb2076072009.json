@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072009,
+    "Title": "JavaScript: parseInt() Function",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-08-24T19:26:57",
+    "ModificationDate": "2008-08-24T19:26:57",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The parseInt() function parses a string and returns an integer.\n\nThe radix parameter is used to specify which numeral system to be used, for example, a radix of 16 (hexadecimal) indicates that the number in the string should be parsed from a hexadecimal number to a decimal number.\n\nIf the radix parameter is omitted, JavaScript assumes the following:\n\n* If the string begins with \"0x\", the radix is 16 (hexadecimal)\n\n* If the string begins with \"0\", the radix is 8 (octal). This feature is deprecated\n\n* If the string begins with any other value, the radix is 10 (decimal)\n\n[http://www.w3schools.com/jsref/jsref_parseInt.asp]\n",
+  "Tag": "kb2076072009"
+}

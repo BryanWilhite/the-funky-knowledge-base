@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072303,
+    "Title": "CSS: “Attribute selectors”; css.maxdesign.com.au",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-10-07T18:43:48",
+    "ModificationDate": "2009-10-07T18:43:48",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "What are attributes?\n\nAll HTML elements can have associated properties, called attributes. These attributes generally have values. Any number of attribute/value pairs can be used in an element's tag - as long as they are separated by spaces. They may appear in any order.\n\nIn the example below, the code segments highlighted in blue are attributes and the segments highlighted in red are attribute values.\n<h1 id=\"section1\">\n<img src=\"small.gif\" width=\"100\" height=\"100\">\n<img title=\"mainimage\" alt=\"main image\">\n<a href=\"foo.htm\">\n<p class=\"maintext\">\n<form style=\"padding: 10px\">\nAttribute selectors\n\nAttribute selectors are used to select elements based on their attributes or attribute value. For example, you may want to select any image on an HTML page that is called \"small.gif\". This could be done with the rule below, that will only target images with the chosen name:\nimg[src=\"small.gif\"] { border: 1px solid #000; }\n\nThere are four types of attribute selectors.\n\nThe first option is to select based on attribute. The example below will select an element (in this case \"img\") with the relevant attribute. Examples could include:\nimg[title] { border: 1px solid #000; }\nimg[width] { border: 1px solid #000; }\nimg[alt] { border: 1px solid #000; }\n\nThe second option is to select based on value. The example below will select any image whose attribute (in this case \"src\") has a value of \"small.gif\".\nimg[src=\"small.gif\"] { border: 1px solid #000; }\n\nThe third method will select space separated instances of a value. The example below will select any image whose attribute (in this case \"alt\") contains a space separated list of words - in this case any \"alt\" that includes the word \"small\".\nimg[alt~=\"small\"] { border: 1px solid #000; }\n\nThe fourth method will select hyphen separated instances of a value. The example below will select any image whose attribute (in this case \"title\") has a hyphen separated list - in this case any title that includes \"small-\".\nimg[title|=\"small\"] { border: 1px solid #000; }\n\nAttribute selectors are not supported by Windows Internet Explorer 5, 5.5 and 6 or Macintosh Internet Explorer 5. They are also not supported by earlier versions of Opera. \n\n[http://css.maxdesign.com.au/selectutorial/selectors_attribute.htm]",
+  "Tag": "kb2076072303"
+}

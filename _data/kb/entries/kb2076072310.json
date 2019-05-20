@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072310,
+    "Title": "VMware: “Turning off the PC speaker for all virtual machines”",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-10-13T22:06:31",
+    "ModificationDate": "2009-10-13T22:06:31",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "To disable the speaker emulation for virtual machines, add the following line to Workstation's global configuration file:\n\nmks.noBeep = \"TRUE\"\n\nThe global configuration file should exist in ~/.vmware/config on a Linux host, and \\Documents and Settings\\All Users\\Application Data\\VMware\\VMware Workstation\\config.ini on a Windows host.\n\nIf the file does not exist, create a new text file and add the mks.noBeep line to it. Also see \"Creating and Editing config.ini\" (for Windows hosts) at http://kb.vmware.com/kb/1754.\n\n[http://kb.vmware.com/selfservice/microsites/search.do?\n    language=en_US&cmd=displayKC&externalId=1664]",
+  "Tag": "kb2076072310"
+}

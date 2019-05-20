@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072128,
+    "Title": "LINQ to Objects: Query FileSystemInfo Array as Generic List",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-05-14T17:17:19",
+    "ModificationDate": "2009-05-14T17:17:19",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "using System;\nusing System.Collections.Generic;\nusing System.IO;\nusing System.Linq;\n\n...\n\nDirectoryInfo di = new DirectoryInfo(@\"E:\\~shares\\util\\SysinternalsSuite\");\nList<FileSystemInfo> files = Enumerable.ToList(di.GetFileSystemInfos());\n\nvar output = from f in files\n             select f;\n\nConsole.WriteLine(output.Count(f => f.FullName.Contains(\"autoruns\")));\n",
+  "Tag": "kb2076072128"
+}

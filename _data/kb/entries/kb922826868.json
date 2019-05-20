@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 922826868,
+    "Title": "The vbYesNoCancel Form with the VBA.MsgBox Statement",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-03-30T21:58:36",
+    "ModificationDate": "1999-03-30T21:58:36",
+    "TemplateId": null,
+    "SegmentId": 76,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "'The following design should speak for itself:\n\n    Select Case VBA.MsgBox(\"Yes, No or Cancel?\", _\n        vbQuestion + vbYesNoCancel)\n        Case vbYes\n            'The Yes case.\n        Case vbNo\n            'The No case.\n        Case vbCancel\n            'The Cancel case.\n    End Select",
+  "Tag": "kb922826868"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072104,
+    "Title": "CSS: border-radius and -moz-border-radius; CSS3; Firefox; Mozilla; the-art-of-web.com; text-shadow, -moz-box-shadow, -moz-column-rule; ajaxian.com",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-02-19T20:29:47",
+    "ModificationDate": "2009-02-19T20:29:47",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "“As with many CSS properties relating to margins, padding and borders, there are four individual properties - one for each corner of a box element - and one shorthand property. Each attribute is mean to accept either one or two values, but the Mozilla implementation is slightly different from the standard…At this time the CSS3 properties above do not work in Internet Explorer. The 'Mozilla' versions however work very well in Firefox 1.5 and presumably in other Mozilla-based browsers.”\n\n[http://www.the-art-of-web.com/css/border-radius/]\n\nThere are other ‘crazy’ Firefox CSS properties like text-shadow, -moz-box-shadow and -moz-column-rule.\n\n[http://ajaxian.com/archives/\n    firefox-implements-3-css-properties-text-shadow-moz-box-shadow-and-moz-column-rule]",
+  "Tag": "kb2076072104"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071950,
+    "Title": "LINQ to XML: Generating XML with a Custom Namespace; System.Xml.Linq",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-03-22T20:58:42",
+    "ModificationDate": "2008-03-22T20:58:42",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "//Dependencies:\n//using System; using System.Xml.Linq;\n\n//Let the compiler infer an XNamespace:\nXNamespace customNamespace = \"urn:foo\";\n\n//Infer a custom namespace with prefix (with + operator overloading):\nXName customAttributeName = XNamespace.Xmlns + \"rx\";\n\n//Generate an XAttribute from the above:\nXAttribute customAttribute =\n    new XAttribute( customAttributeName, customNamespace.NamespaceName );\n\n//Generate a custom element in our namespace (with + operator overloading):\nXElement custom = new XElement( customNamespace + \"custom\", \"Hello world\" );\n\n//Generate an XML document with the namespace declared at document-level:\nXElement document =\n    new XElement( \"root\", new Object[] { customAttribute, custom } );\n\nConsole.WriteLine( document.ToString() );\n\n/*\n    For more information see\n\n    “How to: Create a Document with Namespaces (LINQ to XML) (C#)”\n    http://msdn2.microsoft.com/en-us/library/bb387075(printer).aspx\n\n    and\n\n    “Atomized XName and XNamespace Objects”\n    http://blogs.msdn.com/ericwhite/pages/\n        atomized-xname-and-xnamespace-objects.aspx\n\n    Note: “To enable atomization of XName objects,\n    the constructor is not public, so you are not able\n    to directly instantiate an XName object.”\n*/",
+  "Tag": "kb2076071950"
+}

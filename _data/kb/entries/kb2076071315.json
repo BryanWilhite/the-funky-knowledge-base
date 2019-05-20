@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071315,
+    "Title": "From SQL Server 7 to Oracle 7: Remarks",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2000-11-04T17:02:00",
+    "ModificationDate": "2000-11-04T17:02:00",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Fundamentals\n\nMicrosoft SQL Server 7 is by default case insensitive as is Oracle 7, however Oracle 7.x explicitly stores all characters in upper-case.\n\n\nProcedural Languages\n\nMicrosoft SQL Server 7 uses t-SQL or Transaction SQL to create stored procedures in its DBMS. Oracle 7 uses PL/SQL or SQL Procedural Language. A cursory glance at  the PL/SQL documentation strongly suggests why Oracle would prefer to use Java in later versions of its DBMS.\n\n\nObjects\n\nIn Oracle 7 you can name (or alias) objects with double quotation marks (\"\"). This is similar to using brackets ([]) in SQL Server 7. When specifying an alias in Oracle 7, the AS keyword is not required.\n\nIn Oracle 7 the CREATE DATABASE LINK command is similar to sp_addlinkedserver in SQL Server 7.\n\n\nData Types\n\nIn Oracle 7 there are the RAW and LONG RAW data types, which appear to correspond to SQL Server 7’s BINARY, VARBINARY and IMAGE data types.\n\nOracle 7’s VARCHAR2 data type is a version-specific improvement over the Oracle 6.x VARCHAR data type. Oracle recommends using VARCHAR2 with version 7.\n\nIn Oracle 7, the LONG data type is similar to the TEXT data type in SQL Server 7. The limitations on the LONG type remind me of the limitations on MEMO fields in MS Access.\n\nThe SYSDATE function in Oracle 7 is like the GETDATE function in SQL Server 7.\n\nOracle 7 has two special data types for which SQL server 7 has no equivalent (ROWID and MLSLABEL). For example, the ROWID data type could be associated with SQL Server’s UNIQUEIDENTIFER data type but that would require a bit more words that those written here. What complicates such a discussion further is that ROWID is what Oracle calls a \"pseudo column.\" I am not sure if SQL Server 7 has pseudo columns.\n\nIn summary, Oracle compares its data types to those of ANSI SQL. This may help us to relate to SQL Server 7 data types:\n\nANSI SQL Data Type: CHARACTER(n) CHAR(n)\nOracle7 Data Type: CHAR(n)\n\nANSI SQL Data Type: CHARACTER VARYING(n) CHAR VARYING(n)\nOracle7 Data Type: VARCHAR(n)\n\nANSI SQL Data Type: NUMERIC(p,s) DECIMAL(p,s)\nOracle7 Data Type: NUMBER(p,s)\n\nANSI SQL Data Type: INTEGER INT SMALLINT\nOracle7 Data Type: NUMBER(38)\n\nANSI SQL Data Type: FLOAT(b) DOUBLE PRECISION REAL\nOracle7 Data Type: NUMBER \n\n\nData Type Conversion\n\nSQL Server 7 uses the CONVERT function to handle data type conversion; Oracle 7 uses several data type conversion functions:\n\nTO_CHAR\nTO_NUMBER\nHEXTORAW\nRAWTOHEX\nCHARTOROWID\nROWIDTOCHAR\n\nNote that Oracle 7’s CONVERT function is used to convert strings from one character set to another.\n\nOperators\n\nThe double pipe (||) operator is used in Oracle 7 to concatenate strings. However the CONCAT function is recommended by Oracle.\n\n",
+  "Tag": "kb2076071315"
+}

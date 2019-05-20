@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -24999807,
+    "Title": "Code: Error Handling Base Structure on the Procedure Level.",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-09-09T15:20:21",
+    "ModificationDate": "1999-09-09T15:20:21",
+    "TemplateId": null,
+    "SegmentId": 63,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Function MyFunction () As Integer\n'\n'NOTE: This procedure contains line break characters\n'for readability. These characters are not supported\n'in Access Basic.\n'\n    '\n    'Write any local declarations here. \n    '\n    On Error GoTo MyFunction_Err\n    '\n    'Write code here.\n    '\nMyFunction_Exit:\n    '\n    'Write any \"clean up\" lines here.\n    '\n    Exit Function\n\nMyFunction_Err:\n    Select Case Err\n        '\n        'Enter known error number cases here.\n        '\n        Case Else\n            MsgBox Err & \": \" & Error$(Err), 16, _\n                \"MyFunction Error\"\n            Resume MyFunction_Exit\n    End Select\nEnd Function",
+  "Tag": "kb-24999807"
+}

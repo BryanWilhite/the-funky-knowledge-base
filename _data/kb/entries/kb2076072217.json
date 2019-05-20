@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072217,
+    "Title": "WSS: “Unable to run Repair on SharePoint installation”; David M. Sterling",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-08-26T17:38:18",
+    "ModificationDate": "2009-08-26T17:38:18",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Should you need to run a Repair operation on MOSS or WSS, it usually works well and can fix some unusual problems. However, on some in cases, you may encounter an error that looks like…\n\nMicrosoft Office SharePoint Server 2007 configuration did not complete succesfully.\nAn installation package for the product Microsoft Office Shared Coms English Language Pack cannot be found. Try the installation again using a valid copy of the installation package 'osrvmui.msi'.\n\nThe cause is painfully simple - during the Repair operation the original installation media (DVD/ISO) MUST BE Mounted before hand. Unlike Microsoft Office, when the repair operation checks for this file, rather than request the media, it simply fails the operation.\n\n[http://davidmsterling.blogspot.com/2008_02_01_archive.html]",
+  "Tag": "kb2076072217"
+}

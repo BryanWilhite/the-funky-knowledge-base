@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071353,
+    "Title": "SQL Server 7.x and VB 6.x Code: Manipulating Data Transformation Services (DTS) Programmatically",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2001-04-07T18:54:20.6",
+    "ModificationDate": "2001-04-07T18:54:20.6",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "'This is a \"sketch\" of handling a DTS package programmatically.\n'For more info' check out the following MSKB articles:\n'\n'\"Q221193 - INF: How To Install DTS Event Handlers In Visual Basic\"\n'\n'\"Q240221 - INF: How To Handle Errors in DTS Package and Step Objects\"\n'\n'\"Q252987 - INF: Execute a SQL Server DTS Package from Active Server Pages\"\n'\n'Any calls to routines beginning with \"bas\" have nothing to do with DTS\n'and should be disregarded in this context.\n'\n'DTS variables.\nPrivate WithEvents p_objDTSPack As DTS.Package\nPrivate p_objTaskSQL As DTS.ExecuteSQLTask\nPrivate p_objTaskPump As DTS.DataPumpTask\nPrivate p_blnCancel As Boolean\n\nPrivate Sub p_objDTSPack_OnError(ByVal EventSource As String, _\n    ByVal ErrorCode As Long, _\n    ByVal Source As String, _\n    ByVal Description As String, _\n    ByVal HelpFile As String, _\n    ByVal HelpContext As Long, _\n    ByVal IDofInterfaceWithError As String, _\n    ByRef p_blnCancel As Boolean)\n    \n    Call basAppInfoMsg(EventSource & \": \" & Description, \"DTS Error.\")\n\nEnd Sub\n\nPrivate Sub p_objDTSPack_OnFinish(ByVal EventSource As String)\n    Call basAppInfoMsg(\"DTS Package finished.\" _\n        & vbNewLine & \"(\" & EventSource & \")\")\nEnd Sub\n\nPrivate Sub p_objDTSPack_OnProgress(ByVal EventSource As String, _\n    ByVal ProgressDescription As String, _\n    ByVal PercentComplete As Long, _\n    ByVal ProgressCountLow As Long, _\n    ByVal ProgressCountHigh As Long)\n    ' The DTS Package will trigger this event at certain intervals\n    ' to report the progress of the package. This can be controlled\n    ' by setting the DTS.Package.ProgressRowCount property.\n    \n    Call basAppInfoMsg(\"DTS Package running&#8230;\" _\n        & vbNewLine & \"(\" & EventSource & \": \" _\n        & ProgressDescription & \")\")\n\nEnd Sub\n\nPrivate Sub p_objDTSPack_OnQueryCancel(ByVal EventSource As String, _\n    ByRef p_blnCancel As Boolean)\n    ' The DTS package will trigger this event at certain intervals to check\n    ' whether the execution of the package should be terminated. Set\n    ' p_blnCancel to true to cancel the execution of the package.\n    If p_blnCancel Then _\n    Call basAppInfoMsg(\"DTS Package query cancelled.\" _\n        & vbNewLine & \"(\" & EventSource & \")\")\nEnd Sub\n\nPrivate Sub p_objDTSPack_OnStart(ByVal EventSource As String)\n    Call basAppInfoMsg(\"DTS Package starting&#8230;\" _\n        & vbNewLine & \"(\" & EventSource & \")\")\nEnd Sub\n\nPublic Function basHits() As Boolean\n\n    'Import hits log file.\n    \n    Call Me.basAppInfoMsg(\"Running&#8230;\", \"Bulk inserting hit log file...\")\n    \n    Set p_objDTSPack = VBA.CreateObject(\"DTS.Package\")\n    \n    With p_objDTSPack\n    \n        'The DTS package \"ImportHitLog\" was created in SQL server by hand.\n        'Load package using NT security (dbDTSFlag_UseTrustedConnection = 256).\n         Call .LoadFromSQLServer(ServerName:=dbSERVER, PackageName:=\"ImportHitLog\", Flags:=dbDTSFlag_UseTrustedConnection)\n        \n        'Both of these Steps must run in the same thread for two reasons:\n        'The Provider for the Bulk Insert Task does not support worker threads;\n        'and the SQL Task must precede the Bulk Insert Task.\n        .Steps(\"DTSStep_DTSExecuteSQLTask_1\").ExecuteInMainThread = True\n        .Steps(\"DTSStep_DTSBulkInsertTask_1\").ExecuteInMainThread = True\n        \n        'Using the Execute method of the Package object\n        'allows the Events (if any) to fire.\n        .Execute\n    \n    End With\nEnd Function\n",
+  "Tag": "kb2076071353"
+}

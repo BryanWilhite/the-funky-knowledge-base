@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071797,
+    "Title": "JavaServer Faces in Action Notes: Chapter 1; Introducing JavaServer Faces; 1.5.4 Configuration with faces-config.xml; 1.5.5 Configuration with web.xml",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-03-12T15:15:33",
+    "ModificationDate": "2007-03-12T15:15:33",
+    "TemplateId": null,
+    "SegmentId": 69,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "1.5.4 Configuration with faces-config.xml\n\n\"Technically, JSF supports multiple configuration files, but we'll keep things simple for now.\"\n\n\"...a JSF configuration file is an XML document whose root node is <faces-config>...\"\n\nTo reference beans via JSF EL expressions, JavaBeans can be declared with the <managed-bean> element. These beans are called managed beans. The <managed-bean-name> element contains the string that used in JSF EL expressions to refer to the managed bean. You can even initialize bean properties with the <managed-property> element.\n\n\"The managed bean name and the object's class name don't have to be the same.\"\n\n\"A navigation rule specifies the possible routes from a given page. Each route is called a navigation case.\" The <navigation-rule> element contains the <navigation-case> element.\n\n\n1.5.5 Configuration with web.xml\n\n\"All J2EE web applications are configured with a web.xml deployment descriptor; Faces applications are no different.\" However, JSF deployment descriptors require that the <servlet> element contain a <servlet-class> declaration referencing the FacesServlet (javax.faces.webapp.FacesServlet).\n\nWith the <servlet> declaration, a <servlet-mapping> declaration must follow. In Eclipse running a Tomcat-based Dynamic Web Project, the auto-generated <url-pattern> element contains *.faces. This implies that your faces markup in hello.jsp can only be called with hello.faces. This does not imply that the <welcome-file-list> should contain <welcome-file> elements with hello.jsp or hello.faces.\n",
+  "Tag": "kb2076071797"
+}

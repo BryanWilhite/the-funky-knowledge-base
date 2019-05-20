@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071668,
+    "Title": "PHP Code: Call to Amazon.com Web Service with fopen(); phpGetAmazon()",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2005-04-27T19:59:37.597",
+    "ModificationDate": "2005-04-27T19:59:37.597",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "function phpGetAmazon($ASIN){\n\n    $amazonAffiliateTag = '';\n    $amazonURI = '';\n    $filePointer = false;\n    $HTML = '';\n    $index = '';\n    $key = '';\n    $stream = '';\n    $streamline = '';\n    //This URI seems to work for books as well:\n    $uri = \"http://www.amazon.com/o/ASIN/\"\n        . \"{$ASIN}/ref=nosim/{$amazonAffiliateTag}\";\n    $values = '';\n\n    /*\n        Amazon.com refers to this search as\n        a \"light\" ASIN and ISBN search.\n        Up to 30 ASIN's can be used\n        in the light search but this function\n        currently returns only one product per call.\n    */\n\n    //Protocol, domain, path and start of query string:\n    $amazonURI = 'http://xml.amazon.com/onca/xml3?';\n\n    /*\n        Associate ID (replaces the\n        \"webservices-20\" tag in examples) and Developer ID:\n    */\n    $amazonURI .= \"t={$amazonAffiliateTag}&dev-t=999\";\n\n    //ASIN specifier:\n    $amazonURI .= \"&AsinSearch=\" . $ASIN;\n\n    //Specify light search type and XML format:\n    $amazonURI .= '&type=lite&f=xml';\n\n    //Call web service.\n    $filePointer = @fopen($amazonURI,'r'); \n    if($filePointer){\n        //xmldom stuff:\n        //return phpGetAmazonXML($stream);\n\n        while($streamline = fgets($filePointer,4096)) $stream .= $streamline;\n        fclose($filePointer);\n\n        $xml_parser = xml_parser_create(); \n        xml_parser_set_option($xml_parser,XML_OPTION_CASE_FOLDING,0);\n        xml_parse_into_struct($xml_parser,$stream,$values,$index); \n        xml_parser_free($xml_parser); \n\n        foreach ($index as $key=>$val) {\n            switch ($key) {\n                case 'ImageUrlMedium':\n                    $imageURL = $values[$val[0]]['value'];\n                break;\n\n                case 'OurPrice':\n                    $ourPrice = $values[$val[0]]['value'];\n                break;\n\n                case 'ProductName':\n                    $productName = $values[$val[0]]['value'];\n                break;\n            }\n        }\n        //Add name of product:\n        $HTML = \"<br><small><a class=\\\"amazonLink\\\" \"\n            . \"href=\\\"{$uri}\\\" target=\\\"_blank\\\">{$productName}</a></small>\";\n        //Add image:\n        $HTML = \"<a class=\\\"amazonLink\\\" href=\\\"{$uri}\\\" \"\n            . \"target=\\\"_blank\\\"><img class=\\\"main\\\" \"\n            . \"alt=\\\"Support this web site!\\\" border=\\\"8\\\" \"\n            . \"src=\\\"{$imageURL}\\\"></a>\\n\" . $HTML;\n\n        return $HTML;\n\n    } else return 'Web Service call failed.';\n}\n",
+  "Tag": "kb2076071668"
+}

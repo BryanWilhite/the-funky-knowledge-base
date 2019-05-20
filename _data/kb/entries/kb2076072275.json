@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072275,
+    "Title": "Windows Server 2008: “Rsync error ‘socket operation on non-socket’”; cwRsync; Windows Data Execution Prevention (DEP)",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-09-23T20:36:17",
+    "ModificationDate": "2009-09-23T20:36:17",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Some of our users have recently reported seeing the following error in their rsync logs:\n\n    rsync: Failed to dup/close: Socket operation on non-socket (108)\n    rsync error: error in IPC code (code 14) at pipe.c(72) [sender=3.0.3]\n    rsync: read error: Connection reset by peer (104)\n    rsync error: error in IPC code (code 14) at io.c(803) [sender=3.0.3]\n\nBackupAssist 5.1 reports this error as BA3012 “Error in rsync protocol data stream”. BackupAssist 5.2 reports either BA3302 “Could not establish connection” or BA3014 “Error in IPC code”.\n\nWe have identified two possible causes for this error:\n\n1. Windows Data Execution Prevention (DEP) preventing rsync from running.\n2. Another program, such as the Kaseya Agent inserting itself into the Windows networking stack\n\nTo resolve the DEP issue you need to go to Control Panel > System > Advanced > Performance > Data Execution Prevention.\n\n…\n\nEither change the DEP setting to “essential Windows programs and services only”, or add exceptions for the three programs required for rsync: rsync.exe, ssh.exe and ssh-keygen.exe. These programs are located in \"C:\\ProgramData\\BackupAssist v5\\temp\\Rsync\" on Windows Vista and Server 2008, or in \"C:\\Documents and Settings\\All Users\\Application Data\\BackupAssist v5\\temp\\Rsync\" on earlier versions of Windows.\n\n[http://www.backupassist.com/blog/support/\n    rsync-error-socket-operation-on-non-socket/]",
+  "Tag": "kb2076072275"
+}

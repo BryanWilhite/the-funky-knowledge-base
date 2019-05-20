@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -93314486,
+    "Title": "Visual InterDev and Seagate Crystal Reports: Notes on Data Definition Files and the Convert Database Driver... Command",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-04-22T20:48:30",
+    "ModificationDate": "1999-04-22T20:48:30",
+    "TemplateId": null,
+    "SegmentId": 77,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Crystal Web Reporting services have proven themselves to be somewhat \"ok\" in my Visual InterDev Solutions. My design uses an MTS package that provides data services to pass recordsets to Crystal Report objects. These objects are passed via very expensive (but required) Session-level object variables to the Viewer. (I am using Crystal's Java viewer by the way: it runs very slow on Netscape 4.x but \"mysteriously\" fast in IE 4.x.)\n\nThe Crystal *.RPT files must be prepared for this kind of service. These *.RPT files are made \"server independent\" with the use of Data Definition Files (.TTX files). Since I am working in a team environment on machines with different versions of Crystal Reports, I built a tool called the Crystal DDF Utility that can make .TTX files without running the Designer application. All this utility needs is database logon information a .TTX file to write to and SQL to generate a Recordset. You can find this utility in a self-extracting .CAB file at:\n\nhttp://www.kintespace.com/kb/util/CrystDDF/CrystDDF.EXE\n\nAfter the .TTX file is created, we need to prepare the .RPT file. Here is a summary of the steps involved:\n\n* Make sure File > Save Data with Report is disabled.\n\n* Verify that there are no database server references under Location in the Set Location dialog (Database > Set Location...).\n\n* Select Database > Convert Database Driver...\n\n* Select Convert Database Driver on next Refresh.\n\n* Select To: > pdsmon.dll [ADO, RDO, DAO]\n\n* When the Select Data Source dialog appears, select Data Definition.\n\n* Enter the .TTX file you created.\n\n* Answer yes to \"Fix Up\" the report.\n\n* Save and Close.\n\nWARNING: There is a bug involved with the Select Data Source dialog. It seems to only run once per 32-bit designer session. You may have to close and open the Designer application several times to prepare several reports.",
+  "Tag": "kb-93314486"
+}

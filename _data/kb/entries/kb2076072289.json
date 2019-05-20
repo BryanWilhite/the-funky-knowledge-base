@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072289,
+    "Title": "Ubuntu 8.04 (hardy): Installing badgerports; ",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-10-01T10:35:19",
+    "ModificationDate": "2009-10-01T10:35:19",
+    "TemplateId": null,
+    "SegmentId": 73,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Mono for Ubuntu\nOfficial Packages\n\nThe following official versions are available in the standard Ubuntu repositories:\nUbuntu Dapper (6.06 LTS): \t1.1.13.6\nUbuntu Hardy (8.04 LTS): \t1.2.6\nUbuntu Intrepid (8.10): \t1.9.1\nUbuntu Jaunty (9.04): \t2.0.1\nUbuntu Karmic (9.10): \t2.4.2.3 \n\n…\n\nUnofficial Packages\nUbuntu Hardy (8.04 LTS)\n\nUsers of Ubuntu 8.04 LTS (Hardy Heron) can install Mono 2.4.2.3 by using Synaptic from the badgerports (http://directhex.mfgames.com) repository. badgerports is an unofficial community project from one of the Debian/Ubuntu Mono developers to ship latest Ubuntu packages for Ubuntu LTS users. Please visit the URL below for full information on enabling these packages:\n\n    * http://directhex.mfgames.com/hardy.html \n\n[http://mono-project.com/DistroPackages/Ubuntu]\n\n\nThe primary purpose of badgerports is to provide recent versions of the Mono framework, and associated packages such as F-Spot, Banshee, and Monodevelop. Suggestions for other packages to include are welcome, but don't be offended if I decline for whatever reason.\nHow do I use badgerports?\n\nFirst, download a copy of the archive's GPG key from here [http://directhex.mfgames.com/directhex.ppa.asc], or obtain it yourself (key ID 0E1FAD0C).\n\nNext, launch Software Sources (System, Administration, Software Sources) and navigate to the Authentication tab. Click \"Import Key File\" and select the key file from earlier.\n\nClick on the \"Third Party Software\" tab, click \"Add\", type the following line, then click \"OK\":\n\ndeb http://directhex.mfgames.com/ hardy main\n\nNow, click the \"Close\" button to enable all badgerports packages.\n\n[http://directhex.mfgames.com/hardy.html]\n\n\nObtaining the GPG manually:\n\ngpg --keyserver subkeys.pgp.net --recv 0E1FAD0C\ngpg --export --armor 0E1FAD0C | sudo apt-key add -\nsudo apt-get update\n\n[http://ubuntuforums.org/showthread.php?t=1203095]",
+  "Tag": "kb2076072289"
+}

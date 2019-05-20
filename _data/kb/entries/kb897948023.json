@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 897948023,
+    "Title": "T-SQL: Measuring How Long a Query Takes",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-02-09T11:35:15",
+    "ModificationDate": "1999-02-09T11:35:15",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "By wrapping the query (or queries) to be tested in GETDATE() commands, you can estimate how long it takes for the tSQL to run. This form is\n\n    SELECT GETDATE()\n    -- Enter t-SQL to be tested here.\n    SELECT GETDATE()\n    GO",
+  "Tag": "kb897948023"
+}

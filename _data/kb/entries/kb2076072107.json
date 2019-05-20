@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072107,
+    "Title": "“Open File dialog has the OK button grayed out”; kb.mozillazine.org",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-02-19T20:35:18",
+    "ModificationDate": "2009-02-19T20:35:18",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "“The OK button being grayed out is documented in bug 264492. In some cases, selecting another option (e.g. \"Save to Disk\") will reactivate the OK button so you can then reselect the \"Open with\" action to open the file with an application.”\n\nThis was a problem when a PHP page streamed a file from a link with a target attribute of \"_blank\", causing a new window to open.\n\n[http://kb.mozillazine.org/Open_File_dialog_has_the_OK_button_grayed_out]",
+  "Tag": "kb2076072107"
+}

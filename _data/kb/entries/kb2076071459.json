@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071459,
+    "Title": "Microsoft Office Outlook: Tips and Tricks; Minimizing to System Tray; Clearing Find a Contact Box",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2002-03-10T09:32:10.767",
+    "ModificationDate": "2002-03-10T09:32:10.767",
+    "TemplateId": null,
+    "SegmentId": 71,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "From http://www.slipstick.com/outlook/usertips.htm:\n\nTo make Outlook 2002 go to the Windows system tray when you minimize it edit this key:\n\n    HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\10.0\\Outlook\\Preferences\n\nAdd a new DWORD value named \"MinToTray\" and give it a value of 1. \n\nTo clear the Find a Contact list delete this key:\n\n    HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\9.0\n        \\Outlook\\Contact\\QuickFindMRU\n\nYou can also modify the QuickFindMRU value to a zero-length binary value.",
+  "Tag": "kb2076071459"
+}

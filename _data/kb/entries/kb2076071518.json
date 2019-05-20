@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071518,
+    "Title": "Windows 2000 Server PROBLEM: Terminal Services Client Error Message; You Do Not Have Access to Logon to This Session",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2003-05-29T15:48:05",
+    "ModificationDate": "2003-05-29T15:48:05",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "This problem is NOT solved by making the user trying to log in an Administrator of the server! This problem is most likely solved by setting permissions in the Terminal Services Configuration MMC (and NOT the Local Security Policy MMC).\n\nFor more details please KB article 224395 (\"Terminal Services Client Error Message: You Do Not Have Access to Logon to This Session\") at:\n\n    http://support.microsoft.com/support/kb/articles/Q224/3/95.asp",
+  "Tag": "kb2076071518"
+}

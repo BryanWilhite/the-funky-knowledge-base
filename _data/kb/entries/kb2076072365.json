@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072365,
+    "Title": "WPF: “Introduction to WPF Layout”; wpftutorial.net",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2010-03-24T19:57:10",
+    "ModificationDate": "2010-03-24T19:57:10",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Best Practices\n\n* Avoid fixed positions - use the Alignment properties in combination with Margin to position elements in a panel.\n\n* Avoid fixed sizes - set the Width and Height of elements to Auto whenever possible.\n\n* Don't abuse the canvas panel to layout elements. Use it only for vector graphics.\n\n* Use a StackPanel to layout buttons of a dialog.\n\n* Use a GridPanel to layout a static data entry form. Create a Auto sized column for the labels and a Star sized column for the TextBoxes.\n\n* Use an ItemControl with a grid panel in a DataTemplate to layout dynamic key value lists. Use the SharedSize feature to synchronize the label widths. \n\n[http://wpftutorial.net/LayoutProperties.html]",
+  "Tag": "kb2076072365"
+}

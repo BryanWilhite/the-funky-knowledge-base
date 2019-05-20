@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071798,
+    "Title": "JavaServer Faces in Action Notes: Chapter 2; JSF Fundamentals; 2.1 The key pieces of the pie",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-03-12T16:18:38",
+    "ModificationDate": "2007-03-12T16:18:38",
+    "TemplateId": null,
+    "SegmentId": 69,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "2.1 The key pieces of the pie\n\n\"Eight core terms come into play when you're developing JSF applications...\": (i) UI component (control or component); (ii) Renderer; (iii) Validator; (iv) Backing beans; (v) Converter; (vi) Events and listeners; (vii) Messages; (viii) Navigation.\n\nJSF uses the JavaBeans event/listener model, the same used by Swing.\n\n\"Backing beans contain event listeners and action methods, which are event listeners that are specialized for navigation.\"\n\n\"You may have noticed that events, messages, and model objects are passive from the perspective of JSF... This is an important point for model objects, because it means that the model doesn't know about the user interface. This is part of how JSF enforces an MVC-style architecture.\"\n",
+  "Tag": "kb2076071798"
+}

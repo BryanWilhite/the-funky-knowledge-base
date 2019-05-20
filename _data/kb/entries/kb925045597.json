@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 925045597,
+    "Title": "Windows NT: MSDN Article; \"Securing Microsoft Windows NT Installation\"",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2000-12-24T14:31:55.107",
+    "ModificationDate": "2000-12-24T14:31:55.107",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The Microsoft Corporation has written an interesting overview of the security features of Windows NT. As of this writing, this article is available at the following URI:\n\n    http://msdn.microsoft.com/\n        library/backgrnd/html/msdn_secinst.htm\n\nThe table of contents of this article is as follows:\n\n    Abstract\n    Establishing Computer Security\n    High-Level Software Security Considerations\n    C2 Security",
+  "Tag": "kb925045597"
+}

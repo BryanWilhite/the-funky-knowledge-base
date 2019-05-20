@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071538,
+    "Title": "C# and ASP.NET: Capturing All HTML Output from a Web Forms Page; ASPX; Respecting HTML/XHTML Standards with ASP.NET",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2003-09-30T14:31:30",
+    "ModificationDate": "2003-09-30T14:31:30",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The number one reason here to capture all HTML output during the life cycle of an ASPX page is to intercept any glaring HTML violations that Web Server controls currently produce. By default, we should find that ASP.NET server controls render something between XHTML and HTML 4.x which is effectively nothing that can be validated under any W3C standard.\n\nThis problem is discussed in detail here:\n\n    http://www.liquid-internet.co.uk/content/dynamic/pages/series1article1.aspx\n\nThe article \"Valid XHTML within .NET\" by Kevin Brown of Liquid Internet Limited is somewhat complex. A more brute force way of handling this is by overriding the Render() event of the base class of Page:\n\n    override protected void Render(HtmlTextWriter HTWriter)\n    {\n        StringBuilder StrBuilder = new StringBuilder();\n        StringWriter StrWriter = new StringWriter(StrBuilder);\n        HtmlTextWriter BaseHTWriter = new HtmlTextWriter(StrWriter);\n\n        /*\n            Capture all HTML output for this page\n            and flush into the underlying String Builder:\n        */\n        base.Render(BaseHTWriter);\n        BaseHTWriter.Flush();\n\n        string HTML = StrBuilder.ToString();\n        HTML = HTML.Replace(\"foo\",\"bar\");\n        HTWriter.Write(HTML);\n    }\n\nWe can see that the string HTML is replacing any substring \"foo\" with \"bar.\" Of course, more complex stuff can be done featuring Regular Expresssions. Thanks to Greg McCarty (gmccarty@bizmat.com) for the original design.",
+  "Tag": "kb2076071538"
+}

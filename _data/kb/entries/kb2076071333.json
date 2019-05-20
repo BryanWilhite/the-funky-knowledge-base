@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071333,
+    "Title": "Denormalization; SQL 7.x OLAP and Data Cubes",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2000-12-24T14:48:23.727",
+    "ModificationDate": "2000-12-24T14:48:23.727",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The need to follow the rules of Normalization break down in the context of DBMS performance and analytical processing. For details on the subject of Denormailization please see \"BENEFITS OF DENORMALIZED RELATIONAL DATABASE TABLES\" at:\n\n    http://www.siue.edu/~dbock/cis564/denormal.htm\n\nFor a review of Normalization please see \"A Well Designed Relational Database\" at:\n\n    http://csc.noctrl.edu/f/kwt/460/normal.htm\n\nMicrosoft uses Denormalization when its OLAP technology in SQL 7.x uses \"pre-complied aggregations\" which are stored in a multidemenional cache called a \"cube.\" For more details please see \"OLAP Services: Optimizing Cube Performance Using Microsoft OLAP Services\" at:\n\n    http://msdn.microsoft.com/library/techart/olapunisys.htm\n\nand \"OLAP: Resistance Is Futile!\" at:\n\n    http://www.sqlmag.com/Articles/Index.cfm?ArticleID=5103",
+  "Tag": "kb2076071333"
+}

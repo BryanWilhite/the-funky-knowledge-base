@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072066,
+    "Title": "Linux to Windows Clipboard: This note is used to pass strings from Linux to Windows",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-10-29T17:44:25",
+    "ModificationDate": "2008-10-29T17:44:25",
+    "TemplateId": null,
+    "SegmentId": 70,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "PODS/PODS40/scripts/schema-automation\n\ncbcvs1.medctr.ucla.edu\n\nedu.ucla.mccs.pods.schemas.util.ExcelToXml\n",
+  "Tag": "kb2076072066"
+}

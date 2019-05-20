@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071504,
+    "Title": "Flash ActionScript: the Differences between loadVariables() and loadVariablesNum()",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2002-12-27T16:13:15",
+    "ModificationDate": "2002-12-27T16:13:15",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Flash 4 introduced loadVariables() and loadVariablesNum(). I assumed that an earlier version of Flash developed one of the functions to deprecate the other but this assumption is wrong.\n\nWhile not running in \"expert mode,\" Flash promises to automatically switch from loadVariables() to loadVariablesNum() when an integer is entered for the level parameter. For the experts out there this implies that:\n\n    loadVariables(\"assets/copy.txt\", _root) = loadVariablesNum(\"assets/copy.txt\", 0);\n\nI really can't technically explain why there are two functions introduced in the same version of Flash doing the same thing. There must be political/historical account beyond my scope.",
+  "Tag": "kb2076071504"
+}

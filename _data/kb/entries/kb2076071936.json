@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071936,
+    "Title": "bash Script: a rough draft that splits a monthly Apache web log into days with zgrep",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-01-02T11:59:34",
+    "ModificationDate": "2008-01-02T11:59:34",
+    "TemplateId": null,
+    "SegmentId": 73,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "#!/bin/bash\n\nfile=$2\nmonth=$1\nyear=`date +%Y`\n\necho \"Searching $file for days in $month...\"\n\nfor day in {1..31}\ndo\n    query=$(printf \"\\[%02d/%s/%s\" $day $month $year)\n    outfile=$(printf \"out_%s_%s_%02d.gz\" $year $month $day)\n    count=$(zgrep -c \"$query\" \"$file\")\n    if [ $count -gt 0 ]\n    then\n        printf \"Found %d entries for %s/%02d/%s...\\n\" $count $month $day $year\n        zgrep \"$query\" \"$file\" | gzip >> \"$outfile\"\n    fi\ndone\n\nexit 0\n",
+  "Tag": "kb2076071936"
+}

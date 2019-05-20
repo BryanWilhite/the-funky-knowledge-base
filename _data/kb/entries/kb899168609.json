@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 899168609,
+    "Title": "PROBLEM: the Column Headings in the Datasheet View of a Form Are Field Names",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-06-29T18:15:11",
+    "ModificationDate": "1998-06-29T18:15:11",
+    "TemplateId": null,
+    "SegmentId": 64,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The Column Headings in the Datasheet View of a form or subform are equal to the Name properties of their respective Controls. By default, the Name properties of bound controls are their respective Field Names from the underlying table or query. (The Caption property of an table Access table is ignored.) The Name property of controls can only be changed at design time.",
+  "Tag": "kb899168609"
+}

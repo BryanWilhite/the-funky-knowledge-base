@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 920412834,
+    "Title": "JavaScript: Time Stamp Function",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2000-12-21T09:33:52.817",
+    "ModificationDate": "2000-12-21T09:33:52.817",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "//(c) 1998 Bryan Wilhite\n//All rights reserved.\n//rasx@kintespace.com\n\nfunction jsTimeStamp() {\n    dateobj = new Date(document.lastModified)\n    this.month = dateobj.getMonth() + 1\n    this.day = dateobj.getDate()\n    this.year = dateobj.getYear()\n}\n\nfunction jsGetTS() {\n    //This function intends to be backward-compatible\n    //with older browsers. It is not aware of the getFullYear() function!\n\n    var objTS = new jsTimeStamp()\n    vDate = \"\"\n\n    if(objTS.month == 1) { vDate = \"January \" }\n    if(objTS.month == 2) { vDate = \"February \" }\n    if(objTS.month == 3) { vDate = \"March \" }\n    if(objTS.month == 4) { vDate = \"April \" }\n    if(objTS.month == 5) { vDate = \"May \" }\n    if(objTS.month == 6) { vDate = \"June \" }\n    if(objTS.month == 7) { vDate = \"July \" }\n    if(objTS.month == 8) { vDate = \"August \" }\n    if(objTS.month == 9) { vDate = \"September \" }\n    if(objTS.month == 10) { vDate = \"October \" }\n    if(objTS.month == 11) { vDate = \"November \" }\n    if(objTS.month == 12) { vDate = \"December \" }\n            \n    vDate = vDate + objTS.day + \", \"\n            \n    if (0 >= objTS.year > 98) { vDate = vDate + (2000 + objTS.year) }\n    else { vDate = vDate + (1900 + objTS.year) }\n            \n    return vDate\n}",
+  "Tag": "kb920412834"
+}

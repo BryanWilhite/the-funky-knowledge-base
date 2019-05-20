@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071932,
+    "Title": "“How to Use Log4J within eclipse in 10 Minutes”; http://snippets.dzone.com/posts/show/3248",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-12-28T10:52:08",
+    "ModificationDate": "2007-12-28T10:52:08",
+    "TemplateId": null,
+    "SegmentId": 69,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "1) Download log4j http://logging.apache.org/site/binindex.cgi\n\n2) Unpack the .zip file in your Java folder (In Windows it is usually C:\\Program Files\\Java\\)\n\n3) In Eclipse: Window > Preferences… > Java > Build Path > User Libraries > New: \"log4j\" > OK\nAdd JARs… > navigate to find your log4j .jar you just unpacked in the Java Folder > OK \n\n4) Right click on your project in the Package Explorer > New > Folder\nIn “Folder name” write \"log4j\", click Advanced. Select “Link to a folder in the file system” Create a new folder \"log4j\" in your project folder in the file system.\n\n5) Place this file you are reading right now in in the folder you just created. Name the file as log4j.properties\n\n6) In Eclipse: Run > Run…\nIn the navigation bar on the left select either the server, or the runnable class, or the JUnit test you want to log with log4j\n\nSelect the Classpath tab > User Entries > Advanced… > Add folders > OK\n\nSelect the \"log4j\" folder you created in your project and click OK\n\n7) Repeat step 6 for other servers, runnable classes or JUnit tests you want to log\n\n8) Change in the following line the \"org.example.foo.bar\" with whatever you want:\n\n    log4j.category.org.example.foo.bar=DEBUG\n\n9) Add the following import to the Java Class you want to log: import org.apache.log4j.Logger;\n\n10) Add this lines to the Java Class you want to log:\n\n    /**\n    * Log4j logger\n    */\n    static Logger log4j = Logger.getLogger(\"org.example.foo.bar\");\n\n11) Substitute in the code above \"org.example.foo.bar\" with whatever your wrote in the step 8.\n\n12) Add something like the following code in your Class whenever you want to log:\n\n    log4j.debug(\"WTF?\");\n\n13) Repeat steps 9, 10, 11 and 12 for every Java Class you want to log\n\n14) Enjoy!",
+  "Tag": "kb2076071932"
+}

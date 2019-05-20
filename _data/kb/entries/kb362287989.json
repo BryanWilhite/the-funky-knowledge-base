@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 362287989,
+    "Title": "Limitations of the Do Loop",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-10-29T12:54:50",
+    "ModificationDate": "1998-10-29T12:54:50",
+    "TemplateId": null,
+    "SegmentId": 76,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Using multiple conditions in the Do Loop structure with the Like operator do not always evaluate properly. In such cases, the use of Exit Do helps. For example, the following Do Loop condition is never true:\n\n    Do Until g_str Like \"*PAGE*\" Or g_str Like \"*[#]*[#]*[#]*\"\n        g_str = .ReadLine 'This method is inside a With block.\n\n        'Other stuff goes here.\n\n    Loop\n\nHowever, the following works as planned:\n    Do\n        g_str = .ReadLine 'This method is inside a With block.\n        \n        If g_str Like \"*PAGE*\" _ \n            Or g_str Like \"*[#]*[#]*[#]*\" Then Exit Do\n\n        'Other stuff goes here.\n\n    Loop",
+  "Tag": "kb362287989"
+}

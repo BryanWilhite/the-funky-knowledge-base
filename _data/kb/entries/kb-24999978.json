@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -24999978,
+    "Title": "Creative Labs AWE32: Voyetra MIDI Orchestrator Plus; Using AWE Control Panel Effects in a Score; Vienna Sound Fonts, Level 2",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-02-10T08:29:25",
+    "ModificationDate": "1999-02-10T08:29:25",
+    "TemplateId": null,
+    "SegmentId": 65,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Since AWE Control Panel Effects (like Room 3 and Plate) are global effects they are not useful when you only want one or two tracks to have Panning Delay. A solution would be to record that particular instrument with the Control Panel effect (using a WAV file recorder) and then load it in a SF2 sound bank. Level 2 Sound Fonts support stereo samples. ",
+  "Tag": "kb-24999978"
+}

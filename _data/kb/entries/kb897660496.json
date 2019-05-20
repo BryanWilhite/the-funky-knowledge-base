@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 897660496,
+    "Title": "PROBLEM: 1 Or More Key Violations Executing An Action Query",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-08-07T08:50:51",
+    "ModificationDate": "1998-08-07T08:50:51",
+    "TemplateId": null,
+    "SegmentId": 64,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "This problem may not always be caused by a duplicate value trying to enter a unique index. There may also be a one-to-many relationship defined in the Relationships window where a change to the index on the one side of the relationship causes a key violation. Check the Relationships Window for such one-to-many relationships. Remove them (by deleting their link---not by hiding the tables) if necessary.",
+  "Tag": "kb897660496"
+}

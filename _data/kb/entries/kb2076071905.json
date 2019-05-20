@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071905,
+    "Title": "Sun JAXP Tutorial: 1. A Quick Introduction to XML",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-10-18T21:24:17",
+    "ModificationDate": "2007-10-18T21:24:17",
+    "TemplateId": null,
+    "SegmentId": 69,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "* “To complete this journeyman’s introduction to XML, note that an XML file always starts with a prolog… it may contain the following attributes: version… encoding… standalone… The prolog can also contain definitions of entities…”\n\n* “An XML file can also contain processing instructions that give commands or information to an application that is processing the XML data. Processing instructions have the following format: <?target instructions?>”",
+  "Tag": "kb2076071905"
+}

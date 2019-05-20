@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 906445054,
+    "Title": "Unix to NT: Environment Variables",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-12-05T09:25:25",
+    "ModificationDate": "1998-12-05T09:25:25",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The \"set\" command displays current environment settings. \nThe use of environment variables is yet another way to make this \"New Technology\" OS more Unix-like. Windows NT Help has more information about the \"set\" command and environment variables.",
+  "Tag": "kb906445054"
+}

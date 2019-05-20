@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -165293778,
+    "Title": "Code: A Seconds Delay with DoEvents; basDelaySec()",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-10-29T12:39:10",
+    "ModificationDate": "1998-10-29T12:39:10",
+    "TemplateId": null,
+    "SegmentId": 76,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Public Sub basDelaySec(ByVal Seconds As Long)\n\n    Dim dtmDate as Date\n\n    dtmDate = DateAdd(\"s\", Seconds, Now)\n    \n    Do\n        DoEvents\n    Loop Until Now > dtmDate\n\nEnd Sub",
+  "Tag": "kb-165293778"
+}

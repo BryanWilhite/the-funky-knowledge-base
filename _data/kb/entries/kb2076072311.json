@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072311,
+    "Title": "“Configuring explicit Run As on Windows Server 2008”; Rick Vanover",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-10-14T19:17:17",
+    "ModificationDate": "2009-10-14T19:17:17",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Default installations of Windows Server 2008 provide the User Account Control (UAC) security component to manage contexts in which applications run. The default configuration is to Run As the logged in user or simply to Run As Administrator. The issues with the latter option are that it does not specify any username in particular, and it only refers to local administrative permission. Don’t bother pressing [Shift] and needlessly exploring various right-click menus. To get the explicit Run As functionality that you need for best practice permission assignment, you need to go to the SysInternals bag of tricks.\n\nShellRunas version 1.01 from Sysinternals (which is now part of TechNet) will get the job done. Downloading ShellRunas is straightforward and performing the following one-liner enables the tool:\n\nshellrunas /reg     \n\nThis command will install the Run As option on the Start Menu for use in the Windows Shell. Figure A shows a Windows Server 2008 server with the Sysinternals tool installed.\n\n…\n\nThe ShellRunas command can also work without being installed completely for special one-time iterations of the command. Further, it can be uninstalled with the unreg parameter if you want to remove it from certain configurations. Ironically, adding this tool does not modify the existence of the Windows Secondary Logon service, which provides the functionality to use alternate credentials.\n\nHaving the ability to pass explicit credentials is really a no-brainer in any good practice of administration. This is especially important for accounts that have domain administrator group membership. The ShellRunas command will allow organizations to keep much of their security practices intact as they transition to Windows Server 2008.\n\n[http://blogs.techrepublic.com.com/datacenter/?p=557]",
+  "Tag": "kb2076072311"
+}

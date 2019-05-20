@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071666,
+    "Title": "Windows Server 2003: Flippant Remarks about Network Time Servers; NTP",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2005-04-11T19:05:25.94",
+    "ModificationDate": "2005-04-11T19:05:25.94",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The System event log can show this W32Time error: \"The time provider NtpClient is configured to acquire time from one or more time sources, however none of the sources are currently accessible.\" In the \"good old\" days of the innocent Internet you could run this command and call it day:\n\n    net time /setsntp:tock.usno.navy.mil\n\nHowever, times have changed (pun not really inended) and the USNO NTP Network Time Servers Web page (http://tycho.usno.navy.mil/ntp.html) clearly states that access to these time servers limited. Lowly servers like mine are excluded.\n\nThis is understandable and recoverable. According to ntp.isc.org there are \"open access\" time servers available for us \"end-users.\" For details see:\n\n    http://ntp.isc.org/bin/view/Servers/NTPPoolServers\n\nAfter all these years, it follows that our net time command is now:\n\n    net time /setsntp:pool.ntp.org\n\nOne point of entry for more details about this matter with regard to Windows Server 2003, is MSKB article 816042 \"How to configure an authoritative time server in Windows Server 2003\" at:\n\n    http://support.microsoft.com/kb/816042/\n\nSee also \"Introduction to NTP\" here:\n\n    http://www.akadia.com/services/ntp_synchronize.html",
+  "Tag": "kb2076071666"
+}

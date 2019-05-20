@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 909943719,
+    "Title": "PROBLEM: When a DoCmd Action is Called from Code but Cancelled By the User a Runtime Error Occurs; Error 2501",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-11-01T10:12:45",
+    "ModificationDate": "1998-11-01T10:12:45",
+    "TemplateId": null,
+    "SegmentId": 64,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "When a DoCmd Action is called from VBA code but cancelled by user a runtime error occurs. This is error 2501. I usually trap this VBA.Err and Resume to the exit line label in my error handling structure.",
+  "Tag": "kb909943719"
+}

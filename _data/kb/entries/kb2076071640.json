@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071640,
+    "Title": "Office System 2003: The Open Office Document shortcut and \"My Places\"; Office Shared Features",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2005-01-28T23:53:58.88",
+    "ModificationDate": "2005-01-28T23:53:58.88",
+    "TemplateId": null,
+    "SegmentId": 85,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "You may have noticed that you can resize the Open and Save As... dialogs in all Office System applications. You probably have seen the strip of icons on the left side of these dialogs. This strip is called the My Places bar and it is customizable. The details are in MS KB article 826214 (\"How to customize the My Places bar in both the Open and the Save As dialog boxes in Office 2003\"):\n\n    http://support.microsoft.com/default.aspx?scid=kb;en-us;826214\n\nOnce you have set up a list of your favorite folders, you can really take advantage of the Open dialog by adding the Open Office Document shortcut to your Start menu. Microsoft Office Online details this procedure in \"Find the New Office Document and Open Office Document shortcuts\" here:\n\n    http://office.microsoft.com/en-us/assistance/HA010591561033.aspx",
+  "Tag": "kb2076071640"
+}

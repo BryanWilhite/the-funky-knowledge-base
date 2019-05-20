@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071382,
+    "Title": "T-SQL: Stored Procedure Structure for Microsoft SQL Server 7.0",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-11-19T15:14:21",
+    "ModificationDate": "2007-11-19T15:14:21",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "USE DatabaseName\nGO\n\nIF OBJECT_ID('StoredProcName') IS NOT NULL\nBEGIN\n    DROP PROCEDURE StoredProcName\n    IF OBJECT_ID('StoredProcName') IS NOT NULL\n        PRINT '<<< FAILED DROPPING PROCEDURE StoredProcName >>>'\n    ELSE\n        PRINT '<<< DROPPED PROCEDURE StoredProcName >>>'\nEND\nGO\n\nCREATE PROCEDURE StoredProcName\n    (\n        @param int = 0\n    )\nAS\n\n-- Description: Stored proc' structure for SQL Server 7.0.\n-- Developer: rasx\n\nSET NOCOUNT ON\n\n-- This proc' takes advantage of the new security features in SQL Server 7.0.\n\nRETURN\nGO\n\nGRANT EXECUTE ON StoredProcName TO [Windows NT Group]\nGO\n\nIF OBJECT_ID('StoredProcName') IS NOT NULL\n    PRINT '<<< CREATED PROCEDURE StoredProcName >>>'\nELSE\n    PRINT '<<< FAILED CREATING PROCEDURE StoredProcName >>>'\nGO\n",
+  "Tag": "kb2076071382"
+}

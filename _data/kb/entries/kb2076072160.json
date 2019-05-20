@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072160,
+    "Title": "PowerShell 1.0: Two Ways to Run Multiple External Processes with System.Diagnostics.Process",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-07-31T19:15:34",
+    "ModificationDate": "2009-07-31T19:15:34",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "#1: with an instance of System.Diagnostics.Process:\n$process = New-Object System.Diagnostics.Process;\n$process.StartInfo.Arguments = \"/K cd %ProgramFiles% && dir/w | more\";\n$process.StartInfo.FileName = \"cmd\";\n$process.Start(); #Returns $true\n\n#2: with static System.Diagnostics.Process:\n$arguments = \"/K cd %ProgramFiles% && dir/w | more\";\n[System.Diagnostics.Process]::Start(\"cmd\", $arguments).WaitForExit();\n\n#Other alternatives may be possible with Invoke-Expression\n#or the Call Operator, &",
+  "Tag": "kb2076072160"
+}

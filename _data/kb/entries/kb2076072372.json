@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072372,
+    "Title": "Unity C# Code: Static Service Locator Pattern for Unity; Richard Banks; StackOverflow.com",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2010-03-29T23:50:54",
+    "ModificationDate": "2010-03-29T23:50:54",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "using System.Configuration;\nusing Microsoft.Practices.Unity;\nusing Microsoft.Practices.Unity.Configuration;\n\nnamespace Utilities\n{\n    public static class ServiceLocator\n    {\n        private static IUnityContainer container = new UnityContainer();\n        private static bool isConfigured;\n\n        public static void Clear()\n        {\n                container = new UnityContainer();\n        }\n\n        private static IUnityContainer Container\n        {\n                get\n                {\n                        if (!isConfigured)\n                        {\n                                ConfigureContainer();\n                        }\n                        return container;\n                }\n        }\n\n        public static T Resolve<T>()\n        {\n                return Container.Resolve<T>();\n        }\n\n        public static T Resolve<T>(string name)\n        {\n                return Container.Resolve<T>(name);\n        }\n\n        public static void AddInstance<T>(object instance)\n        {\n                Container.RegisterInstance(typeof (T), instance);\n        }\n\n        private static void ConfigureContainer()\n        {\n                        UnityConfigurationSection section = (UnityConfigurationSection) ConfigurationManager.GetSection(\"unity\");\n                        section.Containers.Default.Configure(container);\n                        isConfigured = true;            \n        }\n    }\n}\n\n[http://stackoverflow.com/questions/557657/shoud-i-make-an-iunitycontainer-object-use-a-singleton-pattern]",
+  "Tag": "kb2076072372"
+}

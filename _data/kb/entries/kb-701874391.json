@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -701874391,
+    "Title": "JavaScript: FORM Validation; the submit() Method of the form Object",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-03-05T11:04:57",
+    "ModificationDate": "1999-03-05T11:04:57",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "If you must validate a FORM before it is sent to the server, you will have to depend on the browser to faithfully execute the submit() method of the form object. Most Mozilla 3.x/4.x browsers support this method.\n\nFor example we can set up a function called \"jsSendForm()\" that takes a form object as an argument. So if the FORM element name is \"frmOne\" we can then call:\n\n    jsSendForm(window.document.frmOne)\n\nor, if frmOne is the only form in the document, we alternatively have:\n\n    jsSendForm(window.document.forms[0])\n\nor, if frmOne is being called from an event (usually the onClick event) in an element inside frmOne we have:\n\n    jsSendForm(this.form)\n\nwhere jsSendForm() looks like this:\n\n    function jsSendForm(vForm) {\n        vFrmValid\n        //Form validation code goes here.\n        //If validation fails, vFrmValid=False\n        if (vFrmValid) {\n            vForm.submit\n            window.document.close\n        }\n        else { \\\\Do something for invalid data. }\n    }\n\nOne technique is to call this function from the onClick event of the INPUT element. Instead of using an INPUT element of TYPE \"submit\" we can use the following:\n\n    <INPUT\n        TYPE=button\n        VALUE=\"Send\"\n        onCLick=\"jsSendForm(this.form)\">\n\nNOTE: Some browsers (namely some Netscape browsers) will ignore the submit() method of a form object where the FORM elements ACTION property contains \"mailto:\" protocol. This is done for security reasons.",
+  "Tag": "kb-701874391"
+}

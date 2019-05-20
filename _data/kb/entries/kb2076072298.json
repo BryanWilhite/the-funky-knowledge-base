@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072298,
+    "Title": "C# 3.0 Extension Methods: “Thinking Beyond ToString()”; Anoop Madhusudanan",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-10-06T09:27:39",
+    "ModificationDate": "2009-10-06T09:27:39",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Here is a neat extension method for all your objects, so that it'll find the appropriate converter if one exists, or otherwise, fall back to ToString() :)\n\npublic static class ConverterExtension\n    {\n        public static string ConvertToString(this object value)\n        {\n            TypeConverter converter = \n              TypeDescriptor.GetConverter(value.GetType());\n\n            // Can converter convert this type to string?\n            if (converter.CanConvertTo(typeof(string)))\n            {\n                // Convert it\n                return converter.ConvertTo(value, \n                        typeof(string)) as string;\n            }\n\n            return value.ToString();\n        }\n    }\n\n[http://www.codeproject.com/Articles/42820/\n    Thinking-Beyond-ToString.aspx?display=Print]",
+  "Tag": "kb2076072298"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071917,
+    "Title": "Flippant Remarks about Encrypting app.config in Client Applications",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-12-05T20:42:10",
+    "ModificationDate": "2007-12-05T20:42:10",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "First, encrypting app.config in client applications is not as easy as using aspnet_regiis.exe for a single IIS server because using the DPAPIProtectedConfigurationProvider or the RSAProtectedConfigurationProvider is machine-specific, requiring encryption to be run on every machine where the client application is installed.\n\nSecond, as of this writing any code sample tried by be using SectionInformation.ProtectSection() is not working at runtime from within the context of the executing assembly or by using ConfigurationManager.OpenExeConfiguration() pointing to an out-of-process configuration file.\n\nSee “SectionInformation.ProtectSection Method” here:\n\n    http://msdn2.microsoft.com/en-us/library/\n        system.configuration.sectioninformation.protectsection.aspx\n\n",
+  "Tag": "kb2076071917"
+}

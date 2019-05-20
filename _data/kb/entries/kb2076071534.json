@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071534,
+    "Title": "Access 2000/2002/XP Forms: Turning Off AutoCorrect Per Field; Data Validation against ADP Forms; Access Data Project Forms",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2003-09-12T15:33:05",
+    "ModificationDate": "2003-09-12T15:33:05",
+    "TemplateId": null,
+    "SegmentId": 85,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Turning Off AutoCorrect Per Field\n\nAutoCorrect can hurt more than it can help in Access forms. To turn it off at the application level (via Options... > Spelling) may not be the way to go as this could affect other Office applications---not to mention the preferences of your users.\n\n\nData Validation against ADP Forms\n\nWe should use the Other > Allow AutoCorrect property in the Properties dialog. This allows us to turn off AutoCorrect on a per-field basis.\n\nAfter the data is entered into an ADP form, we should use T-SQL style expressions in the Data > Validation Rule property in the Properties... dialog. For example, to require a file name with an extension entered into a Text Box we have:\n\n    ALike '%_._%' Or Is Null\n\nwhere I am still trying to figure out what \"ALike\" means. In any canse, we can see T-SQL-like syntax for LIKE expressions.",
+  "Tag": "kb2076071534"
+}

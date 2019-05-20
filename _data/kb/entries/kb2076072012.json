@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072012,
+    "Title": "JavaScript and Douglas Crockford: “if JavaScript were infinitely fast”",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-08-24T19:38:15",
+    "ModificationDate": "2008-08-24T19:38:15",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "I teach that if JavaScript were infinitely fast that most web applications would run at about the same speed. Christian Stockwell of Microsoft gave us the numbers to back that up. The top 100 Alexa websites spend on average about 3% of their time running JScript. The bulk of the time goes to the DOM in current style computation, layout, rendering, and marshaling. Even script-bound applications like GMail spend less that 20% of their time in JScript. It is good to see the browser makers looking seriously and effectively at performance. Mike Connor of Mozilla said that their goal is to make the current performance rules irrelevant. That is commendable.\n\n[http://blog.360.yahoo.com/\n    blog-TBPekxc1dLNy5DOloPfzVvFIVOWMB0li?p=872]\n",
+  "Tag": "kb2076072012"
+}

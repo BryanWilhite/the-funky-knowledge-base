@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072257,
+    "Title": "“System.Windows.Markup Namespace”; XamlReader; MSDN",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-09-19T21:24:16",
+    "ModificationDate": "2009-09-19T21:24:16",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Provides types to support serialization and Extensible Application Markup Language (XAML) in Windows Presentation Foundation (WPF). In particular, contains classes to support XAML markup extensions and other language concepts that are defined by the XAML specification, reader/writer implementation classes, serializers, and attributes that report XAML characteristics to reflection-based analysis.\n\n…\n\nXamlReader\n\nProvides the means to parse XAML markup into an object or a tree of objects. \n\n[http://msdn.microsoft.com/en-us/library/system.windows.markup.aspx]",
+  "Tag": "kb2076072257"
+}

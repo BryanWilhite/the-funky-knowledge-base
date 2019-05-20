@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071487,
+    "Title": "SQL Server 2000: Flippant Remarks about Mixed Mode; Security; Authentication\n",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2005-09-16T14:41:13.46",
+    "ModificationDate": "2005-09-16T14:41:13.46",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The Security tab under the server-level Properties menu in the Enterprise Manager has options under Authentication:. I prefer to select the Windows only option as this effectively turns over the bulk of security issues over to Windows domain administrators.\n\nMost of my solutions depend on a web server and a database. When a web server application disallows anonymous access and when the database server associated with this application is not on the same physical computer as the web server, I may see the following error message:\n\n    Login failed for user 'NT AUTHORITY\\ANONYMOUS LOGON'\n\nThis tells me that the web server could not pass its login credentials to the database server. As of this writing, the only way to pass such credentials from server to server is via a \"chain of delegation\" using the Kerberos Security Account Delegation in Windows 2000 Active Directory Services (AD or ADS).\n\nMSDN's Paul Enfield in \"Implementing a Secure Site with ASP\" explained this back in October of 1997: \"Since NT does not transfer passwords over the network, the NT Server must then get a token from the domain controller. Once it has done so it cannot send it to another machine. If it could send this to another machine this would be referred to as delegation. NT does not support this in version 4.0. This leads to some complications with Web development.\" However, it may help those web masters of domain controllers to read this from the same article:\n\n\"Resources that require authentication in order to be accessed will not be able to access resources on another physical NT machine unless the IIS machine is a domain controller.\"\n\nWhen AD is not being implemented in the Enterprise I find I have no other recourse than to run the SQL Server (database server) in Mixed Mode so I have the option of passing SQL login credentials as well as NT credentials. This means, back under our Security tab under the server-level Properties menu in the Enterprise Manager, Authentication: is set to SQL Server and Windows. Setting this option on a running instance requires stopping and starting the SQL Server service (and dependant services like SQL Server Agent).\n\nA design based on a SQL Server running in this mixed mode reduces the overall level of security. As I understand it, the user \"sa\" is now available to hackers. Passwords for SQL Server accounts might be stored in clear text. This is not good.",
+  "Tag": "kb2076071487"
+}

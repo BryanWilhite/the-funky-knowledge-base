@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071313,
+    "Title": "From VB 6.x to Java: Some Flippant Remarks",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2000-09-16T07:28:00",
+    "ModificationDate": "2000-09-16T07:28:00",
+    "TemplateId": null,
+    "SegmentId": 69,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "I feel obliged to apologize before I do this: sorry. Associating VB with Java is pretty nasty. Okay:\n\nVB is all about encapsulating procedures; Java is all about encapsulating data.\n\nVB (as of 6.0) has modules; Java has classes. Java's equivalent of a standard module is to have a class containing the main() method. And, yes, VB has the \"class module.\"\n\nVB has module-level variables; Java has instance fields.\n\nVB has optional parameters; Java has overloading.",
+  "Tag": "kb2076071313"
+}

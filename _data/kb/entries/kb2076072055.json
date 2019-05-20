@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072055,
+    "Title": "Flippant Remarks about SharePoint vs. File Shares",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-10-23T14:00:34",
+    "ModificationDate": "2008-10-23T14:00:34",
+    "TemplateId": null,
+    "SegmentId": 85,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "SharePoint uses the BLOB data type in SQL Server to store files. SharePoint is the primordial ancestor of WinFS. It is tempting to see it as a full replacement for a traditional file system like NTFS. But there are limitations explored in “SharePoint vs. File Shares” here:\n\n    http://spsdreamjob.spaces.live.com\n        /blog/cns!D0B14C6B969D7501!131.entry\n\n* “Long Paths—WebDav has a limit of 260 chars, and so does MOSS/WSS [or less].”\n\n* “Weird files with inter-file references—the most common problem here includes Excel spreadsheets that are typically peppered with references to data stored in other excel files…”\n\n* “Weird file names—Infrequently users will have filenames that are like test...txt or test#%.txt as a requirement of some application, or as part of a file naming standard.”\n\nAccording to “Is the File Server Dead?” by Joel Oleson, these are valid uses of the File System over SharePoint:\n\n* Product Distribution (Product packages like Office)\n* SMS distribution point (desktop patches and hot fixes)\n* NT Backups, Backup Servers and Desktop Backups\n* Database Storage\n* Large Audio/Video and Streaming Media and other large archive read only media such as DVDs, CDs storage (.iso, .wmv, .ram, .vhd)\n* Developer Source Control\n* Batch, Command Scripts, Executables (.exe, .vbs, .cmd, .bat)\n* Application Server... Client Application Storage Linked Files and File Dependencies -  (.lnk, .lck)\n* Archives and Dumps (.arj, .rar, .zip, .dmp, .bak)\n\n[http://blogs.msdn.com/sharepoint/archive/2007/01/02/is-the-file-server-dead.aspx]\n\n",
+  "Tag": "kb2076072055"
+}

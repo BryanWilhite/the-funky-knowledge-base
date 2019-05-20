@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072356,
+    "Title": "C#: “What is the second meaning of a single ampersand in C#?”; StackOverflow.com",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2010-03-21T16:24:47",
+    "ModificationDate": "2010-03-21T16:24:47",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "As has been said, \"&\" is a bitwise AND. \"&&\" is a logical AND. & performs an AND operation on its operands bit by bit, and in general functions exactly like plus or times or any arithmetic operator. && is more complex. If compares each of its operands against zero. If the first operand is zero, it assumes the value FALSE and short-circuits the rest of the expression, i.e. it does not evaluate any remaining operands. If the first value is non-zero, it examines the second value. If this is zero it assumes the value of false, otherwise it assumes the value of true. In either case it continues to evaluate the expression.\n\nThat is, there are two crucial differences between & and &&:\n\n1. & operates bit by bit while && considers only zero and non-zero and always returns either 0 or 1. Thus 5 & 6 (binary 101 & 110) gives 4 (binary 100), while 5 && 6 gives 1 (true).\n\n2. && \"short circuits\". If the first value is zero, it does not evaluate the second value. & has no such rule. This is important in several ways. First, if the second value has any side effects, then with & those side effects always happen, while with && they do not. So \"x & (y++)\" will always increment y, while \"x && (y++)\" will only increment y if x is not zero. This gets more important -- and possibly more subtle -- if the second operand is a function call. Second, the first value may test something that determines that the second value is invalid. Like \"x!=NULL && x->foo==3\". With &, when x is null that could bomb with segment faults or the equivalent. And third, there may be important performance gains. Life, \"x!='A' && readTonsOfStuffFromDatabaseAndCalculateTotal(x)\". With &, the read would happen regardless, and perhaps be a total waste of time.\n\nThat's why we almost always use && for things that really are logical operations, and limit use of & to when we truly want a bit-wise operation. But there are times when you DON'T want the short-circuit to happen, and in that case & may be a good choice. But if you're using it to operate \"logically\", be very careful with operands that can have any values other than 0 or 1. 1 && 2 is true, but 1 & 2 is false.\n\n[http://stackoverflow.com/questions/1537713/what-is-the-second-meaning-of-a-single-ampersand-in-c]",
+  "Tag": "kb2076072356"
+}

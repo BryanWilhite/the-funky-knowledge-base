@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 917916325,
+    "Title": "T-SQL: Renaming a Table Containing Data; Saving/Restoring Data from a Dropped Table; SELECT INTO",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2000-12-24T14:57:04.393",
+    "ModificationDate": "2000-12-24T14:57:04.393",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Sometimes is is better to DROP a table instead of using the ALTER TABLE or sp_rename commands. If the table has data in it, use the SELECT INTO syntax to create a temporary table. For example:\n\n    SELECT *\n    INTO tmpTable\n    FROM MyTable\n\nwhen the table (\"MyTable\") is ready to have its data back use the INSERT statement. Following our example we have:\n\n    INSERT MyTable (Col1, Col2, Col3)\n    SELECT (Col1, Col2, Col3)\n    FROM tmpTable\n\nColumn lists are used here as omitting column lists may not be supported on all servers. Once the table (\"MyTable\") gets its data back, we would then DROP \"tmpTable.\"",
+  "Tag": "kb917916325"
+}

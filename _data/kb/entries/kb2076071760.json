@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071760,
+    "Title": "Ubuntu Linux Security Logs",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2006-09-22T20:51:27.107",
+    "ModificationDate": "2006-09-22T20:51:27.107",
+    "TemplateId": null,
+    "SegmentId": 73,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "/var/log/syslog - general system log\n/var/log/auth.log - system authentication logs\n/var/log/mail.log - system mail logs\n/var/log/messages - general log messages\n/var/log/dmesg - kernel ring buffer messages, usually since system bootup\n\nFor more information, see \"Tips on keeping your Ubuntu Linux server secure\":\n\n    http://www.computerworld.com/action/article.do?\n        command=viewArticleBasic&articleId=9002691&pageNumber=3\n\n\"This article is excerpted from /The Official Ubuntu Book/ by Benjamin Mako Hill, Jono Bacon, Corey Burger, Jonathan Jesse and Ivan Krstic, copyright Prentice Hall. Reprinted with permission of Prentice Hall, all rights reserved.\"",
+  "Tag": "kb2076071760"
+}

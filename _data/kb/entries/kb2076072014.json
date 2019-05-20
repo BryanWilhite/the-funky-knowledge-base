@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072014,
+    "Title": "FUSE: Filesystem in Userspace; Wikipedia.org",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-08-27T16:17:47",
+    "ModificationDate": "2008-08-27T16:17:47",
+    "TemplateId": null,
+    "SegmentId": 73,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Filesystem in Userspace (FUSE) is a loadable kernel module for Unix-like computer operating systems, that allows non-privileged users to create their own file systems without editing the kernel code. This is achieved by running the file system code in user space, while the FUSE module only provides a \"bridge\" to the actual kernel interfaces. FUSE was officially merged into the mainstream Linux kernel tree in kernel version 2.6.14.\n\n[http://en.wikipedia.org/wiki/Filesystem_in_Userspace]\n",
+  "Tag": "kb2076072014"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071597,
+    "Title": "Flippant Remarks about David Berlind's \"Microsoft's patchwork mess\"; ZDNet; Download.Ject; ADODB.Stream",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2004-07-03T18:15:42.043",
+    "ModificationDate": "2004-07-03T18:15:42.043",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "ZDNet Executive Editor, David Berlind, \"Microsoft's patchwork mess\" (July 3, 2004) writes:\n\n\"The notice, which was posted on Microsoft's site by 9 a.m. on July 2, 2004, says the Windows Update service will be distributing the fix later in the day. People who want to move more quickly are directed to download the code from Microsoft's Download Center.\"\n\n\"But clicking the link will lead to a page that offers not a clue about where to find the fix that Microsoft says is there. The site lists popular downloads and even featured downloads. But nowhere is something that says, 'If you've come here for the download that protects you against Download.Ject, click here!'\"\n\nThis story underscores a huge chunk of my life's work (so far). A non-technical manager should have been able to post a change to the relevant web pages in the relevant web sites but clearly this did not happen. My guess is that the site in question is not database driven---or the database behind this web page(s) is not web-service driven--or the web service---well, you get the idea.\n\nI'm seeing some Microsoft program manager updating Microsoft websites with as much ease as sending an email---with as much ease as opening a \"master document\" in a Word Processor and routing an updated paragraph in that document to the appropriate web site. Having seen MSDN web programmers lecture on MSDNTV about XSD schema stuff driving MSDN webs, clearly the tools are there. It is just a matter of making them available to the right people at the right time. And SharePoint Portal Server is not one of those tools.\n\nWhy did Don Box stop working on his WordML XSLT transform?\n",
+  "Tag": "kb2076071597"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071417,
+    "Title": "Word 2000: TogglePicturePlaceHolder()",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2001-10-28T18:10:38.373",
+    "ModificationDate": "2001-10-28T18:10:38.373",
+    "TemplateId": null,
+    "SegmentId": 76,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Public Sub TogglePicturePlaceHolder()\n    Dim intIndex As Integer\n    \n    If Application.Documents.Count = 0 Then Exit Sub\n\n    If Application.ActiveDocument.InlineShapes.Count = 0 Then Exit Sub\n\n    With ActiveWindow.View\n        .ShowPicturePlaceHolders = Not (.ShowPicturePlaceHolders)\n    End With\n    \n    Call TogglePictPlaceholderButton\n\nEnd Sub\n\nPrivate Sub TogglePictPlaceholderButton()\n    Dim intState As Integer\n    \n    With Application\n        If .ActiveWindow.View.ShowPicturePlaceHolders Then\n            intState = msoButtonDown\n        Else\n            intState = msoButtonUp\n        End If\n        \n        On Error Resume Next\n        .CommandBars.FindControl(Tag:=\"cmdPicPlaceholder\").State = intState\n    End With\nEnd Sub",
+  "Tag": "kb2076071417"
+}

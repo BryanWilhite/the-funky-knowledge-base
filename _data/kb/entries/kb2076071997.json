@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071997,
+    "Title": "Java Exceptions: The Three Kinds of Exceptions",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-08-24T00:24:15",
+    "ModificationDate": "2008-08-24T00:24:15",
+    "TemplateId": null,
+    "SegmentId": 69,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The first kind of exception is the checked exception. These are exceptional conditions that a well-written application should anticipate and recover from. …Checked exceptions are subject to the Catch or Specify Requirement. All exceptions are checked exceptions, except for those indicated by Error, RuntimeException, and their subclasses. \n\nThe second kind of exception is the error. These are exceptional conditions that are external to the application, and that the application usually cannot anticipate or recover from. …Errors are not subject to the Catch or Specify Requirement. Errors are those exceptions indicated by Error and its subclasses.\n\nThe third kind of exception is the runtime exception. These are exceptional conditions that are internal to the application, and that the application usually cannot anticipate or recover from. …Runtime exceptions are not subject to the Catch or Specify Requirement. Runtime exceptions are those indicated by RuntimeException and its subclasses.\n\n[http://java.sun.com/docs/books/tutorial/\n    essential/exceptions/catchOrDeclare.html]\n",
+  "Tag": "kb2076071997"
+}

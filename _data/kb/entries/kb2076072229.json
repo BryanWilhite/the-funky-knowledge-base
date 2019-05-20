@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072229,
+    "Title": "jQuery: JQuery: “Error: jQuery.support is undefined”; Schleichermann; JQuery VisualStudio Intellisense",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-08-28T21:15:31",
+    "ModificationDate": "2009-08-28T21:15:31",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "jQuery.support is undefined\n\nif ( !jQuery.support.opacity && name == “opacity” ) {\n\nIf you are getting this error when trying to use JQuery.hide or JQuery.show it is most likely because you are also using the JQuery VisualStudio Intellisense Documentation ( VSDOC ). The error is simply caused by the fact that you are loading the VSDOC after JQuery. JavaScript loads/renders in the order you have it on the page and by loading the documentation after you load JQuery you are loading things out of order. Simply make sure you load the VSDOC first then JQuery and you are good to go.\n\n<script type=”text/javascript” src=”jquery-1.3.2-vsdoc.js”></script>\n<script type=”text/javascript” src=”jquery-1.3.2.min.js”></script>\n\n[http://schleichermann.wordpress.com/2009/03/10/\n    jquery-error-jquerysupport-is-undefined/]",
+  "Tag": "kb2076072229"
+}

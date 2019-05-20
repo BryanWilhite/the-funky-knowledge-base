@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071352,
+    "Title": "Windows NT PROBLEM: Cannot Find Modems; Plug and Play (PnP)",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2000-12-28T10:26:50.46",
+    "ModificationDate": "2000-12-28T10:26:50.46",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The following message may indicate that Plug and Play is not installed or disabled in Windows NT:\n\n    Windows NT did not find any modems attached to your computer.\n\nSince many \"techies\" consider the Windows 9.x series a \"bunch of toys\" and its Plug and Play features \"invading\" the \"robust\" NT platform, there is the temptation to not install or disable the Plug and Play Service. Another reason why PnP is disabled is to prevent NT from NT from finding \"new\" hardware at each boot of the OS.\nAll of these reasons for avoiding PnP are considerable if and only if there are no modems installed on the hardware running NT. For more information please see \"Remote Access Service Fails If Plug and Play Service Is Disabled\" (MSKB Q170029).\n",
+  "Tag": "kb2076071352"
+}

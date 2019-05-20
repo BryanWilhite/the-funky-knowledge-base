@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072003,
+    "Title": "“Natural Sorting in C#”; Ian Griffiths",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-08-24T17:47:38",
+    "ModificationDate": "2008-08-24T17:47:38",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Jeff Atwood recently posted about natural sorting. This is all about making sure that strings that contain numbers sort numerically. I’m slightly surprised to see that he wants to call it alphabetical sorting. Surely by definition, alphabetical sorting is defined by, well, the alphabet. This is an issue about numbers, not letters.\n\nAnyway, he says he tried and gave up on a succinct C# version. He suggests that it will take 40+ lines of code. I believe that’s misleading, because as far as I can tell, the Python versions are only able to be so succinct because Python already appears to know how to sort an array. Both examples he shows rely on this. In .NET, collections aren’t intrinsically sortable.\n\n[http://www.interact-sw.co.uk/iangblog/2007/12/13/natural-sorting]",
+  "Tag": "kb2076072003"
+}

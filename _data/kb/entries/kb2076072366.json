@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072366,
+    "Title": "Visual Studio 2008: Flippant Remarks about Test Run Configuration Files",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2010-03-24T20:26:16",
+    "ModificationDate": "2010-03-24T20:26:16",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "You can move *.testrunconfig (and *.vsmdi) files to a new Solution for reuse. Add these as existing items into a folder called “Solution Items,” sadly it must have this name. Do have any relevant Test projects loaded in the Solution before you do this.\n\nYou know you are doing something wrong when you get an error message after adding these files to the Solution.",
+  "Tag": "kb2076072366"
+}

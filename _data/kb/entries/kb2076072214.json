@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072214,
+    "Title": "“Interface vs Abstract Class”; StackOverflow.com",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-08-21T18:55:15",
+    "ModificationDate": "2009-08-21T18:55:15",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "In .NET (similar for Java):\n\n    * interfaces can have no state or implementation\n    * a class that implements an interface must provide an implementation of all the methods of that interface\n    * abstract classes may contain state (data members) and/or implementation (methods)\n    * abstract classes can be inherited without implementing the abstract methods (though such a derived class is abstract itslef)\n    * interfaces may be multiple-inherited, abstract classes may not (this is probably the key concrete reason for interfaces to exist separately from abtract classes - they permit an implementation of multiple inheritance that removes many of the problems of general MI).\n\nAs general OO terms, the differences are not necessarily well-defined. For example, there are C++ programmers who may hold similar rigid definitions (interfaces are a strict subset of abstract classes that cannot contain implementation), while some may say that an abstract class with some default implementations is still an interface or that a non-abstract class can still define an interface.\n\n…\n\n1) An interface can be seen as a pure Abstract Class, is the same, but despite this, is not the same to implement an interface and inheriting from an abstract class. When you inherit from this pure abstract class you are defining a hierarchy -> inheritance, if you implement the interface you are not, and you can implement as many interfaces as you want, but you can only inherit from one class.\n\n2) You can define a property in an interface, so the class that implements that interface must have that property.\n\nFor example:\n\n    public interface IVariable\n    {\n        string name {get; set;}\n    }\n\nThe class that implements that interface must have a property like that.\n\nhope this helps!\n\n[http://stackoverflow.com/questions/761194/\n    interface-vs-abstract-class-general-oo]",
+  "Tag": "kb2076072214"
+}

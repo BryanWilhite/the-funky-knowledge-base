@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072249,
+    "Title": "C# Code: “Constructor Chaining : C# 411”",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-09-15T18:07:57",
+    "ModificationDate": "2009-09-15T18:07:57",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "When you want to share initialization code among multiple constructors, there are generally two approaches. \n\nInitialization Method\n\nThe first approach is to create a private initialization method that you call from each constructor:\n\n    public class Test\n    {\n        public Test( bool a, int b, string c )\n        {\n            this.m_C = c;\n            this.Initialize( a, b );\n        }\n        public Test( bool a, int b, float d )\n        {\n            this.m_D = d;\n            this.Initialize( a, b );\n        }\n        private void Initialize( bool a, int b )\n        {\n            this.m_A = a;\n            this.m_B = b;\n        }\n        private bool m_A;\n        public bool A { get { return this.m_A; } }\n        private int m_B;\n        public int B { get { return this.m_B; } }\n        private string m_C;\n        public string C { get { return this.m_C; } }\n        private float m_D;\n        public float D { get { return this.m_D; } }\n    }\n\nConstructor Chaining\n\nAnother approach is to use constructor chaining, where a constructor calls another constructor in its class using the \": this()\" designation as shown below:\n\n    public Test( bool a, int b, string c )\n        : this( a, b )\n    {\n        this.m_C = c;\n    }\n    public Test( bool a, int b, float d )\n        : this( a, b )\n    {\n        this.m_D = d;\n    }\n    private Test( bool a, int b )\n    {\n        this.m_A = a;\n        this.m_B = b;\n    }\n\nChaining is Better\n\nAs described in Nazish Ahsan's blog, constructor chaining is preferred over an initialization method because it eliminates duplicate code and supports readonly members.\n\nThe compiler automatically adds code to constructors to initialize variables and call the base class constructor.  When you write your own common initialization function, the compiler duplicates this code in each constructor that calls the base constructor.  Using constructor chaining so that you have only one constructor calling the base constructor will eliminate this duplicate code.\n\nIn addition, you can initialize readonly members only in a constructor and not in a method.  So if the member m_A in our Test class is readonly, the first example would fail to compile since it tries to initialize the m_A readonly member in the Initialize method.  This means you must either duplicate read-only initialization code in every constructor (bad idea) or use constructor chaining as shown in the second approach (good idea).\n\nAlso notice in the second example how the chained constructor \"Test( bool a, int b)\" is marked private, even though the constructors that call it are public.  This allows you to hide chained constructors if desired.\n\n[http://www.csharp411.com/constructor-chaining/]\n\n[http://nazish.blog.com/1027633/]",
+  "Tag": "kb2076072249"
+}

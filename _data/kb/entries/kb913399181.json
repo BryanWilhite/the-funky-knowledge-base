@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 913399181,
+    "Title": "CSS: Linking to an External Style Sheet; LINK; @import; Using Style Sheets Locally",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-01-13T09:32:15",
+    "ModificationDate": "1999-01-13T09:32:15",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "At this proprietary moment in time, it is better to use LINK HTML markup instead of W3C's @import to refer to external style sheets. My tests show that Netscape browsers ignore the following W3C-recommended syntax:\n\n    <STYLE><!--\n        @import url(\"http://server/root.css\");\n    //-->\n    </STYLE>\n\nWhere root.css is the name of an external style sheet file. Both Microsoft and Netscape browsers have no trouble with the following:\n\n    <LINK\n        REL=\"StyleSheet\"\n        TYPE=\"text/css\"\n        HREF=\"./root.css\">\n\nwhere the HREF value is a relative URI.",
+  "Tag": "kb913399181"
+}

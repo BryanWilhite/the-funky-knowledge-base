@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 360101780,
+    "Title": "The 99 Billion Limit for Non-Integer Numeric Data",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-06-12T23:21:26",
+    "ModificationDate": "1998-06-12T23:21:26",
+    "TemplateId": null,
+    "SegmentId": 64,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The note under Microsoft Visual Basic for Applications entitled \"Review of the Data Type Summary: Floating Point Numbers\" concludes that 99 billion is the highest decimal number that can be stored in an Access (DAO) database. This is true only under the following conditions:\n\nThe use of the CCur() is ruled out because its behavior changes with the Regional Settings of the operating system.\n\nOne or more numbers in the database will require accuracy out to four decimal places.\n\nThe use of CDbl() cannot be ruled out because the design requires a type conversion function.",
+  "Tag": "kb360101780"
+}

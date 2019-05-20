@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071486,
+    "Title": "Windows 2000 PROBLEM: ipconfig and Other Standard App's Not Working or Not \"Recognized\"",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2002-07-16T08:46:42.847",
+    "ModificationDate": "2002-07-16T08:46:42.847",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The following message may require a look at the Registry:\n\n    'ipconfig' is not recognized as an internal or external command,\n    operable program or batch file.\n\nLook at these three keys:\n    HKEY_LOCAL_MACHINE\\SYSTEM\n        \\CURRENTCONTROLSET\\CONTROL\n            \\SESSION MANAGER\\ENVIRONMENT\n    HKEY_LOCAL_MACHINE\\SYSTEM\n        \\CONTROLSET001\\CONTROL\n            \\SESSION MANAGER\\ENVIRONMENT\n    HKEY_LOCAL_MACHINE\\SYSTEM\n        \\CONTROLSET002\\CONTROL\n            \\SESSION MANAGER\\ENVIRONMENT\n\nIf the Path value under any of these keys is of type STRING then the environment variable %SystemRoot% cannot \"expand\" to resolve to the \"real\" path where your system files are. It follows that ipconfig cannot be recognized by the system.\n\nTo resolve this problem replace the Path environment variable under:\n\n    System Properties > Advanced > Environment Variables > System Variables\n\nwhere the System Properties dialog can be found by right-clicking on the My Computer icon on the Desktop and selecting Properties. For more detailed instructions refer to MS KB article Q317206 (\"MMS Lotus Notes Plug-In Alters the Windows Path Environment\").\n",
+  "Tag": "kb2076071486"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071976,
+    "Title": "Microsoft Word 2003/2007: “In Microsoft Word, what is the Spike, and how do I use it?”",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-07-01T20:25:21",
+    "ModificationDate": "2008-07-01T20:25:21",
+    "TemplateId": null,
+    "SegmentId": 85,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Moving items to and from the Spike\n\n1. Select the text or graphic you want to move, and then press Ctrl-F3 (in Windows) or Cmd-F3 (on a Mac).\n\n2. Repeat this step for each additional item you want to move to the Spike.\n\n3. Click in the document where you want to insert the Spike's contents.\n\n4. To insert the Spike's contents and empty the Spike, press Ctrl-Shift-F3 (in Windows) or Cmd-Shift-F3 (on a Mac).\n\n[http://kb.iu.edu/data/aggk.html]\n\nIt is important to remember that the spike ‘cuts’ text and then dumps out all of the cuts at once.\n",
+  "Tag": "kb2076071976"
+}

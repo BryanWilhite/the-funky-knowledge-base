@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071772,
+    "Title": "ADO.NET: CommandType.TableDirect Is Not Supported by SqlCommand.CommandType ",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2006-10-06T15:16:28.853",
+    "ModificationDate": "2006-10-06T15:16:28.853",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "CommandType.TableDirect Is Not Supported by SqlCommand.CommandType. The System.Data.OleDb namespace supports it. It follows that the following form works:\n\n    string cnnStr = \"Provider=SQLOLEDB; Server=(local); Database=pubs; Integrated Security=SSPI;\";\n\n    using(OleDbConnection cnn = new OleDbConnection(cnnStr))\n    {\n        OleDbCommand cmd = null;\n        OleDbDataReader reader = null;\n        try\n        {\n            cnn.Open();\n            string tbl = \"authors\";\n            cmd = new OleDbCommand(tbl, cnn);\n            cmd.CommandType = CommandType.TableDirect;\n            reader = cmd.ExecuteReader();\n\n            //TODO: use reader.\n        }\n        finally\n        {\n            if ((reader != null) && (!reader.IsClosed))\n            {\n                reader.Close();\n                reader.Dispose();\n            }\n\n            if (cmd != null) cmd.Dispose();\n        }\n    }",
+  "Tag": "kb2076071772"
+}

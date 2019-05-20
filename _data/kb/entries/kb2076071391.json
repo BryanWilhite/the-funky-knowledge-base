@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071391,
+    "Title": "Songhay 3 Server: Hardware Inventory",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2001-05-26T17:05:31.67",
+    "ModificationDate": "2001-05-26T17:05:31.67",
+    "TemplateId": null,
+    "SegmentId": 71,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "AMD K62 450\nFIC VA 503+\n\nCD-ROM:\n    Toshiba DVD-ROM SD-M1212\n\nDisk Drive:\n    Maxtor Diamond Max Plus 40GB\n    (7200 RPM; Ultra ATA 100MB/Sec; Buffer/Seek: 2MB/8.7ms)\n    KIT: ST0154000U\n    S/N: T4H7B1QC\n\nDisplay Adapter:\n    Diamond FireGL 1000 Pro\n\nNetwork Adapter:\n    D-Link DFE-530TX+ 10/100 PCI Fast Ethernet",
+  "Tag": "kb2076071391"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071811,
+    "Title": "Hibernate in Action Notes: Chapter 1; Understanding object/relational persistence; 1.4 Object/relational mapping",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-04-09T17:53:52",
+    "ModificationDate": "2007-04-09T17:53:52",
+    "TemplateId": null,
+    "SegmentId": 69,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "1.4 Object/relational mapping\n\n\"Now that we’ve looked at the alternative techniques for object persistence, it’s time to introduce the solution we feel is the best, and the one we use with Hibernate: ORM.\"\n\n\"Isn’t ORM a Visio plugin? The acronym ORM can also mean object role modeling, and this term was invented before object/relational mapping became relevant. It describes a method for information analysis, used in database modeling, and is primarily supported by Microsoft Visio, a graphical modeling tool. Database specialists use it as a replacement or as an addition to the more popular entity-relationship modeling. However, if you talk to Java developers about ORM, it’s usually in the context of object/relational mapping.\"\n\nThe research of Mark Fussel produced four kinds of ORM: Pure relational, Light object mapping, Medium object mapping and Full object mapping. These four kinds are increasing levels of granularity addressing the paradigm mismatch between the relational database and objects in an Application domain. Only the \"full object mapping\" solution solves the \"O/R mapping problems\" detailed in the book (1.4.2).\n\nSection 1.4.3 supports the use of ORM with benefits that include productivity, maintainability, performance and vendor independence. To support the performance argument the book asserts that \"the people who implemented your ORM software probably had much more time to investigate performance optimizations than you have...\" (1.4.3)\n",
+  "Tag": "kb2076071811"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072149,
+    "Title": "Visual Studio: “Resources Page, Project Designer”; MSDN",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-07-20T12:41:23",
+    "ModificationDate": "2009-07-20T12:41:23",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": " The Resource Designer is a user interface tool that enables you to manage resources (such as strings, images, icons, audio, and other files) for your project.\n\nThe Resources page of the Project Designer hosts an instance of the Resource Designer that stores and maintains resources in a single location (Resources.resx).\n\nThe Resource Designer is language-neutral and supports projects in all Visual Studio languages. Items that you add to the project by using the Resource Designer are placed in the Resources directory for your project. The designer information is stored in a file named Resources.resx, and code for the resource is stored in Resources.Designer.cs, Resources.Designer.vb, or Resources.Designer.jsl.\n\nYou can also use the Resource Designer to edit stand-alone .resx files. For example, if you add a resource file by using Solution Explorer, its settings are kept in a separate .resx file and do not appear in the Project Designer. Double-clicking a resource's .resx file opens a separate Resource Designer for that resource.\n\nYou can edit file-based resources by double-clicking the resource in the Resource Designer. The Resource Designer opens the item in the default editor for that file type. If no editor is registered for that file type, the file is opened in the Windows default application for that type. To change the file type association, see How to: Associate an Editor with a Resource Type.\n\nFor Visual C#, the Resource Designer generates strongly-typed resources in the project's default namespace (specifically, ProjectName.Properties in Resources.Designer.cs). For information about accessing resources in Visual C#, see Adding and Editing Resources (Visual C#).\n\nFor Visual Basic, the Resource Designer generates strongly-typed resources in the My.Resources namespace (in Resources.Designer.vb). For information about accessing resources in Visual Basic by using the My.Resources object, see Accessing Application Resources.\n\nStrongly-typed resources encapsulate access to resources by creating classes that contain a set of static, read-only (Get) properties at compile time. You can consume resources by using the Get properties rather than using the GetString and GetObject methods of the ResourceManager class. Strongly-typed resources also make it easier to develop localizable applications. For information about strongly-typed resources, see StronglyTypedResourceBuilder.\n\nResources also have a Persistence property that specifies whether they are linked or embedded. Linked resources are stored as files within the project; the .resx file stores a relative path to the file, and during compilation, the resource data is placed into the manifest for the application. With embedded resources, the resource data is stored directly in the .resx file.\n\nBy default, all new resources are linked resources, as opposed to embedded. If you try to edit an embedded resource, you will receive a message prompting you to convert the item to a linked resource in order to edit it; conversion is recommended but optional.\n\n[http://msdn.microsoft.com/en-us/library/t69a74ty.aspx]",
+  "Tag": "kb2076072149"
+}

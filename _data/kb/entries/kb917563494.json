@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 917563494,
+    "Title": "Notes on SQL Server Standards and Guidelines",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-02-02T10:30:21",
+    "ModificationDate": "1999-02-02T10:30:21",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "These are reflections on the SQL standards and guidelines derived through my direct experience in the field. Currently I am not aware of any popular \"manuals of style\" published by independent third parties.\n\n\n* After the DBA Gives You a Database\n\nOnce a database is available, the time has come to fill it up! SQL server databases can be described by SQL in a text file. The custom that I have acquired is to place the SQL in separate text files: a file for each table, view, data INSERT and stored procedure. These text files are then separated into directories. The directory structure is like this:\n\n    <root database folder>\n        tables\n        data\n        views\n        procs\n\nThese folders are checked into a code repository (e.g. MS SourceSafe) regularly. These files are managed by tools like Embarcadero's Rapid SQL.\n\n\n* Code Presentation and Naming Conventions\n\nWithout going into too much detail, I will be terse: capitalize SQL key words. Indent and line up code (with spaces) for readablity. View code with a fixed-width typeface. Place commas at the beginning of a line of code and line them up.\n\nDo not use plural table names. Do not use underscores in table names; use mixed case names (e.g. MyTable). Here are the conventions used for stored procedures and views:\n\n    Procedure: DELETE one or more rows\n    Prefix: Del\n    \n    Procedure: INSERT one or more rows\n    Prefix: New\n\n    Procedure: INSERT many rows (e.g. from table to table)\n    Prefix: Load\n\n    Procedure: SELECT a row\n    Prefix: Get\n\n    Procedure: SELECT multiple rows\n    Prefix: List\n\n    Procedure: UPDATE or UPDATE/INSERT\n    Prefix: Set\n\n\n* CREATE Database Objects by DROPping Them\n\nAs it is very rare (for me) to create a database object correctly the first time, the SQL used to create it should include logic to drop it as well. This is a \"replace procedure\" that will \"overwrite\" any previous object of the same name. The following CREATE TABLE SQL illustrates this prudence:\n\n    IF EXISTS(SELECT * FROM sysobjects WHERE name = 'WebDomain' AND type = 'U')\n        DROP TABLE WebDomain\n;\n\n    CREATE TABLE WebDomain\n    (\n        WebDomainID NUMERIC(9,0) IDENTITY\n        , Name        VARCHAR(64)  NULL\n  \n        , CONSTRAINT WebDomainPK\n        PRIMARY KEY CLUSTERED (WebDomainID)\n  \n        , CONSTRAINT WebDomainIX00\n        UNIQUE NONCLUSTERED (Name)\n    )\n;\n\nThe EXISTS keyword handles the chore of looking for the old object. This is a brutal but effective alternative to ALTER TABLE or sp_rename stuff.",
+  "Tag": "kb917563494"
+}

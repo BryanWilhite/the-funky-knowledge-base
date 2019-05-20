@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071924,
+    "Title": "SQL Server 2005: “Create Interoperable Native Web Services” Notes; http://mcpmag.com/Features/print.asp?EditorialsID=1299",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-12-22T20:55:39",
+    "ModificationDate": "2007-12-22T20:55:39",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "* “SQL Server 2005 Express Edition doesn’t support HTTP endpoints, so you must license the Workgroup Edition or better to enable these features for production. Only Windows XP Service Pack 2 (SP2) and Windows 2003 Server install Http.sys; thus, you can't deploy native Web services to Windows 2000 servers.”\n\n* “The SQL Server team's design goal was twofold: Provide cross-platform data access that delivers parity with the Windows-only Tabular Data Stream (TDS) protocol, and move the SOAP stack from the IIS middle tier to the database engine's process.”\n\nFrom Wikipedia.org: “Tabular Data Stream (TDS) is a protocol, to transfer data between a database server and client. Initially designed and developed by Sybase Inc. for their Sybase SQL Server relational database engine in 1984, and later by Microsoft in Microsoft SQL Server.” (http://en.wikipedia.org/wiki/Tabular_Data_Stream)\n\n* “You also can take advantage of C# or VB CLR stored procedures to customize the service’s WSDL document for use by non-Microsoft SOAP toolkits, such as Borland’s JBuilder 9.0 or webMethods’ Glue 5.0.1.”\n\nThis is the first recognition of “non-Microsoft SOAP” but only proprietary “toolkits” are recognized.\n\n* “Setting SCHEMA = NONE removes the inline XML schema; most non-Microsoft SOAP toolkits won't process SOAP response messages with inline schemas.”\n\n* “WSDL = DEFAULT generates a dynamic WSDL document with complex or simple (xsd:any) data typing. Data typing depends on the service URL that you use to generate the Web service proxy, which I’ll discuss shortly. …Substituting ?wsdlsimple for ?wsdl in the WSDL document’s URL query string replaces proprietary SQL Server–specific types with XML schema simple datatypes and sqlresultstream:SqlResultStream with the XML schema xsd:any datatype wildcard.”\n\nThe ?wsdlsimple query string option is very important!\n",
+  "Tag": "kb2076071924"
+}

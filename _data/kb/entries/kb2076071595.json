@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071595,
+    "Title": "Outlook PROBLEM: Duplicate Holidays Listed Indefinitely in the Calendar",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2004-07-01T11:36:47.563",
+    "ModificationDate": "2004-07-01T11:36:47.563",
+    "TemplateId": null,
+    "SegmentId": 85,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Under the Tools > Options... > Calendar Options... > Calendar options section you clearly see the Add Holidays... button. You might have the idea that there is a \"remove holidays\" button as well. There isn't. And what's worse is when somehow, someway holidays get added twice to your Calendar. How to remove them? You can't just go to the URI outlook:Calendar and start removing them one by one because they go on forever and, unless I am missing something, holidays don't add themselves as a recurring series (probably because the periodicity of most holidays is not measurable).\n\nSo I simply \"reset\" my holidays by removing them all and adding them back when duplicates start showing up. (I can swear that some security update or upgrade to Outlook caused duplicates to appear but I can't be sure in the fog of war.) To remove all holidays, search for the Category 'Holiday' under Tools > Find > Advanced Find... > More Choices > Categories. When the results appear delete them all, permanently. Then, of course, add fresh, new, clean holidays as aforementioned.",
+  "Tag": "kb2076071595"
+}

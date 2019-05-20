@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 895694248,
+    "Title": "SQL: Domain Aggregate Record Sets Are Not Updatable",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2000-12-24T14:48:52.677",
+    "ModificationDate": "2000-12-24T14:48:52.677",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "SQL Statements containing references to views based on domain aggregate functions are by definition not updateable.",
+  "Tag": "kb895694248"
+}

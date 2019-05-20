@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072140,
+    "Title": "Eclipse PDT: Viewing Hidden Files in the IDE; .htaccess files; europa/ganymede/galileo",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-07-14T12:45:23",
+    "ModificationDate": "2009-07-14T12:45:23",
+    "TemplateId": null,
+    "SegmentId": 69,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "This is issue is addressed on stackoverflow.com in this article “Where / What is the Package Explorer in Eclipse PDT” here:\n\n    http://stackoverflow.com/questions/619455/\n        where-what-is-the-package-explorer-in-eclipse-pdt\n\nVonC [http://stackoverflow.com/users/6309/vonc] writes: “At the top of the PHP Explorer, there are a few toolbar buttons. Clicking the down arrow brings up a context menu. I choose the filters… menu item. By default, ‘name filter patterns’ was not checked. .* files and server projects were selected in the second box. This makes sense why I was not seeing my .htaccess file.”",
+  "Tag": "kb2076072140"
+}

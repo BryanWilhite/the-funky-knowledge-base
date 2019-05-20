@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071555,
+    "Title": "kintespace.com: .htaccess file from Focal Hosting",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2004-03-29T23:04:42.4",
+    "ModificationDate": "2004-03-29T23:04:42.4",
+    "TemplateId": null,
+    "SegmentId": 71,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "ErrorDocument 404 http://www.kintespace.com/not_found.html\n\nRewriteEngine on Options +FollowSymlinks\nRewriteBase /\nRewriteRule ^kb/articles/(.*)\\.html$ http://songhaysystem.com/document.php?cmd=getKBDoc&get=$1\nRewriteRule ^kb/howto/(.*)/ http://songhaysystem.com/document.php?cmd=getDocCode&get=$1\nRewriteRule ^kb/subjects/(.*)\\.html$ http://songhaysystem.com/document.php?cmd=listSubjects&code=$1\nRewriteRule ^kb/util/(.*)/ http://songhaysystem.com/\nRewriteRule ^kb http://songhaysystem.com/\n",
+  "Tag": "kb2076071555"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071815,
+    "Title": "Windows Server 2003 PROBLEM: IIS Throws 404 Errors for ASP.NET 2.0 Applications; ASP.NET 2.x Web Service Extension Not Installed",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-04-12T14:22:45",
+    "ModificationDate": "2007-04-12T14:22:45",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Internet Information Server in Windows Server 2003 will throw 404 errors when ASP.NET 2.0 is not installed but the server is configured for ASP.NET 2.x under Properties > ASP.NET > ASP.NET version in the IIS management console (MMC). Setting this value to ASP.NET 2.x will not install the ASP.NET Web Service Extension.\n\nTo install ASP.NET 2.x, open the Console to this location:\n\n    %systemRoot%\\Microsoft.NET\\Framework\\v2.0.50727\\\n\nthen run this command:\n\n    aspnet_regiis -i\n\nThis invokes the ASP.NET IIS Registration Tool. More information about this tool is here:\n\n    http://msdn2.microsoft.com/en-us/library/k6h9cz8h(VS.80).aspx",
+  "Tag": "kb2076071815"
+}

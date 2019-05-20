@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071482,
+    "Title": "IIS: Flippant Remarks about the SQL Server ADO Error \"Login failed for user 'NT AUTHORITY\\ANONYMOUS LOGON'\" and Active Directory\n",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2002-05-28T16:52:10.983",
+    "ModificationDate": "2002-05-28T16:52:10.983",
+    "TemplateId": null,
+    "SegmentId": 68,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "If I ever want to know why someone would be \"forced\" to upgrade their Windows-based enterprise to Active Directory, all I have to do is try to programmatically connect to SQL Server from an ASP page that disallows anonymous access. IIS does not send logon credentials (other than its own Anonymous Access User) to a SQL Server on another server without Active Directory installed and Security Account Delegation enabled.\n\nEverything works fine as long as I have IIS and SQL server on the same machine but as soon these two are separated I begin to pine for Active Directory. I say this even though there is a workaround suggested in \"INF: Authentication Methods for Connections to SQL Server in Active Server Pages\" (Q247931) and \"PRB: 'Client Unable to Establish Connection' Error Message When Connecting from ASP to SQL Server\" (Q253500). However, this workaround (featuring Basic Authentication and the wonderful, clear text password) leaves unacceptable security holes. No, the only way to go is via Active Directory.\n\nThe Active Directory resolution is the same one specified in \"ACC2002: \"Login Failed for User 'NT AUTHORITY\\ANONYMOUS LOGON'.\" Error When You Try to Link a Table\" (Q295255). I have yet to try it so I'll get back to these flippant remarks later.\n",
+  "Tag": "kb2076071482"
+}

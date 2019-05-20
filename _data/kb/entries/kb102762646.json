@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 102762646,
+    "Title": "Windows 95: Clearing the Run... List Under the Start Menu",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2003-07-31T14:46:09",
+    "ModificationDate": "2003-07-31T14:46:09",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "You can make this change by editing the Registry. (As always, be sure to back up your Registry files--system.dat and user.dat--first.) To open the Registry Editor, click the Start button, select Run, type \n\nregedit \n\nand click OK. \n\nNavigate your way to \nHKEY_CURRENT_USER/Software/Microsoft/Windows/CurrentVersion/Explorer/RunMRU, and in the right pane, you'll see all the items that currently appear in your Run list. To delete an item, right-mouse-click its letter under Name, then select Delete. Click Yes to confirm, and the item disappears. Repeat these same steps for the rest of the items you want to delete (you can select more than one at a time by holding down Ctrl as you click each item), being sure not to delete the items named MRUList and (Default). Close the Registry Editor, restart the computer, check out your Run list, and you'll find that it's clean as a whistle!",
+  "Tag": "kb102762646"
+}

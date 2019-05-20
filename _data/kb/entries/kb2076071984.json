@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071984,
+    "Title": "Dexpot 1.4 PROBLEM: Switching from Desktop to Desktop Leaves ‘Junk’ on the Screen in Windows XP",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-07-14T09:44:21",
+    "ModificationDate": "2008-07-14T09:44:21",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Switching from desktop to desktop in Dexpot 1.4 leaves abandoned border artifacts on the screen. This comes from its lack of support for “shadow effects” in Windows XP. To resolve this annoyance, check off “Show shadows under menus” Display Properties > Effects… in  to disable this effect.\n",
+  "Tag": "kb2076071984"
+}

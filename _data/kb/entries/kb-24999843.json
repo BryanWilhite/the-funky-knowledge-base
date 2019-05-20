@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -24999843,
+    "Title": "Code: Procedure That Reads in a Text File and Updates the SysCmd() Progress Meter;basReadTextFile()",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-09-09T15:45:46",
+    "ModificationDate": "1999-09-09T15:45:46",
+    "TemplateId": null,
+    "SegmentId": 64,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Private Sub basReadTextFile()\n    '\n    'This sub reads a text file line by line.\n    'It updates the progress meter as it reads the file.\n    'The LOF() function is used as the known value\n    'the progress meter refers to. The lineCounter variable\n    'stores the total number of characters in the file.\n    'The theory is that the total number of characters \n    'in a text file (including carriage returns) equals\n    'the value in bytes returned by LOF().\n    '\n    'Recall that 1 character is equal to 1 byte (8 bits).\n    '\n    Dim varReturn As Variant\n    Dim lngCounter As Long\n    Dim strData As String\n    '\n    'Note that varReturn is of datatype Variant since\n    'SysCmd() returns numerical values (error values)\n    'and the Null (indicating successful execution).\n    'lngCounter is of datatype Long; its maximum\n    ' positive range is 2,147,483,647 which\n    'implies that it can be used to read files as\n    'large as 2 GB.\n    '\n    Open \"c:\\windows\\desktop\\pine_addressbook.txt\" _\n        For Input Access Read As #1\n    \n    varReturn = Application.SysCmd(acSysCmdInitMeter, _\n        \"Reading File...\", VBA.LOF(1))\n    \n    Do Until VBA.EOF(1)\n        Line Input #1, strData\n        varReturn = Application.SysCmd(acSysCmdUpdateMeter, _\n            lngCounter)\n        lngCounter = VBA.Len(lineData) + lngCounter + 2\n        '\n        'We add 2 to lngCounter to account for the length\n        'of a carriage return: VBA.Len(vbCrLf) = 2\n        'where vbCrLf is sequentially ASCII char's 13 and 10.\n        '\n    Loop\n    \n    varReturn = Application.SysCmd(acSysCmdRemoveMeter)\n    \n    Close #1\n\nEnd Sub",
+  "Tag": "kb-24999843"
+}

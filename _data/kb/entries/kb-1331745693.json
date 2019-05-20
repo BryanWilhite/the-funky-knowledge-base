@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -1331745693,
+    "Title": "Notes on the Val() Function",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-05-18T20:02:41",
+    "ModificationDate": "1999-05-18T20:02:41",
+    "TemplateId": null,
+    "SegmentId": 76,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Use the Val() function if you are contemplating using LTrim$() and CDbl() on a string literal. You only want the leftmost characters from this string. You want to separate the numeric values from the non-numeric values from this string---and the numeric values are leftmost. And, most importantly, you want to convert this value to data type Double.\n\nWithout Val() you would have to use LTrim$() to find the leftmost numeric characters and then CDbl() to convert them. Please recall that CDbl() will return a Type Mismatch error in the following:\n\n    VBA.CDbl(\"123Text\")\n\nhowever,\n\n    VBA.Val(\"123Text\") = 123\n\nalso consider this a warning:\n\n    VBA.Val(\"1,234\") = 1",
+  "Tag": "kb-1331745693"
+}

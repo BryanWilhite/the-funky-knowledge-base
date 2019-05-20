@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071508,
+    "Title": "Windows 2000 PROBLEM: Error: Trust Relationship between this workstation and the Domain Controller Failed",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2003-02-11T20:25:02.003",
+    "ModificationDate": "2003-02-11T20:25:02.003",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The following taken from Microsoft Certified Professional Magazine Online:\n\n    http://www.mcpmag.com/Features/article.asp?EditorialsID=187\n\nProblem: When attempting to log on to a Win2K member server or Win2K Pro workstation using a domain account, the following error message appears: \"Error: Trust Relationship between this workstation and the Domain Controller Failed.\"\n\nSolution: This error is usually caused by the secure channel password for the member server or workstation getting out of sync with the DC, but it could be caused by a time-zone shift between the client and the DC. A typical scenario for this problem would be removing a computer from a Win2K domain, A, and joining it to another domain, B, then later moving it back to the original domain, A. Initially, there's a machine account for this client on the A domain. When it's moved to the B domain, it creates a new account on the B domain and synchs the password with the client. When it's moved back into the A domain, the machine account is still there—it doesn't create a new one—but now the passwords don't match, resulting in the error. I've also seen it caused by moving a computer between time zones and not changing the client's time zone information.\n\nTo resolve this problem, delete the client's computer account from domain A and let replication in the site occur, which should take a maximum of five to 10 minutes. Then configure the client to join a workgroup and reboot it. This cleans up all the local machine account information. After the reboot, configure the machine into the domain and reboot again. This will create a new account and synch the passwords with the client. The reboot, which is required anyway, will purge the Kerberos tickets so new ones will be created with the new access information.\n\nIf the problem still exists, it could be a timing issue. Go to the client, open a command prompt window, and enter this command:\n\nnet time \\\\domaincontroller /set\n\n\n\n\n\nwhere \"domaincontroller\" is a valid DC name that can be used to synchronize time on the client. Remember that Kerberos requires that the time difference between the two systems be less than five minutes.\n\n",
+  "Tag": "kb2076071508"
+}

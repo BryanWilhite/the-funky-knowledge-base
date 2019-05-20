@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071355,
+    "Title": "JavaScript: jsWindow(); Function That Opens a New Browser Window",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2000-12-30T19:25:33.94",
+    "ModificationDate": "2000-12-30T19:25:33.94",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "function jsWindow(vName,vValue,vFeatures,vIsHTML) {\n    \n    if(vFeatures == '') {\n        vFeatures = \"\"\n            + \"toolbar=1\"\n            + \",location=0\"\n            + \",scrollbars=1\"\n            + \",resizable=1\"\n            + \",directories=0\"\n            + \",status=0\"\n            + \",width=320\"\n            + \",height=240\"\n    }\n    \n    if(vIsHTML) {\n        //Format HTML, adding the close method of the window object.\n        vValue = \"<HTML>\\n\"\n            + \"<CENTER>\\n<BR><BR>\\n\"\n            + \"<HEAD><TITLE>Songhay System</TITLE></HEAD>\\n\"\n            + vValue\n        vValue += \"\\n<FORM><INPUT TYPE=button VALUE=\\\"Close\\\"\"\n               +\"OnClick=\\\"window.close()\\\"></FORM>\"\n        vValue += \"\\n</CENTER>\\n</HTML>\"\n\n        //Open window.\n        vWindow = window.open('', vName, vFeatures)\n        with(vWindow.document) {\n            write(vValue)\n            close()\n        }\n    }\n    else {\n        //Open window.\n        vWindow = window.open(vValue, vName, vFeatures)\n    }\n}",
+  "Tag": "kb2076071355"
+}

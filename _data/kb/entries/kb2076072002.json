@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072002,
+    "Title": "Developing Windows Services; James Foster",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-08-24T18:00:52",
+    "ModificationDate": "2008-08-24T18:00:52",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "With the .NET Framework, it is much easier to develop applications that run as Windows Services using classes defined in the System.ServiceProcess namespace. This article starts with an overview of the ServiceProcess namespace and the classes you are most likely to use in developing your own services. Next, we’ll look at an developing an example using Visual Studio.NET. Finally, we’ll cover the installation of your service.\n\n[http://www.dotnetcoders.com/web/\n    Articles/ShowArticle.aspx?article=32]\n\nAlso see “How to create a setup project for a Windows Service application in Visual C#” here:\n\n    http://support.microsoft.com/kb/816169\n\n\n",
+  "Tag": "kb2076072002"
+}

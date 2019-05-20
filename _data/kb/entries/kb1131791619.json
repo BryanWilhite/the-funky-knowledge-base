@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 1131791619,
+    "Title": "Use of the VarType() Function with Optional Function Parameters",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-02-09T18:21:46",
+    "ModificationDate": "1999-02-09T18:21:46",
+    "TemplateId": null,
+    "SegmentId": 76,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Since Optional function arguments are variants, the VarType() function should be used to \"sub-type\" these arguments for a non-variant data type. The sample code fragment below illustrates the form:\n\nPublic Sub OpenTextFile(FileName As String, _\n        Optional OpenWrite = False)\n \n    On Error GoTo HandleErr\n    \n    'Check optional input.\n    If VarType(OpenWrite) <> vbBoolean Then Err.Raise 450\n\n    'More code may go here.\n\nEnd Sub\n\nNote the use of the instrinsic constant vbBoolean. For a complete list of contants refer to the online help documentation.",
+  "Tag": "kb1131791619"
+}

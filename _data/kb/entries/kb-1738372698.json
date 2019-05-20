@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -1738372698,
+    "Title": "Book: Access 97 Power Programming; Chapter 3 Highlights (2/3): \"Working with Application Collections And Data Access Objects\"",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-10-01T13:42:17",
+    "ModificationDate": "1998-10-01T13:42:17",
+    "TemplateId": null,
+    "SegmentId": 64,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The \"Default Instance\" of a Form\n\nThe Application object refers to all of the forms in an Access .MDB via the Forms collection. This collection contains class modules that happen to be \"automatically instanced\" when the .MDB file is loaded.\n\nThe Object Browser's Project/Library field contains a project name referring to what is stored in the .MDB file. (This project name is stored in the Title field under File > Database Properties > Summary.) Here are found the default instances of all the Forms (and Reports) in the .MDB file. For example, a form called \"Form1\" in a file called DB1.MDB will been seen as Form_Form1.\n\nThe exact way to refer this instance in code when setting a property like Caption is:\n\n    DB1.Form_Form1.Caption = \"Test\"\n\nThe shorthand syntax is:\n\n    Form_Form1.Caption = \"Test\"\n\nProperties set against the default instance of an object are not \"saved\" (they do not modify the underlying class module). Like any other object, they have a limited life.\n\n\nProgramming Multiple Copies of the Same Form (pg. 83)\n\nForms used in multiple-instance references must have modules to denote the variable storing the references to the instanced forms. In some cases you may have to set the HasModule property to True.\n\nThe general form for instancing a new form is:\n\n    Set frmInstanced = New Form_DefaultInstance\n    '\n    '...where Form_DefaultInstance is the class name\n    'of the instancing form.\n    '\n    With frmInstanced\n        .Filter = \"<stuff>\"\n        .FilterOn = True\n        <more stuff>\n        .Visible = True\n    End With\n\nNote that the Visible property of the instanced form must be explicitly set to True. When multiple copies of a forms class are instanced, it is not possible to \"find\" the forms in the Forms collection without using something like a custom property or the Tag property to differentiate among forms. \n\nEach time the New keyword is used above, a new form is added to the Forms collection. In the Unload event of the instancing form, set the variable referencing the instanced forms to Nothing. This event causes all of the Form_DefaultInstance forms in the Forms collection to close.\n\nTo keep instanced forms open when the instancing form closes, modify the form above by adding these lines of code after the With structure:\n\n    Set p_colForms As New Collection\n    p_colForms.Add frmInstanced\n\nwhere p_colForms is a public variable defined in a module.",
+  "Tag": "kb-1738372698"
+}

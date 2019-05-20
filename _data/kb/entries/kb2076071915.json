@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071915,
+    "Title": "Adobe Flex 2 and Fireworks CS3: Fireworks Only Supports mx:Image Elements",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-11-21T23:06:42",
+    "ModificationDate": "2007-11-21T23:06:42",
+    "TemplateId": null,
+    "SegmentId": 84,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<mx:Application\n    x­mlns:mx=\"http://www.adobe.com/2006/mxml\"\n    width=\"128\" height=\"128\"\n    layout=\"absolute\">\n\n<!--\n    The Adobe Fireworks CS3 File > Export command\n    has an export type called “MXML and Images”\n    that ALWAYS produces mx:Image elements.\n\n    There is NO SUPPORT for vector-like elements\n    such as mx:Shape.\n-->\n\n\t<mx:Image\n        source=\"Image.gif\"\n        x=\"5\" y=\"14\"\n        width=\"121\" height=\"111\"/>\n\n</mx:Application>\n",
+  "Tag": "kb2076071915"
+}

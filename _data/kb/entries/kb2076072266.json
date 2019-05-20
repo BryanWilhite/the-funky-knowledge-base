@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072266,
+    "Title": "C# LINQ to XML: “Empty Elements and Self-Closing Tags”; XElement",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-09-20T21:30:05",
+    "ModificationDate": "2009-09-20T21:30:05",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Last January, I blogged about an approach to normalizing LINQ to XML trees.  That post is based on another post, Manually Cloning LINQ to XML Trees.  In those posts, my code to clone an element would clone a self-closing element (<Tag/>) as self-closing, and an empty element with a start and end tag (<Tag></Tag>) as an element with start and end tag.\n\nBut, in fact, this was not necessary – empty elements can be always serialized as self-closing elements – the XML specification states, “The representation of an empty element is either a start-tag immediately followed by an end-tag, or an empty-element tag.\"\n\nFurther, per the specification, “the empty-element tag SHOULD be used, and SHOULD only be used, for elements which are declared EMPTY”.  This means that it’s always safe to serialize an empty element as a self-closing element, but sometimes it’s not correct to serialize an empty element with a start and end tag.\n\nOriginally, the code to clone an element looked like this:\n\nstatic XElement CloneElement(XElement element)\n{\n\n    return new XElement(element.Name,\n\n        element.Attributes(),\n\n        element.Nodes().Select(n =>\n\n        {\n\n            XElement e = n as XElement;\n\n            if (e != null)\n\n                return CloneElement(e);\n\n            return n;\n\n        }),\n\n        (!element.IsEmpty && !element.Nodes().OfType<XText>().Any()) ? \"\" : null\n\n    );\n\n}\n\nI’ve revised both of the above referenced posts to remove the code to exactly serialize empty elements as they were in the source document.  The new code looks like this:\n\nstatic XElement CloneElement(XElement element)\n{\n\n    return new XElement(element.Name,\n\n        element.Attributes(),\n\n        element.Nodes().Select(n =>\n\n        {\n\n            XElement e = n as XElement;\n\n            if (e != null)\n\n                return CloneElement(e);\n\n            return n;\n\n        })\n\n    );\n\n}\n\nstatic void Main(string[] args)\n{\n\n    XElement root = XElement.Parse(\"<Root></Root>\");\n\n    Console.WriteLine(\"Original tree\");\n\n    Console.WriteLine(root);\n\n    Console.WriteLine();\n\n    Console.WriteLine(\"Cloned tree\");\n\n    XElement rootClone = CloneElement(root);\n\n    Console.WriteLine(rootClone);\n\n}\n\nThe code is simpler and more correct.  When you run this example, it produces:\n\nOriginal tree\n\n<Root></Root>\n\nCloned tree\n\n<Root />\n\n[http://blogs.msdn.com/ericwhite/archive/\n    2009/07/08/empty-elements-and-self-closing-tags.aspx]",
+  "Tag": "kb2076072266"
+}

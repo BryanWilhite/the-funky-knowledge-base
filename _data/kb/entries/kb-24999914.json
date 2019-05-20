@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -24999914,
+    "Title": "Windows 95: Registry; Making Thumbnails of .BMP Images Into Icons",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2003-07-31T14:46:18",
+    "ModificationDate": "2003-07-31T14:46:18",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "In REGEDIT.EXE:\n\nSelect HKEY_CLASSES_ROOT\\Paint.Picture\\DefaultIcon.\n\nDouble-click on default in the left pane.\n\nNote the existing value which should be C:\\WINDOWS\\SYSTEM\\cool.dll,41.\n\nReplace this value with '%1' (a percent sign and arabic numeral 1)\n\nReboot Windows 95 and look for BMP file icons.",
+  "Tag": "kb-24999914"
+}

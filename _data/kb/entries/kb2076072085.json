@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072085,
+    "Title": "“SharePoint: Delete / Purge / Remove Orphaned Sites or Site Collections”; sharenotes.wordpress.com",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-12-02T14:26:42",
+    "ModificationDate": "2008-12-02T14:26:42",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Microsoft makes it tough with simple things like finding and deleting the orhpaned sites/site collections. There seems to be no well documented way to do this task. After googling for many search strings, below are few resources and steps you can take to clean up your content and config databases.\n\n1. Run the following command:\n\nstsadm -o databaserepair -url http://<URL_of_WindowsSharePointServices_Site> -databasename <name of database that contains the orphan item>\n\n2. If the above command reveals any orhpaned sites, then run the above command with -deletecorruption parameter:\n\nstsadm -o databaserepair -url http://<URL_of_WindowsSharePointServices_Site> -databasename <name of database that contains the orphan item that is to be deleted> -deletecorruption\n\n[http://sharenotes.wordpress.com/2007/11/19/\n    deleting-purging-removing-orphaned-sites-or-site-collections/]",
+  "Tag": "kb2076072085"
+}

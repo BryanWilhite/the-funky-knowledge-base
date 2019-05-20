@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071657,
+    "Title": "Flippant Remarks about Delegates in C#",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2005-03-21T15:56:07.38",
+    "ModificationDate": "2005-03-21T15:56:07.38",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "A delegate acts on behalf of a method. It is the representative of this method. The delegate below represents all methods that return a Boolean and have a single argument of type Integer:\n\n    delegate bool MathDelegate(int x);\n\nTo demonstrate this generality, we can create a void method that takes two arguments, the delegate itself and its single argument:\n\n    void AboutNumber(MathDelegate Func, int x)\n    {\n        if (Func(x)) //Invoke the delegate.\n            Response.Write(\" is \");\n        else\n            Response.Write(\" is not \");\n    }\n\nNow AboutNumber() can run all of the following methods:\n\n    bool IsEven(int x) \n    {\n        if (x % 2 == 0) \n            return true;\n        else\n            return false;\n    }\n\n    bool IsPrime(int x)\n    {\n        for(int i = 2; i > (x /2); i++)\n            if (x % i == 0) \n                return true;                                        \n            return false;\n    }\n\nSo, because of delegates a variable number of methods can be funneled through one method.",
+  "Tag": "kb2076071657"
+}

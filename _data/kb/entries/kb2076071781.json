@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071781,
+    "Title": "ASP.NET ERROR in Visual Studio: \"Unable to start debugging on the web server. Debugging failed because integrated Windows authentication is not enabled. Please see Help for assistance.\"",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-01-13T19:14:31",
+    "ModificationDate": "2007-01-13T19:14:31",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Windows XP Solution: In the Internet Information Services (IIS) Management Console under Default Web Site Properties > Directory Security > Anonymous Access and Authentication Control > Edit... > Authenticated Access > Integrated Windows authentication, check the check box.",
+  "Tag": "kb2076071781"
+}

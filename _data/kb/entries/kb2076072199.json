@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072199,
+    "Title": "Blender 3D: “Getting Blender to find Python in Windows XP”",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-08-17T17:16:08",
+    "ModificationDate": "2009-08-17T17:16:08",
+    "TemplateId": null,
+    "SegmentId": 62,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "If this is what appears on the console when you start Blender:\n\nCompiled with Python version 2.5.\n'import site' failed; use -v for traceback\nChecking for installed Python... No installed Python found.\n\n\nThis means Blender could not find Python on your box. Either Python is not installed or it is the wrong version. Blender needs Python to run scripts. Blender 2.44 needs Python 2.5 and Blender 2.43 needs Python 2.4.\n\nTo resolve this issue you have to tell the system and blender how to find the necessary Python files to work.\n\n- download Blender from blender.org (yah, duh, eh?)\n\n- download the associated Python for Windows from python.org ( for example you need Python 2.4 for Blender 2.43 but you need Python 2.51 for Blender 2.44; the console tells you which version of Python Blender needs when it starts by saying\"Compiled with Python version ...\")\n\n- install Python (actually I am not sure the install order matters at all but hey, it makes more sense to me to have Python setup before trying to get Blender to run properly)\n\n- once python is installed, right click on you \"My Computer\" icon on your desktop and bring up \"Properties\" select the \"Advanced\" tab and then the \"Environment Variables\" button at the bottom left of that tab\n\n- you get a window with two panes, \"User Variables for <yourusername>\" for the current user and \"System Variables\" for all users. Under the \"System Variables\" window there is a \"New\" button. Click it to add a new variable called \"PYTHONPATH\". If you do not have administrator privileges you will not be able to add the new System Variable, so at least add it to your \"User Variables\" section by clicking on the new button underneath the \"User Variables for...\" window.\n\n- In the editing dialogue that pops up, the new variable name, as I said, is \"PYTHONPATH\" and the variable value is the path to your Python install. If you selected the default \"C:\\Python25\\\" directory for Python for Windows version 2.51, then enter the following path information \"C:\\Python25\\;C:\\Python25\\DLLs\\;C:\\Python25\\Lib\\;C:\\Python25\\Lib\\lib-tk;\"\n\n-Click OK to exit the variable editing dialogue, click OK to leave the Environment Variables window and click OK once more to leave the System Properties dialogue, thereby saving all your changes.\n\n- you may have to reboot, but probably not.\n\n- install Blender\n\n- Run Blender\n\n- If you are still getting that console output saying that Blender can't find a Python install instead of Blender saying \"Checking for installed Python...got It\", then with Blender running, bring up the Info window (See this page http://www.blender.org/tutorials-help/tutorials/tutorial-folder/the-blender-windows/) which you get at by dragging down the bottom edge of what looks like the menu at the top of the screen. Click on the \"File Paths\" button and in the Python entry box, type in \"C:\\Python25\\Lib\". Drag the bottom edge of the Info window back up and then in that upper menu, click on \"File\" then \"Save Default Settings\".\n\n- you should now quit and restart Blender.\n\n- if that still doesn't work, try rebooting the system so that the Environment variables get properly initialized.\n\nI hope that helps.\n\nPeter\n\n[http://www.blender.org/forum/viewtopic.php?t=11938]",
+  "Tag": "kb2076072199"
+}

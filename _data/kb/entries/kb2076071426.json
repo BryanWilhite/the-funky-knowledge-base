@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071426,
+    "Title": "Windows 2000: Flippant Remarks about Losing Windows 2000",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2001-12-06T21:38:44.467",
+    "ModificationDate": "2001-12-06T21:38:44.467",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "I lost my SYSTEM hive and Windows 2000 would not start. I was shocked but comfortably numb. At least it wasn't a hard disk failure. I assumed the worst-case scenario would be something like what I recorded back in my halcyon days of Windows NT:\n\n    http://www.kintespace.com/kb/articles/912851386.html\n\nHowever, I found that Windows 2000 has something called Windows Recovery Console. As of this writing it is described at:\n\n    http://support.Microsoft.com/support/kb/articles/Q229/7/16.ASP\n\nThis tool allowed me to recover my SYSTEM hive in a process that is similar to the one described in detail at:\n\n    http://support.Microsoft.com/support/kb/articles/Q269/0/75.ASP\n\nThe technique centers upon having a backup copy of the registry. The copy I was forced to use was not updated because I failed to understand the importance of making an Emergency Backup Disk.\n\nOnce the SYSTEM hive was replaced via the Console Windows booted up. The next stage was to look through the Event Logs for errors and responding to them. Many things happened beyond the scope of this funky thang. Let's just say that details were hell.\n",
+  "Tag": "kb2076071426"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 912015905,
+    "Title": "Microsoft Windows NT 4.0: Core Installation",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-11-26T20:06:56",
+    "ModificationDate": "1998-11-26T20:06:56",
+    "TemplateId": null,
+    "SegmentId": 71,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Context: DOS 6.22 is required to install Windows 95; Windows 95 is required to install Windows NT.\n\nInstall Windows NT from Windows 95 command prompt:\n\nE:\\i386\\WINNT /B\n\nChoose C:\\WINNT for installation directory. Select a Custom installation. Computer Name is \"Songhay.\" Do not make an Emergency Repair Disk.\n\nSelect Components (different from defaults):\n    Accessibility Options: (unchecked)\n    Accessories > Imaging: (unchecked)\n    Accessories > Object Packager: (unchecked)\n    Accessories > Paint: (unchecked)\n    Accessories > Communications: (unchecked)\n    Windows Messaging > Microsoft Mail: (unchecked)\n\nChoose \"Do not connect this computer to a network at this time\" and continue leaving defaults.\n\n\nLogged in as Administrator for the first time:\n\nDelete the My Briefcase Icon.\n\nNote: Ports COM1 and COM2 were created by this installation. Ports > Settings > Advanced show \"Default\" for addresses and interrupts.\n\nUser Manager:\n    Rename the users \"Administrator\" and \"Guest.\"\n    Disable the Guest account.\n    Add a new user to the Power Users group.\n    Set a Home Directory for the new user.\n\nFrom the User Manager, select Policies > User Rights Policy > Show Advanced User Rights. The Administrators and Power Users groups can \"Access this computer from a network\"; the Administrators, Power Users and Backup Operators groups can \"Log on locally.\"\n\nApply SP3 from MSIE4 CD-ROM. Select Install from PNPISA.INF; PNP will load Diamond SupraExpress 56i Voice V.90 with modem jumpers set to COM1 (03F8, IRQ4); PNP will install Creative Labs AWE 32 (IRQ5, DMA 1, DMA 5, 0220-022F, 0330-0331, 0388-038B); PNP will attempt to install IDE CD-ROM Controller on AWE 32 card (Do not install a driver); PNP will install Creative Labs Advanced Wave Effects Synthesis (0620-0623, 0A20-0A23, 0E20-0E23); PNP will install Microsoft Joystick Port Enabler (0200-0207).\n\nREGEDT32.EXE: set Registry to clear log in user name and swap file.",
+  "Tag": "kb912015905"
+}

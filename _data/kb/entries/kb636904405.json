@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 636904405,
+    "Title": "VBScript and ASP: The \"Brute Force\" Debugging of ASP Pages",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-12-23T14:56:36",
+    "ModificationDate": "1999-12-23T14:56:36",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "At this time in my life, I find it convenient to debug my ASP pages directly in the web browser window. This probably comes from my \"traditional\" building of ASP pages with only a text editor. I am sure I am missing out on the code breaking features of Visual InterDev. But for now, when I want to see the contents of a variable (e.g. vReturn), I would use the following lines of code:\n\n    Response. Write \"My Variable: \" & vReturn\n    Response.End\n\nThese lines are placed in the same manner that VB's Stop statement was heavily used in the \"old days.\" And they should be feared in the same way as well!\n\nAnother more subtle technique is to Write HTML comments with the form:\n\n    Response. Write \"<!-- My Variable: \" & vReturn & \"-->\"",
+  "Tag": "kb636904405"
+}

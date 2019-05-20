@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071888,
+    "Title": "DateTime.ToString() Patterns in PowerShell",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-10-01T14:39:54",
+    "ModificationDate": "2007-10-01T14:39:54",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "This is the output:\n\nMM/dd/yyyy ==> 10/01/2007\n\ndddd, dd MMMM yyyy ==> Monday, 01 October 2007\n\nMM/dd/yyyy HH:mm ==> 10/01/2007 14:35\n\nMM/dd/yyyy hh:mm tt ==> 10/01/2007 02:35 PM\n\nMM/dd/yyyy h:mm tt ==> 10/01/2007 2:35 PM\n\nMM/dd/yyyy HH:mm:ss ==> 10/01/2007 14:35:48\n\nMMMM dd ==> October 01\n\nyyyy'-'MM'-'dd'T'HH':'mm':'ss.fffffffK ==> 2007-10-01T14:35:48.7031250-07:00\n\nddd, dd MMM yyyy HH':'mm':'ss 'GMT' ==> Mon, 01 Oct 2007 14:35:48 GMT\n\nyyyy'-'MM'-'dd'T'HH':'mm':'ss ==> 2007-10-01T14:35:48\n\nHH:mm ==> 14:35\n\nhh:mm tt ==> 02:35 PM\n\nHH:mm:ss ==> 14:35:48\n\nyyyy'-'MM'-'dd HH':'mm':'ss'Z' ==> 2007-10-01 14:35:48Z\n\ndddd, dd MMMM yyyy HH:mm:ss ==> Monday, 01 October 2007 14:35:48\n\nyyyy MMMM ==> 2007 October\n\nd ==> 10/1/2007\n\nD ==> Monday, October 01, 2007\n\nf ==> Monday, October 01, 2007 2:35 PM\n\nF ==> Monday, October 01, 2007 2:35:48 PM\n\ng ==> 10/1/2007 2:35 PM\n\nG ==> 10/1/2007 2:35:48 PM\n\nm ==> October 01\n\nr ==> Mon, 01 Oct 2007 14:35:48 GMT\n\ns ==> 2007-10-01T14:35:48\n\nu ==> 2007-10-01 14:35:48Z\n\nU ==> Monday, October 01, 2007 9:35:48 PM\n\ny ==> October, 2007\n\n\n\nThis is the PowerShell script that produced the output:\n\n$d = [System.DateTime]::Now\n\n$s = \n    \"MM/dd/yyyy\",\n    \"dddd, dd MMMM yyyy\",\n    \"MM/dd/yyyy HH:mm\",\n    \"MM/dd/yyyy hh:mm tt\",\n    \"MM/dd/yyyy h:mm tt\",\n    \"MM/dd/yyyy HH:mm:ss\",\n    \"MMMM dd\",\n    \"yyyy'-'MM'-'dd'T'HH':'mm':'ss.fffffffK\",\n    \"ddd, dd MMM yyyy HH':'mm':'ss 'GMT'\",\n    \"yyyy'-'MM'-'dd'T'HH':'mm':'ss\",\n    \"HH:mm\",\n    \"hh:mm tt\",\n    \"HH:mm:ss\",\n    \"yyyy'-'MM'-'dd HH':'mm':'ss'Z'\",\n    \"dddd, dd MMMM yyyy HH:mm:ss\",\n    \"yyyy MMMM\",\n    \"d\",\n    \"D\",\n    \"f\",\n    \"F\",\n    \"g\",\n    \"G\",\n    \"m\",\n    \"r\",\n    \"s\",\n    \"u\",\n    \"U\",\n    \"y\"\n\nforeach( $format in $s )\n{\n    $output = [System.String]::Format(\"{0} ==> {1}{2}\",\n        $format,$d.ToString( $format ), [System.Environment]::NewLine )\n    Write-Host $output\n}",
+  "Tag": "kb2076071888"
+}

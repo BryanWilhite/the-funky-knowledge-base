@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 911637588,
+    "Title": "Code: Scanning A Root for Files and Directories",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-11-30T18:36:08",
+    "ModificationDate": "1998-11-30T18:36:08",
+    "TemplateId": null,
+    "SegmentId": 76,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Public Function basScan() As Boolean\n    \n    Dim strPath As String, strName As String\n    \n    On Error GoTo basScan_Err\n\n    basScan = True    \n\n    strPath = \"C:\\\"\n    \n    strName = VBA.Dir(strPath, vbDirectory)\n    \n    Do While strName <> Empty\n        'Ignore file system directories.\n        If strName <> \".\" And strName <> \"..\" Then\n            ' Use bitwise comparison to make sure strName is a directory.\n            If (VBA.GetAttr(strPath & strName) And vbDirectory) > 0 Then\n                Debug.Print \"Directory: \" & strName\n            ' Use bitwise comparison to make sure strName is a file.\n            ElseIf (VBA.GetAttr(strPath & strName) And vbDirectory) = 0 Then\n                Debug.Print \"File: \" & strName\n            End If\n        End If\n        ' Get next entry for current path.\n        strName = VBA.Dir\n    Loop\n            \nbasScan_Exit:\n    Exit Function\n    \nbasScan_Err:\n    Select Case VBA.Err\n        Case Else\n            VBA.MsgBox VBA.Err & \": \" & VBA.Err.Description, _           \n                 vbCritical, \"basScan Error\"\n            basScan = False\n            Resume basScan_Exit\n    End Select\nEnd Function",
+  "Tag": "kb911637588"
+}

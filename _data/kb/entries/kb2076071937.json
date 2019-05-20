@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071937,
+    "Title": "Adobe ActionScript 3.0 code block: get/set Template; Object Properties",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-01-14T17:59:56",
+    "ModificationDate": "2008-01-14T17:59:56",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The get/set form looks like this:\n\n    public function get prop():[type]\n    {\n        return this._prop;\n    }\n\n    public function set prop( value:[type] ):void\n    {\n        this._prop = value;\n    }\n\nA more compact spacing:\n\n    public function get prop():[type] { return this._prop; }\n\n    public function set prop( value:[type] ):void { this._prop = value; }\n",
+  "Tag": "kb2076071937"
+}

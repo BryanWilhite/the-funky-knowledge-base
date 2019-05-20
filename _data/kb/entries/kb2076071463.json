@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071463,
+    "Title": "JavaScript and HTML Code: The Inline Pop Up Window Off an ANCHOR Element; The open() Method of the window Object.",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2002-04-08T14:59:45.33",
+    "ModificationDate": "2002-04-08T14:59:45.33",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "<a\n    href=\"[URI]\"\n    target=\"PopUp\"\n    onClick=\"javascript:window.open('','PopUp','toolbar=0,location=0,scrollbars=1,resizable=1,directories=0,status=0,width=320,height=240')\"\n    onMouseOver=\"javascript:window.status='[Window Status]';return true;\"\n    onMouseOut=\"javascript:window.status=window.defaultStatus;return true;\">[Link Text]</a>\n",
+  "Tag": "kb2076071463"
+}

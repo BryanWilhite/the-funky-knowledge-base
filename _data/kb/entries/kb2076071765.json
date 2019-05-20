@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071765,
+    "Title": "Ubuntu Linux: Removing the MySQL Daemon from Startup",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2006-09-27T22:52:49.05",
+    "ModificationDate": "2006-09-27T22:52:49.05",
+    "TemplateId": null,
+    "SegmentId": 73,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Remove the MySQL daemon from startup with the Debian Runlevel configuration tool, rcconf. More details about this tool is here:\n\n    http://packages.debian.org/stable/admin/rcconf\n\nInstall the tool with APT:\n\n    sudo apt-get install rcconf\n\nThen run the configuration tool:\n\n    sudo rcconf\n\nThis will display a basic GUI that will allow you to uncheck the MySQL daemon, mysql. There may be two other MySQL related items, mysql-ndb and mysql-ndb-mgm. It is not essential to disable these administrative services to prevent the MySQL server from running. To start the daemon manually enter:\n\n    sudo /etc/init.d/mysql start\n\nTo edit the configuration before starting the server, run:\n\n    sudo nano /etc/mysql/my.cnf\n\nVerify that the server is running with:\n\n    mysqladmin -u root -p version\n",
+  "Tag": "kb2076071765"
+}

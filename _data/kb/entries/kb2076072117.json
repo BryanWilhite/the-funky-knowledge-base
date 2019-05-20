@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072117,
+    "Title": "Akregator PROBLEM: Font Size Not Changing in Gnome Akregator 1.2.2 on KDE 3.5.2 on Ubuntu 6.x",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-04-07T21:19:18",
+    "ModificationDate": "2009-04-07T21:19:18",
+    "TemplateId": null,
+    "SegmentId": 73,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Since Akregator uses a KDE runtime environment, it is independent of many Gnome preferences, including UI font sizes. (Note that you can set browser fonts in Akregator by choosing Settings > Configure Akregator… > Appearance > Font Size.) You have to edit a configuration file, ~.kde/share/config/kdeglobals, to change the font size. For example, the following sets all UI fonts to 14:\n\n[General]\nfixed=Monospace,14,-1,5,50,0,0,0,0,0\nfont=Sans Serif,14,-1,5,50,0,0,0,0,0\nmenuFont=Sans Serif,14,-1,5,50,0,0,0,0,0\ntaskbarFont=Sans Serif,14,-1,5,50,0,0,0,0,0\ntoolBarFont=Sans Serif,14,-1,5,50,0,0,0,0,0\n\n",
+  "Tag": "kb2076072117"
+}

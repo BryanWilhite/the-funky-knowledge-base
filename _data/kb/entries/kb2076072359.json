@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072359,
+    "Title": "WPF: “What is the difference between the ‘Resource’ and ‘Embedded Resource’ build actions?”",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2010-03-22T13:32:43",
+    "ModificationDate": "2010-03-22T13:32:43",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "What is the difference between the “Resource” and “Embedded Resource” build actions?\n\n“Resource” and “Content” build actions are to access the WPF resources using the Uris. However “Embedded Resource” is for prior technologies. However both options embeds the resource in assembly but “Resource” option to be used for WPF.\n\n[http://csharpsimplified.wordpress.com/2009/02/16/resources-in-wpf-i-binary-resources/]",
+  "Tag": "kb2076072359"
+}

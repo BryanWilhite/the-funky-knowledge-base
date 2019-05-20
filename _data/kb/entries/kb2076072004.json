@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072004,
+    "Title": "List of LINQ Providers; Robert Shelton",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-08-24T18:05:34",
+    "ModificationDate": "2008-08-24T18:05:34",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "As of month 7, 2008:\n\n# LINQ to Amazon\n# LINQ to Active Directory\n# LINQ to Bindable Sources (SyncLINQ)\n# LINQ over C# project\n# LINQ to CRM\n# LINQ To Geo—Language Integrated Query for Geospatial Data\n# LINQ to Excel\n# LINQ to Expressions (MetaLinq)\n# LINQ Extender (Toolkit for building LINQ Providers)\n# LINQ to Flickr\n# LINQ to Google\n# LINQ to Indexes (LINQ and i40)\n# LINQ to IQueryable (Matt Warren on Providers)\n# LINQ to JSON\n# LINQ to NHibernate\n# LINQ to JavaScript\n# LINQ to LDAP\n# LINQ to LLBLGen Pro\n# LINQ to Lucene\n# LINQ to Metaweb(freebase)\n# LINQ to MySQL, Oracle and PostgreSql (DbLinq)\n# LINQ to NCover\n# LINQ to Opf3\n# LINQ to Parallel (PLINQ)\n# LINQ to RDF Files\n# LINQ to Sharepoint\n# LINQ to SimpleDB\n# LINQ to Streams\n# LINQ to WebQueries\n# LINQ to WMI\n# LINQ to XtraGrid\n\n[http://rshelton.com/archive/\n    2008/07/11/list-of-linq-providers.aspx]\n",
+  "Tag": "kb2076072004"
+}

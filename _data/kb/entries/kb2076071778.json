@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071778,
+    "Title": "SQL Server 2005 t-SQL: Bulk Insert Operation",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2006-10-20T04:00:35.19",
+    "ModificationDate": "2006-10-20T04:00:35.19",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "DECLARE @cmd VARCHAR(512)\nDECLARE @lf CHAR(1)\nSET @lf = CHAR(10) --Unix line break\nSET @cmd='\nBULK INSERT LogImport\nFROM ''{0}''\nWITH\n(\n    ROWTERMINATOR = '''+@lf+'''\n)\n",
+  "Tag": "kb2076071778"
+}

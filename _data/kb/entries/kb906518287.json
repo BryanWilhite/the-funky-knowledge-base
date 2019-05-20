@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 906518287,
+    "Title": "Java in VB Terms: Fundamentals of the AWT",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-09-22T19:59:41",
+    "ModificationDate": "1998-09-22T19:59:41",
+    "TemplateId": null,
+    "SegmentId": 69,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Perhaps it is not too dangerous to think of the AWT in VB terms. Let's try. The VB form should translate to the Container and the form's grid could somehow make it to Java's Layout Manager. VB Form Controls are answered in Java by Components. The Component Peers would lead to the operating system in the same way as the Windows Operating System lies behind VB. So here is our ill-fated summary:\n\nWindows Operating System ---> ComponentPeer\nForm ---> Container (namely the Panel or Frame subclasses)\nForm Grid (VB Design Mode) ---> Layout Manager\nControl ---> Component",
+  "Tag": "kb906518287"
+}

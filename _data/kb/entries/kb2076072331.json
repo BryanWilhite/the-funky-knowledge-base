@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072331,
+    "Title": "WPF: WPF DispatcherUnhandledException Pattern",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2010-02-23T16:35:48",
+    "ModificationDate": "2010-02-23T16:35:48",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "/// <summary>\n/// Interaction logic for App.xaml\n/// </summary>\npublic partial class App : Application\n{\n    protected override void OnStartup(StartupEventArgs e)\n    {\n        base.OnStartup(e);\n\n        this.DispatcherUnhandledException +=\n             new DispatcherUnhandledExceptionEventHandler(\n                 (s, args) =>\n                 {\n                     MessageBox.Show(string.Format(\"An error occured: {0}\", \n                     args.Exception.Message), \"Error\");\n                     args.Handled = true;\n                 });\n    }\n}\n",
+  "Tag": "kb2076072331"
+}

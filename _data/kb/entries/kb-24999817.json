@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -24999817,
+    "Title": "VBA Can't Tell What Day It Is?",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-05-19T09:14:05",
+    "ModificationDate": "1998-05-19T09:14:05",
+    "TemplateId": null,
+    "SegmentId": 76,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Wrong. VBA can tell what day it is. VBA has the Weekday() function.",
+  "Tag": "kb-24999817"
+}

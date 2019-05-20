@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071940,
+    "Title": "XAMPP Installation Notes",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-02-21T14:41:05",
+    "ModificationDate": "2008-02-21T14:41:05",
+    "TemplateId": null,
+    "SegmentId": 73,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The relevant documentation is here:\n\n    http://www.apachefriends.org/en/xampp-linux.html\n\nStop any previous running version of XAMPP with this:\n\n    sudo /opt/lampp/lampp stop\n\nIt may be a best practice to uninstall any previous version of XAMPP for a “clean install” with this:\n\n    sudo rm -rf /opt/lampp\n\nInstall the new version from the archive with this:\n\n    sudo tar xvfz xampp-linux-1.6.6.tar.gz -C /opt\n\nStart the new version of XAMPP and set the security with this:\n\n    sudo /opt/lampp/lampp start\n\n    sudo /opt/lampp/lampp security\n\nThe practice here is to stop the FTP server (after setting a password) with this:\n\n    sudo /opt/lampp/lampp stopftp\n\nThe basics are now in place. From here MySQL databases are generated in loaded. And a script is run to generate symbolic links from /opt/lampp/htdocs to my local development web sites in my home directory (because XAMPP configures Apache to follow symbolic links by default).\n",
+  "Tag": "kb2076071940"
+}

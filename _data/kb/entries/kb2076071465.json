@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071465,
+    "Title": "CD-ROM: Flippant Remarks about AutoPlay for Windows Systems",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2002-04-17T09:05:43.597",
+    "ModificationDate": "2002-04-17T09:05:43.597",
+    "TemplateId": null,
+    "SegmentId": 66,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "So far my only concern is to get Windows CD-ROMs to load HTML files automatically as investing in other Win32 binaries is beyond my scope. Microsoft addresses this issue somewhat historically in \"How can I make a CD-ROM load an HTML file automatically when the disk is inserted into the drive?\" at:\n\n    http://www.microsoft.com/msj/0499/win32/win320499.htm\n\nWhile this is a great reference, I have simply copied Microsoft's own way of auto-loading HTML files by examining a few of the promotional CD-ROMs I have received from them over the years. Their \"internal\" way of doing it seems to be more exhaustive, covering Alpha-based systems (the entire NT family). This is a bit of an overkill but (flippantly) here we are.\n",
+  "Tag": "kb2076071465"
+}

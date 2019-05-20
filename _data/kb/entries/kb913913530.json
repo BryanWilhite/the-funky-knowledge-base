@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 913913530,
+    "Title": "Perl: Returning the Last Five Errors from a Server Log",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-12-17T08:54:44",
+    "ModificationDate": "1998-12-17T08:54:44",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "#!/path/to/perl\nopen(CMDPIPE, \"tail -5 /path/to/server/error/log |\");\nprint \"Content-type: text/html\\n\\n\";\nprint \"<HTML>\\n\";\nprint \"<PRE>\\n\";\nprint <CMDPIPE>;\nclose (CMDPIPE);\nprint \"</PRE>\\n\";\nprint \"</HTML>\\n\";",
+  "Tag": "kb913913530"
+}

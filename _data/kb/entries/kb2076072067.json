@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072067,
+    "Title": "XSLT 1.0: Flippant Remarks about xsl:template match=\"node()|@*\"; Copying All Nodes to Edit One Node; Understanding xsl:template priority; Doug Tidwell",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-11-10T11:48:46",
+    "ModificationDate": "2008-11-10T11:48:46",
+    "TemplateId": null,
+    "SegmentId": 84,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "This declaration\n\n    xsl:template match=\"node()|@*\"\n\ncomes to me in this move:\n\n    <xsl:template match=\"node()|@*\">\n    <xsl:copy>\n        <xsl:apply-templates select=\"node()|@*\"/>\n    </xsl:copy>\n    </xsl:template>\n\nIt is an error to assume that xsl:template and xsl:apply-templates are matching/selecting the same thing in the same context. You can cause a java.lang.StackOverflowError when you run this transformation (in Java):\n\n    <xsl:template match=\"/\">\n    <xsl:copy>\n        <xsl:apply-templates select=\"/\"/>\n    </xsl:copy>\n    </xsl:template>\n\nThis error is thrown in the above because xsl:template and xsl:apply-templates in this second declaration is actually selecting the same thing. This should be a very violent clue that recursion is taking place as xsl:apply-templates calls its parent template. To speak in imperative programming terms, this is the violence of the infinite loop.\n\nTo avoid fears of recursion it may be best to rewrite the first template like this:\n\n    <xsl:template match=\"node()|@*\">\n    <xsl:copy>\n        <xsl:apply-templates select=\"./node()|./@*\"/>\n    </xsl:copy>\n    </xsl:template>\n\nThe ./ syntax reminds us that xsl:apply-templates is selecting in context—‘underneath’ any node or any attribute selected by the template. xsl:template is selecting any node or any attribute. The xsl:template is simply ‘shallow’ copying any node or any attribute with xsl:copy. (Please recall the difference between xsl:copy and xsl:copy-of.)\n\nDoug Tidwell reminds us that node() “returns all nodes, regardless of type…all element nodes, attribute nodes, processing-instruction nodes, etc.” So it may seem redundant to express node()|@* (any node or any attribute). However, Tidwell also reminds us that, “Be aware that using node() on the child axis does not return any attribute nodes, because attributes are not considered child nodes.” [XSLT 2nd Edition p. 547]\n\nIt is important to understand that  xsl:template match=\"node()|@*\" is so broad in scope that it will conflict with another template. Explicitly setting the template priority should clearly express programmer intent:\n\n    <xsl:template match=\"node()|@*\" priority=\"-10\">\n    <xsl:copy>\n        <xsl:apply-templates select=\"./node()|./@*\"/>\n    </xsl:copy>\n    </xsl:template>\n\nThis move permits any other template next to the one above to be invoked upon a successful match especially when its priority is greater than -10. The awesome power in the xsl:apply-templates element lies in the fact that it is the only XSLT element (apart from xsl:apply-imports) that can call multiple templates—‘any other template next to the one above.’\n",
+  "Tag": "kb2076072067"
+}

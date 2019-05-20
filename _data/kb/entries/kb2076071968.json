@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071968,
+    "Title": "Visual Studio 2005/2008: “* Assembly Version vs Assembly File Version”; Vikas Goyal",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-07-01T19:42:52",
+    "ModificationDate": "2008-07-01T19:42:52",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Vikas Goyal distinguishes between Assembly Version and Assembly File Version here:\n\n    http://dotnetwithme.blogspot.com/2007/09/\n        assembly-version-vs-assembly-file.html\n\nThe Assembly File Version is prioritized because, “Providing a (*) in place of absolute number makes compiler increase the number by one every time you build… Use the assembly file version number to communicate the latest release of assembly. In this case, developers will not have to change the references and they can simply overwrite the assembly in reference path.”",
+  "Tag": "kb2076071968"
+}

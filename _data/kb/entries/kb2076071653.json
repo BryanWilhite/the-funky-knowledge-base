@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071653,
+    "Title": "ASP.NET Code: A Quick and Dirty Way to Make Cookies That Never Expire",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2005-03-15T14:29:31.997",
+    "ModificationDate": "2005-03-15T14:29:31.997",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The following takes advantage of the System.DateTime.MaxValue property, making sure that your cookie will not expire for a large time:\n\n    // Create a cookie.\n    HttpCookie cookUPrefs = new HttpCookie(\"UPrefs\");\n    cookUPrefs.Value = \"English\";\n    cookUPrefs.Expires = System.DateTime.MaxValue;\n\nBy the way, removing cookies can also involve System.DateTime static members:\n\n    // Delete the cookie by setting its expiration.\n    Response.Cookies[\"UPrefs\"].Expires = System.DateTime.Now;\n",
+  "Tag": "kb2076071653"
+}

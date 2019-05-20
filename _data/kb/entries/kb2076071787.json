@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071787,
+    "Title": "JavaServer Faces in Action Notes: Chapter 1; Introducing JavaServer Faces",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-02-27T13:35:08",
+    "ModificationDate": "2007-02-27T13:35:08",
+    "TemplateId": null,
+    "SegmentId": 69,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "RAD tools have four layers: (i) an underlying component architecture, (ii) a set of standard widgets, (iii) and application infrastructure, (iv) the tool itself.\n\nJavaServer Faces (JSF or Faces) defines three of the four layers of RAD tools, leaving \"the tool itself\" to be the NetBeans or Eclipse IDE.\n\n\"Faces can also automatically keep your UI components in sync with Java objects that collect user input values and respond to events, which are called backing beans.\"\n\n\"JSF runs on the server. As such, a Faces application will run in a standard Java web container like Apache Tomcat [ASF, Tomcat]...\"\n\n\"JavaServer Faces was introduced as Java Specification Request (JSR) 127 by Sun in May 2001...and JSF 1.1 (a maintenance release) arrived on May 27th, 2004.\"",
+  "Tag": "kb2076071787"
+}

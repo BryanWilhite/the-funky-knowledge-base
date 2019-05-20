@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071622,
+    "Title": "SQL Server 2000 Data Transformation Services; Flippant Remarks about the DTS Data Driven Query Task; Updating Data with DTS",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2004-11-23T15:13:45.737",
+    "ModificationDate": "2004-11-23T15:13:45.737",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "I am familiar with the Transform Data Task. I use this frequently because this task is related to importing and exporting data. The Data Driven Query Task became relevant when I found frustration and a few hours of misery trying to update data with the Transform Data Task.\n\nThe Microsoft documentation about the Data Driven Query Task has no pictures so its hard to visualize what is going on. This is really apparent in \"Building a Data Driven Query\" here:\n\n    http://msdn.microsoft.com/library/en-us/dtssql/dts_elemtsk1_97lj.asp\n\nA step-by-step tutorial by Marcin Policht, \"SQL Server 2000 DTS Part 10 - DTS Designer Tasks - The Data Driven Query Task\" helps quite a bit. As of this writing, it is published here:\n\n    http://www.databasejournal.com/features/mssql/article.php/10894_3315951_2\n\nIn order to understand the underlying fundamentals the MSDN article \"Data Flow in a Data Driven Query Task\" helps quite a bit. It is here:\n\n    http://msdn.microsoft.com/library/en-us/dtsprog/dtspapps_5nlf.asp\n\nHowever, I have yet to find any documentation stressing the importance of using row identifiers in the Source and the Binding table under the Data Driven Query Task Properties > Transformations tab. Row identifiers are typically the columns that represent the Primary Key of the Source and Binding table. These are used by the Update, Delete and Select queries under the Data Driven Query Task Properties > Queries tab.\n\nThe speculation here is that a line like this is absolutely necessary in an ActiveX Script Transformation mapped to an Update query:\n\n    DTSDestination(\"destinationRowID\") = DTSSource(\"sourceRowID\")\n\nI see this pattern in Marcin Policht's article. Apparently, without this line of code, the DTS package will be unable to find the row it needs to update.",
+  "Tag": "kb2076071622"
+}

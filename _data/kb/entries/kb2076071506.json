@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071506,
+    "Title": "Sonic Foundry Vegas Video 3.0 PROBLEM: Save As... Dialog Appears When Render As... Command is Executed",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2004-04-17T21:33:40.89",
+    "ModificationDate": "2004-04-17T21:33:40.89",
+    "TemplateId": null,
+    "SegmentId": 65,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "If all of the tracks are muted in a Vegas Video Project file, the Save As... dialog will appear when the Render As... Command is executed. The behavior is by design and can frustrate many a sleepy head in the middle of a pre-dawn render. Just wake up and enable at least one track!",
+  "Tag": "kb2076071506"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072166,
+    "Title": "HTML/XHTML and WordPress.org: “Format Your Images for Feed Readers”; smashingmagazine.com",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-08-09T10:03:23",
+    "ModificationDate": "2009-08-09T10:03:23",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "…add a CSS class to display the image as a block. WordPress provides the built-in class “center”:\n\n    <img src=\"myimage.jpg\" alt=\"This is my image\" class=\"center\"/>\n\n[http://www.smashingmagazine.com/2008/\n    12/02/10-useful-rss-hacks-for-wordpress/]",
+  "Tag": "kb2076072166"
+}

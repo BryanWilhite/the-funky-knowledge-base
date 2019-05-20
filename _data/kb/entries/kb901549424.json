@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 901549424,
+    "Title": "Filter by Form Events; VBA Filter Property; Order of Events; Constants",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-07-29T13:48:50",
+    "ModificationDate": "1998-07-29T13:48:50",
+    "TemplateId": null,
+    "SegmentId": 64,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Filter by Form (applying the filter):\n    Filter Event; FilterType = acFilterByForm = 0\n    Apply Filter Event; ApplyType = acApplyFilter = 1\n    Current Event\n\nDuring this Apply Filter event, Access changes the FilterOn property to True. This implies that the Filter property has been changed to a valid SQL WHERE clause.\n\nRemoving a form filter:\n    Apply Filter Event; ApplyType = acShowAllRecords = 0\n    Current Event\n\nDuring this Apply Filter event, Access changes the FilterOn property to False and leaves the Filter property unchanged.\n\nFilter by Form (closing the filter form):\n    Filter Event; FilterType = 0\n    Apply Filter Event; ApplyType = acCloseFilterWindow = 2\n    Current Event\n\nUsing VBA to change the Filter property does not cause any filter related events to fire (the Current event does not fire either) if and only if the FilterOn property equals False.\n\nHowever changing the Filter property to a valid SQL WHERE clause when FilterOn = True causes the following:\n    Current Event\n    Apply Filter Event; ApplyType = 1\n    Current Event\n\nUsing VBA to change the FilterOn property to False causes the Current event to fire if and only if the Filter property is not equal to Empty.\n\nUsing VBA to change the FilterOn property to True (when the Filter is not equal to Empty) causes the following events:\n    Apply Filter Event; ApplyType = 1\n    Current Event\n\nSetting Cancel = True inside the ApplyFilter event with VBA prevents the Filter by Form window from \"closing.\" This is not very useful. Setting the FilterOn property to False (and setting the TimerInterval property > 0) during the ApplyFilter event may prove to be very useful. One caveat: we have seen that changing the FilterOn property against a valid filter causes the Current event to fire.",
+  "Tag": "kb901549424"
+}

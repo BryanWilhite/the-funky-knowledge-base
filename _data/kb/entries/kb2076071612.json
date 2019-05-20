@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071612,
+    "Title": "MCAD/MCSD Notes: Chapter 1, Lesson 3; Using Visual Studio .NET",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2005-09-12T16:21:35.223",
+    "ModificationDate": "2005-09-12T16:21:35.223",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Lesson 3: Using Visual Studio .NET\n\nThe purpose of this lesson is to introduce the Visual Studio .NET IDE. The method of study respected here demands that familiarity with VS.NET is gained from direct experience. It follows that only a list of facts about this IDE will be listed below without introductory explanation:\n\n* One way to show the Start Page is through the menu command, Help > Show Start Page.\n\n* The Start Page > Projects tab shows the last four recently saved projects (which are actually Solutions but the book fails to distinguish them as such).\n\n* The Start Page > Online Resorces > Web Hosting Pane features Brinkster.com (this reference appears to be out of date as of this writing).\n\n* VS.NET has two types of Windows: Document windows and Tool windows.\n\n* To cause a tabbed Tool window to remain in view, toggle its pushpin, the Auto Hide button.\n\n* The Clipboard Ring keeps track of the last 20 items you have copied. The key strokes Ctrl+Shift+v can cycle through the Clipboard Ring as alternative to dragging and dropping from its Tool window.\n\n* IntelliSense technology assists with writing source code directly.\n\n* Page 18 states, \"Web forms have code-behind files associated with them...\" this statement must be modified in ASP.NET 2.0.\n\n* A Web form is associated with its code file by the @Page directive. VS.NET 2003 does not automatically maintain the Inherits attribute of the @Page directve, which refers to the ASPX page's root namespace and class name.\n\n* The AutoComplete feature in VB.NET will case key words and member names automatically. This feature is not available in C# and its case-sensitivity will not allow it to recognize key words and member names not capitalized correctly.\n\n* ASP.NET 1.x supports single-source ASPX pages as well as code-behind pages. These single-source pages feature the <script runat=\"server\"></script> pattern (and AutoComplete does not work for these pages in ASP.NET 1.x).\n\n* A Project is a group of files that produce a single assembly and its associated content and resources. A Solution is a group of projects that make up a single functional unit.\n\n* The Tools > Options > Task List command manages code comment tokens (like TODO) that are displayed in the Task list.\n\n* The Watch windows become available under Debug > Windows when VS.NET is in \"debug mode.\" Add a class field member to a Watch window by selecting it and dragging it on top of the window.\n\n* Debug keys: F9 sets a Breakpoint; F10 steps over a procedure; F11 steps into a procedure.\n\n* The Help system includes three ways to find topics: the Contents window, the Index window and the Search window.\n\n* The MSDN site gotdotnet.com specializes in .NET tutorials and other helpful resources.",
+  "Tag": "kb2076071612"
+}

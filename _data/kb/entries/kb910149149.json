@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 910149149,
+    "Title": "Core Data Services for DAO; Migration to ADO from DAO; Access 2000",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-11-30T08:38:59",
+    "ModificationDate": "1998-11-30T08:38:59",
+    "TemplateId": null,
+    "SegmentId": 64,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Every application that I build means to reflect the three-tier abstract model within Microsoft's software design guidelines. One of those tiers is Data Services. With Access 2000 and ADO in mind, I have distilled the core data services of a DAO (native ISAM) Access application.\n\nHere are the current tools:\n\nOne Private, module-level, Recordset Object Variable\n\nAll of the procedure designs that take advantage of Recordset objects see this variable. Frequently in my designs, the procedure needs to loop through a set of records or add records to a table---here I find such a variable useful.\n\n\nOne Function, Returning a Recordset Object\n\nThis function serves the Module-level Object Variable. Currently it passes arguments for only one Parameter (for parameterized queries). It needs to distinguish between tables and compiled queries.\n\n\nOne Function That Executes Action Queries\n\nThis function returns a value of type Long, indicating the number of records affected by the Action Query. This function replaces the \"seductive\" functionality of the DoCmd.RunSQL() method of the Application object.\n\n\nOne Function, Returning a Single Value from a Database Object\n\nThis function replaces the Dlookup() method of the Application object. It takes a SQL WHERE clause among its arguments and returns a Variant.\n\n\nOne Function, Returning String from tblStrings\n\nAll of my Visual Basic applications store their String Literals in a DAO table called tblStrings. I built a \"special\" function that is optimized to read from this table. This function features the Seek method of the DAO.Recordset object.",
+  "Tag": "kb910149149"
+}

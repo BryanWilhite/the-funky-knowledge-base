@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071588,
+    "Title": "SharePoint Portal Server 2003: Flippant Remarks about Setup",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2004-05-25T19:46:34.823",
+    "ModificationDate": "2004-05-25T19:46:34.823",
+    "TemplateId": null,
+    "SegmentId": 85,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "* To avoid Internet Explorer security prompts, namely those popping up because of Web Parts, add the SharePoint portal to the Trusted Sites zone.\n\n* The fastest way to expose the portal to an intranet domain (and all of the domains that trust this domain) is to add the NT AUTHORITY\\Authenticated Users group to the SharePoint Readers group.",
+  "Tag": "kb2076071588"
+}

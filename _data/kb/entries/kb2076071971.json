@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071971,
+    "Title": "Krzysztof Cwalina: The Definition of “Framework”",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-07-01T19:54:34",
+    "ModificationDate": "2008-07-01T19:54:34",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "During his recorded talk, “MSR Technical Education Series: Designing .NET Class Libraries,” Krzysztof Cwalina defined a “framework” as an OOP reusable class library.\n\nThe talk is posted here:\n\n    http://www.researchchannel.org/prog/displayevent.aspx?rID=11087&fID=2740\n",
+  "Tag": "kb2076071971"
+}

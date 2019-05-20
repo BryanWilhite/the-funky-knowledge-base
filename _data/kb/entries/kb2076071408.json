@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071408,
+    "Title": "Macromedia Flash 4: Flippant Remarks about Fundamental Design Points",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2002-06-12T13:39:26.433",
+    "ModificationDate": "2002-06-12T13:39:26.433",
+    "TemplateId": null,
+    "SegmentId": 62,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "These fundamental \"design points\" must be addressed when building Flash 4 movies:\n\nPreloading. Macromedia addresses with this point with TechNote 14673 (\"How to preload movies in Flash 4 and earlier\"). Simultaneously, I have my own design.\n\nThe Tell Target action. Use of the Tell Target action implies an understanding of Timelines in particular and modular Flash design in general. Macromedia addresses with this point with TechNote 13479 (\"How to use the Tell Target action\"). Tell Target works on \"internal\" movies (i.e. Symbols behaving as Clips with an Instance Name) and \"external\" movies (i.e. entire SWF files loaded into a movie via the Load Movie Action).\n\nLoading external movies. Macromedia addresses with this point with TechNote 14190 (\"How to use Load Movie\"). The Load Movie action is what makes mature, modular, scalable, Flash web sites possible. Moreover, the Load Movie Action is very useful when preloading does not make good design sense. The classic case is loading a movie with large amounts of streaming audio.\n\nBackground music. I have my own way of using background music in Flash movies, where there are multiple sound loops toggling on and off. When the main Movie has one scene the Background music is loaded as a Symbol with Clip Behavior. When the movie has multiple scenes it is loaded with the Load Movie action. My design is based on at:\n\n    http://www.enetserve.com/tutorials/backgrndmusictutorial.html\n\nOther major issues. As of this writing, these links discuss other major design issues in detail:\n\nBill Tagliaferro's \"Generic Scroll Bar\":\n\n    http://www.enetserve.com/tutorials/scrollbartutorial.html\n\nMacromedia TechNote 14072: \"How to create a button that will send e-mail messages\"\nMacromedia TechNote 14156: \"How to create scrolling text\"\n\n\n",
+  "Tag": "kb2076071408"
+}

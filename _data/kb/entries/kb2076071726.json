@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071726,
+    "Title": "T-SQL: User-Defined Function Structure; Scalar Form",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-03-19T19:51:30",
+    "ModificationDate": "2007-03-19T19:51:30",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "USE [Database]\nGO\n\nIF OBJECT_ID('fUserDefined') IS NOT NULL \nBEGIN \n    DROP FUNCTION fUserDefined\n    IF OBJECT_ID('fUserDefined') IS NOT NULL\n        PRINT '<<< FAILED DROPPING FUNCTION fUserDefined >>>'\n    ELSE \n        PRINT '<<< DROPPED FUNCTION fUserDefined >>>'\nEND\nGO\n\nCREATE FUNCTION dbo.fUserDefined\n    (\n        @param1 varchar(255) = NULL\n    )\nRETURNS bit\nAS\n/*\n    Description: \n    Developer: Bryan Wilhite\n*/\nBEGIN\n    DECLARE\n        @bit bit\n\nRETURN @bit\nEND\nGO\n\nGRANT EXECUTE ON fUserDefined TO public\nGO\n\nIF OBJECT_ID('fUserDefined') IS NOT NULL \n    PRINT '<<< CREATED FUNCTION fUserDefined >>>' \nELSE \n    PRINT '<<< FAILED CREATING FUNCTION fUserDefined >>>' \nGO\n",
+  "Tag": "kb2076071726"
+}

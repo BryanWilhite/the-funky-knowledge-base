@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071462,
+    "Title": "Web Banner Ad Recommended Dimensions",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2002-04-02T15:30:42.223",
+    "ModificationDate": "2002-04-02T15:30:42.223",
+    "TemplateId": null,
+    "SegmentId": 62,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "From http://www.workz.com/content/1027.asp\n\nDimension Guidelines\n\nCurrently, size standards for banner ads are really just recommendations. Two professional associations, the Internet Advertising Bureau (IAB) and the Coalition for Advertising-Supported Information and Entertainment (CASIE), have compiled a list of the most popular and most effective banner ad sizes. According to IAB's Web site, a joint committee of IAB and CASIE members \"has identified the following as the most commonly accepted\":\n\nType: Dimensions (in pixels): \nFull banner 468 x 60 \nFull banner w/ vertical navigation Bar    392 x 72 \nHalf banner 234 x 60 \nSquare button 125 x 125 \nButton 1 120 x 90 \nButton 2 120 x 60 \nMicro button 88 x 31 \nVertical banner 120 x 240 ",
+  "Tag": "kb2076071462"
+}

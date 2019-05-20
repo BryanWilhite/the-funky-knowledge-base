@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 899226217,
+    "Title": "Protecting Type Conversion Functions From Null Values",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-06-30T10:12:05",
+    "ModificationDate": "1998-06-30T10:12:05",
+    "TemplateId": null,
+    "SegmentId": 76,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "To avoid Run-time Error 94 (Invalid Use of Null) when using type conversion functions, \"protect\" them by concatenating \"default\" values where logically possible. Suppose that g_varReturn is a variant. We can use type conversion functions on g_varReturn with the forms:\n\n    <variable of type Double> = CDbl(0 & g_varReturn)\n\n    <variable of type String> = CStr(g_varReturn & \"\")\n\n    <variable of type String> = CStr(g_varReturn & Empty)\n\nNote that in the CDbl() example above the zero is concatenated in front of g_varReturn. Do not concatenate the zero after g_varReturn!",
+  "Tag": "kb899226217"
+}

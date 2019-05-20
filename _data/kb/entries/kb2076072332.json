@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072332,
+    "Title": "Firefox 3.x: Using the SQLite Databases to Get Bookmark Data",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2010-02-25T21:08:42",
+    "ModificationDate": "2010-02-25T21:08:42",
+    "TemplateId": null,
+    "SegmentId": 68,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "This is a sample SQLite query to get all bookmark data in a folder with ID 69826:\n\n    select * from moz_places where id\n        in(select fk from moz_bookmarks where parent=69826);\n\nThese tables are in the places.sqlite file.\n",
+  "Tag": "kb2076072332"
+}

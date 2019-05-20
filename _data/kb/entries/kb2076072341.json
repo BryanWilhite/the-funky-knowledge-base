@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072341,
+    "Title": "“Remote Desktop Dual Monitor Support tip…”",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2010-03-13T18:16:47",
+    "ModificationDate": "2010-03-13T18:16:47",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "You're probably wondering if there is dual monitor support for Remote Desktop Connection. There is indeed, but there are some caveats and issues you should be aware of, as well as some solutions to these issues.\n\n[http://blog.tmcnet.com/blog/tom-keating/microsoft/remote-desktop-dual-monitor-support-tip.asp]",
+  "Tag": "kb2076072341"
+}

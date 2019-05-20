@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072307,
+    "Title": "ASP.NET: “Data Paging in ASP.NET”; DataPager Control",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-10-10T18:49:03",
+    "ModificationDate": "2009-10-10T18:49:03",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Custom paging with GridView is great, but the problem is you must use GridView to use it. ASP.NET introduces new DataPager control, which works with ListView control (but will not work with DataList or Repeater controls). The using of DataPager control is simple. After you configured data source for ListView control, you simply drag DataPager from the menu and drop it on web form. After that you only need to set PagerControlID property to ID of ListView control and DataPager will work! You can customize its page size and look if you need.\n\nThe problem with DataPager control is that DataPager uses all data from data source to work with. It cannot select only current page to save up web server resources, but simply uses ListView's data source which is not efficient. If your data set has more than 100 or 200 pages or even more, this is unacceptable.\n\n[http://www.beansoftware.com/ASP.NET-Tutorials/Using-Data-Paging.aspx]",
+  "Tag": "kb2076072307"
+}

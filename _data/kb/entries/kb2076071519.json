@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071519,
+    "Title": "VBScript: Regular Expressions",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2003-06-01T18:01:22",
+    "ModificationDate": "2003-06-01T18:01:22",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Microsoft makes mention of regular expressions in VBScript back in 1999, with \"Microsoft Beefs Up VBScript with Regular Expressions\" by Vernon W. Hui at:\n\n    http://msdn.microsoft.com/library/en-us/dnclinic/html/scripting051099.asp\n\nI was completely unaware of this development for at least three years but should really should have seen it coming since classes were introduced in VBScript 5.0. This should be not surprising since Microsoft would make the effort to match the advanced features of Jscript. Adding regular expressions is an attempt to level the playing field between the Jscript team and the VBScript team.",
+  "Tag": "kb2076071519"
+}

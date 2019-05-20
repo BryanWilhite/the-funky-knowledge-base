@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071576,
+    "Title": "Flash MX ActionScript 1.x: The Change Handler Function of ComboBox; Flash UI Components",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2004-05-13T22:39:23.623",
+    "ModificationDate": "2004-05-13T22:39:23.623",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The Change Handler function cannot be of _global scope and by default should be in the timeline of the clip. This can be of the form:\n\n    function asComboHandler(objCombo){\n        var vValue = objCombo.getValue();\n        switch(vValue){...}\n    }",
+  "Tag": "kb2076071576"
+}

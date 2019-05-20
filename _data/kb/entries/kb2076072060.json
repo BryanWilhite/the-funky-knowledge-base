@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072060,
+    "Title": "PROBLEM: “You cannot open HTML Help files [*.CHM] from Internet Explorer after you install security update 896358 or Windows Server 2003 Service Pack 1”; 902225",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-10-23T14:06:57",
+    "ModificationDate": "2008-10-23T14:06:57",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "After you install security update 896358 or Microsoft Windows Server 2003 Service Pack 1 (SP1), you may experience one or both of the following symptoms after you click a link to an HTML Help .chm file in Internet Explorer:\n\n* Topics in the .chm file cannot be viewed when you click Open instead of Save in the File Download dialog box.\n\n* Topics in the .chm file cannot be viewed when you click Save in the File Download dialog box, and you then try to open the file.\n\nCAUSE\nSecurity update 896358 and Windows Server 2003 SP1 include changes to the InfoTech protocol that block the ability to view remote content. These changes were introduced to reduce security vulnerabilities in HTML Help. After you install 896358 or Windows Server 2003 SP1, files in the Temporary Internet Files folder are treated as content from the Internet zone. Therefore, files may be blocked when you click Open in the File Download dialog box. Additionally, after you install 896358 or Windows Server 2003 SP1, Attachment Manager may treat a downloaded .chm file as an untrusted file. Therefore, you may not be able to open the file. These effects are expected and intended effects of installing the security update and of installing Windows Server 2003 SP1.\n\nRESOLUTION\n\n…\n\nMethod 2\n1. Right-click the CHM file, and then click Properties.\n2. Click Unblock.\n3. Double-click the .chm file to open the file.\n\n[http://support.microsoft.com/kb/902225]\n",
+  "Tag": "kb2076072060"
+}

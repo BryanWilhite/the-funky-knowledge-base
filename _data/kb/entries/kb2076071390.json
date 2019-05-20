@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071390,
+    "Title": "Windows NT Command Script: PWSstop.cmd; Stopping Personal Web Server on Windows NT Workstation",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2001-05-13T08:47:51.217",
+    "ModificationDate": "2001-05-13T08:47:51.217",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "@ECHO OFF\n\nnet stop iisadmin /y\n\nPAUSE",
+  "Tag": "kb2076071390"
+}

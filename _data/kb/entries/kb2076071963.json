@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071963,
+    "Title": "Ubuntu 6.06: “How to Tell What Version of Ubuntu You Are Running”; howtogeek.com",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-07-29T22:05:23",
+    "ModificationDate": "2008-07-29T22:05:23",
+    "TemplateId": null,
+    "SegmentId": 73,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "“Telling what version of Ubuntu you are running is extremely easy. You would commonly use this command to figure out if you are running Edgy after you upgraded from Dapper.”\n\n    cat /etc/issue\n\nFrom:\n\n    http://www.howtogeek.com/howto/ubuntu/\n        how-to-tell-what-version-of-ubuntu-you-are-running/\n\nUbuntu 6.06 is Dapper Drake",
+  "Tag": "kb2076071963"
+}

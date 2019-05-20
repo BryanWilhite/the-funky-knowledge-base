@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071792,
+    "Title": "XSLT Snippet: Degrading XHTML for Macromedia/Adobe Flash; inner_xhtml Template",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-03-02T13:27:23",
+    "ModificationDate": "2007-03-02T13:27:23",
+    "TemplateId": null,
+    "SegmentId": 84,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "<xsl:template name=\"inner_xhtml\">\n    <xsl:param name=\"p_class_name\" select=\"''\"/>\n\n    <xsl:for-each select=\"text()|*\">\n        <xsl:choose>\n            <xsl:when test=\"local-name(.) = 'a'\">\n                <a href=\"{./@href}\"><xsl:call-template name=\"inner_xhtml\" /></a>\n            </xsl:when>\n            <xsl:when test=\"local-name(.) = 'div'\">\n                <xsl:if test=\"string-length(.) &gt; 1\">\n                    <p>\n                        <xsl:if test=\"string-length($p_class_name) &gt; 0\">\n                            <xsl:attribute name=\"class\"><xsl:value-of select=\"$p_class_name\" /></xsl:attribute>\n                        </xsl:if>\n                        <xsl:call-template name=\"inner_xhtml\" /><br/>\n                    </p>\n                </xsl:if>\n            </xsl:when>\n            <xsl:when test=\"local-name(.) = 'em'\">\n                <i><xsl:value-of select=\".\" /></i>\n            </xsl:when>\n            <xsl:when test=\"local-name(.) = 'h1'\">\n                <p class=\"Header1\"><xsl:value-of select=\".\" /></p>\n            </xsl:when>\n            <xsl:when test=\"local-name(.) = 'h2'\">\n                <p class=\"Header2\"><xsl:value-of select=\".\" /></p>\n            </xsl:when>\n            <xsl:when test=\"local-name(.) = 'h3'\">\n                <p class=\"Header3\"><xsl:value-of select=\".\" /></p>\n            </xsl:when>\n            <xsl:when test=\"local-name(.) = 'strong'\">\n                <b><xsl:value-of select=\".\" /></b>\n            </xsl:when>\n            <xsl:otherwise>\n                <xsl:value-of select=\".\" />\n            </xsl:otherwise>\n        </xsl:choose>\n    </xsl:for-each>\n</xsl:template>\n",
+  "Tag": "kb2076071792"
+}

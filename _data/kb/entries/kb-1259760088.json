@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -1259760088,
+    "Title": "Windows 95: Selected Keyboard Commands; The 110-key Equivalents of the Windows 95 Keyboard",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2003-07-31T14:46:24",
+    "ModificationDate": "2003-07-31T14:46:24",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Selected Keyboard Commands:\n\nShift-F10: Right-mouse-click selected item \nCtrl-Esc: Display Start menu \nAlt-[underlined letter]: Select menu command \nAlt-Esc: Switch to Taskbar's \"next\" open window \nAlt-Tab: Switch among open windows (hold Alt and continue to press Tab) \nAlt-F4: Close active window \nAlt-spacebar, N: Minimize active window \nAlt-spacebar, X: Maximize active window \nAlt-spacebar, R: Restore active window \nAlt-spacebar, C: Close active window \nCtrl-F10: Switch focus to menu commands (in any Explorer window) \nCtrl-Tab: Rotate through dialog box tabs \nCtrl-Shift-Tab: Rotate through dialog box tabs in reverse \nCtrl-Alt-Del: Display Close Program dialog box\nCtrl-Esc, Esc, Shift-F10: Right-mouse-click Start button \nCtrl-Esc, Esc, Tab, Tab: Shift focus to desktop icons \nCtrl-Esc, Esc, Tab, Shift-F10, M: Minimize open windows\n\n\nThe 110-key Equivalents of the Windows 95 Keyboard:\n\nShift-F10: Right-mouse-click selected item \nCtrl-Esc: Display Start menu \nAlt-[underlined letter]: Select menu command \nAlt-Esc: Switch to Taskbar's \"next\" open window \nAlt-Tab: Switch among open windows\nAlt-F4: Close active window \nAlt-spacebar, N: Minimize active window \nAlt-spacebar, X: Maximize active window \nAlt-spacebar, R: Restore active window \nAlt-spacebar, C: Close active window \nCtrl-F10: Switch focus to menu commands (in any Explorer window) \nCtrl-Tab: Rotate through dialog box tabs \nCtrl-Shift-Tab: Rotate through dialog box tabs in reverse \nCtrl-Alt-Del: Display Close Program dialog box",
+  "Tag": "kb-1259760088"
+}

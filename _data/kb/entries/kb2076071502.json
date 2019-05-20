@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071502,
+    "Title": "ASP.NET: Flippant Introductory Remarks",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2003-09-03T13:48:34",
+    "ModificationDate": "2003-09-03T13:48:34",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "MSDN features Scott Mitchell from 4guysfromrolla.com, his article, \"Converting ASP to ASP.NET\" at:\n\n    http://msdn.microsoft.com/library/en-us/dndotnet/html/convertasptoaspnet.asp\n\nCraig Utley's article \"Common .NET Libraries for Developers\" is a perfect article for any .NET programmer:\n\n    http://msdn.microsoft.com/library/en-us/dndotnet/html/commnetlibs.asp\n\nPaul D. Sheriff's \"Variable and Method Scope in Microsoft .NET\" is also good for programming with a firm knowledge of fundamentals:\n\n    http://msdn.microsoft.com/library/en-us/dndotnet/html/methodscope.asp\n\nThe Code-Behind object model looks attractive as in-line code loses some of the Intellisense features that makes VS.NET cool. More details can be found in Microsoft Knowledge Base Article 303247 (\"INFO: ASP.NET Code-Behind Model Overview\") and Microsoft Knowledge Base Article 313105 (\"BUG: Cannot Compile Code-Behind Files That Use Src Attribute on a UNC Share\").\n\nFor the 30,000-foot view see Microsoft Knowledge Base Article 305141 (\"INFO: ASP.NET Page Framework Overview\").",
+  "Tag": "kb2076071502"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071769,
+    "Title": "Ubuntu Linux: Installing Tomcat 5.x",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2006-10-12T12:02:00.087",
+    "ModificationDate": "2006-10-12T12:02:00.087",
+    "TemplateId": null,
+    "SegmentId": 73,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "This is the command summary for installing Tomcat on Ubuntu Linux:\n\n    sudo apt-get install sun-java5-jdk\n    sudo apt-get install apache2\n    sudo apt-get install tomcat5\n    sudo apt-get install tomcat5-admin\n\nPoint Ubuntu to the newly installed Java JDK with:\n\n    sudo update-alternatives --config java\n\nSelect /usr/lib/jvm/java-1.5.0-sun/jre/bin/java.\n\nConfigure Tomcat for the Java JDK. Edit /etc/default/tomcat5 for this line:\n\n    JAVA_HOME=/usr/lib/jvm/java-1.5.0-sun/\n\nReview the users for Tomcat in /var/lib/tomcat5/conf/tomcat-users.xml. Here is one relatively terrible way to configure the default user, tomcat:\n\n    <user username=\"tomcat\"\n        password=\"foo\" roles=\"tomcat,manager,admin\" />\n\nStart Tomcat with:\n\n    sudo /etc/init.d/tomcat5 start\n\nTest for connectivity by browsing http://localhost:8180. You can change this port number by editing the standalone server service, Tomcat-Standalone, in /usr/share/tomcat5/conf/server.xml.\n\nMuch of this summary is based on \"Setting Up Tomcat 5 on Ubuntu 6.06\" here:\n\n    http://blixtra.org/blog/2006/07/14/\n        setting-up-tomcat-5-on-ubuntu-606/\n\nand \"Installing Java 5 JDK and Tomcat on Ubuntu (using VMWare)\" here:\n\n    http://www.spaceprogram.com/knowledge/2006/\n        05/installing-java-5-jdk-and-tomcat-on.html\n\nFor additional configuration details, see \"Top Ten Tomcat Configuration Tips\" by Jason Brittain  and Ian F. Darwin here:\n\n    http://www.onjava.com/pub/a/onjava/2003/06/25/tomcat_tips.html",
+  "Tag": "kb2076071769"
+}

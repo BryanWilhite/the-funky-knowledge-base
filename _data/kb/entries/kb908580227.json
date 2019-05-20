@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 908580227,
+    "Title": "Access to VB: The TabStrip Control in the Microsoft Windows Common Controls 6.0 Library",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-11-05T13:25:35",
+    "ModificationDate": "1998-11-05T13:25:35",
+    "TemplateId": null,
+    "SegmentId": 64,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The TabStrip Control in the Microsoft Windows Common Controls 6.0 library (MSCOMCTL.OCX) is not as \"robust\" as the Tab Control native to Access. The greatest difference appears to be that the VB TabStrip Control is not a container. This means that at design time you cannot see your objects \"inside\" each tab. As of this writing, the VB developer must use Container Controls to group Controls on a \"page\" and the Visible property for the Container can be manipulated whenever a tab is clicked.\n\nNow Microsoft does provide the Microsoft Tabbed Dialog Control (TABCTL32.OCX) and its design-time \"container\" features do match those of the the Access Tab control. But Container controls are still needed when you want to place a Control Array on a Tabbed Dialog page.",
+  "Tag": "kb908580227"
+}

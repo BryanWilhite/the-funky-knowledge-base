@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 923177003,
+    "Title": "SQL: The Difference between UNION and UNION ALL",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2000-12-24T14:49:41.78",
+    "ModificationDate": "2000-12-24T14:49:41.78",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "UNION ALL selects all records between two views including duplicates; whereas UNION takes the time to sort records in order to remove duplicates. To optimize the time a UNION query takes, using ALL may help.",
+  "Tag": "kb923177003"
+}

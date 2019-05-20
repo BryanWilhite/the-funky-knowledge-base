@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072354,
+    "Title": "Explicit Join Syntax and Implicit Join Syntax",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2010-03-19T22:35:20",
+    "ModificationDate": "2010-03-19T22:35:20",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "SQL specifies two different syntactical ways to express joins. The first, called \"explicit join notation\", uses the keyword JOIN, whereas the second uses the \"implicit join notation\". The implicit join notation lists the tables for joining in the FROM clause of a SELECT statement, using commas to separate them. Thus, it specifies a cross-join, and the WHERE clause may apply additional filter-predicates. Those filter-predicates function comparably to join-predicates in the explicit notation.\n\n[http://en.wikipedia.org/wiki/Join_(SQL)]",
+  "Tag": "kb2076072354"
+}

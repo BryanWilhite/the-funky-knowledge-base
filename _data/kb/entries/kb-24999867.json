@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -24999867,
+    "Title": "Book: Access 97 Power Programming; Chapter 1 Highlights (1/2): \"Coding in Access 97 Using VBA\"",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-10-01T13:41:27",
+    "ModificationDate": "1998-10-01T13:41:27",
+    "TemplateId": null,
+    "SegmentId": 64,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Private | Public\n\nUse the Private and Public keywords to declare variables. This can be done at the module level only. At the module level, the keyword Private replaces keyword Dim. The old keyword Global is completely replaced by Public.\n\n\nVBA Naming Conventions\n\nRefer to Appendix C for Leszynski Naming conventions.\n\n\nDeclaring Functions\n\nProcedures that return a value (functions) can be delcared and typed just like variables with the form:\n\n    Public Function MyFunction(intArg As Integer) As Long\n        <stuff>\n    End Function\n\n\nPassing by Value or by Reference\n\nBy default, parameters are passed to functions by reference.\n\n\nOptional Function Arguments\n\nVBA's use of optional function arguments take the form:\n\n    Public Function MyFunction(intArg As Integer, _ \n        Optional varOpt as Variant) As Long\n        <stuff>\n    End Function\n\nOptional parameters are always of type variant and are always last in the argument list.\n\n\nParameterized Arrays\n\nParameterized Arrays allow functions to take in any number of values and have the form:\n\n    Public Function MyFunction(ParamArray varMyArray() _\n         as Varaint) As Long\n        <stuff>\n    End Function\n\n\nThe For Each...Next Structure\n\nThe For Each...Next structure can be used to iterate over the members of a collection. This includes moving through standard Access object collections including controls and forms.\n\n\nReferences\n\nUse the References command in the Tools menu to add other object libraries to VBA running under Access. This command is available when viewing code. One great use of this feature is to add the RDO object library to Access, which will allow DSN-less connections to ODBC data sources.\n\n\nNamed Function Parameters\n\nSpecify named parameters when function arguments must be listed out of order. This has the form:\n\nObjectName.MethodName Parameter:=expression, ParameterN: expression",
+  "Tag": "kb-24999867"
+}

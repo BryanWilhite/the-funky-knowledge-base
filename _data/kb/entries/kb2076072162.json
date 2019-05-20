@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072162,
+    "Title": "PowerShell 1.0: Add a Local User; Add-LocalUser Function; ADSI",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-08-01T18:36:35",
+    "ModificationDate": "2009-08-01T18:36:35",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Function Add-LocalUser([String]$userName, [String]$userDescription, [String]$password)\n{\n    $path = [String]::Concat(\"WinNT://./\",$userName,\",user\");\n    $user = [ADSI]$path;\n    if([String]::IsNullOrEmpty($user.Name))\n    {\n        $computer = [ADSI]\"WinNT://.\";\n        $user = $computer.Create(\"user\", $userName);\n        $user.SetPassword($password);\n        $user.SetInfo();\n        $user.Description = $userDescription;\n        $user.SetInfo();\n        $user.UserFlags += 65536\n        #flag ADS_UF_DONT_EXPIRE_PASSWD = &h10000\n\n        $user.SetInfo();\n\n        Write-Host \"User\"$user.Name\"added.\";\n    }\n    else\n    {\n        Write-Host \"User\"$user.Name\"already a Local User.\";\n    }\n}\n",
+  "Tag": "kb2076072162"
+}

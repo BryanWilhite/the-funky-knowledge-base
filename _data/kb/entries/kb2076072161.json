@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072161,
+    "Title": "Batch File: Shell Script Installing a .NET Service; InstallUtil.exe",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-08-01T18:30:51",
+    "ModificationDate": "2009-08-01T18:30:51",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "@echo off\n%SYSTEMROOT%\\Microsoft.NET\\Framework\\v2.0.50727\\InstallUtil.exe %1\npause",
+  "Tag": "kb2076072161"
+}

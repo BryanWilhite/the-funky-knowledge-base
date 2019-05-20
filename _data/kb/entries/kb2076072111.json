@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072111,
+    "Title": "Notepad++ PROBLEM: The Styler Configurator… Command Does Not Override Background Colors for All Languages",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-03-25T15:36:05",
+    "ModificationDate": "2009-03-25T15:36:05",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "For those of us who are used to setting syntax coloring in Visual Studio, Notepad++ does not automatically override the background color settings for all languages. You can run the Settings > Styler Configurator… command to change colors for each language.\n\nTo very quickly change background colors for all languages, edit these files:\n\n    \"%UserProfile%\\Application Data\\Notepad++\\stylers.xml\"\n\n    \"%UserProfile%\\Application Data\\Notepad++\\userDefineLang.xml\"\n\nRun find-change operations to replace, say, bgColor=\"FFFFFF\" with bgColor=\"C0C0C0\".",
+  "Tag": "kb2076072111"
+}

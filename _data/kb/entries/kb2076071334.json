@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071334,
+    "Title": "JavaScript: Essential Form Validation Functions",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2001-03-31T08:50:54.71",
+    "ModificationDate": "2001-03-31T08:50:54.71",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "//Form Validation Functions:\nfunction jsIsEmailValid(vFormName,vElementName) {\n\n    var vValue = ''\n    var vValid  = false\n    var vElement = document.forms[vFormName].elements[vElementName]\n    var vPosAtSymbol = vElement.value.indexOf('@')\n    var vPosPeriod = vElement.value.lastIndexOf('.')\n    var vPosSpace  = vElement.value.indexOf(' ')\n    var vLength = vElement.value.length - 1\n\n    if (\n    // '@' in first position\n    (vPosAtSymbol < 1) ||\n\n    // '@' in last position\n    (vPosAtSymbol == vLength) ||                    \n\n    // Not at least one valid char' between '@' and '.'\n    (vElement.value.charAt(vPosAtSymbol + 1) == '.' ) ||\n    (vElement.value.charAt(vPosAtSymbol - 1) == '.' ) ||\n\n    // Must be at least two valid char's after last '.'\n    (vPosPeriod >= vLength - 1) ||\n\n    // No space char's permitted\n    (vPosSpace  != -1)\n        ) {                   \n        vValue = 'Please enter a valid e-mail address.'\n            + '\\n\\nSample: YourName@aol.com'\n        window.alert(vValue)\n        vElement.focus()\n        return vValid\n    }\n    vValid = true\n    return vValid\n}\n\nfunction jsIsNotComplete(vElement, vMsg) {\n    if (vElement.value == '' ) {\n        vValue = 'Please complete the following:\\n\\n    ' + vMsg\n        window.alert(vValue)\n        vElement.focus()\n        return true\n    }\n    else {\n        return false\n    }\n}\n\nfunction jsIsNotSelected(vElement, vMsg) {\n    if (vElement.selectedIndex == 0 ) {\n        vValue = 'Please complete the following:\\n\\n    ' + vMsg\n        window.alert(vValue)\n        vElement.focus()\n        return true\n    }\n    else {\n        return false\n    }\n}\n\nfunction jsIsPasswordValid(vElement1, vElement2) {\n    if (vElement1.value == '' || vElement2.value == '') return false\n    \n    if (vElement1.value == vElement2.value ) {\n        return true\n    }\n    else {\n        window.alert('Please enter a valid password.')\n        vElement1.focus()\n        return false\n    }\n}\n",
+  "Tag": "kb2076071334"
+}

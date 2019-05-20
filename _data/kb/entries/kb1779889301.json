@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 1779889301,
+    "Title": "VB Code: Populating the Microsoft TreeView Control",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-04-24T09:59:42",
+    "ModificationDate": "1999-04-24T09:59:42",
+    "TemplateId": null,
+    "SegmentId": 77,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Public Sub basPopTV(tv As MSComctlLib.TreeView)\n    '\n    'This sub demonstrates the \"hard code\" way of\n    'populating a Microsoft TreeView Control.\n    '\n    With tv\n        .LabelEdit = tvwAutomatic\n        .Style = tvwTreelinesPlusMinusText\n        .LineStyle = tvwRootLines\n            \n        Set m_tvNode = .Nodes.Add(Key:=\"Root1\", _\n            Text:=\"Root1\")\n\n        'Add child Nodes.\n        Set m_tvNode = .Nodes.Add(Relative:=\"Root1\", _\n            Relationship:=tvwChild, Key:=\"Key1.1\", _\n            Text:=\"1.1\")\n        Set m_tvNode = .Nodes.Add(Relative:=\"Root1\", _\n            Relationship:=tvwChild, Key:=\"Key1.2\", _\n            Text:=\"1.2\")\n        Set m_tvNode = .Nodes.Add(Relative:=\"Root1\", _\n            Relationship:=tvwChild, Key:=\"Key1.3\", _\n            Text:=\"1.3\")\n      \n        .Nodes(1).Expanded = True\n        .Nodes(1).Bold = True\n        \n        Set m_tvNode = Nothing\n        \n    End With\n\nEnd Sub",
+  "Tag": "kb1779889301"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072075,
+    "Title": "eclipse: “Does eclipse allow vertical selections?”; tkilla.ch",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-12-02T13:03:00",
+    "ModificationDate": "2008-12-02T13:03:00",
+    "TemplateId": null,
+    "SegmentId": 69,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Eclipse Bugs 8521 and 19771 have over one hundred combined votes, resulting in one of the ten most voted for features of Eclipse. However, implementing Column Mode (aka. rectangular selection) is not easy and involves numerous API additions, namely to the StyledText class in SWT, which is already complicated to maintain.\n\nThere have been various attempts to fix this by simply adding a plug-in on top of eclipse, most notably columns4eclipse. However, these solutions do not offer the full functionality one expects when coming from editors such as UltraEdit. \n\n[http://tkilla.ch/column_mode/]",
+  "Tag": "kb2076072075"
+}

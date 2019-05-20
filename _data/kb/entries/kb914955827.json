@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 914955827,
+    "Title": "PQMAGICT.EXE, the Text Version of Partition Magic 3.0 on Boot Floppy",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-12-29T18:28:07",
+    "ModificationDate": "1998-12-29T18:28:07",
+    "TemplateId": null,
+    "SegmentId": 71,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "My MS-DOS 6.22 Boot Floppy contains the text version of Partition Magic 3.0. This file is called PQMAGIC.EXE. It follows that this floppy can be used against my Windows NT installation as Partition Magic requires DOS to work.",
+  "Tag": "kb914955827"
+}

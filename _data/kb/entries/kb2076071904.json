@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071904,
+    "Title": "Introduction to the GOF Strategy Pattern in C#",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-03-22T20:14:07",
+    "ModificationDate": "2008-03-22T20:14:07",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "“Introduction to the GOF Strategy Pattern in C#”:\n\n    http://www.c-sharpcorner.com/UploadFile/\n        rmcochran/strategyPattern08072006095804AM/\n            strategyPattern.aspx\n\nThere are three  main parts to any strategy:\n\n    1. Strategy: the interface that defines how the algorithm will be called.\n    2. Concrete Strategy: the implementation of the strategy.\n    3. Context: the object holding the Concrete Strategy.\n\nThis strategy formally defines the use of the Interface.\n",
+  "Tag": "kb2076071904"
+}

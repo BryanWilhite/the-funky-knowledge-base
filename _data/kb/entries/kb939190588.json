@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 939190588,
+    "Title": "EMU APS: The Disk Record Pot",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2004-04-19T14:55:56.89",
+    "ModificationDate": "2004-04-19T14:55:56.89",
+    "TemplateId": null,
+    "SegmentId": 65,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "In the E-Control Mixer, on the Master Output Strip's Hard Disk Recording Panel is the Disk Record Pot. By default it is not turned all the way to the right (0dB). It is highly recommended to turn this all the way up and reduce levels as needed with faders in the mixer.",
+  "Tag": "kb939190588"
+}

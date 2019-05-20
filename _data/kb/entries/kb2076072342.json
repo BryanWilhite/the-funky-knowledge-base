@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072342,
+    "Title": "Windows Presentation Foundation: “Text Clarity in WPF”",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2010-03-13T18:19:42",
+    "ModificationDate": "2010-03-13T18:19:42",
+    "TemplateId": null,
+    "SegmentId": 62,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Many, but not all, fonts that start with C and come installed with Windows Vista (Cambria, Calibri, Corbel, Candara, Consolas, etc...) have been designed to work well with WPF. In addition to these, fonts with robust outlines like Verdana, Georgia, etc… display well on computer screens. Ultimately the choice of font selection comes down to personal preference.\n\n[http://windowsclient.net/wpf/white-papers/wpftextclarity.aspx]",
+  "Tag": "kb2076072342"
+}

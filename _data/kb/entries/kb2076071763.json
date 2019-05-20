@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071763,
+    "Title": "Ubuntu Linux: LAMP Setup; Linux-Apache-MySQL-PHP; Ubuntu Server 6.0.6 (dapper)",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2006-09-27T12:04:21.623",
+    "ModificationDate": "2006-09-27T12:04:21.623",
+    "TemplateId": null,
+    "SegmentId": 73,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The detailed documentation for this procedure is here:\n\n    https://help.ubuntu.com/community/ApacheMySQLPHP\n\nOur summary is this:\n\n    sudo apt-get install apache2\n    sudo a2enmod rewrite\n\n    sudo apt-get install php5\n    sudo apt-get install mysql-server\n    sudo apt-get install libapache2-mod-auth-mysql\n    sudo apt-get install php5-mysql\n    sudo apt-get install php5-curl\n    sudo apt-get install php5-xsl\n\n    sudo /etc/init.d/apache2 force-reload\n\n    sudo nano /etc/php5/apache2/php.ini\n\n    sudo apt-get install phpmyadmin\n\nNote that in Ubuntu Server 6.0.6 (dapper), mod_rewrite is disabled by default. By the way, the convention here is to use/configure mod_rewrite per .htaccess file.\n\nNote that libapache2-mod-auth-mysql allows you to use MySQL to authenticate users. For more information on this framework, see \"Mod Auth MySQL Under Apache 2 and Debian\":\n\n    http://www.howtoforge.com/mod_auth_mysql_apache2_debian\n\nNote that you can enable external MySql connections by editing the bind-address line in /etc/mysql/my.cnf.",
+  "Tag": "kb2076071763"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071795,
+    "Title": "Ubuntu Hardware: Setting Up a New Monitor; Flat Panel Monitor",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-03-07T16:34:57",
+    "ModificationDate": "2007-03-07T16:34:57",
+    "TemplateId": null,
+    "SegmentId": 73,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "This is the command to use to step through an automated process when installing a new monitor:\n\n    sudo dpkg-reconfigure xserver-xorg\n\nA new flat panel monitor has a preferred resolution so this setting should be used. Also there should be an option to use the kernel to drive the video. You might want to avoid this option first to make sure it works.",
+  "Tag": "kb2076071795"
+}

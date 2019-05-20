@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072371,
+    "Title": "WPF/Silverlight: “Layout with Absolute and Dynamic Positioning”",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2010-03-28T18:29:17",
+    "ModificationDate": "2010-03-28T18:29:17",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Whenever possible, it is preferable to use a dynamic layout. Dynamic layouts are the most flexible, and allow the end user the most control over their environment. Dynamic layouts allow your content to adapt to localization and other content changes. Absolute layouts should be reserved for cases when precise and unchanging positioning of elements is important, or when there is only a single child element, such as an image or a graphic.\n\n[http://msdn.microsoft.com/en-us/library/bb514707.aspx]",
+  "Tag": "kb2076072371"
+}

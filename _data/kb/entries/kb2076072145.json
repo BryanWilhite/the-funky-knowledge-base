@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072145,
+    "Title": "NetBeans 6.7: Troubleshooting NetBeans Problems",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-07-19T15:25:33",
+    "ModificationDate": "2009-07-19T15:25:33",
+    "TemplateId": null,
+    "SegmentId": 69,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "In general, troubleshoot NetBeans issues by using the View > IDE Log command. You should see Java exceptions there related to the IDE. You can also view them in a file at $HOME/.netbeans/6.7/var/log/messages.log.*\n\nIt is possible that a NetBeans plugin you have installed has corrupted NetBeans configuration and is causing the problem. One way to test this is to remove the $HOME/.netbeans folder (while the IDE is closed) and let NetBeans rebuild it by starting the IDE.\n\nFinally, you can uninstall NetBeans (by using the uninstall.sh script/JAR in the NetBeans installation folder.",
+  "Tag": "kb2076072145"
+}

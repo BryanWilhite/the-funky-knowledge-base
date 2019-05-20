@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071613,
+    "Title": "Visual Studio 2003 PROBLEM: New Windows Script Host Item Produces Active Schema Errors; The active schema does not support the element 'package' or 'job'",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2004-10-29T15:07:08.48",
+    "ModificationDate": "2004-10-29T15:07:08.48",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "By default, a new WSF file added as WinScript1.wsf looks like this:\n\n<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<package xmlns=\"Windows Script Host\">\n    <job>\n        <script language=\"VBscript\">\n\n        </script>\n    </job>\n</package>\n\nThis file will generate schema errors against wshmeta.xsd in the Common7\\Packages\\schemas\\xml directory of your Visual Studio installation. To deal with this problem immediately, change the file to this:\n\n<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<package xmlns=\"http://schemas.microsoft.com/WindowsScriptHost\">\n    <job>\n        <script language=\"VBscript\">\n        \n        </script>\n    </job>\n</package>\n",
+  "Tag": "kb2076071613"
+}

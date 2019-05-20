@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -24999917,
+    "Title": "Windows 95; Lucasarts X-Wing Collectors CD-ROM; EMM386 Considerations",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-11-28T17:57:28",
+    "ModificationDate": "1998-11-28T17:57:28",
+    "TemplateId": null,
+    "SegmentId": 71,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The following line in CONFIG.SYS allows X-Wing to run properly: \n\ndevice=c:\\windows\\emm386.exe 4096 RAM D=256\n\nThe NOEMS parameter prevents X-Wing from running properly. (Any alternative EMM386 settings are to accomodate the Media Vision ProMovie card.) Also there will still not be enough conventional memory to run this game if standard system applications are not \"optimized.\" Here is the current default DOS configuration:\n\nCONFIG.SYS listing:\n\nDOS=HIGH,UMB\nDevice=C:\\WINDOWS\\Himem.Sys\nDeviceHigh=C:\\WINDOWS\\Emm386.Exe 4096 RAM D=256\nDEVICEHIGH=C:\\WINDOWS\\COMMAND\\DRVSPACE.SYS /MOVE\n\nAUTOEXEC.BAT listing:\n\n@echo off\nPATH D:\\PROGRA~1\\MICROS~4\\OFFICE;C:\\WINDOWS;C:\\WINDOWS\\COMMAND;C:\\QTW\\BIN;C:\\WINDOWS\\COMMAND\\CDROM;C:\\UTIL\n\nSET TMP=C:\\WINDOWS\\TEMP\nSET TEMP=C:\\WINDOWS\\TEMP\nSET winbootdir=C:\\WINDOWS\nSET PROMPT=$p$g\n\nSET CTCM=C:\\WINDOWS\nSET MIDI=SYNTH:1 MAP:E MODE:0\nSET SOUND=C:\\PROGRA~1\\CREATIVE\\CTSND\nSET BLASTER=A220 I5 D1 H5 P330 E640 T6 \n\nrem LH C:\\WINDOWS\\CTCM\nrem LH C:\\PROGRA~1\\SBCD\\DOSDRV\\CTLOAD C:\\PROGRA~1\\SBCD\\DOSDRV\\SBIDE.SYS /D:MSCD001 /V /P:168,10,36e\nrem LH C:\\WINDOWS\\COMMAND\\MSCDEX /D:MSCD001 /V /M:8\n\nSET SQLANY=d:\\program files\\sqlany50 \n\nWhat is also very important is the shortcut settings for X-Wing:\n\nProgram > Advanced... > Prevent MS-DOS-based programs from detecting Windows is enabled.\n\nProgram > Advanced... > Suggest MS-DOS mode as necessary is enabled.\n\nScreen > Usage > Full Screen is checked.\n\nScreen > Performance > Dynamic memory allocation is NOT checked.\n\nMisc > Foreground > Allow screen saver is NOT checked.\n\nMisc > Mouse > Exclusive mode is enabled.\n\nMisc > Idle sensitivity is set to the lowest possible value.",
+  "Tag": "kb-24999917"
+}

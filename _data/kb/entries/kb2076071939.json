@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071939,
+    "Title": "Team Foundation Source Control Command-Line Notes",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-06-02T14:57:37",
+    "ModificationDate": "2008-06-02T14:57:37",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The general reference is here:\n\n    http://msdn2.microsoft.com/en-us/library/cc31bk2e(vs.80).aspx\n\nThe practice here is to use tf.exe from version 9.0 of Visual Studio here:\n\n    \"%ProgramFiles%\\Microsoft Visual Studio 9.0\\Common7\\IDE\\tf.exe\"\n\ntf.exe is used against a ‘disconnected’ copy of Visual Studio project files to define a Workspace that is separate from my ‘real’ Visual Studio code. This was done because any Team Foundation GUI fun running in Visual Studio is annoying to me!\n\nThe files in the Workspace should be read-only because of the checkin command in the procedure below:\n\ni) Check out the files with a command like this:\n\n    tf checkout /recursive /login:your\\login codeplex_yourfolder/*.*\n\nii) Copy the changes from your ‘real’ code into the Workspace folder(s). You might want to use the XCOPY command in a script.\n\niii) Verify any changes with this command:\n\n    tf status /recursive /login:your\\login codeplex_yourfolder/*.*\n\niv) Check in your changes with a command like this:\n\n    tf checkin /comment:\"My comment...\"\n        /recursive /login:your\\login codeplex_yourfolder/*.*\n\nIn this example, all commands were run from the parent folder of \\codeplex_yourfolder.\n",
+  "Tag": "kb2076071939"
+}

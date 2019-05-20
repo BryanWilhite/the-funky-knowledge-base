@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 1739769177,
+    "Title": "JavaScript: Using Constructor Functions to Create User-Defined Objects",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2001-10-28T17:56:19.01",
+    "ModificationDate": "2001-10-28T17:56:19.01",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Using constructor functions to create user-defined objects is the \"old\" but respectable---and backward-compatible way of getting the job done. Building the constructor function is the first step in creating the user-defined object. This creation has the form:\n\n    function myConstruct(arg1, arg2, arg3) {\n  \n        //Properties:\n        this.property1 = arg1\n        this.property2 = arg2\n        this.property3 = arg3\n\n        //Methods:\n        this.method1 = myFunc1\n        this.method2 = myFunc2\n        this.method3 = myFunc3\n    }\n\nThe instantiation is the second and final step; it has the form:\n\n    objUser = new myConstruct\n\nsuch that objUser.property2 will return the value of arg2 immediately after the instantiation.\n\nThe \"new\" way to create user-defined objects is via what Netscape calls \"object initializers\" for their 4.0-class browsers (JavaScript 1.2). This creation has the form:\n\n    objectName = {property1:value1, property2:value2,..., propertyN:valueN}\n\nMore information on both ways of doing things may be found at developer.netscape.com with path:\n\n    /docs/manuals/js/client/jsguide/obj.htm",
+  "Tag": "kb1739769177"
+}

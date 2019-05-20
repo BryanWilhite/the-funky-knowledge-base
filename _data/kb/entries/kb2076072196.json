@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072196,
+    "Title": "PowerShell: “Getting Credentials From The Command Line”; Jeffrey Snover; Get-Credential",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-08-17T17:07:20",
+    "ModificationDate": "2009-08-17T17:07:20",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "When you use the Get-Credential cmdlet, you get a GUI dialog box to enter the credentials.  This is the \"Common Criteria Certified\" way of handling credentials.  It is also a pain in the butt at times.  If you are an admin, you can alter this and request credentials via the command line as follows:\n\nPS> $key = \"HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\1\\ShellIds\"\nPS> Set-ItemProperty $key ConsolePrompting True\nPS> Get-Credential\n\ncmdlet Get-Credential at command pipeline position 1\nSupply values for the following parameters:\nCredential\nUser: ntdev\\jsnover\nPassword for user ntdev\\jsnover: **************\n\n\nUserName                                       Password\n--------                                               --------\nntdev\\jsnover                                  System.Security.SecureString\n\n[http://blogs.msdn.com/powershell/archive/2008/06/20/\n    getting-credentials-from-the-command-line.aspx]",
+  "Tag": "kb2076072196"
+}

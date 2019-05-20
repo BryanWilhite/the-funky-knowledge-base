@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071783,
+    "Title": "SQL Server 2005 PROBLEM: Using the ADO.NET DbCommand.ExecuteScalar() Method Truncates at 2033 Characters",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-01-16T15:16:13",
+    "ModificationDate": "2007-01-16T15:16:13",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "This statement used with ExecuteScalar() will truncate at 2033 characters:\n\n    SELECT\n        *\n    FROM\n        Segment\n    ,   [Document]\n    WHERE\n        Segment.SegmentId = [Document].SegmentId\n    FOR XML AUTO, ELEMENTS, ROOT('SegmentTreeSet')\n\nSolve this problem with this design:\n\n    DECLARE @xml XML\n\n    SET @xml = \n        (\n            SELECT\n                *\n            FROM\n                Segment\n            ,   [Document]\n            WHERE\n                Segment.SegmentId = [Document].SegmentId\n            FOR XML AUTO, ELEMENTS, ROOT('SegmentTreeSet')\n        )\n\n    SELECT @xml\n\nAs of this writing, DbCommand.ExecuteScalar() returns a String object of the appropriate length.\n\nThis problem is chronicled in detail (for SQL Server 2000 and 2005) here:\n\n    http://www.aspnetresources.com/blog/executescalar_truncates_xml.aspx\n",
+  "Tag": "kb2076071783"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071725,
+    "Title": "Microsoft Word 2003: Flippant Remarks about XML Expansion Packs",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2006-01-10T23:16:17.74",
+    "ModificationDate": "2006-01-10T23:16:17.74",
+    "TemplateId": null,
+    "SegmentId": 85,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "I will never build an XML Expansion Pack. This sacred vow is based on the description of them in \"XML Expansion Packs [Word 2003 XML Reference]\":\n\n    http://msdn.microsoft.com/library/en-us/\n        WordXMLCDK/html/cdkAdvancedExpansion_HV01112412.asp\n\nThe XML Expansion pack \"may include any type of file, such as, but not limited to: XML schemas, Extensible Stylesheet Language Transforms (XSLTs), dynamic-link libraries (DLLs), and image files, as well as additional XML files, HTML files, Microsoft® Office Word 2003 or Microsoft Office Excel 2003 documents, and text files.\" What about a kitchen sink? I am overwhelmed with a sense of clutter and chaos. XML Expansion packs are the ideal \"Smart Document\" solution for bloated organizations.\n\nThe only reason why I mention XML Expansion Packs is because of its relationship to this Registry Key:\n\n    \\HKEY_CURRENT_USER\\Software\\Microsoft\\Schema Library\\\n\nI thought this key would help me remove orphan references to schemas. This is unclear but what is clear is that, \"To properly set up the XML expansion pack on the user's computer, Office must also set up the Schema Library registry subkey to link the XML namespace used by the XML expansion pack to each of the associated files.\" A quote from \"How Office Installs XML Expansion Packs\":\n\n    http://msdn.microsoft.com/library/\n        en-us/sdsdk/html/sdconDeployment\n            HowXEPInstalled_HV01085034.asp",
+  "Tag": "kb2076071725"
+}

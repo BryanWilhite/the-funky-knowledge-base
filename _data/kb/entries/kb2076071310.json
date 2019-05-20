@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071310,
+    "Title": "Java Diddler: An Example of String Formatting; MRJ SDK 2.1",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2000-09-16T07:28:00",
+    "ModificationDate": "2000-09-16T07:28:00",
+    "TemplateId": null,
+    "SegmentId": 69,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "//The number we want to show.\ndouble dbl = 10000.0 / 3.0;\n\n//Get a Locale object from the java.util package.\njava.util.Locale locale = java.util.Locale.getDefault();\n\n//Format the number for a given Locale.\njava.text.NumberFormat nf = java.text.NumberFormat.getNumberInstance(locale.US);\njava.lang.String strUSnum = nf.format(dbl);\n\n//Format the number as Locale currency.\njava.text.NumberFormat cf = java.text.NumberFormat.getCurrencyInstance(locale.US);\njava.lang.String strUSD = cf.format(dbl);\n\n//Format the number with a custom format.\njava.text.DecimalFormat df = new java.text.DecimalFormat(\",##0.000000 foobars\");\njava.lang.String strCustomNum = df.format(dbl);\n\njava.lang.System.out.println(strUSnum);\njava.lang.System.out.println(strUSD);\njava.lang.System.out.println(strCustomNum);\n",
+  "Tag": "kb2076071310"
+}

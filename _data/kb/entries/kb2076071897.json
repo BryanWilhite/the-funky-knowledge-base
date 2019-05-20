@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071897,
+    "Title": "ASP.NET 2.0: Flippant Remarks about Server.UrlEncode and Server.UrlPathEncode",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-10-08T16:21:56",
+    "ModificationDate": "2007-10-08T16:21:56",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "There is a table that summarizes the behavior of Server.UrlEncode and Server.UrlPathEncode here:\n\n    http://engineering.meta-comm.com/blogs/misha/content/binary/results.html\n\nOne approach to establishing a kind of “coverage” with Server.UrlEncode is discussed Ray Jezek in “HttpUtility.UrlEncode Does not encode spaces properly” here:\n\n    http://blogs.geekdojo.net/jez/archive/2005/01/14/6462.aspx\n",
+  "Tag": "kb2076071897"
+}

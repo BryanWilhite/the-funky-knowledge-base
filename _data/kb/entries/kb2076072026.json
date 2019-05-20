@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072026,
+    "Title": "Microsoft Word 2007: How to change the default view to Draft view in Word 2007; support.microsoft.com",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-09-01T21:01:32",
+    "ModificationDate": "2008-09-01T21:01:32",
+    "TemplateId": null,
+    "SegmentId": 85,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "To change the default view to Draft view when a Word 2007 document is opened, follow these steps:\n\n1. Click the Microsoft Office Button, and then click Word Options.\n\n2. Click Advanced.\n\n3. Under General, click to select the Allow opening a document in Draft view check box.\n\n4. Click OK.\n\n5. On the View tab, click Draft in the Document Views group. \n\n[http://support.microsoft.com/kb/919599]\n",
+  "Tag": "kb2076072026"
+}

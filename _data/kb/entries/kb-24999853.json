@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -24999853,
+    "Title": "MS-SQL and T-SQL: Deleting Records Not in Another Table",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-02-09T11:36:41",
+    "ModificationDate": "1999-02-09T11:36:41",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Suppose Table1 has records that are not in Table2. Also suppose that Table1 and Table2 have a column named \"IndexColumn\" which can be used for an outer join.\n\nWe want an outer join because we want to delete the records in Table1 that are not in Table2. In MS-SQL we have:\n\n    DELETE Table1.*\n    FROM Table1 LEFT JOIN Table2\n    ON Table1.IndexColumn = Table2.IndexColumn\n    WHERE ((Table2.IndexColumn Is Null));\n\nDo not do this in t-SQL. Use the following instead:\n\n    DELETE Table1\n    WHERE IndexColumn\n    NOT IN (SELECT IndexColumn FROM Table2)",
+  "Tag": "kb-24999853"
+}

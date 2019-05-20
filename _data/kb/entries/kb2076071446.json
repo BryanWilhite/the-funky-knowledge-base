@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071446,
+    "Title": "Code: Scanning A Root for Files and Directories with Scripting and rasxADO",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2002-01-15T01:10:49.717",
+    "ModificationDate": "2002-01-15T01:10:49.717",
+    "TemplateId": null,
+    "SegmentId": 76,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Private Sub basFavoritesScan(ByRef objADO As rasxADO.ADOServices, _\n    Optional ByVal Directory = \"\\\")\n\n    Dim objFolders As Scripting.Folders\n    Dim objFolder As Scripting.Folder\n    Dim objFiles As Scripting.Files\n    Dim objFile As Scripting.File\n    \n    Dim lngFolderCount As Long\n\n    Dim varParameters(0 To 1, 0 To 1) As Variant\n    'To be a two-dimensional array of form:\n    '   <param' name>, <row 0>\n    '   <param' value>, <row 0>\n    '   <param' name>, <row 1>\n    '   <param' value>, <row 1>\n    'etc.\n    \n    'For readability:\n    varParameters(0, 0) = \"@path\"\n    varParameters(1, 0) = vbNullString\n    \n    varParameters(0, 1) = \"@url\"\n    varParameters(1, 1) = vbNullString\n    \n    On Error GoTo basFavoritesScan_Err\n    \n    p_strInFile = basGetKeyString(\"path_root_favorites\") & Directory\n    Set objFolders = p_objFileSys.GetFolder(p_strInFile).SubFolders\n    \n    'Initialize Progress Bar.\n    Call basProgress(0, 0, objFolders.Count): p_lngStatusCount = 0\n    \n    For Each objFolder In objFolders\n    \n        varParameters(1, 0) = Directory & objFolder.Name\n        varParameters(1, 1) = \"Directory\"\n        If Not objADO.StoredProcCmd(\"NewFavorite\", varParameters, True) Then GoTo basFavoritesScan_Err\n        \n        Set objFiles = objFolder.Files\n        For Each objFile In objFiles\n            varParameters(1, 0) = Directory & objFolder.Name & \"\\\" & objFile.Name\n            varParameters(1, 1) = \"File\"\n            If Not objADO.StoredProcCmd(\"NewFavorite\", varParameters, True) Then GoTo basFavoritesScan_Err\n        Next\n        \n        'Mark progress.\n        p_lngStatusCount = p_lngStatusCount + 1: Call basProgress(p_lngStatusCount)\n    \n    Next\n    \n    'Terminate Progress Bar.\n    Call basProgress(0): p_lngStatusCount = 0\n\nbasFavoritesScan_Exit:\n    Exit Sub\n\nbasFavoritesScan_Err:\n    If (VBA.Err.Number <> 0) Or (p_objADO.Connection.Errors.Count > 0) Then\n        Call Me.basDataErrMsg(p_objADO, \"basFavorites()\")\n        If (VBA.Err.Number <> 0) Then\n            Resume basFavoritesScan_Exit\n        Else\n            GoTo basFavoritesScan_Exit\n        End If\n    End If\nEnd Sub",
+  "Tag": "kb2076071446"
+}

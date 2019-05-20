@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 898280413,
+    "Title": "PROBLEM: a Column with \"Numbers\" And Text Is Not Sorting Correctly",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-06-19T11:32:12",
+    "ModificationDate": "1998-06-19T11:32:12",
+    "TemplateId": null,
+    "SegmentId": 64,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Suppose you have a function bound to a field in a query or form. This function performs calculations and then returns the number as a string. This will be the case when you want to use the Format() function in the bound function or return custom text messages as well as numerical values.\n\nThe subsequent column of data based on the bound function will now be sorted as String data. To make sure that numbers sort properly, format numerical output with leading zeros. This is not too unattractive with percentages. For example, when MyValue = 0.05,\n\n   Format(MyValue, \"000.000%\") = \"005.000%\"\n\nmakes only two leading zeros. However to make numbers larger than Integer sort properly, this method is not recommended.",
+  "Tag": "kb898280413"
+}

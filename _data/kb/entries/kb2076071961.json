@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071961,
+    "Title": "bash: “Keyboard Shortcuts for Bash (Command Shell for Ubuntu, Debian, Suse, Redhat, Linux, etc)”; howtogeek.com",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-06-10T16:04:03",
+    "ModificationDate": "2008-06-10T16:04:03",
+    "TemplateId": null,
+    "SegmentId": 73,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Ctrl + A: Go to the beginning of the line you are currently typing on\n\nCtrl + E: Go to the end of the line you are currently typing on\n\nCtrl + L: Clears the Screen, similar to the clear command\n\nCtrl + U: Clears the line before the cursor position. If you are at the end of the line, clears the entire line.\n\nCtrl + H: Same as backspace\n\nCtrl + R: Let's you search through previously used commands\n\nCtrl + C: Kill whatever you are running\n\nCtrl + D: Exit the current shell\n\nCtrl + Z: Puts whatever you are running into a suspended background process. fg restores it.\n\nCtrl + W: Delete the word before the cursor\n\nCtrl + K: Clear the line after the cursor\n\nCtrl + T: Swap the last two characters before the cursor\n\nEsc + T: Swap the last two words before the cursor\n\nAlt + F: Move cursor forward one word on the current line\n\nAlt + B: Move cursor backward one word on the current line\n\nTab: Auto-complete files and folder names\n\nfrom http://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc/",
+  "Tag": "kb2076071961"
+}

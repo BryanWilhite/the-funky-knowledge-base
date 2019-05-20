@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071304,
+    "Title": "Opening files with the VS 6.0 Development Environment",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2000-08-15T00:28:00",
+    "ModificationDate": "2000-08-15T00:28:00",
+    "TemplateId": null,
+    "SegmentId": 77,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Icons: C:\\Program Files\\Microsoft Visual Studio\\VIntDev98\\bin\\vidisws.dll\n\nConfirm open after download\n\nAction > open\nApplication used to perform action: \"C:\\Program Files\\Microsoft Visual\nStudio\\Common\\IDE\\IDE98\\devenv.exe\" \"%1\"\n\nUse DDE\n\nDDE Message: Open(\"%1\")\nApplication: vstudio\nTopic: system\n",
+  "Tag": "kb2076071304"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 924941775,
+    "Title": "VB Code: Sorting ListBox Items with a Two-Button Control Array",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-04-24T09:19:42",
+    "ModificationDate": "1999-04-24T09:19:42",
+    "TemplateId": null,
+    "SegmentId": 77,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Private Sub cmdFieldOrder_Click(Index As Integer)\n    '\n    'This sub responds to the click event of\n    'a two-button control array called cmdFieldOrder.\n    'It manipulates the items in the List Box lstFields.\n    '\n    Dim strList As String\n    Dim intListIndex As Integer\n    \n    Select Case Index\n        Case 0\n            With Me.lstFields\n                If .ListIndex > 0 Then\n                    strList = .List(.ListIndex)\n                    intListIndex = .ListIndex\n                    Call .RemoveItem(.ListIndex)\n                    Call .AddItem(strList, intListIndex - 1)\n                End If\n            End With\n        Case 1\n            With Me.lstFields\n                If 0 <= .ListIndex _\n                    And .ListIndex < .ListCount - 1 Then\n                    strList = .List(.ListIndex)\n                    intListIndex = .ListIndex\n                    Call .RemoveItem(.ListIndex)\n                    Call .AddItem(strList, intListIndex + 1)\n                    .ListIndex = intListIndex + 1\n                End If\n            End With\n    End Select\n    \nEnd Sub",
+  "Tag": "kb924941775"
+}

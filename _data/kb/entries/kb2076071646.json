@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071646,
+    "Title": "Microsoft Access Data Project PROBLEM: \"The stored procedure executed successfully but did not return records.\" Error When Opening a Table in DataSheet View",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2005-02-14T13:55:42.18",
+    "ModificationDate": "2005-02-14T13:55:42.18",
+    "TemplateId": null,
+    "SegmentId": 85,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "When opening a SQL Server table in DataSheet View from an ADP file, the following error message might appear:\n\n    \"The stored procedure executed successfully but did not return records.\"\n\nThis problem is likely to be caused by an invalid SQL statement stored in an Extended SQL Server property called MS_RowSource assigned to the column of one of the tables in the project. This property can be viewed, edited or removed by the SQL Query Analyzer. For more information see MSDN article \"Extended Properties in SQL Server 2000\" by Mike Gunderloy at:\n\n    http://msdn.microsoft.com/library/en-us/dnsqlpro02/html/sql02a10.asp\n\nSee also:\n\n    \"Using Extended Properties on Database Objects\"\n    http://msdn.microsoft.com/library/en-us/createdb/cm_8_des_08_7qb7.asp\n\n    \"Using SQL Server 2000 Extended Properties\"\n    http://developer.com/db/article.php/10920_3361751_2",
+  "Tag": "kb2076071646"
+}

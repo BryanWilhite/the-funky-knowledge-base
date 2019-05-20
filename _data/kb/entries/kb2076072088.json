@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072088,
+    "Title": "SonghaySystem.com mail <form/>; cold storage",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-12-12T11:56:20",
+    "ModificationDate": "2008-12-12T11:56:20",
+    "TemplateId": null,
+    "SegmentId": 71,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "<form method=\"post\" action=\"#\" name=\"frmEmail\" style=\"visibility: hidden\">\n\n<input type=\"hidden\" name=\"recipient\" value=\"rasx@songhaysystem.com\" />\n<input type=\"hidden\" name=\"subject\" value=\"Songhay Mail\" />\n<input type=\"hidden\" name=\"redirect\" value=\"{$rootUri}mail/sent\" />\n<input type=\"hidden\" name=\"required\" value=\"email,body\" />\n\n<div class=\"MailerPageFormText\">\n    <div>Please Enter Your Name:</div>\n    <input name=\"realname\" type=\"text\" />\n</div>\n<div class=\"MailerPageFormText\">\n    <div>Please Enter Your E-Mail Address:</div>\n    <input name=\"email\" type=\"text\" />\n</div>\n<div id=\"MailerPageComments\">\n    <div>Comments:</div>\n    <textarea name=\"body\" onfocus=\"this.wrap='soft'\"></textarea>\n</div>\n\n<ul id=\"MailerPageFormButtons\">\n    <li>\n<input class=\"InputButton\" type=\"button\" onclick=\"{$onClickStatement}\" value=\"Cancel\" />\n    </li>\n    <li>\n<input class=\"InputButton\" type=\"reset\" value=\"Clear\" />\n    </li>\n    <li>\n<input class=\"InputButton\" id=\"SendMail\" type=\"button\" value=\"Send Message!\" />\n    </li>\n</ul>\n<div style=\"clear:both;\"></div>\n\n</form>\n",
+  "Tag": "kb2076072088"
+}

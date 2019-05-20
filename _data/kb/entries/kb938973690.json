@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 938973690,
+    "Title": "Compaq: Support for Presario Models",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-10-03T11:22:49",
+    "ModificationDate": "1999-10-03T11:22:49",
+    "TemplateId": null,
+    "SegmentId": 66,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "If Compaq does not make their web site worse than it is then the following URI ids valid:\n\nhttp://vcmproapp04.compaq.com/mypresario/\n\nFor their weak-ass SoftPaqs we have:\n\nhttp://www.compaq.com/support/files/allspidx.html",
+  "Tag": "kb938973690"
+}

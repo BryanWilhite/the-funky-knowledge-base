@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072195,
+    "Title": "NetBeans for PHP: “Defining a variable type in comment”; Petr Pisl",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-08-17T16:55:44",
+    "ModificationDate": "2009-08-17T16:55:44",
+    "TemplateId": null,
+    "SegmentId": 69,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The comment has to be /* @var $variable type */ . If the comment is written in the right form, then the var tag has bold font.\n\nYou can use this helper, when NetBeans is not able to recognize the type of the variable. On the picture below you can see that NetBeans recognizes that the variable $media in the echo statement is Book type. But then another object is assigned to the $media variable through the getLastMovie() function. This function defines the return type Movie, so from this line NetBeans knows that $media variable contains an object of Movie type.\n\n[http://blogs.sun.com/netbeansphp/entry/defining_variable_type_in_a]",
+  "Tag": "kb2076072195"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071380,
+    "Title": "T-SQL Code: Example of the use of a Cursor; Parsing WebCom Hit Log Files; NewHitLog",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2001-03-04T10:07:23.26",
+    "ModificationDate": "2001-03-04T10:07:23.26",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "CREATE PROCEDURE NewHitLog\nAS\n\n-- Description: Inserts rows into tblLog from tblLogImport\n-- Developer: rasx\n\nSET NOCOUNT ON\nDECLARE\n    @type     varchar(10)\n,   @date     datetime\n,   @address  varchar(255)\n,   @file     varchar(255)\n,   @logEntry varchar(1000)\n\n\nDECLARE tblLogImportCursor CURSOR FOR\n    SELECT\n        LogEntry\n    FROM\n        tblLogImport\n    \nOPEN tblLogImportCursor\n    \nFETCH NEXT FROM tblLogImportCursor\nINTO @logEntry\n\nWHILE @@FETCH_STATUS = 0\nBEGIN\n\n    SELECT\n        @type    = RTRIM(SUBSTRING(@logEntry,1,4))\n    ,   @date    = CONVERT(datetime,RTRIM(SUBSTRING(@logEntry,5,20)))\n    ,   @address = RTRIM(SUBSTRING(@logEntry,24,CHARINDEX('/',@logEntry,24) - 24))\n    ,   @file    = RTRIM(SUBSTRING(@logEntry,CHARINDEX('/',@logEntry,24),CHARINDEX(' ',@logEntry,CHARINDEX('/',@logEntry,24)) - CHARINDEX('/',@logEntry,24)))\n\n    INSERT INTO\n        tblLog\n        (\n            type\n        ,   date\n        ,   address\n        ,   [file]\n        )\n    VALUES\n        (\n            @type\n        ,   @date\n        ,   @address\n        ,   @file\n        )\n    \n    FETCH NEXT FROM tblLogImportCursor\n    INTO @logEntry\nEND\n\nCLOSE tblLogImportCursor\nDEALLOCATE tblLogImportCursor\n",
+  "Tag": "kb2076071380"
+}

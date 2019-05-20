@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 891118918,
+    "Title": "Book: Access 97 Power Programming; Chapter 1 Highlights (2/2): \"Coding in Access 97 Using VBA\"",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-10-01T13:41:40",
+    "ModificationDate": "1998-10-01T13:41:40",
+    "TemplateId": null,
+    "SegmentId": 64,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Assigning Objects to Variables\n\nAssign objects to a variable by using the Set statement.\n\n\nGeneric Object Types\n\nOne advanced VBA programming technique is the use of generic object types. There are two types of generic objects specified by the declaration keywords Object and Control.\n\n\nThe TypeOf Operator\n\nUse the TypeOf operator to identify an object's type. It only works in the If Then structure with form:\n\n    If TypeOf <Object> is <ClassName> Then\n        <stuff>\n    End If\n\nNote that Access 97 objects have a ControlType property.\n\n\nThe Concept of Collections\n\nCollections are similar to arrays. Collections are superior to arrays in many ways. Collections can have unique string names as well as the numerical index used in arrays.\n\n\nIterating through the Members of a Collection\n\nUse the For Each...Next structure. There is no need to determine the number of elements in the collection.\n\n\nWriting Custom Properties\n\nDeclaring a variable Public in a form at module level creates a user-defined property for this form. By using Property Get and Property Let, we can add more functionality than just setting a public property. We can associate a procedure with the manipulation of the property.\n\nPlease see \"Customizing a Form\" (pg. 45) for further discussion.\n\n\nObject-Valued Properties and the Property Set Statement\n\nAn object-valued property contains object instead of an integer, boolean, long, etc. You can create custom properties that return objects using the Property Set keywords.\n\n\nWhen to Use Property Procedures and Public Functions\n\nPublic variables do not have all the functionality of property procedures. Property procedures also have an advantage over public functions. Functions can return values but they do not store the current state of the values they are associated with.\n\n\nVBA Classes\n\nProperty procedures go a long way to make the classes used in VBA actually useful. VBA Classes are an aid for programmers, allowing them to package their code and add them to projects and be recognized in the object browser.\n\nTo see classes in action please see \"Coding Access 97 Class Modules\" (pg. 50).",
+  "Tag": "kb891118918"
+}

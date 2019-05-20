@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072059,
+    "Title": "IIS 6.0: iisreset.exe command line parameters; Internet Information Services",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-10-17T19:41:59",
+    "ModificationDate": "2008-10-17T19:41:59",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "IISRESET.EXE (c) Microsoft Corp. 1998-1999\n\nUsage: iisreset [computername]\n\n    /RESTART\n        Stop and then restart all Internet services.\n\n    /START\n        Start all Internet services.\n\n    /STOP\n        Stop all Internet services.\n\n    /REBOOT\n        Reboot the computer.\n\n    /REBOOTONERROR\n        Reboot the computer if an error occurs when starting,\n        stopping, or restarting Internet services.\n\n    /NOFORCE\n        Do not forcefully terminate Internet services\n        if attempting to stop them gracefully fails.\n\n    /TIMEOUT:val\n        Specify the timeout value ( in seconds ) to wait\n        for a successful stop of Internet services.\n        On expiration of this timeout the computer can be rebooted\n        if the /REBOOTONERROR parameter is specified.\n        The default value is 20s for restart, 60s for stop,\n        and 0s for reboot.\n\n    /STATUS\n        Display the status of all Internet services.\n\n    /ENABLE\n        Enable restarting of Internet Services on the local system.\n\n    /DISABLE\n        Disable restarting of Internet Services on the local system.\n\nFor more information, see: “Restarting IIS (IIS 6.0)” here:\n\n    http://www.microsoft.com/technet/prodtechnol/\n        WindowsServer2003/Library/IIS/\n            003ed2fe-6339-4919-b577-6aa965994a9b.mspx?mfr=true\n",
+  "Tag": "kb2076072059"
+}

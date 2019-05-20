@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071292,
+    "Title": "Code: basRandomNum(); Generating a Random Number between Upper and Lower Limits",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2000-08-14T17:52:00",
+    "ModificationDate": "2000-08-14T17:52:00",
+    "TemplateId": null,
+    "SegmentId": 76,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Function basRandomNum(Lower As Long, Upper As Long)\n\n    basRandomNum = VBA.Int((Upper - Lower + 1) * VBA.Rnd + Lower)\n\nEnd Function",
+  "Tag": "kb2076071292"
+}

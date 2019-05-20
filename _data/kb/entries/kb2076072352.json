@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072352,
+    "Title": "C#: Auto-Implemented Properties (C# Programming Guide); MSDN",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2010-03-18T21:34:01",
+    "ModificationDate": "2010-03-18T21:34:01",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "In C# 3.0 and later, auto-implemented properties make property-declaration more concise when no additional logic is required in the property accessors. They also enable client code to create objects When you declare a property as shown in the following example, the compiler creates a private, anonymous backing field can only be accessed through the property's get and set accessors.\n\n…\n\nContrary to what the documentation suggests, it is not possible to define an auto-implemented property that uses the same behavior as the C# readonly keyword (when applied to an explicit backing field). The link to the readonly topic should be removed, at the very least.\n\nUsing private set will define an auto-implemented property with a read-only public contract, although this leaves open the possibility for the value to change after the constructor has been invoked; behavior that is prevented by defining a property without a set accessor and applying the readonly keyword to the backing field.\n\n[http://msdn.microsoft.com/en-us/library/bb384054.aspx]",
+  "Tag": "kb2076072352"
+}

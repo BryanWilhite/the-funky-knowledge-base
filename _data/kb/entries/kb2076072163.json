@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072163,
+    "Title": "LAMP and WordPress.org: “Redirecting WordPress Feeds to FeedBurner Feeds”; smashingmagazine.com",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-08-09T09:51:33",
+    "ModificationDate": "2009-08-09T09:51:33",
+    "TemplateId": null,
+    "SegmentId": 73,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "# temp redirect wordpress content feeds to feedburner\n<IfModule mod_rewrite.c>\n RewriteEngine on\n RewriteCond %{HTTP_USER_AGENT} !FeedBurner    [NC]\n RewriteCond %{HTTP_USER_AGENT} !FeedValidator [NC]\n RewriteRule ^feed/?([_0-9a-z-]+)?/?$ http://feeds.feedburner.com/wprecipes [R=302,NC,L]\n</IfModule>\n\n# [http://www.smashingmagazine.com/2008/\n#    12/02/10-useful-rss-hacks-for-wordpress/]",
+  "Tag": "kb2076072163"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -24999926,
+    "Title": "OLE Server; \"Object Server Not Correctly Registered\" Message",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-02-10T15:48:42",
+    "ModificationDate": "1998-02-10T15:48:42",
+    "TemplateId": null,
+    "SegmentId": 74,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The \"Object server not correctly registered\" message appears after Tools > Custom Controls... is selected when one of the .OCX files in the Windows\\System directory corresponding to the control listed in the Custom Controls dialog is not present. To stop the message from appearing delete the \"appropriate\" registry entry. Of course deleting a CLSID key is risky so be careful! A relatively safer option is to run Microsoft Regclean. It is in the \\Tools\\Pss directory of the VB4 Standard Edition CD-ROM. Make sure to restart the system immediately after using it.",
+  "Tag": "kb-24999926"
+}

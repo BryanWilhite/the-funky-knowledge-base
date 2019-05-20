@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071922,
+    "Title": ".NET 3.0/3.5: Flippant Remarks about the yield Keyword",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-12-18T21:50:43",
+    "ModificationDate": "2007-12-18T21:50:43",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The yield keyword is used only inside of a for loop and with an IEnumerable<> generic type to form a pattern like this:\n\n    class Program\n    {\n        static void Main(string[] args)\n        {\n            IEnumerable<int> integers = Program.YieldList( 1, 10, 2 );\n        }\n\n        public static IEnumerable<int> YieldList( int start,\n            int end, int increment )\n        {\n            for (int current = start;\n                current <= end; current += increment)\n            {\n                yield return current;\n            }\n        }\n    }\n\nThe variable current is the same type as that specified in IEnumerable<int> and the yield keyword fills IEnumerable<int> until the loop is finished. Without yield, the loop would return after one pass (actually the code won’t compile!).\n\nFor more information, see:\n\n    “yield (C# Reference)”\n    http://msdn2.microsoft.com/en-us/library/9k7k7cf0(VS.80).aspx\n\n    “Drop the temporary lists and leverage yield”\n    http://www.jpboodhoo.com/blog/\n        DropTheTemporaryListsAndLeverageYield.aspx\n\nAs elegant as this pattern appears, note that, as of this writing, setting a breakpoint inside of YieldList() and getting the Debugger to stop on it is “problematic” (just not possible). Targeting .NET 3.5 from Visual Studio 2008 provides a debugging visualizer for IEnumerable<>.\n",
+  "Tag": "kb2076071922"
+}

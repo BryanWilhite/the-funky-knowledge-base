@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072227,
+    "Title": "WCF: “Since a WCF service can return any user defined class, why use a DataContract and CompositeType class?”; StackOverflow.com",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-08-27T21:50:32",
+    "ModificationDate": "2009-08-27T21:50:32",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Blankman: Since a WCF service can return any user defined class, why use a DataContract and CompositeType class?\n\nI can return something like:\n\n[OperationContract]\nMyUserCollection GetUsers();\n\nWhat am I missing?\n\nGuy Starbuck: The DataContract is just a formal definition of a type that can be understood on both sides of the service boundary.\n\nIf you return, as in your example, a \"MyUserCollection\" object, the consumers of your service will need to reference the innards of your service/system, which is a violation of the SOA tenet of explicit boundaries. By using a DataContract, you are publishing the structure of your return types in a loosely-coupled way.\n\n[http://stackoverflow.com/questions/303013/whats-the-point-of-a-datacontract-in-wcf]",
+  "Tag": "kb2076072227"
+}

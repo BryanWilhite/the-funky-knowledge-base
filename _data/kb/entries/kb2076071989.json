@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071989,
+    "Title": "Visual Studio 2005/2008: Flippant Remarks about Code Snippets",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-08-19T15:58:51",
+    "ModificationDate": "2008-08-19T15:58:51",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Code snippets refers to *code* based on my investigations this does not include t-SQL (but does include XML).\n\nThere might be t-SQL code snippets in a Team Server edition of Visual Studio.\n\nFor better information, see “How to: Creating Code Snippets for Visual Studio 2005/2008” here:\n\n    http://blogs.msdn.com/publicsector/archive/2007/12/18/\n        how-to-creating-code-snippets-\n        for-visual-studio-2005-2008.aspx\n\nAlso see “How to: Use Code Snippets (C#)” here:\n\n    http://msdn.microsoft.com/en-us/library/z4c5cc9b(VS.80).aspx\n",
+  "Tag": "kb2076071989"
+}

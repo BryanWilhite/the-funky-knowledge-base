@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071722,
+    "Title": "JavaScript Code: DOM Routines; Dom.js; Abandoned Code",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2005-12-02T22:30:35.963",
+    "ModificationDate": "2005-12-02T22:30:35.963",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "\nfunction jsAnchorElement()\n{\n    var vCount = arguments.length\n\n    var oElement = window.document.createElement('a')\n\n    if(vCount > 0) oElement.href = arguments[0]\n    if(vCount > 1) oElement.innerHTML = arguments[1]\n    if(vCount > 2) oElement.id = arguments[2]\n    if(vCount > 3) oElement.className = arguments[3]\n    if(vCount > 4) oElement.title = arguments[4]\n\n    return oElement\n}\n\nfunction jsDivElement()\n{\n    var vCount = arguments.length\n\n    var oElement = window.document.createElement('div')\n\n    if(vCount > 0) oElement.innerHTML = arguments[0]\n    if(vCount > 1) oElement.id = arguments[1]\n    if(vCount > 2) oElement.className = arguments[2]\n\n    return oElement\n}\n\nfunction jsImageElement()\n{\n    var vCount = arguments.length\n\n    var oElement = window.document.createElement('img')\n\n    if(vCount > 0) oElement.src = arguments[0]\n    if(vCount > 1) oElement.alt = arguments[1]\n    if(vCount > 2) oElement.id = arguments[2]\n    if(vCount > 3) oElement.className = arguments[3]\n\n    return oElement\n}\n\n/*\n\nfunction jsTableElement()\n{\n    var vCount = arguments.length\n    var oXmlRows = null\n    var oTableFormatting = null\n\n    var oElement = window.document.createElement('table')\n\n    if(vCount > 0) oXmlRows = arguments[0]\n    if(vCount > 1) oElement.id = arguments[1]\n    if(vCount > 2) oElement.className = arguments[2]\n    if(vCount > 3) oTableFormatting = arguments[3]\n\n    var oRow = null\n    var oCell = null\n\n    for(var y = 0;y < oXmlRows.length;y++)\n    {\n        oRow = window.document.createElement('tr')\n        for(var x = 0;x < oXmlRows[y].childNodes.length;x++)\n        {\n            if(oXmlRows[y].childNodes[x].nodeType == 1)\n            {\n                oCell = window.document.createElement('td')\n                oCell.innerHTML = oXmlRows[y].childNodes[x].firstChild.nodeValue\n                oRow.appendChild(oCell)\n            }\n        }\n        oElement.appendChild(oRow)\n    }\n\n    return oElement\n}\n\nfunction TableFormatting()\n{\n    this.firstColumnIsHeader = null\n    this.headerArray = null\n    this.oddRowClassName = null\n    this.useElementNames = null\n    this.lastRowClassName = null\n    this.columnArray = null\n}\n\n*/\n",
+  "Tag": "kb2076071722"
+}

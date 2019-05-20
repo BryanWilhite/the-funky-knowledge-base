@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 915303286,
+    "Title": "HTML: Notes on the TABLE Element",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2000-03-09T22:24:38",
+    "ModificationDate": "2000-03-09T22:24:38",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "HTML 4.0 Transitional allows TABLE to have the attributes BORDER, CELLPADDING, CELLSPACING and WIDTH (among others). When a TABLE is being used for layout (not for presenting tabular data), a good \"default\" markup is\n\n    <TABLE\n        BORDER=0\n        CELLPADDING=0\n        CELLSPACING=0\n        WIDTH=\"100%\">\n\n    <!-- Table contents here -->\n\n    </TABLE>\n\nwhere the attributes set to 0 are prevented from rendering unexpected results when, say, setting \"margins\" with TD elements and transparent GIFs.\n\nTables can be nested inside tables. This is very useful when you want to make your own buttons using tables instead of those provided by the INPUT element. Also, table nesting, used with BGCOLOR attributes in TD and TH elements, is currently the safest way to format a block of text as a callout or sidebar. I have noticed that Netscape 4.x browsers place background colors (and borders) in TABLE elements far better than in P, DIV and other block-level tags.",
+  "Tag": "kb915303286"
+}

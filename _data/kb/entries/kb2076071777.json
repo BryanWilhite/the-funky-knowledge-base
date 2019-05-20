@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071777,
+    "Title": "PowerShell: \"The Four Pillars of Discoverability\" by Jeff Snover",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2006-10-13T08:01:29.1",
+    "ModificationDate": "2006-10-13T08:01:29.1",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Get-Command\n\nGet-Help\n\nGet-PSDrive\n\n-?\n\nGet-Members\n",
+  "Tag": "kb2076071777"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -24999982,
+    "Title": "Caligari trueSpace: Mapped vs. Ray Traced Shadows",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-08-24T19:27:43",
+    "ModificationDate": "1999-08-24T19:27:43",
+    "TemplateId": null,
+    "SegmentId": 62,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Hesitate to use ray traced shadows as this may slow down rendering and produce shadows that are too \"perfect looking.\" Try mapped shadows and do not make shadow casting objects too large with respect to the grid extents as mapped shadows tend to break into large pixel blocks under large objects. ",
+  "Tag": "kb-24999982"
+}

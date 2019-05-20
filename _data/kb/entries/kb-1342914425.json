@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -1342914425,
+    "Title": "Multiple ODBC Entries Are Required for One Server",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-07-31T09:02:41",
+    "ModificationDate": "1999-07-31T09:02:41",
+    "TemplateId": null,
+    "SegmentId": 64,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "When you use one Access .MDB file to link to multiple remote (SQL Server) databases from the Database Window, you will need multiple ODBC entries for each database you want to link to.\n\nThis implies that, if you want to link to a table in database DB1 on MyServer and to another table in DB2 on MyServer, there should be two ODBC entries (e.g. MyServer_DB1 and MyServer_DB2). When you choose File > Get External Data Link Tables... Access will build a static Connection String for each Link created.",
+  "Tag": "kb-1342914425"
+}

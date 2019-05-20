@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072245,
+    "Title": "ASP.NET MVC: “Custom Route Constraints”; James Welch",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-09-15T17:15:40",
+    "ModificationDate": "2009-09-15T17:15:40",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Here’s the resulting constraint class:\n\nusing System;\nusing System.Web;\nusing System.Web.Routing;\n\npublic class NotEqual : IRouteConstraint\n{\n   private string[] _matches = null; \n\n   public NotEqual(params string[] matches)\n   {\n      _matches = matches;\n   }\n\n   public bool Match(HttpContextBase httpContext, Route route,\n                     string parameterName, RouteValueDictionary values,\n                     RouteDirection routeDirection)\n   {\n      bool foundMatch = false;\n      foreach (string match in _matches)\n         if (String.Compare(values[parameterName].ToString(), match, true)\n               == 0)\n            foundMatch = true;\n\n      return !foundMatch;//not matching!\n   }\n}\n\nThis was a pretty simple fix, just changing the code to use params string[] instead of a single string argument. You can also use this in replace of Stephen’s code, since you can also pass in a single argument. \n\n[http://jamesewelch.wordpress.com/\n    2008/08/11/custom-route-constraints-aspnet-mvc/]",
+  "Tag": "kb2076072245"
+}

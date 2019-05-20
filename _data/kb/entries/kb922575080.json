@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 922575080,
+    "Title": "VB: PROBLEM: Reference Lists  As \"MISSING\" in Project When Components Are Installed",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2000-02-10T23:36:04",
+    "ModificationDate": "2000-02-10T23:36:04",
+    "TemplateId": null,
+    "SegmentId": 77,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "When you are certain that your DLLs for your reference are installed (because, perhaps, you properly used REGSVR32.EXE) but they still show up as \"MISSING...\" in Project > References... list, try editing the .VBP file associated with the project. \n\nClose the project (to be safe, close Visual Basic). Open the .VBP file in a text editor. Remove the lines that begin with \"Reference=*...\" referring to the missing References. Reopen the project file in Visual Basic. Choose Project > References... to select the components that you know are installed.\n\nAs of this writing, Microsoft has a complete discussion of this issue at the following URI:\n\n    http://msdn.microsoft.com/\n        library/devprods/vs6/vb/html/\n            vbconfixingmissingreferences.htm",
+  "Tag": "kb922575080"
+}

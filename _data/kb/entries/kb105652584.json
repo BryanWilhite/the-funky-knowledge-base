@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 105652584,
+    "Title": "Microsoft Windows 95: Core Installation",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-11-28T20:29:45",
+    "ModificationDate": "1998-11-28T20:29:45",
+    "TemplateId": null,
+    "SegmentId": 71,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "This install is approximately 28.6 MB.\n\nBoot from DOS 6.x floppy (for Windows 95 Upgrade CD-ROM access). Run Setup.\n\nWindows 95 Setup Wizard:\n    Other Directory: C:\\WIN95\n    Setup Options > Custom\n    (Do not allow Setup to analyze the computer.)\n    Get Connected: not selected\n    Accessibility Options: not selected\n    Accessories: only Calculator is selected\n    Communications: not selected\n    Disk Tools: only Defrag is selected\n    Multimedia: defaults settings kept plus Volume Control\n    \nDo not allow Network Configuration, Computer Settings, Startup Disk and Add Printer Wizard.\n\nNOTE: PNP will install Creative Labs Devices; if there is a problem (like a partial install of the drivers) go Device Manager > Sound, Video and Game Controllers > [driver] > Change Driver..., where [driver] is the Windows 95 driver having problems.\n\nApply Windows 95 SP1, Kernel Update and OLE Update.\n\nGo to Display Properties > Settings > Change Display Type > Monitor Type > Change... > Standard Monitor Types > Super VGA 1024x768; check Monitor is Energy Star Compliant.\n\nInstall Guest 95.\n\nInstall Sound Software.",
+  "Tag": "kb105652584"
+}

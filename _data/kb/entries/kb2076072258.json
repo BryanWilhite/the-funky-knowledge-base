@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072258,
+    "Title": "Ubuntu: “Terminator—Multiple GNOME terminals in one window”; ubuntugeek.com",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-09-19T21:28:09",
+    "ModificationDate": "2009-09-19T21:28:09",
+    "TemplateId": null,
+    "SegmentId": 73,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "This is a project to produce an efficient way of filling a large area of screen space with terminals. This is done by splitting the window into a resizeable grid of terminals. As such, you can produce a very flexible arrangements of terminals for different tasks.\n\nAt the moment, Terminator is available for Ubuntu Hardy and you can install from source in Feisty,Gutsy etc\n\nYou can download Terminator source code from here this is only for who is using ubuntu 7.10 and below version users\n\nIf you are using hardy use the following command to install\n\n    sudo aptitude install terminator\n\nInstall terminator in ubuntu gutsy,feisty etc\n\n[http://www.ubuntugeek.com/terminator-multiple-gnome-\n    terminals-in-one-window.html]",
+  "Tag": "kb2076072258"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071768,
+    "Title": "eclipse 3.2.0 SDK Plugin PROBLEM: tk.eclipse.plugin.htmleditor loads *.html Files Slowly; Naoki Takezoe; HTML/JSP/XML Editor 2.0.2 Plugin; amateras",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2006-10-03T16:31:12.977",
+    "ModificationDate": "2006-10-03T16:31:12.977",
+    "TemplateId": null,
+    "SegmentId": 69,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The tk.eclipse.plugin.htmleditor may load slowly due to the enabled HTML validation option under\n\n    Project > Properties > Amateras > Validation:\n\nUncheck the HTML Validation box and this should improve performance. This guidance applies to version 2.0.2 of the plugin.",
+  "Tag": "kb2076071768"
+}

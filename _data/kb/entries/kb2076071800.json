@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071800,
+    "Title": "JavaServer Faces in Action Notes: Chapter 2; JSF Fundamentals; 2.1.2 Renderers; 2.1.3 Validators",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-03-13T13:00:21",
+    "ModificationDate": "2007-03-13T13:00:21",
+    "TemplateId": null,
+    "SegmentId": 69,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "2.1.2 Renderers\n\n\"When components render themselves, it's called the direct implementation model, but JSF also supports the delegated implementation model...\" The classes that implement these implementation models are called \"renderers.\" All of the standard JSF components use the delegated implementation model.\n\n\"Renderers are organized into render kits... JSF ships with a standard render kit for HTML 4.01...\"\n\nIt is important to understand that renderers implement encoding and decoding for the response and the request, respectively. \"Because all encoding and encoding is handled by a single entity... the visual representation of the component and the underlying protocol for translating between request parameters and objects on the server are nicely self-contained.\"\n\nIt follows that the ability to change a render kit means that \"displaying a different markup language is just a matter of changing the render kit.\"\n\n\n2.1.3 Validators\n\n\"Faces handles validation in three ways---at the UI component level [declaratively], via validator methods in backing beans, or in validator classes.\"\n\nHere is an example of declarative validation:\n\n    <h:inputText>\n        <f:validateLength minimum=\"2\" maximum=\"10\" />\n    </h:inputText>\n",
+  "Tag": "kb2076071800"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -24999967,
+    "Title": "Netcom Shell; SMTP; MAPI Client Cannot Transfer Mail",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-06-09T13:46:18",
+    "ModificationDate": "1998-06-09T13:46:18",
+    "TemplateId": null,
+    "SegmentId": 68,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "At times transferring mail from the Netcom Shell to a MAPI client like Outlook Express mail fail due to an SMTP server failure on Netcom. By changing the server specification from netcom2.nectom.com through netcom22.netcom may solve this problem.",
+  "Tag": "kb-24999967"
+}

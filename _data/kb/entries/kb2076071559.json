@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071559,
+    "Title": "Microsoft Word 2000 VBA: Inserting HTML Tags into a Range; Programmatic Find/Replace",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2004-04-11T01:32:01.82",
+    "ModificationDate": "2004-04-11T01:32:01.82",
+    "TemplateId": null,
+    "SegmentId": 85,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Dim objRange As Range\nSet objRange = Application.ActiveDocument.Range\nWith objRange.Find\n    Call .ClearFormatting\n    .Font.Bold = True\n    .Format = True\n    .Forward = True\n    .Highlight = False\n    .MatchAllWordForms = False\n    .MatchCase = False\n    .MatchSoundsLike = False\n    .MatchWholeWord = True\n    .MatchWildcards = True\n    .NoProofing = False\n    .Text = vbNullString\n    .Wrap = wdFindContinue\n    \n    With .Replacement\n        Call .ClearFormatting\n        .Text = \"<strong>^&<\\strong>\"\n    End With\n    Call .Execute(Replace:=wdReplaceAll)\nEnd With\n",
+  "Tag": "kb2076071559"
+}

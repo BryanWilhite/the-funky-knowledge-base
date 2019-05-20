@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071807,
+    "Title": "T-SQL Code: A Function for Checking for the Existence of an Object; fItemExists()",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-04-04T12:44:27",
+    "ModificationDate": "2007-04-04T12:44:27",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "USE [Database]\nGO\nIF OBJECT_ID('fItemExists') IS NOT NULL \nBEGIN \n    DROP FUNCTION fItemExists\n    IF OBJECT_ID('fItemExists') IS NOT NULL\n        PRINT '<<< FAILED DROPPING FUNCTION fItemExists >>>'\n    ELSE \n        PRINT '<<< DROPPED FUNCTION fItemExists >>>'\nEND\nGO\nCREATE FUNCTION dbo.fItemExists\n(\n    @objectName   nvarchar(128) = NULL\n,   @propertyName nvarchar(128) = NULL\n)\nRETURNS bit\nAS\nBEGIN\n    DECLARE @bit bit\n    SET @bit = 0\n    IF EXISTS(\n        SELECT\n            [object]   = o.name\n        ,   [property] = p.name\n        FROM\n            sysObjects o\n        ,   sysColumns p\n        WHERE\n            o.id = p.id\n        AND\n            o.name = @objectName\n        AND\n            p.name = @propertyName\n    )\n    BEGIN\n        SET @bit = 1\n    END\n\nRETURN @bit\nEND\nGO\nGRANT EXECUTE ON fItemExists TO public\nGO\nIF OBJECT_ID('fItemExists') IS NOT NULL \n    PRINT '<<< CREATED FUNCTION fItemExists >>>' \nELSE \n    PRINT '<<< FAILED CREATING FUNCTION fItemExists >>>' \nGO ",
+  "Tag": "kb2076071807"
+}

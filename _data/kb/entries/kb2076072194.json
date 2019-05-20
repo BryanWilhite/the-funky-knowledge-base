@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072194,
+    "Title": "SQL Server 2005: Summary of DBCC Commands; Emil Chang",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-08-17T16:53:39",
+    "ModificationDate": "2009-08-17T16:53:39",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "DBCC stands for database consistency checker. We use these commands to check the consistency of the databases.\nExample, maintenance, validation task and status checks.\n\nDBCC CHECKALLOC - Check consistency of disk allocation.\nDBCC CHECKCATALOG - Check catalog consistency\nDBCC CHECKCONSTRAINTS - Check integrity of table constraints.\nDBCC CHECKDB - Check allocation, and integrity of all objects.\nDBCC CHECKFILEGROUP - Check all tables and indexed views in a filegroup.\nDBCC CHECKIDENT - Check identity value for a table.\nDBCC CHECKTABLE - Check integrity of a table or indexed view.\nDBCC CLEANTABLE - Reclaim space from dropped variable-length columns.\nDBCC dllname - Unload a DLL from memory.\nDBCC DROPCLEANBUFFERS - Remove all clean buffers from the buffer pool.\nDBCC HELP - Help for DBCC commands.\nDBCC INPUTBUFFER - Display last statement sent from a client to a database instance.\nDBCC OPENTRAN - Display information about recent transactions.\nDBCC OUTPUTBUFFER - Display last statement sent from a client to a database instance.\nDBCC PROCCACHE - Display information about the procedure cache\nDBCC SHOW_STATISTICS - Display the current distribution statistics\nDBCC SHRINKDATABASE - Shrink the size of the database data and log files.\nDBCC SHRINKFILE - Shrink or empty a database data or log file.\nDBCC SQLPERF - Display transaction-log space statistics. Reset wait and latch statistics.\nDBCC TRACE - Enable or Disable trace flags\nDBCC UPDATEUSAGE - Report and correct page and row count inaccuracies in catalog views\nDBCC USEROPTIONS - Return the SET options currently active\nDBCC deprecated commands \n\n[http://sqltutorials.blogspot.com/2008/07/list-of-dbcc-in-sql-server-2005.html]",
+  "Tag": "kb2076072194"
+}

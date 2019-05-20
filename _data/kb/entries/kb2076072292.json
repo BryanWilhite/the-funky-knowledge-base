@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072292,
+    "Title": "ASP.NET MVC: “Using C# 3.0 Anonymous Types as Dictionaries”; History of Html.ActionLink(); Eilon Lipton",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-10-04T19:01:36",
+    "ModificationDate": "2009-10-04T19:01:36",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "During a design meeting for a new feature in ASP.NET we had a requirement that a new method accept a dictionary of name/values pairs. An obvious solution is to have the method accept a parameter of type IDictionary (or its generic cousin):\n\npublic static string GetHtmlLink(string text, IDictionary<string, string> properties) {\n    ...\n}\n\nWhile it looks nice and neat from the perspective of our function, the caller of this function has a real mess to deal with. Creating dictionaries is definitely somewhat of a pain. Since Dictionary<TKey, TValue> doesn't have an Add() method with one parameter you can't use C# 3.0's collection initializer syntax. This is some ugly code:\n\nDictionary<string, string> values = new Dictionary<string, string>();\nvalues.Add(\"key1\", \"value1\");\nvalues.Add(\"key2\", \"value2\");\nvalues.Add(\"key3\", \"value3\");\nGetHtmlLink(\"Click me\", values);\n\nMy proposal: Have the method accept a parameter of type object. Callers could pass in a type that has properties with the appropriate names and values. They can use C#'s object initializer syntax to save some space:\n\nMyParams myParams = new MyParams { Key1 = \"value1\", Key2 = \"value2\", Key3 = \"value3\" };\nGetHtmlLink(\"Click me\", myParams);\n\nHowever, there was the added work of defining the MyParams type. Admittedly, it wasn't that hard with C# 3.0's automatic properties, but I hate defining types that are used in only one place. If the user can pass in an arbitrary object with properties, why not let that object be of an anonymous type? Here's the final code:\n\nGetHtmlLink(\"Click me\", new { Key1 = \"value1\", Key2 = \"value2\", Key3 = \"value3\" });\n\nWoah! We went from five lines of code with dictionaries to two lines of code with object initializers (minus the type definition), to just one line of code with anonymous types!\n\nSo what does the GetHtmlLink method look like, anyway? Download the code from the attachment. You can now use the two helpers like so:\n\nSample link: <%= HtmlHelpers.GetHtmlLink(\"My Site\", new { @class = \"someStyle\", href = \"http://www.example.org\" })%>\n<br />\nSample URL: <%= HtmlHelpers.GetUrl(\"http://www.example.org/search\", new { query = \"kitten's mittens\", mode = \"details\" })%>\n\nAnd it'll render this HTML:\n\nSample link: <a class=\"someStyle\" href=\"http://www.example.org\">My Site</a>\n<br />\nSample URL: http://www.example.org/search?query=kitten's+mittens&mode=details\n\nSo, what do you think?\n\nI'm obviously ignoring certain aspects of this technique such as performance. There are certainly ways to optimize the performance with some clever caching. Performance might not be an issue anyway, depending on where this code is used.\n\nHave you come up with a novel way to use a new language feature that you'd like to share?\n\n[http://weblogs.asp.net/leftslipper/archive/\n    2007/09/24/using-c-3-0-anonymous-types-as-dictionaries.aspx]",
+  "Tag": "kb2076072292"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071903,
+    "Title": "Gang of Four Patterns: Flippant Remarks about Singleton and Monostate",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-10-18T21:03:25",
+    "ModificationDate": "2007-10-18T21:03:25",
+    "TemplateId": null,
+    "SegmentId": 69,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Singleton:\n\n    public class Singleton\n    {\n        private static Singleton theInstance = null;\n        private Singleton() {}\n\n        public static Singleton Instance()\n        {\n            if (theInstance == null) theInstance = new Singleton();\n            return theInstance;\n        }\n    }\n\nMonostate:\n\n    public class Monostate\n    {\n        private static int itsX = 0;\n        public Monostate() {}\n\n        public void setX(int x) { itsX = x; }\n        public int getX() { return itsX; }\n    }\n",
+  "Tag": "kb2076071903"
+}

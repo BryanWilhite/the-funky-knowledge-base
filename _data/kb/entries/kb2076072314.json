@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072314,
+    "Title": "CSS Child Selectors and Descendant Selectors; Microsoft Internet Explorer Limitations; webmasterworld.com",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-10-16T12:54:23",
+    "ModificationDate": "2009-10-16T12:54:23",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "selector[1] > selector[2]{\n[property]: value\n}\n\nThis is called the child selector. In browsers that support it (all but IE), it applies the styles to selector2 child elements of selector1.\n\nFor instance, if you had this code...\n\nhtml:\n<div id=\"box\">\n<p>Lorem ipsum dolor sit amet.</p>\n<p>Lorem ipsum dolor sit amet.</p>\n</div>\n\n…and you wanted all of the paragraphs in it to have blue text, you could use the child selector...\n\ncss:\n#box > p{\ncolor:blue;\n}\n\n…which applies it's styles to all the <p> children of #box. This is similar to the decendant selector...\n\ncss:\n#box p {\ncolor:blue;\n}\n\n…which in this situation would work identically, but it's a little different. The decendant selector will apply to ALL decendants (elements nested in any element that is nested in #box), whereas the child selector applies only to the direct children of the parent (elements nested in #box).\n\n…\n\nWe'll need slightly more complicated code to see this...\n\nhtml:\n<div id=\"box\">\n<p>Lorem ipsum dolor sit amet.</p>\n<p>Lorem ipsum dolor sit amet.</p>\n<div>\n<p>Lorem ipsum dolor sit amet.</p>\n<p>Lorem ipsum dolor sit amet.</p>\n</div>\n</div>\n\nApplying the same css to this, the child selector would color only the first two paragraphs blue, but would leave the other two, the one's inside of the non-IDed div, at the default text color. The descendant selector, however, would color all four paragraphs blue since they are all decendants (two children, two grandchildren) of the parent #box.\n\nGoing by this \"official\" application, the child selector's usefulness is limited to situations in which the order of nesting requires applying styles to child elements but not grand- (or great-grand) child elements.\n\nIt has another use, however, that stems from IE's conspicuous lack of support for it.\n\nSince no IE browser recognizes the child selector, it is often used as a way to feed other browsers style information that must be hidden from IE. There's a good chance that this is what it is doing in the code you've seen. \n\n[http://www.webmasterworld.com/forum83/5944.htm]",
+  "Tag": "kb2076072314"
+}

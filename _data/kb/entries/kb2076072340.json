@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072340,
+    "Title": "LINQ to XML: “…use XPathEvaluate() instead of XPathSelectElement[s]()”",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2010-03-13T18:12:37",
+    "ModificationDate": "2010-03-13T18:12:37",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "First, the documentation for all the XPath extension methods from LINQ to XML is already available online at http://msdn2.microsoft.com/en-us/library/system.xml.xpath.extensions_methods(VS.90).aspx\n\nRegarding the evaluation of XPath expressions returning XAttribute, you probably want to use XPathEvaluate() instead of XPathSelectElement[s](). XPathSelectElements() and XPathSelectElement() are specialized versions of XPathEvaluate() that return either a sequence of XElement or one XElement respectively. They are provided as properly typed convenience methods given that quering for elements is such a common task.\n\n[http://connect.microsoft.com/VisualStudio/feedback/details/289519/xpathselectelement-s-invalidoperationexception-query-other-node-types]",
+  "Tag": "kb2076072340"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071978,
+    "Title": "Ubuntu: “Add a User on Ubuntu Server”; howtogeek.com",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-07-03T12:54:18",
+    "ModificationDate": "2008-07-03T12:54:18",
+    "TemplateId": null,
+    "SegmentId": 73,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "To add a user, use the useradd command or the adduser command:\n\n    sudo useradd -d /home/testuser -m testuser\n\n    sudo passwd testuser\n\n“The adduser command is even easier than the useradd command, because it prompts you for each piece of information. I find it slightly funny that there are two virtually identically named commands that do the same thing, but that's linux for you.”\n\n[http://www.howtogeek.com/howto/ubuntu/add-a-user-on-ubuntu-server/]\n",
+  "Tag": "kb2076071978"
+}

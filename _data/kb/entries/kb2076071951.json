@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071951,
+    "Title": "LINQ to XML: Two Ways of Generating the xml:space Attribute",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-03-22T21:00:17",
+    "ModificationDate": "2008-03-22T21:00:17",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "This is our “spacey” string:\n\n    String s = @\"\nThis\n    is\n        a\n            spacey\n                string...\n\";\n\nThe first method is to “brutally” use the XElement.Parse() method:\n\n    XElement spacey = XElement.Parse(\n        String.Format(\"<spacey xml:space=\\\"preserve\\\">{0}</spacey>\", s) );\n\nThe second (preferred) method builds with .NET 3.5 types in System.Xml.Linq:\n\n    XName xmlAttributeName = XNamespace.Xml + \"space\";\n    XAttribute xmlAttribute = new XAttribute( xmlAttributeName, \"preserve\" );\n\n    XElement spacey =\n        new XElement( \"spacey\", new Object[] { xmlAttribute, s } );\n\n    XElement document = new XElement( \"root\", spacey );\n\n    Console.WriteLine( document.ToString() );\n",
+  "Tag": "kb2076071951"
+}

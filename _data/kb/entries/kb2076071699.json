@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071699,
+    "Title": "MCAD/MCSD Notes: Chapter 8, Lesson 1; Authenticating and Authorizing Users",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2005-08-23T14:25:12.883",
+    "ModificationDate": "2005-08-23T14:25:12.883",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Lesson 1: Authenticating and Authorizing Users\n\nThe purpose of this lesson is to provide basic security concepts and implementation guidance for ASP.NET Web applications running on IIS 5.x and versions earlier. This lesson introduces the concepts of authentication, authorization, impersonation and anonymous access.\n\n* \"ASP.NET Web applications provide anonymous access to resources by impersonation.\"\n\nThe local Windows account, named in the form IUSER_machinename, is used to \"impersonate\" users allowed anonymous access permissions. This account should belong to a security group with reduced privileges.\n\n* \"Under the default settings, ASP.NET uses the ASPNET account to run the Web application.\"\n\nWhen impersonation is not enabled, the Web application uses the ASPNET account to access all resources. The ASPNET account can, say, have higher privileges than IUSER_machinename or lower ones for an authenticated administrative account. So when impersonation is enabled, security settings can be spread out among multiple Windows accounts.\n\n* \"You restrict the access of anonymous users by setting Windows file permissions.\"\n\nThis design requires NTFS file systems and error pages designed to capture security exceptions is optional.\n\n* \"There are three major ways to authenticate and authorize users...\"\n\nPassport authentication stands apart from Windows authentication and forms authentication as Microsoft's \"single sign-on\" solution. All of these solutions depend on the System.Web.Security namespace. However, as of the publication of this lesson, Passport involves an SDK and redirection to a Microsoft Web site.\n\n* \"If you want to authenticate users who access HTML pages from within your Web application using Windows, Forms, or Passport authentication modes, you must map those files to the ASP.NET executable.\"",
+  "Tag": "kb2076071699"
+}

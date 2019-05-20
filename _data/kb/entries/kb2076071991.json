@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071991,
+    "Title": "Word 2007: Flippant Remarks about Customizing the Ribbon",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-08-19T16:19:46",
+    "ModificationDate": "2008-08-19T16:19:46",
+    "TemplateId": null,
+    "SegmentId": 85,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "1: Use the Custom UI Editor Tool to generate the proper OpenXML parts in the Normal.dotm template to get me started writing raw XML against the Word 2007 application. I could have done this by hand using the tool mentioned in step 2 but was too “lazy.”\n\n2: Use the Open XML Package Editor in the VSTO 2008 Power Tools to write raw XML. Doing this in Visual Studio was easier on my eyes (larger, bolder fonts than the Custom UI Editor Tool) and I could use the customUI.xsd schema (in 2007 Office System: XML Schema Reference) to make writing faster (Intellisense support). Also I found out the hard way that it is better to write this XML in a separate file in case Word panics and auto-magically deletes all of my hard work! Visual Studio is a great XML file editor.\n\n3: Use the 2007 Office System Document: Lists of Control IDs to wade through the sea of “Fluent” fluxions. Utterly ridiculous but it helped.\n\nFor more details, see:\n\n    http://kintespace.com/rasxlog/?p=928\n",
+  "Tag": "kb2076071991"
+}

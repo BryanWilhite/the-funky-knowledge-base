@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -1109101906,
+    "Title": "VB PROBLEM: Cannot Get My Code to \"Wait\" on a Form When the Form is Designed to Be a Custom Dialog Box",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-03-01T13:47:08",
+    "ModificationDate": "1999-03-01T13:47:08",
+    "TemplateId": null,
+    "SegmentId": 77,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Suppose that the form frmDialog is meant to be a custom dialog that is called from code. The form takes values (like a user name and a password) and returns them to the calling procedure. The problem is the calling procedure does not \"wait\" for the values returned from the form.\n\nTo stop execution of code while the frmDialog is visible, open frmDialog modally with the form:\n\n    Call frmDialog.Show(Modal:=vbModal, _\n        OwnerForm:=frmMain)\n\nwhere frmMain is the Startup Object of the project. Now suppose that frmDialog has a Cancel button with the following Click Event:\n\n    Private Sub cmdCancel_Click()\n        CancelDialog = True\n        Me.Visible = False\n    End Sub\n\nwhere CancelDialog is a Public Boolean of the frmDialog. Once frmDialog.Visible = False, the calling procedure (basCallingSub()) stops waiting. The following lines of code has the form:\n\n    If frmDialog.CancelDialog Then\n        'User clicked Cancel.\n        Call VB.Unload(frmDialog)\n        Set frmDialog = Nothing\n        GoTo basCallingSub_Exit\n    Else\n        'Get values from frmDialog.\n        With frmDialog\n            strUserName = .txtUserName.Text\n            strPassword = .txtPassword.Text\n        End With\n        Call VB.Unload(frmDialog)\n        Set frmDialog = Nothing\n    End If\n\nwhere the Unload() Method of the VB Object removes the frmDialog UI from memory. Setting frmDialog = Nothing removes the frmDialog code from memory such that when it is called again, its variables wil be reinitialized.",
+  "Tag": "kb-1109101906"
+}

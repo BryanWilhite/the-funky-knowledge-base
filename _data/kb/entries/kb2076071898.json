@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071898,
+    "Title": "Conventional TCP Port Numbers",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-10-08T16:24:59",
+    "ModificationDate": "2007-10-08T16:24:59",
+    "TemplateId": null,
+    "SegmentId": 68,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "1\tTCP Port Service Multiplexer (TCPMUX)\n5\tRemote Job Entry (RJE)\n7\tECHO\n18\tMessage Send Protocol (MSP)\n20\tFTP -- Data\n21\tFTP -- Control\n22\tSSH Remote Login Protocol\n23\tTelnet\n25\tSimple Mail Transfer Protocol (SMTP)\n29\tMSG ICP\n37\tTime\n42\tHost Name Server (Nameserv)\n43\tWhoIs\n49\tLogin Host Protocol (Login)\n53\tDomain Name System (DNS)\n69\tTrivial File Transfer Protocol (TFTP)\n70\tGopher Services\n79\tFinger\n80\tHTTP\n103\tX.400 Standard\n108\tSNA Gateway Access Server\n109\tPOP2\n110\tPOP3\n115\tSimple File Transfer Protocol (SFTP)\n118\tSQL Services\n119\tNewsgroup (NNTP)\n137\tNetBIOS Name Service\n139\tNetBIOS Datagram Service\n143\tInterim Mail Access Protocol (IMAP)\n150\tNetBIOS Session Service\n156\tSQL Server\n161\tSNMP\n179\tBorder Gateway Protocol (BGP)\n190\tGateway Access Control Protocol (GACP)\n194\tInternet Relay Chat (IRC)\n197\tDirectory Location Service (DLS)\n389\tLightweight Directory Access Protocol (LDAP)\n396\tNovell Netware over IP\n443\tHTTPS\n444\tSimple Network Paging Protocol (SNPP)\n445\tMicrosoft-DS\n458\tApple QuickTime\n546\tDHCP Client\n547\tDHCP Server\n563\tSNEWS\n569\tMSN\n1080\tSocks\n\nThis list comes from here:\n\n    http://www.webopedia.com/quick_ref/portnumbers.asp\n",
+  "Tag": "kb2076071898"
+}

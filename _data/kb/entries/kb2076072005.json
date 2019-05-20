@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072005,
+    "Title": "Formal Ontology",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-08-24T18:07:40",
+    "ModificationDate": "2008-08-24T18:07:40",
+    "TemplateId": null,
+    "SegmentId": 86,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "A Formal ontology is an ontology with a structure that is guided and defined through axioms. The goal of a formal ontology is to provide an unbiased (domain- and application-independent) view on reality. Formal ontologies are founded upon a specific Formal Upper Level Ontology, which provides consistency checks for the entire ontology and, if applied properly, allows the modeler to avoid possibly erroneous ontological assumptions encountered in modeling large-scale ontologies.\n\n[http://en.wikipedia.org/wiki/Formal_ontology]\n",
+  "Tag": "kb2076072005"
+}

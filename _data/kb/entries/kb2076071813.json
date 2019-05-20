@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071813,
+    "Title": "Hibernate in Action Notes: Chapter 2; Introducing and\nintegrating Hibernate; 2.2 Understanding the architecture",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-04-10T18:30:47",
+    "ModificationDate": "2007-04-10T18:30:47",
+    "TemplateId": null,
+    "SegmentId": 69,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "2.2 Understanding the architecture\n\n\"The programming interfaces are the first thing you have to learn about Hibernate in order to use it in the persistence layer of your application.\" There are about four types of interfaces:\n\ni) The Session, Transaction, and Query interfaces perform basic CRUD and querying operations.\n\nii) The Configuration class for \"application infrastructure.\"\n\niii) Interceptor, Lifecycle, and Validatable characterize callback interfaces.\n\niv) UserType, CompositeUserType, and IdentifierGenerator are interfaces that extend \"Hibernate’s powerful mapping functionality.\"\n\n\"Hibernate makes use of existing Java APIs, including JDBC), Java Transaction API (JTA, and Java Naming and Directory Interface (JNDI). JDBC provides a rudimentary level of abstraction of functionality common to relational databases, allowing almost any database with a JDBC driver to be supported by Hibernate. JNDI and JTA allow Hibernate to be integrated with J2EE application servers.\"\n\nMost of the important Hibernate interfaces are in the net.sf.hibernate package. Five \"core interfaces\" form the basis of the majority of Hibernate applications:\n\ni) Session\nii) SessionFactory\niii) Configuration\niv) Transaction\nv) Query (and Criteria)\n\nHibernate uses Configuration to instantiate a SessionFactory which is shared among many threads. Each thread gets a lightweight Session object. \"Hibernate sessions are not threadsafe and should by design be used by only one thread at a time.\"\n\nTransaction is optional. \"Hibernate applications may choose not to use this interface, instead managing transactions in their own infrastructure code.\"\n\n\"The Lifecycle and Validatable interfaces allow a persistent object to react to events relating to its own persistence lifecycle... The Interceptor interface was introduced to allow the application to process\ncallbacks without forcing the persistent classes to implement Hibernate-specific APIs. Implementations of the Interceptor interface are passed to the persistent instances as parameters.\"\n\n\"A fundamental and very powerful element of the architecture is Hibernate’s notion of a Type. A Hibernate Type object maps a Java type to a database column type (actually, the type may span multiple columns)... Even better, Hibernate supports user-defined custom types. The interfaces UserType and CompositeUserType are provided to allow you to add your own types.\"\n",
+  "Tag": "kb2076071813"
+}

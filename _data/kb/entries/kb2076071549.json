@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071549,
+    "Title": "DTS ActiveX Script Task: Formatting an Apache Log File; Visual Basic ActiveX Script; Data Transformation Services",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2003-12-04T11:51:27.293",
+    "ModificationDate": "2003-12-04T11:51:27.293",
+    "TemplateId": null,
+    "SegmentId": 72,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "'**********************************************************************\n'  Visual Basic ActiveX Script\n'************************************************************************\nFunction Main()\n    Dim objFileSys : Set objFileSys = CreateObject(\"Scripting.FileSystemObject\")\n    Dim vPath : vPath = DTSGlobalVariables(\"gRootLogPath\").Value\n    Dim objInStream\n    Dim objOutStream\n    Dim vWrite, vLine\n\n    Set objInStream = objFileSys.OpenTextFile(vPath & \"raw.txt\")\n    Set objOutStream = objFileSys.CreateTextFile(vPath & \"log.txt\")\n\n    '\n    'Apache \"common\" log file: host ident authuser date request status bytes\n    '\n    Do Until objInStream.AtEndOfStream\n        vWrite = false\n        vLine = objInStream.ReadLine\n\n        If Instr(1,vLine,\"/ HTTP\") > 0 _\n            Or Instr(1,vLine,\".css HTTP\") > 0 _\n            Or Instr(1,vLine,\".exe HTTP\") > 0 _\n            Or Instr(1,vLine,\".html HTTP\") > 0 _\n            Or Instr(1,vLine,\".js HTTP\") > 0 _\n            Or Instr(1,vLine,\".mov HTTP\") > 0 _\n            Or Instr(1,vLine,\".mp3 HTTP\") > 0 _\n            Or Instr(1,vLine,\".pdf HTTP\") > 0 _\n            Or Instr(1,vLine,\".swf HTTP\") > 0 _\n            Then\n\n            If Instr(1,vLine,\"not_found.html HTTP\") = 0 _\n                And Instr(1,vLine, \"\"\"GET\" & Space(1)) > 0 _\n                Then vWrite = true\n\n        End If\n\n        If CBool(vWrite) Then objOutStream.WriteLine(vLine)\n    Loop\n\n    objInStream.Close\n    objOutStream.Close\n\n    Set objInStream = Nothing\n    Set objOutStream = Nothing\n    Set objFileSys = Nothing\n\n    Main = DTSTaskExecResult_Success\nEnd Function",
+  "Tag": "kb2076071549"
+}

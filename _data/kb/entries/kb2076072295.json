@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072295,
+    "Title": "Ubuntu and VMware Tools: \"linux/version.h\" Error from ./vmware-install.pl",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2009-10-05T12:03:51",
+    "ModificationDate": "2009-10-05T12:03:51",
+    "TemplateId": null,
+    "SegmentId": 73,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Invoking ./vmware-install.pl may cause this error: “The path \"/usr/src/linux-headers-2.6.24-24/include\" is a kernel header file \ndirectory, but it does not contain the file \"linux/version.h\" as expected.  \nThis can happen if the kernel has never been built, or if you have invoked the \n\"make mrproper\" command in your kernel directory.  In any case, you may want to rebuild your kernel.” Not that 2.6.24-24 is likely to change over time.\n\nInstead of rebuilding your kernel, install a linux-headers-* package with:\n\n    sudo apt-get install linux-headers-`uname -r`\n\nThis should add new files in your /usr/src folder—a bunch of folders with symlinks pointing to another image of source files for your running kernel.\n\n[http://ubuntuforums.org/showthread.php?t=294384]",
+  "Tag": "kb2076072295"
+}

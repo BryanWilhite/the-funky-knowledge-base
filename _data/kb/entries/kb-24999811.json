@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -24999811,
+    "Title": "Code: txtCopies_Exit() -- Data Validation on Exit",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-09-09T15:36:59",
+    "ModificationDate": "1999-09-09T15:36:59",
+    "TemplateId": null,
+    "SegmentId": 63,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Sub txtCopies_Exit (Cancel As Integer)\n'\n'NOTE: This procedure contains line break characters\n'for readability. These characters are not supported\n'in Access Basic.\n'\n    '\n    'This sub checks txtCopies for smart-ass values.\n    'We don't want txtCopies to have negative values\n    'or fractional values.\n    '\n    If IsNumeric(Me![txtCopies]) Then\n        If Me![txtCopies] >=1 Then Me![txtCopies] = _\n            CInt(Abs(Me![txtCopies]))\n    Else\n        Me![txtCopies] = 1\n    End If\nEnd Sub",
+  "Tag": "kb-24999811"
+}

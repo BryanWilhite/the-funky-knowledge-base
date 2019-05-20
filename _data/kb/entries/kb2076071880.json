@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071880,
+    "Title": "gvim/vim: selected tips from the vim tip database; toggling case; VimTip 49",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-09-07T19:57:02",
+    "ModificationDate": "2007-09-07T19:57:02",
+    "TemplateId": null,
+    "SegmentId": 73,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "To switch the case of one or more characters use these commands:\n    ~\n\n,\n\n    gU\n\nor\n\n    gu\n\nExamples:\n\nSwitch case of character under cursor (in visual-mode: switch case of highlighted text):\n\n    ~\n\nSwitch case of next three characters:\n\n    3~\n\nSwitch case of current line:\n\n    g~~\n\nIn visual-mode: make highlighted text uppercase:\n\n    U\n\nMake current line uppercase:\n\n    gUU\n\nIn visual-mode: make highlighted text lowercase:\n\n    u\n\nMake current line lowercase:\n\n    guu\n\nMake current word uppercase:\n\n    gUaw\n\nMake current word lowercase:\n\n    guaw\n",
+  "Tag": "kb2076071880"
+}

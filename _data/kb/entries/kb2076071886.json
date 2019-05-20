@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071886,
+    "Title": "PowerShell and ADSI: Searching the Registry to Find All Available Providers on Windows with .NET Objects",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-09-28T16:01:31",
+    "ModificationDate": "2007-09-28T16:01:31",
+    "TemplateId": null,
+    "SegmentId": 79,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "PS C:\\> $key = [Microsoft.Win32.Registry]::LocalMachine\n\nPS C:\\> $key.GetSubKeyNames()\nHARDWARE\nSAM\nSECURITY\nSOFTWARE\nSYSTEM\n\nPS C:\\> $subKey = $key.OpenSubKey(\"SOFTWARE\\\\Microsoft\\\\ADs\\\\Provide\nrs\")\n\nPS C:\\> $subKey.GetSubKeyNames()\nIIS\nLDAP\nNDS\nNWCOMPAT\nWinNT\n",
+  "Tag": "kb2076071886"
+}

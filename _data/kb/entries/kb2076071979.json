@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071979,
+    "Title": "PHP cURL: building headers for a HTTP Request",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-07-03T13:01:21",
+    "ModificationDate": "2008-07-03T13:01:21",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "This is an example for building headers for a cURL call in PHP:\n\n    $ch = curl_init();\n    $user_agent = 'Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)';\n\n    …\n\n    $headers = array();\n\n    $headers[] = \"POST \" . $postPath . \" HTTP/1.1\";\n    $headers[] = \"Host: \" . $postHost;\n    $headers[] = \"Content-type: text/xml\";\n    $headers[] = \"Content-length: \" . mb_strlen($content, \"UTF-8\");\n    $headers[] = \"Connection: close\";\n\n    …\n\n    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);\n    curl_setopt($ch, CURLOPT_HEADER, 1);\n    curl_setopt($ch, CURLOPT_USERAGENT, $user_agent);\n\nThe complete code sample is here:\n\n    http://www.tanguay.info/web/codeExample.php?id=993\n",
+  "Tag": "kb2076071979"
+}

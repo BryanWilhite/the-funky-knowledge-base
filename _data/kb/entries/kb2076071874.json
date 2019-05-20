@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071874,
+    "Title": "PowerShell 1.x script: Toggling Servers on and off in Windows Server 2003",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2007-08-29T12:17:43",
+    "ModificationDate": "2007-08-29T12:17:43",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Function StopService\n{\n    $s = Get-WmiObject -Class Win32_Service -Filter $args[0]\n    if ( $s )\n    {\n        Write-Host \"Service\"$s.Name\"found.\"\n        if ( $s.State -eq \"Running\" )\n        {\n            Write-Host \"Service is running. Stopping service…`n\"\n            StopServiceReturnValue $s.StopService().ReturnValue\n            Write-Host \"Waiting 5 seconds…`n\"\n            Sleep -seconds 5\n        }\n    }\n    else\n    {\n        Write-Host \"Service not found.`n\"\n    }\n}\n\nFunction StopServiceReturnValue\n{\n    $v = $args[0]\n\n    $msg = \"Unknown return value:$v\"\n\n    switch($v)\n    {\n        0 \t{ $msg = \"Success.`n\" }\n        1 \t{ $msg = \"Not Supported.`n\" }\n        2 \t{ $msg = \"Access Denied.`n\" }\n        3 \t{ $msg = \"Dependent Services Running.`n\" }\n        4 \t{ $msg = \"Invalid Service Control.`n\" }\n        5 \t{ $msg = \"Service Cannot Accept Control.`n\" }\n        6 \t{ $msg = \"Service Not Active.`n\" }\n        7 \t{ $msg = \"Service Request timeout.`n\" }\n        8 \t{ $msg = \"Unknown Failure.`n\" }\n        9 \t{ $msg = \"Path Not Found.`n\" }\n        10 \t{ $msg = \"Service Already Stopped.`n\" }\n        11 \t{ $msg = \"Service Database Locked.`n\" }\n        12 \t{ $msg = \"Service Dependency Deleted.`n\" }\n        13 \t{ $msg = \"Service Dependency Failure.`n\" }\n        14 \t{ $msg = \"Service Disabled.`n\" }\n        15 \t{ $msg = \"Service Logon Failed.`n\" }\n        16 \t{ $msg = \"Service Marked For Deletion.`n\" }\n        17 \t{ $msg = \"Service No Thread`n\" }\n        18 \t{ $msg = \"Status: Circular Dependency`n\" }\n        19 \t{ $msg = \"Status: Duplicate Name`n\" }\n        20 \t{ $msg = \"Status: Invalid Name`n\" }\n        21 \t{ $msg = \"Status: Invalid Parameter`n\" }\n        22 \t{ $msg = \"Status: Invalid Service Account`n\" }\n        23 \t{ $msg = \"Status: Service Exists`n\" }\n        24 \t{ $msg = \"Service Already Paused.`n\" }\n    }\n\n    Write-Host $msg\n}\n\nFunction ToggleService\n{\n\n    $s = Get-WmiObject -Class Win32_Service -Filter $args[0]\n\n    if ( $s )\n    {\n        Write-Host \"Service\"$s.Name\"found.\"\n        if ( $s.State -eq \"Stopped\" )\n        {\n            Write-Host \"Service is stopped. Starting service…`n\"\n            $s.StartService() | Out-Null\n        }\n        else\n        {\n            Write-Host \"Service is not stopped. Stopping service…`n\"\n            StopServiceReturnValue $s.StopService().ReturnValue\n\n            if ( $s.Name -eq \"W3SVC\" )\n            {\n                Write-Host \"Waiting 5 seconds…`n\"\n                Sleep -seconds 5\n\n                Write-Host \"Looking for dependencies for\"$s.Name\"…`n\"\n\n                Write-Host \"Looking for HTTP SSL Service…\"\n                StopService 'Name = \"HTTPFilter\"'\n\n                Write-Host \"Looking for IIS Admin Service…\"\n                StopService 'Name = \"IISADMIN\"'\n            }\n        }\n    }\n    else\n    {\n        Write-Host \"Service not found.`n\"\n    }\n}\n\nClear-Host\n\nWrite-Host \"Looking for WWW Publishing Service…\"\nToggleService 'Name = \"W3SVC\"'\n\n\"Looking for default instance of SQL Server 2000…\"\nToggleService 'Name = \"MSSQLSERVER\"'\n\n\"Looking for conventional instance of SQL Server 2005 Express…\"\nToggleService 'Name = \"MSSQL$MYDB\"'\n",
+  "Tag": "kb2076071874"
+}

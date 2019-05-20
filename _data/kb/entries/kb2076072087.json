@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072087,
+    "Title": "ActionScript 3.0 and E4X Code: Remove a Namespace; XSPF",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-12-04T20:44:46",
+    "ModificationDate": "2008-12-04T20:44:46",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "    public static function getTrackData(data:*, index:int=0):XML\n    {\n        var xspf:Namespace = new Namespace(xspfUri);\n        default xml namespace = xspf;\n        var playlist:XML = new XML(data);\n\n        var length:int = playlist.trackList.length();\n        var title:String = String(playlist.trackList.track[index].title);\n        var location:String = String(playlist.trackList.track[index].location);\n\n        var returnXml:XML =\n            <trackData x­mlns=\"\">\n                <total>{length}</total>\n                <title>{title}</title>\n                <location>{location}</location>\n            </trackData>\n\n        return returnXml;\n    }\n/*\n\nBy setting x­mlns to a zero-length string, E4X will omit the x­mlns attribute.\n\n*/",
+  "Tag": "kb2076072087"
+}

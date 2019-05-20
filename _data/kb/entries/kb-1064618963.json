@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": -1064618963,
+    "Title": "AMD K6-2 Processors Do Not Work with Windows 95",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2000-01-17T20:35:52",
+    "ModificationDate": "2000-01-17T20:35:52",
+    "TemplateId": null,
+    "SegmentId": 66,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "I found out the hard way that AMD K6-2 processors do not work with Windows 95 (the OEM version of Windows 95 has a fix from Microsoft). This is not the fault of the hardware. For more information please see Microsoft Knowledge Base article Q192841 (\"Problems Using High Speed AMD K6-2/350 Central Processing Unit\").\n\nI was forced to upgrade to Windows 98.",
+  "Tag": "kb-1064618963"
+}

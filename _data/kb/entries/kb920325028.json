@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 920325028,
+    "Title": "Visual InterDev: Avoiding the Visual InterDev CSS Editor",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1999-03-01T14:08:05",
+    "ModificationDate": "1999-03-01T14:08:05",
+    "TemplateId": null,
+    "SegmentId": 77,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "In the rare case of a hard core VB Progammer actually having respect for the W3C's recommendations and publications, such a person will want to avoid the CSS GUI editor provided by Visual Interdev 6.0.\n\nIt is useful to have the CSS files in InterDev Solutions open as text files by default. One way to do this is to set the Default under Open With… in the Project Explorer Window. For example:\n\n    Choose Project > Add Item > New > StyleSheet\n    Choose View > Project Explorer\n\nVisual InterDev may create a new CSS file named StyleSheet1.CSS. Right-click on the new CSS file.\n\n    Choose Open With... > Source Code (Text) Editor\n    Click the Set as Default button\n    Click the Open button",
+  "Tag": "kb920325028"
+}

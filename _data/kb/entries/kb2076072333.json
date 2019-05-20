@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072333,
+    "Title": "JavaScript: “Why does instanceof return false for some literals?”; stackoverflow.com",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2010-03-02T14:41:39",
+    "ModificationDate": "2010-03-02T14:41:39",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "\"foo\" instanceof String //=> false\n\"foo\" instanceof Object //=> false\ntrue instanceof Boolean //=> false\ntrue instanceof Object //=> false\nfalse instanceof Boolean //=> false\nfalse instanceof Object //=> false\n[0,1] instanceof Array //=> true\n{0:1} instanceof Object //=> true\n12.21 instanceof Number //=> false\n/foo/ instanceof RegExp //=> true\n\n…\n\nThat’s because those things are primitives, and unless they need to be used as objects (when you are calling methods on them, for example) they remain so. The only time they “become” objects is when they need to be wrapped. If you are familiar with the concept of “boxing” in .NET, then think of it in that way.\n\n[http://stackoverflow.com/questions/203739/why-does-instanceof-return-false-for-some-literals]",
+  "Tag": "kb2076072333"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071551,
+    "Title": "ASP and VBScript 5.5 Code: basRowCmds(); Use of the Regular Expression Object",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2004-02-03T11:07:39.95",
+    "ModificationDate": "2004-02-03T11:07:39.95",
+    "TemplateId": null,
+    "SegmentId": 67,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "Function basRowCmds(vString)\n    If Len(vString) = 0 Then Exit Function\n    Dim vCmdButton\n    Dim objRegExpr: Set objRegExpr = New regexp\n    objRegExpr.Pattern = \"<\\!--cmd_(\\D+)_(\\D+)_(\\d+)-->\"\n    objRegExpr.Global = True\n    objRegExpr.IgnoreCase = True\n    Dim objMatches: Set objMatches = objRegExpr.Execute(vString)\n    Dim objMatch: For Each objMatch in objMatches\n        Select Case LCase(objMatch.SubMatches(0))\n            'SubMatches() was added to VBScript 5.5!\n            Case \"add\"\n                vCmdButton = \"<button class=\"\"uiButton\"\"\" _\n                    & \"onClick=\"\"window.location.href='./?cmd=add&type=\" _\n                    & objMatch.SubMatches(1) & \"&id=\" _\n                    & objMatch.SubMatches(2) & \"'\"\">Add</button>\"\n                vString = Replace(vString,objMatch.Value,vCmdButton _\n                    ,1,-1,vbTextCompare)\n            Case \"delete\"\n                vCmdButton = \"<button class=\"\"uiButton\"\"\" _\n                    & \"onClick=\"\"window.location.href='./?cmd=delete&type=\" _\n                    & objMatch.SubMatches(1) & \"&id=\" _\n                    & objMatch.SubMatches(2) & \"'\"\">Delete</button>\"\n                vString = Replace(vString,objMatch.Value,vCmdButton _\n                    ,1,-1,vbTextCompare)\n            Case \"remove\"\n                vCmdButton = \"<button class=\"\"uiButton\"\"\" _\n                    & \"onClick=\"\"window.location.href='./?cmd=remove&type=\" _\n                    & objMatch.SubMatches(1) & \"&id=\" _\n                    & objMatch.SubMatches(2) & \"'\"\">Remove</button>\"\n                vString = Replace(vString,objMatch.Value,vCmdButton _\n                    ,1,-1,vbTextCompare)\n        End Select\n    Next\n\n    basRowCmds = vString\nEnd Function\n",
+  "Tag": "kb2076071551"
+}

@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076072007,
+    "Title": "Nullable<T> Usage Guidelines; Krzysztof Cwalina",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-08-24T19:16:46",
+    "ModificationDate": "2008-08-24T19:16:46",
+    "TemplateId": null,
+    "SegmentId": 83,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "CONSIDER using Nullable<T> to represent values that might not be present (i.e. optional values).\n\nDo NOT use Nullable<T> unless you would use a reference type in a similar manner, taking advantage of the fact that reference type values can be null.\n\nAVOID using Nullable<bool> to represent a general three-state value.\n\nAVOID using System.DBNull. Prefer Nullable<T> instead.\n\nNullable<T> is in general a better representation of optional database values. One thing to consider though it that while Nullable<T> gives you the ability to represent null values, you don’t get database null operational semantics. Specifically, you don’t get null propagation through operators and functions. If you deeply care about the propagation semantics, consider sticking with DBNull.\n\n[http://blogs.msdn.com/kcwalina/archive/2008/07/16/Nullable.aspx]\n\n\n",
+  "Tag": "kb2076072007"
+}

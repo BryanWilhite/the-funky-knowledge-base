@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 912442279,
+    "Title": "PROBLEM: MSysCmdBars Error Message; Replication",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "1998-11-30T08:21:11",
+    "ModificationDate": "1998-11-30T08:21:11",
+    "TemplateId": null,
+    "SegmentId": 64,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "The following error message may occur after selecting Tools > Replication > Create Replica...: \"Microsoft Access can't convert the database to a Design Master. Cannot make the MSysCmdBars object in Tables container replicable.\" This problem is most likely due to a version of replication dynamic-link library, MSREPL35.DLL, less than 3.51.0623.0.\n\nTo obtain updated DLLs from Microsoft please refer to the following Microsoft Knowledge Base articles: \"ACC97: Updated Version of Microsoft Jet 3.5 Available on MSL\" (Q172733); \"ACC97: Error Converting Database To Design Master\" (Q173775).",
+  "Tag": "kb912442279"
+}

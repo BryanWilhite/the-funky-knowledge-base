@@ -1,0 +1,20 @@
+{
+  "Document": {
+    "DocumentId": 2076071944,
+    "Title": "Zend Framework Upgrade of SonghaySystem.com: the “legacy” .htaccess file",
+    "DocumentShortName": null,
+    "FileName": null,
+    "Path": null,
+    "CreateDate": "2008-03-12T14:04:00",
+    "ModificationDate": "2008-03-12T14:04:00",
+    "TemplateId": null,
+    "SegmentId": 71,
+    "IsRoot": false,
+    "IsActive": true,
+    "SortOrdinal": null,
+    "ClientId": null,
+    "Tag": null
+  },
+  "Content": "# Disallow file browsing:\n#Options -Indexes\n\n# Custom errors:\n#ErrorDocument 401 /ex.php?status=401\n#ErrorDocument 403 /ex.php?status=403\n#ErrorDocument 404 /ex.php?status=404\n#ErrorDocument 500 /ex.php?status=500\n\n\nRewriteEngine on\n\n# Production server rewrites:\n#RewriteCond %{SERVER_NAME} songhaysystem.com\n#RewriteRule ^public_tools/js/rootData\\.js$ /js/routines/DataValidation\\.js [redirect,last]\n#RewriteCond %{SERVER_NAME} songhaysystem.com\n#RewriteRule ^public_tools/js/rootSniffer\\.js$ /js/routines/Sniffer.js [redirect,last]\n#RewriteCond %{SERVER_NAME} songhaysystem.com\n#RewriteRule ^public_tools/rss/news_feeds\\.opml /samples/OPML/sage\\.opml [redirect,last]\n#RewriteCond %{SERVER_NAME} songhaysystem.com\n#RewriteRule ^public_tools/(CSS|CrystDDF|DOM) /samples/$1 [redirect,last]\n\n# Development server rewrites (for testing):\n#RewriteCond %{SERVER_NAME} songhay7lxv\n#RewriteRule ^public_tools/js/rootData\\.js$ /dev_SonghaySystem/js/routines/DataValidation\\.js [redirect,last]\n#RewriteCond %{SERVER_NAME} songhay7lxv\n#RewriteRule ^public_tools/js/rootSniffer\\.js$ /dev_SonghaySystem/js/routines/Sniffer.js [redirect,last]\n#RewriteCond %{SERVER_NAME} songhay7lxv\n#RewriteRule ^public_tools/rss/news_feeds\\.opml /dev_SonghaySystem/samples/OPML/sage\\.opml [redirect,last]\n#RewriteCond %{SERVER_NAME} songhay7lxv\n#RewriteRule ^public_tools/(CSS|CrystDDF|DOM) /dev_SonghaySystem/samples/$1 [redirect,last]\n",
+  "Tag": "kb2076071944"
+}
