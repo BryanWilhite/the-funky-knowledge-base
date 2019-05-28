@@ -2,6 +2,18 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "dotnet: build",
+            "type": "shell",
+            "command": [
+                "dotnet",
+                "build"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/shell/Songhay.Publications.Tests"
+            },
+            "problemMatcher": []
+        },
+        {
             "type": "npm",
             "script": "build",
             "problemMatcher": []

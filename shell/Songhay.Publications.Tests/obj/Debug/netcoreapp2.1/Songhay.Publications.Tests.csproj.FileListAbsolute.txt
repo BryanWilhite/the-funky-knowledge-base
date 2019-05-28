@@ -1,0 +1,14 @@
+/home/rasx/sourceRoot/the-funky-knowledge-base/shell/Songhay.Publications.Tests/bin/Debug/netcoreapp2.1/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/home/rasx/sourceRoot/the-funky-knowledge-base/shell/Songhay.Publications.Tests/bin/Debug/netcoreapp2.1/xunit.runner.reporters.netcoreapp10.dll
+/home/rasx/sourceRoot/the-funky-knowledge-base/shell/Songhay.Publications.Tests/bin/Debug/netcoreapp2.1/xunit.runner.utility.netcoreapp10.dll
+/home/rasx/sourceRoot/the-funky-knowledge-base/shell/Songhay.Publications.Tests/bin/Debug/netcoreapp2.1/Songhay.Publications.Tests.deps.json
+/home/rasx/sourceRoot/the-funky-knowledge-base/shell/Songhay.Publications.Tests/bin/Debug/netcoreapp2.1/Songhay.Publications.Tests.runtimeconfig.json
+/home/rasx/sourceRoot/the-funky-knowledge-base/shell/Songhay.Publications.Tests/bin/Debug/netcoreapp2.1/Songhay.Publications.Tests.runtimeconfig.dev.json
+/home/rasx/sourceRoot/the-funky-knowledge-base/shell/Songhay.Publications.Tests/bin/Debug/netcoreapp2.1/Songhay.Publications.Tests.dll
+/home/rasx/sourceRoot/the-funky-knowledge-base/shell/Songhay.Publications.Tests/bin/Debug/netcoreapp2.1/Songhay.Publications.Tests.pdb
+/home/rasx/sourceRoot/the-funky-knowledge-base/shell/Songhay.Publications.Tests/obj/Debug/netcoreapp2.1/Songhay.Publications.Tests.csprojAssemblyReference.cache
+/home/rasx/sourceRoot/the-funky-knowledge-base/shell/Songhay.Publications.Tests/obj/Debug/netcoreapp2.1/Songhay.Publications.Tests.csproj.CoreCompileInputs.cache
+/home/rasx/sourceRoot/the-funky-knowledge-base/shell/Songhay.Publications.Tests/obj/Debug/netcoreapp2.1/Songhay.Publications.Tests.AssemblyInfoInputs.cache
+/home/rasx/sourceRoot/the-funky-knowledge-base/shell/Songhay.Publications.Tests/obj/Debug/netcoreapp2.1/Songhay.Publications.Tests.AssemblyInfo.cs
+/home/rasx/sourceRoot/the-funky-knowledge-base/shell/Songhay.Publications.Tests/obj/Debug/netcoreapp2.1/Songhay.Publications.Tests.dll
+/home/rasx/sourceRoot/the-funky-knowledge-base/shell/Songhay.Publications.Tests/obj/Debug/netcoreapp2.1/Songhay.Publications.Tests.pdb
