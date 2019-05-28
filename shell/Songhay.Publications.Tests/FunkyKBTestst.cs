@@ -1,4 +1,4 @@
-using Songhay.Tests;
+using SonghayCore.xUnit;
 using System;
 using System.IO;
 using Xunit;
