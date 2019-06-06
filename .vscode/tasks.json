@@ -2,6 +2,37 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/shell/Songhay.Publications.Tests/Songhay.Publications.Tests.csproj"
+            ],
+            "problemMatcher": "$tsc"
+        },
+        {
+            "label": "publish",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/shell/Songhay.Publications.Tests/Songhay.Publications.Tests.csproj"
+            ],
+            "problemMatcher": "$tsc"
+        },
+        {
+            "label": "watch",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "${workspaceFolder}/shell/Songhay.Publications.Tests/Songhay.Publications.Tests.csproj"
+            ],
+            "problemMatcher": "$tsc"
+        },
+        {
             "label": "dotnet: build",
             "type": "shell",
             "command": [
