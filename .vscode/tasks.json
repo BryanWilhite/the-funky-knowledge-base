@@ -11,7 +11,21 @@
             "options": {
                 "cwd": "${workspaceFolder}/shell/Songhay.Publications.Tests"
             },
-            "problemMatcher": []
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "test [Songhay.Publications.Tests, filtered by selected text]",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "test",
+                "${workspaceFolder}/Songhay.Publications.Tests/Songhay.Publications.Tests.csproj",
+                "--filter:${selectedText}",
+                "--logger:trx",
+                "--results-directory:${workspaceFolder}/TestResults",
+                "--verbosity:normal"
+            ],
+            "problemMatcher": "$msCompile"
         },
         {
             "type": "npm",
