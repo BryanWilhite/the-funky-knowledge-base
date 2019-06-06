@@ -50,10 +50,10 @@
             "type": "shell",
             "args": [
                 "test",
-                "${workspaceFolder}/Songhay.Publications.Tests/Songhay.Publications.Tests.csproj",
+                "${workspaceFolder}/shell/Songhay.Publications.Tests/Songhay.Publications.Tests.csproj",
                 "--filter:${selectedText}",
                 "--logger:trx",
-                "--results-directory:${workspaceFolder}/TestResults",
+                "--results-directory:${workspaceFolder}/shell/TestResults",
                 "--verbosity:normal"
             ],
             "problemMatcher": "$msCompile"
