@@ -1,7 +1,9 @@
-using Newtonsoft.Json.Linq;
-using SonghayCore.xUnit;
 using System;
 using System.IO;
+using System.Linq;
+using Newtonsoft.Json.Linq;
+using Songhay.Extensions;
+using SonghayCore.xUnit;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -22,7 +24,20 @@ namespace Songhay.Publications.Tests
             var jO = JObject.Parse(File.ReadAllText(entryInfo.FullName));
             var md = string.Empty;
 
-            File.WriteAllText(mdInfo.FullName, md);
+            string ConvertToCamelCase(string input)
+            { // TODO: move to Core
+                return $"{input[0].ToString().ToLowerInvariant()}{input.Substring(1)}";
+            }
+
+            var documentJson = jO["Document"]?.Value<JObject>()
+                .Properties()
+                .Select(i => $"\"{ConvertToCamelCase(i.Name)}\": \"{i.Value}\"")
+                .Aggregate((a, i) => $"{a},{i}");
+            var document = JObject.Parse($"{{{documentJson}}}");
+
+            this._testOutputHelper.WriteLine(document.ToString());
+
+            // File.WriteAllText(mdInfo.FullName, md);
         }
 
         ITestOutputHelper _testOutputHelper;
