@@ -16,6 +16,13 @@ namespace Songhay.Publications.Tests
             this._testOutputHelper = helper;
         }
 
+        [Theory, InlineData("../../../../../_data/kb/entries/")]
+        public void ShouldLoadEntries(string root)
+        {
+            root = FrameworkAssemblyUtility.GetPathFromAssembly(this.GetType().Assembly);
+            this._testOutputHelper.WriteLine(root);
+        }
+
         [Theory, ProjectFileData(typeof(FunkyKBTests),
             "../../../../../_data/kb/entries/kb-19901868.json",
             "../../../../../posts/kb-19901868.md")]
