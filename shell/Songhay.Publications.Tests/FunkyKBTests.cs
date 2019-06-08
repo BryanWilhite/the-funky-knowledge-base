@@ -1,9 +1,9 @@
-using System;
-using System.IO;
-using System.Linq;
 using Newtonsoft.Json.Linq;
 using Songhay.Extensions;
 using SonghayCore.xUnit;
+using System;
+using System.IO;
+using System.Linq;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -22,22 +22,33 @@ namespace Songhay.Publications.Tests
         public void ShouldLoadEntry(FileInfo entryInfo, FileInfo mdInfo)
         {
             var jO = JObject.Parse(File.ReadAllText(entryInfo.FullName));
+
+            var md = GetMarkdown(jO);
+
+            this._testOutputHelper.WriteLine($"writing {entryInfo.Name}...");
+            File.WriteAllText(mdInfo.FullName, md);
+        }
+
+        public static string GetMarkdown(JObject input)
+        {
             var md = string.Empty;
 
-            string ConvertToCamelCase(string input)
+            string ConvertToCamelCase(string s)
             { // TODO: move to Core
-                return $"{input[0].ToString().ToLowerInvariant()}{input.Substring(1)}";
+                return $"{s[0].ToString().ToLowerInvariant()}{s.Substring(1)}";
             }
 
-            var documentJson = jO["Document"]?.Value<JObject>()
+            var documentJson = input["Document"]?.Value<JObject>()
                 .Properties()
                 .Select(i => $"\"{ConvertToCamelCase(i.Name)}\": \"{i.Value}\"")
                 .Aggregate((a, i) => $"{a},{i}");
             var document = JObject.Parse($"{{{documentJson}}}");
+            var frontMatter = $"---json{Environment.NewLine}{document}{Environment.NewLine}---";
+            var content = input["Content"]?.Value<string>();
 
-            this._testOutputHelper.WriteLine(document.ToString());
+            md = $"{frontMatter}{Environment.NewLine}{Environment.NewLine}{content}{Environment.NewLine}";
 
-            // File.WriteAllText(mdInfo.FullName, md);
+            return md;
         }
 
         ITestOutputHelper _testOutputHelper;
