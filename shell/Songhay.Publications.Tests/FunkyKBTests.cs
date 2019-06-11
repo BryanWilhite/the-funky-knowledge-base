@@ -1,6 +1,6 @@
 using Newtonsoft.Json.Linq;
 using Songhay.Extensions;
-using SonghayCore.xUnit;
+using Songhay.Tests;
 using System;
 using System.IO;
 using System.Linq;
@@ -19,7 +19,7 @@ namespace Songhay.Publications.Tests
         [Theory, InlineData("../../../../../_data/kb/entries/")]
         public void ShouldLoadEntries(string root)
         {
-            root = FrameworkAssemblyUtility.GetPathFromAssembly(this.GetType().Assembly);
+            root = FrameworkAssemblyUtility.GetPathFromAssembly(this.GetType().Assembly, root);
             this._testOutputHelper.WriteLine(root);
         }
 
