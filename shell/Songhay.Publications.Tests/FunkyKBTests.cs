@@ -41,16 +41,24 @@ namespace Songhay.Publications.Tests
         }
 
         [Theory, ProjectFileData(typeof(FunkyKBTests),
-            "../../../../../_data/kb/entries/kb-19901868.json",
-            "../../../../../posts/kb-19901868.md")]
+            "../../../../../_data/kb/entries/kb904850341.json",
+            "../../../../../posts/kb904850341.md")]
         public void ShouldLoadEntry(FileInfo entryInfo, FileInfo mdInfo)
         {
-            var jO = JObject.Parse(File.ReadAllText(entryInfo.FullName));
+            var jsonString = GetJsonString(File.ReadAllText(entryInfo.FullName));
+            var jO = JObject.Parse(jsonString);
 
             var md = GetMarkdown(jO);
 
             this._testOutputHelper.WriteLine($"writing {entryInfo.Name}...");
             File.WriteAllText(mdInfo.FullName, md);
+        }
+
+        public static string GetJsonString(string input)
+        {
+            return input
+                .Replace(@"\""", @"`")
+                ;
         }
 
         public static string GetMarkdown(JObject input)
