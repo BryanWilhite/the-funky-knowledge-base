@@ -28,8 +28,15 @@ namespace Songhay.Publications.Tests
             var entriesRootInfo = new DirectoryInfo(entriesRoot);
             foreach (var entryInfo in entriesRootInfo.GetFiles("*.json"))
             {
+                this._testOutputHelper.WriteLine($"reading {entryInfo.Name}...");
+                var jO = JObject.Parse(File.ReadAllText(entryInfo.FullName));
+
+                var md = GetMarkdown(jO);
+
                 var mdPath = FrameworkFileUtility.GetCombinedPath(postsRoot, entryInfo.Name.Replace(".json", ".md"));
+
                 this._testOutputHelper.WriteLine($"writing `{mdPath}`...");
+                File.WriteAllText(mdPath, md);
             }
         }
 
