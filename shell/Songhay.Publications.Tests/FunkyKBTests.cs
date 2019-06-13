@@ -29,7 +29,8 @@ namespace Songhay.Publications.Tests
             foreach (var entryInfo in entriesRootInfo.GetFiles("*.json"))
             {
                 this._testOutputHelper.WriteLine($"reading {entryInfo.Name}...");
-                var jO = JObject.Parse(File.ReadAllText(entryInfo.FullName));
+                var jsonString = GetJsonString(File.ReadAllText(entryInfo.FullName));
+                var jO = JObject.Parse(jsonString);
 
                 var md = GetMarkdown(jO);
 
@@ -57,7 +58,11 @@ namespace Songhay.Publications.Tests
         public static string GetJsonString(string input)
         {
             return input
-                .Replace(@"\""", @"`")
+                .Replace("\t", "    ")
+                .Replace("<", "&lt;")
+                .Replace(">", "&gt;")
+                .Replace(@"\""", "&quot;")
+                .Replace(@"\\", "&bsol;&bsol;")
                 ;
         }
 
@@ -65,18 +70,13 @@ namespace Songhay.Publications.Tests
         {
             var md = string.Empty;
 
-            string ConvertToCamelCase(string s)
-            { // TODO: move to Core
-                return $"{s[0].ToString().ToLowerInvariant()}{s.Substring(1)}";
-            }
-
             var documentJson = input["Document"]?.Value<JObject>()
                 .Properties()
-                .Select(i => $"\"{ConvertToCamelCase(i.Name)}\": \"{i.Value}\"")
+                .Select(i => $"\"{(i.Name.ToCamelCase())}\": \"{i.Value}\"")
                 .Aggregate((a, i) => $"{a},{i}");
             var document = JObject.Parse($"{{{documentJson}}}");
             var frontMatter = $"---json{Environment.NewLine}{document}{Environment.NewLine}---";
-            var content = input["Content"]?.Value<string>();
+            var content = input["Content"]?.Value<string>().Trim();
 
             md = $"{frontMatter}{Environment.NewLine}{Environment.NewLine}{content}{Environment.NewLine}";
 
