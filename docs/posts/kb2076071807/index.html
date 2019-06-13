@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>T-SQL Code: A Function for Checking for the Existence of an Object; fItemExists() - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>USE [Database]
+GO
+IF OBJECT_ID('fItemExists') IS NOT NULL
+BEGIN
+DROP FUNCTION fItemExists
+IF OBJECT_ID('fItemExists') IS NOT NULL
+PRINT '&lt;&lt;&lt; FAILED DROPPING FUNCTION fItemExists &gt;&gt;&gt;'
+ELSE
+PRINT '&lt;&lt;&lt; DROPPED FUNCTION fItemExists &gt;&gt;&gt;'
+END
+GO
+CREATE FUNCTION dbo.fItemExists
+(
+@objectName   nvarchar(128) = NULL
+,   @propertyName nvarchar(128) = NULL
+)
+RETURNS bit
+AS
+BEGIN
+DECLARE @bit bit
+SET @bit = 0
+IF EXISTS(
+SELECT
+[object]   = o.name
+,   [property] = p.name
+FROM
+sysObjects o
+,   sysColumns p
+WHERE
+o.id = p.id
+AND
+o.name = @objectName
+AND
+p.name = @propertyName
+)
+BEGIN
+SET @bit = 1
+END</p>
+<p>RETURN @bit
+END
+GO
+GRANT EXECUTE ON fItemExists TO public
+GO
+IF OBJECT_ID('fItemExists') IS NOT NULL
+PRINT '&lt;&lt;&lt; CREATED FUNCTION fItemExists &gt;&gt;&gt;'
+ELSE
+PRINT '&lt;&lt;&lt; FAILED CREATING FUNCTION fItemExists &gt;&gt;&gt;'
+GO</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

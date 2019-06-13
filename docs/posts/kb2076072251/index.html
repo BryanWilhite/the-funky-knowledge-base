@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>“Silverlight Tip of the Day #57—How to Dynamically Load a Silverlight Control within another Silverlight Control”; Mike Snow - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Let’s say your site is entirely written in Silverlight but you want to be able to load and run a different Silverlight application within your main Silverlight application/site. Currently this scenario is not directly supported in Silverlight. However, I have a work around that will more or less accomplish this scenario.</p>
+<p>The way I do this is to add a second, hidden Silverlight control to your web page. I set the Source for this second Silverlight control to be empty (“”) until I want the Silverlight control to load and display. I also put the control in a DIV that is hidden. You can load and unload this control as well and you can dynamically set it to point to different XAP’s to load different applications in your site.</p>
+<p>Step 1.</p>
+<p>In my web site (I.e. default.aspx file):</p>
+<pre><code>Main Silverlight Control that represents my web site:
+
+&amp;lt;div style=&amp;quot;height: 100%; z-index: 1; position: absolute;&amp;quot;&amp;gt;
+    &amp;lt;asp:Silverlight ID=&amp;quot;Xaml1&amp;quot; runat=&amp;quot;server&amp;quot; Source=&amp;quot;~/ClientBin/SLDev.xap&amp;quot;  MinimumVersion=&amp;quot;2.0.30523&amp;quot; Width=&amp;quot;100%&amp;quot; Height=&amp;quot;100%&amp;quot; /&amp;gt;
+&amp;lt;/div&amp;gt;
+
+Second Silverlight control that we will load and display within the main site:
+
+&amp;lt;div id=&amp;quot;myDIV&amp;quot; style=&amp;quot;z-index: 2; display: none; position: absolute; padding-left: 0px;   padding-top: 200px;&amp;quot;&amp;gt;
+    &amp;lt;asp:Silverlight ID=&amp;quot;Silverlight1&amp;quot; runat=&amp;quot;server&amp;quot; Source=&amp;quot;&amp;quot; MinimumVersion=&amp;quot;2.0.30523&amp;quot; Width=&amp;quot;800px&amp;quot; Height=&amp;quot;600px&amp;quot; /&amp;gt;
+&amp;lt;/div&amp;gt;
+</code></pre>
+<p>Things to notice:</p>
+<ol>
+<li>I set the style z-index order to be higher for the second Silverlight control than the first so that it appears on top.</li>
+<li>I set style display = none for the DIV of the second Silverlight control so that it is not displayed and does not interfere with mouse/keyboard input for the first Silverlight control.</li>
+<li>I set style position = absolute so that the controls can float on top of each other. You will want to adjust the padding-left and padding-right to properly position the control where you want it on your site.</li>
+<li>I set Source =”” for the second Silverlight control to keep it from loading an application until I am ready.</li>
+</ol>
+<p>Step 2.</p>
+<p>In my web site (I.e default.aspx) I add two Javascript functions that my Silverlight application can call to load and hide the second Silverlight control. Few notes:</p>
+<ol>
+<li>LoadSilverlightControl() – This function takes a parameter that contains the full path to the XAP we want to load. Example: “ClientBin\\TankWar.xap”</li>
+<li>For the Silverlight Control, I call setAttribute() to change the source of the Silverlight control.</li>
+<li>For the DIV I modify style.display setting it to “block” so that it will display or “none” to hide it.</li>
+</ol>
+<p>&lt;script type=&quot;text/javascript&quot;&gt;</p>
+<pre><code>function LoadSilverlightControl(ctrl) {
+
+
+
+    var control = document.getElementById(&amp;quot;Silverlight1&amp;quot;);
+
+    var div = document.getElementById(&amp;quot;myDIV&amp;quot;);
+
+    div.style.display = &amp;quot;block&amp;quot;;        
+
+    control.setAttribute(&amp;quot;Source&amp;quot;, ctrl);
+
+}
+
+
+
+function HideSilverlightControl() {
+
+
+
+    var control = document.getElementById(&amp;quot;Silverlight1&amp;quot;);
+
+    var div = document.getElementById(&amp;quot;myDIV&amp;quot;);
+
+    div.style.display = &amp;quot;none&amp;quot;;
+
+    control.setAttribute(&amp;quot;Source&amp;quot;, &amp;quot;&amp;quot;);
+
+}
+</code></pre>
+<p>&lt;/script&gt;</p>
+<p>Step 3.</p>
+<p>The call from Silverlight-&gt;Javascript to make the control load and run:</p>
+<p>HtmlPage.Window.Invoke(&quot;LoadSilverlightControl&quot;, &quot;ClientBin/TankWar.xap&quot;);</p>
+<p>To hide it:</p>
+<p>HtmlPage.Window.Invoke(&quot;HideSilverlightControl&quot;);</p>
+<p>Result.</p>
+<p>The following screen shots show this in action. Click on the “Games” button….</p>
+<p>[http://blogs.silverlight.net/blogs/msnow/archive/2008/10/08/
+silverlight-tip-of-the-day-57-how-to-dynamically-load-
+a-silverlight-control-within-another-silverlight-control.aspx]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

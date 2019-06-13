@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SQL Server 2005/2008: “SQL Server UPDATE STATISTICS” - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>You can add statistics on columns that don't have statistics in order to boost query performance. For example, you can create statistics for columns in a composite index other than the first column (which is the default for AUTO CREATE STATISTICS), and for columns that are not indexed.</p>
+<p>The SQL Server Query Optimizer has the ability to use statistics on columns that are not indexed in order to create more optimal execution plans. Doing so can increase performance without having the overhead of indexes. In fact, sometimes it is more efficient to use column statistics instead of an index to optimize query performance. The only way to know this for sure is to make controlled experiments and see what works best for your situation.</p>
+<p>[http://www.sql-server-performance.com/tips/update_statistics_p1.aspx]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

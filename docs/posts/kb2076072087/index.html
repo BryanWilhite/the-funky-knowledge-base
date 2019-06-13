@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ActionScript 3.0 and E4X Code: Remove a Namespace; XSPF - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>public static function getTrackData(data:*, index:int=0):XML
+{
+var xspf:Namespace = new Namespace(xspfUri);
+default xml namespace = xspf;
+var playlist:XML = new XML(data);</p>
+<pre><code>    var length:int = playlist.trackList.length();
+    var title:String = String(playlist.trackList.track[index].title);
+    var location:String = String(playlist.trackList.track[index].location);
+
+    var returnXml:XML =
+        &amp;lt;trackData x­mlns=&amp;quot;&amp;quot;&amp;gt;
+            &amp;lt;total&amp;gt;{length}&amp;lt;/total&amp;gt;
+            &amp;lt;title&amp;gt;{title}&amp;lt;/title&amp;gt;
+            &amp;lt;location&amp;gt;{location}&amp;lt;/location&amp;gt;
+        &amp;lt;/trackData&amp;gt;
+
+    return returnXml;
+}
+</code></pre>
+<p>/*</p>
+<p>By setting x­mlns to a zero-length string, E4X will omit the x­mlns attribute.</p>
+<p>*/</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

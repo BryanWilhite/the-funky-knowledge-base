@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PHP Warning: open_basedir restriction in effect … is not within the allowed path(s) - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Your friendly hosting service may have Safe Mode enabled for PHP. Safe Mode is described here:</p>
+<pre><code>http://us2.php.net/features.safe-mode
+</code></pre>
+<p>This means that you are not able to test for the existence of a file or directory with a root different from the “allowed path(s).” One way around this problem is to re-factor your PHP code to test for the allowed path(s) when possible.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

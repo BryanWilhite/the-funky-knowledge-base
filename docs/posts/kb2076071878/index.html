@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>gvim/vim: flippant remarks about customizing gvim - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>You can start with this command:</p>
+<pre><code>:help gui-init
+</code></pre>
+<p>This will load gui.txt, which should reveal a portion called “Recommended place for your personal GUI initializations”—this will lead to this file:</p>
+<pre><code>$HOME/.gvimrc
+</code></pre>
+<p>Here is a sample .gvimrc file:</p>
+<pre><code>colorscheme darkblue
+set expandtab
+set guifont=Monospace&amp;bsol;&amp;bsol; 20
+set hlsearch
+set incsearch
+set laststatus=2
+set number
+set shiftwidth=4
+set tabstop=4
+set tbis=large
+</code></pre>
+<p>Options like tbis and guifont can be found in quickref.txt, which can be loaded with this command:</p>
+<pre><code>:help option-list
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

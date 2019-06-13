@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>XSLT Snippet: Degrading XHTML for Macromedia/Adobe Flash; inner_xhtml Template - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>&lt;xsl:template name=&quot;inner_xhtml&quot;&gt;
+&lt;xsl:param name=&quot;p_class_name&quot; select=&quot;''&quot;/&gt;</p>
+<pre><code>&amp;lt;xsl:for-each select=&amp;quot;text()|*&amp;quot;&amp;gt;
+    &amp;lt;xsl:choose&amp;gt;
+        &amp;lt;xsl:when test=&amp;quot;local-name(.) = 'a'&amp;quot;&amp;gt;
+            &amp;lt;a href=&amp;quot;{./@href}&amp;quot;&amp;gt;&amp;lt;xsl:call-template name=&amp;quot;inner_xhtml&amp;quot; /&amp;gt;&amp;lt;/a&amp;gt;
+        &amp;lt;/xsl:when&amp;gt;
+        &amp;lt;xsl:when test=&amp;quot;local-name(.) = 'div'&amp;quot;&amp;gt;
+            &amp;lt;xsl:if test=&amp;quot;string-length(.) &amp;gt; 1&amp;quot;&amp;gt;
+                &amp;lt;p&amp;gt;
+                    &amp;lt;xsl:if test=&amp;quot;string-length($p_class_name) &amp;gt; 0&amp;quot;&amp;gt;
+                        &amp;lt;xsl:attribute name=&amp;quot;class&amp;quot;&amp;gt;&amp;lt;xsl:value-of select=&amp;quot;$p_class_name&amp;quot; /&amp;gt;&amp;lt;/xsl:attribute&amp;gt;
+                    &amp;lt;/xsl:if&amp;gt;
+                    &amp;lt;xsl:call-template name=&amp;quot;inner_xhtml&amp;quot; /&amp;gt;&amp;lt;br/&amp;gt;
+                &amp;lt;/p&amp;gt;
+            &amp;lt;/xsl:if&amp;gt;
+        &amp;lt;/xsl:when&amp;gt;
+        &amp;lt;xsl:when test=&amp;quot;local-name(.) = 'em'&amp;quot;&amp;gt;
+            &amp;lt;i&amp;gt;&amp;lt;xsl:value-of select=&amp;quot;.&amp;quot; /&amp;gt;&amp;lt;/i&amp;gt;
+        &amp;lt;/xsl:when&amp;gt;
+        &amp;lt;xsl:when test=&amp;quot;local-name(.) = 'h1'&amp;quot;&amp;gt;
+            &amp;lt;p class=&amp;quot;Header1&amp;quot;&amp;gt;&amp;lt;xsl:value-of select=&amp;quot;.&amp;quot; /&amp;gt;&amp;lt;/p&amp;gt;
+        &amp;lt;/xsl:when&amp;gt;
+        &amp;lt;xsl:when test=&amp;quot;local-name(.) = 'h2'&amp;quot;&amp;gt;
+            &amp;lt;p class=&amp;quot;Header2&amp;quot;&amp;gt;&amp;lt;xsl:value-of select=&amp;quot;.&amp;quot; /&amp;gt;&amp;lt;/p&amp;gt;
+        &amp;lt;/xsl:when&amp;gt;
+        &amp;lt;xsl:when test=&amp;quot;local-name(.) = 'h3'&amp;quot;&amp;gt;
+            &amp;lt;p class=&amp;quot;Header3&amp;quot;&amp;gt;&amp;lt;xsl:value-of select=&amp;quot;.&amp;quot; /&amp;gt;&amp;lt;/p&amp;gt;
+        &amp;lt;/xsl:when&amp;gt;
+        &amp;lt;xsl:when test=&amp;quot;local-name(.) = 'strong'&amp;quot;&amp;gt;
+            &amp;lt;b&amp;gt;&amp;lt;xsl:value-of select=&amp;quot;.&amp;quot; /&amp;gt;&amp;lt;/b&amp;gt;
+        &amp;lt;/xsl:when&amp;gt;
+        &amp;lt;xsl:otherwise&amp;gt;
+            &amp;lt;xsl:value-of select=&amp;quot;.&amp;quot; /&amp;gt;
+        &amp;lt;/xsl:otherwise&amp;gt;
+    &amp;lt;/xsl:choose&amp;gt;
+&amp;lt;/xsl:for-each&amp;gt;
+</code></pre>
+<p>&lt;/xsl:template&gt;</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

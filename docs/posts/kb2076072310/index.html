@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VMware: “Turning off the PC speaker for all virtual machines” - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>To disable the speaker emulation for virtual machines, add the following line to Workstation's global configuration file:</p>
+<p>mks.noBeep = &quot;TRUE&quot;</p>
+<p>The global configuration file should exist in ~/.vmware/config on a Linux host, and \\Documents and Settings\\All Users\\Application Data\\VMware\\VMware Workstation\\config.ini on a Windows host.</p>
+<p>If the file does not exist, create a new text file and add the mks.noBeep line to it. Also see &quot;Creating and Editing config.ini&quot; (for Windows hosts) at http://kb.vmware.com/kb/1754.</p>
+<p>[http://kb.vmware.com/selfservice/microsites/search.do?
+language=en_US&amp;cmd=displayKC&amp;externalId=1664]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

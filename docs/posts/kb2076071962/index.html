@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ubuntu 6.06: sshfs and fuse: an attempt to mount a cygwin drive; howtogeek.com - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>An attempt was made to mount a cygwin drive with sshfs and fuse. It did NOT work. Following the article “How to Mount a Remote Folder using SSH on Ubuntu” here:</p>
+<pre><code>http://www.howtogeek.com/howto/ubuntu/
+    how-to-mount-a-remote-folder-using-ssh-on-ubuntu/
+</code></pre>
+<p>these steps were taken:</p>
+<pre><code>sudo apt-get install sshfs
+
+sudo modprobe fuse
+
+sudo adduser &amp;lt;username&amp;gt; fuse
+
+sudo chown root:fuse /dev/fuse
+
+sudo chmod +x /dev/fuse
+
+mkdir ~/remoteserv
+</code></pre>
+<p>At this step many sshfs commands were tried. None worked:</p>
+<pre><code>sshfs &amp;lt;username&amp;gt;@&amp;lt;ipaddress&amp;gt;:/remotepath ~/remoteserv
+</code></pre>
+<p>or
+sudo sshfs &lt;username&gt;@&lt;ipaddress&gt;:/remotepath ~/remoteserv
+or
+sshfs &lt;username&gt;@&lt;ipaddress&gt;:/cygdrive/c/remotepath ~/remoteserv -o allow_other -p 22</p>
+<p>All of these attempts produced this error:</p>
+<pre><code>failed to access mountpoint /home/&amp;lt;username&amp;gt;/remoteserv: Permission denied
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

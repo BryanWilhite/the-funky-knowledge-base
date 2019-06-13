@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Call Keyword Used with SysCmd() - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Quite often the return value supplied by the Application object's SysCmd() Method is not needed. Instead of wasting a variable to store these values, use the Call keyword. Recall that when the Call keyword is used on a function (or a method that returns a value), its return value is discarded.</p>
+<p>For example, the following call to SysCmd() returns Empty if successful:</p>
+<pre><code>Call Application.SysCmd(acSysCmdClearStatus)
+</code></pre>
+<p>by using the Call statement, the value of Empty is ignored.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

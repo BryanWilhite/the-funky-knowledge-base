@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Windows NT Registry: A &quot;Brave Attempt&quot; to Control the State of the Numlock Key - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>The following Registry Keys must be Merged from a properly formatted *.REG file:</p>
+<pre><code>HKEY_USERS
+    &amp;bsol;&amp;bsol;.DEFAULT&amp;bsol;&amp;bsol;Control Panel&amp;bsol;&amp;bsol;Keyboard
+        &amp;quot;InitialKeyboardIndicators&amp;quot;=&amp;quot;2&amp;quot;
+
+HKEY_CURRENT_USER
+    &amp;bsol;&amp;bsol;Control Panel&amp;bsol;&amp;bsol;Keyboard
+        &amp;quot;InitialKeyboardIndicators&amp;quot;=&amp;quot;2&amp;quot; 
+</code></pre>
+<p>Note that InitialKeyboardIndicators is of type REG_SZ (string). It has been said that this procedure may not work as planned. The opinion here is that this setting does not force an &quot;on&quot; or &quot;off&quot; state. I assume that it is saving the state that the Numlock Key is in before the user logs off.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

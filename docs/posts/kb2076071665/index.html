@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MCAD/MCSD Notes: Chapter 4, Lesson 2; Using Validation - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Lesson 2: Using Validation</p>
+<p>The purpose of this lesson is to detail the validation controls in ASP.NET.</p>
+<ul>
+<li>&quot;Client-side validation is provided by a JScript library named WebUIValidation.js, which is downloaded separately to the client.&quot;</li>
+</ul>
+<p>It is important to note that the client-side validation features in ASP.NET work only in Microsoft Internet Explorer version 4.0 and later. This is why validation controls automatically provide server-side validation. (Incidentally, the sample Web form Validation1.aspx uses a call to Server.Transfer() that breaks the automatic server-side validation functionality.)</p>
+<p>The validation controls: RequiredFieldValidator, CompareValidator, RangeValidator, RegularExpressionValidator, CustomValidator and ValidationSummary.</p>
+<ul>
+<li>&quot;A server control can have multiple validators.&quot;</li>
+</ul>
+<p>The lesson details a problem (in Table 4-7) with the CompareValidator control that can be solved by combining it with a RequiredFieldValidator control.</p>
+<ul>
+<li>&quot;To let the user cancel validation, provide a Submit HTML control that sets the Page_ValidationActive attribute...&quot;</li>
+</ul>
+<p>Clicking on this Submit HTML control will cause a postback and in the Page_Load event procedure below, the variable bln will be false:</p>
+<pre><code>bool bln;
+if(this.IsPostBack)
+{
+    this.Validate();
+    bln = this.IsValid;
+}
+</code></pre>
+<p>There is a typo in this lesson stating effectively that bln would be true.</p>
+<ul>
+<li>&quot;Customizing Validation... On the server side, place your validation code in the ServerValidate event procedure... To provide client-side validation, specify a validation script in the CustomValidator control's ClientValidationFunction property.&quot;</li>
+</ul>
+<p>This may be one of very few places where an external JavaScript file could seamlessly integrate with an ASP.NET Web form design pattern.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Silverlight: “Silverlight Tip of the Day #60—How to load a XAML Control From a File or String”; Mike Snow - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>If you have a control written in XAML that is included in your project you can load and create it directly from file by using the method:</p>
+<p>System.Windows.Markup.XamlReader.Load().This method can also be used to directly create a Silverlight control from a string.</p>
+<p>To demonstrate this I have created two functions called LoadFromXAML(). The first function takes takes as a parameter a URI that points to the XAML file in your project you want to load. The second takes as a parameter a string representation of the control.</p>
+<p>public static object LoadFromXaml(Uri uri)
+{
+System.Windows.Resources.StreamResourceInfo streamInfo = System.Windows.Application.GetResourceStream(uri);</p>
+<pre><code>if ((streamInfo != null) &amp;&amp; (streamInfo.Stream != null))
+{
+    using (System.IO.StreamReader reader = new System.IO.StreamReader(streamInfo.Stream))
+    {
+        return System.Windows.Markup.XamlReader.Load(reader.ReadToEnd());
+    }
+
+}
+return null;
+</code></pre>
+<p>}</p>
+<p>public static object LoadFromXamlString(string xamlControl)
+{
+return System.Windows.Markup.XamlReader.Load(xamlControl);
+}</p>
+<p>The above methods return a generic object that can be typecast to the object you are loading. For example:</p>
+<pre><code>Button myButton = (Button)LoadFromXaml(new Uri(&amp;quot;/LoadXaml;component/MyButton.xaml&amp;quot;, UriKind.Relative));
+
+or
+
+string buttonXAML = &amp;quot;&amp;lt;Button x­mlns='http://schemas.microsoft.com/client/2007' Width=&amp;bsol;&amp;bsol;&amp;quot;100&amp;bsol;&amp;bsol;&amp;quot; Height=&amp;bsol;&amp;bsol;&amp;quot;100&amp;bsol;&amp;bsol;&amp;quot; Content=&amp;bsol;&amp;bsol;&amp;quot;Click Me&amp;bsol;&amp;bsol;&amp;quot;&amp;gt;&amp;lt;/Button&amp;gt;&amp;quot;;
+
+Button myButton = (Button) LoadFromXaml(buttonXAML);
+</code></pre>
+<p>Note that in the XAML you must declare a default XML namespace as highlighted below:</p>
+<p>&lt;Button x­mlns='http://schemas.microsoft.com/client/2007' Width=&quot;100&quot; Height=&quot;100&quot; Content=&quot;Click Me&quot;&gt;&lt;/Button&gt;</p>
+<p>If you do not declare this namespace, you will see the following error:</p>
+<pre><code>AG_E_PARSER_MISSING_DEFAULT_NAMESPACE [Line: 0 Position: 0]
+</code></pre>
+<p>[http://silverlight.net/blogs/msnow/archive/2008/10/09/
+silverlight-tip-of-the-day-60-how-to-load-a-control-straight-from-xaml.aspx]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

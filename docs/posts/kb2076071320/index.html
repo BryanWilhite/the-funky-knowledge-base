@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PL/SQL: Oracle 7; Date Arithmetic with SYSDATE - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>SYSDATE stores dates in days by default. It follows that all arithmetic operations with SYSDATE as an operand must be units of days. For example, to subtract 30 minutes from the current time, convert 30 minutes into units of days:</p>
+<pre><code>30 [minutes]/1440 [minutes/day] = 0.02083
+</code></pre>
+<p>In SQL*Plus we have:</p>
+<pre><code>SELECT TO_CHAR(SYSDATE - 0.02083, 'HH:MI:SS') OUT
+FROM DUAL;
+</code></pre>
+<p>Where OUT is just an arbitrary column name for readability.</p>
+<p>To verify that SYSDATE is, by default, in units of days, run the following to get yesterday's date:</p>
+<pre><code>SELECT TO_CHAR(SYSDATE - 1, 'MM/DD/YY') OUT
+FROM DUAL;
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript: “The Miller Device”; Identifying an Array; Douglas Crockford - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>The JavaScript language currently does not provide a good way to distinguish between objects and arrays. The typeof operator is broken: It identifies arrays as objects. Comparing a value's constructor property doesn't work because arrays created in a different frame will have a different constructor. There are do-it-yourself tests for arrayness, but they are complicated and unreliable.</p>
+<p>Mark Miller of The Google, by closely reading the ECMAScript standard, has discovered a simpler, more reliable test.</p>
+<pre><code>Object.prototype.toString.apply(value) === '[object Array]'
+</code></pre>
+<p>[http://blog.360.yahoo.com/blog-TBPekxc1dLNy5DOloPfzVvFIVOWMB0li?p=916]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

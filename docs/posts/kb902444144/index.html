@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript: Using External *.js Files - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Use external JavaScript files (*.js) files when you want to separate lengthy JavaScript routines from HTML. This is a convenience for the programmer.</p>
+<p>The following HTML demonstrates usage and syntax:</p>
+<pre><code>&amp;lt;HTML&amp;gt;
+&amp;lt;HEAD&amp;gt;
+    &amp;lt;TITLE&amp;gt;js test&amp;lt;/TITLE&amp;gt;
+    &amp;lt;SCRIPT LANGUAGE=&amp;quot;JavaScript&amp;quot; SRC=&amp;quot;module.js&amp;quot;&amp;gt;
+    &amp;lt;/SCRIPT&amp;gt;
+&amp;lt;/HEAD&amp;gt;
+
+&amp;lt;/HTML&amp;gt;
+</code></pre>
+<p>where the following content is in a text file called module.js:</p>
+<pre><code>//
+// (c)1998 Bryan Wilhite
+// All rights reserved.
+// rasx@kintespace.com
+//
+// This JavaScript file kicks much ass.
+//
+alert(&amp;quot;hello&amp;quot;)
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

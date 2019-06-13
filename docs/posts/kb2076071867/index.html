@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Framework (SDK) Tools: The Difference between signtool.exe and sn.exe - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>According to Michael Wood in “.NN #1: .Net 2.0 SDK Tools (Part 1 of 3),” signtool.exe is a “command line utility is used to digitally sign a file for Authenticode. This is different than strong naming your assembly. If you are a component vendor and you want to digitally sign your code so that individuals can verify that it came from you then you would get a digital certificate from a trusted certificate authority (such as Verisign) and then use this tool to include that certificate in the signing process of your code.” More here:</p>
+<pre><code>http://www.mvwood.com/blogs/blog/archive/2007/03/07/1408.aspx
+</code></pre>
+<p>For strong naming sn.exe is used. “This one should be very familiar for anyone that is serious about the security of their assemblies and/or loading assemblies into the GAC. The Strong Name tool (sn.exe) is used to digitally sign assemblies with an encrypted key.” More here:</p>
+<pre><code>“Using Strong Name Signatures”
+http://msdn.microsoft.com/msdnmag/issues/06/07/CLRInsideOut/
+</code></pre>
+<p>A flippant parting remark: the use of the Visual Studio PFX file implies that you trust your fellow developers. This is easy when there is just one developer. Delay signing is used when you do not have this trust and makes coding life complicated.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

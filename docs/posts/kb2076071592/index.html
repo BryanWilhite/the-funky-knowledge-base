@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>C# Code Snippet: Simple Threading - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>/*
+This example does not take into account Thread() being called in sucession as ThreadTarget() is running. It does not deal with data being passed to/from ThreadTarget() as well.
+*/
+using System.Threading;</p>
+<pre><code>private void Thread()
+{
+    ThreadStart myThreadDelegate = new ThreadStart(this.ThreadTarget);
+    Thread myThread = new Thread(myThreadDelegate);
+    myThread.Priority = ThreadPriority.AboveNormal;
+    myThread.Start();
+}
+
+private void ThreadTarget()
+{
+    //Perform task on thread.
+}
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

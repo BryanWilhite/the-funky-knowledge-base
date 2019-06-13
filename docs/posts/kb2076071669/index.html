@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SQL Server 2000: Flippant Remarks about Renaming Databases - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Use the ALTER DATABASE t-SQL instead of the system stored procedure sp_renameDB. For SQL Server 2000, the ALTER DATABASE solution is an improvement over the system stored procedure (which can get into goofy 'exclusive locking errors'). One too many SQL Server MVPs confuse the new SQL 2005 features with the old SQL 2000 limitations. Google sees all and you beta-junkies in the newsgroups are no help!</p>
+<p>In old SQL Server 2000, the ALTER DATABASE syntax is only useful for renaming the logical database and not the physical files on disk. The best way to handle the physical files is to grit teeth and create a new database.</p>
+<p>Here is a sketch of the ALTER DATABASE syntax:</p>
+<pre><code>ALTER DATABASE 'my_old_ass_dbname'
+MODIFY NAME 'my_funky_fresh_dbname'
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

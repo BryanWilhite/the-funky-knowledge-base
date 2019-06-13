@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaServer Faces in Action Notes: Chapter 2; JSF Fundamentals; 2.2 The Request Processing Lifecycle - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>2.2 The Request Processing Lifecycle</p>
+<p>The Request Processing Lifecycle has 10 parts in six &quot;primary phases&quot;: Restore View, Apply Request Values, Process Events, Process Validations, Process Events, Update Model Values, Process Events, Invoke Application, Process Events and Render Response. Note how 'Process Events' occurs multiple times. To avoid this redundancy, see the six-part diagram by IBM in &quot;JSF for nonbelievers: The JSF application lifecycle&quot; here:</p>
+<pre><code>http://www-128.ibm.com/developerworks/java/library/j-jsf2/
+</code></pre>
+<p>&quot;After most phases, JSF will broadcast events to any interested listeners (events can be associated with a particular phase)... A listener can even skip the final phase and render a response itself.&quot;</p>
+<p>&quot;The main idea behind this whole process is that by the time the Invoke Application stage has been reached, there is a fully populated component tree, all validations have been completed, and any backing beans or model objects have been completely updated.&quot; It is clear that JSF realizes all of these application-centric concepts 'for free' over a primal HTTP request and response adding most or even all of the abstraction needed to implement a web application.</p>
+<p>&quot;Once JSF receives this HTTP request, it creates and populates an instance of javax.faces.context.FacesContext. This class represents the current state of the request...&quot;</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

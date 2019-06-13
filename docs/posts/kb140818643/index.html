@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code: basRenLinkTbls() - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Public Sub basRenLinkTbls()
+'
+'This procedure renames all tables starting with &quot;dbo_&quot;.
+'
+Dim DAOTblDef As DAO.TableDef</p>
+<pre><code>With Application
+
+    For Each DAOTblDef In CurrentDb.TableDefs
+        If VBA.InStr(1, DAOTblDef.Name, _
+            &amp;quot;dbo_&amp;quot;,  vbTextCompare) &amp;gt; 0 Then
+            DAOTblDef.Name = VBA.Mid$(DAOTblDef.Name, 5)
+        End If
+    Next
+    
+    .CurrentDb.TableDefs.Refresh
+    .RefreshDatabaseWindow
+    
+End With
+</code></pre>
+<p>End Sub</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

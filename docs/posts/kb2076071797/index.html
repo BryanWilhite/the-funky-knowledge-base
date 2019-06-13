@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaServer Faces in Action Notes: Chapter 1; Introducing JavaServer Faces; 1.5.4 Configuration with faces-config.xml; 1.5.5 Configuration with web.xml - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>1.5.4 Configuration with faces-config.xml</p>
+<p>&quot;Technically, JSF supports multiple configuration files, but we'll keep things simple for now.&quot;</p>
+<p>&quot;...a JSF configuration file is an XML document whose root node is &lt;faces-config&gt;...&quot;</p>
+<p>To reference beans via JSF EL expressions, JavaBeans can be declared with the &lt;managed-bean&gt; element. These beans are called managed beans. The &lt;managed-bean-name&gt; element contains the string that used in JSF EL expressions to refer to the managed bean. You can even initialize bean properties with the &lt;managed-property&gt; element.</p>
+<p>&quot;The managed bean name and the object's class name don't have to be the same.&quot;</p>
+<p>&quot;A navigation rule specifies the possible routes from a given page. Each route is called a navigation case.&quot; The &lt;navigation-rule&gt; element contains the &lt;navigation-case&gt; element.</p>
+<p>1.5.5 Configuration with web.xml</p>
+<p>&quot;All J2EE web applications are configured with a web.xml deployment descriptor; Faces applications are no different.&quot; However, JSF deployment descriptors require that the &lt;servlet&gt; element contain a &lt;servlet-class&gt; declaration referencing the FacesServlet (javax.faces.webapp.FacesServlet).</p>
+<p>With the &lt;servlet&gt; declaration, a &lt;servlet-mapping&gt; declaration must follow. In Eclipse running a Tomcat-based Dynamic Web Project, the auto-generated &lt;url-pattern&gt; element contains *.faces. This implies that your faces markup in hello.jsp can only be called with hello.faces. This does not imply that the &lt;welcome-file-list&gt; should contain &lt;welcome-file&gt; elements with hello.jsp or hello.faces.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Java Fundamentals: “Is Java pass by reference?”; stackoverflow.com - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Java is always pass-by-value. The difficult thing can be to understand that Java passes objects as references passed by value.</p>
+<p>It goes like this:</p>
+<p>public void foo(Dog d) {
+d.name == &quot;Max&quot;; // true
+d = new Dog(&quot;Fifi&quot;);
+d.name == &quot;Fifi&quot;; // true
+}</p>
+<p>Dog aDog = new Dog(&quot;Max&quot;);
+foo(aDog);
+aDog.name == &quot;Max&quot;; // true</p>
+<p>In this example aDog.name will still be &quot;Max&quot;. &quot;d&quot; is not overwritten in the function as the object reference is passed by value.</p>
+<p>Likewise:</p>
+<p>public void foo(Dog d) {
+d.name == &quot;Max&quot;; // true
+d.setname(&quot;Fifi&quot;);
+}</p>
+<p>Dog aDog = new Dog(&quot;Max&quot;);
+foo(aDog);
+aDog.name == &quot;Fifi&quot;; // true</p>
+<p>[http://stackoverflow.com/questions/40480/is-java-pass-by-reference][erlando]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

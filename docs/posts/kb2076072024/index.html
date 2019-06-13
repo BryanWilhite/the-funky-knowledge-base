@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ubuntu: By default, the root account password is locked in Ubuntu; help.ubuntu.com - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>By default, the root account password is locked in Ubuntu. This means that you cannot login as root directly or use the su command to become the root user. However, since the root account physically exists it is still possible to run programs with root-level privileges. This is where sudo comes in—it allows authorized users (normally &quot;Administrative&quot; users; for further information please refer to AddUsersHowto) to run certain programs as root without having to know the root password.</p>
+<p>…</p>
+<p>Redirecting the output of commands run with sudo requires a different approach. For instance consider sudo ls &gt; /root/somefile will not work since it is the shell that tries to write to that file. You can use ls | sudo tee -a /root/somefile to append, or ls | sudo tee /root/somefile to overwrite contents. You could also pass the whole command to a shell process run under sudo to have the file written to with root permissions, such as sudo bash -c &quot;ls &gt; /root/somefile&quot;.</p>
+<p>[https://help.ubuntu.com/community/RootSudo]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

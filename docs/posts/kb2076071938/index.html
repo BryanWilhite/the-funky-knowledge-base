@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SQL Server 2005 t-SQL: The Use of the nodes() Method for SQL Types; Converting XML Data into SQL Types - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>DECLARE @xml xml</p>
+<p>SET @xml = '
+&lt;Root&gt;
+&lt;Item&gt;one&lt;/Item&gt;
+&lt;Item&gt;two&lt;/Item&gt;
+&lt;Item&gt;three&lt;/Item&gt;
+&lt;Item&gt;four&lt;/Item&gt;
+&lt;Item&gt;five&lt;/Item&gt;
+&lt;/Root&gt;
+'</p>
+<p>SELECT
+Temp.Items.value('.','varchar(16)') AS [Items]
+FROM
+@xml.nodes('//Item') AS Temp(Items)</p>
+<p>/*
+For general information, see
+“Introduction to XQuery in SQL Server 2005”
+http://technet.microsoft.com/en-us/library/ms345122.aspx
+*/</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

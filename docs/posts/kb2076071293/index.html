@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code: Sending mail from Outlook Express; basSendMail() - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Public Sub basSendMail()</p>
+<pre><code>Dim objMailItem As MailItem
+
+Set objMailItem = Application.CreateItem(olMailItem)
+
+With objMailItem
+    .To = &amp;quot;rasx@kintespace.com&amp;quot;
+    .Subject = &amp;quot;Is Haley's Comet for You?&amp;quot;
+    .Body = &amp;quot;This is the body text.&amp;quot;
+    .Send
+End With
+</code></pre>
+<p>End Sub</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

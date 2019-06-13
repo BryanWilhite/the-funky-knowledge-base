@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>“Configuring explicit Run As on Windows Server 2008”; Rick Vanover - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Default installations of Windows Server 2008 provide the User Account Control (UAC) security component to manage contexts in which applications run. The default configuration is to Run As the logged in user or simply to Run As Administrator. The issues with the latter option are that it does not specify any username in particular, and it only refers to local administrative permission. Don’t bother pressing [Shift] and needlessly exploring various right-click menus. To get the explicit Run As functionality that you need for best practice permission assignment, you need to go to the SysInternals bag of tricks.</p>
+<p>ShellRunas version 1.01 from Sysinternals (which is now part of TechNet) will get the job done. Downloading ShellRunas is straightforward and performing the following one-liner enables the tool:</p>
+<p>shellrunas /reg</p>
+<p>This command will install the Run As option on the Start Menu for use in the Windows Shell. Figure A shows a Windows Server 2008 server with the Sysinternals tool installed.</p>
+<p>…</p>
+<p>The ShellRunas command can also work without being installed completely for special one-time iterations of the command. Further, it can be uninstalled with the unreg parameter if you want to remove it from certain configurations. Ironically, adding this tool does not modify the existence of the Windows Secondary Logon service, which provides the functionality to use alternate credentials.</p>
+<p>Having the ability to pass explicit credentials is really a no-brainer in any good practice of administration. This is especially important for accounts that have domain administrator group membership. The ShellRunas command will allow organizations to keep much of their security practices intact as they transition to Windows Server 2008.</p>
+<p>[http://blogs.techrepublic.com.com/datacenter/?p=557]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

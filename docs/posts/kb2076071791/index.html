@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tomcat 5.x INFO Message: &quot;INFO: The Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: ...&quot; - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>According to ranch hand, Scott Dunbar at saloon.javaranch.com, the Tomcat 5.x message during start up, &quot;INFO: The Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: ...,&quot; means that the Apache Portable Runtime (APR) was not found. To quote:</p>
+<p>&quot;You can safely ignore this message if you want. Basically it is telling you that an optional shared library (dll on Windows) is not found. The APR is the Apache Portable Runtime. This is a native (non-java) library that can improve the performance of Tomcat in certain situations.&quot;</p>
+<p>&quot;On both Windows and Unix/Linux you will need a C compiler to build this library.&quot;</p>
+<p>The APR project is here:</p>
+<pre><code>http://apr.apache.org/
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>C# Code: “What is the difference between ICollection and IDictionary in .NET/C#?” - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>ICollection is an interface for collections of similar objects: the controls on a form, the elements in a list, the attributes in an XML tag, and so on. As of .NET 2.0, there’s a generic version, so you can refer to a collection of integers as ICollection&lt;int&gt;.</p>
+<p>IDictionary is an interface for mapping one type of object or value to another. It works like a real dictionary, or a phone book: you have a &quot;key&quot; in mind like a person’s name, and when you look it up, you get some information that’s identified by that key, like an address or phone number. Each key can only be listed once, although two different keys are still allowed to have the same value. This is also generic in .NET 2.0, so a dictionary whose keys are strings and whose values are integers would be IDictionary&lt;string,int&gt;.</p>
+<p>A dictionary is actually a collection of key/value pairs: you can use an IDictionary&lt;int,string&gt; as an ICollection&lt;KeyValuePair&lt;int,string&gt;&gt;, and you can access the keys and values as separate collections with the Keys and Values properties.</p>
+<p>Both ICollection and IDictionary are unordered, meaning that although you can retrieve the elements in some order with the CopyTo method or a foreach loop, that order has no special meaning, and it might change for no apparent reason. That’s the main difference between ICollection and IList: a list lets you put items in specific positions, just like an array, and they stay there until you move them.</p>
+<p>Finally, note that these are all interfaces, not classes. .NET gives you a few different types of collections, lists, and dictionaries to choose from, and the interfaces like ICollection and IDictionary give you a common way to access all of them without worrying about the details. When you create one in your own code, you’ll usually want to use the generic List or Dictionary classes.</p>
+<p>[http://askville.amazon.com/difference-
+ICollection-IDictionary-NET-C%23/AnswerViewer.do?requestId=8375948]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

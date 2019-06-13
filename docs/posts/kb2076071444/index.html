@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>T-SQL Code: Example of Connecting to Index Server and Listing Files in Scope - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>USE MyLocalServer
+GO</p>
+<p>IF OBJECT_ID('ListIDXFiles') IS NOT NULL
+BEGIN
+DROP PROCEDURE ListIDXFiles
+IF OBJECT_ID('ListIDXFiles') IS NOT NULL
+PRINT '&lt;&lt;&lt; FAILED DROPPING PROCEDURE ListIDXFiles &gt;&gt;&gt;'
+ELSE
+PRINT '&lt;&lt;&lt; DROPPED PROCEDURE ListIDXFiles &gt;&gt;&gt;'
+END
+GO</p>
+<p>CREATE PROCEDURE ListIDXFiles
+(
+@cmdID        int           = 0
+,   @columns      nvarchar(500) = NULL
+,   @scope        nvarchar(255) = NULL
+,   @contains     nvarchar(500) = NULL
+,   @order        nvarchar(255) = NULL
+,   @fileNameLike nvarchar(255) = NULL
+)</p>
+<p>AS</p>
+<p>-- Description: List Files in Index Server Scope.
+-- Developer: Bryan Wilhite</p>
+<p>SET NOCOUNT ON</p>
+<p>IF NOT EXISTS(SELECT * FROM master.dbo.sysservers WHERE srvname = 'IDXSERVER')
+BEGIN
+EXECUTE sp_addlinkedserver
+@server     = IDXSERVER
+,   @srvproduct = 'Index Server'
+,   @provider   = 'MSIDXS'
+,   @datasrc    = 'Web'
+--'Web' is the name of Index Server's default text search catalog.
+END</p>
+<p>DECLARE
+@tSQL nvarchar(4000)
+,   @test nvarchar(500)
+,   @sq   char(1)</p>
+<p>IF @cmdID = 0
+BEGIN
+IF @columns IS NULL
+SET @columns = 'DocTitle,Directory,Vpath,Path,ShortFileName,Filename,Size,Access,Create,Write,Characterization,Rank'</p>
+<pre><code>IF @scope IS NULL
+    SET @scope = '&amp;quot;/&amp;quot;'
+
+IF @order IS NULL
+    SET @order = 'Rank DESC'
+
+IF @fileNameLike IS NULL
+    SET @fileNameLike = '%.pdf'
+
+SET @sq = CHAR(39)
+
+IF @contains IS NOT NULL
+BEGIN
+    -- Test only to prevent syntax errors.
+    SET @test = @contains
+    SET @test = REPLACE(@test,CHAR(34),'')
+    SET @test = REPLACE(@test,CHAR(39),'')
+    SET @test = REPLACE(@test,SPACE(1),'')
+    IF LEN(@test) = 0
+        RETURN
+
+    -- The use of NEAR() on the client causes &amp;quot;Expecting Phrase&amp;quot; error in .HTW files.
+    IF CHARINDEX(CHAR(34),@contains) = 0 AND CHARINDEX('NEAR',@contains) &amp;gt; 0 AND CHARINDEX('NEAR()',@contains) = 0
+        SET @contains = REPLACE(@contains,'NEAR','NEAR()')
+
+    SET @contains = REPLICATE(@sq,2) + @contains + REPLICATE(@sq,2)
+
+    SET @tSQL = 'SELECT * FROM OPENQUERY(IDXSERVER,'
+        + @sq + 'SELECT' + SPACE(1) + @columns
+        + SPACE(1) + 'FROM SCOPE('+ REPLICATE(@sq,2) + @scope + REPLICATE(@sq,2) + ')'
+        + SPACE(1) + 'WHERE CONTAINS(' + @contains + ') &amp;gt; 0'
+        + SPACE(1) + 'AND Filename LIKE' + SPACE(1) + REPLICATE(@sq,2) + @fileNameLike + REPLICATE(@sq,2)
+        + SPACE(1) + 'ORDER BY' + SPACE(1) + @order + @sq + ')'
+END
+ELSE
+BEGIN
+    SET @tSQL = 'SELECT * FROM OPENQUERY(IDXSERVER,'
+        + @sq + 'SELECT' + SPACE(1) + @columns
+        + SPACE(1) + 'FROM SCOPE('+ REPLICATE(@sq,2) + @scope + REPLICATE(@sq,2) + ')'
+        + SPACE(1) + 'WHERE Filename LIKE' + SPACE(1) + REPLICATE(@sq,2) + @fileNameLike + REPLICATE(@sq,2)
+        + SPACE(1) + 'ORDER BY' + SPACE(1) + @order + @sq + ')'
+END
+
+--For debugging purposes:
+--PRINT @tSQL
+--RETURN
+
+EXECUTE sp_executesql @stmt = @tSQL
+</code></pre>
+<p>END
+RETURN
+GO</p>
+<p>GRANT EXECUTE ON ListIDXFiles TO [Web Solutions Users]
+GO</p>
+<p>IF OBJECT_ID('ListIDXFiles') IS NOT NULL
+PRINT '&lt;&lt;&lt; CREATED PROCEDURE ListIDXFiles &gt;&gt;&gt;'
+ELSE
+PRINT '&lt;&lt;&lt; FAILED CREATING PROCEDURE ListIDXFiles &gt;&gt;&gt;'
+GO</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

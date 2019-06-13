@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Windows Server 2008: “Command-line Tools in Windows Server 2008”; win2k8 - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Like every release of the Windows Server OS before it, Windows Server 2008 includes a set of new command-line tools, some of which come from previous resource kits or support tools and others are new. Although Server 2008 includes Windows PowerShell, none of these new commands are PowerShell commands. For a complete list of commands in Server 2008, you can download the Windows Command Reference from Microsoft’s Web site (https://www.microsoft.com/downloads/details.aspx?FamilyID=5fb255ff-72da-4b08-a504-1b10266cf72a). Here are my favorite new commands in Server 2008.</p>
+<ol start="10">
+<li>Oclist—Microsoft added the command-oriented Server Core as an installation option for Server 2008, and it has its own commands. Oclist queries the installed roles on your Server Core system. To list the status of all Server Core roles, you can run the command</li>
+</ol>
+<p>oclist</p>
+<ol start="9">
+<li>Ocsetup—The Ocsetup command is used to install and remove roles and features from a Server Core system. The following example shows how to add the DHCP Server role:</li>
+</ol>
+<p>start /w ocsetup DHCPServerCore</p>
+<ol start="8">
+<li>Bcdedit—Like Windows Vista, Server 2008 uses a new boot process that saves the system boot configuration in the Boot Configuration Data (BCD) store. The primary tool for editing Server 2008’s BCD store is the Bcdedit command, which supports many command-line options. To list the contents of the store, run</li>
+</ol>
+<p>bcdedit /enum</p>
+<ol start="7">
+<li>Icacls—The Icacls command replaces the older Cacls and Xacls commands. Icacls lets you list, update, and back up the ACLs for files and directories. The following example shows how you can save the ACLs for the C:\\temp directory:</li>
+</ol>
+<p>icacls c:\\temp /save tempacl</p>
+<ol start="6">
+<li>Mklink—The Mklink command creates a symbolic link in the file system that redirects all requests to a location you specify. Symbolic links are transparent to users, appearing as normal files or directories. The following example shows how to create a symbolic link named alsotemp for the C:\\temp directory:</li>
+</ol>
+<p>mklink /d alsotemp c:\\temp</p>
+<ol start="5">
+<li>Robocopy—A staple in the Windows Resource Kit for years, Robocopy is more capable than the standard Windows Copy and Xcopy commands, and it’s able to resume after network outages as well as correctly copy file attributes, alternate streams, and security information. The following example shows how to use Robocopy to create a mirrored copy of the MyData directory and all its subfolders on the share named Backups on MyServer:</li>
+</ol>
+<p>robocopy &quot;C:\\MyData&quot; &quot;\\\\MyServer\\Backups&quot; /MIR /R:2 /NP</p>
+<ol start="4">
+<li>Wbadmin—Wbadmin is used for Server 2008 backup and restore operations. The following example shows how to use Wbadmin to perform a full system backup to the share named Backups on MyServer: wbadmin start backup -backuptarget \\\\MyServer\\Backups</li>
+</ol>
+<p>-allCritical -vssFull</p>
+<ol start="3">
+<li>WinRS—The WinRS command lets you open a secure command window with a remote host. All communications between the client and the host are encrypted using Kerberos or NT LAN Manager (NTLM) keys. The following example connects to the server named MyServer and displays the command shell:</li>
+</ol>
+<p>winrs -r:MyServer cmd</p>
+<ol start="2">
+<li>Appcmd—Appcmd.exe is a new command-line tool that can be found in the \\%WinDir%\\System32\\InetSrv directory. Appcmd is used to query, create, and configure Microsoft IIS 7.0 server properties, Web sites, and application pools. To list all sites on the system, you can use the following command:</li>
+</ol>
+<p>appcmd list sites</p>
+<ol>
+<li>ServerManagerCmd—Without a doubt, the coolest commandline tool in Server 2008 is ServerManagerCmd.exe, which is the command-line version of the new Server Manager. This command essentially lets you script all of the Server Manager actions. To list all the installed roles and features on a Server 2008 system, you can enter</li>
+</ol>
+<p>servermanagercmd.exe -query</p>
+<p>[http://windowsitpro.com/article/articleid/99119/
+command-line-tools-in-windows-server-2008.html]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

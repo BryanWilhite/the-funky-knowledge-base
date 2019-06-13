@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flippant Remarks about Canceling BackgroundWorker Operations - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>In “Creating a better BackgroundWorker: CancelImmediately and other goodies,” Roy Osherove introduces my problem, “Right now BackgroundWorker has only one way to cancel: &quot;CancelAsync()&quot;. The feature I was missing was &quot;CancelImmediately()&quot;.  I've even gotten to talk a little with Mark Rideout, Program Manager for the .NET Client who supported my claim that this is not possible with the current version of BackgroundWorker.”</p>
+<p>What this means is that one of the design goals behind BackgroundWorker cancellation is to stop a background process that performs the same, ‘small’ operation that runs and returns to a loop. It follows that the problem of canceling one ‘big’ operation is not really solved by BackgroundWorker. This is because once the BackgroundWorker process runs it really cannot be stopped until it returns. I find this very counterintuitive.</p>
+<p>The Roy Osherove article is here:</p>
+<pre><code>http://weblogs.asp.net/rosherove/pages/BackgroundWorkerEx.aspx
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

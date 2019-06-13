@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Visual Studio 2005: Flippant Remarks about Application Settings - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>A general overview (with some specific advice) is &quot;How to use the Settings class in C#&quot; by Seun found here:</p>
+<pre><code>http://www.codeproject.com/useritems/PropertiesSettings.asp
+</code></pre>
+<p>User-scope settings are saved in the Local Settings folder:</p>
+<pre><code>%UserProfile%&amp;bsol;&amp;bsol;Local Settings&amp;bsol;&amp;bsol;Application Data&amp;bsol;&amp;bsol;[Company]&amp;bsol;&amp;bsol;
+</code></pre>
+<p>where [Company] is specified under Properties &gt; Application &gt; Assembly Information...</p>
+<p>The Settings.Default.SettingsLoaded event will not fire until a setting is called.</p>
+<p>The Settings.Default.Upgrade() method must be called in order to obtain previously saved settings. You can call this method when there are no previously saved settings without an exception penalty.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

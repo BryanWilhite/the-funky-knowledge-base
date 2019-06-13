@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thinking of the BeforeUpdate and AfterUpdate Events in DAO Terms; the Change Event Is Different from the BeforeUpdate Event - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>In order to distinguish the BeforeUpdate event from the Change event, think of the BeforeUpdate event and AfterUpdate event in DAO transaction terms. The BeforeUpdate event fires just before a transaction is committed to the database. It marks the time when a BeginTrans method would be called out of the Workspace object.</p>
+<p>It follows that the AfterUpdate event fires when a CommitTrans method would be called. One can emulate the Rollback method of the Workspace by setting Cancel = True during a BeforeUpdate event procedure or implement an Undo routine by saving the OldValue property of the control that supports BeforeUpdate and AfterUpdate events.</p>
+<p>The BeforeUpdate and AfterUpdate events fire in succession after the supporting control loses focus; whereas the Change event fires as soon as data in the control is altered by the user. The Change event continues to fire with every edit the user makes. This can make the change event very dangerous for text boxes where the user can make many changes before the control loses focus.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

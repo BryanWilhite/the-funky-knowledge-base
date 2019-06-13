@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>“Filters in ASP.NET MVC CodePlex Preview 4”; Phil Haack 08/2008 - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>In CodePlex Preview 4 of ASP.NET MVC, we split out our action filters into four types of filters, each of which is an interface.</p>
+<pre><code>* IAuthorizationFilter
+* IActionFilter
+* IResultFilter
+* IExceptionFilter
+</code></pre>
+<p>IAuthorizationFilter</p>
+<p>Authorization filters run before any of the action filters and allow you to cancel the action. If you cancel the action, you can set the ActionResult instance you want rendered in response to the current request.</p>
+<p>There should be very few cases (hopefully) that you need to write such a filter of your own. In those rare cases when you do, you’ll be glad to have this interface around.
+IActionFilter</p>
+<p>Action filters allow you to run code before and after an action method is called, but before the result of the action method is executed. This effectively allows you to hook into the rendering of the view, for example.</p>
+<p>In the “before” method (OnActionExecuting), you can cancel the action and even supply an action result of your own instead. If you cancel the action, no other filters higher up the stack will be executed and the invoker starts executing the “after” method for any action filter that had its “before” method called (except for the filter that canceled the action).</p>
+<p>In the after method (OnActionExecuted) you can’t cancel the action (it already ran and we don’t have a ITimeMachineFilter implemented yet), but you can replace or modify the action result before it gets called.</p>
+<p>If an exception was thrown by another action filter or by the action method itself, you can examine the exception thrown from your filter. Your filter can specify that it can handle the exception (seriously, only do this if your filter really can do this as it’s generally a bad thing to handle an exception you shouldn’t be handling), in which case the action result will still get executed. If the exception propagates up, the result will not get executed.
+IResultFilter</p>
+<p>Result filters are pretty much similar to action filters, except they run after the action method has executed, but before the result returned from the action method has been executed. The “before” method is called OnResultExecuting and the “after” method is called OnResultExecuted.
+IExceptionFilter</p>
+<p>The exception filters are all guaranteed to run after all of the action filters and result filters have run. Even if an exception filter indicates that it can handle the exception, it will still run. This is useful for logging scenarios in cases where you want a filter to always run no matter what happens so it can log exceptions etc…</p>
+<p>One interesting thing to note is that exception filters run after result filters. So what can you do from an exception filter? Well we give you one last ditch chance to render something to the user by allowing you to set the action result in the exception filter. If that action result throws an exception, you’re SOL and the exception filter does not handle that exception. Well, you’re not totally SOL. The normal ASP.NET web.config settings for custom errors will kick in if you set them.</p>
+<p>[http://haacked.com/archive/2008/08/14/aspnetmvc-filters.aspx]</p>
+<p>[http://www.asp.net/LEARN/mvc/tutorial-14-cs.aspx]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

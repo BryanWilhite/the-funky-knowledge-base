@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Microsoft.mshtml Namespace; Accessing the DHTML DOM from C# - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Martin Tracy wrote a three-page walkthrough for MSDN &quot;Walkthrough: Accessing the DHTML DOM from C#&quot; here:</p>
+<pre><code>http://msdn.microsoft.com/library/default.asp?
+    url=/library/en-us/dv_vstechart/html/
+        vsgrfWalkthroughAccessingDHTMLDOMFromC.asp
+</code></pre>
+<p>This article features the use of the Microsoft.mshtml namespace used to display Internet Explorer in a Windows Form via the COM-based Microsoft Web Browser control (AxSHDocVw). Simultaneously, there are a number of articles on CodeProject.com that also use AxSHDocVw but they do not use the Microsoft.mshtml namespace. These articles are recorded in the kintespace.com Blog here:</p>
+<pre><code>http://www.kintespace.com/rasxlog/index.php?p=84
+</code></pre>
+<p>These articles are unaware of the Microsoft.mshtml namespace; they feature designs that are quite complex in part because they depend on the use of the IDocHostUIHandler interface. It appears that this interface is used instead of the Microsoft.mshtml namespace. The guidance in the Martin Tracy article should be prioritized before the other articles.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

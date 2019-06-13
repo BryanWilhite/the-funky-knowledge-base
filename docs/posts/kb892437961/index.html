@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book: Level 2: Programming Visual Basic 5.0; Chapter 15 Highlights (1/2): An Introduction to Objects - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Objects exist only in temporary memory (RAM). To persist any changes to object properties in permanent memory, use database or text files, or Registry entries.</p>
+<p>System Objects</p>
+<p>These are the system objects available to Visual Basic at run time:</p>
+<p>App
+Clipboard
+Forms
+Printers
+Screen</p>
+<p>For more details, please see &quot;System Objects&quot; (pg. 15-5).</p>
+<p>Deriving Pixel Values from the Screen Object</p>
+<p>The Width and Height properties of the Screen object return twip values. This unit of measurement is logical. To derive the physical pixel values for a given display adapter, use the TwipsPerPixelX and TwipsPerPixelY properties of the Screen object.</p>
+<p>For example, to store the x and y values of the screen resolution in variables lngResX and lngResY respectively we have:</p>
+<pre><code>With Screen
+    lngResX = .Width &amp;bsol;&amp;bsol; .TwipsPerPixelX
+    lngResY = .Width &amp;bsol;&amp;bsol; .TwipsPerPixelY
+End With
+</code></pre>
+<p>Note the use of integer division.</p>
+<p>Populating cboMousePointers on frmScreenInfo</p>
+<p>The following form is the preferred way to populate cboMousePointers (please see &quot;Changing the Mouse Pointer&quot; on page 15-10 and frmScreenInfo code):</p>
+<pre><code>With cboMousePointers
+    .AddItem strText
+    .ItemData(.NewIndex) = lngItem
+End With
+</code></pre>
+<p>This is in contrast to the For-Next form:</p>
+<pre><code>For intI = 0 to ItemsToAdd -1
+    cboTest.AddItem &amp;quot;SomeText&amp;quot;
+    cboTest.ItemData(intI) = SomeNumericValue
+Next intI
+</code></pre>
+<p>Unlike the For-Next method of populating cboMousePointers, the use of the NewIndex property above has no regard for the total number of items to be added (contained in ItemsToAdd). It is also immune to unexpected results if the index of ItemData changes when the Sorted property of the combo box is set to True.</p>
+<p>NOTE: VB is in control of the index specified in ItemData(&lt;index&gt;), List(&lt;index&gt;), AddItem &lt;string&gt;, &lt;index&gt;, et al. When the Sorted property of the control is set to True, Visual Basic handles almost all necessary string processing to maintain alphabetic order, including changing the index numbers for items as required by the addition or removal of items. You cannot change the Sorted property at run time.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

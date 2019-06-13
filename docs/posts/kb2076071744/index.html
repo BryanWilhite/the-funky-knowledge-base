@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>C# Code: GetNamespaceManager() Member for Static XPathDocument Helper Class; Songhay.Xml.XmlUtility - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>/// &lt;summary&gt;
+/// Returns an &lt;see cref=&quot;System.Xml.XmlNamespaceManager&quot;/&gt;
+/// with respect to the scope element of the specified node.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;XpNode&quot;&gt;
+/// The &lt;see cref=&quot;System.Xml.XPath.XPathNavigator&quot;/&gt; node.
+/// &lt;/param&gt;
+public static XmlNamespaceManager GetNamespaceManager(XPathNavigator XpNode)
+{
+XmlNamespaceManager nsman = new XmlNamespaceManager(XpNode.NameTable);
+IDictionary&lt;String, String&gt; names = XpNode.GetNamespacesInScope(XmlNamespaceScope.Local);
+foreach (KeyValuePair&lt;String, String&gt; kv in names)
+{
+nsman.AddNamespace(kv.Key, kv.Value);
+}</p>
+<pre><code>return nsman;
+</code></pre>
+<p>}</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>XSD Markup: SqlResultStream; Raw XML; http://schemas.microsoft.com/sqlserver/2004/SOAP/types/SqlResultStream/SqlResultStream.xsd - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:sqlsoaptypes=&quot;http://schemas.microsoft.com/sqlserver/2004/SOAP/types&quot; xmlns:sqlmessage=&quot;http://schemas.microsoft.com/sqlserver/2004/SOAP/types/SqlMessage&quot; xmlns:sqlrowcount=&quot;http://schemas.microsoft.com/sqlserver/2004/SOAP/types/SqlRowCount&quot; xmlns:sqltransaction=&quot;http://schemas.microsoft.com/sqlserver/2004/SOAP/types/SqlTransaction&quot; attributeFormDefault=&quot;qualified&quot; elementFormDefault=&quot;qualified&quot; targetNamespace=&quot;http://schemas.microsoft.com/sqlserver/2004/SOAP/types/SqlResultStream&quot;&gt;
+&lt;xsd:annotation&gt;
+&lt;xsd:documentation xml:lang=&quot;en&quot;&gt;
+(c) Copyright 2004, Microsoft Corporation
+
+The following schema for Microsoft SQL Server is presented in XML format and is for informational purposes only. Microsoft Corporation (&quot;Microsoft&quot;) may have trademarks, copyrights, or other intellectual property rights covering subject matter in the schema.
+
+Microsoft does not make any representation or warranty regarding the schema or any product or item developed based on the schema. The schema is provided to you on an AS IS basis.  Microsoft disclaims all express, implied and statutory warranties, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, and freedom from infringement. Without limiting the generality of the foregoing, Microsoft does not make any warranty of any kind that any item developed based on the schema, or any portion of the schema, will not infringe any copyright, patent, trade secret, or other intellectual property right of any person or entity in any country. It is your responsibility to seek licenses for such intellectual property rights where appropriate.
+
+MICROSOFT SHALL NOT BE LIABLE FOR ANY DAMAGES OF ANY KIND ARISING OUT OF OR IN CONNECTION WITH THE USE OF THE SCHEMA, INCLUDING WITHOUT LIMITATION, ANY DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL (INCLUDING ANY LOST PROFITS), PUNITIVE OR SPECIAL DAMAGES, WHETHER OR NOT MICROSOFT HAS BEEN ADVISED OF SUCH DAMAGES.
+&lt;/xsd:documentation&gt;
+&lt;/xsd:annotation&gt;
+&lt;xsd:import namespace=&quot;http://schemas.microsoft.com/sqlserver/2004/SOAP/types&quot; /&gt;
+&lt;xsd:import namespace=&quot;http://schemas.microsoft.com/sqlserver/2004/SOAP/types/SqlMessage&quot; /&gt;
+&lt;xsd:import namespace=&quot;http://schemas.microsoft.com/sqlserver/2004/SOAP/types/SqlRowCount&quot; /&gt;</p>
+<p>&lt;xsd:import namespace=&quot;http://schemas.microsoft.com/sqlserver/2004/SOAP/types/SqlTransaction&quot; /&gt;
+&lt;xsd:complexType name=&quot;SqlResultStream&quot;&gt;
+&lt;xsd:choice minOccurs=&quot;1&quot; maxOccurs=&quot;unbounded&quot;&gt;
+&lt;xsd:element name=&quot;SqlRowSet&quot; type=&quot;sqlsoaptypes:SqlRowSet&quot; /&gt;
+&lt;xsd:element name=&quot;SqlXml&quot; type=&quot;sqlsoaptypes:SqlXml&quot; /&gt;
+&lt;xsd:element name=&quot;SqlMessage&quot; type=&quot;sqlmessage:SqlMessage&quot; /&gt;
+&lt;xsd:element name=&quot;SqlRowCount&quot; type=&quot;sqlrowcount:SqlRowCount&quot; /&gt;
+&lt;xsd:element name=&quot;SqlResultCode&quot; type=&quot;sqlsoaptypes:SqlResultCode&quot; /&gt;
+&lt;xsd:element name=&quot;SqlTransaction&quot; type=&quot;sqltransaction:SqlTransaction&quot; /&gt;</p>
+<pre><code>&amp;lt;/xsd:choice&amp;gt;
+</code></pre>
+<p>&lt;/xsd:complexType&gt;
+&lt;/xsd:schema&gt;</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

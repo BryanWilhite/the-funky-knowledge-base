@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Windows 2000 PROBLEM: Event logs are empty; &quot;Event logs are corrupted&quot; (MSKB 829246) - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>The assumption here is that, during Microsoft's reactionary quest to address security flaws, someone broke EVENTLOG.DLL. I suspect that my event logs began to disappear after an automatic update from Windows Update. Some guy named Matt posted this on bmonday(dot)com:</p>
+<p>&quot;I had this problem and it only reared its ugly head when I changed the log files to 'Overwrite as needed' because I got fed up of deleting them. So this supports your theory.&quot;</p>
+<p>So what I did was set all of my logs to Properties &gt; General &gt; Log size &gt; Do not overwrite events (clear log manually). Microsoft recognizes this problem in MSKB article 829246 (&quot;Event logs are corrupted&quot;) here:</p>
+<pre><code>http://support.microsoft.com/?kbid=829246
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

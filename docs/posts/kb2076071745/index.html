@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>C# Code in Cold Storage: ConnectionStringIsValid() - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>private static bool ConnectionStringIsValid(SqlConnection SqlCnn,
+string ConnectionString)
+{
+/*
+FUNKYKB:
+The connection string is parsed immediately after being set.
+If errors in syntax are found when parsing, a runtime exception,
+such as ArgumentException, is generated.
+Other errors can be found only when an attempt is made
+to open the connection.</p>
+<pre><code>            In ADO.NET 2.0 this procedure is replaced by the
+            SqlConnectionStringBuilder.
+        */
+        bool success = false;
+
+        if (SqlCnn.State == ConnectionState.Open) return success;
+
+        SqlCnn.ConnectionString = ConnectionString;
+        success = true;
+
+        return success;
+    }
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

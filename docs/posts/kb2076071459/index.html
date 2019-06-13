@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Microsoft Office Outlook: Tips and Tricks; Minimizing to System Tray; Clearing Find a Contact Box - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>From http://www.slipstick.com/outlook/usertips.htm:</p>
+<p>To make Outlook 2002 go to the Windows system tray when you minimize it edit this key:</p>
+<pre><code>HKEY_CURRENT_USER&amp;bsol;&amp;bsol;Software&amp;bsol;&amp;bsol;Microsoft&amp;bsol;&amp;bsol;Office&amp;bsol;&amp;bsol;10.0&amp;bsol;&amp;bsol;Outlook&amp;bsol;&amp;bsol;Preferences
+</code></pre>
+<p>Add a new DWORD value named &quot;MinToTray&quot; and give it a value of 1.</p>
+<p>To clear the Find a Contact list delete this key:</p>
+<pre><code>HKEY_CURRENT_USER&amp;bsol;&amp;bsol;Software&amp;bsol;&amp;bsol;Microsoft&amp;bsol;&amp;bsol;Office&amp;bsol;&amp;bsol;9.0
+    &amp;bsol;&amp;bsol;Outlook&amp;bsol;&amp;bsol;Contact&amp;bsol;&amp;bsol;QuickFindMRU
+</code></pre>
+<p>You can also modify the QuickFindMRU value to a zero-length binary value.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VB PROBLEM: Cannot Get My Code to &quot;Wait&quot; on a Form When the Form is Designed to Be a Custom Dialog Box - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Suppose that the form frmDialog is meant to be a custom dialog that is called from code. The form takes values (like a user name and a password) and returns them to the calling procedure. The problem is the calling procedure does not &quot;wait&quot; for the values returned from the form.</p>
+<p>To stop execution of code while the frmDialog is visible, open frmDialog modally with the form:</p>
+<pre><code>Call frmDialog.Show(Modal:=vbModal, _
+    OwnerForm:=frmMain)
+</code></pre>
+<p>where frmMain is the Startup Object of the project. Now suppose that frmDialog has a Cancel button with the following Click Event:</p>
+<pre><code>Private Sub cmdCancel_Click()
+    CancelDialog = True
+    Me.Visible = False
+End Sub
+</code></pre>
+<p>where CancelDialog is a Public Boolean of the frmDialog. Once frmDialog.Visible = False, the calling procedure (basCallingSub()) stops waiting. The following lines of code has the form:</p>
+<pre><code>If frmDialog.CancelDialog Then
+    'User clicked Cancel.
+    Call VB.Unload(frmDialog)
+    Set frmDialog = Nothing
+    GoTo basCallingSub_Exit
+Else
+    'Get values from frmDialog.
+    With frmDialog
+        strUserName = .txtUserName.Text
+        strPassword = .txtPassword.Text
+    End With
+    Call VB.Unload(frmDialog)
+    Set frmDialog = Nothing
+End If
+</code></pre>
+<p>where the Unload() Method of the VB Object removes the frmDialog UI from memory. Setting frmDialog = Nothing removes the frmDialog code from memory such that when it is called again, its variables wil be reinitialized.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

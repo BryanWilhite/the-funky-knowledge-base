@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VBScript and ASP: ADO PROBLEM: Error '800a0bb9'; ADO Filter Property Error
+ - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>The following throws ADODB.Recordset Error '800a0bb9' (&quot;Arguments are of the wrong type, are out of acceptable range or are in conflict with one another.&quot;) in VBScript:</p>
+<pre><code>objListRst.Filter = objH1Rst.Fields(&amp;quot;filter&amp;quot;)
+</code></pre>
+<p>This is because the Filter property of ADO expects a string literal. This error can be avoided with implicit conversion:</p>
+<pre><code>objListRst.Filter = objH1Rst.Fields(&amp;quot;filter&amp;quot;) &amp; vbNullString
+</code></pre>
+<p>or explicit conversion:</p>
+<pre><code>objListRst.Filter = Cstr(objH1Rst.Fields(&amp;quot;filter&amp;quot;))
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

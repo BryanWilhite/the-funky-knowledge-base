@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code: Error Handling Base Structure on the Procedure Level. - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Function MyFunction () As Integer
+'
+'NOTE: This procedure contains line break characters
+'for readability. These characters are not supported
+'in Access Basic.
+'
+'
+'Write any local declarations here.
+'
+On Error GoTo MyFunction_Err
+'
+'Write code here.
+'
+MyFunction_Exit:
+'
+'Write any &quot;clean up&quot; lines here.
+'
+Exit Function</p>
+<p>MyFunction_Err:
+Select Case Err
+'
+'Enter known error number cases here.
+'
+Case Else
+MsgBox Err &amp; &quot;: &quot; &amp; Error$(Err), 16, _
+&quot;MyFunction Error&quot;
+Resume MyFunction_Exit
+End Select
+End Function</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

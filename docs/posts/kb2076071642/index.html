@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EncryptionServices; Class Module - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Option Compare Database</p>
+<p>Option Explicit</p>
+<p>Private x1a0(9) As Long
+Private cle(17) As Long
+Private x1a2 As Long</p>
+<p>Private inter As Long
+Private res As Long</p>
+<p>Private ax As Long
+Private bx As Long
+Private cx As Long
+Private dx As Long
+Private si As Long</p>
+<p>Private tmp As Long
+Private i As Long
+Private c As Byte</p>
+<p>Private lngCounter1 As Long</p>
+<p>Private pKey As String
+Private pClearText As String
+Private pEncText As String</p>
+<p>Public Property Get ClearText() As String
+ClearText = pClearText
+End Property</p>
+<p>Public Property Let ClearText(ByVal str As String)
+pClearText = str
+End Property</p>
+<p>Public Property Get EncryptedText() As String
+EncryptedText = pEncText
+End Property</p>
+<p>Public Property Let EncryptedText(ByVal str As String)
+pEncText = str
+End Property</p>
+<p>Public Property Get Key() As String
+Key = pKey
+End Property</p>
+<p>Public Property Let Key(ByVal str As String)
+pKey = VBA.Mid$(str, 1, 16)
+End Property</p>
+<p>Private Sub Class_Initialize()
+pKey = vbNullString
+pClearText = vbNullString
+pEncText = vbNullString
+End Sub</p>
+<p>Private Sub Assemble()</p>
+<pre><code>x1a0(0) = ((cle(1) * 256) + cle(2)) Mod 65536
+code
+inter = res
+
+x1a0(1) = x1a0(0) Xor ((cle(3) * 256) + cle(4))
+code
+inter = inter Xor res
+
+x1a0(2) = x1a0(1) Xor ((cle(5) * 256) + cle(6))
+code
+inter = inter Xor res
+
+x1a0(3) = x1a0(2) Xor ((cle(7) * 256) + cle(8))
+code
+inter = inter Xor res
+
+x1a0(4) = x1a0(3) Xor ((cle(9) * 256) + cle(10))
+code
+inter = inter Xor res
+
+x1a0(5) = x1a0(4) Xor ((cle(11) * 256) + cle(12))
+code
+inter = inter Xor res
+
+x1a0(6) = x1a0(5) Xor ((cle(13) * 256) + cle(14))
+code
+inter = inter Xor res
+
+x1a0(7) = x1a0(6) Xor ((cle(15) * 256) + cle(16))
+code
+inter = inter Xor res
+
+i = 0
+</code></pre>
+<p>End Sub</p>
+<p>Private Sub code()</p>
+<pre><code>dx = (x1a2 + i) Mod 65536
+ax = x1a0(i)
+cx = &amp;H15A
+bx = &amp;H4E35
+
+tmp = ax
+ax = si
+si = tmp
+
+tmp = ax
+ax = dx
+dx = tmp
+
+If (ax &amp;lt;&amp;gt; 0) Then
+ax = (ax * bx) Mod 65536
+End If
+
+tmp = ax
+ax = cx
+cx = tmp
+
+If (ax &amp;lt;&amp;gt; 0) Then
+ax = (ax * si) Mod 65536
+cx = (ax + cx) Mod 65536
+End If
+
+tmp = ax
+ax = si
+si = tmp
+ax = (ax * bx) Mod 65536
+dx = (cx + dx) Mod 65536
+
+ax = ax + 1
+
+x1a2 = dx
+x1a0(i) = ax
+
+res = ax Xor dx
+i = i + 1
+</code></pre>
+<p>End Sub</p>
+<p>Public Sub Encrypt()
+Dim champ1 As String, lngchamp1 As Long
+Dim cfc, cfd, compte, c, d, e</p>
+<pre><code>pEncText = vbNullString
+
+si = 0
+x1a2 = 0
+i = 0
+
+For lngCounter1 = 1 To 16
+cle(lngCounter1) = 0
+Next lngCounter1
+
+champ1 = pKey
+lngchamp1 = Len(champ1)
+
+For lngCounter1 = 1 To lngchamp1
+cle(lngCounter1) = Asc(Mid(champ1, lngCounter1, 1))
+Next lngCounter1
+
+champ1 = pClearText
+lngchamp1 = Len(champ1)
+For lngCounter1 = 1 To lngchamp1
+c = Asc(Mid(champ1, lngCounter1, 1))
+
+Assemble
+
+cfc = (((inter / 256) * 256) - (inter Mod 256)) / 256
+cfd = inter Mod 256
+
+For compte = 1 To 16
+
+cle(compte) = cle(compte) Xor c
+
+Next compte
+
+c = c Xor (cfc Xor cfd)
+
+d = (((c / 16) * 16) - (c Mod 16)) / 16
+e = c Mod 16
+
+pEncText = pEncText + Chr$(&amp;H61 + d)
+' d+&amp;h61 give one letter range from a to p for the 4 high bits of c
+pEncText = pEncText + Chr$(&amp;H61 + e)
+' e+&amp;h61 give one letter range from a to p for the 4 low bits of c
+
+Next lngCounter1
+</code></pre>
+<p>End Sub</p>
+<p>Public Sub Decrypt()
+Dim champ1 As String, lngchamp1 As Long
+Dim cfc, cfd, compte, c, d, e</p>
+<pre><code>pClearText = vbNullString
+
+si = 0
+x1a2 = 0
+i = 0
+
+For lngCounter1 = 1 To 16
+cle(lngCounter1) = 0
+Next lngCounter1
+
+champ1 = pKey
+lngchamp1 = Len(champ1)
+
+For lngCounter1 = 1 To lngchamp1
+cle(lngCounter1) = Asc(Mid(champ1, lngCounter1, 1))
+Next lngCounter1
+
+champ1 = pEncText
+lngchamp1 = Len(champ1)
+
+For lngCounter1 = 1 To lngchamp1
+
+d = Asc(Mid(champ1, lngCounter1, 1))
+If (d - &amp;H61) &amp;gt;= 0 Then
+d = d - &amp;H61  ' to transform the letter to the 4 high bits of c
+If (d &amp;gt;= 0) And (d &amp;lt;= 15) Then
+d = d * 16
+End If
+End If
+If (lngCounter1 &amp;lt;&amp;gt; lngchamp1) Then
+lngCounter1 = lngCounter1 + 1
+End If
+e = Asc(Mid(champ1, lngCounter1, 1))
+If (e - &amp;H61) &amp;gt;= 0 Then
+e = e - &amp;H61 ' to transform the letter to the 4 low bits of c
+If (e &amp;gt;= 0) And (e &amp;lt;= 15) Then
+c = d + e
+End If
+End If
+
+Assemble
+
+cfc = (((inter / 256) * 256) - (inter Mod 256)) / 256
+cfd = inter Mod 256
+
+c = c Xor (cfc Xor cfd)
+
+For compte = 1 To 16
+
+cle(compte) = cle(compte) Xor c
+
+Next compte
+
+pClearText = pClearText + Chr$(c)
+
+Next lngCounter1
+</code></pre>
+<p>End Sub</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

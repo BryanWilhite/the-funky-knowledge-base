@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UCLA MCCS: PODS 3.x Schema Generation and Deployment - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Schema Generation Servers</p>
+<ul>
+<li>Build server: xpcpodsmgmt.medctr.ucla.edu</li>
+<li>Development server: xdcpods02.medctr.ucla.edu</li>
+<li>NAS filer: \\\\nasfs1 (or \\\\nasfs2)</li>
+</ul>
+<p>Testing and Deployment Server</p>
+<ul>
+<li>Testing server: podstest.mednet.ucla.edu</li>
+<li>Database server: cerebrus.medctr.ucla.edu</li>
+<li>Production server: pods.mednet.ucla.edu</li>
+</ul>
+<ol>
+<li>
+<p>Use IcapSchemaRequestVerification.xls to verify spreadsheet input.
+As of this writing this file is located here:</p>
+<p>\\\\nasfs1\\DevGroup\\PODS\\icap-schema-gen</p>
+</li>
+<li>
+<p>Verify the uniqueness of the IDs in the Form ID column of the spreadsheet input. Note that any characters in the IDs should be in upper case.</p>
+</li>
+<li>
+<p>Determine the new release number. This defaults to incrementing one from the last release number. The last release number can be seen in the xpcpodsmgmt*/home/podsdev/schema/*-list.txt files.</p>
+</li>
+<li>
+<p>Determine the new test number. This defaults to incrementing one from the last test number. The last test number can be seen by running ant in the xpcpodsmgmt*/home/podsdev/test/suite folder.</p>
+</li>
+<li>
+<p>Enter the unique IDs from the spreadsheet into a file called xpcpodsmgmt*/home/podsdev/schema/[release#]-list.txt where [release#] is the new release number (step 3). Note that any characters in the IDs should be in upper case. Omit empty lines and spaces.</p>
+</li>
+<li>
+<p>Run ./generate-schema.sh [release#]-list.txt [release#] [test#] Ignore any &quot;rm: cannot remove... No such file or directory&quot; errors.</p>
+</li>
+<li>
+<p>Make a new release candidates folder on the NAS filer with the form [release#] in \\\\nasfs1\\DevGroup\\PODS\\releaseCandidates\\. Make folders \\\\nasfs1\\DevGroup\\PODS\\releaseCandidates\\[release#]\\unzipped-schemas and \\\\nasfs1\\DevGroup\\PODS\\releaseCandidates\\[release#]\\sql-mapping.</p>
+</li>
+<li>
+<p>Copy xpcpodsmgmt*/home/podsdev/schema/[release#]/sql/<em>.</em> to \\\\nasfs1\\DevGroup\\PODS\\releaseCandidates\\[release#]\\sql-mapping.</p>
+</li>
+<li>
+<p>Copy xpcpodsmgmt*/home/podsdev/schema/[release#]/output/*.xsd to \\\\nasfs1\\DevGroup\\PODS\\releaseCandidates\\[release#]\\unzipped-schemas.</p>
+</li>
+<li>
+<p>Copy xpcpodsmgmt*/home/podsdev/schema/[release#]/output/*.xsd to \\\\nasfs1\\DevGroup\\PODS\\RELEASES\\PODS3.0\\SCHEMAS\\DEV\\xsds.</p>
+</li>
+<li>
+<p>Map a Windows drive from \\\\nasfs1\\DevGroup\\PODS\\RELEASES\\PODS3.0\\SCHEMAS\\DEV\\xsds and run dir &gt; releasedoc.txt.</p>
+</li>
+<li>
+<p>Copy releasedoc.txt into \\\\nasfs1\\DevGroup\\PODS\\releaseCandidates\\[release#]\\ReleaseSummary_PODS_v[release#]_[date].txt. And example file would be ReleaseSummary_PODS_v3_6_11_Jun_05_2007.txt</p>
+</li>
+<li>
+<p>Copy xpcpodsmgmt*/home/podsdev/test/suite/build.xml into xpcpodsmgmt*/home/podsdev/test/suite/build.xml.bak.</p>
+</li>
+<li>
+<p>Add a new message under TARGET:HELP in build.xml of the form &lt;echo message=&quot;[test#] - [release#]-schema&quot;/&gt; .</p>
+</li>
+<li>
+<p>Add a new regression test &lt;target /&gt; block under the last test block in build.xml. (Look for blocks &lt;!--TARGET: PODS REGRESSION TEST 000 --&gt;.)</p>
+</li>
+<li>
+<p>Add a new &lt;if /&gt; block under the last test &lt;if /&gt; block in build.xml.</p>
+</li>
+<li>
+<p>Copy xpcpodsmgmt*/home/podsdev/schema/[release#]/output/<em>.xsd to xdcpods02</em>/PODS/all_online/dtd/3.1/ and send and email to the development database person:</p>
+<p>subject: PODS 3.x Release Candidate [release#]
+body:
+Please deploy new schema changes to PODS 3.0 Test DB.
+You can find the script in following location:
+\\\\nasfs1\\DevGroup\\PODS\\releaseCandidates\\[release#]\\sql-mapping</p>
+</li>
+<li>
+<p>From the xpcpodsmgmt*/home/podsdev/test/suite/ folder run this command: ant pods-regression-batch -Dserver=xdcpods02.medctr.ucla.edu -Dbatch=001,002,003,[test#] -Dhost=xpcpodsmgmt.medctr.ucla.edu -Dnotify=bwilhite@mednet.ucla.edu,wting@mednet.ucla.edu,mchan@mednet.ucla.edu  Make sure to run this command from a terminal that can stay open for a large time!</p>
+</li>
+</ol>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

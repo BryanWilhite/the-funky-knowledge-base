@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>“Basic Unit Testing Guidelines” by Chris Eargle - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>When I recently started looking through a certain project’s tests, I was struck by how difficult it was for me to read and understand. The tests were laid out haphazardly, and the code contained enough logic to make me wonder if it would be easier to analyze the functional code. Tests don’t do anyone good if they require that much analysis. In contrast, one of my favorite open source projects contains tests that allow me to learn the functionality of the system without looking at any functional code.</p>
+<p>The intent of this post isn’t to describe advanced unit testing techniques but to describe a few guidelines that I feel should be implemented regardless if you’re mocking objects, using test driven development, or just want to ensure your code works. I am using Microsoft’s unit testing framework, but these same guidelines apply in most other unit testing frameworks.</p>
+<p>Name Code Files Sensibly</p>
+<p>You should be able to find your test, which may be difficult to do if you name your file “MyTests.cs.” Naming the file after the class you’re testing is a guideline many people use. Alternatively, you can name it after a functional area if you have more than one fixture per file. Yes, generally speaking you should have one class per file, but I admit to relaxing this rule because you are going to experience class explosion if you’re striving for 100% coverage. I prefer to name my class files after the class just as I do in functional development.</p>
+<p>Name Fixture After Scenario</p>
+<p>Your test fixture should set up a scenario, and the name of the class should reflect that scenario. For example, if you’re testing what happens when a user activates an account, name the class “WhenUserActivatesAccount.”</p>
+<p>[TestClass]
+public class WhenUserActivatesAccount
+{
+}</p>
+<p>Setup Code in Constructor</p>
+<p>Usually, your constructor (or Setup method in some frameworks) should initialize the scenario that you’re testing. If external setup must be done, use the ClassInitializer attribute on a static method.</p>
+<p>User user;
+Account account;</p>
+<p>public WhenUserActivatesAccount()
+{
+user = new User(&quot;kodefuguru&quot;);
+account = user.Account;
+account.Activate();
+}</p>
+<p>If you expect exceptions with certain parameters in various, similar scenarios; it may be necessary to call the setup code from within the testing method. I prefer to refactor my tests so that the test for the expected exception is in a derived class that tweaks the modifications within its constructor before calling the base constructor… for example, “public class WhenInvalidUserActivatesAccount : WhenUserActivatesAccount.”</p>
+<p>Name Test After Expected Result</p>
+<p>Ideally, tests contain one Assert statement. You’re testing a specific condition that you expect to occur as a result of the scenario you’ve presented. When a user activates an account, you expect the account to activated. Therefore, your test should be named “AccountActivatedShouldBeTrue,” with the assertion “Assert.IsTrue(account.Activated).”</p>
+<p>[TestMethod]
+public void AccountActivatedShouldBeTrue()
+{
+Assert.IsTrue(account.Activated);
+}</p>
+<p>No Conditionals Containing Assertions</p>
+<p>If assertions are contained within a conditional statement, then you aren’t really ensuring that your code is running as expected. When you’re writing tests, you’re declaring the behavior of your system based upon certain conditions.</p>
+<p>[TestMethod]
+public void AccountActivatedShouldDependOnUserValid()
+{
+if (user.Valid)
+{
+Assert.IsTrue(account.Activated);
+}
+else
+{
+Assert.IsFalse(account.Activated);
+}
+}</p>
+<p>If I have a test like this, I’m not really declaring a fact about the system. Instead, I’m declaring facts about two different situations, one of which will not occur. Whether user.Valid is true or not should depend on the setup of my test, and I should know what the value will be when this test runs.</p>
+<p>Differentiate Between Unit Tests and Integration Tests</p>
+<p>Unit tests are for testing an individual unit of code. Integration tests are for testing functionality between different systems. It is best to separate unit tests and integration tests by placing them in separate projects. If you’re not already doing so, at some point you may wish to automate your testing process. In a continuous integration environment, unit tests should be run with every build. Integration tests tend to be slower, and it is oftentimes not practical to automate them as frequently.</p>
+<p>If you have trouble differentiating between unit tests and integration tests (i.e. everything you do connects to a service or persists to the database), it would be a good idea to look into mocking and inversion of control so that you can create tests for units of functionality.</p>
+<hr>
+<p>There are many more things you can do to create effective unit tests, but if you follow the few guidelines I have listed you will benefit immediately. It is important that it is easy for anyone looking at your tests to know how the system is supposed to behave. There is additional benefit in that you can harvest fixture and test names to create functional documentation for your software.</p>
+<p>[http://www.kodefuguru.com/post/2009/07/23/
+Basic-Unit-Testing-Guidelines.aspx]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SQL Server CLR: “Regular Expressions in MS SQL Server 2005/2008”; CodeProject.com - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Reqular expressions in MS SQL Server 2005/2008. You can use all .Net Framework Regular Expressions stuff via MS Server CLR Integration. By the way you can use not only Regular Expressions from FCL.</p>
+<p>This article describe how to create and use extension for LIKE (Transact-SQL) clause that supports regular expressions. Just for demo we also have created text parser that extracts tokens from text by given regular expression pattern. Also there is an overview of the namespaces and libraries required to compile database objects using the Microsoft SQL Server integration with the aid of .NET Framework common language runtime (CLR) as a whole.
+Background</p>
+<p>Stated material could be helpful if you know T-SQL and C#. In that case you can to wide library functionality. If you master T-SQL only (witout C#) you may just use RegExpLike function instead of standard LIKE clause in places where Regular Expressions functionality is needed.
+Using the Code
+Part 1. Extension of LIKE clause</p>
+<p>At the begin you have to allow MS SQL Server to use CLR Integration, i.e. to make possible usage of .Net assemblies and methods from them (by default this possibility is disabled). To do this use following script:</p>
+<p>sp_configure 'clr enabled', 1
+GO
+RECONFIGURE
+GO</p>
+<p>If you want to revert defualt state run this script:</p>
+<p>sp_configure 'clr enabled', 0
+GO
+RECONFIGURE
+GO</p>
+<p>From here we create assembly that is Wrapper for Regular Expression .Net classes. To create user defined function for MS SQL Server in C#/.Net you have just to create library project, you create class, you add public static methods that will be SQL Function in future. And SqlFunctionAttribute must forestall each from these methods. It used to mark a method definition of a user-defined aggregate as a function in SQL Server. For our RegularExpressionLike method we have got method as shown:</p>
+<p>/// &lt;summary&gt;
+/// Class that allows to support regular expressions in MS SQL Server 2005/2008
+/// &lt;/summary&gt;
+public partial class SqlRegularExpressions
+{	
+/// &lt;summary&gt;
+/// Checks string on match to regular expression
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;text&quot;&gt;string to check&lt;/param&gt;
+/// &lt;param name=&quot;pattern&quot;&gt;regular expression&lt;/param&gt;
+/// &lt;returns&gt;true - text consists match one at least, false - no matches&lt;/returns&gt;
+[SqlFunction]
+public static bool Like(string text, string pattern)
+{
+Match match = Regex.Match(text, pattern);
+return (match.Value != String.Empty);
+}</p>
+<pre><code>//...
+</code></pre>
+<p>}</p>
+<p>Next step is assembly building. From now you have to deploy given assembly to MS SQL Server. To do this run next script (but you have to indicate path to assembly actual for your machine):</p>
+<p>CREATE ASSEMBLY
+--assembly name for references from SQL script
+SqlRegularExpressions
+-- assembly name and full path to assembly dll, SqlRegularExpressions in this case
+from 'd:\\Projects\\SqlRegularExpressions\\SqlRegularExpressions\\bin\\Release\\SqlRegularExpressions.dll'
+WITH PERMISSION_SET = SAFE</p>
+<p>Bingo! Your assembly is registered and from now we may to use functionality from it. That is exactly what we plan do.</p>
+<p>By the way to revert this action you can run script as following:</p>
+<p>drop assembly
+--assembly name for references from SQL script
+SqlRegularExpressions</p>
+<p>To bind assembly method with SQL Function you have to run script as shown:</p>
+<p>--function signature
+CREATE FUNCTION RegExpLike(@Text nvarchar(max), @Pattern nvarchar(255)) RETURNS BIT
+--function external name
+AS EXTERNAL NAME SqlRegularExpressions.SqlRegularExpressions.[Like]</p>
+<p>And that is all. Now you may use RegExpLike function to check string matching to pattern with regular expression:</p>
+<p>-- get all titles where title consists word that starts by 'A'
+select * from titles
+where 1 = dbo.RegExpLike(title, '\\b(A\\S+)')</p>
+<p>[http://www.codeproject.com/KB/database/
+SqlRegularExpressions.aspx?display=Print]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

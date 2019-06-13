@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PowerShell and ADSI: Searching the Registry to Find All Available Providers on Windows with .NET Objects - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>PS C:\\&gt; $key = [Microsoft.Win32.Registry]::LocalMachine</p>
+<p>PS C:\\&gt; $key.GetSubKeyNames()
+HARDWARE
+SAM
+SECURITY
+SOFTWARE
+SYSTEM</p>
+<p>PS C:\\&gt; $subKey = $key.OpenSubKey(&quot;SOFTWARE\\\\Microsoft\\\\ADs\\\\Provide
+rs&quot;)</p>
+<p>PS C:\\&gt; $subKey.GetSubKeyNames()
+IIS
+LDAP
+NDS
+NWCOMPAT
+WinNT</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

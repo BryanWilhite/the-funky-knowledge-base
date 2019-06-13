@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WPF and WCF: The Decorator Pattern and Dispatcher.CurrentDispatcher - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>/*
+Push dispatching into the service layer with a decorator pattern.
+*/</p>
+<p>public class MySvcDecorator : IMySvc
+{
+private readonly IMySvc _mysvc;
+private readonly Dispatcher _current = Dispatcher.CurrentDispatcher;</p>
+<pre><code>public MySvcDecorator(IMySvc mysvc){//set _mysvc here...;}
+public Event Action&amp;lt;T&amp;gt; HeyGui;
+void MySvcEventHandler(T mydata)
+{
+    Action dispatch = () =&amp;gt; { if(HeyGui != null) HeyGui(mydata); }
+    _current.BeginInvoke(DispatcherPriority.DataBind, dispatch);
+}
+</code></pre>
+<p>}</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

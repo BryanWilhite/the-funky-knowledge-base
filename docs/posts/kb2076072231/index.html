@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Windows Server 2008 R2: “Using Remote Desktop” - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>To allow remote connections for administrative purposes only, you do not have to install the RD Session Host role service. Instead, you enable Remote Desktop on the computer that you want to remotely administer.</p>
+<p>Remote Desktop supports only two concurrent remote connections to the computer. You do not need Remote Desktop Services client access licenses (RDS CALs) for these connections.</p>
+<p>You can use the following procedure to enable Remote Desktop on a Windows Server 2008 R2 computer.</p>
+<p>Membership in the local Administrators group, or equivalent, on the computer that you plan to configure, is the minimum required to complete this procedure.
+To enable Remote Desktop</p>
+<ol>
+<li>
+<p>Start the System tool. To start the System tool, click Start, click Run, type control system and then click OK.</p>
+</li>
+<li>
+<p>Under Tasks, click Remote settings.</p>
+</li>
+<li>
+<p>In the System Properties dialog box, on the Remote tab, click either of the following, depending on your environment:</p>
+<pre><code>* Allow connections from computers running any version of Remote Desktop (less secure)
+
+* Allow connections only from computers running Remote Desktop with Network Level Authentication (more secure)
+</code></pre>
+<p>For more information about the two options, click the Help me choose link on the Remote tab.</p>
+</li>
+<li>
+<p>Click Select Users to add the users and groups that need to connect to the computer by using Remote Desktop. The users and groups that you add are added to the Remote Desktop Users group.</p>
+<p>Members of the local Administrators group can connect even if they are not listed.</p>
+</li>
+</ol>
+<p>[http://technet.microsoft.com/en-us/library/cc742816.aspx]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hibernate in Action Notes: Chapter 1; Understanding object/relational persistence; 1.2 The paradigm mismatch - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>1.2 The paradigm mismatch</p>
+<p>&quot;The problem of granularity&quot; identifies the mismatch between Java type definitions and the obstacles of SQL user-defined types (UDT).</p>
+<p>&quot;Unfortunately, UDT support is a somewhat obscure feature of most SQL database management systems and certainly isn't portable between different systems.</p>
+<p>&quot;The problem of subtypes&quot; reminds us that inheritance and polymorphism has no place in relational theory.</p>
+<p>&quot;The problem of identity&quot; shows us that Java objects are distinguished by tests for equality (== and !=) while the relational world uses the notion of the primary key.</p>
+<p>&quot;...we'll recommend that you use surrogate keys whenever possible. A surrogate key is a primary key column with no meaning to the user.&quot;</p>
+<p>The &quot;problems relating to associations&quot; compare Java object references (directional) to foreign key associations (non-directional).</p>
+<p>&quot;The problem of object graph navigation&quot; refers to the &quot;fundamental difference in the way you access objects in Java and in a relational database.&quot; The dreaded &quot;n+1 selects problem&quot; is hidden here.</p>
+<p>&quot;This mismatch in the way we access objects in Java and in a relational database is perhaps the single most common source of performance problems in Java applications.&quot;</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PHP Code: File Upload with a Single PHP Script File - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>&lt;?php
+/*
+This code is loosely based
+on john@php-dude.com,
+the post 27-Jul-2001 12:00
+at http://www.php.net/manual/en/features.file-upload.php.
+*/</p>
+<pre><code>$HTML = NULL;
+
+if(count($HTTP_POST_FILES) &amp;gt; 0){
+    $allowed_types = array(&amp;quot;application/pdf&amp;quot;,&amp;quot;text/plain&amp;quot;,&amp;quot;text/html&amp;quot;); 
+    $size_limit = &amp;quot;100000&amp;quot;; //bytes
+
+    $file = $HTTP_POST_FILES[&amp;quot;file&amp;quot;][&amp;quot;name&amp;quot;]; 
+    $type = $HTTP_POST_FILES[&amp;quot;file&amp;quot;][&amp;quot;type&amp;quot;]; 
+    $size = $HTTP_POST_FILES[&amp;quot;file&amp;quot;][&amp;quot;size&amp;quot;]; 
+    $temp = $HTTP_POST_FILES[&amp;quot;file&amp;quot;][&amp;quot;tmp_name&amp;quot;]; 
+
+    $path_info = pathinfo($PATH_TRANSLATED);
+
+    //Web server anonymous user must have
+    //write permissions to this path:
+    $write_path = $path_info[&amp;quot;dirname&amp;quot;] . &amp;quot;/&amp;quot; . $file;
+
+    if ($file){ 
+        if ($size &amp;lt; $size_limit){ 
+            if (in_array($type,$allowed_types)){ 
+                if(move_uploaded_file($temp,$write_path)){
+                    $HTML = &amp;quot;&amp;lt;div&amp;gt;The file &amp;lt;tt&amp;gt;$file&amp;lt;/tt&amp;gt; was sucessfully uploaded.&amp;lt;/div&amp;gt;&amp;quot;;
+                }
+                else{
+                    $HTML = &amp;quot;&amp;lt;div&amp;gt;The file &amp;lt;tt&amp;gt;$file&amp;lt;/tt&amp;gt; upload failed.&amp;lt;/div&amp;gt;&amp;quot;;
+                }
+            }
+            else { 
+                $HTML = &amp;quot;&amp;lt;div&amp;gt;Files of type &amp;lt;tt&amp;gt;$type&amp;lt;/tt&amp;gt; are not permitted.&amp;lt;/div&amp;gt;&amp;quot;; 
+            }
+        }
+        else { 
+            $HTML = &amp;quot;&amp;lt;div&amp;gt;File exceeds the size limit of $size_limit bytes.&amp;lt;/div&amp;gt;&amp;quot;;
+        }
+    } 
+
+    $HTML .= &amp;quot;&amp;bsol;&amp;bsol;n&amp;quot;;
+}
+</code></pre>
+<p>?&gt;
+&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;
+&quot;http://www.w3.org/TR/REC-html40/loose.dtd&quot;&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta name=VS_TARGETSCHEMA content=&quot;HTML 4.0&quot;&gt;
+&lt;meta name=&quot;editor&quot; content=&quot;Bryan Wilhite&quot;&gt;
+&lt;meta name=&quot;reply-to&quot; content=&quot;bwilhite@ucla.mednet.edu&quot;&gt;
+&lt;meta name=&quot;keywords&quot; content=&quot;&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
+&lt;title&gt;PHP File Upload Test&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;?php echo $HTML ?&gt;
+&lt;form enctype=&quot;multipart/form-data&quot; action=&quot;&lt;?php echo $PHP_SELF ?&gt;&quot;
+method=&quot;POST&quot;&gt;
+Upload a File:
+&lt;input name=&quot;file&quot; type=&quot;file&quot;&gt;
+&lt;input type=&quot;submit&quot; value=&quot;Upload&quot;&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

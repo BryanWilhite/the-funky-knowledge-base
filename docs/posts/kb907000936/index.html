@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VB: Orange County Visual Basic Users Group Seminar; VB 6.0 Data Controls - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>The ADO Data Control promises to actually be useful in VB 6.0. The control can connect to a database and retrieve or modify data without code. The control only needs ConnectionString and RecordSource properties specified to run.</p>
+<p>Several VB controls are &quot;data aware.&quot; On text boxes, for example, the DataField and DataSource properties are used to bind to the ADO Recordset object. With Combo Box or List Box the properties are DataSource, ListField, DataField, BoundColumn, RowSource, Description, etc. This 6.0 design very much rivals the conveniences available in Microsoft Access.</p>
+<p>The concept of events associated with a VB data control is a new concept. These are are Data Control Events:</p>
+<pre><code>Error
+WillChangeField
+FieldChangeComplete
+WillMove
+MoveComplete
+WillChangeRecord
+RecordChangeComplete
+WillChangeRecordSet
+RecordSetChangeComplete
+</code></pre>
+<p>Miscellaneous Notes</p>
+<p>At design time with the DataGrid Control, use the Retrieve Fields command to get more columns from the underlying RecordSet.</p>
+<p>Option Buttons cannot be bound to and ADO Data Control.</p>
+<p>The Error event of the Data Control allows a centralized Error handler for Data Errors (just like in an Access form). Use Booleans to avoid cascading errors.</p>
+<p>Miscellaneous Code</p>
+<p>Testing an ADO Recordset's EditMode property:</p>
+<pre><code>blnAdding = (adoCtrl.Recordset.EditMode = adEditAdd)
+If blnAdding Then
+    'Adding a record...
+Else
+    'Not adding a record...
+End If
+</code></pre>
+<p>This form is slightly faster than the If Then structure testing .EditMode directly.</p>
+<p>Rolling your own record position caption:</p>
+<pre><code>With adoCtrl.Recordset
+    Me.lbl1.Caption = &amp;quot;Record &amp;quot; .AbosolutePosition _
+        &amp; &amp;quot; of &amp;quot; &amp; .Recordcount
+End With
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

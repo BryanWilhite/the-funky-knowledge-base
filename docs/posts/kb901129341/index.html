@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code: Using the BeforeUpdate Form Event to &quot;Undo&quot; Changes - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Private Sub Form_BeforeUpdate(Cancel As Integer)</p>
+<pre><code>Dim strMsg As String
+
+strMsg = &amp;quot;Are you sure you want to change this data?&amp;quot;
+
+If VBA.MsgBox(strMsg, vbYesNo + vbDefaultButton2 _
+    + vbQuestion) = vbNo Then
+    Me.Undo
+    Exit Sub
+End If
+</code></pre>
+<p>End Sub</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

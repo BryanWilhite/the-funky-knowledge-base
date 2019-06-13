@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>T-SQL: Stored Procedure Structure for Microsoft SQL Server 7.0 - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>USE DatabaseName
+GO</p>
+<p>IF OBJECT_ID('StoredProcName') IS NOT NULL
+BEGIN
+DROP PROCEDURE StoredProcName
+IF OBJECT_ID('StoredProcName') IS NOT NULL
+PRINT '&lt;&lt;&lt; FAILED DROPPING PROCEDURE StoredProcName &gt;&gt;&gt;'
+ELSE
+PRINT '&lt;&lt;&lt; DROPPED PROCEDURE StoredProcName &gt;&gt;&gt;'
+END
+GO</p>
+<p>CREATE PROCEDURE StoredProcName
+(
+@param int = 0
+)
+AS</p>
+<p>-- Description: Stored proc' structure for SQL Server 7.0.
+-- Developer: rasx</p>
+<p>SET NOCOUNT ON</p>
+<p>-- This proc' takes advantage of the new security features in SQL Server 7.0.</p>
+<p>RETURN
+GO</p>
+<p>GRANT EXECUTE ON StoredProcName TO [Windows NT Group]
+GO</p>
+<p>IF OBJECT_ID('StoredProcName') IS NOT NULL
+PRINT '&lt;&lt;&lt; CREATED PROCEDURE StoredProcName &gt;&gt;&gt;'
+ELSE
+PRINT '&lt;&lt;&lt; FAILED CREATING PROCEDURE StoredProcName &gt;&gt;&gt;'
+GO</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

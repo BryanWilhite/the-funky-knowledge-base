@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nullable&lt;T&gt; Usage Guidelines; Krzysztof Cwalina - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>CONSIDER using Nullable&lt;T&gt; to represent values that might not be present (i.e. optional values).</p>
+<p>Do NOT use Nullable&lt;T&gt; unless you would use a reference type in a similar manner, taking advantage of the fact that reference type values can be null.</p>
+<p>AVOID using Nullable&lt;bool&gt; to represent a general three-state value.</p>
+<p>AVOID using System.DBNull. Prefer Nullable&lt;T&gt; instead.</p>
+<p>Nullable&lt;T&gt; is in general a better representation of optional database values. One thing to consider though it that while Nullable&lt;T&gt; gives you the ability to represent null values, you don’t get database null operational semantics. Specifically, you don’t get null propagation through operators and functions. If you deeply care about the propagation semantics, consider sticking with DBNull.</p>
+<p>[http://blogs.msdn.com/kcwalina/archive/2008/07/16/Nullable.aspx]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

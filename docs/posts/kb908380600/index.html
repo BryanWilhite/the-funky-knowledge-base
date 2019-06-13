@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript: Testing for an Instantiated Object; Constructor Functions - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Because of low-bandwidth loading problems, a variable may be declared but not yet set to a &quot;new&quot; instance of a Constructor Function's object. In such a limbo state the variable will be null. As a precaution, test for null. For example,</p>
+<pre><code>if (objAgent != null) {
+    if (objAgent.cool) { //do stuff }
+}
+</code></pre>
+<p>checks for the instantiation of objAgent before its &quot;cool&quot; property is tested. This often happens while a page is loading and the page has an OnLoad event that binds one or more variables to an object. (Recall that the OnLoad event does not fire until all elements on the page are completely loaded.) If an element on the loading page refers to an object that is not yet instantiated (because the OnLoad event has not fired yet) and no precautions are taken, a &quot;not an object&quot; error will occur.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

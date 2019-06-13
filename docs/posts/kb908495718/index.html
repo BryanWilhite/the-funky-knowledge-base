@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VB: From DAO to ADO; Notes - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>ADO Objects are not found in a hierarchy; they logically lie side by side. For example, the Command, Connection and Recordset objects can open a connection to a database. It is up to the programmer to decide the &quot;best&quot; way to open the connection.</p>
+<p>There is no FindFirst method inside the Recordset object. There is only the Find method. Moreover there is no NoMatch property: when an ADO Recordset cannot find a row it moves to EOF (making EOF = True). WARNING: when specifying criteria strings in a Find, use single quotes only.</p>
+<p>It appears that ADO cannot see DAO objects. It follows that you cannot treat a DAO query like a stored procedure. I beleive I am confined to using MS-SQL strings.</p>
+<p>The AbsolutePosition property in DAO is zero-based; in ADO it is one-based.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

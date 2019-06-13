@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Start/End of Month Functions basSOM() and basEOM() - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Public Function basEOM(TheDate As Date)</p>
+<pre><code>Dim dtmNextMonth As Date
+
+dtmNextMonth = VBA.DateAdd(&amp;quot;m&amp;quot;, 1, TheDate)
+'
+'By subtracting all of the days out of dtmNextMonth
+'for a given date (TheDate), the last day of the previous 
+'month is returned by the DateValue method
+'of the VBA object.
+'
+basEOM = VBA.DateValue(dtmNextMonth - _ 
+    VBA.DatePart(&amp;quot;d&amp;quot;, dtmNextMonth))
+</code></pre>
+<p>End Function</p>
+<p>Public Function basSOM(TheDate As Date)
+'
+'By subtracting all of the days out of TheDate
+'and adding one, the first day of the month for TheDate
+'is returned by the DateValue method of the VBA object.
+'
+basSOM = VBA.DateValue(TheDate - _
+DatePart(&quot;d&quot;, TheDate) + 1)</p>
+<p>End Function</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

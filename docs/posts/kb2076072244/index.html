@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ASP.NET MVC: “What is the best way to return XML from a controller’s action in ASP.NET MVC?”; stackoverflow.com - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Use MVCContrib's XmlResult Action.</p>
+<p>For reference here is their code:</p>
+<p>public class XmlResult : ActionResult
+{
+private object objectToSerialize;</p>
+<pre><code>/// &amp;lt;summary&amp;gt;
+/// Initializes a new instance of the &amp;lt;see cref=&amp;quot;XmlResult&amp;quot;/&amp;gt; class.
+/// &amp;lt;/summary&amp;gt;
+/// &amp;lt;param name=&amp;quot;objectToSerialize&amp;quot;&amp;gt;The object to serialize to XML.&amp;lt;/param&amp;gt;
+public XmlResult(object objectToSerialize)
+{
+    this.objectToSerialize = objectToSerialize;
+}
+
+/// &amp;lt;summary&amp;gt;
+/// Gets the object to be serialized to XML.
+/// &amp;lt;/summary&amp;gt;
+public object ObjectToSerialize
+{
+    get { return this.objectToSerialize; }
+}
+
+/// &amp;lt;summary&amp;gt;
+/// Serialises the object that was passed into the constructor to XML and writes the corresponding XML to the result stream.
+/// &amp;lt;/summary&amp;gt;
+/// &amp;lt;param name=&amp;quot;context&amp;quot;&amp;gt;The controller context for the current request.&amp;lt;/param&amp;gt;
+public override void ExecuteResult(ControllerContext context)
+{
+    if (this.objectToSerialize != null)
+    {
+        context.HttpContext.Response.Clear();
+        var xs = new System.Xml.Serialization.XmlSerializer(this.objectToSerialize.GetType());
+        context.HttpContext.Response.ContentType = &amp;quot;text/xml&amp;quot;;
+        xs.Serialize(context.HttpContext.Response.Output, this.objectToSerialize);
+    }
+}
+</code></pre>
+<p>}</p>
+<p>[http://stackoverflow.com/questions/134905/what-is-the-best-way-
+to-return-xml-from-a-controllers-action-in-aspnet-mvc]</p>
+<p>[http://www.codeplex.com/MVCContrib]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VBScript and ASP: The &quot;Brute Force&quot; Debugging of ASP Pages - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>At this time in my life, I find it convenient to debug my ASP pages directly in the web browser window. This probably comes from my &quot;traditional&quot; building of ASP pages with only a text editor. I am sure I am missing out on the code breaking features of Visual InterDev. But for now, when I want to see the contents of a variable (e.g. vReturn), I would use the following lines of code:</p>
+<pre><code>Response. Write &amp;quot;My Variable: &amp;quot; &amp; vReturn
+Response.End
+</code></pre>
+<p>These lines are placed in the same manner that VB's Stop statement was heavily used in the &quot;old days.&quot; And they should be feared in the same way as well!</p>
+<p>Another more subtle technique is to Write HTML comments with the form:</p>
+<pre><code>Response. Write &amp;quot;&amp;lt;!-- My Variable: &amp;quot; &amp; vReturn &amp; &amp;quot;--&amp;gt;&amp;quot;
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

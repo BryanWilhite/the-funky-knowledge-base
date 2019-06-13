@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>T-SQL Code: Stored Procedure AutoDTS_complianceDumps; An Example of Running a DTS Package in tSQL - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>USE compliance
+GO</p>
+<p>IF OBJECT_ID('AutoDTS_complianceDumps') IS NOT NULL
+BEGIN
+DROP PROCEDURE AutoDTS_complianceDumps
+IF OBJECT_ID('AutoDTS_complianceDumps') IS NOT NULL
+PRINT '&lt;&lt;&lt; FAILED DROPPING PROCEDURE AutoDTS_complianceDumps &gt;&gt;&gt;'
+ELSE
+PRINT '&lt;&lt;&lt; DROPPED PROCEDURE AutoDTS_complianceDumps &gt;&gt;&gt;'
+END
+GO</p>
+<p>CREATE PROCEDURE AutoDTS_complianceDumps
+(
+@serverName nvarchar(255) = 'BWilhiteBofA'
+,   @groupName  nvarchar(255) = '[ALL]'
+,   @path       nvarchar(255) = 'c:\\Inetpub\\wwwroot\\dev_Compliance_Support\\data\\FileDump_Compliance\\'
+)</p>
+<p>AS</p>
+<p>-- Description: Automation of the DTS Package complianceDumps via tSQL.
+/*
+Note that if SQL Server is not run by a domain-level user (e.g. the
+SYSTEM account) then do not use UNC paths for the @path parameter. This
+code can be translated into an ActiveX Script and run as a SQL Server
+Job if need be:</p>
+<pre><code>Dim objDTSPack
+
+Set objDTSPack = CreateObject(&amp;quot;DTS.Package&amp;quot;)
+
+'Load Package using NT security.
+Call objDTSPack.LoadFromSQLServer(&amp;quot;BWilhiteBofA&amp;quot;, , , 256, , , , &amp;quot;complianceDumps&amp;quot;)
+
+'Set Global Variables.
+objDTSPack.GlobalVariables(&amp;quot;g_strGroupName&amp;quot;).Value = &amp;quot;[ALL]&amp;quot;
+objDTSPack.GlobalVariables(&amp;quot;g_strCSVActivityPath&amp;quot;).Value = &amp;quot;&amp;bsol;&amp;bsol;&amp;bsol;&amp;bsol;bwilhitebofa&amp;bsol;&amp;bsol;FileDump_Compliance&amp;bsol;&amp;bsol;ActivityReport.csv&amp;quot;
+objDTSPack.GlobalVariables(&amp;quot;g_strCSVExceptionPath&amp;quot;).Value = &amp;quot;&amp;bsol;&amp;bsol;&amp;bsol;&amp;bsol;bwilhitebofa&amp;bsol;&amp;bsol;FileDump_Compliance&amp;bsol;&amp;bsol;ExceptionReport.csv&amp;quot;
+'Note that we are using UNC's for the g_strCSV[...] global variables
+'as a domain-level user is running SQL Server Agent.
+
+'Begin.
+objDTSPack.FailOnError = True
+objDTSPack.WriteCompletionStatusToNTEventLog = True
+
+objDTSPack.Execute
+
+'Clean up.
+Set objDTSPack = Nothing
+
+References:
+DTS Packages &amp; OLE Stored Procedures
+http://www.swynk.com/friends/green/dtsole.asp
+</code></pre>
+<p>*/</p>
+<p>-- Developer: Bryan D. Wilhite</p>
+<p>SET NOCOUNT ON</p>
+<p>DECLARE
+@token                              int
+,   @hresult                            int
+,   @context                            int
+,   @progID                             nvarchar(255)
+,   @errSrc                             nvarchar(255)
+,   @errDescription                     nvarchar(255)
+,   @isObject                           bit
+,   @methodCall                         nvarchar(512)</p>
+<p>,   @DTSSQLStgFlag_UseTrustedConnection nvarchar(4)
+,   @CSVActivityPath                    nvarchar(512)
+,   @CSVExceptionPath                   nvarchar(512)</p>
+<p>SET @DTSSQLStgFlag_UseTrustedConnection = '256'
+SET @CSVActivityPath = @path + 'ActivityReport.csv'
+SET @CSVExceptionPath = @path + 'ExceptionReport.csv'</p>
+<p>SET @context = 1
+/*
+1 = In-process (.dll) OLE server only
+4 = Local (.exe) OLE server only
+5 = Both in-process and local OLE server allowed</p>
+<pre><code>Note: DTS runs in process with SQL Server so its creation context must be 1.
+</code></pre>
+<p>*/</p>
+<p>SET @isObject = 0
+SET @progID = 'DTS.Package'</p>
+<p>-- Create DTS object.
+EXECUTE @hresult = sp_OACreate @progID=@progID, @objecttoken=@token OUTPUT, @context=@context
+IF @hresult &lt;&gt; 0
+BEGIN
+EXECUTE sp_OAGetErrorInfo @objecttoken=@token, @source=@errSrc, @description=@errDescription OUTPUT
+SELECT
+PROGID        = @progID
+,   HRESULT       = @hresult
+,   SOURCE        = @errSrc
+,   [Description] = @errDescription
+END
+ELSE
+BEGIN
+SET @isObject = 1
+END</p>
+<p>-- Load Package using NT security.
+SET @methodCall = 'LoadFromSQLServer(ServerName:=&quot;' + @serverName + '&quot;, PackageName:=&quot;complianceDumps&quot;, Flags:=' + @DTSSQLStgFlag_UseTrustedConnection + ')'
+EXECUTE @hresult = sp_OAMethod @objecttoken=@token, @methodname=@methodCall
+IF @hresult &lt;&gt; 0
+BEGIN
+EXECUTE sp_OAGetErrorInfo @objecttoken=@token,  @source=@errSrc, @description=@errDescription OUTPUT
+SELECT
+PROGID        = @progID
+,   HRESULT       = @hresult
+,   SOURCE        = @errSrc
+,   [Description] = @errDescription
+END</p>
+<p>-- Set Package Properties.
+EXECUTE @hresult = sp_OASetProperty @objecttoken=@token, @propertyname='FailOnError', @newvalue=TRUE
+IF @hresult &lt;&gt; 0
+BEGIN
+EXECUTE sp_OAGetErrorInfo @objecttoken=@token,  @source=@errSrc, @description=@errDescription OUTPUT
+SELECT
+PROGID        = @progID
+,   HRESULT       = @hresult
+,   SOURCE        = @errSrc
+,   [Description] = @errDescription
+END</p>
+<p>EXECUTE @hresult = sp_OASetProperty @objecttoken=@token, @propertyname='WriteCompletionStatusToNTEventLog', @newvalue=TRUE
+IF @hresult &lt;&gt; 0
+BEGIN
+EXECUTE sp_OAGetErrorInfo @objecttoken=@token,  @source=@errSrc, @description=@errDescription OUTPUT
+SELECT
+PROGID        = @progID
+,   HRESULT       = @hresult
+,   SOURCE        = @errSrc
+,   [Description] = @errDescription
+END</p>
+<p>-- Set Global Variables.
+EXECUTE @hresult = sp_OASetProperty @objecttoken=@token, @propertyname='GlobalVariables(&quot;g_strGroupName&quot;).Value', @newvalue=@groupName
+IF @hresult &lt;&gt; 0
+BEGIN
+EXECUTE sp_OAGetErrorInfo @objecttoken=@token,  @source=@errSrc, @description=@errDescription OUTPUT
+SELECT
+PROGID        = @progID
+,   HRESULT       = @hresult
+,   SOURCE        = @errSrc
+,   [Description] = @errDescription
+END</p>
+<p>EXECUTE @hresult = sp_OASetProperty @objecttoken=@token, @propertyname='GlobalVariables(&quot;g_strCSVActivityPath&quot;).Value', @newvalue=@CSVActivityPath
+IF @hresult &lt;&gt; 0
+BEGIN
+EXECUTE sp_OAGetErrorInfo @objecttoken=@token,  @source=@errSrc, @description=@errDescription OUTPUT
+SELECT
+PROGID        = @progID
+,   HRESULT       = @hresult
+,   SOURCE        = @errSrc
+,   [Description] = @errDescription
+END</p>
+<p>EXECUTE @hresult = sp_OASetProperty @objecttoken=@token, @propertyname='GlobalVariables(&quot;g_strCSVExceptionPath&quot;).Value', @newvalue=@CSVExceptionPath
+IF @hresult &lt;&gt; 0
+BEGIN
+EXECUTE sp_OAGetErrorInfo @objecttoken=@token,  @source=@errSrc, @description=@errDescription OUTPUT
+SELECT
+PROGID        = @progID
+,   HRESULT       = @hresult
+,   SOURCE        = @errSrc
+,   [Description] = @errDescription
+END</p>
+<p>-- Execute.
+EXECUTE @hresult = sp_OAMethod @objecttoken=@token, @methodname='Execute'
+IF @hresult &lt;&gt; 0
+BEGIN
+EXECUTE sp_OAGetErrorInfo @objecttoken=@token,  @source=@errSrc, @description=@errDescription OUTPUT
+SELECT
+PROGID        = @progID
+,   HRESULT       = @hresult
+,   SOURCE        = @errSrc
+,   [Description] = @errDescription
+END</p>
+<p>-- Clean up.
+IF @isObject = 1
+BEGIN
+EXECUTE @hresult = sp_OADestroy @objecttoken=@token
+IF @hresult &lt;&gt; 0
+BEGIN
+EXECUTE sp_OAGetErrorInfo @objecttoken=@token,  @source=@errSrc, @description=@errDescription OUTPUT
+SELECT
+PROGID        = @progID
+,   HRESULT       = @hresult
+,   SOURCE        = @errSrc
+,   [Description] = @errDescription
+END
+END</p>
+<p>GO</p>
+<p>GRANT EXECUTE ON AutoDTS_complianceDumps TO dbWebSolutionsUsers
+GO</p>
+<p>IF OBJECT_ID('AutoDTS_complianceDumps') IS NOT NULL
+PRINT '&lt;&lt;&lt; CREATED PROCEDURE AutoDTS_complianceDumps &gt;&gt;&gt;'
+ELSE
+PRINT '&lt;&lt;&lt; FAILED CREATING PROCEDURE AutoDTS_complianceDumps &gt;&gt;&gt;'
+GO</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

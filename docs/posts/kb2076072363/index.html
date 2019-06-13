@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WPF MVVM: “Rockford Lhotka—Initial thoughts on MVVM” - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>It turns out that there are various ways of thinking about the role of a ViewModel. I think there are two broad approaches worth considering.
+ViewModel as Sole Data Source</p>
+<p>You can set up the ViewModel to be the sole data source for the View. In this case the ViewModel exposes all the properties and methods necessary to make the View function. This can work well with an anemic Model, where the Model is composed of a bunch of dumb data container objects (think DataTable, DTO and most entity objects).</p>
+<p>With an anemic data-centric Model it is common to reshape the Model to fit the needs of the View. And since the Model is anemic, something needs to apply any business, validation and authorization rules and it surely won’t be the Model itself.</p>
+<p>Creating this type of ViewModel is non-trivial, because the ViewModel must use containment and delegation (a concept familiar to VB6 developers) to literally wrap, reshape and alter/enhance the behavior of the underlying Model.</p>
+<p>…</p>
+<p>What’s really sad about this approach, is that the end result will almost certainly require more code than if you’d just used code-behind. Arguably the result is more testable, but even that is debatable, since the ViewModel now implements all sorts of data binding goo and you’ll need to test that as well.</p>
+<p>ViewModel as Action Repository</p>
+<p>Another way to think about a ViewModel is to have it be a repository for actions/commands/verbs. Don’t have it reimplement all the properties from the Model, just have it augment the Model.</p>
+<p>This works well if you already have a rich Model, such as one created using CSLA .NET. If the Model is composed of objects that already fully support data binding and have business, validation and authorization rules, it seems silly to reimplement large chunks of that functionality in a ViewModel.</p>
+<p>Instead, have the ViewModel expose the Model as a property, alongside any additional methods or properties exposed purely by the ViewModel itself.</p>
+<p>Again, this presupposes the Model is powerful enough to support direct data binding to the View, which is the case with CSLA .NET business objects, but may not be the case with simpler DTO or entity objects (which probably don’t implement IEditableObject, etc).</p>
+<p>[http://www.lhotka.net/weblog/InitialThoughtsOnMVVM.aspx]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>“What does ‘yield break;’ do in C#?”; StackOverflow.com - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>It specifies that an iterator has come to an end. You can think of yield break as return statement which does not return value.</p>
+<p>For example, if you define a function as iterator, a body of the function may look like this:</p>
+<p>for (int i = 0; i &lt; 5; i++) {
+yield return i;
+}</p>
+<p>Console.Out.WriteLine(&quot;You will see me&quot;);</p>
+<p>Note that after the loop has completed all cycles, the last line gets executed and you will see the message in your console app.</p>
+<p>Or like this with yield break:</p>
+<p>int i = 0;
+while (true) {
+if (i &lt; 5) {
+yield return i;
+} else {
+// note that i++ will not be executed after this
+yield break;
+}
+i++;
+}</p>
+<p>Console.Out.WriteLine(&quot;Won't see me&quot;);</p>
+<p>In this case last statement is never executed because we left function early.</p>
+<p>[http://stackoverflow.com/questions/231893/what-does-yield-break-do-in-c]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

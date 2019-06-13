@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Netscape Enterprise Server 3.5.1 Administration: Setting Up Restricted Access - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>To set up Restricted Access we need to create the user(s) and groups (if applicable), specify a restricted path and set permissions for the path.</p>
+<p>Creating user(s) and groups: Choose General Administration &gt; Users and Groups &gt; New User. Under New User, you are required to specify Surname, Full Name and User ID. Entering a password is highly recommended. When this form is filled press the &quot;Create User&quot; button.</p>
+<p>Specify a restricted path: Choose Servers Supporting General Administration &gt; (your server name) &gt; Server Preferences &gt; Restrict Access.</p>
+<p>Under Access Control List Management, click &quot;Browse…&quot; under heading &quot;A. Pick a resource.&quot; Select the directory in your web you want to restrict access to from the next display (&quot;Choose a Part of Your Server&quot;).</p>
+<p>Under Access Control List Management, click the &quot;Edit Access Control&quot; button under heading &quot;A. Pick a resource.&quot; When this Java applet starts, check the &quot;Access control is on&quot; box. This applet is a table with columns Action, Users/Groups, From Host, Rights, Extra…, Continue. For now, we can only be concerned with the first two columns.</p>
+<p>In these two columns we first want to &quot;deny&quot; access to &quot;anyone&quot; ---this means the Action column is set to &quot;Deny&quot; and the Users/Groups is left as &quot;anyone.&quot; Please see your online help for more details. Press the &quot;New Line&quot; button. This will make a second row in this table. For the second row, we want to &quot;allow&quot; access to the user created earlier.</p>
+<p>When this is completed, press the &quot;Submit&quot; button. This will bring up the Save and Apply Changes display. Press the &quot;Save and Apply&quot; button to save these changes.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

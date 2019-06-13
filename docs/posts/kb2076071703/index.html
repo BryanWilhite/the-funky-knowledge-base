@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MCAD/MCSD Notes: Chapter 8, Lesson 4; Using Passport Authentication - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Lesson 4: Using Passport Authentication</p>
+<p>This lesson recognizes that Microsoft attempted to solve the &quot;Single Sign-On&quot; problem for the Windows platform. SSO is an industry-wide acronym maintained by OpenGroup.org (among others) at http://www.opengroup.org/security/sso/.</p>
+<p>As of this writing there is doubt that this technology is an active concern at Microsoft. The Passport SDK is currently not available for download from here:</p>
+<pre><code>http://msdn.microsoft.com/library/default.asp?url=/downloads/list/websrvpass.asp
+</code></pre>
+<ul>
+<li>&quot;Passport authentication identifies users via Microsoft Passport's single sign-on service. Microsoft Passport is meant to provide Internet users with a single identity that they can use to visit a wide variety of Web sites that require authentication.&quot;</li>
+</ul>
+<p>To declare Passport authentication in Web.config, this is a pattern:</p>
+<pre><code>&amp;lt;authentication mode=&amp;quot;Passport&amp;quot; /&amp;gt;
+&amp;lt;authorization&amp;gt;
+    &amp;lt;deny users=&amp;quot;?&amp;quot; /&amp;gt;
+    &amp;lt;!-- Deny unauthenticated users --&amp;gt;
+&amp;lt;/authorization&amp;gt;
+</code></pre>
+<p>The code used to implement authentication is almost identical to the code used for NTLM authentication discussed in &quot;Lesson 2: Using Windows Authentication,&quot; featuring use of System.Web.UI.Page.User.Identity.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

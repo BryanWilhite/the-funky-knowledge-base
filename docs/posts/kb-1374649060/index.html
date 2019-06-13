@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code: basMessagingLink - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Public Sub basMessagingLink(Optional IsAddressBook = False)</p>
+<pre><code>Dim tdfDAO As TableDef
+Dim strConn As String
+
+g_strMsg = &amp;quot;Are you sure?&amp;quot; &amp; vbCrLf _
+    &amp; &amp;quot;TIP: Outlook Express should not &amp;quot; _
+    &amp; &amp;quot;be your default MAPI client &amp;quot; _
+    &amp; &amp;quot;during this procedure. (In Outlook Express, &amp;quot; _
+    &amp; &amp;quot;see Options &amp;gt; General.)&amp;quot;
+If VBA.MsgBox(g_strMsg, vbQuestion + vbYesNo _
+    + vbDefaultButton2, _
+    &amp;quot;Songhay System&amp;quot;) = vbNo Then Exit Sub
+
+On Error GoTo basMessagingLink_Err
+
+If VBA.VarType(IsAddressBook) &amp;lt;&amp;gt; vbBoolean Then _
+    If VBA.VarType(IsAddressBook) &amp;lt;&amp;gt; vbInteger Then _
+        VBA.Err.Raise 450
+
+'Source database type:
+strConn = &amp;quot;Exchange 4.0;&amp;quot;
+'Table name (MAPILEVEL=&amp;lt;storage|folders&amp;gt;):
+strConn = strConn &amp; &amp;quot;MAPILEVEL=Personal Folders|;&amp;quot;
+'Source table type (0 for folders, 1 for address books):
+If IsAddressBook Then
+    strConn = strConn &amp; &amp;quot;TABLETYPE=1;&amp;quot;
+Else
+    strConn = strConn &amp; &amp;quot;TABLETYPE=0;&amp;quot;
+End If
+'Database name (DATABASE=&amp;lt;path&amp;gt;):
+strConn = strConn &amp; &amp;quot;DATABASE=&amp;quot; _
+    &amp; Application.CurrentDb.Name &amp; &amp;quot;;&amp;quot;
+'Profile name (optional):
+strConn = strConn &amp; &amp;quot;PROFILE=Windows Messaging Settings;&amp;quot;
+'Password (optional):
+
+If IsAddressBook Then
+    Set tdfDAO = Application.CurrentDb _
+        .CreateTableDef(&amp;quot;twmAddressBook&amp;quot;)
+Else
+    Set tdfDAO = Application.CurrentDb _
+        .CreateTableDef(&amp;quot;twmWebCom&amp;quot;)
+End If
+
+With tdfDAO
+    .Connect = strConn
+    If IsAddressBook Then
+        .SourceTableName = &amp;quot;Personal Address Book&amp;quot;
+    Else
+        .SourceTableName = &amp;quot;WebCom Accesses&amp;quot;
+    End If
+End With
+
+With Application.CurrentDb
+    .TableDefs.Append tdfDAO
+    VBA.MsgBox tdfDAO.Name _
+        &amp; &amp;quot; has been linked to this database.&amp;quot;, vbInformation
+    .TableDefs.Refresh
+End With
+
+Application.RefreshDatabaseWindow
+</code></pre>
+<p>basMessagingLink_Exit:
+Exit Sub</p>
+<p>basMessagingLink_Err:
+Select Case VBA.Err
+Case 3000
+VBA.MsgBox &quot;There is a problem with &quot; _
+&amp; &quot;the connection string.&quot;, vbCritical
+Resume basMessagingLink_Exit
+Case 3170
+VBA.MsgBox &quot;Windows Messaging Installable ISAM &quot; _
+&amp; &quot;(in Msexch32.dll) not found or not &quot; _
+&amp; &quot;registered.&quot;, vbCritical
+Resume basMessagingLink_Exit
+Case 3012
+VBA.MsgBox tdfDAO.Name _
+&amp; &quot; is already linked to this database.&quot;, _
+vbInformation
+Resume basMessagingLink_Exit
+Case Else
+VBA.MsgBox VBA.Err &amp; &quot;: &quot; &amp; VBA.Err.Description, _
+vbCritical, &quot;basMessagingLink Error&quot;
+Resume basMessagingLink_Exit
+End Select</p>
+<p>End Sub</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

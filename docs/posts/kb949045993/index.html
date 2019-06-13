@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IIS/PWS 4.0: Starting and stopping the Web Server from the Command Line; CMD Scripts - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>There are many reasons why the Web Server needs to be stopped and started frequently. Here are two: debugging ActiveX Server Components (after they crash) and manually refreshing the IIS Server cache. I use two CMD scripts, PWSstart and PWSstop. These scripts were tested against PWS but should work with IIS as well:</p>
+<p>PWSstart</p>
+<pre><code>@ECHO OFF
+
+net start w3svc
+net start msftpsvc
+
+PAUSE
+</code></pre>
+<p>PWSstop</p>
+<pre><code>@ECHO OFF
+
+net stop iisadmin /y
+
+PAUSE
+</code></pre>
+<p>These scripts may generate error 2185 (&quot;The service name is invalid&quot;). Referring to the following list of Service Names may help resolve this problem:</p>
+<p>IIS Admin Service: iisadmin
+FTP Publishing Service: msftpsvc
+Microsoft NNTP Service: nntpsvc
+World Wide Web Publishing Service: w3svc</p>
+<p>For more information, please see MS Knowledge Base articles Q236166 (&quot;Using NET STOP and NET START Commands to Force IIS Services to Re-Read the Registry&quot;) and Q189409 (&quot;INFO: Controlling the Caching of Web Pages with IIS 4.0&quot;).
+Debugging ActiveX Components Consumed by a Web Browser; the Debugging Tab; Microsoft Transaction Server (MTS)
+An ActiveX DLL Project contains an in-process Component looking for a process in which to be. This component ends up being a DLL. Instead of constantly making the DLL every time the code is changed, it is possible to run it on the fly in VB6. Under Project Properties &gt; Debugging, we have the Start Program and Start browser with URL options. (The Debugging Tab, by the way, is only available for ActiveX DLL projects.)</p>
+<p>In the case of a browser running a script that calls Classes in the DLL, use the Start browser with URL option to call the script file via a web address. For DLLs built for MTS, this procedure will not work. For MTS you will have to build the DLL each time.</p>
+<p>It is possible that the DLL will get &quot;stuck&quot; in a process and not allow the DLL to be created, throwing a &quot;Permission Denied&quot; error message. If this happens, try to shut down the hosting process. In the case of a server-side web server script the web server may have to be shut down. At the very extreme, the system must be rebooted.</p>
+<p>For more information please see:</p>
+<p>http://www.4guysfromrolla.com/webtech/042499-1.shtml</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

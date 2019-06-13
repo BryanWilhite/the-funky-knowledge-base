@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LINQ to XML: Using System.Linq.Enumerable to Generate XML; Code from Mike Taulty, Microsoft UK - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>/*
+using System;
+using System.Linq;
+using System.Xml.Linq;
+*/</p>
+<p>var numbers =</p>
+<pre><code>from n in Enumerable.Range( 1, 20 )
+
+let attributes =
+    new Object[]{
+        new XAttribute( &amp;quot;value&amp;quot;, n ),
+        new XAttribute( &amp;quot;squared&amp;quot;, n * n ) }
+
+select new XElement( &amp;quot;number&amp;quot;, attributes );
+</code></pre>
+<p>XElement document = new XElement( &quot;numbers&quot;, numbers );</p>
+<p>Console.WriteLine( document.ToString() );</p>
+<p>/*</p>
+<pre><code>This code is derived from Mike Taulty (Microsoft UK Ltd.) here:
+http://mtaulty.com/downloads/MTLaunchLINQXML.zip
+
+For more information, see
+“LINQ Talk at UK Visual Studio 2008 Launch”
+http://mtaulty.com/CommunityServer/blogs/mike_taultys_blog/
+    archive/2008/03/20/10255.aspx
+</code></pre>
+<p>*/</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

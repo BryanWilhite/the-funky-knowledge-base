@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Windows NT: Explorer Command-Line Syntax - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>The general form for entering Explorer commands from the console is</p>
+<pre><code>Explorer [/n][/e][,/root,&amp;lt;path or UNC&amp;gt;][[,/select],&amp;lt;object&amp;gt;] 
+</code></pre>
+<p>where:</p>
+<p>/n opens Explorer with object view only;</p>
+<p>/e opens Explorer with tree view and object view at the current folder;</p>
+<p>/root,&lt;path or UNC&gt; opens Explorer at the specified root level;</p>
+<p>/select,&lt;object&gt; specifies which object (a file, folder or volume) gets the focus. The select parameter may not work in certain IE4 installations.</p>
+<p>Some &quot;stupid&quot; Explorer tricks:</p>
+<pre><code>Explorer ..
+</code></pre>
+<p>will open Explorer one directory above the current directory.</p>
+<pre><code>Explorer 
+</code></pre>
+<p>will open Explorer at the root directory (usally C:\\).</p>
+<p>Note that most of these commands also apply to Shortcuts and the Run dialog as well. One Explorer command that works only in the Run dialog consists of a single period (&quot;.&quot;). The &quot;period command&quot; is the same as Explorer \\.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

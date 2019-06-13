@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>C# Code: ADSI Class for .NET 1.1 Active Directory Searching - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>/// &lt;summary&gt;
+/// Static members for ADSI.
+/// &lt;/summary&gt;
+public class Adsi
+{
+/// &lt;summary&gt;
+/// Wrapper for the
+/// &lt;see cref=&quot;System.DirectoryServices.DirectoryEntry.Exists&quot;/&gt;
+/// method.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;Path&quot;&gt;
+/// An LDAP-style query string.
+/// &lt;/param&gt;
+/// &lt;returns&gt;
+/// Returns &lt;c&gt;true&lt;/c&gt; when a valid entry is found.
+/// &lt;/returns&gt;
+public static bool EntryExists(string Path)
+{
+bool bln = false;</p>
+<pre><code>        try
+        {
+            bln = DirectoryEntry.Exists(Path);
+        }
+        catch { return bln; }
+
+        return bln;
+    }
+
+    /// &amp;lt;summary&amp;gt;
+    /// Returns an
+    /// &amp;lt;see cref=&amp;quot;System.Collections.ArrayList&amp;quot;/&amp;gt;
+    /// of the Active Directory Security Groups
+    /// for the target
+    /// &amp;lt;see cref=&amp;quot;System.DirectoryServices.DirectoryEntry&amp;quot;/&amp;gt;.
+    /// &amp;lt;/summary&amp;gt;
+    /// &amp;lt;param name=&amp;quot;Path&amp;quot;&amp;gt;
+    /// An LDAP-style query string.
+    /// &amp;lt;/param&amp;gt;
+    public static ArrayList EntryGroups(string Path)
+    {
+        ArrayList al = new ArrayList();
+
+        if (!EntryExists(Path)) return al;
+
+        using (DirectoryEntry user = new DirectoryEntry(Path))
+        {
+
+            object adsGroups = user.Invoke(&amp;quot;Groups&amp;quot;);
+
+            foreach (object adsGroup in (IEnumerable)adsGroups)
+            {
+                using (DirectoryEntry group = new DirectoryEntry(adsGroup))
+                {
+                    al.Add(group.Name);
+                }
+            }
+        }
+        return al;
+    }
+
+    /// &amp;lt;summary&amp;gt;
+    /// Returns a
+    /// &amp;lt;see cref=&amp;quot;System.Collections.SortedList&amp;quot;/&amp;gt;
+    /// of
+    /// &amp;lt;see cref=&amp;quot;System.DirectoryServices.DirectoryEntry.Properties&amp;quot;/&amp;gt;.
+    /// &amp;lt;/summary&amp;gt;
+    /// &amp;lt;param name=&amp;quot;Path&amp;quot;&amp;gt;
+    /// An LDAP-style query string.
+    /// &amp;lt;/param&amp;gt;
+    public static SortedList EntryProperties(string Path)
+    {
+        SortedList entries = null;
+        DirectoryEntry entry = null;
+
+        if (EntryExists(Path))
+        {
+            entry = new DirectoryEntry(Path);
+            entries = new SortedList();
+
+            foreach (string name in entry.Properties.PropertyNames)
+            {
+                if (entry.Properties[name].Value is Byte[])
+                {
+                    entries.Add(name, &amp;quot;[Complex Data Structure]&amp;quot;);
+                }
+                else
+                {
+                    entries.Add(name, entry.Properties[name].Value.ToString());
+                }
+            }
+        }
+
+        return entries;
+    }
+}
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Apache HTTP Server 2.x: Force HTTPS by Port; .htaccess - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>RewriteEngine on</p>
+<p>#Force HTTPS by port:
+RewriteCond %{SERVER_PORT} !^443$
+RewriteRule (.*) https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

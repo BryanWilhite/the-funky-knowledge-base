@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DTS ActiveX Script Task: Assigning SQL Statements to Execute SQL Tasks Based on Global Variables - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>'Based on Global Variables and SQL statements in DTS by Darren Green
+'http://www.sqldts.com/Default.aspx?205,2
+Option Explicit</p>
+<p>Function Main()
+Dim objDtsPack,vSQL</p>
+<pre><code>' Get reference to the Exec SQL Task
+Set objDtsPack = DTSGlobalVariables.Parent
+
+'Delete Quiz Participant tasks:
+vSQL = &amp;quot;DELETE FROM ParticipantQuiz WHERE pID IN(&amp;quot; _
+    &amp; &amp;quot;SELECT pID FROM Participant WHERE domainUserName = '&amp;quot; _
+    &amp; DTSGlobalVariables(&amp;quot;ImportGroup&amp;quot;).Value _
+    &amp; &amp;quot;')&amp;quot;
+
+Call SetDtsSql(objDtsPack,&amp;quot;DTSTask_DTSExecuteSQLTask_3&amp;quot;,vSQL)
+Call SetDtsSql(objDtsPack,&amp;quot;DTSTask_DTSExecuteSQLTask_6&amp;quot;,vSQL)
+
+' Clean Up
+Set objDtsPack = Nothing
+
+Main = DTSTaskExecResult_Success
+</code></pre>
+<p>End Function</p>
+<p>Sub SetDtsSql(objDtsPack,vTaskName,vSQL)
+Dim objExecSqlTask
+Set objExecSqlTask = objDtsPack.Tasks(CStr(vTaskName)).CustomTask</p>
+<pre><code>' Assign SQL Statement to Exec SQL Task
+objExecSqlTask.SQLStatement = vSQL
+
+' Clean Up
+Set objExecSqlTask = Nothing
+</code></pre>
+<p>End Sub</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

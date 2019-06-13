@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Microsoft Word 2007 VBA: RefreshCustomQuickParts() - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Public Sub RefreshCustomQuickParts()
+Dim objRow As Word.Row
+Dim objCell As Word.Cell
+Dim strEntryName As String, strCategoryName As String, objEntryRange As Word.Range
+Dim strMsg As String
+Dim objNode As Word.XMLNode
+Dim objContentType As WdBuildingBlockTypes
+Dim objWordRange As Word.Range
+Dim i As Integer</p>
+<pre><code>With Application
+    'Check for an active Document:
+    If .Documents.count = 0 Then
+        strMsg = &amp;quot;Please open a Word Document.&amp;quot;
+        Call VBA.MsgBox(strMsg, vbInformation + vbOKOnly, .Name)
+        Exit Sub
+    End If
+    
+    'Verify the document with the data:
+    If .ActiveDocument.Name &amp;lt;&amp;gt; &amp;quot;Custom Quick Parts.docx&amp;quot; Then
+        strMsg = &amp;quot;Please open or activate Word Document &amp;quot;&amp;quot;Custom Quick Parts.docx.&amp;quot;&amp;quot;&amp;quot;
+        Call VBA.MsgBox(strMsg, vbInformation + vbOKOnly, .Name)
+        Exit Sub
+    End If
+
+    .System.Cursor = wdCursorWait
+
+    strCategoryName = &amp;quot;Songhay Custom Quick Parts&amp;quot;
+    
+    For Each objRow In .ActiveDocument.Tables(1).Rows
+        For Each objCell In objRow.Cells
+            With objCell
+                
+                Set objNode = .Range.XMLNodes(1)
+                
+                If .ColumnIndex = 1 Then
+                    strEntryName = objNode.Text
+                ElseIf .ColumnIndex = 2 Then
+                    Set objEntryRange = objNode.Range
+                End If
+            
+            End With
+        Next
+        
+        Call .NormalTemplate.BuildingBlockEntries.Add(strEntryName, wdTypeCustomQuickParts, strCategoryName, objEntryRange)
+
+    Next
+
+    .System.Cursor = wdCursorNormal
+
+    Call VBA.MsgBox(&amp;quot;Custom Quick Parts refreshed.&amp;quot;, vbInformation + vbOKOnly, .Name)
+End With
+</code></pre>
+<p>End Sub</p>
+<p>Public Sub RefreshCustomQuickPartsClick(ByVal control As IRibbonControl)
+Call RefreshCustomQuickParts
+End Sub</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

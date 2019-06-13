@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>T-SQL: Dynamic SQL in a Stored Procedure; sp_executesql
+ - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>DECLARE @vSQL nvarchar(4000)</p>
+<p>SET @vSQL = 'SELECT * FROM authors'</p>
+<p>EXECUTE sp_executesql @vSQL</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

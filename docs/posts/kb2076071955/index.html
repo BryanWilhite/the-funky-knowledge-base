@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>XPathDocument.XPathNavigator Throws NotSupportedException for AppendChild() and AppendchildElement() Methods - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>XPathDocument.XPathNavigator throws NotSupportedException for AppendChild() and AppendchildElement() methods. Generating XPathNavigator from XmlDocument behaves as expected:</p>
+<pre><code>string contoso = @&amp;quot;
+</code></pre>
+<p>&lt;bookstore&gt;
+&lt;book genre=&quot;&quot;autobiography&quot;&quot; publicationdate=&quot;&quot;1981-03-22&quot;&quot; ISBN=&quot;&quot;1-861003-11-0&quot;&quot;&gt;
+&lt;title&gt;The Autobiography of Benjamin Franklin&lt;/title&gt;
+&lt;author&gt;
+&lt;first-name&gt;Benjamin&lt;/first-name&gt;
+&lt;last-name&gt;Franklin&lt;/last-name&gt;
+&lt;/author&gt;
+&lt;price&gt;8.99&lt;/price&gt;
+&lt;/book&gt;
+&lt;book genre=&quot;&quot;novel&quot;&quot; publicationdate=&quot;&quot;1967-11-17&quot;&quot; ISBN=&quot;&quot;0-201-63361-2&quot;&quot;&gt;
+&lt;title&gt;The Confidence Man&lt;/title&gt;
+&lt;author&gt;
+&lt;first-name&gt;Herman&lt;/first-name&gt;
+&lt;last-name&gt;Melville&lt;/last-name&gt;
+&lt;/author&gt;
+&lt;price&gt;11.99&lt;/price&gt;
+&lt;/book&gt;
+&lt;book genre=&quot;&quot;philosophy&quot;&quot; publicationdate=&quot;&quot;1991-02-15&quot;&quot; ISBN=&quot;&quot;1-861001-57-6&quot;&quot;&gt;
+&lt;title&gt;The Gorgias&lt;/title&gt;
+&lt;author&gt;
+&lt;name&gt;Plato&lt;/name&gt;
+&lt;/author&gt;
+&lt;price&gt;9.99&lt;/price&gt;
+&lt;/book&gt;
+&lt;/bookstore&gt;
+&quot; ;
+XmlDocument document = new XmlDocument();
+document.LoadXml( contoso );
+XPathNavigator navigator = document.CreateNavigator();</p>
+<pre><code>navigator.MoveToChild( &amp;quot;bookstore&amp;quot;, &amp;quot;&amp;quot; );
+navigator.MoveToChild( &amp;quot;book&amp;quot;, &amp;quot;&amp;quot; );
+
+navigator.AppendChildElement( &amp;quot;&amp;quot;, &amp;quot;pages&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;100&amp;quot; );
+
+Console.WriteLine( navigator.OuterXml );
+</code></pre>
+<p>However, the following (with XPathDocument) does not work:</p>
+<pre><code>XPathDocument document =
+    new XPathDocument( new StringReader( contoso ) );
+XPathNavigator navigator = document.CreateNavigator();
+
+navigator.MoveToChild( &amp;quot;bookstore&amp;quot;, &amp;quot;&amp;quot; );
+navigator.MoveToChild( &amp;quot;book&amp;quot;, &amp;quot;&amp;quot; );
+
+navigator.AppendChildElement( &amp;quot;&amp;quot;, &amp;quot;pages&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;100&amp;quot; );
+//NotSupportedException thrown here! 
+
+Console.WriteLine( navigator.OuterXml );
+</code></pre>
+<p>To be generous, one can argue that this behavior is “by design” because the XPathdocument is designed to be read only.</p>
+<p>The examples here are derived from the Microsoft documentation:</p>
+<pre><code>http://msdn.microsoft.com/en-us/library/
+    system.xml.xpath.xpathnavigator.appendchildelement.aspx
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

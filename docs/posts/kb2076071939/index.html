@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Team Foundation Source Control Command-Line Notes - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>The general reference is here:</p>
+<pre><code>http://msdn2.microsoft.com/en-us/library/cc31bk2e(vs.80).aspx
+</code></pre>
+<p>The practice here is to use tf.exe from version 9.0 of Visual Studio here:</p>
+<pre><code>&amp;quot;%ProgramFiles%&amp;bsol;&amp;bsol;Microsoft Visual Studio 9.0&amp;bsol;&amp;bsol;Common7&amp;bsol;&amp;bsol;IDE&amp;bsol;&amp;bsol;tf.exe&amp;quot;
+</code></pre>
+<p>tf.exe is used against a ‘disconnected’ copy of Visual Studio project files to define a Workspace that is separate from my ‘real’ Visual Studio code. This was done because any Team Foundation GUI fun running in Visual Studio is annoying to me!</p>
+<p>The files in the Workspace should be read-only because of the checkin command in the procedure below:</p>
+<p>i) Check out the files with a command like this:</p>
+<pre><code>tf checkout /recursive /login:your&amp;bsol;&amp;bsol;login codeplex_yourfolder/*.*
+</code></pre>
+<p>ii) Copy the changes from your ‘real’ code into the Workspace folder(s). You might want to use the XCOPY command in a script.</p>
+<p>iii) Verify any changes with this command:</p>
+<pre><code>tf status /recursive /login:your&amp;bsol;&amp;bsol;login codeplex_yourfolder/*.*
+</code></pre>
+<p>iv) Check in your changes with a command like this:</p>
+<pre><code>tf checkin /comment:&amp;quot;My comment...&amp;quot;
+    /recursive /login:your&amp;bsol;&amp;bsol;login codeplex_yourfolder/*.*
+</code></pre>
+<p>In this example, all commands were run from the parent folder of \\codeplex_yourfolder.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS: Linking to an External Style Sheet; LINK; @import; Using Style Sheets Locally - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>At this proprietary moment in time, it is better to use LINK HTML markup instead of W3C's @import to refer to external style sheets. My tests show that Netscape browsers ignore the following W3C-recommended syntax:</p>
+<pre><code>&amp;lt;STYLE&amp;gt;&amp;lt;!--
+    @import url(&amp;quot;http://server/root.css&amp;quot;);
+//--&amp;gt;
+&amp;lt;/STYLE&amp;gt;
+</code></pre>
+<p>Where root.css is the name of an external style sheet file. Both Microsoft and Netscape browsers have no trouble with the following:</p>
+<pre><code>&amp;lt;LINK
+    REL=&amp;quot;StyleSheet&amp;quot;
+    TYPE=&amp;quot;text/css&amp;quot;
+    HREF=&amp;quot;./root.css&amp;quot;&amp;gt;
+</code></pre>
+<p>where the HREF value is a relative URI.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

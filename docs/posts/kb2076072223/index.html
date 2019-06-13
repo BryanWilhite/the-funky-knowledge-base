@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WCF: “Wcf Binding Comparision List and Supported Features (Reference)”; Dan Rigsby - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>&gt;&gt;&gt;BasicHttpBinding
+(Config Name) [Schemas]: (basicHttpBinding) [http, https]
+Transport: HTTP/HTTPS
+Message Encoding: Text
+Message Version: SOAP 1.1
+Interop: Basic Profile 1.1
+Security: None [default], Transport, Message, Mixed
+Session: No Support
+Tx Flow: No Support
+Duplex: N</p>
+<p>A binding that is suitable for communicating with WS-Basic Profile conformant Web services like ASP.NET Web services (ASMX)-based services.</p>
+<p>&gt;&gt;&gt;WSHttpBinding
+(Config Name) [Schemas]: (wsHttpBinding, webHttpBinding) [http, https]
+Transport: HTTP/HTTPS
+Message Encoding: Text [default], MTOM
+Message Version: SOAP 1.2, WS-A 1.0
+Interop: WS
+Security: None, Transport, Message [default], Mixed
+Session: None [default], Transport, Reliable Session
+Tx Flow: No [default], Yes (WS-AT)
+Duplex: N</p>
+<p>A secure and interoperable binding that is suitable for non-duplex service contracts.</p>
+<p>&gt;&gt;&gt;WS2007HttpBinding
+(Config Name) [Schemas]: (ws2007HttpBinding) [http, https]
+Transport: HTTP/HTTPS
+Message Encoding: Text [default], MTOM
+Message Version: SOAP 1.2, WS-A 1.0
+Interop: WS-Security, WS-Trust, WS-SC, WS-SP
+Security: None, Transport, Message [default], Mixed
+Session: None [default], Transport, Reliable Session
+Tx Flow: No [default], Yes (WS-AT)
+Duplex: N</p>
+<p>&gt;&gt;&gt;WSDualHttpBinding
+(Config Name) [Schemas]: (wsDualHttpBinding) [http]
+Transport: HTTP/HTTPS
+Message Encoding: Text [default], MTOM
+Message Version: SOAP 1.2, WS-A 1.0
+Interop: WS
+Security: None, Message [default]
+Session: Reliable Session
+Tx Flow: No [default], Yes (WS-AT)
+Duplex: Y</p>
+<p>A secure and interoperable binding that is suitable for duplex service contracts or communication through SOAP intermediaries.</p>
+<p>&gt;&gt;&gt;WSFederationHttpBinding
+(Config Name) [Schemas]: (wsFederationHttpBinding) [http, https]
+Transport: HTTP/HTTPS
+Message Encoding: Text [default], MTOM
+Message Version: SOAP 1.2, WS-A 1.0
+Interop: WS-Federation
+Security: None, Message [default], Mixed
+Session: None [default], Reliable Session
+Tx Flow: No [default], Yes (WS-AT)
+Duplex: N</p>
+<p>A secure and interoperable binding that supports the WS-Federation protocol, enabling organizations that are in a federation to efficiently authenticate and authorize users.</p>
+<p>&gt;&gt;&gt;WS2007FederationHttpBinding
+(Config Name) [Schemas]: (ws2007FederationHttpBinding) [http, https]
+Transport: HTTP/HTTPS
+Message Encoding: Text [default], MTOM
+Message Version: SOAP 1.2, WS-A 1.0
+Interop: WS-Federation
+Security: None, Message [default], Mixed
+Session: None [default], Reliable Session
+Tx Flow: No [default], Yes (WS-AT)
+Duplex: N</p>
+<p>A secure and interoperable binding that derives from WS2007HttpBinding and supports federated security.</p>
+<p>&gt;&gt;&gt;NetTcpBinding
+(Config Name) [Schemas]: (netTcpBinding) [net.tcp]
+Transport: TCP
+Message Encoding: Binary
+Message Version: SOAP 1.2
+Interop: .Net
+Security: None, Transport [default], Message, Mixed
+Session: Transport [default], Reliable Session
+Tx Flow: No [default], Yes (OleTx)
+Duplex: Y</p>
+<p>A secure and optimized binding suitable for cross-machine communication between WCF applications.</p>
+<p>&gt;&gt;&gt;NetPeerTcpBinding
+(Config Name) [Schemas]: (netTcpBinding) [net.p2p]
+Transport: P2P
+Message Encoding: Binary
+Message Version: SOAP 1.2
+Interop: Peer
+Security: None, Transport [default], Message, Mixed
+Session: Not Supported
+Tx Flow: Not Supported
+Duplex: Y</p>
+<p>A binding that enables secure, multi-machine communication.</p>
+<p>&gt;&gt;&gt;NetNamedPipeBinding
+(Config Name) [Schemas]: (netNamedPipeBinding) [net.pipe]
+Transport: Named Pipe (IPC)
+Message Encoding: Binary
+Message Version: SOAP 1.2
+Interop: .Net
+Security: None, Transport [default]
+Session: None, Transport [default]
+Tx Flow: No, Yes (OleTx)
+Duplex: Y</p>
+<p>&gt;&gt;&gt;NetMsmqBinding
+(Config Name) [Schemas]: (netMsmqBinding) [net.msmq]
+Transport: MSMQ
+Message Encoding: Binary
+Message Version: SOAP 1.2
+Interop: .Net
+Security: None, Transport [default], Message, Both
+Session: Not Supported
+Tx Flow: No, Yes (OleTx)
+Duplex: N</p>
+<p>A queued binding that is suitable for cross-machine communication between WCF applications.</p>
+<p>&gt;&gt;&gt;MsmqIntegrationBinding
+Transport: HTTP/HTTPS
+Message Encoding: Text
+Message Version: SOAP 1.1
+Interop: Basic Profile 1.1
+Security: None [default], Transport, Message, Mixed
+Session: No Support
+Tx Flow: No Support
+Duplex: N</p>
+<p>A binding that is suitable for communicating with WS-Basic Profile conformant Web services like ASP.NET Web services (ASMX)-based services.</p>
+<p>&gt;&gt;&gt;WSHttpBinding
+(Config Name) [Schemas]: (wsHttpBinding, webHttpBinding) [http, https]
+Transport: HTTP/HTTPS
+Message Encoding: Text [default], MTOM
+Message Version: SOAP 1.2, WS-A 1.0
+Interop: WS
+Security: None, Transport, Message [default], Mixed
+Session: None [default], Transport, Reliable Session
+Tx Flow: No [default], Yes (WS-AT)
+Duplex: N</p>
+<p>A secure and interoperable binding that is suitable for non-duplex service contracts.</p>
+<p>&gt;&gt;&gt;WS2007HttpBinding
+(Config Name) [Schemas]: (ws2007HttpBinding) [http, https]
+Transport: HTTP/HTTPS
+Message Encoding: Text [default], MTOM
+Message Version: SOAP 1.2, WS-A 1.0
+Interop: WS-Security, WS-Trust, WS-SC, WS-SP
+Security: None, Transport, Message [default], Mixed
+Session: None [default], Transport, Reliable Session
+Tx Flow: No [default], Yes (WS-AT)
+Duplex: N</p>
+<p>&gt;&gt;&gt;WSDualHttpBinding
+(Config Name) [Schemas]: (wsDualHttpBinding) [http]
+Transport: HTTP/HTTPS
+Message Encoding: Text [default], MTOM
+Message Version: SOAP 1.2, WS-A 1.0
+Interop: WS
+Security: None, Message [default]
+Session: Reliable Session
+Tx Flow: No [default], Yes (WS-AT)
+Duplex: Y</p>
+<p>A secure and interoperable binding that is suitable for duplex service contracts or communication through SOAP intermediaries.</p>
+<p>&gt;&gt;&gt;WSFederationHttpBinding
+(Config Name) [Schemas]: (wsFederationHttpBinding) [http, https]
+Transport: HTTP/HTTPS
+Message Encoding: Text [default], MTOM
+Message Version: SOAP 1.2, WS-A 1.0
+Interop: WS-Federation
+Security: None, Message [default], Mixed
+Session: None [default], Reliable Session
+Tx Flow: No [default], Yes (WS-AT)
+Duplex: N</p>
+<p>A secure and interoperable binding that supports the WS-Federation protocol, enabling organizations that are in a federation to efficiently authenticate and authorize users.</p>
+<p>&gt;&gt;&gt;WS2007FederationHttpBinding
+(Config Name) [Schemas]: (ws2007FederationHttpBinding) [http, https]
+Transport: HTTP/HTTPS
+Message Encoding: Text [default], MTOM
+Message Version: SOAP 1.2, WS-A 1.0
+Interop: WS-Federation
+Security: None, Message [default], Mixed
+Session: None [default], Reliable Session
+Tx Flow: No [default], Yes (WS-AT)
+Duplex: N</p>
+<p>A secure and interoperable binding that derives from WS2007HttpBinding and supports federated security.</p>
+<p>&gt;&gt;&gt;NetTcpBinding
+(Config Name) [Schemas]: (netTcpBinding) [net.tcp]
+Transport: TCP
+Message Encoding: Binary
+Message Version: SOAP 1.2
+Interop: .Net
+Security: None, Transport [default], Message, Mixed
+Session: Transport [default], Reliable Session
+Tx Flow: No [default], Yes (OleTx)
+Duplex: Y</p>
+<p>A secure and optimized binding suitable for cross-machine communication between WCF applications.</p>
+<p>&gt;&gt;&gt;NetPeerTcpBinding
+(Config Name) [Schemas]: (netTcpBinding) [net.p2p]
+Transport: P2P
+Message Encoding: Binary
+Message Version: SOAP 1.2
+Interop: Peer
+Security: None, Transport [default], Message, Mixed
+Session: Not Supported
+Tx Flow: Not Supported
+Duplex: Y</p>
+<p>A binding that enables secure, multi-machine communication.</p>
+<p>&gt;&gt;&gt;NetNamedPipeBinding
+(Config Name) [Schemas]: (netNamedPipeBinding) [net.pipe]
+Transport: Named Pipe (IPC)
+Message Encoding: Binary
+Message Version: SOAP 1.2
+Interop: .Net
+Security: None, Transport [default]
+Session: None, Transport [default]
+Tx Flow: No, Yes (OleTx)
+Duplex: Y</p>
+<p>&gt;&gt;&gt;NetMsmqBinding
+(Config Name): (msmqIntegrationBinding)
+Transport: MSMQ
+Message Encoding: Doesn’t use a WCF message encoding – instead it lets you choose a pre-WCF serialization format
+Message Version: N/A
+Interop: MSMQ
+Security: None, Transport [default]
+Session: Not Supported
+Tx Flow: No, Yes
+Duplex: N</p>
+<p>A binding that is suitable for cross-machine communication between a WCF application and existing MSMQ applications.</p>
+<p>&gt;&gt;&gt;Feature and Description</p>
+<p>Name: The name of the binding.</p>
+<p>Config Name: The name of the binding used in configuration such as app.config or web.config.</p>
+<p>Scheme: The supported Uri schemes.</p>
+<p>Transport: The supported types of message transport (similar to Providers in Remoting).</p>
+<p>Message Encoding: The supported types of message encoding.</p>
+<p>Message Version: The supported message versions.</p>
+<p>Interop: Names the protocol or technology with which the binding ensures interoperation.</p>
+<p>Security: Specifies how the channel is secured:
+* None: The SOAP message is not secured and the client is not authenticated.
+* Transport: Security requirements are satisfied at the transport layer.
+* Message: Security requirements are satisfied at the message layer.
+* Mixed: This security mode is known as TransportWithMessageCredentials. It handles credentials at the message level, and integrity and confidentiality requirements are satisfied by the transport layer.
+* Both: Both message level and transport level security are used. This ability is unique to the NetMsmqBinding.</p>
+<p>Session: Specifies whether this binding supports session contracts.</p>
+<p>Transaction Flow: Specifies whether transactions are enabled and the transaction flow type in ().</p>
+<p>Duplex:	Specifies whether duplex contracts are supported. Note this feature requires support for Sessions in the binding.</p>
+<p>[http://www.danrigsby.com/blog/index.php/2008/01/19/
+wcf-binding-comparision-list-and-supported-features-reference/]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ASP.NET: “The Global.asax file does not raise events in an ASP.NET 2.0 application”; KB Article 937095 - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>KB Article 937095 “The Global.asax file does not raise events in an ASP.NET 2.0 application” addresses a possible problem that is likely to occur in my little ASP.NET corner of the world but has not happened yet.</p>
+<pre><code>http://support.microsoft.com/kb/937095
+</code></pre>
+<p>“The Global.asax file does not raise events in a Microsoft ASP.NET 2.0 application. Additionally, the App_global.asax.dll file is not generated in the temporary ASP.NET folder… This behavior occurs because the Global.asax file is not precompiled.”</p>
+<p>“The ASP.NET 2.0 application root directory contains a file that is named the PreCompiledApp.config file. The PreCompiledApp.config file tracks the deployment of an application, and the PreCompiledApp.config file informs ASP.NET 2.0 if ASP.NET 2.0 must compile any files at request time. The standard contents of the PreCompiledApp.config file are as follows.”</p>
+<pre><code>&amp;lt;precompiledApp version=&amp;quot;2&amp;quot; updatable=&amp;quot;true&amp;quot;/&amp;gt;
+</code></pre>
+<p>“The updatable attribute that is set to the true value applies to ASP.NET pages (.aspx files) and to user controls (.ascx files). The value does not apply to ASP.NET 2.0 application files (.asax files). Therefore, the Global.asax file is compiled, and the Global.asax file is not updatable.”</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

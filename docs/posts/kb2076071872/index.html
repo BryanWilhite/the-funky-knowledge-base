@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CMD: A Script That Deletes Recent Document References - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>@ECHO OFF
+COLOR 4F
+ECHO *********************************************************************
+ECHO *                                                                   *
+ECHO * This command will delete the links in the Recent Documents list.  *
+ECHO * Are you sure you want to continue? (Press Ctrl C to quit.)        *
+ECHO *                                                                   *
+ECHO *********************************************************************
+PAUSE</p>
+<p>CD %userprofile%\\Recent
+ECHO Y|DEL .</p>
+<p>ECHO ***************************************************************
+ECHO *                                                             *
+ECHO * No more commands to process.                                *
+ECHO *                                                             *
+ECHO ***************************************************************
+ECHO *                                                             *
+ECHO * End of Command Script.                                      *
+ECHO *                                                             *
+ECHO ***************************************************************
+PAUSE</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

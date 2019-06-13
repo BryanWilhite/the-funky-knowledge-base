@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>C# in .NET 3.5: “Explanation of Func”; StackOverflow.com; Jon Skeet - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Are you familiar with delegates in general? I have a page about delegates and events which may help if not, although it's more geared towards explaining the differences between the two.</p>
+<p>Func&lt;T, TResult&gt; is just a generic delegate - work out what it means in any particular situation by replacing the type parameters (T and TResult) with the corresponding type arguments (int and string) in the declaration. I've also renamed it to avoid confusion:</p>
+<p>string ExpandedFunc(int x)</p>
+<p>In other words, Func&lt;int, string&gt; is a delegate which represents a function taking an int argument and returning a string.</p>
+<p>Func&lt;T, TResult&gt; is often used in LINQ, both for projections and predicates (in the latter case, TResult is always bool). For example, you could use a Func&lt;int, string&gt; to project a sequence of integers into a sequence of strings. Lambda expressions are usually used in LINQ to create the relevant delegates:</p>
+<p>Func&lt;int, string&gt; projection = x =&gt; &quot;Value=&quot; + x;
+int[] values = { 3, 7, 10 };
+var strings = values.Select(projection);</p>
+<p>foreach (string s in strings)
+{
+Console.WriteLine(s);
+}</p>
+<p>Result:</p>
+<p>Value=3
+Value=7
+Value=10</p>
+<p>[http://stackoverflow.com/questions/878650/explanation-of-func]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

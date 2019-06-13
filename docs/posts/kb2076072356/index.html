@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>C#: “What is the second meaning of a single ampersand in C#?”; StackOverflow.com - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>As has been said, &quot;&amp;&quot; is a bitwise AND. &quot;&amp;&amp;&quot; is a logical AND. &amp; performs an AND operation on its operands bit by bit, and in general functions exactly like plus or times or any arithmetic operator. &amp;&amp; is more complex. If compares each of its operands against zero. If the first operand is zero, it assumes the value FALSE and short-circuits the rest of the expression, i.e. it does not evaluate any remaining operands. If the first value is non-zero, it examines the second value. If this is zero it assumes the value of false, otherwise it assumes the value of true. In either case it continues to evaluate the expression.</p>
+<p>That is, there are two crucial differences between &amp; and &amp;&amp;:</p>
+<ol>
+<li>
+<p>&amp; operates bit by bit while &amp;&amp; considers only zero and non-zero and always returns either 0 or 1. Thus 5 &amp; 6 (binary 101 &amp; 110) gives 4 (binary 100), while 5 &amp;&amp; 6 gives 1 (true).</p>
+</li>
+<li>
+<p>&amp;&amp; &quot;short circuits&quot;. If the first value is zero, it does not evaluate the second value. &amp; has no such rule. This is important in several ways. First, if the second value has any side effects, then with &amp; those side effects always happen, while with &amp;&amp; they do not. So &quot;x &amp; (y++)&quot; will always increment y, while &quot;x &amp;&amp; (y++)&quot; will only increment y if x is not zero. This gets more important -- and possibly more subtle -- if the second operand is a function call. Second, the first value may test something that determines that the second value is invalid. Like &quot;x!=NULL &amp;&amp; x-&gt;foo==3&quot;. With &amp;, when x is null that could bomb with segment faults or the equivalent. And third, there may be important performance gains. Life, &quot;x!='A' &amp;&amp; readTonsOfStuffFromDatabaseAndCalculateTotal(x)&quot;. With &amp;, the read would happen regardless, and perhaps be a total waste of time.</p>
+</li>
+</ol>
+<p>That's why we almost always use &amp;&amp; for things that really are logical operations, and limit use of &amp; to when we truly want a bit-wise operation. But there are times when you DON'T want the short-circuit to happen, and in that case &amp; may be a good choice. But if you're using it to operate &quot;logically&quot;, be very careful with operands that can have any values other than 0 or 1. 1 &amp;&amp; 2 is true, but 1 &amp; 2 is false.</p>
+<p>[http://stackoverflow.com/questions/1537713/what-is-the-second-meaning-of-a-single-ampersand-in-c]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

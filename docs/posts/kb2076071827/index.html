@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WPF XAML: Reading Properties.Settings Data - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>&lt;Window
+x­mlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+x­mlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</p>
+<pre><code>x­mlns:c=&amp;quot;clr-namespace:My.WpfApp&amp;quot;
+
+x:Class=&amp;quot;My.WpfApp.Client&amp;quot;
+
+Name=&amp;quot;MyWindow&amp;quot;
+</code></pre>
+<p>&gt;
+&lt;Window.Resources&gt;
+&lt;ObjectDataProvider
+x:Key=&quot;appSettings&quot;
+ObjectType=&quot;{x:Type c:Properties.Settings}&quot;&gt;
+&lt;/ObjectDataProvider&gt;
+&lt;/Window.Resources&gt;</p>
+<pre><code>&amp;lt;Grid&amp;gt;
+    &amp;lt;TextBlock
+        Text=&amp;quot;{Binding Source={StaticResource appSettings}, Path=Default.Test}&amp;quot;
+        /&amp;gt;
+&amp;lt;/Grid&amp;gt;
+</code></pre>
+<p>&lt;/Window&gt;</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

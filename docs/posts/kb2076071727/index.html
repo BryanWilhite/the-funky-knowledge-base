@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>T-SQL: User-Defined Function Structure; Table/Set Form - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>USE [Database]
+GO</p>
+<p>IF OBJECT_ID('fUserDefined') IS NOT NULL
+BEGIN
+DROP FUNCTION fUserDefined
+IF OBJECT_ID('fUserDefined') IS NOT NULL
+PRINT '&lt;&lt;&lt; FAILED DROPPING FUNCTION fUserDefined &gt;&gt;&gt;'
+ELSE
+PRINT '&lt;&lt;&lt; DROPPED FUNCTION fUserDefined &gt;&gt;&gt;'
+END
+GO</p>
+<p>CREATE FUNCTION dbo.fUserDefined
+(
+@param1 varchar(255) = NULL
+)
+RETURNS @set TABLE (idx smallint PRIMARY KEY, value varchar(1024))
+AS
+BEGIN</p>
+<p>/*
+Description:
+Developer: Bryan Wilhite</p>
+<pre><code>INSERT INTO @set (idx, value) VALUES (@idx, @value)
+</code></pre>
+<p>*/</p>
+<p>RETURN
+END
+GO</p>
+<p>GRANT SELECT ON fUserDefined TO public
+GO</p>
+<p>IF OBJECT_ID('fUserDefined') IS NOT NULL
+PRINT '&lt;&lt;&lt; CREATED FUNCTION fUserDefined &gt;&gt;&gt;'
+ELSE
+PRINT '&lt;&lt;&lt; FAILED CREATING FUNCTION fUserDefined &gt;&gt;&gt;'
+GO</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

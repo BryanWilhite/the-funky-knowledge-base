@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book: Level 2: Programming Visual Basic 5.0; Chapter 16 Highlights (1/3): Managing Data with Data Access Objects - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>DAO: Data Access Object</p>
+<p>A DAO is an automation interface for Accessing the Jet Database engine. In fact, Access is an IDE/GUI for Jet. DAO is described by a containment hierarchy beginning with the DBEngine object. The DAO object hierarchy is shown on page 16-5. To access DAO from VB, its object library must be loaded in via the Project References dialog. Currently the Microsoft DAO 3.5 Object Library is used.</p>
+<p>The Recordset Object</p>
+<p>VB interacts with DAO data sets via the Recordset object. This object can be instanced using the TableDef object, the QueryDef object or a SQL string against a valid Database object. There are three types of record sets: table-, snapshot-, and dynaset-type record sets. The most commonly used record set is the dynaset type.</p>
+<p>The OpenDatabase Method</p>
+<p>Use the OpenDatabase method to open a Jet .MDB or compatible Indexed Sequential Access Method (ISAM) file. The opening (and closing) has the general form:</p>
+<pre><code>Set g_dbDAO = DBEngine.Workspaces(0).OpenDatabase(&amp;quot;C:&amp;bsol;&amp;bsol;MyData.MDB&amp;quot;)
+'Use database object.
+Set g_dbDAO = Nothing
+</code></pre>
+<p>where MyData.MDB is opened against the default DAO Workspace object. An alternative way to close the database object is to use the Close method. This has the form:</p>
+<pre><code>g_dbDAO.Close
+</code></pre>
+<p>This method is &quot;better&quot; if the programmer wishes to recognize the specific qualities of the object instead of handling the object variable itself.</p>
+<p>The RecordCount Property of the Recordset Object</p>
+<p>The RecordCount property does not return the number of rows in the record set. It only provides the current number of rows accessed. However, it can always be used to determine if a given record set contains any rows at all. This is very useful  because any operations on zero-row record sets will generate runtime errors.</p>
+<p>This is one form of checking for zero-row record sets:</p>
+<pre><code>Set g_rsDAO = g_dbDAO.OpenRecordset(&amp;quot;qselZeroRows&amp;quot;, dbOpenDynaset)
+
+With g_rsDAO
+    If .Recordcount Then
+        'Operate on record set.
+    Else
+        'Do not operate on record set.
+    End If
+End With
+
+Set g_rsDAO = Nothing
+Set g_dbDAO = Nothing
+</code></pre>
+<p>Another form implicitly checks for zero-row record sets. This code fragment uses the MoveNext method of the Reocrdset object to move through all of the rows of the record set. The Boolean EOF property of the Recordset object is used to stop this loop:</p>
+<pre><code>With m_rsDAO
+    Do Until .EOF
+       'Operate on record set.
+        .MoveNext
+    Loop
+End With
+</code></pre>
+<p>If a design calls for the MovePrevious method, the BOF property of the Recordset object should be used as well.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

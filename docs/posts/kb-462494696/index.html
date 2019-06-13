@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PROBLEM: Replication Synchronization Increases Size of Database - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Microsoft does a great job warning users that Replication Design Masters will be significantly larger in size than MDB files not in a Replication set. What is not underscored (at runtime) is the fact that the Tools &gt; Replication &gt; Synchronize Now... command will cause all MDBs involved in synchronization to grow in size as well.</p>
+<p>Compating the database helps but does not reduce the size of the database file to the size it was before replication. Here is a real-world example: to synchronize a change in one record in a Replica set all MDBs grow over ~100KBs! Running the compact command after synchonization may shave up to ~50KB off this size increase. I can only assume that this growth in file size is due to data being written to the hidden tables created by Replication.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

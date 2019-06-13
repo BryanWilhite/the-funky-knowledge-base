@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VB: The Use of New Keyword, the CreateObject() and the GetObject() Functions - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>The New Keyword</p>
+<p>Use the New keyword to create objects associated with a Type Library. In short, if the VB Object Browser can show your object's classes and members then this object is associated with a Type Library. So, for example, Excel.Application is a member of a Type Library. The New keyword can be used in this Declaration:</p>
+<pre><code>Private objExcel As Excel.Application
+</code></pre>
+<p>Later, in a Procedure, we use the New keyword for explicit object creation:</p>
+<pre><code>Set objExcel = New Excel.Application
+</code></pre>
+<p>The New keyword can be used in the Declaration (for implicit object creation) but this slows down VB at runtime as it has to check to see if objExcel is instantiated each time it is called. Moreover the statement</p>
+<pre><code>objExcel Is Nothing
+</code></pre>
+<p>will always be False since implicit object creation sets the object's variable to Nothing. For more information, please see MS KB article Q138072 (&quot;INFO: Tips to Improve Performance While Using OLE servers&quot;).</p>
+<p>The CreateObject() Function</p>
+<p>The CreateObject() function has all of the functionality of the New keyword. But has two notable advantages: it creates objects without a Type Library (that VB understands) and it creates objects that can recognize and comply with COM. The latter is most important for scaling a VB solution into MTS. For more information, please see MS KB article Q202535 (&quot;INFO: Use of New Keyword In MTS Environment&quot;).</p>
+<p>The GetObject() Function</p>
+<p>I have trouble trying to compare this function with the other two object-creating &quot;things&quot; because this function lies in the context of &quot;persisted&quot; objects. This means that GetObject() can create objects from files. For example:</p>
+<pre><code>Dim CADObject As Object
+Set CADObject = GetObject(&amp;quot;C:&amp;bsol;&amp;bsol;CAD&amp;bsol;&amp;bsol;SCHEMA.CAD&amp;quot;)
+</code></pre>
+<p>I don't use GetObject() as of this writing. The opinion here is that this function is used in OLE Automation of Microsoft Office Applications and other desktop applications based on VBA. I daresay that GetObject() is &quot;heavier&quot; than CreateObject() and packs quite a performance hit (relatively speaking). Nevertheless, I feel that it is important to mention that there is a difference between GetObject() and GetObject(&quot;&quot;). This may come in handy someday. For more information please see MS KB article Q114347 (&quot;INFO: OLE Automation Objects with GetObject and CreateObject&quot;).</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

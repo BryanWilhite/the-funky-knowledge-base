@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>“Delegates Explained in Plain English”; Simon Pickersgill - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Delegates are fundamental to the .NET Framework (events and callbacks wouldn't work without them) and can be extremely powerful to the .NET Developer once they come to grasps with exactly what they are and how to use them. In this blog I will consider aspects of a real world situation in which delegates are useful, after which I will explain, in illustrative terms exactly what delegates are all about. You will see how delegates are an intrinsic part of the events structure in the .NET framework, but also why they are useful in their own right. First, though, we need to understand a little about the origins of delgates in the .NET framework.</p>
+<p>…</p>
+<p>Where one class may wants to be represented within another class it can use a delegate. This is a lot more efficient that passing itself to the other class in its entirety, and is a lot more flexible. The delegate has to conform to certain limitations, though, just as the real world delegate does.</p>
+<p>When a delegate is declared it is declared much along the lines of a method/sub/function declaration. For example, in C#, a delegate declaration might look like:</p>
+<pre><code>public delegate void NewStaffCreatedHandler(StaffMember NewStaffMember)
+</code></pre>
+<p>It is given a scope public, a return type void (although it could equally be any other type), and specifies parameters. This constitutes the agreement as to how the implementation of the delegate (i.e. the method/sub/function it points to) must behave. In other words, any method/sub/function that this delegate points to must return a void and take a StaffMember object parameter.</p>
+<p>The most common event handler delegate EventHandler, for example, has the following declaration:</p>
+<pre><code>public delegate void EventHandler(object sender, EventArgs e);
+</code></pre>
+<p>All events are of a delegate type. In other words, all events are declared with a specific delegate as their representative. For example, a delegate at a Microsoft conference could report back on an event that a delegate at an Sun conference couldn't (although they in turn could report back on an event that the Microsoft delegate couldn't), because they weren't in attendance at the same conference.</p>
+<p>So, if you wanted to declare an event in your program that used the standard EventHandler delegate you would declare it as follows:</p>
+<pre><code>public event EventHandler MyEvent;
+</code></pre>
+<p>…</p>
+<p>In essence, delegates allow one class to invoke code in another class, without necessarily needing to care where that code is, or even if it exists at all…</p>
+<p>[http://www.codeproject.com/Articles/38716/
+Delegates-Explained-in-Plain-English.aspx]</p>
+<p>Note that this article does not recognize the role generics play with delegates.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

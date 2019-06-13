@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Microsoft JScript: Generic Functions for RDS Data Binding; Data Source Objects; DSO - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>The function listed below, jsBindData(), depends on HTML similar to the following:</p>
+<p>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;LINK REL=stylesheet TYPE=&quot;text/css&quot; HREF=&quot;./root.css&quot;&gt;
+&lt;META NAME=Generator CONTENT=&quot;Bryan Wilhite&quot;&gt;
+&lt;META NAME=Reply-To CONTENT=&quot;rasx@kintespace.com&quot;&gt;
+&lt;META NAME=Keywords CONTENT=&quot;Songhay System, email, kinte space&quot;&gt;
+&lt;META NAME=Description CONTENT=&quot;Email List&quot;&gt;
+&lt;SCRIPT LANGUAGE=&quot;JavaScript&quot; TYPE=&quot;text/javascript&quot; SRC=&quot;./root.js&quot;&gt;&lt;/SCRIPT&gt;
+&lt;SCRIPT LANGUAGE=&quot;JavaScript&quot; TYPE=&quot;text/javascript&quot; SRC=&quot;./email.js&quot;&gt;&lt;/SCRIPT&gt;
+&lt;TITLE&gt;Songhay System: Email List&lt;/TITLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY BACKGROUND=&quot;http://Songhay3/kRoot/bitmaps/backgrnd.gif&quot; BGCOLOR=Black TEXT=White LINK=Lime VLINK=Silver ALINK=Yellow onLoad=&quot;jsFormat()&quot;&gt;
+&lt;!-- RDS.DataControl Objects: --&gt;
+&lt;OBJECT CLASSID=&quot;clsid:BD96C556-65A3-11D0-983A-00C04FC29E33&quot; ID=dsoEmail HEIGHT=0 WIDTH=0&gt;
+&lt;PARAM NAME=Connect VALUE=&quot;Provider=SQLOLEDB.1;Persist Security Info=False;User ID=sa;Initial Catalog=kinteDB;Data Source=SONGHAY3&quot;&gt;
+&lt;PARAM NAME=Server VALUE=&quot;http://Songhay3&quot;&gt;
+&lt;PARAM NAME=SQL VALUE=&quot;EXECUTE ListDSOEmail&quot;&gt;
+&lt;/OBJECT&gt;
+&lt;OBJECT CLASSID=&quot;clsid:BD96C556-65A3-11D0-983A-00C04FC29E33&quot; ID=dsoEmailTypes HEIGHT=0 WIDTH=0&gt;
+&lt;PARAM NAME=Connect VALUE=&quot;Provider=SQLOLEDB.1;Persist Security Info=False;User ID=sa;Initial Catalog=kinteDB;Data Source=SONGHAY3&quot;&gt;
+&lt;PARAM NAME=Server VALUE=&quot;http://Songhay3&quot;&gt;
+&lt;PARAM NAME=SQL VALUE=&quot;EXECUTE ListDSOEmail 1&quot;&gt;
+&lt;/OBJECT&gt;
+&lt;OBJECT CLASSID=&quot;clsid:BD96C556-65A3-11D0-983A-00C04FC29E33&quot; ID=dsoEmailFilter HEIGHT=0 WIDTH=0&gt;
+&lt;PARAM NAME=Connect VALUE=&quot;Provider=SQLOLEDB.1;Persist Security Info=False;User ID=sa;Initial Catalog=kinteDB;Data Source=SONGHAY3&quot;&gt;
+&lt;PARAM NAME=Server VALUE=&quot;http://Songhay3&quot;&gt;
+&lt;PARAM NAME=SQL VALUE=&quot;EXECUTE ListDSOEmail 2&quot;&gt;
+&lt;/OBJECT&gt;
+&lt;TABLE WIDTH=512 BORDER=0 CELLSPACING=0 CELLPADDING=4 ALIGN=center&gt;
+&lt;TR&gt;
+&lt;TH ALIGN=left NOWRAP&gt;
+email type:
+&lt;/TH&gt;
+&lt;TD COLSPAN=2&gt;
+&lt;SELECT CLASS=frmInput ID=lstEmailType NAME=&quot;#dsoEmail_emailTypeID&quot; SIZE=1&gt;
+&lt;/SELECT&gt;
+&lt;/TD&gt;
+&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TH ALIGN=left NOWRAP&gt;
+email address:
+&lt;/TH&gt;
+&lt;TD COLSPAN=2&gt;
+&lt;INPUT CLASS=frmInput ID=txtEmailAddress NAME=&quot;#dsoEmail_emailAddress&quot; TYPE=text MAXLENGTH=255 SIZE=32 onBlur=&quot;jsIsEmailValid(this)&quot;&gt;
+&lt;/TD&gt;
+&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TH ALIGN=left&gt;
+url:
+&lt;/TH&gt;
+&lt;TD COLSPAN=2&gt;
+&lt;INPUT CLASS=frmInput ID=txtURL NAME=&quot;#dsoEmail_url&quot; TYPE=text MAXLENGTH=512 SIZE=48&gt;
+&lt;/TD&gt;
+&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TH ALIGN=left&gt;
+first:
+&lt;/TH&gt;
+&lt;TD&gt;
+&lt;INPUT CLASS=frmInput ID=txtFirst NAME=&quot;#dsoEmail_first&quot; TYPE=text MAXLENGTH=32 SIZE=32&gt;
+&lt;/TD&gt;
+&lt;TD ALIGN=right ROWSPAN=2 NOWRAP VALIGN=middle&gt;
+&lt;STRONG&gt;tagged?:&lt;/STRONG&gt;
+&lt;INPUT ID=chkTagged NAME=&quot;#dsoEmail_tagged&quot; TYPE=checkbox&gt;
+&lt;BR&gt;
+&lt;STRONG&gt;send?:&lt;/STRONG&gt;
+&lt;INPUT ID=chkSend NAME=&quot;#dsoEmail_send&quot; TYPE=checkbox&gt;
+&lt;/TD&gt;
+&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TH ALIGN=left&gt;
+last:
+&lt;/TH&gt;
+&lt;TD&gt;
+&lt;INPUT CLASS=frmInput ID=txtLast NAME=&quot;#dsoEmail_last&quot; TYPE=text MAXLENGTH=32 SIZE=32&gt;
+&lt;/TD&gt;
+&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD COLSPAN=3&gt;
+&lt;STRONG&gt;note:&lt;/STRONG&gt;
+&lt;BR&gt;
+&lt;TEXTAREA CLASS=frmInput ID=txtNote NAME=&quot;#dsoEmail_note&quot; ROWS=7 COLS=54&gt;&lt;/TEXTAREA&gt;
+&lt;/TD&gt;
+&lt;/TR&gt;
+&lt;TR&gt;
+&lt;!-- Record filtering: --&gt;
+&lt;TD COLSPAN=3&gt;
+&lt;TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=&quot;100%&quot;&gt;
+&lt;TR&gt;
+&lt;TD VALIGN=middle&gt;
+&lt;SELECT CLASS=frmCtrl ID=lstFilter NAME=lstFilter SIZE=1 onChange=&quot;jsFilter('onchange',dsoEmail)&quot;&gt;
+&lt;OPTION VALUE=&quot;#default&quot; SELECTED&gt;filtering commands&lt;/OPTION&gt;
+&lt;/SELECT&gt;                     
+&lt;INPUT CLASS=frmCtrl ID=txtFilter NAME=txtFilter TYPE=text MAXLENGTH=32 SIZE=16&gt; 
+&lt;INPUT CLASS=frmCtrl ID=cmdFilter NAME=cmdFilter TYPE=button VALUE=&quot;filter on&quot; TITLE=&quot;Filter Records&quot; onClick=&quot;jsFilter('onclick',dsoEmail)&quot;&gt;
+&lt;/TD&gt;
+&lt;TD ALIGN=right&gt;
+&lt;!-- Record navigation: --&gt;
+&lt;INPUT CLASS=frmCtrl ID=cmdNavFirst NAME=cmdNavFirst TYPE=button VALUE=&quot;&lt;&lt;&quot; TITLE=&quot;Move to the First Record&quot; onClick=&quot;jsDSONav(this.name,dsoEmail)&quot;&gt;
+&lt;INPUT CLASS=frmCtrl ID=cmdNavPrev NAME=cmdNavPrev TYPE=button VALUE=&quot;&lt;  &quot; TITLE=&quot;Move to the Previous Record&quot; onClick=&quot;jsDSONav(this.name,dsoEmail)&quot;&gt;
+&lt;INPUT CLASS=frmCtrl ID=cmdNavNext NAME=cmdNavNext TYPE=BUTTON VALUE=&quot; &gt; &quot; TITLE=&quot;Move to the Next Record&quot; onClick=&quot;jsDSONav(this.name,dsoEmail)&quot;&gt;
+&lt;INPUT CLASS=frmCtrl ID=cmdNavLast NAME=cmdNavLast TYPE=BUTTON VALUE=&quot;&gt;&gt;&quot; TITLE=&quot;Move to the Last Record&quot; onClick=&quot;jsDSONav(this.name,dsoEmail)&quot;&gt;
+&lt;/TD&gt;
+&lt;/TR&gt;
+&lt;/TABLE&gt;
+&lt;/TD&gt;
+&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD COLSPAN=3&gt;
+&lt;!-- Record commands: --&gt;
+ 
+&lt;BR&gt;
+&lt;INPUT CLASS=frmCtrl ID=cmdAdd NAME=cmdAdd TYPE=button VALUE=&quot;add record&quot; TITLE=&quot;Add a New Record&quot; onClick=&quot;jsDSOAdd(dsoEmail)&quot;&gt;  
+&lt;INPUT CLASS=cmdDelete ID=cmdDelete NAME=cmdDelete TYPE=button VALUE=&quot;delete record&quot; TITLE=&quot;Delete the Current Record&quot; onClick=&quot;jsDSODelete(dsoEmail)&quot;&gt;  
+&lt;INPUT CLASS=frmCtrl ID=cmdSave NAME=cmdSave TYPE=button VALUE=&quot;save changes&quot; TITLE=&quot;Save Changes to Records&quot; onClick=&quot;jsDSOSave(dsoEmail)&quot;&gt;
+&lt;INPUT ID=chkRefresh NAME=chkRefresh TYPE=checkbox TITLE=&quot;Check to Save Changes to Records on Server?&quot;&gt;&lt;STRONG&gt;refresh?&lt;/STRONG&gt;
+&lt;/TD&gt;
+&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD COLSPAN=3&gt;
+&lt;!-- Status reports: --&gt;
+&lt;TABLE BORDER=1 CELLPADDING=0 CELLSPACING=0 WIDTH=&quot;100%&quot;&gt;
+&lt;TR&gt;
+&lt;TD CLASS=frmMsg ID=tdMsg&gt;
+&lt;/TD&gt;
+&lt;/TR&gt;
+&lt;/TABLE&gt;
+&lt;/TD&gt;
+&lt;/TR&gt;
+&lt;/TABLE&gt;
+&lt;/BODY&gt;
+&lt;/HTML&gt;</p>
+<p>Now the JScript code:</p>
+<p>//ADO variables:
+var vBookMark = null</p>
+<p>//---- EditModeEnum Values ----
+var adEditNone = 0x0000
+var adEditInProgress = 0x0001
+var adEditAdd = 0x0002
+var adEditDelete = 0x0004</p>
+<p>//---- FilterGroupEnum Values ----
+var adFilterNone = 0
+var adFilterPendingRecords = 1
+var adFilterAffectedRecords = 2
+var adFilterFetchedRecords = 3
+var adFilterPredicate = 4
+var adFilterConflictingRecords = 5</p>
+<p>//RDS variables:
+//----  RDS.ADCReadyStateEnum Values ----
+var adcReadyStateLoaded = 2
+var adcReadyStateInteractive = 3
+var adcReadyStateComplete = 4</p>
+<p>function jsBindData() {
+//This function tries very hard to be generic in the Microsoft sense of the word.
+//It depends on element ID and NAME properties to be different,
+//where NAME is of the form &lt;data source&gt;_&lt;data field&gt;.</p>
+<pre><code>var vCollection = document.all.tags(&amp;quot;INPUT&amp;quot;)
+if (vCollection != null) {
+    for (var i = 0; i &amp;lt; vCollection.length; i++)  {
+        with(vCollection[i]) {
+            var vStr = name
+            if (vStr.indexOf(&amp;quot;_&amp;quot;) != -1) {
+
+                var vArray = vStr.split(&amp;quot;_&amp;quot;)
+                
+                if((type == &amp;quot;text&amp;quot;) &amp;&amp; (readOnly != true)) style.background = &amp;quot;#C0C0C0 none no-repeat scroll 0% 0%&amp;quot;
+                if((type != &amp;quot;button&amp;quot;) 
+                    &amp;&amp; (type != &amp;quot;file&amp;quot;)
+                    &amp;&amp; (type != &amp;quot;image&amp;quot;)
+                    &amp;&amp; (type != &amp;quot;reset&amp;quot;)
+                    &amp;&amp; (type != &amp;quot;submit&amp;quot;)) {
+                    dataSrc = vArray[0]
+                    dataFld = vArray[1]
+                }
+            }
+        }
+    }
+}
+
+vCollection = document.all.tags(&amp;quot;SELECT&amp;quot;)
+if (vCollection != null) {
+    for (i = 0; i &amp;lt; vCollection.length; i++)  {
+        with(vCollection[i]) {
+            vStr = name
+            if (vStr.indexOf(&amp;quot;_&amp;quot;) != -1) {
+
+                vArray = vStr.split(&amp;quot;_&amp;quot;)
+
+                style.background = &amp;quot;#C0C0C0 none no-repeat scroll 0% 0%&amp;quot;
+
+                dataSrc = vArray[0]
+                dataFld = vArray[1]
+            }
+        }
+    }
+}
+
+vCollection = document.all.tags(&amp;quot;TEXTAREA&amp;quot;)
+if (vCollection != null) {
+    for (i = 0; i &amp;lt; vCollection.length; i++)  {
+        with(vCollection[i]) {
+            vStr = name
+            if (vStr.indexOf(&amp;quot;_&amp;quot;) != -1) {
+
+                vArray = vStr.split(&amp;quot;_&amp;quot;)
+                
+                if(readOnly != true) style.background = &amp;quot;#C0C0C0 none no-repeat scroll 0% 0%&amp;quot;
+
+                dataSrc = vArray[0]
+                dataFld = vArray[1]
+            }
+        }
+    }
+}
+</code></pre>
+<p>}</p>
+<p>function jsBindSELECT(vDSOrs,vSELECT){
+with(vDSOrs){
+while(EOF != true){
+vOPTION = document.createElement(&quot;OPTION&quot;)
+vOPTION.value = vDSOrs.fields(0)
+vOPTION.text = vDSOrs.fields(1)
+vSELECT.add(vOPTION)
+MoveNext()
+}
+MoveFirst()
+}
+}</p>
+<p>function jsDSOAdd(vDSO) {
+vDSO.recordset.AddNew()
+}</p>
+<p>function jsDSODelete(vDSO) {
+if(window.confirm(&quot;Are you sure you want to delete this record?&quot;) == false) return
+if (vDSO.recordset.recordCount &gt; 0) vDSO.recordset.Delete()
+}</p>
+<p>function jsDSONav(vCmd,vDSO) {</p>
+<pre><code>if(vDSO.recordset.recordcount == 0) {
+    window.alert(&amp;quot;There are no records to display.&amp;quot;)
+    return
+}
+
+switch(vCmd){
+    case &amp;quot;cmdNavFirst&amp;quot;:
+        vDSO.recordset.MoveFirst()
+        top.status = window.defaultStatus
+        break
+    case &amp;quot;cmdNavPrev&amp;quot;:
+        vDSO.recordset.MovePrevious()
+        top.status = window.defaultStatus
+        if (vDSO.recordset.BOF) {
+            vDSO.recordset.MoveFirst()
+            top.status = &amp;quot;At beginning of records.&amp;quot;
+        }
+        break
+    case &amp;quot;cmdNavNext&amp;quot;:
+        vDSO.recordset.MoveNext()
+        top.status = window.defaultStatus
+        if (vDSO.recordset.EOF) {
+            vDSO.recordset.MoveLast()
+            top.status = &amp;quot;At end of records.&amp;quot;
+        }
+        break
+    case &amp;quot;cmdNavLast&amp;quot;:
+        vDSO.recordset.MoveLast()
+        top.status = window.defaultStatus
+        break
+}
+</code></pre>
+<p>}</p>
+<p>function jsDSOSave(vDSO) {
+with(vDSO) {
+vBookMark = vDSO.recordset.bookmark
+SubmitChanges()
+if(chkRefresh.checked) Refresh()
+}</p>
+<p>}</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

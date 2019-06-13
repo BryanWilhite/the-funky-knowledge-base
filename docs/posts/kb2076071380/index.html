@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>T-SQL Code: Example of the use of a Cursor; Parsing WebCom Hit Log Files; NewHitLog - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>CREATE PROCEDURE NewHitLog
+AS</p>
+<p>-- Description: Inserts rows into tblLog from tblLogImport
+-- Developer: rasx</p>
+<p>SET NOCOUNT ON
+DECLARE
+@type     varchar(10)
+,   @date     datetime
+,   @address  varchar(255)
+,   @file     varchar(255)
+,   @logEntry varchar(1000)</p>
+<p>DECLARE tblLogImportCursor CURSOR FOR
+SELECT
+LogEntry
+FROM
+tblLogImport</p>
+<p>OPEN tblLogImportCursor</p>
+<p>FETCH NEXT FROM tblLogImportCursor
+INTO @logEntry</p>
+<p>WHILE @@FETCH_STATUS = 0
+BEGIN</p>
+<pre><code>SELECT
+    @type    = RTRIM(SUBSTRING(@logEntry,1,4))
+,   @date    = CONVERT(datetime,RTRIM(SUBSTRING(@logEntry,5,20)))
+,   @address = RTRIM(SUBSTRING(@logEntry,24,CHARINDEX('/',@logEntry,24) - 24))
+,   @file    = RTRIM(SUBSTRING(@logEntry,CHARINDEX('/',@logEntry,24),CHARINDEX(' ',@logEntry,CHARINDEX('/',@logEntry,24)) - CHARINDEX('/',@logEntry,24)))
+
+INSERT INTO
+    tblLog
+    (
+        type
+    ,   date
+    ,   address
+    ,   [file]
+    )
+VALUES
+    (
+        @type
+    ,   @date
+    ,   @address
+    ,   @file
+    )
+
+FETCH NEXT FROM tblLogImportCursor
+INTO @logEntry
+</code></pre>
+<p>END</p>
+<p>CLOSE tblLogImportCursor
+DEALLOCATE tblLogImportCursor</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

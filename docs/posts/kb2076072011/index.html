@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript and Firebug: “Permission denied to set property XULElement.selectedIndex” - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Finally I found a simple solution for the FireFox error:</p>
+<p>&quot;[Exception... &quot;'Permission denied to set property XULElement.selectedIndex' when calling method: [nsIAutoCompletePopup::selectedIndex]&quot; nsresult: &quot;0x8057001e (NS_ERROR_XPC_JS_THREW_STRING)&quot;</p>
+<p>This error occurs when focus() is called. I was reported in https://bugzilla.mozilla.org/show_bug.cgi?id=236791 but still no fix/patch from mozilla.</p>
+<p>To avoid this error, you have to turn off autocomplete.</p>
+<p>from javascript, you can do that in following way: obj.setAttribute('autocomplete','off');</p>
+<p>Or, you can simply set autocomplete=&quot;off&quot; in HTML.</p>
+<p>[http://geekswithblogs.net/shahedul/archive/2006/08/14/87910.aspx]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

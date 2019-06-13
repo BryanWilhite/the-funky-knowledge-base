@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>XHTML Problem: Internet Explorer Shows Blank Page When &lt;script /&gt; Is Present; Minimized script elements - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Minimized script elements are interpreted as open elements by Internet Explorer up to version 6.x. It follows that</p>
+<pre><code>&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;...&amp;quot; /&amp;gt;
+</code></pre>
+<p>will be seen as</p>
+<pre><code>&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;...&amp;quot;&amp;gt;
+</code></pre>
+<p>This will effectively consume any elements following. So when a script element appears within the head element, an entire document can disappear! This, of course, is the workaround:</p>
+<pre><code>&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;...&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

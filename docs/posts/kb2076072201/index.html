@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>“yield (C# Reference)”; MSDN - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Used in an  iterator block to provide a value to the enumerator object or to signal the end of iteration. It takes one of the following forms:</p>
+<pre><code>yield return &amp;lt;expression&amp;gt;;
+
+yield break;
+</code></pre>
+<p>The yield statement can only appear inside an iterator block, which might be used as a body of a method, operator, or accessor. The body of such methods, operators, or accessors is controlled by the following restrictions:</p>
+<pre><code>* Unsafe blocks are not allowed.
+* Parameters to the method, operator, or accessor cannot be ref or out.
+</code></pre>
+<p>A yield statement cannot appear in an anonymous method.</p>
+<p>…</p>
+<p>Starting from .NET 2.0 you also use System.Collections.Generic.IEnumerable&lt;T&gt; as return type of iterator block.</p>
+<p>A yield statement can not be used in body of finally block.</p>
+<p>Using  try/finally blocks with yield return statement inside them is unsafe if iteration performed using MoveNext/Current methods. Execution of statements inside finally block is not guaranteed. They will be executed only after all values before block will be iterated and next one requested OR IDisposable.Dispose method called on IEnumerator. Finally statements will not be executed during garbage collection as compiler generated iterator class have no finalizer. Using with foreach is safe as compiler will generate call to Dispose.</p>
+<p>[http://msdn.microsoft.com/en-us/library/9k7k7cf0(VS.80).aspx]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

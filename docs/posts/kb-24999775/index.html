@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SQL: SELECTing Duplicates - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Let's project Column1 in Table1 and look for duplicates. The SQL syntax for this is:</p>
+<pre><code>SELECT Column1 FROM Table1
+GROUP BY Column1
+HAVING Count(*) &amp;gt; 1
+</code></pre>
+<p>NOTE: the argument of Count() relates to the projections of GROUP BY.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

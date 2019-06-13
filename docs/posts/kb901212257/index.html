@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PROBLEM: Tab Control Does Not Recognize Alt-Key Combinations - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Using Alt-key combinations for the Tab Control may not work all the time in Access 97. What I have noticed is when the access keys are pressed, the focus does not change but the application &quot;beeps.&quot; This problem is intermittent. It appears to work correctly for tabs with fewer controls on them (three controls or less perhaps).</p>
+<p>One work-around for this problem is responding to the KeyDown event:</p>
+<pre><code>Private Sub Form_KeyDown(KeyCode As Integer, _
+    Shift As Integer)
+
+    Dim blnAltDwn As Boolean
+    blnAltDwn = (Shift And acAltMask) &amp;gt; 0
+
+    With Me
+        If blnAltDwn And KeyCode = vbKeyD Then
+            'Tab Caption: &amp;quot;Import Ownership &amp;Data&amp;quot;
+            .pagImport.SetFocus
+        ElseIf blnAltDwn And KeyCode = vbKeyG Then
+            'Tab Caption: &amp;quot;Build/Edit Ownership &amp;Groups&amp;quot;
+            .pagGrouping.SetFocus
+        ElseIf blnAltDwn And KeyCode = vbKeyP Then
+            'Tab Caption: &amp;quot;Build Ownership Re&amp;port&amp;quot;
+            .pagRpt.SetFocus
+        End If
+    End With
+End Sub
+</code></pre>
+<p>Using this code, the beeps eventually stop while the Alt-key combinations are pressed.</p>
+<p>MSKB Article Q156222 (&quot;ACC95: Access Keys Do Not Work with Tabs on TabStrip Control&quot;) states &quot;Microsoft has confirmed this to be a problem in Microsoft Access 7.0. This problem no longer occurs in Microsoft Access 97.&quot;</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Microsoft SQL Server 2005/2000 Compatibility Problem: SQL 2005 CREATE TABLE Syntax Fails in SQL 2000 - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>One glaring difference in the CREATE TABLE syntax between SQL 2000 and 2005 is this 2005 clause:</p>
+<pre><code>WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+</code></pre>
+<p>The only WITH clause support in SQL Server 2000 is WITH FILLFACTOR.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

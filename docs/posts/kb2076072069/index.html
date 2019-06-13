@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Visual Studio 2008 PROBLEM: “Server Explorer not showing up on Visual Studio”; devenv.exe - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Some person with the handle speenr says (on http://forums.asp.net/t/1227004.aspx), “I had the same problem in VS2008. I tried to repair VS2008 installation, but it did not solve my problem. Only 'devenv /setup' brought success.” The problem is when VS2008 will not show the Server Explorer. Also, you may be prompted to refresh every database connection in the Solution you are loading. This is the fully qualified command to use to attempt to fix the problem:</p>
+<pre><code>&amp;quot;%ProgramFiles%&amp;bsol;&amp;bsol;Microsoft Visual Studio 9.0&amp;bsol;&amp;bsol;Common7&amp;bsol;&amp;bsol;IDE&amp;bsol;&amp;bsol;devenv&amp;quot; /setup
+</code></pre>
+<p>You may be interested in the files devenv.com and devenv.exe. Take a look at “DevEnv.com?—Sairama’s Tip of the Day” here:</p>
+<pre><code>http://www.hanselman.com/blog/DevEnvcomSairamasTipOfTheDay.aspx
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

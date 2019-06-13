@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript: Timer Code - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>//(c) 1998 Bryan Wilhite
+//All rights reserved.
+//rasx@kintespace.com</p>
+<p>//This code assumes that there is a text input object
+//called &quot;textDisplay&quot; in a FORM block level element.
+//It is also assumed that there are two buttons.
+//One calls jsTimerStart() and the other
+//calls jsTimerStop() when their
+//onClick() events fire.</p>
+<p>var isRunning = false
+var timeoutID = null
+var vLater = null</p>
+<p>function jsTimer() {
+vNow = new Date()
+vNow = vNow.getTime()
+//Change vDelta into a value in milliseconds.
+vDelta = vLater - vNow
+if (vDelta &lt;= 0) { jsTimerStop() }
+else {
+//Change vDelta into an object.
+vDelta = new Date(vDelta)
+//Change vDelta into an value in seconds.
+vDelta = vDelta.getSeconds()
+window.document.forms[1].textDisplay.value =
+((vDelta &lt; 10) ? &quot;:0&quot; : &quot;:&quot;) + vDelta
+if (isRunning) { timeoutID = setTimeout(&quot;jsTimer()&quot;, 1000) }
+}
+}</p>
+<p>function jsTimerStart(vSeconds) {
+isRunning = true
+vNow = new Date()
+vNow = vNow.getTime()
+vLater = vNow + (1000 * vSeconds)
+jsTimer()
+}</p>
+<p>function jsTimerStop() {
+if (isRunning) {
+clearTimeout(timeoutID)
+window.document.forms[1].textDisplay.value = &quot;:00&quot;
+isRunning = false
+}
+else { window.alert(&quot;Timer is already stopped.&quot;) }
+}</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flash MX ActionScript 2.0: Flippant Remarks about createClassObject(); Array() - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>createClassObject() is a method of UIObject. &quot;UIObject is the base class for all version 2 components; it is not a visual component. The UIObject class wraps the ActionScript MovieClip object and contains functions and properties that allow version 2 components to share some common behavior. Wrapping the MovieClip class allows Macromedia to add new events and extend functionality in the future without breaking content.&quot;</p>
+<p>UIObject for Flash MX 2004 is referenced here:</p>
+<pre><code>http://livedocs.macromedia.com/flash/mx2004/
+    &amp;bsol;&amp;bsol;main_7_2/wwhelp/wwhimpl/common/html/
+        wwhelp.htm?context=Flash_MX_2004&amp;file=00002930.html
+</code></pre>
+<p>createClassObject() may &quot;silently&quot; fail when object initiation parameters are incorrect with respect to the current build of the ActionScript compiler. For example, the List object will not populate an instance properly such that this pattern is recommended for the moment:</p>
+<pre><code>import mx.controls.List;
+this.createClassObject(List,'oList',
+    this.getNextHighestDepth());
+
+var oPlayList:Array = new Array();
+
+with(oList)
+{
+    move(10,96);
+    dataProvider = oPlayList;
+    rowCount = 14;
+}
+
+oPlayList.push({label:'song one',
+    data:'./audio/mp3/Mikey Dread - 05.mp3'});
+oPlayList.push({label:'song two',
+    data:'./audio/mp3/Mikey Dread - 06.mp3'});
+oPlayList.push({label:'song three',
+    data:'./audio/mp3/Mikey Dread - 07.mp3'});
+
+oList.selectedIndex = 0;
+//selectedIndex is undefined by default.
+
+var oListenChange:Object = new Object();
+oListenChange.change = function(e:Object)
+{
+    var oSelectedItem:Object = e.target.selectedItem;
+    with(oAudioDisplay)
+    {
+        setMedia(oSelectedItem.data,'MP3');
+        play();
+    }
+}
+oList.addEventListener('change',oListenChange);
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

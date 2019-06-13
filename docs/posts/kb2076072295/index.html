@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ubuntu and VMware Tools: &quot;linux/version.h&quot; Error from ./vmware-install.pl - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Invoking ./vmware-install.pl may cause this error: “The path &quot;/usr/src/linux-headers-2.6.24-24/include&quot; is a kernel header file
+directory, but it does not contain the file &quot;linux/version.h&quot; as expected.<br>
+This can happen if the kernel has never been built, or if you have invoked the
+&quot;make mrproper&quot; command in your kernel directory.  In any case, you may want to rebuild your kernel.” Not that 2.6.24-24 is likely to change over time.</p>
+<p>Instead of rebuilding your kernel, install a linux-headers-* package with:</p>
+<pre><code>sudo apt-get install linux-headers-`uname -r`
+</code></pre>
+<p>This should add new files in your /usr/src folder—a bunch of folders with symlinks pointing to another image of source files for your running kernel.</p>
+<p>[http://ubuntuforums.org/showthread.php?t=294384]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

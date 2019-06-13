@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PHP 5.x Code: Building a SQL Format String for sprintf() - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>&lt;?php<br>
+$sql = &lt;&lt;&lt;BLOCK
+SELECT
+<code>server</code>.<code>server_id</code>
+,   <code>server</code>.<code>server_name</code>
+,   <code>server</code>.<code>ip</code>
+,   <code>server</code>.<code>mac</code>
+,   <code>server</code>.<code>sn</code>
+,   server_status.status
+,   <code>notes</code>
+FROM
+<code>server</code>
+,   server_status
+WHERE
+<code>server</code>.status_id = server_status.status_id
+AND
+<code>%1&amp;bsol;&amp;bsol;$s</code> LIKE '%%%2\\$s%%'
+;
+BLOCK;</p>
+<pre><code>$s = sprintf($sql,'ip','10.');
+</code></pre>
+<p>?&gt;</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

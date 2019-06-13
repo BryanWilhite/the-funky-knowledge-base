@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Adobe Flex 2: The Minimal MXML Application with an ActionScript3 Package - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>This is the MXML in a file called Client.mxml:</p>
+<p>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;mx:Application
+x­mlns:mx=&quot;http://www.adobe.com/2006/mxml&quot;
+horizontalAlign=&quot;center&quot; verticalAlign=&quot;center&quot;
+initialize=&quot;ClientAction.Initialize()&quot;
+&gt;</p>
+<p>&lt;/mx:Application&gt;</p>
+<p>This is ActionScript3 package in a file called ClientAction.as:</p>
+<p>package
+{
+import mx.controls.Alert;
+import mx.core.Application;</p>
+<pre><code>public class ClientAction
+{
+	public static function Initialize():void
+	{
+		if(ClientAction._action == null)
+		{
+			ClientAction._action =
+				new ClientAction(Application.application as Application);
+		}
+	}
+
+	public function ClientAction(thisApplication:Application)
+	{
+		//TODO: do some stuff with the root application.
+	}
+
+	private static var _action:ClientAction = null;
+}
+</code></pre>
+<p>}</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

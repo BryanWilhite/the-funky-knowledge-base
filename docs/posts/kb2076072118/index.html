@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ubuntu 6.x Firefox PROBLEM: Firefox “Looks up” DNS Information Too Frequently; “Speed Up Firefox web browser,” ubuntugeek.com - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>There are approximately two ways to handle this problem: (i) mess about with about:config settings in Firefox itself and (ii) install dnsmasq in Ubuntu.</p>
+<p>These are some of the about:config settings of concern:</p>
+<p>network.http.pipelining
+[http://kb.mozillazine.org/Network.http.pipelining]</p>
+<p>network.http.pipelining.maxrequests</p>
+<p>network.dns.disableIPv6
+[http://kb.mozillazine.org/Network.dns.disableIPv6]</p>
+<p>plugin.expose_full_path</p>
+<p>nglayout.initialpaint.delay</p>
+<p>content.notify.backoffcount</p>
+<p>For an overview of dnsmasq, see “Local DNS Cache for Faster Browsing on Ubuntu Machine”:</p>
+<pre><code>http://www.ubuntugeek.com/
+    local-dns-cache-for-faster-browsing-on-ubuntu-machine.html
+</code></pre>
+<p>For a more extensive view, see  “Speed Up Firefox web browser”:</p>
+<pre><code>http://www.ubuntugeek.com/speed-up-firefox-web-browser.html
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

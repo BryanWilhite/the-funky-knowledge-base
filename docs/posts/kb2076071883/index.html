@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flippant Remarks about System.Uri and System.UriBuilder - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>A new System.Uri accepts data in its constructor. Any subsequent usage of this object is on a read-only basis. A new System.UriBuilder supports read-write assignments after construction.</p>
+<p>From Microsoft, “The UriBuilder class provides a convenient way to modify the contents of a Uri instance without creating a new Uri instance for each modification.” More information:</p>
+<pre><code>http://msdn2.microsoft.com/en-us/library/system.uribuilder.aspx
+</code></pre>
+<p>The “contents” of the Uri are exposed by the UriBuilder as shown in PowerShell like this:</p>
+<p>Fragment : #hash
+Host     : localhost
+Password : MyPassword
+Path     : /Folder1/Folder2
+Port     : 999
+Query    : ?var1=foo&amp;var2=bar
+Scheme   : http
+Uri      : http://User1:MyPassword@localhost:999/Folder1/Folder2
+?var1=foo&amp;var2=bar#hash
+UserName : User1</p>
+<p>You should be able to see that all the members of UriBuilder (except UriBuilder.Uri) are used to “build” UriBuilder.Uri.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

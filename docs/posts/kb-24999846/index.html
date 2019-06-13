@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code: Passing Data between SQL And Access Tables - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>I have had problems using stored delete/update queries that involve changing data in SQL tables. The query would run without returning any error. It would also indicate SQL table rows have been deleted or changed. But when the SQL table is re-opened the records would reappear or revert to their original state.</p>
+<p>To avoid this issue entirely I have  written code that uses DAO objects instead of stored queries (other than SELECT queries). The following is a sketch of this technique:</p>
+<p>Module Level:
+'
+'NOTE: This procedure contains line break characters
+'for readability. These characters are not supported
+'in Access Basic.
+'
+Option Compare Database   'Use database order for string comparisons
+Option Explicit</p>
+<p>Dim m_wsDAO As WorkSpace
+Dim m_dbDAO As Database</p>
+<p>Dim m_varReturn As Variant
+Dim m_Transaction As Integer
+Dim m_intObj As Integer</p>
+<p>Dim m_strMsgBox  As String, m_strFileName As String</p>
+<p>Sub DailyCalc_CleanSQLtbls ()
+'
+'This sub clears out temporary Shaw CUSIPs from SQL Server
+'tables ejv_cusip and output_oas. Without this procedure
+'duplicate Security Names can show up
+'in qselPortfolio* queries.
+'
+Dim dbSQLServer As Database, rsDAO As Recordset
+Dim tSQL As String</p>
+<pre><code>On Error GoTo DailyCalc_CleanSQLtbls_Err
+
+m_intObj = m_wsDAO Is Nothing
+If m_intObj Then
+    MsgBox &amp;quot;This sub needs workspace and database objects!&amp;quot;
+    Exit Sub
+End If
+
+m_intObj = m_dbDAO Is Nothing
+If m_intObj Then
+    MsgBox &amp;quot;This sub needs a database object!&amp;quot;
+    Exit Sub
+End If
+
+Set dbSQLServer = m_wsDAO.OpenDatabase(&amp;quot;&amp;quot;, _
+    False, False, ODBC_CONNECT_STRING)
+Set rsDAO = m_dbDAO.OpenRecordset(&amp;quot;qselOA_not_Taz&amp;quot;, _
+    DB_OPEN_DYNASET, DB_READONLY)
+
+While Not rsDAO.EOF
+
+    tSQL = &amp;quot;delete from ejv_cusip &amp;quot;
+    tSQL = tSQL &amp; &amp;quot;where cusip = '&amp;quot; &amp; rsDAO(&amp;quot;cusip&amp;quot;) &amp; &amp;quot;'&amp;quot;
+
+    dbSQLServer.Execute tSQL, DB_SQLPASSTHROUGH
+
+    rsDAO.MoveNext
+Wend
+
+Set rsDAO = m_dbDAO.OpenRecordset(&amp;quot;qselOA_not_Taz&amp;quot;, _
+    DB_OPEN_DYNASET, DB_READONLY)
+
+While Not rsDAO.EOF
+
+    tSQL = &amp;quot;delete from output_oas &amp;quot;
+    tSQL = tSQL &amp; &amp;quot;where cusip = '&amp;quot; &amp; rsDAO(&amp;quot;cusip&amp;quot;) &amp; &amp;quot;'&amp;quot;
+
+    dbSQLServer.Execute tSQL, DB_SQLPASSTHROUGH
+
+    rsDAO.MoveNext
+Wend
+</code></pre>
+<p>DailyCalc_CleanSQLtbls_Exit:
+m_intObj = dbSQLServer Is Nothing
+If Not (m_intObj) Then dbSQLServer.Close
+Exit Sub</p>
+<p>DailyCalc_CleanSQLtbls_Err:
+Select Case Err
+Case Else
+MsgBox Err &amp; &quot;: &quot; &amp; Error$(Err), 16, _
+&quot;DailyCalc_CleanSQLtbls Error&quot;
+Resume DailyCalc_CleanSQLtbls_Exit</p>
+<pre><code>End Select
+</code></pre>
+<p>End Sub</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

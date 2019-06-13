@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>XSLT Markup: The importance of the XPath Boolean functions false() and true() - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>The strings 'true' and 'false' have no meaning for XPath functions. Please note that the following two lines are both true:</p>
+<pre><code>boolean('true')
+
+boolean('false')
+</code></pre>
+<p>Moreover, the following is a node test for a node called &quot;true&quot;:</p>
+<pre><code>boolean(true)
+</code></pre>
+<p>This function will return false when it cannot find an element called &quot;true&quot; in the current context.</p>
+<p>The Boolean functions false() and true() produce the expected results for our first example. So this is true:</p>
+<pre><code>boolean(true())
+</code></pre>
+<p>and this is false:</p>
+<pre><code>boolean(false())
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

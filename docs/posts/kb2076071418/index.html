@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ASP, ADO and Microsoft Access PROBLEM: Access MDB File Fails to Open or Appears Locked - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>The IIS user account (e.g. IUSR_&lt;machine name&gt;) requires dangerously high levels of security permissions to open Access MDB files via ASP. When it cannot open the Access database this error may be thrown:</p>
+<p>Microsoft OLE DB Provider for ODBC Drivers (0x80004005) [Microsoft][ODBC Microsoft Access Driver] The Microsoft Jet database engine cannot open the file '(unknown)'. It is already opened exclusively by another user, or you need permission to view its data.</p>
+<p>I will not recommend what should be done in response to this problem as using Access databases behind any serious web site totally sucks in ways thought not suckable. Microsoft, alternatively, has more details (MS KB article Q174943):</p>
+<pre><code>http://support.microsoft.com/support/kb/articles/q174/9/43.asp
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

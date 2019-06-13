@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SQL Server 2008 SSRS: “All those temporary files (RSTempFiles)”; John Gallardo, MSDN - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>When you install Reporting Services, we create a few directories:</p>
+<ol>
+<li>LogFiles</li>
+<li>ReportManager</li>
+<li>ReportServer</li>
+<li>RSTempFiles</li>
+</ol>
+<p>Most of these are fairly self explanatory.  LogFiles... well we put our log files in there.  ReportManager contains the Report Manager application (what you get when you browse to http://&lt;server&gt;/reports) and ReportServer contains the Report Server application which is the proper 'Report Server' which implements our Web Service and HTTP handler endpoints... it is what you get when you go to http://&lt;server&gt;/reportserver.</p>
+<p>So what about that RSTempFiles thing?  Well it contains files that are temporary of course!</p>
+<p>These temporary files can be broken down into a few categories:</p>
+<pre><code>* Temporary Report Snapshot files.
+      o These files are only created if you have opted into using temporary file storage (see the WebServiceUseFileShareStorage).
+      o For RS2000/2005, snapshots are more or less completely independent and each is contained in its own directory (identified by a GUID).  Each snapshot contains a set of files (internally, they are referred to as &amp;quot;chunks&amp;quot;). 
+      o For RS2008, snapshots oftentimes contain some shared data.  The folder-per-snapshot hierarchy used in RS2000/2005 is replaced by a single directory called &amp;quot;Chunks.&amp;quot;  Each chunk is a discrete file in this directory.
+      o These files are automatically cleaned up by the Report Server on a time-based interval (same as snapshot data stored in ReportServer and ReportServerTempDB catalog databases).
+* Output/Intermediate Streams
+      o These files are all created directly within the the RSTempFiles directory.  There is no way to differentiate between these two sub-categories of files currently.
+      o Output streams - these streams are generated as output from the renderers.  The server spools them to disk if they grow large enough.  RS has an output cache that may cause these streams to survive beyond the lifetime of the request so that subsequent accesses can be served directly from the cache. 
+      o Intermediate files - these files contain results of intermediate calculations during report processing and rendering.  Generally, these contain data which is never returned to the client, but rather holds temporary results in order to relieve memory pressure.  These files are cleaned up when the request completes (no caching across requests).
+* Conversion files
+      o These are stored under a folder named _Conversion. 
+      o Our compression format for snapshots changed between RS2000 and RS2005.  This folder would contain temporary files supporting the on-demand one-time upgrade of these persisted snapshots.  Unless you are upgrading from an RS2000 instance, you should never see this directory or files created.  
+* Shadow Copy Files
+      o This is only for RS2008.
+      o After the CTP6 release of RS2008, we enabled shadow copy for our ASP.Net worker domains under the new hosting model.
+</code></pre>
+<p>[http://blogs.msdn.com/jgalla/archive/2008/06/30/
+all-those-temporary-files-rstempfiles.aspx]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

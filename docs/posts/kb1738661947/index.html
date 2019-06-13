@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Macromedia Freehand PROBLEM: Fonts Are Not Embedded in PDF Files; 8.0.1 - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Fonts are not embedded in PDF files when they are exported via the File &gt; Export... Command. One way to get the fonts embedded in the PDF is to print to Adobe Distiller Assistant. Using this method requires understanding the consequences of printing to what is effectively a PostScript printer (or ripper).</p>
+<p>Recall that a PostScript printer needs to be setup properly what with page size, registration and crop marks. Using crop marks is important if the PDF pages being exported are not of the dimensions listed in the PostScript printer driver. The crop marks can be used to crop the custom pages in Adobe Acrobat Exchange 3.x or greater. Acrobat Exchange also comes in handy if Distiller Assistant rotates the pages for some reason. Exchange can rotate the pages back.</p>
+<p>For more details please see FreeHand Technote 12295 (&quot;Fonts do not appear correctly in exported PDF files&quot;) at:</p>
+<pre><code>http://www.macromedia.com/
+    support/freehand/ts/documents/pdf_fonts.htm
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

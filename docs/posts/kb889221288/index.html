@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Using Queries to Handle Replication Errors - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>All replication synchronization data errors are stored in a hidden system table called MSysErrors. It has column (or field name) called RowGUID that can be used in joins with the table generating the error.</p>
+<p>The join between the MSysErrors and the table in question is between the fields RowGUID and s_GUID respectively. This information can be used to build temporary queries in the QDE.</p>
+<p>Recall that in order to see system tables like MSysErrors select Tools &gt; Options &gt; Show &gt; System Objects from the Menu Bar.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>T-SQL: Values Stored in Sybase/Microsoft Sysobjects Table - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>When browsing a Microsoft or Sybase SQL Server database, looking for system objects, use a query of form:</p>
+<pre><code>SELECT name FROM sysobjects
+WHERE type = '&amp;lt;type&amp;gt;'
+</code></pre>
+<p>where &lt;type&gt; can be one of the following:</p>
+<p>C - CHECK constraint
+D - Default or DEFAULT constraint
+F - FOREIGN KEY constraint
+K - PRIMARY KEY or UNIQUE constraint
+L  - Log
+P - Stored procedure
+R - Rule
+RF - Stored procedure for replication
+S - System table
+TR - Trigger
+U - User table
+V - View
+X - Extended stored procedure</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UriBuilder Inserts Multiple Question Marks in Query Strings; C# Cookbook - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>From Jay Hilyard and Stephen Teilhet (C# Cookbook): “Every time you set the Query property, the UriBuilder class appends a ? to the front of the query string information.” This move should solve the problem:</p>
+<pre><code>Uri u = new Uri(&amp;quot;http://contoso.com/mypage.html?foo=0&amp;quot;);
+
+string uriString = u.AbsoluteUri.Replace(u.Query, string.Empty);
+string queryString = u.Query.Contains(&amp;quot;?&amp;quot;) ?
+    string.Concat(u.Query.Replace(&amp;quot;?&amp;quot;,string.Empty), &amp;quot;&amp;&amp;quot;, &amp;quot;foo=1&amp;quot;) : &amp;quot;foo=1&amp;quot;;
+
+UriBuilder builder = new UriBuilder(uriString);
+builder.Query = queryString;
+</code></pre>
+<p>Now Jay Hilyard and Stephen Teilhet recommends using a .NET 3.5 extension method pattern to permanently fix the problem:</p>
+<pre><code>public class UriBuilderFix : UriBuilder
+{
+    public UriBuilderFix() : base()
+    {
+    }
+
+    public new string Query
+    {
+        get
+        {
+            return base.Query;
+        }
+        set
+        {
+            if (!string.IsNullOrEmpty(value))
+            {
+                if (value[0] == '?')
+                    // trim off the leading ? as the underlying 
+                    // UriBuilder class will add one to the 
+                    // querystring.  Also prepend ; for additional items
+                    base.Query = value.Substring(1);
+                else
+                    base.Query = value;
+            }
+            else
+                base.Query = string.Empty;
+        }
+    }
+}
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

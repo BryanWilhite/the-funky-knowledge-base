@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>“Fixing those pesky DCOM event log error 10016 in a SharePoint farm environment”; soerennielsen.wordpress.com - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Event Type: Error
+Event Source: DCOM
+Event Category: None
+Event ID: 10016
+Date: 1/17/2007
+Time: 4:31:48 AM
+User: &lt;DOMAIN&gt;\\sa_adm
+Computer: &lt;SERVER&gt;
+Description:</p>
+<p>The application-specific permission settings do not grant Local Activation permission for the COM Server application with CLSID</p>
+<p>{61738644-F196-11D0-9953-00C04FD919C1}</p>
+<p>to the user &lt;DOMAIN&gt;\\sa_adm SID (S-1-5-21-162740987-2502514208-3469184634-1119). This security permission can be modified using the Component Services administrative tool.</p>
+<p>For more information, see Help and Support Center at http://go.microsoft.com/fwlink/events.asp.</p>
+<p>…</p>
+<p>The error listed above is that the user running the Central Administration web application doesn’t have access to activate (instantiate) the IIS WAMREG admin Service object (search the registry for the CLSID).</p>
+<p>…</p>
+<p>On each SharePoint server do the following:</p>
+<pre><code>1. Click Start, Click Run, type “dcomcnfg” and click ok
+2. Expand Component Services / Computers / My Computer / DCOM Config
+3. Right click IIS WAMREG admin Service and choose Properties
+4. Click the Security tag
+5. Click Edit under Launch and Activation Permissions
+6. Click Add
+7. In the Select Users, Computers or Groups type computername&amp;bsol;&amp;bsol;WSS_WPG and
+</code></pre>
+<p>computername\\WSS_ADMIN_WPG
+8. Click ok
+9. In the Permissions for UserName list, click to select the Allow check box
+10. Click Ok twice.
+11. Go back to the main Component Services window, right click the “netman” node and select Properties
+12. Click the security tab
+13. Click Edit under Activation Permissions
+14. Click Add on the Launch Permissons Dialog
+15. Enter “NETWORK SERVICE” in the edit box
+16. Click Ok
+17. Enable all the checkboxes for the NETWORK SERVICE
+18. Click Ok twice
+19. Finally, run “IISReset”</p>
+<p>[http://soerennielsen.wordpress.com/2007/04/16/
+fixing-those-pesky-dcom-event-log-error-10016-in-a-sharepoint-farm-environment/]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

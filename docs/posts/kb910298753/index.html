@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VB Code: Synchronizing the DriveListBox with the DirListBox and FileListBox Controls - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Private Sub fsDevice_Change()
+'fsDevice is the DriveListBox.
+'fsRoot is the DirListBox.
+'fsFile is the FileListBox.
+With Me
+.fsRoot.Path = fsDevice.List(.fsDevice.ListIndex)
+.fsFile.Path = .fsRoot.Path
+End With
+End Sub</p>
+<p>Private Sub fsRoot_Change()
+With Me
+.fsFile.Path = .fsRoot.Path
+End With
+End Sub</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

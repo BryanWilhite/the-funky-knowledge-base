@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>System.Xml.Xsl.XslTransform PROBLEM: Document Type Declarations Are Ignored; xsl:output Element; DOCTYPE; .NET Framework 1.1 - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>The xsl:output element is supported by the .NET Framework. The xsl:output element is ignored when the output of the XslTransform.Transform method is an XmlReader or XmlWriter. These types are not byte-stream-based, using .NET-native UTF-16 encoded strings to store data.</p>
+<p>The following sketch uses the MemoryStream type to represent data as bytes instead of UTF-16 strings:</p>
+<pre><code>XslTransform xslt = new XslTransform();
+XPathDocument xml = new XPathDocument(&amp;quot;data.xml&amp;quot;);
+MemoryStream ms = new MemoryStream();
+
+xslt.Load(&amp;quot;template.xslt&amp;quot;);
+xslt.Transform(xml,null,ms,null);
+
+xhtml = Encoding.UTF8.GetString(ms.GetBuffer());
+</code></pre>
+<p>For details see &quot;Outputs from an XslTransform&quot; at:</p>
+<pre><code>http://msdn.microsoft.com/library/
+    en-us/cpguide/html/cpconInputsOutputsToXslTransform.asp
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

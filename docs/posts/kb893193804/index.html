@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code: Changing the Connect Properties of All Tables And Queries - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Sub basChangeConnect (argSession As String)
+'
+'NOTE: This procedure contains line break characters
+'for readability. These characters are not supported
+'in Access Basic.
+'
+Set m_dbDAO = DBEngine(0)(0)</p>
+<pre><code>Select Case argSession
+
+    Case &amp;quot;Production&amp;quot;
+
+        For m_intObj = 1 To m_dbDAO.TableDefs.Count - 1
+
+            If m_dbDAO.TableDefs(m_intObj).Connect _
+                Like &amp;quot;ODBC*&amp;quot; Then
+                m_dbDAO.TableDefs(m_intObj).Connect _
+                    = ODBC_TBLCONNECT_STRING_PROD
+                m_dbDAO.TableDefs(m_intObj).RefreshLink
+            End If
+
+        Next m_intObj
+
+        For m_intObj = 1 To m_dbDAO.QueryDefs.Count - 1
+
+            If m_dbDAO.QueryDefs(m_intObj).Connect _
+                Like &amp;quot;ODBC*&amp;quot; Then
+                m_dbDAO.QueryDefs(m_intObj).Connect _
+                    = ODBC_QRYCONNECT_STRING_PROD
+                m_dbDAO.QueryDefs.Refresh
+            End If
+
+        Next m_intObj
+    
+    Case &amp;quot;Test&amp;quot;
+        For m_intObj = 1 To m_dbDAO.TableDefs.Count - 1
+
+            If m_dbDAO.TableDefs(m_intObj).Connect _
+                Like &amp;quot;ODBC*&amp;quot; Then
+                m_dbDAO.TableDefs(m_intObj).Connect _
+                    = ODBC_TBLCONNECT_STRING_TEST
+                m_dbDAO.TableDefs(m_intObj).RefreshLink
+            End If
+
+        Next m_intObj
+
+
+        For m_intObj = 1 To m_dbDAO.QueryDefs.Count - 1
+
+            If m_dbDAO.QueryDefs(m_intObj).Connect _
+                Like &amp;quot;ODBC*&amp;quot; Then
+                m_dbDAO.QueryDefs(m_intObj).Connect_
+                    = ODBC_QRYCONNECT_STRING_TEST
+                m_dbDAO.QueryDefs.Refresh
+            End If
+
+        Next m_intObj
+
+End Select
+</code></pre>
+<p>End Sub</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

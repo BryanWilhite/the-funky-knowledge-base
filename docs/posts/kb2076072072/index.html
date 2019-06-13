@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flex/ActionScript3: Run-Time Errors; Adobe® Flex™ 2 Language Reference - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Code    Message    Description:</p>
+<pre><code> 1000    The system is out of memory.     Flash Player needs more memory to compile your code than your system has available. Close some of the applications or processes running on your system.
+
+ 1001    The method _ is not implemented.
+
+ 1002    The precision argument must be between 0 and 20; _ is invalid.     You specified a value less than 0 or greater than 20 for the precision argument of a method or property. Pass a value between 0 and 20 as a precision argument.
+
+ 1003    The radix argument must be between 2 and 36; got _.     You passed a value less than 2 or greater than 36 for the radix argument of a method or property. Pass a value between 2 and 36 as a radix argument.
+
+ 1004    Method _ was invoked on an incompatible object.     You tried to call a method that is not available to the specified object. This error occurs when you have copied a prototype function from one object to another, and then invoked it, but the target object is not the same type as the original object. Ensure that the target object and original object are the same type. See the ECMAScript Language Specification, 3rd Edition, Chapter 15 for more details.
+
+ 1005    Array index is not a positive integer (_).     You tried to access a member of an array using an index value that is not a positive integer. Pass only positive integers as index values for arrays.
+
+ 1006    _ is not a function.     This error occurs when you attempt to call a function that does not exist. Make sure you are calling the correct function, and that the API has not changed from ActionScript 2.0. Also, make sure you are using the correct object. For example, you will see this error when you use the following code (because the last line mistakenly calls the variable big instead of blg):
+</code></pre>
+<p>var blg:String = &quot;foo&quot;;
+var big:Sprite = new Sprite();
+var error:int = big.length();</p>
+<pre><code> 1007    Instantiation attempted on a non-constructor. 
+
+ 1008    _ is ambiguous; Found more than one matching binding.
+
+ 1009    Cannot access a property or method of a null object reference.     An object that evaluates to null can have no properties. This error can occur in some unexpected (though valid) situations. For example, consider the following code, which creates a Sprite object. Because this Sprite object is never added to the display list (through the addChild() method of a DisplayObjectContainer object), its stage property is set to null. Thus, the example generates this error because Sprite object's stage property cannot have any properties:
+</code></pre>
+<p>import flash.display.Sprite;
+var sprite1:Sprite = new Sprite();
+var q:String = sprite1.stage.quality;</p>
+<pre><code> 1010    A term is undefined and has no properties.     This error can occur if you try to access a property of an object that does not exist. For example:
+</code></pre>
+<p>var obj:Object = new Object();
+obj.a = &quot;foo&quot;;
+trace(obj.b.prop);</p>
+<p>You can also see this error because of a misspelling, for example in the following, where mc represents a MovieClip object in the display list, and the stage property is misspelled with a capital S (it should be stage):</p>
+<p>trace(mc.Stage.quality);</p>
+<pre><code> 1011    Method _ contained illegal opcode _ at offset _.     See the note at the bottom of this table.*
+
+ 1012    The last instruction exceeded code size.     See the note at the bottom of this table.*
+
+ 1013    Cannot call OP_findproperty when scopeDepth is 0.     See the note at the bottom of this table.*
+
+ 1014    Class _ could not be found.
+
+ 1015    Method _ cannot set default xml namespace     See the note at the bottom of this table.*
+
+ 1016    Descendants operator (..) not supported on type _. 
+
+ 1017    Scope stack overflow occurred.     See the note at the bottom of this table.*
+
+ 1018    Scope stack underflow occurred.     See the note at the bottom of this table.*
+
+ 1019    Getscopeobject _ is out of bounds.     See the note at the bottom of this table.*
+
+ 1020    Code cannot fall off the end of a method.     See the note at the bottom of this table.*
+
+ 1021    At least one branch target was not on a valid instruction in the method.     See the note at the bottom of this table.*
+
+ 1022    Type void may only be used as a function return type.     See the note at the bottom of this table.*
+
+ 1023    Stack overflow occurred.     See the note at the bottom of this table.*
+
+ 1024    Stack underflow occurred.     See the note at the bottom of this table.*
+
+ 1025    An invalid register _ was accessed.     See the note at the bottom of this table.*
+
+ 1026    Slot _ exceeds slotCount=_ of _.     See the note at the bottom of this table.*
+
+ 1027    Method_info _ exceeds method_count=_.     See the note at the bottom of this table.*
+
+ 1028    Disp_id _ exceeds max_disp_id=_ of _.     See the note at the bottom of this table.*
+
+ 1029    Disp_id _ is undefined on _.     See the note at the bottom of this table.*
+
+ 1030    Stack depth is unbalanced. _ != _.     See the note at the bottom of this table.*
+
+ 1031    Scope depth is unbalanced. _ != _.     See the note at the bottom of this table.*
+
+ 1032    Cpool index _ is out of range _.     See the note at the bottom of this table.*
+
+ 1033    Cpool entry _ is wrong type.     See the note at the bottom of this table.*
+
+ 1034    Type Coercion failed: cannot convert _ to _.
+
+ 1035    Illegal super expression found in method _.     See the note at the bottom of this table.*
+
+ 1037    Cannot assign to a method _ on _.     See the note at the bottom of this table.*
+
+ 1038    _ is already defined.     You cannot declare a variable or function with the same identifier name more than once within the same scope. In ActionScript 3.0, different code blocks (such as those used in two for loops in the same function definition) are considered to be in the same scope. See the note at the bottom of this table.*
+
+ 1039    Cannot verify method until it is referenced.     See the note at the bottom of this table.*
+
+ 1040    The right-hand side of instanceof must be a class or function.     The expression on the right side of the instanceof operator must be a class or function.
+
+ 1041    The right-hand side of operator must be a class.     The expression on the right side of the is operator must be a class.
+
+ 1042    Not an ABC file. major_version=_ minor_version=_.     You are attempting to use an invalid file with the player: the tool that generates the SWF may be out of date or the SWF itself may be corrupt.
+
+ 1043    Invalid code_length=_.     See the note at the bottom of this table.*
+
+ 1044    MethodInfo-_ unsupported flags=_.     See the note at the bottom of this table.*
+
+ 1045    Unsupported traits kind=_.     See the note at the bottom of this table.*
+
+ 1046    MethodInfo-_ referenced before definition.     See the note at the bottom of this table.*
+
+ 1047    No entry point was found.     See the note at the bottom of this table.*
+
+ 1049    Prototype objects must be vanilla Objects.     See the note at the bottom of this table.*
+
+ 1050    Cannot convert _ to primitive.     See the note at the bottom of this table.*
+
+ 1051    Illegal early binding access to _.     See the note at the bottom of this table.*
+
+ 1052    Invalid URI passed to _ function.     See the note at the bottom of this table.*
+
+ 1053    Illegal override of _ in _.     See the note at the bottom of this table.*
+
+ 1054    Illegal range or target offsets in exception handler.     See the note at the bottom of this table.*
+
+ 1056    Cannot create property _ on _.     You are trying to assign a value to a nonexistent property on an instance of a non-dynamic class. This is only possible for instances of dynamic classes
+
+ 1057    _ can only contain methods.     See the note at the bottom of this table.*
+
+ 1058    Illegal operand type: _ must be _.     See the note at the bottom of this table.*
+
+ 1059    ClassInfo-_ is referenced before definition.     See the note at the bottom of this table.*
+
+ 1060    ClassInfo _ exceeds class_count=_.     See the note at the bottom of this table.*
+
+ 1061    The value _ cannot be converted to _ without losing precision.     This error appears if you attempt to assign a decimal number to a property that has data type int.
+</code></pre>
+<p>This error also appears for out-of-range assignments, such as the following:</p>
+<p>var m0:int = 2147483648; // int.MAX_VALUE == 2147483647</p>
+<p>You can also see this error when using the bitwise left shift operator (&lt;&lt;). For example, consider the following code:</p>
+<p>var m0:uint = 0xFF;
+var m1:uint = m0&lt;&amp;lt24;</p>
+<p>The result of left shift operator (&lt;&lt;) is interpreted as a 32-bit two's complement number with sign. In the example, the result is a negative value, which causes the error when assigned to the uint typed property. A workaround is the following:</p>
+<p>var m0:uint = 0xFF;
+var m1:uint = uint(m0&lt;&amp;lt24);</p>
+<pre><code> 1063    Argument count mismatch on _. Expected _, got _. 
+
+ 1064    Cannot call method _ as constructor.     Extracted methods are permanently bound to the object they are extracted from. Therefore, they can not later be called as a constructor. For example, the following creates function f() in Class A:
+</code></pre>
+<p>class A {
+function f() {}
+}</p>
+<p>In the following code, extracting the function causes no error. However, creating a new instance of the function causes an error.</p>
+<p>var a = new A()
+var m = a.f // extract f, don't call it
+m() // same as a.f()
+new m() // causes this error</p>
+<pre><code> 1065    Variable _ is not defined.     You are using an undefined lexical reference. For example, in the following statements, the statement trace(x) generates an error because x is undefined. However, the statement trace(y) doesn't generate an error because y is defined:
+</code></pre>
+<p>trace(&quot;hello world&quot;)
+trace(x) // x is undefined
+var y
+trace(y) // No error, y is defined.</p>
+<pre><code> 1066    The form function('function body') is not supported.     Unlike JavaScript, Flash does not compile code on-the-fly using eval() and function(). Thus, calling these as a constructor in ActionScript 3.0 generates this error.
+
+ 1067    Native method _ has illegal method body.     See the note at the bottom of this table.*
+
+ 1068    _ and _ cannot be reconciled.     See the note at the bottom of this table.*
+
+ 1069    Property _ not found on _ and there is no default value.     You are referencing an undefined property on a non-dynamic class instance. For example, the following generates this error when it references property x, which is not defined and cannot be created dynamically:
+</code></pre>
+<p>class A {} // sealed class, not dynamic
+trace(new A().x) // no property x defined on A, and A is not dynamic</p>
+<pre><code> 1070    Method _ not found on _     You are using a super statement to call a function, but the function doesn't exist in the super class. For example, the following code generates the error:
+</code></pre>
+<p>class A() {}
+class B extends A {
+function f() { trace(super.f()); } // error 1070, there is no f on A
+}</p>
+<pre><code> 1071    Function _ has already been bound to _.     
+
+ 1072    Disp_id 0 is illegal.     See the note at the bottom of this table.*
+
+ 1073    Non-override method _ replaced because of duplicate disp_id _.     See the note at the bottom of this table.*
+
+ 1074    Illegal write to read-only property _ on _.     
+
+ 1075    Math is not a function.     You are trying to call math() as a function, but the Math class is a class with static methods.
+
+ 1076    Math is not a constructor.     You can not instantiate the Math class.
+
+ 1077    Illegal read of write-only property _ on _.     
+
+ 1078    Illegal opcode/multiname combination: _&amp;lt;_&amp;gt;.     See the note at the bottom of this table.*
+
+ 1079    Native methods are not allowed in loaded code.     See the note at the bottom of this table.*
+
+ 1080    Illegal value for namespace.     See the note at the bottom of this table.*
+
+ 1081    Property _ not found on _ and there is no default value.     
+
+ 1082    No default namespace has been set.     See the note at the bottom of this table.*
+
+ 1083    The prefix &amp;quot;_&amp;quot; for element &amp;quot;_&amp;quot; is not bound.     An attribute name or element name has a prefix but no matching namespace was found. This statement generates an error because there is no foo namespace to match foo:x:
+</code></pre>
+<p>&lt;foo:x x­mlns:clowns='http://circuscenter.org'&gt;</p>
+<pre><code> 1084    Element or attribute (&amp;quot;_&amp;quot;) does not match QName production: QName::=(NCName':')?NCName.     You have foo: or :foo as an element or attribute name, but there is nothing on the other side of the colon.
+
+ 1085    The element type &amp;quot;_&amp;quot; must be terminated by the matching end-tag &amp;quot;&amp;lt;/_&amp;gt;&amp;quot;.     
+
+ 1086    The _ method only works on lists containing one item.     The XMLList class propagates the XML-specific functions to one child if it has only one item in its list. If more than one item is in the list, the routines fail with this error. This happens for the following XMLList functions that mimic XML functions:
+</code></pre>
+<p>addNamespace, appendChild, childIndex, inScopeNamespaces, insertChildAfter, insertChildBefore, name, namespace, localName, namespaceDeclarations, nodeKind, prependChild, removeNamespace, replace, setChildren, setLocalName, setName, and setNamespace.</p>
+<pre><code> 1087    Assignment to indexed XML is not allowed.     
+
+ 1088    The markup in the document following the root element must be well-formed.     These are possible causes of this error:
+
+* Parsing an XMLList style object as XML
+* Misbalanced strings
+
+ 1089    Assignment to lists with more than one item is not supported.     
+
+ 1090    XML parser failure: element is malformed.     An element name is malformed. This example of an element name is malformed because a trailing right angle bracket &amp;gt; is missing:
+</code></pre>
+<p>&lt;a/&gt;&lt;b&gt;&lt;/b</p>
+<pre><code> 1091    XML parser failure: Unterminated CDATA section.     
+
+ 1092    XML parser failure: Unterminated XML declaration.     
+
+ 1093    XML parser failure: Unterminated DOCTYPE declaration.     
+
+ 1094    XML parser failure: Unterminated comment.     
+
+ 1095    XML parser failure: Unterminated attribute.     
+
+ 1096    XML parser failure: Unterminated element.     
+
+ 1097    XML parser failure: Unterminated processing instruction.     
+
+ 1098    Illegal prefix _ for no namespace.     The namespace constructor throws this error if you try to pass in an empty URI with a non-empty prefix as in this example:
+</code></pre>
+<p>ns = new Namespace (&quot;prefix&quot;, &quot;&quot;);</p>
+<pre><code> 1100    Cannot supply flags when constructing one RegExp from another.     Creating a new regular expression from an existing one also copies its flags. To create a regular expression with different flags, use the new operator and set the flags as desired. For example, this statement creates a regular expression and specifies flag settings:
+</code></pre>
+<p>var re:RegExp = new RegExp(&quot;ali&quot;, /s)</p>
+<p>Alternatively, this statement creates a regular expression that has the same flags as re:</p>
+<p>var re2:RegExp = new RegExp(re, ...)</p>
+<pre><code> 1101    Cannot verify method _ with unknown scope.     See the note at the bottom of this table.*
+
+ 1102    Illegal default value for type _.     See the note at the bottom of this table.*
+
+ 1103    Class _ cannot extend final base class.     See the note at the bottom of this table.*
+
+ 1104    Attribute &amp;quot;_&amp;quot; was already specified for element &amp;quot;_&amp;quot;.     
+
+ 1107    The ABC data is corrupt, attempt to read out of bounds.     See the note at the bottom of this table.*
+
+ 1108    The OP_newclass opcode was used with the incorrect base class.     See the note at the bottom of this table.*
+
+ 1109    Attempt to directly call unbound function _ from method _.     See the note at the bottom of this table.*
+
+ 1110    _ cannot extend _.     See the note at the bottom of this table.*
+
+ 1111    _ cannot implement _.     See the note at the bottom of this table.*
+
+ 1112    Argument count mismatch on class coercion. Expected 1, got _.     
+
+ 1113    OP_newactivation used in method without NEED_ACTIVATION flag.     See the note at the bottom of this table.*
+
+ 1114    OP_getglobalslot or OP_setglobalslot used with no global scope.     See the note at the bottom of this table.*
+
+ 1115    _ is not a constructor.     
+
+ 1116    second argument to Function.prototype.apply must be an array.  
+
+ 1117    Invalid XML name: _.     
+
+ 1118    Illegal cyclical loop between nodes.     
+
+ 1119    Delete operator is not supported with operand of type _.     
+
+ 1120    Cannot delete property _ on _.     
+
+ 1121    Method _ has a duplicate method body.     
+
+ 1122    Interface method _ has illegal method body.     
+
+ 1123    Filter operator not supported on type _.     
+
+ 1124    OP_hasnext2 requires object and index to be distinct registers.    
+
+ 1502    A script has executed for longer than the default timeout period of 15 seconds.     A script executed after the timeout period. (The default timeout period is 15 seconds.) After this error occurs, the script can continue to execute for 15 seconds more, after which the script terminates and throws run-time error number 1503 (A script failed to exit after 30 seconds and was terminated.)
+
+ 1503    A script failed to exit after 30 seconds and was terminated.     The script was still executing after 30 seconds. Flash Player first throws run-time error number 1502 (A script has executed for longer than the default timeout period of 15 seconds.) if the script executed more than 15 seconds, which is the default timeout period. This error occurs 15 seconds after Error 1502 occurs.
+
+ 1507    Argument _ cannot be null.     
+
+ 1508    The value specified for argument _ is invalid.     You are possibly trying to pass the wrong data type. For example, the code
+</code></pre>
+<p>public function doSomething(const:int):void {
+}
+this [&quot;doSomething&quot;] (&quot;str&quot;)</p>
+<p>generates an error at runtime because doSomething is cast as an int data type.</p>
+<pre><code> 1510    When the callback argument is a method of a class, the optional this argument must be null.     
+
+ 2000    No active security context.     
+
+ 2001    Too few arguments were specified; got _, _ expected.     
+
+ 2002    Operation attempted on invalid socket.     
+
+ 2003    Invalid socket port number specified.     The valid range is 0 to 65535. For more information, see Socket Connections in this language reference.
+
+ 2004    One of the parameters is invalid.     
+
+ 2005    Parameter _ is of the incorrect type. Should be type _.     
+
+ 2006    The supplied index is out of bounds.     
+
+ 2007    Parameter _ must be non-null.     
+
+ 2008    Parameter _ must be one of the accepted values.     
+
+ 2009    This method cannot be used on a text field with a style sheet.     
+
+ 2010    Local-with-filesystem SWF files are not permitted to use sockets.     
+
+ 2011    Socket connection failed to _:_.     There is a network problem. Possibly a DNS name is not resolving or a TCP socket is not connecting.
+
+ 2012    _ class cannot be instantiated.     
+
+ 2013    Feature can only be used in Flash Authoring.     
+
+ 2014    Feature is not available at this time.     The feature is not supported on this system.
+ 2015    Invalid BitmapData.     
+
+ 2017    Only trusted local files may cause the Flash Player to exit.     
+
+ 2018    System.exit is only available in the standalone Flash Player.     
+
+ 2019    Depth specified is invalid.     
+
+ 2020    MovieClips objects with different parents cannot be swapped.     
+
+ 2021    Object creation failed.     
+
+ 2022    Class _ must inherit from DisplayObject to link to a symbol.     
+
+ 2023    Class _ must inherit from Sprite to link to the root.     
+
+ 2024    An object cannot be added as a child of itself.     
+
+ 2025    The supplied DisplayObject must be a child of the caller.     
+
+ 2026    An error occurred navigating to the URL _.     Possibly the URL does not exist, the network connection has a problem, or the URL is outside the security sandbox.
+
+ 2027    Parameter _ must be a non-negative number; got _.     
+
+ 2028    Local-with-filesystem SWF file _ cannot access Internet URL _.     
+
+ 2029    This URLStream object does not have a stream opened.     
+
+ 2030    End of file was encountered.     
+
+ 2031    Socket Error.     A socket error occurred. For more information, see Socket Connections in this language reference.
+
+ 2032    Stream Error.     
+
+ 2033    Key Generation Failed.     
+
+ 2035    URL Not Found.     
+
+ 2036    Load Never Completed.     
+
+ 2037    Functions called in incorrect sequence, or earlier call was unsuccessful.    
+
+ 2038    File I/O Error.     
+
+ 2039    Invalid remote URL protocol. The remote URL protocol must be HTTP or HTTPS.     
+ 2041    Only one file browsing session may be performed at a time.     
+
+ 2044    Unhandled _:.     
+
+ 2047    Security sandbox violation: _: _ cannot access _.     
+
+ 2048    Security sandbox violation: _ cannot load data from _.     
+
+ 2049    Security sandbox violation: _ cannot upload data to _.     
+
+ 2051    Security sandbox violation: _ cannot evaluate scripting URLs within _ (allowScriptAccess is _). Attempted URL was _.     
+
+ 2052    Only String arguments are permitted for allowDomain and allowInsecureDomain.  
+
+ 2053    Security sandbox violation: _ cannot clear an interval timer set by _.     
+
+ 2054    The value of Security.exactSettings cannot be changed after it has been used.   
+
+ 2055    The print job could not be started.     
+
+ 2056    The print job could not be sent to the printer.     
+
+ 2057    The page could not be added to the print job.     The addPage() method is not used correctly. See the addPage() entry in this language reference.
+
+ 2058    There was an error decompressing the data.     
+
+ 2059    Security sandbox violation: _ cannot overwrite an ExternalInterface callback added by _.     
+
+ 2060    Security sandbox violation: ExternalInterface caller _ cannot access _.     
+
+ 2061    No ExternalInterface callback _ registered.     
+
+ 2062    Children of Event must override clone() {return new MyEventClass (...);}.    
+
+ 2063    Error attempting to execute IME command.     One of the IME services has failed.
+
+* If you are using the setConversionMode() or setEnabled() method, ActionScript 3.0 replaces these methods with the access property.
+* If you are using the doConversion() or setComposition() method, these methods are not supported for Macintosh OSX and Macintosh Classic.
+
+ 2065    The focus cannot be set for this target.     
+
+ 2066    The Timer delay specified is out of range.     
+
+ 2067    The ExternalInterface is not available in this container. ExternalInterface requires Internet Explorer ActiveX, Firefox, Mozilla 1.7.5 and greater, or other browsers that support NPRuntime.     
+
+ 2068    Invalid sound.     
+
+ 2069    The Loader class does not implement this method.     
+
+ 2070    Security sandbox violation: caller _ cannot access Stage owned by _.     
+
+ 2071    The Stage class does not implement this property or method.    
+
+ 2074    The stage is too small to fit the download ui.     
+
+ 2075    The downloaded file is invalid.     Possibly the file decompression failed, the file format is invalid, or the signature validation failed.
+
+ 2077    This filter operation cannot be performed with the specified input parameters.  
+
+ 2078    The name property of a Timeline-placed object cannot be modified.  
+
+ 2079    Classes derived from Bitmap can only be associated with defineBits characters (bitmaps).     
+
+ 2082    Connect failed because the object is already connected.     
+
+ 2083    Close failed because the object is not connected.     
+
+ 2084    The AMF encoding of the arguments cannot exceed 40K.     
+
+ 2085    Parameter _ must be non-empty string.     
+
+ 2086    A setting in the mms.cfg file prohibits this FileReference request.     
+
+ 2087    The FileReference.download() file name contains prohibited characters.     The filename cannot contain spaces or any of the following characters: /, &amp;bsol;&amp;bsol;, :, *, ?, &amp;quot;, &amp;lt;, &amp;gt;, |, %, or the ASCII control characters 0 through 31 (0x00 through 0X1F). Also, filenames longer than 256 characters may fail on some browsers or servers.
+
+ 2088    The Proxy class does not implement getProperty. It must be overridden by a subclass.     
+
+ 2089    The Proxy class does not implement setProperty. It must be overridden by a subclass.     
+
+ 2090    The Proxy class does not implement callProperty. It must be overridden by a subclass.     
+
+ 2091    The Proxy class does not implement hasProperty. It must be overridden by a subclass.     
+
+ 2092    The Proxy class does not implement deleteProperty. It must be overridden by a subclass.     
+ 2093    The Proxy class does not implement getDescendants. It must be overridden by a subclass.     
+
+ 2094    Event dispatch recursion overflow.     The recursion exceeds the maximum recursion depth. (The default maximum is 256.)
+
+ 2095    _ was unable to invoke callback _.     
+
+ 2096    The HTTP request header _ cannot be set via ActionScript.     You are adding a disallowed HTTP header to an HTTP request. The following headers are disallowed:
+
+* NULL header string
+* Accept-Ranges
+* Age
+* Allow
+* Allowed
+* Connection
+* Content-Length
+* Content-Location
+* Content-Range
+* ETag
+* Host
+* Last-Modified
+* Location
+* Max-Forwards
+* Proxy-Authenticate
+* Proxy-Authorization
+* Public
+* Range
+* Retry-After
+* Server
+* TE
+* Trailer
+* Transfer-Encoding
+* Upgrade
+* URI
+* Vary
+* Via
+* Warning
+* WWW-Authenticate
+
+ 2097    The FileFilter Array is not in the correct format.     There are two valid formats:
+
+* A description with Windows file extensions only
+* A description with Windows file extensions and Macintosh file formats.
+</code></pre>
+<p>The two file formats and not interchangeable; you must use one or the other. For more information, see the FileFilter class in this language reference.</p>
+<pre><code> 2098    The loading object is not a .swf file, you cannot request SWF properties from it.     
+
+ 2099    The loading object is not sufficiently loaded to provide this information.     
+
+ 2100    The ByteArray parameter in Loader.loadBytes() must have length greater than 0.     
+
+ 2101    The String passed to URLVariables.decode() must be a URL-encoded query string containing name/value pairs.     
+
+ 2102    The before XMLNode parameter must be a child of the caller.     
+
+ 2103    XML recursion failure: new child would create infinite loop.     Possibly you are trying to make objects child objects of each other. For example, the following code generates this error because a and b both try to add the other as a child object.
+</code></pre>
+<p>a.addChild(b);
+b.addChild(a);</p>
+<pre><code> 2105    The Proxy class does not implement nextNameIndex. It must be overridden by a subclass.     
+
+ 2106    The Proxy class does not implement nextName. It must be overridden by a subclass.     
+
+ 2107    The Proxy class does not implement nextValue. It must be overridden by a subclass.     
+
+ 2108    Scene _ was not found.     
+
+ 2109    Frame label _ not found in scene _.     
+
+ 2110    The value of Security.disableAVM1Loading cannot be set unless the caller can access the stage and is in an ActionScript 3.0 SWF file.     
+
+ 2111    Security.disableAVM1Loading is true so the current load of the ActionScript 1.0/2.0 SWF file has been blocked.     
+
+ 2112    Provided parameter LoaderContext.ApplicationDomain is from a disallowed domain.     
+
+ 2113    Provided parameter LoaderContext.SecurityDomain is from a disallowed domain.     
+
+ 2114    Parameter _ must be null.     
+
+ 2115    Parameter _ must be false.     
+
+ 2116    Parameter _ must be true.     
+
+ 2118    The LoaderInfo class does not implement this method.     
+
+ 2119    Security sandbox violation: caller _ cannot access LoaderInfo.applicationDomain owned by _.     
+
+ 2121    Security sandbox violation: _: _ cannot access _. This may be worked around by calling Security.allowDomain.     
+
+ 2122    Security sandbox violation: _: _ cannot access _. A policy file is required, but the checkPolicyFile flag was not set when this media was loaded.     
+
+ 2123    Security sandbox violation: _: _ cannot access _. No policy files granted access.     
+
+ 2124    Loaded file is an unknown type.     
+
+ 2125    Security sandbox violation: _ cannot use Runtime Shared Library _ because crossing the boundary between ActionScript 3.0 and ActionScript 1.0/2.0 objects is not allowed.     
+
+ 2126    NetConnection object must be connected.     
+
+ 2127    FileReference POST data cannot be type ByteArray.     
+
+ 2129    Connection to _ failed.     
+
+ 2130    Unable to flush SharedObject.     
+
+ 2131    Definition _ cannot be found.     
+
+ 2132    NetConnection.connect cannot be called from a netStatus event handler.     
+
+ 2133    Callback _ is not registered.     
+
+ 2134    Cannot create SharedObject.     
+
+ 2135    Security sandbox violation: _: _ cannot access _. RTMP content cannot be accessed using this API.     
+
+ 2136    The SWF file _ contains invalid data.     
+
+ 2137    Security sandbox violation: _ cannot navigate window _ within _ (allowScriptAccess is _). Attempted URL was _.     
+
+ 2138    Rich text XML could not be parsed.     
+
+ 2139    SharedObject could not connect.     
+
+ 2140    Security sandbox violation: _ cannot load _. Local-with-filesystem and local-with-networking SWF files cannot load each other.     
+
+ 2141    Only one PrintJob may be in use at a time.     
+
+ 2142    Security sandbox violation: local SWF files cannot use the LoaderContext.securityDomain property. _ was attempting to load _.     
+
+ 2143    AccessibilityImplementation.get_accRole() must be overridden from its default.     
+
+ 2144    AccessibilityImplementation.get_accState() must be overridden from its default.     
+
+ 2145    Cumulative length of requestHeaders must be less than 8192 characters.     
+
+ 2146    Security sandbox violation: _ cannot call _ because the HTML/container parameter allowNetworking has the value _.     
+
+ 2147    Forbidden protocol in URL _.     
+
+ 2148    SWF file _ cannot access local resource _. Only local-with-filesystem and trusted local SWF files may access local resources.     
+
+ 2149    Security sandbox violation: _ cannot make fscommand calls to _ (allowScriptAccess is _).     
+</code></pre>
+<ul>
+<li>Note: This error indicates that the ActionScript in the SWF is invalid. If you believe that the file has not been corrupted, please report the problem to Adobe.</li>
+</ul>
+<p>[http://livedocs.adobe.com/flex/2/langref/runtimeErrors.html]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

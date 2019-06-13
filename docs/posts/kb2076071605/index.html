@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DTS: Fixed-Role Permissions for Logins to Change Data in SQL Server 2000; Data Transformation Services; db_ddladmin - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>This is a proposed set of &quot;minimum&quot; fixed-role permissions required to run a DTS package to change data on the target database defined in the package. The login should be a member of the following fixed roles on the target database server:</p>
+<pre><code>db_ddladmin
+db_datareader
+db_datawriter
+</code></pre>
+<p>For the source database server these roles can be used to set read-only permissions:</p>
+<pre><code>db_datareader
+db_denydatawriter
+</code></pre>
+<p>The need for db_ddladmin permissions should not be underestimated. Even when the DTS package does not explicitly CREATE or DROP database objects, SQL Server still seems to need this level of permissions to run the package at the target database without errors.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

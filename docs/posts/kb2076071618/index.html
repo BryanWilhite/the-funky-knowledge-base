@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MCAD/MCSD Notes: Chapter 2, Lesson 1; Creating an ASP.NET Web Application Project - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Lesson 1: Creating an ASP.NET Web Application Project</p>
+<p>The purpose of this lesson is accurately expressed in its title. Additionally it introduces the Microsoft concept of the &quot;Web Application&quot; and its relationship to IIS, namely its virtual folder.</p>
+<ul>
+<li>
+<p>&quot;Web applications run on a server and are distributed to clients through the Internet.&quot;</p>
+</li>
+<li>
+<p>&quot;It is important to realize that Web applications can exist only in a location that has been published by IIS as a virtual folder. A virtual folder is a shared resource identified by an alias that represents a physical location on a server.&quot;</p>
+</li>
+</ul>
+<p>The virtual folder access method covered in this lesson is the FrontPage Extensions method. This is the most flexible method as the other &quot;File share&quot; method is associated with NTFS security issues. FrontPage extensions work on virtual folders located on the desktop, the intranet and the Internet. For more details, see &quot;Choosing the Best Access Method&quot; here:</p>
+<pre><code>http://msdn.microsoft.com/library/en-us/vbcon/html/vbconwebaccessmethod.asp
+</code></pre>
+<p>Many of us have discovered that FrontPage Extensions suck wild boar ass. For us strange Visual Studio .NET folk, we can choose Tools &gt; Options &gt; Projects &gt; Web Settings &gt; Web Server Connection &gt; Preferred access method: File share. The next version of Visual Studio will offer even more methods including an option not to use IIS at all!</p>
+<ul>
+<li>&quot;When Visual Studio .NET creates a web application, it displays a new Web form in the center window... To add code to respond to events on the Web form, double-click the control... Visual Studio automatically creates the event procedures for an object's default event... Creating this connection between an object's event and the event procedure that responds to the event is called wiring the event.&quot;</li>
+</ul>
+<p>In C# events, are wired &quot;manually&quot; by appending a new event handler to the event. In VB.NET, the Handles clause &quot;automatically&quot; wires up the event as it is written by the IDE when the our control is double-clicked.</p>
+<ul>
+<li>&quot;...Web Forms applications are similar to Windows Forms applications. However, Web Forms applications have the following significant differences...&quot;</li>
+</ul>
+<p>These diffrences are summarized under the headings: Tools (actually controls), User Interface (or browser dependence), Lifetime (introducing the issue of state) and Execution (but &quot;...the executable portions of a Web application live on the Web server&quot; ignores client-side scripting in the web browser).</p>
+<ul>
+<li>&quot;The Web form is only one of 11 files Visual Studio .NET generates when it creates a new Web forms project.&quot;</li>
+</ul>
+<p>The lesson then enumerates these files and then the file types.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

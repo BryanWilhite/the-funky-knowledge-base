@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>What the New StartUpPosition Property Replaces; Centering a Form - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>'The following has been replaced with the StartUpPosition
+'property where StartUpPosition = vbCenter can
+'be set at design time or runtime:</p>
+<pre><code>Public Sub basFrmCenter(ByRef Frm As Form)
+
+    With Frm
+        .Move (Screen.Width - .Width) / 2, _
+            (Screen.Height - .Height) / 2
+    End With
+
+End Sub
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

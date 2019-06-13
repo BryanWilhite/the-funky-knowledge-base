@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>C# LINQ to XML: “Document-Centric Transforms using LINQ to XML”; Eric White - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>When thought of in a certain way, XML documents come in two flavors – data-centric and document-centric.  Further, there are two types of document-centric documents.  This post presents my thoughts about approaches to various types of document-centric transformations – data-centric to document-centric, document-centric to data-centric, and document-centric to document-centric.  Then, I’ll tie my thoughts back to Open XML transformations.</p>
+<p>Data-centric to data-centric is, of course, the scenario that LINQ to XML absolutely shines at.  There’s been a lot written about this.  This post won’t focus on these types of transformations, but instead will give my thoughts on the wrinkle that document-centric XML documents give to transformations.</p>
+<p>First, I’ll define what I mean by data-centric and document-centric XML documents.
+Data-Centric XML Document</p>
+<p>A data-centric XML document contains regular repeating elements.  Child elements of a given element might all have the same tag name, or they might not.  Typically, child element order doesn’t matter.  There are lots of examples of this – many types of transforms of a relational database to XML results in data-centric XML.  RSS feeds are another.</p>
+<p>Here’s a data-centric XML document:</p>
+<p>&lt;Customers&gt;</p>
+<p>&lt;Customer&gt;</p>
+<pre><code>&amp;lt;Name&amp;gt;Bob&amp;lt;/Name&amp;gt;
+
+&amp;lt;Age&amp;gt;45&amp;lt;/Age&amp;gt;
+</code></pre>
+<p>&lt;/Customer&gt;</p>
+<p>&lt;Customer&gt;</p>
+<pre><code>&amp;lt;Name&amp;gt;Jill&amp;lt;/Name&amp;gt;
+
+&amp;lt;Age&amp;gt;37&amp;lt;/Age&amp;gt;
+</code></pre>
+<p>&lt;/Customer&gt;</p>
+<p>&lt;/Customers&gt;</p>
+<p>Document-Centric XML Document</p>
+<p>Document-centric XML documents have the characteristic that the child elements of a given element are much less bounded – you might have many child elements of a given name, or you might have none.  You might have ‘recursion’ in the hierarchy – element A is a child of element B, which is itself a child of a different element A.  A number of examples: Open XML word processing markup, XHTML, and XPS.</p>
+<p>I further divide document-centric XML documents into two camps – those that contained mixed content, and those that don’t.  Mixed content is a variety of XML where significant text nodes and elements are interspersed.  Insignificant text nodes are the white space that provides indenting when formatting XML.  Open XML word processing markup doesn’t contain mixed content, whereas XHTML does:</p>
+<p>An Open XML paragraph that contains some bold text:</p>
+<p>&lt;w:p&gt;</p>
+<p>&lt;w:r&gt;</p>
+<pre><code>&amp;lt;w:t&amp;gt;abc&amp;lt;/w:t&amp;gt;
+</code></pre>
+<p>&lt;/w:r&gt;</p>
+<p>&lt;w:r&gt;</p>
+<pre><code>&amp;lt;w:rPr&amp;gt;
+
+  &amp;lt;w:b/&amp;gt;
+
+&amp;lt;/w:rPr&amp;gt;
+
+&amp;lt;w:t&amp;gt;def&amp;lt;/w:t&amp;gt;
+</code></pre>
+<p>&lt;/w:r&gt;</p>
+<p>&lt;w:r&gt;</p>
+<pre><code>&amp;lt;w:t&amp;gt;ghi&amp;lt;/w:t&amp;gt;
+</code></pre>
+<p>&lt;/w:r&gt;</p>
+<p>&lt;/w:p&gt;</p>
+<p>An XHTML document that contains significant text nodes interspersed with element start and end tags:</p>
+<p>&lt;html&gt;</p>
+<p>&lt;head&gt;&lt;/head&gt;</p>
+<p>&lt;body&gt;</p>
+<pre><code>&amp;lt;p&amp;gt;abc&amp;lt;b&amp;gt;def&amp;lt;/b&amp;gt;ghi&amp;lt;/p&amp;gt;
+</code></pre>
+<p>&lt;/body&gt;</p>
+<p>&lt;/html&gt;</p>
+<p>Types of Transformations</p>
+<p>If we’re going to divide the XML world into the categories of data-centric and document-centric, it follows that there are four types of transformations.
+Data-Centric =&gt; Data Centric</p>
+<p>There is a lot to say (and has been said) about these types of transformations.  In the LINQ to XML documentation, I included a tutorial on pure functional transformations of XML.  I also have a tutorial on my blog on composing queries in the pure functional style.
+Data-Centric =&gt; Document Centric</p>
+<p>These transforms are report writers for databases – take some subset of records, transform to XML, then transform that XML into another form – XPS, for instance.  The transform may be based on another source document, the report definition.  These types of transforms are straightforward to write in the pure functional style.  Based on the simplicity or complexity of the report definition, this type of transform could be a few hundred lines of code or many thousands.</p>
+<p>There are also many good examples of transforming data-centric XML to Open XML markup.  We may want to transform a collection of records into a table in a word processing document, or into rows and cells in a worksheet.
+Document-Centric =&gt; Data Centric</p>
+<p>We write this type of transform when querying an Open XML document for some aspect of the markup.  If we want to retrieve a collection of comments from a document, or if we want a collection of content controls, then we write a query that iterates over certain descendant elements, projecting a regular data structure – perhaps a collection of strings or anonymous types.  The query that I develop in my functional programming tutorial is a document-centric =&gt; data-centric transform.</p>
+<p>Another example is finding all hyper-links in an XHTML document.  It is easy to write a LINQ query to retrieve a collection of links and transform the collection to a regular repeating data structure.
+Document-Centric =&gt; Document-Centric</p>
+<p>This is where it starts to get a little more involved.  There are a variety of these types of transformations.</p>
+<p>Common-vocabulary document-centric transform: Sometimes we want to transform a XML tree to a new tree in the same vocabulary.  For example, we can transform an Open XML document into a new Open XML document with modified contents - comments are removed or revisions accepted.  Another example - replace content controls with other markup based on the contents of the content controls.</p>
+<p>Different-vocabulary document-centric transform: Sometimes we want to transform from one document-centric vocabulary to another one – Open XML =&gt; XHTML, or XHTML =&gt; Open XML.  With this type of transform, the ease with which we write the transform is directly related to whether the two vocabularies have a similar structure.  For instance, there is much that is parallel between Open XML and XHTML.  There is a body element.  The body contains paragraphs and tables.  Tables contain rows, which contain cells.  Tables can contain other tables in cells.</p>
+<p>XSLT works well for these types of transformations – you write a pattern to match a node, and then supply the transformation for just that node.  In the case of XSLT, you can indicate to the transform engine to ‘continue processing rules for child elements’, so that you can specify the transforms for those child elements in their own rules.  If you are aware of Flat OPC, it is pretty easy to process Open XML documents using XSLT.</p>
+<p>Some time ago, I write a post on an approach for using LINQ to XML annotations for doing this type of transform.  In that post, I was proving out whether you could write document-centric transforms using LINQ to XML in a style similar to XSLT.  It’s easy to read the code to specify the transform if you read LINQ code easily, but there are obvious problems with the approach, not the least of which is that annotating a tree in that fashion might have performance issues if you are working with too large of a tree.</p>
+<p>Even though Open XML and XHTML have similar structures, there are places where the structures are not parallel, and in those cases, you still must jump through hoops.  In XSLT, this often means generating intermediate trees to use in subsequent transforms.  I’ve seen XSLT transforms where the first thing the developer did was to transform the tree to a new tree with new attributes on elements – the purpose of the attributes was to aid further transforms.  If using the LINQ to XML approach that uses annotations, you must deal with the same issues – parts of the transformation are expressed as nice mappings between a pattern that matches nodes and the subsequent transform of those nodes, and parts of the transformation deals with abstractions that often must be explained in comments.  It’s just more complicated to do these types of transformations.
+Open XML Document-Centric Transforms</p>
+<p>There are lots of examples of interesting common-vocabulary document-centric Open XML transforms.  Removing comments and accepting revisions are two, but there are many others.</p>
+<p>I've needed to write a number of these over the last couple of years.  Because I know the size of documents that I potentially need to process (&gt;2 million nodes), I rejected the annotations approach for simple transforms of Open XML documents.  For performance reasons, it just wouldn’t fly.</p>
+<p>I also rejected using XSLT – I really don’t want to step out into another language.  XSLT is an attractive approach if you already have an XSLT transform written, or if you are particularly fluent in XSLT.  You must deal with converting the OPC (Zip) file to the Flat OPC format, but this is easy.  But when I’m writing little examples that show how to do something interesting in Open XML, XSLT isn’t appropriate.</p>
+<p>So, for instance, for the code to accept tracked revisions, I opted for the tree-modification approach.  This isn’t idea from a functional programming purist’s point of view, but it performs well in the real world.  You have to be careful when coding, but no big deal.
+Recursive Approach to Transforms</p>
+<p>Lately, I’ve been writing more of these types of transforms in a recursive style.  The gist of this technique is that you write a recursive function to clone a tree, and while cloning, you trim nodes, or transform nodes, or whatever.</p>
+<p>This approach has good performance, and it is appealing in that when you are writing a more complicated recursive transform, you can write it in terms of other simpler recursive transforms.  The code should be written with no side effects, and if so, transforms are easy to write and debug.</p>
+<p>This approach has a draw-back.  It’s somewhat harder to intuitively see the mapping between the pattern that matches a node, and the transform for that pattern.  However, we don’t lose this entirely.  For example, we may want to write a recursive transform of an XHTML document to Open XML.  Here is the XHTML document:</p>
+<p>&lt;html&gt;</p>
+<p>&lt;head&gt;&lt;/head&gt;</p>
+<p>&lt;body&gt;</p>
+<pre><code>&amp;lt;p&amp;gt;abc&amp;lt;b&amp;gt;def&amp;lt;/b&amp;gt;ghi&amp;lt;/p&amp;gt;
+</code></pre>
+<p>&lt;/body&gt;</p>
+<p>&lt;/html&gt;</p>
+<p>We want to transform it to this document:</p>
+<p>&lt;w:document xmlns:w=&quot;http://schemas.openxmlformats.org/wordprocessingml/2006/main&quot; &gt;</p>
+<p>&lt;w:body&gt;</p>
+<pre><code>&amp;lt;w:p&amp;gt;
+
+  &amp;lt;w:r&amp;gt;
+
+    &amp;lt;w:t&amp;gt;abc&amp;lt;/w:t&amp;gt;
+
+  &amp;lt;/w:r&amp;gt;
+
+  &amp;lt;w:r&amp;gt;
+
+    &amp;lt;w:rPr&amp;gt;
+
+      &amp;lt;w:b/&amp;gt;
+
+    &amp;lt;/w:rPr&amp;gt;
+
+    &amp;lt;w:t&amp;gt;def&amp;lt;/w:t&amp;gt;
+
+  &amp;lt;/w:r&amp;gt;
+
+  &amp;lt;w:r&amp;gt;
+
+    &amp;lt;w:t&amp;gt;ghi&amp;lt;/w:t&amp;gt;
+
+  &amp;lt;/w:r&amp;gt;
+
+&amp;lt;/w:p&amp;gt;
+</code></pre>
+<p>&lt;/w:body&gt;</p>
+<p>&lt;/w:document&gt;</p>
+<p>We can write the recursive transform like this:</p>
+<p>using System;</p>
+<p>using System.Linq;</p>
+<p>using System.Xml.Linq;</p>
+<p>class Program</p>
+<p>{</p>
+<pre><code>static object XHtmlToOpenXml(XNode node)
+
+{
+
+    XNamespace w = &amp;quot;http://schemas.openxmlformats.org/wordprocessingml/2006/main&amp;quot;;
+
+
+
+    XElement element = node as XElement;
+
+    if (element != null)
+
+    {
+
+        if (element.Name == &amp;quot;html&amp;quot;)
+
+            return new XElement(w + &amp;quot;document&amp;quot;,
+
+                new XAttribute(XNamespace.Xmlns + &amp;quot;w&amp;quot;, w.NamespaceName),
+
+                new XElement(w + &amp;quot;head&amp;quot;, &amp;quot;&amp;quot;),
+
+                element.Elements().Select(e =&amp;gt; XHtmlToOpenXml(e)));
+
+
+
+        if (element.Name == &amp;quot;body&amp;quot;)
+
+            return new XElement(w + &amp;quot;body&amp;quot;,
+
+                element.Elements().Select(e =&amp;gt; XHtmlToOpenXml(e)));
+
+
+
+        if (element.Name == &amp;quot;p&amp;quot;)
+
+            return new XElement(w + &amp;quot;p&amp;quot;,
+
+                element.Nodes().Select(n =&amp;gt; XHtmlToOpenXml(n)));
+
+
+
+        if (element.Name == &amp;quot;b&amp;quot;)
+
+            return new XElement(w + &amp;quot;r&amp;quot;,
+
+                new XElement(w + &amp;quot;rPr&amp;quot;,
+
+                    new XElement(w + &amp;quot;b&amp;quot;)),
+
+                new XElement(w + &amp;quot;t&amp;quot;,
+
+                    element.Value));
+
+    }
+
+
+
+    XText t = node as XText;
+
+    if (t != null)
+
+        return new XElement(w + &amp;quot;r&amp;quot;,
+
+            new XElement(w + &amp;quot;t&amp;quot;, t.Value));
+
+
+
+    // ignore all other nodes
+
+    return null;
+
+}
+
+
+
+static void Main(string[] args)
+
+{
+
+    XElement root = XElement.Parse(
+
+        @&amp;quot;&amp;lt;html&amp;gt;
+
+            &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt;
+
+            &amp;lt;body&amp;gt;
+
+              &amp;lt;p&amp;gt;abc&amp;lt;b&amp;gt;def&amp;lt;/b&amp;gt;ghi&amp;lt;/p&amp;gt;
+
+            &amp;lt;/body&amp;gt;
+
+          &amp;lt;/html&amp;gt;&amp;quot;);
+
+    Console.WriteLine(XHtmlToOpenXml(root));
+
+}
+</code></pre>
+<p>}</p>
+<p>In the above transform, the code highlighted in yellow serves the same purpose as the XPath pattern to match in an XSLT template.  The code highlighted in green is the “sequence constructor”.  The expressions element.Nodes().Select(n =&gt; XHtmlToOpenXml(n)) and element.Elements().Select(e =&gt; XHtmlToOpenXml(e)) serves the same purpose as the xsl:apply-templates element in an XSLT template.</p>
+<p>Key to understanding this transform is that selectively, we can cause every node/element to be passed to this method.  But we can also trim descendant nodes if we like, sending only a subset back through this method.</p>
+<p>I initially started talking about this approach in a post that described manually cloning XML trees.  The code is short and easy to understand.</p>
+<p>I used this approach for code to normalize an XML tree.  It performs well.  Of the approaches that I could have taken for coding the sample, it was by far the easiest.</p>
+<p>I also used this approach for the code to split runs in paragraphs.  Again, it was the easiest way for me to write the code.</p>
+<p>For more information about writing these types of transformations, see Recursive Approach to Pure Functional Transformations of XML.</p>
+<p>This certainly isn’t the last word.  This is what has been on my mind lately, so wanted to blog it before I forgot about it.</p>
+<p>I’m fascinated by XML document transformation, primarily because of the power it gives me.  The ability to spin out an Open XML document in a couple hundred lines of code opens up a lot of interesting scenarios.  Generating documents server-side in SharePoint or a web application allows us to use documents to make it easier for people to communicate.  Document-centric transforms are key in these scenarios.</p>
+<p>[http://blogs.msdn.com/ericwhite/archive/2009/07/09/
+document-centric-transforms-using-linq-to-xml.aspx]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

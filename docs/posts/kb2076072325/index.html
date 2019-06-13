@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>.NET 2.x: Something Obvious about Nullables - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>[TestMethod]
+public void TinyTest()
+{
+var i = new Int32?();
+i = null;
+Assert.IsFalse(i.HasValue);
+}
+/*
+This test will pass because i.HasValue will <em>not</em> throw
+a null reference exception; a “nullable” has the ability
+to be null and <em>not</em> throw such exceptions.
+*/</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

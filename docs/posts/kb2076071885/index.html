@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PowerShell and ADSI: Searching the Registry to Find All Available Providers on Windows with PSDrive - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>PS C:\\&gt; Set-Location HKLM:\\SOFTWARE\\Microsoft\\ADs\\Providers</p>
+<p>PS HKLM:\\SOFTWARE\\Microsoft\\ADs\\Providers&gt; Get-ChildItem | format-list</p>
+<p>Hive: Microsoft.PowerShell.Core\\Registry::HKEY_LOCAL_MACHINE\\SOFTWARE\\Micros
+oft\\ADs\\Providers</p>
+<p>Name        : IIS
+ValueCount  : 1
+Property    : {(default)}
+SubKeyCount : 1</p>
+<p>Name        : LDAP
+ValueCount  : 2
+Property    : {(default), Aliases}
+SubKeyCount : 2</p>
+<p>Name        : NDS
+ValueCount  : 1
+Property    : {(default)}
+SubKeyCount : 0</p>
+<p>Name        : NWCOMPAT
+ValueCount  : 1
+Property    : {(default)}
+SubKeyCount : 0</p>
+<p>Name        : WinNT
+ValueCount  : 1
+Property    : {(default)}
+SubKeyCount : 1</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

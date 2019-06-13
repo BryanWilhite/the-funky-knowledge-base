@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>C# Code in Cold Storage: A &quot;Strongly-Typed&quot; DataTable; - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>/// &lt;summary&gt;
+///
+/// &lt;/summary&gt;
+public class ListControlTable : DataTable,System.Collections.IEnumerable
+{
+/// &lt;summary&gt;
+///
+/// &lt;/summary&gt;
+public ListControlTable():base(&quot;ListControlTable&quot;)
+{
+this.InitClass();
+}</p>
+<pre><code>    /// &amp;lt;summary&amp;gt;
+    /// 
+    /// &amp;lt;/summary&amp;gt;
+    public DataColumn DisplayColumn
+    {
+        get{ return this.Columns[&amp;quot;displayColumn&amp;quot;]; }
+    }
+
+    /// &amp;lt;summary&amp;gt;
+    /// 
+    /// &amp;lt;/summary&amp;gt;
+    public DataColumn ValueColumn
+    {
+        get{ return this.Columns[&amp;quot;valueColumn&amp;quot;]; }
+    }
+
+    /// &amp;lt;summary&amp;gt;
+    /// 
+    /// &amp;lt;/summary&amp;gt;
+    /// &amp;lt;returns&amp;gt;&amp;lt;/returns&amp;gt;
+    public System.Collections.IEnumerator GetEnumerator() 
+    {
+        return this.Rows.GetEnumerator();
+    }
+
+    /// &amp;lt;summary&amp;gt;
+    /// 
+    /// &amp;lt;/summary&amp;gt;
+    /// &amp;lt;returns&amp;gt;&amp;lt;/returns&amp;gt;
+    public override DataTable Clone() 
+    {
+        ListControlTable cln = (ListControlTable)base.Clone();
+        return cln;
+    }
+
+    /// &amp;lt;summary&amp;gt;
+    /// 
+    /// &amp;lt;/summary&amp;gt;
+    /// &amp;lt;param name=&amp;quot;SourceTable&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;
+    /// &amp;lt;param name=&amp;quot;ValueColumn&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;
+    /// &amp;lt;param name=&amp;quot;DisplayColumn&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;
+    /// &amp;lt;param name=&amp;quot;Refill&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;
+    /// &amp;lt;param name=&amp;quot;InsertNull&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;
+    /// &amp;lt;param name=&amp;quot;NullText&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;
+    public void Fill(DataTable SourceTable,DataColumn ValueColumn,
+        DataColumn DisplayColumn,bool Refill,bool InsertNull,string NullText)
+    {
+        foreach(DataRow row in SourceTable.Rows)
+        {
+            object[] rowArray = new object[3];
+            rowArray[0] = (row.ItemArray[ValueColumn.Ordinal].Equals(DBNull.Value))
+                ? 0 : row.ItemArray[ValueColumn.Ordinal];
+            rowArray[1] = row.ItemArray[ValueColumn.Ordinal];
+            rowArray[2] = row.ItemArray[DisplayColumn.Ordinal];
+            if(!Refill) this.Rows.Add(rowArray);
+            else
+            {
+                this.BeginLoadData();
+                this.LoadDataRow(rowArray,true);
+                this.EndLoadData();
+            }
+        }
+
+        if(InsertNull)
+        {
+            DataRow row = this.NewRow();
+            this.Rows.Add(new object[] {0,DBNull.Value,NullText});
+        }
+
+        this.DefaultView.Sort = &amp;quot;displayColumn&amp;quot;;
+    }
+
+    /// &amp;lt;summary&amp;gt;
+    /// 
+    /// &amp;lt;/summary&amp;gt;
+    /// &amp;lt;returns&amp;gt;&amp;lt;/returns&amp;gt;
+    protected override DataTable CreateInstance() 
+    {
+        return new ListControlTable();
+    }
+
+    private void InitClass()
+    {
+        this.Columns.Add(new DataColumn(&amp;quot;valueColumnKey&amp;quot;,typeof(int),
+            null,System.Data.MappingType.Element));
+        this.Columns.Add(new DataColumn(&amp;quot;valueColumn&amp;quot;,typeof(int),
+            null,System.Data.MappingType.Element));
+        this.Columns.Add(new DataColumn(&amp;quot;displayColumn&amp;quot;,typeof(string),
+            null,System.Data.MappingType.Element));
+
+        //This is needed for the DataTable.LoadDataRow() method.
+        this.PrimaryKey = new DataColumn[] {this.Columns[&amp;quot;valueColumnKey&amp;quot;]};
+    }
+}
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

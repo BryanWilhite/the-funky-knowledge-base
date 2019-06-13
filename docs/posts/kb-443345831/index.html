@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book: Access 97 Power Programming; Chapter 3 Highlights (1/3): &quot;Working with Application Collections And Data Access Objects&quot; - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Declaring a Collection Variable</p>
+<p>A user-defined collection is a new instance of a collection object. Its &quot;instancing&quot; requires the New keyword. The abbreviated way of declaring a new collection object has the form:</p>
+<pre><code>Dim &amp;lt;my collection object variable&amp;gt; as New Collection
+</code></pre>
+<p>e.g.</p>
+<pre><code>Dim colExample as New Collection
+</code></pre>
+<p>This form is useful at procedure level in the code module. However the non-abbreviated way of delcaring any new object uses two statements instead of one. The first statement is in the declarations section of the module:</p>
+<pre><code>Public p_colExample as Collection
+</code></pre>
+<p>This object variable is now avaible for use and re-use throughout the application. At the procedure level, we can Set this variable equal to a New Collection:</p>
+<pre><code>Set p_colExample = New Collection
+</code></pre>
+<p>Although this appears redundant, it is now possible to quickly destroy the contents of a collection with the code:</p>
+<p>Set p_colExample = Nothing</p>
+<p>Now this collection object variable can be reused in other modules.</p>
+<p>Index Numbers in Collections</p>
+<p>Intrinsic Access collections are 0-based while user-defined collection indices are 1-based.</p>
+<p>For a detailed discussion of how collections differ from arrays, please see &quot;Creating Custom Collections&quot; (pg. 67) and &quot;Comparing Custom Collections to Arrays&quot; (pg. 70).</p>
+<p>The Access Object Model</p>
+<p>The Access Object Model is a containment hierarchy that begins with the Application object. Please see &quot;Accessing the Access Object Model&quot; (pg. 73). Here are some noted methods of the Application object:</p>
+<p>Application. Echo
+Application.GetOption
+Application.SetOption</p>
+<p>The Screen Object</p>
+<p>The Screen object is of the Application object. Here are some noted properties of the Screen object:</p>
+<p>Screen. ActiveForm
+Screen.ActiveReport
+Screen.ActiveControl
+Screen.PreviousControl</p>
+<p>Note that there is no need to specify the Application keyword in code within Access.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LAMP and WordPress.org: “Redirecting WordPress Feeds to FeedBurner Feeds”; smashingmagazine.com - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<h1>temp redirect wordpress content feeds to feedburner</h1>
+<p>&lt;IfModule mod_rewrite.c&gt;
+RewriteEngine on
+RewriteCond %{HTTP_USER_AGENT} !FeedBurner    [NC]
+RewriteCond %{HTTP_USER_AGENT} !FeedValidator [NC]
+RewriteRule ^feed/?([_0-9a-z-]+)?/?$ http://feeds.feedburner.com/wprecipes [R=302,NC,L]
+&lt;/IfModule&gt;</p>
+<h1>[http://www.smashingmagazine.com/2008/</h1>
+<h1>12/02/10-useful-rss-hacks-for-wordpress/]</h1>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

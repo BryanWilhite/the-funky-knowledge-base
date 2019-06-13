@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VB Code: Sorting ListBox Items with a Two-Button Control Array - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Private Sub cmdFieldOrder_Click(Index As Integer)
+'
+'This sub responds to the click event of
+'a two-button control array called cmdFieldOrder.
+'It manipulates the items in the List Box lstFields.
+'
+Dim strList As String
+Dim intListIndex As Integer</p>
+<pre><code>Select Case Index
+    Case 0
+        With Me.lstFields
+            If .ListIndex &amp;gt; 0 Then
+                strList = .List(.ListIndex)
+                intListIndex = .ListIndex
+                Call .RemoveItem(.ListIndex)
+                Call .AddItem(strList, intListIndex - 1)
+            End If
+        End With
+    Case 1
+        With Me.lstFields
+            If 0 &amp;lt;= .ListIndex _
+                And .ListIndex &amp;lt; .ListCount - 1 Then
+                strList = .List(.ListIndex)
+                intListIndex = .ListIndex
+                Call .RemoveItem(.ListIndex)
+                Call .AddItem(strList, intListIndex + 1)
+                .ListIndex = intListIndex + 1
+            End If
+        End With
+End Select
+</code></pre>
+<p>End Sub</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

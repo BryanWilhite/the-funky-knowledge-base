@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VBScript and ASP Code: Flippant Remarks about the Response.Buffer Property, the Response.Redirect() Method and Windows 2000 - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>You know your code is running on an older, Windows NT, server when you see this error:</p>
+<pre><code>Response object error 'ASP 0156 : 80004005 
+Header Error...
+The HTTP headers are already written to the client browser.
+Any HTTP header modifications must be made before writing page content.
+</code></pre>
+<p>The implication is that your ASP page is rendering HTML before it encounters the Response.Redirect() method. Microsoft explains in detail why this is problematic in KB Article Q159402 (&quot;HOW TO: Use Response Redirect in a Server Script&quot;).</p>
+<p>This problem is usually not encountered in Windows 2000 (and, I assume, versions above) as the Buffer property of the Response object is set to true in Windows 2000. To be very safe this form is suggested:</p>
+<pre><code>&amp;lt;%
+    Response.Buffer = True
+    ...
+%&amp;gt;
+    &amp;lt;h1&amp;gt;HTML Rendering Here&amp;lt;/h1&amp;gt;
+&amp;lt;%
+    Response.Clear
+    Response.Redirect &amp;quot;someother.asp&amp;quot;
+%&amp;gt;
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

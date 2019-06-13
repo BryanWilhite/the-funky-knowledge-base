@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Java Fundamentals: “There is no such thing as a byte or short literal.”; char and String escape sequences; mindprod.com - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>There is no such thing as a byte or short literal. You would have to write it with a cast e.g. (byte)0xff or (short)-99.</p>
+<p>…</p>
+<p>Escape sequences</p>
+<p>inside char and String literals include:
+' ' space
+'\\u003f' Unicode hex, (must be exactly 4 digits to give a 16-bit Unicode number ). \\u2007 is Figure Space, a space as wide as a digit, to help in aligning numbers.
+'\\n' newline, ctrl-J (10, x0A)
+'\\b' backspace, ctrl-H (8, 0x08)
+'\\f' formfeed, ctrl-L (12, 0x0C)
+'\\r' carriage return, ctrl-M (13, 0x0D)
+'\\t' tab, ctrl-I (9, 0x09)
+'\\\\' backslash,
+'\\'' single quote (optional inside &quot; &quot;),
+'\\&quot;' double quote (optional inside ' '),
+'\\377' octal (must be exactly 3 digits. You can get away with fewer, but then you create an ambiguity if the character following the literal just happens to be in the range 0..7.). This lets you get at only the 8-bit characters in the range 0..377 octal or 0..255 decimal or 0..255 decimal, which still gives you 16-bit Unicode.
+\\007 bel, ctrl-G (7, 0x07)
+\\010 backspace, ctrl-H (8, 0x08)
+\\013 vt vertical tab, ctrl-K (11, 0x0B)
+\\032 sub (used in DOS/CPM as eof), ctrl-Z (26, 0x1A)
+\\033 esc ctrl-^ (27, 0x1B)</p>
+<p>[http://mindprod.com/jgloss/literal.html]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

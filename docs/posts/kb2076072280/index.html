@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>“Mounting Windows Shares In Linux” - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>I want to access the music collection on our big Windows XP-running game-playing desktop PC from my recycled Linux laptop down in the basement. I found a lot of information on connecting to a Linux file server from a Windows client, but not much on going the other way round. A bit here, and bit there, and this is what I came up with.</p>
+<p>First, edit your /etc/hosts file and give the Windows machine a name:</p>
+<p>192.168.1.2   pootie</p>
+<p>Next, install the samba and smbfs packages using your method of choice.</p>
+<p>Create a directory where the share will appear on your local filesystem.</p>
+<p>$ sudo mkdir /mnt/music</p>
+<p>Edit /etc/fstab and add a line for the mount. Here “pootie” is the name of the machine and “music” is the name of the share.</p>
+<p>//pootie/music  /mnt/music  cifs exec,credentials=/etc/cifspw 0 0</p>
+<p>Create a password file /etc/cifspw with the login credentials for your Windows account.</p>
+<p>username=Jason
+password=ImNotGonnaTellYouThat</p>
+<p>And secure the file:</p>
+<p>$ sudo chmod 600 /etc/cifspw</p>
+<p>Giddyup.</p>
+<p>$ sudo mount -a</p>
+<p>[http://industriousone.com/mounting-windows-shares-linux]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

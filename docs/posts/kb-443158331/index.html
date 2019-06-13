@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML: Setting the Width of SELECT Widgets for both Netscape and Microsoft 4.x Browsers - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Netscape 4.x Browsers do not apply width values to SELECT tags via CSS. The proprietary WIDTH attribute must be used in the SELECT tag. Netscape 4.x and Microsoft 4.x browsers respond appropriately to the inline STYLE attribute shown below:</p>
+<pre><code>&amp;lt;SELECT
+    NAME=test
+    SIZE=1
+    STYLE=&amp;quot;width: 250px;&amp;quot;
+    WIDTH=250&amp;gt;
+
+&amp;lt;OPTION VALUE=&amp;quot;1&amp;quot;&amp;gt;This is 1&amp;lt;/OPTION&amp;gt;
+&amp;lt;OPTION VALUE=&amp;quot;2&amp;quot;&amp;gt;This is two&amp;lt;/OPTION&amp;gt;
+&amp;lt;OPTION VALUE=&amp;quot;3&amp;quot;&amp;gt;This is 3&amp;lt;/OPTION&amp;gt;
+
+&amp;lt;/SELECT&amp;gt;
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

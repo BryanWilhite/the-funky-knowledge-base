@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ASP and VBScript 5.5 Code: basRowCmds(); Use of the Regular Expression Object - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Function basRowCmds(vString)
+If Len(vString) = 0 Then Exit Function
+Dim vCmdButton
+Dim objRegExpr: Set objRegExpr = New regexp
+objRegExpr.Pattern = &quot;&lt;\\!--cmd_(\\D+)<em>(\\D+)</em>(\\d+)--&gt;&quot;
+objRegExpr.Global = True
+objRegExpr.IgnoreCase = True
+Dim objMatches: Set objMatches = objRegExpr.Execute(vString)
+Dim objMatch: For Each objMatch in objMatches
+Select Case LCase(objMatch.SubMatches(0))
+'SubMatches() was added to VBScript 5.5!
+Case &quot;add&quot;
+vCmdButton = &quot;&lt;button class=&quot;&quot;uiButton&quot;&quot;&quot; _
+&amp; &quot;onClick=&quot;&quot;window.location.href='./?cmd=add&amp;type=&quot; _
+&amp; objMatch.SubMatches(1) &amp; &quot;&amp;id=&quot; _
+&amp; objMatch.SubMatches(2) &amp; &quot;'&quot;&quot;&gt;Add&lt;/button&gt;&quot;
+vString = Replace(vString,objMatch.Value,vCmdButton _
+,1,-1,vbTextCompare)
+Case &quot;delete&quot;
+vCmdButton = &quot;&lt;button class=&quot;&quot;uiButton&quot;&quot;&quot; _
+&amp; &quot;onClick=&quot;&quot;window.location.href='./?cmd=delete&amp;type=&quot; _
+&amp; objMatch.SubMatches(1) &amp; &quot;&amp;id=&quot; _
+&amp; objMatch.SubMatches(2) &amp; &quot;'&quot;&quot;&gt;Delete&lt;/button&gt;&quot;
+vString = Replace(vString,objMatch.Value,vCmdButton _
+,1,-1,vbTextCompare)
+Case &quot;remove&quot;
+vCmdButton = &quot;&lt;button class=&quot;&quot;uiButton&quot;&quot;&quot; _
+&amp; &quot;onClick=&quot;&quot;window.location.href='./?cmd=remove&amp;type=&quot; _
+&amp; objMatch.SubMatches(1) &amp; &quot;&amp;id=&quot; _
+&amp; objMatch.SubMatches(2) &amp; &quot;'&quot;&quot;&gt;Remove&lt;/button&gt;&quot;
+vString = Replace(vString,objMatch.Value,vCmdButton _
+,1,-1,vbTextCompare)
+End Select
+Next</p>
+<pre><code>basRowCmds = vString
+</code></pre>
+<p>End Function</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SQL Server 2000: DTS; “Package Ownership Issues”; http://www.sqldts.com/212.aspx - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>“spDTSChangeOwner, available on the downloads page, is a convenient wrapper around sp_reassign_dtspackageowner. It accepts two parameters @old_owner and @new_owner, which should be self explanatory.”</p>
+<p>As of this writing, download the script here:</p>
+<pre><code>http://www.sqldts.com/redir.aspx?1212
+</code></pre>
+<p>Sample usage:</p>
+<pre><code>EXEC dbo.spDTSChangeOwner 'Fred', 'John'
+
+EXEC dbo.spDTSChangeOwner 
+    @old_owner='MyDomain&amp;bsol;&amp;bsol;OldUser', 
+    @new_owner='MyDomain&amp;bsol;&amp;bsol;OldUser'
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PowerShell: Using Windows PowerShell “Here-Strings”; Windows PowerShell Tip of the Week; TechNet - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>We want to assign our string value to a variable named $x; that’s why we started things off with $x = followed by @&quot;, the syntax that represents the start of our here-string. (Which, we should add, needs to be on a line all by itself.) We then indicate the end of the here-string by typing the construction &quot;@, also on a line by itself.</p>
+<p>The cool part, however, is what lies in-between the beginning and the end of the here-string. In between the opening line and the closing line all we have to do is type the string value exactly the way we want it assigned; in turn, PowerShell will respect any line breaks, double and single quote marks, and blank spaces we type in. Suppose we wanted to type each word and punctuation mark on a separate line. In that case, our here-string (or at least the first part of it) would look like this:</p>
+<p>$x = @&quot;
+&quot;
+Curiouser
+and
+curiouser
+!
+&quot;
+&quot;@</p>
+<p>And what do you suppose will show up onscreen when we echo back the value of $x? Good guess:</p>
+<p>&quot;
+Curiouser
+and
+curiouser
+!
+&quot;</p>
+<p>As you might expect, this is also a nifty way to add comments to a script: you can type as much text as you want any way you want, and without having to comment out each and every line. Here’s a comment that uses a here-string:</p>
+<p>$x = @&quot;</p>
+<p>This script demonstrates the use of &quot;here-strings.&quot;
+Anything typed between the top line of this code block
+and the bottom line of this code block will be formatted
+exactly as shown here.</p>
+<p>&quot;@</p>
+<p>[http://www.microsoft.com/technet/scriptcenter/resources/
+pstips/jun07/pstip0629.mspx]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LINQ to XML: Two Ways of Generating the xml:space Attribute - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>This is our “spacey” string:</p>
+<pre><code>String s = @&amp;quot;
+</code></pre>
+<p>This
+is
+a
+spacey
+string...
+&quot;;</p>
+<p>The first method is to “brutally” use the XElement.Parse() method:</p>
+<pre><code>XElement spacey = XElement.Parse(
+    String.Format(&amp;quot;&amp;lt;spacey xml:space=&amp;bsol;&amp;bsol;&amp;quot;preserve&amp;bsol;&amp;bsol;&amp;quot;&amp;gt;{0}&amp;lt;/spacey&amp;gt;&amp;quot;, s) );
+</code></pre>
+<p>The second (preferred) method builds with .NET 3.5 types in System.Xml.Linq:</p>
+<pre><code>XName xmlAttributeName = XNamespace.Xml + &amp;quot;space&amp;quot;;
+XAttribute xmlAttribute = new XAttribute( xmlAttributeName, &amp;quot;preserve&amp;quot; );
+
+XElement spacey =
+    new XElement( &amp;quot;spacey&amp;quot;, new Object[] { xmlAttribute, s } );
+
+XElement document = new XElement( &amp;quot;root&amp;quot;, spacey );
+
+Console.WriteLine( document.ToString() );
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

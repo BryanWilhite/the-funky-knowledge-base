@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PROBLEM: &quot;Can't Execute a Non-Action Query&quot; Error with Pass-Through Queries - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>A compiled Pass-Through Query in the QueryDefs collection of a DAO database can be referenced in code like the following:</p>
+<pre><code>Set qdDAO = dbDAO.QueryDefs(&amp;quot;qsptTaz3Test00&amp;quot;)
+qdDAO.Execute DB_FAILONERROR
+</code></pre>
+<p>where &quot;qsptTaz3Test00&quot; is the name of the compiled Pass-Through query and &quot;qdDAO&quot; is the name of a QueryDef object. Calling the Execute method of the QueryDef object may generate the error, &quot;Can't Execute a Non-Action Query.&quot; This error will occur when the Returns Records property of the Pass-Through query is set to Yes.</p>
+<p>Note: multiple SQL commands can be placed in an Access Pass-Through query but it is not recommended to mix select statements with SQL that does not return records like update statements.</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WSS 3.0: “WSS 3.0 Web Service Reference Guide”; Glen Cooper; CJ - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>Admin Web Service
+http://&lt;AdminSite&gt;/_vti_adm/Admin.asmx
+Provides methods for managing a deployment of Microsoft Windows SharePoint Services, such as for creating or deleting site collections.
+CreateSite
+DeleteSite
+GetLanguages
+RefreshConfigCache</p>
+<p>Alerts
+http://&lt;Site&gt;/_vti_bin/Alerts.asmx
+Provides methods for working with alerts for list items in a SharePoint site.
+DeleteAlerts
+GetAlerts</p>
+<p>Authentication
+http://&lt;Site&gt;/_vti_bin/Authentication.asmx
+Login
+Mode</p>
+<p>Copy
+http://&lt;Site&gt;/_vti_bin/Authentication.asmx
+Provides methods for copying files to or from or within a SharePoint site.
+CopyIntoItems
+CopyIntoItemsLocal
+GetItem</p>
+<p>Document Workspace
+http://&lt;Site&gt;/_vti_bin/Dws.asmx
+Exposes methods for managing Document Workspace sites and the data they contain.
+CanCreateDwsUrl
+CreateDws
+CreateFolder
+DeleteDws
+DeleteFolder
+FindDwsDoc
+GetDwsData
+GetDwsMetaData
+RemoveDwsUser
+RenameDws
+UpdateDwsData</p>
+<p>Forms
+http://&lt;Site&gt;/_vti_bin/Forms.asmx
+Provides methods for returning forms that are used in the user interface when working with the contents of a list.
+GetForm
+GetFormCollection</p>
+<p>Imaging
+http://&lt;Site&gt;/_vti_bin/Imaging.asmx
+Provides methods that enable you to create and manage picture libraries.
+CheckSubwebAndList
+CreateNewFolder
+Delete
+Download
+Edit
+GetItemsByIds
+GetItemsXMLData
+GetListItems
+ListPictureLibrary
+Rename
+Upload</p>
+<p>List Data Retrieval (StsAdapter)
+http://&lt;Site&gt;/_vti_bin/DspSts.asmx
+Represents the adapter service used to perform queries against sites and lists in Microsoft Windows SharePoint Services.
+Query</p>
+<p>Lists
+http://&lt;Site&gt;/_vti_bin/Lists.asmx
+Provides methods for working with lists and list data.
+AddAttachment
+AddDiscussionBoardItem
+AddList
+AddListFromFeature
+ApplyContentTypeToList
+CheckInFile
+CheckOutFile
+CreateContentType
+DeleteAttachment
+DeleteContentType
+DeleteContentTypeXmlDocument
+DeleteList
+GetAttachmentCollection
+GetList
+GetListAndView
+GetListCollection
+GetListContentType
+GetListContentTypes
+GetListItemChanges
+GetListItemChangesSinceToken
+GetListItems
+GetVersionCollection
+UndoCheckOut
+UpdateContentType
+UpdateContentTypesXmlDocument
+UpdateContentTypeXmlDocument
+UpdateList
+UpdateListItems</p>
+<p>Meetings
+http://&lt;Site&gt;/_vti_bin/Meetings.asmx
+Enables you to create and manage Meeting Workspace sites.
+AddMeeting
+AddMeetingFromICal
+CreateWorkspace
+DeleteWorkspace
+GetMeetingsInformation
+GetMeetingWorkspaces
+RemoveMeeting
+RestoreMeeting
+SetAttendeeResponse
+SetWorkspaceTitle
+UpdateMeeting
+UpdateMeetingFromICal</p>
+<p>People
+http://&lt;Site&gt;/_vti_bin/People.asmx
+ResolvePrincipals
+SearchPrincipals</p>
+<p>Permissions
+http://&lt;Site&gt;/_vti_bin/Permissions.asmx
+Provides methods for working with the permissions for a site or list.
+AddPermission
+AddPermissionCollection
+GetPermissionCollection
+RemovePermission
+RemovePermissionCollection
+UpdatePermission</p>
+<p>Site Data
+http://&lt;Site&gt;/_vti_bin/SiteData.asmx
+Provides methods that return metadata or list data from sites or lists in Microsoft Windows SharePoint Services.
+EnumerateFolder
+GetAttachments
+GetChanges
+GetContent
+GetList
+GetListCollection
+GetListItems
+GetSite
+GetSiteAndWeb
+GetSiteUrl
+GetURLSegments
+GetWeb</p>
+<p>Sites
+http://&lt;Site&gt;/_vti_bin/Sites.asmx
+Provides a method for returning information about the collection of site templates on the virtual server.
+ExportWeb
+GetSiteTemplates
+GetUpdatedFormDigest
+ImportWeb</p>
+<p>Search
+http://&lt;Site&gt;/_vti_bin/spsearch.asmx
+The QueryService class is the entry point for calling the Search in Microsoft Windows SharePoint Services Query web service.
+GetPortalSearchInfo (MOSS only)
+GetSearchMetadata (MOSS only)
+Query
+QueryEx
+RecordClick (MOSS only)
+Registration
+Status</p>
+<p>Users and Groups
+http://&lt;Site&gt;/_vti_bin/usergroup.asmx
+Provides methods for working with users, role definitions, and groups.
+AddGroup
+AddGroupToRole
+AddRole
+AddRoleDef
+AddUserCollectionToGroup
+AddUserCollectionToRole
+AddUserToGroup
+AddUserToRole
+GetAllUserCollectionFromWeb
+GetGroupCollection
+GetGroupCollectionFromRole
+GetGroupCollectionFromSite
+GetGroupCollectionFromUser
+GetGroupCollectionFromWeb
+GetGroupInfo
+GetRoleCollection
+GetRoleCollectionFromGroup
+GetRoleCollectionFromUser
+GetRoleCollectionFromWeb
+GetRoleInfo
+GetRolesAndPermissionsForCurrentUser
+GetRolesAndPermissionsForSite
+GetUserCollection
+GetUserCollectionFromGroup
+GetUserCollectionFromRole
+GetUserCollectionFromSite
+GetUserCollectionFromWeb
+GetUserInfo
+GetUserLoginFromEmail
+RemoveGroup
+RemoveGroupFromRole
+RemoveRole
+RemoveUserCollectionFromGroup
+RemoveUserCollectionFromRole
+RemoveUserCollectionFromSite
+RemoveUserFromGroup
+RemoveUserFromRole
+RemoveUserFromSite
+RemoveUserFromWeb
+UpdateGroupInfo
+UpdateRoleDefInfo
+UpdateRoleInfo
+UpdateUserInfo</p>
+<p>Versions
+http://&lt;Site&gt;/_vti_bin/Versions.asmx
+Provides methods for working with file versions.
+DeleteAllVersions
+DeleteVersion
+GetVersions
+RestoreVersion</p>
+<p>Views
+http://&lt;Site&gt;/_vti_bin/Views.asmx
+Provides methods for working with views of lists.
+AddView
+DeleteView
+GetView
+GetViewCollection
+GetViewHtml
+UpdateView
+UpdateViewHtml
+UpdateViewHtml2</p>
+<p>Web Part Pages
+http://&lt;Site&gt;/_vti_bin/WebPartPages.asmx
+Provides methods for working with Web Parts.
+AddWebPart
+AddWebPartToZone
+AssociateWorkflowMarkup
+ConvertWebPartFormat
+DeleteWebPart
+ExecuteProxyUpdates
+FetchLegalWorkflowActions
+GetAssemblyMetaData
+GetBindingResourceData
+GetCustomControlList
+GetDataFromDataSourceControl
+GetFormCapabilityFromDataSourceControl
+GetSafeAssemblyInfo
+GetWebPart
+GetWebPart2
+GetWebPartCrossPageCompatibility
+GetWebPartPage
+GetWebPartPageConnectionInfo
+GetWebPartPageDocument
+GetWebPartProperties
+GetWebPartProperties2
+GetXmlDataFromDataSource
+RemoveWorkflowAssociation
+RenderWebPartForEdit
+SaveWebPart
+SaveWebPart2
+ValidateWorkflowMarkupAndCreateSupportObjects</p>
+<p>Webs
+http://&lt;Site&gt;/_vti_bin/Webs.asmx
+Provides methods for working with sites and subsites.
+CreateContentType
+CustomizeCss
+DeleteContentType
+GetActivatedFeatures
+GetAllSubWebCollection
+GetColumns
+GetContentType
+GetContentTypes
+GetCustomizedPageStatus
+GetListTemplates
+GetWeb
+GetWebCollection
+RemoveContentTypeXmlDocument
+RevertAllFileContentStreams
+RevertCss
+RevertFileContentStream
+UpdateColumns
+UpdateContentType
+UpdateContentTypeXmlDocument
+WebUrlFromPageUrl</p>
+<p>[http://claytonj.wordpress.com/2007/02/19/wss-30-web-service-reference-guide/]
+[http://glenc.wordpress.com/2006/11/24/wss-30-web-service-quick-reference/]</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

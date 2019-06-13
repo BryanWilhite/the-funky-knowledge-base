@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>T-SQL Code: Searching for a Finite Set of Unknowns with a Single SELECT Statement; the ISNULL() Function - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>/*
+Use this technique when enabling full-text search functionality is not possible. If full-text search functionality is possible consider a design featuring the CONTAINS Predicate.
+*/</p>
+<p>CREATE PROCEDURE ListSSKB
+(
+@subjectID varchar(32)  = NULL
+,   @title     varchar(255) = NULL
+,   @kbID      varchar(32)  = NULL
+)
+AS</p>
+<p>SET NOCOUNT ON</p>
+<p>SELECT
+subject AS 'Subject'
+,   title   AS 'Title'
+FROM
+tblKB
+,   tlkpKBSubjects
+WHERE
+tblKB.subjectID = tlkpKBSubjects.subjectID
+AND
+ISNULL(CONVERT(varchar(32),tblKB.subjectID),'') LIKE ISNULL(@subjectID,'%')
+AND
+ISNULL(CONVERT(varchar(32),tblKB.kbID),'') LIKE ISNULL(@kbID,'%')
+AND
+ISNULL(title,'') LIKE ISNULL(@title,'%')
+ORDER BY
+subject
+,   title</p>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>

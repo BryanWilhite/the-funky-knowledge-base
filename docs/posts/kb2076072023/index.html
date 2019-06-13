@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SQL Server 2005 PROBLEM: “Unable to determine if the owner (DOMAIN&bsol;&bsol;xxx) of job &lt;JOB_Name&gt; has server access (reason: error code 0x534. [SQLSTATE 42000] (Error 15404))”; Andrew Calvett - the funky knowledge base</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<p>SQL Server Agent jobs can revert back to their previous owner. This can produce the error: “Unable to determine if the owner (DOMAIN\\xxx) of job &lt;JOB_Name&gt; has server access (reason: error code 0x534. [SQLSTATE 42000] (Error 15404))”</p>
+<p>Ultimately the sysdtspackages90 table might need updating. The following SQL statements help:</p>
+<p>--See who owns which packages
+SELECT
+name
+,   description
+,   suser_sname(ownersid)
+FROM
+msdb.dbo.sysdtspackages90</p>
+<p>/*
+Now we update the owner to an appropriate domain account. Either the service account or a generic admin account is good.
+*/</p>
+<p>UPDATE msdb.dbo.sysdtspackages90</p>
+<p>SET
+OWNERSID = SUSER_SID('YOUR_DOMAIN\\APPROPRIATE_ACCOUNT')
+WHERE
+OWNERSID = SUSER_SID('YOUR_DOMAIN\\OLD_ACCOUNT')</p>
+<p>Andrew Calvett writes, “It turns out that when you save a change to a maintenance plan the job owners are reset to the owner of the maintenance plan. The owner of the maintenance plan will be the account used to connect to the server in SSMS when creating the plan.”</p>
+<p>For more information see Andrew Calvett, his post, “The Job whose owner kept coming back”:</p>
+<pre><code>http://sqlblogcasts.com/blogs/acalvett/
+    archive/2007/12/30/the-job-whose-owner-kept-coming-back.aspx
+</code></pre>
+
+
+<footer>
+    &copy; 2019 the funky knowledge base
+</footer>
+</body>
+</html>
