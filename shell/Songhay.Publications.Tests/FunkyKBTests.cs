@@ -1,9 +1,9 @@
-using Newtonsoft.Json.Linq;
-using Songhay.Extensions;
-using Songhay.Tests;
 using System;
 using System.IO;
 using System.Linq;
+using Newtonsoft.Json.Linq;
+using Songhay.Extensions;
+using Songhay.Tests;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -16,11 +16,21 @@ namespace Songhay.Publications.Tests
             this._testOutputHelper = helper;
         }
 
-        [Theory, InlineData("../../../../../_data/kb/entries/")]
-        public void ShouldLoadEntries(string root)
+        [Theory, InlineData("../../../../../_data/kb/entries/", "../../../../../posts/")]
+        public void ShouldLoadEntries(string entriesRoot, string postsRoot)
         {
-            root = FrameworkAssemblyUtility.GetPathFromAssembly(this.GetType().Assembly, root);
-            this._testOutputHelper.WriteLine(root);
+            entriesRoot = FrameworkAssemblyUtility.GetPathFromAssembly(this.GetType().Assembly, entriesRoot);
+            this._testOutputHelper.WriteLine($"loading entries from `{entriesRoot}`");
+
+            postsRoot = FrameworkAssemblyUtility.GetPathFromAssembly(this.GetType().Assembly, postsRoot);
+            this._testOutputHelper.WriteLine($"writing entries to `{postsRoot}`");
+
+            var entriesRootInfo = new DirectoryInfo(entriesRoot);
+            foreach (var entryInfo in entriesRootInfo.GetFiles("*.json"))
+            {
+                var mdPath = FrameworkFileUtility.GetCombinedPath(postsRoot, entryInfo.Name.Replace(".json", ".md"));
+                this._testOutputHelper.WriteLine($"writing `{mdPath}`...");
+            }
         }
 
         [Theory, ProjectFileData(typeof(FunkyKBTests),
