@@ -1,7 +1,7 @@
 module.exports = function(config) {
    
     config.addCollection('entries', collection => {
-      return collection.getFilteredByGlob('entries/*.md');
+      return collection.getFilteredByGlob('entry/*.md');
     });
 
     config.addFilter("slice", require("./filters/slice.js"));
