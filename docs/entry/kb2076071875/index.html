@@ -1,0 +1,10 @@
+<p>One of the many, many ways to use Generics in C# 2.0 is to build a strongly-typed Array from a Generic Dictionary&lt;String, Object&gt;. This form of Dictionary is useful for generating parameters for data commands. The challenge is to get this general-purpose collection of parameters into a “real” array of parameters that can be used by the .NET Framework:</p>
+<pre><code>List&amp;lt;IDataParameter&amp;gt; list =
+    new List&amp;lt;IDataParameter&amp;gt;( parameterCollection.Count );
+foreach ( KeyValuePair&amp;lt;String, Object&amp;gt; kvp in parameterCollection )
+{
+    list.Add( GetParameter( dbmsCommand, kvp.Key, kvp.Value ) );
+}
+return list.ToArray();
+</code></pre>
+<p>The GetParameter() member generates an object that implements IDataParameter.</p>

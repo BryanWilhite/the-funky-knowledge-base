@@ -1,0 +1,138 @@
+<p>@ECHO OFF
+COLOR 4F
+ECHO **************************************************************
+ECHO * This Command Script sets Default NTFS Permissions          *
+ECHO * for the Ideal Windows 2000 Member Server.                  *
+ECHO * For more details, please recall MS KB Articles Q244600     *
+ECHO * and Q135268.                                               *
+ECHO * Are you sure you want to continue? (Press Ctrl C to quit.) *
+ECHO *                                                            *
+ECHO *                                                            *
+ECHO * WARNING: Permissions for &quot;Terminal Server User&quot;            *
+ECHO * may be lost by running this script. Please review Q244600  *
+ECHO * before running this script. Please report any errors       *
+ECHO * in the script to rasx@songhaysystem.com.                   *
+ECHO *                                                            *
+ECHO **************************************************************
+PAUSE</p>
+<p>ECHO Setting NTFS Permissions...
+%SystemDrive%;CD \\</p>
+<p>ECHO Setting %SystemDrive%\\Program Files (and subfolders)...
+ECHO y| CACLS &quot;%SystemDrive%\\Program Files&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; Users:R SYSTEM:F &quot;Terminal Server User:C&quot;
+ECHO y| CACLS &quot;%SystemDrive%\\Program Files\\<em>.</em>&quot; /T /P Administrators:F &quot;CREATOR OWNER:F&quot; Users:R SYSTEM:F &quot;Power Users:C&quot; &quot;Terminal Server User:C&quot;</p>
+<p>CLS
+ECHO Setting %SystemDrive%\\Documents and Settings...
+ECHO y| CACLS &quot;%SystemDrive%\\Documents and Settings&quot; /P Administrators:F &quot;Power Users:R&quot; Everyone:R Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemDrive%\\Documents and Settings\\<em>.</em>&quot; /P Administrators:F &quot;Power Users:R&quot; Everyone:R Users:R SYSTEM:F</p>
+<p>CLS
+ECHO Setting %SystemDrive%\\Documents and Settings\\Administrator (and subfolders)...
+ECHO y| CACLS &quot;%SystemDrive%\\Documents and Settings\\Administrator&quot; /P Administrator:F Administrators:F SYSTEM:F
+ECHO y| CACLS &quot;%SystemDrive%\\Documents and Settings\\Administrator\\<em>.</em>&quot; /T /P Administrator:F Administrators:F SYSTEM:F</p>
+<p>CLS
+ECHO Setting %SystemDrive%\\Documents and Settings\\All Users (and subfolders)...
+ECHO y| CACLS &quot;%SystemDrive%\\Documents and Settings\\All Users&quot; /P Administrators:F &quot;Power Users:C&quot; Users:R Everyone:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemDrive%\\Documents and Settings\\All Users\\<em>.</em>&quot; /T /P Administrators:F &quot;Power Users:C&quot; Users:R Everyone:R SYSTEM:F</p>
+<p>CLS
+ECHO Setting %SystemDrive%\\Documents and Settings\\Default User (and subfolders)...
+ECHO y| CACLS &quot;%SystemDrive%\\Documents and Settings\\Default User&quot; /P Administrators:F &quot;Power Users:R&quot; Users:R Everyone:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemDrive%\\Documents and Settings\\Default User\\<em>.</em>&quot; /T /P Administrators:F &quot;Power Users:R&quot; Users:R Everyone:R SYSTEM:F</p>
+<p>CLS
+ECHO Setting %SystemRoot% (and selected folders)...
+ECHO y| CACLS %SystemRoot% /P Administrators:F &quot;CREATOR OWNER:F&quot; Everyone:R &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; Everyone:R &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Addins&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Addins\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Connection Wizard&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Connection Wizard\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Config&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Config\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Cursors&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Cursors\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Debug&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Debug\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Driver Cache&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Driver Cache\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Driver Cache\\I386&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Driver Cache\\I386\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Fonts&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Fonts\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Help&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Help\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Inf&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Inf\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Java&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Java\\<em>.</em>&quot; /T /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Media&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Media\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\MSAgent&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\MSAgent\\<em>.</em>&quot; /T /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\MSApps&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\MSApps\\<em>.</em>&quot; /T /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\MWW32&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\MWW32\\<em>.</em>&quot; /T /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Registration&quot; /P Administrators:F Everyone:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Registration\\<em>.</em>&quot; /P Administrators:F Everyone:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Repair&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Repair\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Security&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Security\\<em>.</em>&quot; /T /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Speech&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Speech\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R Everyone:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R Everyone:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\CatRoot&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\CatRoot\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Com&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Com\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Config&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Config\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Dhcp&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:R&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Dhcp\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:R&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Drivers&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Drivers\\<em>.</em>&quot; /T /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\DTCLog&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\DTCLog\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Export&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Export\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\GroupPolicy&quot; /P Administrators:F &quot;Authenticated Users:R&quot; SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\GroupPolicy\\<em>.</em>&quot; /T /P Administrators:F &quot;Authenticated Users:R&quot; SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\IAS&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\IAS\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Inetsrv&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Inetsrv\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Mui&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Mui\\<em>.</em>&quot; /T /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Npp&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Npp\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\NtmsData&quot; /P Administrators:F SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\NtmsData\\<em>.</em>&quot; /P Administrators:F SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Os2&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Os2\\<em>.</em>&quot; /T /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Ras&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Ras\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Rocket&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Rocket\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Rpcproxy&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Rpcproxy\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Setup&quot; /P Everyone:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Setup\\<em>.</em>&quot; /P Everyone:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\ShellExt&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\ShellExt\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Spool&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; &quot;Print Operators:F&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Spool\\<em>.</em>&quot; /T /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; &quot;Print Operators:F&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Wbem&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Wbem\\<em>.</em>&quot; /T /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Wins&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\System32\\Wins\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Temp&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; &quot;Authenticated Users:C&quot; SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Temp\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; &quot;Authenticated Users:C&quot; SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\twain_32&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\twain_32\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Web&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F
+ECHO y| CACLS &quot;%SystemRoot%\\Web\\<em>.</em>&quot; /P Administrators:F &quot;CREATOR OWNER:F&quot; &quot;Power Users:C&quot; Users:R SYSTEM:F</p>
+<p>CLS
+ECHO No more commands to process.
+ECHO End of Command Script.
+PAUSE</p>

@@ -1,0 +1,40 @@
+<p>Lesson 5: Consuming XML Web Services</p>
+<p>This lesson is a very brief overview of Web services support in the .NET Framework. The concept of the &quot;Microsoft WebService Behavior&quot; is introduced here.</p>
+<ul>
+<li>&quot;XML Web services are business logic components that can be accessed over the Internet.&quot;</li>
+</ul>
+<p>The above quote is listed here for 'posterity' as the use of the term &quot;business logic&quot; is by now threadbare!</p>
+<ul>
+<li>&quot;XML Web services are made public over the Web using a Universal Description, Discovery, and Integration (UDDI) registry. Currently, Microsoft and IBM manage two UDDI nodes available for locating XML Web services.&quot;</li>
+</ul>
+<p>As of this writing, IBM, Microsoft, NTT Communications, and SAP jointly own the registry. For more information, see:</p>
+<pre><code>http://uddi.org/find.html
+</code></pre>
+<ul>
+<li>&quot;Using an XML Web service is much the same as using a .NET or COM component: you establish a reference to the class, create an instance of an object from the class, and then use the object's properties and methods within your code.&quot;</li>
+</ul>
+<p>The opinion here is that this a true Microsoft innovation. Adding a Web Reference in Visual Studio .NET, automatically creates WSDL (Web Services Description Language) for SOAP calls through a proxy class. For a Microsoft-centric understanding of WDSL, see &quot;Understanding WSDL&quot; at:</p>
+<pre><code>http://msdn.microsoft.com/library/en-us/dnwebsrv/html/understandWSDL.asp
+</code></pre>
+<p>The following is a SOAP call to Amazon.com:</p>
+<pre><code>com.amazon.soap.AmazonSearchService ws =
+    new com.amazon.soap.AmazonSearchService();
+com.amazon.soap.AsinRequest req =
+    new MCSDWebAppsCS.com.amazon.soap.AsinRequest();
+com.amazon.soap.ProductInfo info =
+    new MCSDWebAppsCS.com.amazon.soap.ProductInfo();
+
+req.asin = &amp;quot;0782113273&amp;quot;;
+req.devtag = &amp;quot;XXXXXXXXXXXXXX&amp;quot;;
+req.tag = &amp;quot;thekintespacec00A&amp;quot;;
+req.type = &amp;quot;lite&amp;quot;;
+
+info = ws.AsinSearchRequest(req);
+com.amazon.soap.Details product = info.Details[0];
+body.InnerHtml = String.Format(&amp;quot;Product Name: {0}&amp;quot;,product.ProductName);
+</code></pre>
+<ul>
+<li>&quot;In some cases it makes more sense to call an XML Web service from client-side scripts than from server code.&quot;</li>
+</ul>
+<p>The Microsoft WebService Behavior is one asynchronous solition to the problem of waiting on Web services. The sample code for this lesson includes a &quot;WebService Behavior&quot; HTC file that has over 2000 lines of code! For more information, see &quot;Using the WebService Behavior&quot; at:</p>
+<p>http://msdn.microsoft.com/workshop/author/webservice/using.asp</p>

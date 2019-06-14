@@ -1,0 +1,18 @@
+<p>From the C# Programming Guide:</p>
+<p>&quot;Given a variable t of a parameterized type T, the statement t = null is only valid if T is a reference type and t = 0 will only work for numeric value types but not for structs. The solution is to use the default keyword, which will return null for reference types and zero for numeric value types.&quot;</p>
+<pre><code>public T GetNext()
+{
+    T temp = default(T);
+
+    Node current = head;
+    if (current != null)
+    {
+        temp = current.Data;
+        current = current.Next;
+    }
+    return temp;
+}
+</code></pre>
+<p>For more information, see:</p>
+<pre><code>http://msdn2.microsoft.com/en-us/library/xwth0h0d.aspx
+</code></pre>

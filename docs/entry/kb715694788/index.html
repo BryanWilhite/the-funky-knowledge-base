@@ -1,0 +1,55 @@
+<p>Public Function basGetString(KeyName As String, ColumnName As String) As String</p>
+<pre><code>On Error GoTo basGetString_Err
+
+Set m_rsADO = New ADODB.Recordset
+m_rsADO.Open Source:=&amp;quot;tblStrings&amp;quot;, _
+    ActiveConnection:=m_cnnADO, _
+    CursorType:=adOpenKeyset, _
+    LockType:=adLockReadOnly, _
+    Options:=adCmdTable
+
+With m_rsADO
+    .Find Criteria:=&amp;quot;name = '&amp;quot; &amp; KeyName &amp; &amp;quot;'&amp;quot;, _
+        SearchDirection:=adSearchForward
+    If Not .EOF Then _
+        basGetString = .Fields(ColumnName) &amp; Empty
+End With
+</code></pre>
+<p>basGetString_Exit:
+m_rsADO.Close
+Set m_rsADO = Nothing
+Exit Function</p>
+<p>basGetString_Err:
+Select Case Err
+Case Else
+MsgBox Err &amp; &quot;: &quot; &amp; Err.Description, vbCritical, &quot;basGetString Error&quot;
+Resume basGetString_Exit
+End Select</p>
+<p>End Function</p>
+<p>Public Sub basWriteString(KeyName As String, NewStr As String)</p>
+<pre><code>Dim strSQL As String
+
+On Error GoTo basWriteString_Err
+
+strSQL = &amp;quot;UPDATE tblStrings SET tblStrings.string = &amp;quot;&amp;quot;&amp;quot; &amp; NewStr &amp; &amp;quot;&amp;quot;&amp;quot;&amp;quot; _
+    &amp; &amp;quot; WHERE tblStrings.name = &amp;quot;&amp;quot;&amp;quot; &amp; KeyName &amp; &amp;quot;&amp;quot;&amp;quot;&amp;quot;
+
+Set m_cmdADO = New ADODB.Command
+
+With m_cmdADO
+    .ActiveConnection = m_cnnADO
+    .CommandType = adCmdText
+    .CommandText = strSQL
+    .Execute
+End With
+</code></pre>
+<p>basWriteString_Exit:
+Set m_cmdADO = Nothing
+Exit Sub</p>
+<p>basWriteString_Err:
+Select Case Err
+Case Else
+MsgBox Err &amp; &quot;: &quot; &amp; Err.Description, vbCritical, &quot;basWriteString Error&quot;
+Resume basWriteString_Exit
+End Select</p>
+<p>End Sub</p>

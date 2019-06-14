@@ -1,0 +1,64 @@
+<p>Lesson 2: Responding to Events</p>
+<p>The purpose of this lesson is detail Web application events from the page level to the application level. Dino Esposito further details the sequential, cyclical process of page-level events in &quot;The ASP.NET Page Object Model: One Day in the Life of an ASP.NET Web Page&quot; here:</p>
+<pre><code>http://msdn.microsoft.com/library/en-us
+    /dnaspp/html/aspnet-pageobjectmodel.asp
+</code></pre>
+<ul>
+<li>&quot;The life of a Web application begins when a browser requests the start page of the application.&quot;</li>
+</ul>
+<p>This statement does not seem accurate. The assumption here is that the life of a Web application begins when a browser requests any page of the application. This level of accuracy takes into account what some call &quot;deep linking.&quot;</p>
+<ul>
+<li>&quot;When the user stops using the Web application for a period of time (the default is 20 minutes), the user's session times out and ends.&quot;</li>
+</ul>
+<p>When all sessions end the application &quot;ends&quot; but because of .NET Framework garbage collection, &quot;...you don't know when an Application_End event will occur.&quot; For more details about Session State, see &quot;Session State&quot; at MSDN:</p>
+<pre><code>http://msdn.microsoft.com/library/en-us/cpguide/html/cpconSessionState.asp
+</code></pre>
+<ul>
+<li>&quot;The data that ASP.NET preserves between requests is called the Web form's view state.&quot;</li>
+</ul>
+<p>This introduction of view state seems to serve only to introduce the words &quot;view state&quot; as the lesson moves on quickly to survey Application and Session &quot;state variables&quot; (yet another term that understandably avoids delving into the object collections of the underlying HttpApplicationState and HttpSessionState classes). More details at MSDN in &quot;ASP.NET State Management&quot; here:</p>
+<pre><code>http://msdn.microsoft.com/library/
+    en-us/cpguide/html/cpconaspstatemanagement.asp
+</code></pre>
+<ul>
+<li>&quot;Application state variables must be initialized in Visual C#...&quot;</li>
+</ul>
+<p>The assumption here is that C# does not protect the developer against runtime errors caused by strong-typing collections of type object with casting. The code samples on page 3 clearly suggest that VB.NET insulates the developer from such pitfalls.</p>
+<ul>
+<li>&quot;You can write code to respond to Application and Session events in the Global.asax file.&quot;</li>
+</ul>
+<p>The following summarizes application-scope event handlers:</p>
+<pre><code>Application_Start
+Application_End
+Application_BeginRequest
+Application_EndRequest
+
+Session_Start
+Session_End
+</code></pre>
+<ul>
+<li>&quot;In Web forms, a session is a unique instance of the browser.&quot;</li>
+</ul>
+<p>The following summarizes the page-scope event handlers firing in sequence:</p>
+<pre><code>Page_Init
+Page_Load
+Page_PreRender
+Page_Unload
+Page_Disposed
+</code></pre>
+<p>The following summarizes the other page-scope event handlers:</p>
+<pre><code>Page_Error
+Page_AbortTransaction
+Page_CommitTransaction
+Page_DataBinding
+</code></pre>
+<ul>
+<li>&quot;You can couple the Page_Load event with the IsPostBack property to initialize data the first time a user visits a Web form.&quot;</li>
+</ul>
+<p>The following summarizes the server control-scope event types:</p>
+<pre><code>Postback events (e.g. the Click event)
+Cached events (e.g. the TextChanged event; see below)
+Validation events (solely of the validation server controls)
+</code></pre>
+<p>The lesson refers to &quot;Cached events&quot; for the sake of completeness but not clarity. This term should not be confused with &quot;cache events&quot;: Cache events are not really .NET Framework events but are a design pattern featuring the CacheItemRemovedCallback delegate. This is discussed in detail in Chapter 12, &quot;Optimizing Web Applications with Caching&quot; under &quot;Responding to Cache Events.&quot;</p>
+<p>Cached events reveal the design goal of the ASP.NET team to try as much as possible to replicate Windows Forms eventing by &quot;postponing&quot; events on the client and processing them later on the server.</p>

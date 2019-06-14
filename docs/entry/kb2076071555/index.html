@@ -1,0 +1,8 @@
+<p>ErrorDocument 404 http://www.kintespace.com/not_found.html</p>
+<p>RewriteEngine on Options +FollowSymlinks
+RewriteBase /
+RewriteRule ^kb/articles/(.<em>)\\.html$ http://songhaysystem.com/document.php?cmd=getKBDoc&amp;get=$1
+RewriteRule ^kb/howto/(.</em>)/ http://songhaysystem.com/document.php?cmd=getDocCode&amp;get=$1
+RewriteRule ^kb/subjects/(.<em>)\\.html$ http://songhaysystem.com/document.php?cmd=listSubjects&amp;code=$1
+RewriteRule ^kb/util/(.</em>)/ http://songhaysystem.com/
+RewriteRule ^kb http://songhaysystem.com/</p>

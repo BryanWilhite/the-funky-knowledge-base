@@ -1,0 +1,26 @@
+<p>Given the following types:</p>
+<p>public interface IFruit
+{
+String name { get; set; }
+Int32 id { get; set; }
+}</p>
+<p>public class Fruit : IFruit
+{
+public String name { get; set; }
+public Int32 id { get; set; }
+}</p>
+<p>I think that you could do something like this:</p>
+<pre><code>static IEnumerable&amp;lt;T&amp;gt; GetSomeFruit&amp;lt;T&amp;gt;(String xml)
+    where T : IFruit, new()
+{
+    return XElement.Parse(xml)
+            .Elements(&amp;quot;fruit&amp;quot;)
+            .Select(f =&amp;gt; new T {
+                    name = f.Element(&amp;quot;name&amp;quot;).Value,
+                    id = Int32.Parse(f.Element(&amp;quot;id&amp;quot;).Value)
+            });
+}
+</code></pre>
+<p>Which you would call like this:</p>
+<p>IEnumerable&lt;Fruit&gt; fruit = GetSomeFruit&lt;Fruit&gt;(yourXml);</p>
+<p>[http://stackoverflow.com/questions/1460567/xml-to-ienumerablet]</p>

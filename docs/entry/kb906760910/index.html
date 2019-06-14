@@ -1,0 +1,31 @@
+<p>Common DOS commands translated back to UNIX:</p>
+<p>cd ---exactly like cd</p>
+<p>clear ---exactly like cls</p>
+<p>cp ---very much like copy</p>
+<p>ls -al; df -k | more ---kind of like dir /p</p>
+<p>mv ---very much like move</p>
+<p>uname -sr ---kind of like ver</p>
+<p>Other Unix commands I really need right about now:</p>
+<p>cat ---concatenate files</p>
+<p>chgrp -R &lt;group name&gt; &lt;folder name&gt;/* ---changes the group of &lt;folder name&gt; to &lt;group name&gt; and all of its sub-folders/files</p>
+<p>chmod a+r &lt;filename&gt; ---makes &lt;filename&gt; readable to all</p>
+<p>chmod a+x &lt;filename&gt; ---makes &lt;filename&gt; executable to all</p>
+<p>chmod -R g+w &lt;folder name&gt;/* ---adds group-level write privileges to &lt;folder name&gt; and all sub-folders/files</p>
+<p>chown -R &lt;user name&gt; &lt;folder name&gt;/* ---changes the owner of &lt;folder name&gt; to &lt;user name&gt; and all of its sub-folders/files</p>
+<p>du -sk &lt;path name&gt; ----returns the amount of disk space &lt;path name&gt; occupies in KBs</p>
+<p>find .  -name  &quot;*.html&quot; -print | sort ---displays a sorted list of files with &quot;.html&quot; in their names in the directory (and any subdirectories) where the command is executed</p>
+<p>kill -9 &lt;process ID&gt; ---&quot;really&quot; stops a process with id &lt;process ID&gt;</p>
+<p>passwd &lt;user name&gt; ---changes the password of &lt;user name&gt;</p>
+<p>ps -fu&lt;user name&gt; ---returns the processes run by &lt;user name&gt;</p>
+<p>rm -r &lt;folder name&gt; ---remove &lt;folder name&gt; and all of its sub-folders/files</p>
+<p>sort -o &lt;destination file&gt; &lt;source file&gt; ---e.g.: sort -o .newsrc .newsrc</p>
+<p>su &lt;user name&gt; ---creates the shell of &lt;user name&gt;; to terminate this session and return to the original login enter EOF (usually Ctrl+d)</p>
+<p>tar -xvf &lt;archive name(s)&gt; ---extracts one or more tape archive files (tar files) and prints the name(s) of the file(s) stored in the archive to the console</p>
+<p>which &lt;command name(s)&gt; ---determines which file is associated with &lt;command name(s)&gt; (separated by spaces)</p>
+<p>who ---determines who's logged in the system</p>
+<p>Search for literals with grep and fgrep (&quot;fast&quot; grep).</p>
+<p>To shutdown the system use the command</p>
+<p>/usr/sbin/shutdown -y -g0 -i0</p>
+<p>To start the system use boot.</p>
+<p>Don't forget all those kick-ass compression commands like pack and compress! Also note that .tgz implies .tar.gz---which in turn implies the compression application gunzip.</p>
+<p>Use the vacation command for vacations.</p>

@@ -1,0 +1,10 @@
+<p>Public Sub basDelaySec(ByVal Seconds As Long)</p>
+<pre><code>Dim dtmDate as Date
+
+dtmDate = DateAdd(&amp;quot;s&amp;quot;, Seconds, Now)
+
+Do
+    DoEvents
+Loop Until Now &amp;gt; dtmDate
+</code></pre>
+<p>End Sub</p>

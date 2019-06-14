@@ -1,0 +1,164 @@
+<p>#region Internal DataSet Procedures</p>
+<p>internal enum DataPosition
+{
+First = 0,
+Next = 1,
+Previous = 2,
+Last = 3
+}</p>
+<p>internal static void DataSetCancel(DataSet TargetDataSet,ClientMessage Message)
+{
+try
+{
+TargetDataSet.RejectChanges();
+MessageBox.Show(String.Concat(&quot;All of your changes have been rejected. &quot;,
+&quot;Previous edits since last Save will not be saved to the server.&quot;),
+Message.MainForm.Text,
+MessageBoxButtons.OK,
+MessageBoxIcon.Information);
+}
+catch(Exception Ex)
+{
+Message.DataErr();
+MessageBox.Show(Ex.Message);
+}
+}</p>
+<p>internal static void DataSetPosition(DataSet TargetDataSet,
+DataView EditView,DataPosition EnumPosition,ClientMessage Message)
+{
+try
+{
+switch(EnumPosition)
+{
+case DataPosition.First:
+Message.MainForm.BindingContext[EditView].Position = 0;
+DataSetPosition(TargetDataSet,EditView,Message);
+Message.ReadyToEdit();
+break;</p>
+<pre><code>        case DataPosition.Next:
+            Message.MainForm.BindingContext[EditView].Position += 1;
+            DataSetPosition(TargetDataSet,EditView,Message);
+            Message.ReadyToEdit();
+            break;
+        
+        case DataPosition.Previous:
+            Message.MainForm.BindingContext[EditView].Position -= 1;
+            DataSetPosition(TargetDataSet,EditView,Message);
+            Message.ReadyToEdit();
+            break;
+        
+        case DataPosition.Last:
+            Message.MainForm.BindingContext[EditView].Position 
+                = Message.MainForm.BindingContext[EditView].Count - 1;
+            DataSetPosition(TargetDataSet,EditView,Message);
+            Message.ReadyToEdit();
+            break;
+    }
+}
+catch(Exception Ex)
+{
+    Message.ClientErr();
+    Message.MainStatusPanel.Text = Ex.Message;
+    MessageBox.Show(Ex.Message);
+}
+</code></pre>
+<p>}</p>
+<p>internal static void DataSetPosition(DataSet TargetDataSet,
+DataView EditView,ClientMessage Message)
+{
+if(Message.MainForm.BindingContext[EditView].Count &gt; 0)
+{
+Message.EditStatusPanel.Text = String.Format(&quot;Data Row {0}  of  {1}&quot;,
+(Message.MainForm.BindingContext[EditView].Position + 1).ToString(),
+Message.MainForm.BindingContext[EditView].Count.ToString());</p>
+<pre><code>    if(TargetDataSet.HasChanges())
+    {
+        DataSet ds = TargetDataSet.GetChanges();
+        string msg = &amp;quot;&amp;quot;;
+        foreach(DataTable table in ds.Tables)
+        {
+            if(table.Rows.Count &amp;gt; 1)
+                msg += String.Format(&amp;quot;{0}: {1} changes. &amp;quot;,
+                    table.TableName,table.Rows.Count);
+
+            if(table.Rows.Count == 1)
+                msg += String.Format(&amp;quot;{0}: 1 change. &amp;quot;,
+                    table.TableName);
+        }
+        Message.ServerStatusPanel.Text = msg;
+    }
+    else
+    {
+        Message.ServerStatusPanel.Text
+            = &amp;quot;No new changes to client-side data.&amp;quot;;
+    }
+}
+else
+{
+    Message.EditStatusPanel.Text = &amp;quot;        &amp;quot;;
+    Message.ServerStatusPanel.Text = &amp;quot;        &amp;quot;;
+}
+</code></pre>
+<p>}</p>
+<p>internal static void DataSetUpdate(SqlDataAdapter TargetSQLDataAdapter,
+DataSet TargetDataSet,
+DataTable TargetDataTable,
+bool UpdateDBMS,
+bool PromptToLoseChanges,
+ClientMessage Message)
+{
+//Stop any current edits.
+Message.MainForm.BindingContext[TargetDataTable].EndCurrentEdit();</p>
+<pre><code>if(TargetDataSet.HasChanges())
+{
+    if(PromptToLoseChanges)
+    {
+        if(MessageBox.Show(&amp;quot;Do you want to save your changes?&amp;quot;,
+            Message.MainForm.Text, MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question)
+            == DialogResult.No) return;
+    }
+}
+
+//Clone target data set. 
+DataSet dsTmp = null;
+try
+{
+    dsTmp = TargetDataSet.Clone();
+}
+catch(System.Exception Ex)
+{
+    MessageBox.Show(Ex.Message);
+}
+
+//Merge with empty clone. FUNKYKB: Does this test schema integrity?
+try
+{
+    TargetDataSet.Merge(dsTmp);
+}
+catch(System.Exception Ex)
+{
+    MessageBox.Show(Ex.Message);
+}
+
+//Update server.
+if(UpdateDBMS)
+{
+    try
+    {
+        Message.Saving();
+        TargetSQLDataAdapter.Update(TargetDataSet);
+    }
+    catch(System.Exception Ex)
+    {
+        Message.DataErr();
+        Message.MainStatusPanel.Text = Ex.Message;
+        MessageBox.Show(Ex.Message);
+    }
+}
+
+//Save and clear all changes.
+TargetDataSet.AcceptChanges();
+</code></pre>
+<p>}</p>
+<p>#endregion</p>

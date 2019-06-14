@@ -1,0 +1,21 @@
+<p>DECLARE @x xml</p>
+<p>SET @x = '
+&lt;root&gt;
+&lt;myElement myAttribute=&quot;attrValue&quot;&gt;The element value.&lt;/myElement&gt;
+&lt;/root&gt;
+'</p>
+<p>SELECT
+@x.query('//myElement/node()') as [element value]
+,   @x.query('data(//myElement)') as [element value]
+,   @x.query('data(//myElement/@myAttribute)') as [elment attribute]</p>
+<p>/*</p>
+<pre><code>For more information see:
+
+“Using the data() function in XQuery”
+http://www.sqlskills.com/blogs/bobb/
+    2004/09/06/UsingTheDataFunctionInXQuery.aspx
+
+“Introduction to XQuery in SQL Server 2005”
+http://technet.microsoft.com/en-us/library/ms345122.aspx
+</code></pre>
+<p>*/</p>

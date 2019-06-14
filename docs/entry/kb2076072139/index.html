@@ -1,0 +1,23 @@
+<p>Although there is a performance hit, the preference here is to use .htaccess files for bootstrapping the Zend Framework. The 2006-era expression for using .htaccess comes from “Configuring Your URL Rewriter” here:</p>
+<pre><code>http://framework.zend.com/wiki/display/ZFDEV/Configuring+Your+URL+Rewriter
+</code></pre>
+<p>The Apache RewriteRule is:</p>
+<pre><code>RewriteEngine on
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule !&amp;bsol;&amp;bsol;.(js|ico|txt|gif|jpg|png|css)$ index.php
+</code></pre>
+<p>Here is a more recent expression:</p>
+<pre><code>RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d 
+RewriteRule ^.*$ - [NC,L]
+RewriteRule ^.*$ index.php [NC,L]
+</code></pre>
+<p>There may be one advantage here with the omission of RewriteBase. For more information, see “What happens to the Zend Framework routing tables when you change the site to a subfolder?” here:</p>
+<pre><code>http://stackoverflow.com/questions/1071003/
+    what-happens-to-the-zend-framework-routing-tables
+    -when-you-change-the-site-to-a-s
+</code></pre>

@@ -1,0 +1,11 @@
+<p>Sometimes is is better to DROP a table instead of using the ALTER TABLE or sp_rename commands. If the table has data in it, use the SELECT INTO syntax to create a temporary table. For example:</p>
+<pre><code>SELECT *
+INTO tmpTable
+FROM MyTable
+</code></pre>
+<p>when the table (&quot;MyTable&quot;) is ready to have its data back use the INSERT statement. Following our example we have:</p>
+<pre><code>INSERT MyTable (Col1, Col2, Col3)
+SELECT (Col1, Col2, Col3)
+FROM tmpTable
+</code></pre>
+<p>Column lists are used here as omitting column lists may not be supported on all servers. Once the table (&quot;MyTable&quot;) gets its data back, we would then DROP &quot;tmpTable.&quot;</p>

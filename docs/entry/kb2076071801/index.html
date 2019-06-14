@@ -1,0 +1,12 @@
+<p>2.1.4 Backing beans</p>
+<p>In the MVC world backing beans play the part of the controller, the interaction between the UI and the model. &quot;Backing beans generally contain properties you want to retrieve from users and event listener methods... that process those properties and either manipulate the UI or perform some sort of application processing.&quot;</p>
+<p>&quot;You associate a component with a backing bean via the JSF expression language (EL), which is similar to the JSP 2.0 and JSTL expression languages.&quot; The expression for the rendered attribute in the &lt;panelGrid&gt; declaration below says, 'Do not render the component unless the backing bean counts more than 0 controls':</p>
+<pre><code>&amp;lt;h:panelGrid
+    rendered=&amp;quot;#{helloBean.numControls &amp;gt; 0}&amp;quot;
+    id=&amp;quot;controlPanel&amp;quot;
+    binding=&amp;quot;#{helloBean.controlPanel}&amp;quot;
+    columns=&amp;quot;20&amp;quot;
+    border=&amp;quot;1&amp;quot;
+    cellspacing=&amp;quot;0&amp;quot; /&amp;gt;
+</code></pre>
+<p>&quot;Here, the component's binding property uses a JSF EL expression to associate it with the HelloBean property controlPanel, which is of type HtmlPanelGrid.&quot; One difference between a backing bean and a &quot;Model Object&quot; is that the Model Object would not define types like HtmlPanelGrid. Model Objects should &quot;know nothing&quot; about the UI. It follows that, in our example above, you cannot use the binding property with Model Objects.</p>

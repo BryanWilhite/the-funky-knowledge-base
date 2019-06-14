@@ -1,0 +1,27 @@
+<p>IF OBJECT_ID('_newproc') IS NOT NULL
+BEGIN
+DROP PROCEDURE _newproc
+IF OBJECT_ID('_newproc') IS NOT NULL
+PRINT '&lt;&lt;&lt; FAILED DROPPING PROCEDURE _newproc &gt;&gt;&gt;'
+ELSE
+PRINT '&lt;&lt;&lt; DROPPED PROCEDURE _newproc &gt;&gt;&gt;'
+END
+GO</p>
+<p>CREATE PROCEDURE _newproc
+(
+@cmdName   varchar(32)  = 'default'
+)</p>
+<p>AS</p>
+<p>-- Description: Renames the specified database.
+-- Developer: rasx@songhaysystem.com
+IF @cmdName = 'default'
+BEGIN
+END</p>
+<p>GO</p>
+<p>GRANT EXECUTE ON _newproc TO dbWebSolutionsUsers
+GO</p>
+<p>IF OBJECT_ID('_newproc') IS NOT NULL
+PRINT '&lt;&lt;&lt; CREATED PROCEDURE _newproc &gt;&gt;&gt;'
+ELSE
+PRINT '&lt;&lt;&lt; FAILED CREATING PROCEDURE _newproc &gt;&gt;&gt;'
+GO</p>

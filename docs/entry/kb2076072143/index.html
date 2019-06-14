@@ -1,0 +1,51 @@
+<p>I'm sure many out there know this or figured it out eons ago, but it was new to me and took awhile to figure out.</p>
+<p>Say you have a RDF style XML document that looks something like:</p>
+<p>&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot; ?&gt;
+&lt;rdf:RDF xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot; xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot; xmlns:sy=&quot;http://purl.org/rss/1.0/modules/syndication/&quot; xmlns:admin=&quot;http://webns.net/mvcb/&quot; xmlns=&quot;http://purl.org/rss/1.0/&quot;&gt;
+&lt;channel rdf:about=&quot;http://someplace.com/weblog/&quot;&gt;
+&lt;title&gt;News from Bob&lt;/title&gt;
+&lt;link&gt;http:// someplace.com/weblog/&lt;/link&gt;
+&lt;description&gt;&lt;/description&gt;
+&lt;dc:language&gt;en-us&lt;/dc:language&gt;
+&lt;dc:creator&gt;Bob&lt;/dc:creator&gt;
+&lt;dc:rights&gt;Copyright 2003 Bob&lt;/dc:rights&gt;
+&lt;dc:date&gt;2003-03-19T22:30:34-07:00&lt;/dc:date&gt;
+&lt;admin:generatorAgent rdf:resource=&quot;http://www.movabletype.org/?v=2.51&quot; /&gt;
+&lt;admin:errorReportsTo rdf:resource=&quot;mailto:tbob@somewhere.com&quot; /&gt;
+&lt;sy:updatePeriod&gt;hourly&lt;/sy:updatePeriod&gt;
+&lt;sy:updateFrequency&gt;1&lt;/sy:updateFrequency&gt;
+&lt;/channel&gt;
+&lt;item rdf:about=&quot;http://somewhere/weblog/archives/2003/03/19.shtml#how_i_really_feel_about_cheese&quot;&gt;
+&lt;title&gt;How I really feel about Cheese&lt;/title&gt;
+&lt;description&gt;&lt;p&gt;
+I was asked in a comment why I really don't like cheese...&lt;/description&gt;
+&lt;/item&gt;
+&lt;/rdf:RDF&gt;</p>
+<p>Simplistically I thought the following code would work:</p>
+<pre><code>XmlNode dateNode = rdfXml.SelectSingleNode(&amp;quot;/RDF/channel/date&amp;quot;);
+</code></pre>
+<p>But of course it returns Null. So I tried the following:</p>
+<pre><code>XmlNode dateNode = rdfXml.SelectSingleNode(&amp;quot;/rdf:RDF/channel/dc:date&amp;quot;);
+</code></pre>
+<p>Of course this returned Null as well. So it was time to turn to the help file, which didn’t help much. My next best friend is Google, and Google Groups didn’t let me down. Turns out SelectSingleNode is overloaded and takes a XmlNamespaceManager as the second parameter. I now had this:</p>
+<pre><code>nsMgr = new XmlNamespaceManager(feedXml.NameTable);
+
+nsMgr.AddNamespace(&amp;quot;rdf&amp;quot;, &amp;quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&amp;quot;);
+
+nsMgr.AddNamespace(&amp;quot;dc&amp;quot;, &amp;quot;http://purl.org/dc/elements/1.1/&amp;quot;);
+
+XmlNode dateNode = rdfXml.SelectSingleNode(&amp;quot;/rdf:RDF/channel/dc:date&amp;quot;, nsMgr);
+</code></pre>
+<p>However, I didn’t know what to do with the default namespace. A little more research lead me to the nugget that there is no such thing as a default namespace in XPath, so all I has to do was add the default namespace with the prefix of my choosing.</p>
+<pre><code>nsMgr = new XmlNamespaceManager(feedXml.NameTable);
+
+nsMgr.AddNamespace(&amp;quot;rdf&amp;quot;, &amp;quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&amp;quot;);
+
+nsMgr.AddNamespace(&amp;quot;dc&amp;quot;, &amp;quot;http://purl.org/dc/elements/1.1/&amp;quot;);
+
+nsMgr.AddNamespace(&amp;quot;rss&amp;quot;, &amp;quot;http://purl.org/rss/1.0/&amp;quot;);
+
+XmlNode dateNode = rdfXml.SelectSingleNode(&amp;quot;/rdf:RDF/rss:channel/dc:date&amp;quot;, nsMgr);
+</code></pre>
+<p>Now everything works like it should.</p>
+<p>[http://weblogs.asp.net/wallen/archive/2003/04/02/4725.aspx]</p>

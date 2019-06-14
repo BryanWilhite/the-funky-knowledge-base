@@ -1,0 +1,99 @@
+<p>Function StopService
+{
+$s = Get-WmiObject -Class Win32_Service -Filter $args[0]
+if ( $s )
+{
+Write-Host &quot;Service&quot;$s.Name&quot;found.&quot;
+if ( $s.State -eq &quot;Running&quot; )
+{
+Write-Host &quot;Service is running. Stopping service…<code>n&amp;quot; StopServiceReturnValue $s.StopService().ReturnValue Write-Host &amp;quot;Waiting 5 seconds…</code>n&quot;
+Sleep -seconds 5
+}
+}
+else
+{
+Write-Host &quot;Service not found.`n&quot;
+}
+}</p>
+<p>Function StopServiceReturnValue
+{
+$v = $args[0]</p>
+<pre><code>$msg = &amp;quot;Unknown return value:$v&amp;quot;
+
+switch($v)
+{
+    0 	{ $msg = &amp;quot;Success.`n&amp;quot; }
+    1 	{ $msg = &amp;quot;Not Supported.`n&amp;quot; }
+    2 	{ $msg = &amp;quot;Access Denied.`n&amp;quot; }
+    3 	{ $msg = &amp;quot;Dependent Services Running.`n&amp;quot; }
+    4 	{ $msg = &amp;quot;Invalid Service Control.`n&amp;quot; }
+    5 	{ $msg = &amp;quot;Service Cannot Accept Control.`n&amp;quot; }
+    6 	{ $msg = &amp;quot;Service Not Active.`n&amp;quot; }
+    7 	{ $msg = &amp;quot;Service Request timeout.`n&amp;quot; }
+    8 	{ $msg = &amp;quot;Unknown Failure.`n&amp;quot; }
+    9 	{ $msg = &amp;quot;Path Not Found.`n&amp;quot; }
+    10 	{ $msg = &amp;quot;Service Already Stopped.`n&amp;quot; }
+    11 	{ $msg = &amp;quot;Service Database Locked.`n&amp;quot; }
+    12 	{ $msg = &amp;quot;Service Dependency Deleted.`n&amp;quot; }
+    13 	{ $msg = &amp;quot;Service Dependency Failure.`n&amp;quot; }
+    14 	{ $msg = &amp;quot;Service Disabled.`n&amp;quot; }
+    15 	{ $msg = &amp;quot;Service Logon Failed.`n&amp;quot; }
+    16 	{ $msg = &amp;quot;Service Marked For Deletion.`n&amp;quot; }
+    17 	{ $msg = &amp;quot;Service No Thread`n&amp;quot; }
+    18 	{ $msg = &amp;quot;Status: Circular Dependency`n&amp;quot; }
+    19 	{ $msg = &amp;quot;Status: Duplicate Name`n&amp;quot; }
+    20 	{ $msg = &amp;quot;Status: Invalid Name`n&amp;quot; }
+    21 	{ $msg = &amp;quot;Status: Invalid Parameter`n&amp;quot; }
+    22 	{ $msg = &amp;quot;Status: Invalid Service Account`n&amp;quot; }
+    23 	{ $msg = &amp;quot;Status: Service Exists`n&amp;quot; }
+    24 	{ $msg = &amp;quot;Service Already Paused.`n&amp;quot; }
+}
+
+Write-Host $msg
+</code></pre>
+<p>}</p>
+<p>Function ToggleService
+{</p>
+<pre><code>$s = Get-WmiObject -Class Win32_Service -Filter $args[0]
+
+if ( $s )
+{
+    Write-Host &amp;quot;Service&amp;quot;$s.Name&amp;quot;found.&amp;quot;
+    if ( $s.State -eq &amp;quot;Stopped&amp;quot; )
+    {
+        Write-Host &amp;quot;Service is stopped. Starting service…`n&amp;quot;
+        $s.StartService() | Out-Null
+    }
+    else
+    {
+        Write-Host &amp;quot;Service is not stopped. Stopping service…`n&amp;quot;
+        StopServiceReturnValue $s.StopService().ReturnValue
+
+        if ( $s.Name -eq &amp;quot;W3SVC&amp;quot; )
+        {
+            Write-Host &amp;quot;Waiting 5 seconds…`n&amp;quot;
+            Sleep -seconds 5
+
+            Write-Host &amp;quot;Looking for dependencies for&amp;quot;$s.Name&amp;quot;…`n&amp;quot;
+
+            Write-Host &amp;quot;Looking for HTTP SSL Service…&amp;quot;
+            StopService 'Name = &amp;quot;HTTPFilter&amp;quot;'
+
+            Write-Host &amp;quot;Looking for IIS Admin Service…&amp;quot;
+            StopService 'Name = &amp;quot;IISADMIN&amp;quot;'
+        }
+    }
+}
+else
+{
+    Write-Host &amp;quot;Service not found.`n&amp;quot;
+}
+</code></pre>
+<p>}</p>
+<p>Clear-Host</p>
+<p>Write-Host &quot;Looking for WWW Publishing Service…&quot;
+ToggleService 'Name = &quot;W3SVC&quot;'</p>
+<p>&quot;Looking for default instance of SQL Server 2000…&quot;
+ToggleService 'Name = &quot;MSSQLSERVER&quot;'</p>
+<p>&quot;Looking for conventional instance of SQL Server 2005 Express…&quot;
+ToggleService 'Name = &quot;MSSQL$MYDB&quot;'</p>

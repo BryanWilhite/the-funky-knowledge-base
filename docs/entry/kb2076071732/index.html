@@ -1,0 +1,15 @@
+<p>Ken Laws of Microsoft writes the following: &quot;Once Visual Studio 2005 is installed you may encounter problems debugging your VSTO 2003 project from within Visual Studio 2003. This is again a result of Microsoft Office loading the project in the 2.0 Framework. A couple of options that you have for debugging would be to convert the project to a VSTO 2005 project and you could then debug using Visual Studio 2005 or you could also implement an app config file to force Microsoft Office to load the project in the 1.1. Framework.&quot;</p>
+<p>This is the format of the configuration file:</p>
+<pre><code>&amp;lt;configuration&amp;gt;
+&amp;lt;startup&amp;gt;
+    &amp;lt;supportedRuntime version=&amp;quot;v1.1.4322&amp;quot;/&amp;gt; 
+&amp;lt;/startup&amp;gt;
+&amp;lt;/configuration&amp;gt;
+</code></pre>
+<p>This fragment should be saved in an XML file saved at this path:</p>
+<pre><code>%Program Files%&amp;bsol;&amp;bsol;Microsoft Office&amp;bsol;&amp;bsol;OFFICE11&amp;bsol;&amp;bsol;WINWORD.EXE.CONFIG
+</code></pre>
+<p>For more details, see &quot;Targeting a .NET Framework Version&quot; at:</p>
+<pre><code>http://msdn.microsoft.com/library/
+    en-us/cpguide/html/cpcontargetingnetframeworkversion.asp
+</code></pre>

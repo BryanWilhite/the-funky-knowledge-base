@@ -1,0 +1,18 @@
+<p>/// &lt;summary&gt;
+/// Returns an &lt;see cref=&quot;System.Xml.XmlNamespaceManager&quot;/&gt;
+/// with respect to the scope element of the specified node.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;XpNode&quot;&gt;
+/// The &lt;see cref=&quot;System.Xml.XPath.XPathNavigator&quot;/&gt; node.
+/// &lt;/param&gt;
+public static XmlNamespaceManager GetNamespaceManager(XPathNavigator XpNode)
+{
+XmlNamespaceManager nsman = new XmlNamespaceManager(XpNode.NameTable);
+IDictionary&lt;String, String&gt; names = XpNode.GetNamespacesInScope(XmlNamespaceScope.Local);
+foreach (KeyValuePair&lt;String, String&gt; kv in names)
+{
+nsman.AddNamespace(kv.Key, kv.Value);
+}</p>
+<pre><code>return nsman;
+</code></pre>
+<p>}</p>

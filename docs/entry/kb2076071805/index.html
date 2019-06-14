@@ -1,0 +1,20 @@
+<p>2.1.7 Messages</p>
+<p>Messages are communications with the user. Other UI components can be associated with the HtmlMessages components in a declarative way like this:</p>
+<pre><code>&amp;lt;h:message
+    id=&amp;quot;errors&amp;quot;
+    for=&amp;quot;helloInput&amp;quot;
+    style=&amp;quot;color:red;display:block;&amp;quot; /&amp;gt;
+</code></pre>
+<p>They can also be used in Java code for, say, informational messages in an action listener method.</p>
+<p>2.1.8 Navigation</p>
+<p>&quot;Faces has a pretty elegant navigation system. The navigation handler is responsible for deciding what page to load based on the logical outcome of an action method.&quot; The following sample shows a &quot;navigation rule&quot; and associated navigation cases:</p>
+<pre><code>&amp;lt;navigation-rule&amp;gt;
+    &amp;lt;description&amp;gt;Navigation from the hello page.&amp;lt;/description&amp;gt;
+    &amp;lt;from-view-id&amp;gt;/hello.jsp&amp;lt;/from-view-id&amp;gt;
+    &amp;lt;navigation-case&amp;gt;
+        &amp;lt;from-outcome&amp;gt;success&amp;lt;/from-outcome&amp;gt;
+        &amp;lt;to-view-id&amp;gt;/goodbye.jsp&amp;lt;/to-view-id&amp;gt;
+    &amp;lt;/navigation-case&amp;gt;
+&amp;lt;/navigation-rule&amp;gt;
+</code></pre>
+<p>&quot;This is a handy feature of JSF that should look familiar if you've used frameworks like Struts... changes can be made in a central location [faces-config.xml] instead of across several pages.</p>

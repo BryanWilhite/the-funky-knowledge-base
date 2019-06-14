@@ -1,0 +1,22 @@
+<p>public static function getTrackData(data:*, index:int=0):XML
+{
+var xspf:Namespace = new Namespace(xspfUri);
+default xml namespace = xspf;
+var playlist:XML = new XML(data);</p>
+<pre><code>    var length:int = playlist.trackList.length();
+    var title:String = String(playlist.trackList.track[index].title);
+    var location:String = String(playlist.trackList.track[index].location);
+
+    var returnXml:XML =
+        &amp;lt;trackData x­mlns=&amp;quot;&amp;quot;&amp;gt;
+            &amp;lt;total&amp;gt;{length}&amp;lt;/total&amp;gt;
+            &amp;lt;title&amp;gt;{title}&amp;lt;/title&amp;gt;
+            &amp;lt;location&amp;gt;{location}&amp;lt;/location&amp;gt;
+        &amp;lt;/trackData&amp;gt;
+
+    return returnXml;
+}
+</code></pre>
+<p>/*</p>
+<p>By setting x­mlns to a zero-length string, E4X will omit the x­mlns attribute.</p>
+<p>*/</p>

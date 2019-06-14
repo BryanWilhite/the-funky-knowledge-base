@@ -1,0 +1,47 @@
+<p>/*
+using System;
+using System.Linq;
+using System.Xml.Linq;
+*/</p>
+<p>string xml = @&quot;
+&lt;root&gt;
+&lt;one&gt;this one&lt;/one&gt;
+&lt;two&gt;this two&lt;/two&gt;
+&lt;three&gt;
+this one &lt;three_5&gt;and a half&lt;/three_5&gt;
+&lt;/three&gt;
+&lt;/root&gt;
+&quot;;</p>
+<p>XDocument document = XDocument.Parse( xml );</p>
+<p>var assertions = from n in document.Descendants( &quot;root&quot; )</p>
+<pre><code>select new
+{
+    HasOne = n.Element( &amp;quot;one&amp;quot; ),
+    HasTwo = n.Element( &amp;quot;two&amp;quot; ),
+    HasThree = n.Element( &amp;quot;three&amp;quot; ),
+    HasTen = n.Element( &amp;quot;ten&amp;quot; )
+};
+</code></pre>
+<p>//Verify that there is one root element:
+if ( assertions.Count() == 1 )
+{
+var test = assertions.First();</p>
+<pre><code>Console.WriteLine( test.HasOne != null );
+Console.WriteLine( test.HasTwo != null );
+
+//Search for nested element:
+if ( test.HasThree != null )
+{
+    Console.WriteLine( test.HasThree.Element( &amp;quot;three_5&amp;quot; ) != null );
+}
+
+Console.WriteLine( test.HasTen != null );
+</code></pre>
+<p>}</p>
+<p>/*</p>
+<p>Console output:</p>
+<p>True
+True
+True
+False</p>
+<p>*/</p>

@@ -1,0 +1,17 @@
+<p>'
+'This code replaces the use of DLOOKUP and other
+'domain lookup functions (e.g. DFIRST or DLAST) not
+'available in VB.
+'
+Dim strSQL As String, rsDAO As Recordset
+Dim varReturn</p>
+<p>strSQL = &quot;SELECT Subject FROM tblKBSubjects&quot;</p>
+<p>Set rsDAO = DBEngine(0)(0).OpenRecordset(strSQL)</p>
+<p>rsDAO.FindFirst &quot;Subject = 'Access 97'&quot;</p>
+<p>MsgBox rsDAO.Fields(&quot;Subject&quot;)
+'
+'The key is using the criteria argument
+'in the FindFirst method. The methods
+'of the Recordset object replace
+'the domain lookup functions.
+'</p>

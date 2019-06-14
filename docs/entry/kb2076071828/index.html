@@ -1,0 +1,26 @@
+<ul>
+<li>
+<p>&quot;Please note that this release only works with the Final release of Visual Studio 2005.&quot;</p>
+</li>
+<li>
+<p>&quot;A few users have seen a situation where when they try to create a .NET Framework 3.0 project, they get a package load failure for the WPFFlavor.  This appears to be due to having a machine that had earlier versions of Visual Studio, .NET Framework 3.0, and Visual Studio 2005 extensions for .NET Framework 3.0 (WCF &amp; WPF), November 2006 CTP.  If you hit this problem, run devenv /setup from the command line and this package load failure should be resolved.&quot;</p>
+</li>
+<li>
+<p>&quot;Note that until a final release of the .NET Framework 3.0 runtime is available, publishing can only be used for internal testing.&quot;</p>
+</li>
+<li>
+<p>&quot;You must close all generated files that are open in the Visual Studio editor with extensions .g.cs or .g.vb before building your project.  Failure to do so may result in these files not being updated in subsequent builds.&quot;</p>
+</li>
+<li>
+<p>&quot;IntelliSense doesn't work for elements with a Name until you build once. The IntelliSense engine relies on the code in the markup-compiler generated code file to know what type the Name is.&quot;</p>
+</li>
+<li>
+<p>&quot;The Windows Presentation Foundation and XAML schemas provided with the .NET Framework 3.0 SDK are not flawless. Today, many things can compile that the schema may not approve of. We also have things that the schema will approve that will not compile.&quot;</p>
+</li>
+<li>
+<p>&quot;The WPF Designer no longer has a tab for viewing source code. In VB projects this can be confusing because the source code behind the .xaml files is a subnode and the Visual Basic project system hides subnodes from the user. To work around this you should use the 'Show All Files' button the solution explorer to access the source files.&quot;</p>
+</li>
+<li>
+<p>&quot;We still have a way to go before the design/compilation process for xaml files gets smoother. In our first version, we aren’t going to be able to do as much content model and attribute value checking during compilation as we would like to. For hand coding xaml, until you start using a visual designer, it will be painful. To make it better, the XamlPresentation2006.xsd file has been significantly enhanced to give you better xaml editing in the xml editor. You can also choose to turn on Debug/Exceptions/Break when an exception is thrown for exceptions that you get when loading your xaml page. This will prevent .g.cs/.g.vb files from being opened which cause bad side effects. We realize that we need to invest significantly in this area in the future.&quot;</p>
+</li>
+</ul>

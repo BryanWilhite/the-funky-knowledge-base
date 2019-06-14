@@ -1,0 +1,33 @@
+<p>'Based on Global Variables and SQL statements in DTS by Darren Green
+'http://www.sqldts.com/Default.aspx?205,2
+Option Explicit</p>
+<p>Function Main()
+Dim objDtsPack,vSQL</p>
+<pre><code>' Get reference to the Exec SQL Task
+Set objDtsPack = DTSGlobalVariables.Parent
+
+'Delete Quiz Participant tasks:
+vSQL = &amp;quot;DELETE FROM ParticipantQuiz WHERE pID IN(&amp;quot; _
+    &amp; &amp;quot;SELECT pID FROM Participant WHERE domainUserName = '&amp;quot; _
+    &amp; DTSGlobalVariables(&amp;quot;ImportGroup&amp;quot;).Value _
+    &amp; &amp;quot;')&amp;quot;
+
+Call SetDtsSql(objDtsPack,&amp;quot;DTSTask_DTSExecuteSQLTask_3&amp;quot;,vSQL)
+Call SetDtsSql(objDtsPack,&amp;quot;DTSTask_DTSExecuteSQLTask_6&amp;quot;,vSQL)
+
+' Clean Up
+Set objDtsPack = Nothing
+
+Main = DTSTaskExecResult_Success
+</code></pre>
+<p>End Function</p>
+<p>Sub SetDtsSql(objDtsPack,vTaskName,vSQL)
+Dim objExecSqlTask
+Set objExecSqlTask = objDtsPack.Tasks(CStr(vTaskName)).CustomTask</p>
+<pre><code>' Assign SQL Statement to Exec SQL Task
+objExecSqlTask.SQLStatement = vSQL
+
+' Clean Up
+Set objExecSqlTask = Nothing
+</code></pre>
+<p>End Sub</p>

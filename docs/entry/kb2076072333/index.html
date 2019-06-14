@@ -1,0 +1,13 @@
+<p>&quot;foo&quot; instanceof String //=&gt; false
+&quot;foo&quot; instanceof Object //=&gt; false
+true instanceof Boolean //=&gt; false
+true instanceof Object //=&gt; false
+false instanceof Boolean //=&gt; false
+false instanceof Object //=&gt; false
+[0,1] instanceof Array //=&gt; true
+{0:1} instanceof Object //=&gt; true
+12.21 instanceof Number //=&gt; false
+/foo/ instanceof RegExp //=&gt; true</p>
+<p>…</p>
+<p>That’s because those things are primitives, and unless they need to be used as objects (when you are calling methods on them, for example) they remain so. The only time they “become” objects is when they need to be wrapped. If you are familiar with the concept of “boxing” in .NET, then think of it in that way.</p>
+<p>[http://stackoverflow.com/questions/203739/why-does-instanceof-return-false-for-some-literals]</p>

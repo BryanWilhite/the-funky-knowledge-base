@@ -1,0 +1,19 @@
+<p>The Web service is the core API mechanism for programmatically interacting with all entities in Microsoft Dynamics CRM. This service contains six common methods that work on all entities, and an Execute method that is available for all other needs. The service is strongly typed and WSDL compliant, and it can be updated with any changes to the schema directly through Visual Studio 2008.</p>
+<p>…</p>
+<p>The CrmService Web service is located at http://&lt;crmserver&gt;/mscrmservices/2007/crmservice.asmx, where &lt;crmserver&gt; is the Microsoft Dynamics CRM Web server.</p>
+<p>…</p>
+<p>public static CrmService GetCrmService(string orgName, string server)
+{
+// Standard CRM Service Setup
+CrmAuthenticationToken token = new CrmAuthenticationToken();
+token.AuthenticationType = 0; //AD (On-premise)
+token.OrganizationName = orgName;
+CrmService service = new CrmService();
+service.Credentials = System.Net.CredentialCache.DefaultCredentials;
+// If you know you are using the default credentials,
+// you can replace the service.Crendentials line with the following line
+// service.UseDefaultCredentials = true;
+service.CrmAuthenticationTokenValue = token;
+service.Url = string.Format(&quot;http://{0}/mscrmservices/2007/crmservice.asmx&quot;,server);
+return service;
+}</p>

@@ -1,0 +1,136 @@
+<p>From http://www.keyxl.com/aaab462/105/VIM-Text-Editor-keyboard-shortcuts.htm</p>
+<p>Insert:</p>
+<p>i
+Inserts text to the left of the cursor.</p>
+<p>I
+Inserts text at the beginning of the line, no matter where the cursor is positioned on the current line.</p>
+<p>Append:</p>
+<p>a
+Begins inserting after the character (append) on which the cursor is positioned.</p>
+<p>A
+Begins inserting at the end of the current line, no matter where the cursor is positioned on that line.</p>
+<p>Open:</p>
+<p>o
+Begins inserting text on a new, empty line that is opened for you, below the current line. This is the only command that will allow you to insert text BELOW the LAST line of the file.</p>
+<p>O
+Begins inserting text on a new, empty line that is opened for you, above the current line. This is the only command that will allow you to insert text ABOVE the FIRST line of the file.</p>
+<p>Deleting,copying and changing:</p>
+<p>d
+Delete text. (see explanation above)</p>
+<p>y
+Copy text (that is, yank it into a holding area for later use). (see explanation above)</p>
+<p>c
+Change text from one thing to another, which you will type. (see explanation above)</p>
+<p>!
+Filter text through a program.</p>
+<p>&lt;
+Shift a region of text to the left.</p>
+<p>&gt;
+Shift a region of text to the right.</p>
+<p>Single Key Movements:</p>
+<p>h
+Move cursor to the left one character.</p>
+<p>l
+Move cursor to the right one character.</p>
+<p>j
+Move cursor down one line.</p>
+<p>k
+Move cursor up one line.</p>
+<p>^
+Move cursor to the beginning of the line.</p>
+<p>$
+Move cursor to the end of the current line.</p>
+<p>1G
+Move cursor to the first line of your document. Other numbers will move to the line specified by number (ex. 50G goes to the 50th line).</p>
+<p>G
+Move cursor to the last line of your file.</p>
+<p>CTRL U
+Move cursor up in file 12 lines. Hold down the key marked CTRL (stands for control) and type U. CTRL is like another shift key.</p>
+<p>CTRL D
+Move cursor down in file 15 lines.</p>
+<p>w
+Move cursor forward to the next word, stopping at punctuation.</p>
+<p>W
+Move cursor forward to the next word, ignoring punctuation.</p>
+<p>e
+Move cursor forward to the end of the word, stopping at punctuation.</p>
+<p>E
+Move cursor forward to the end of the word, ignores punctuation.</p>
+<p>b
+Move cursor backwards to the previous word, stopping at punctuation.</p>
+<p>B
+Move cursor backwards to the previous word, ignores punctuation.</p>
+<p>H
+Move cursor to the top line of the screen, (as opposed to the top of the document which may not be the same place).</p>
+<p>M
+Move cursor to the middle of the screen.</p>
+<p>L
+Move cursor to the last line on the screen.</p>
+<p>%
+Move cursor to the matching parenthesis, bracket or brace. Great for debugging programs.</p>
+<p>(
+Move cursor to the beginning of the previous sentence (where a punctuation mark and two spaces define a sentence).</p>
+<p>)
+Move cursor to the beginning of the next sentence.</p>
+<p>{
+Move cursor to the beginning of the current paragraph.</p>
+<p>}
+Move cursor to the beginning of the next paragraph.</p>
+<p>;
+Repeat the last f or F command (see below).</p>
+<p>Almost Single Key Movements:</p>
+<p>'
+Move cursor to a previously marked location in the file. (ex. ma marks the location with the letter a, so a (apostrophe a) moves back to that location).</p>
+<p>f
+Find the character corresponding to the next keystroke typed. Move the cursor to the next occurrence of that character (on the current line only).</p>
+<p>F
+Same as f but movement is backwards.</p>
+<p>Useful:</p>
+<p>x
+Delete character(s) to the right of the cursor, starting with the one beneath it.</p>
+<p>r
+Replace the character under the cursor with the next character you type. This can be a very useful command. If you wanted to split up a line between two words, you might put the cursor on the blank space before the word you would like to go on the next line and type r . This would replace the space between the words with a carriage return and put the rest of the line onto a new line.</p>
+<p>j
+Join lines; the opposite of the line splitting operation above. This will join the current line with the next line in your file. Also very useful.</p>
+<p>R
+Replace lines; puts you in INSERT mode but types over the characters that are already on the current line.</p>
+<p>p
+Paste line(s) you deleted (or yanked) back into the file. This is an excellent command if you want to move a few lines somewhere else in your file. Just type 3dd to delete three lines, for example, and then move to where you want those lines to be and type p to paste the lines back into your file below the cursor.</p>
+<p>.
+The period . command repeats the last text modification command, whatever it may have been (insert, deletion, etc).</p>
+<p>:r filename RETURN
+Read a file into the current file being edited. The file be added gets placed below the current cursor position. Please note the colon : before the r in this command.</p>
+<p>CTRL L
+Redraw the screen. If somebody writes to you while you are in the middle of vi and junk appears all over your screen, dont panic, it did not hurt your file, but you will have to hold down the CTRL key and type L to clean it up (CTRL L).</p>
+<p>d$
+Delete (including the current character), to the end of the line.</p>
+<p>d^
+Delete (excluding the current character), to the beginning of the line.</p>
+<p>dw
+Delete a word(s), stops at punctuation.</p>
+<p>dW
+Delete a word(s), ignoring punctuation.</p>
+<p>de
+Delete a word(s), ignoring punctuation.</p>
+<p>dd
+Delete a line(s).</p>
+<p>dG
+Delete from the current line to the end of the document. CAREFUL: Slightly dangerous.</p>
+<p>dH
+Delete from the current line to the line shown at the top of the screen.</p>
+<p>Search and Replace:</p>
+<p>/the
+Finds the next occurence of the. This will also find their, them, another, etc.</p>
+<p>?the
+Finds the previous occurence of the.</p>
+<p>n
+Repeats the last search command. Finds the Next occurence.</p>
+<p>d/the
+Deletes until the next occurence of the. This is to demonstrate how the delete prefix can be used with any cursor movement command.</p>
+<p>:g/oldword/s//newword/gc
+This will find all occurences of oldword and replace them with newword. The optional c at the end of the command tells vi that you would like to confirm each change. Vi will want you to type in y to make the change or n to skip that replacement. Great for spelling fixes.</p>
+<p>Exit:</p>
+<p>ESC :wq RETURN
+Save and exit VI</p>
+<p>ESC :q! RETURN
+Exit WITHOUT saving changes</p>

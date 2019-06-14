@@ -1,0 +1,38 @@
+<p>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;xsl:stylesheet
+version=&quot;1.0&quot;
+xmlns=&quot;http://www.w3.org/1999/xhtml&quot;
+xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;
+&gt;</p>
+<pre><code>&amp;lt;xsl:output
+    encoding=&amp;quot;utf-8&amp;quot;
+    indent=&amp;quot;yes&amp;quot;
+    media-type=&amp;quot;text/xml&amp;quot;
+    omit-xml-declaration=&amp;quot;yes&amp;quot;
+    standalone=&amp;quot;no&amp;quot; /&amp;gt;
+
+&amp;lt;xsl:param name=&amp;quot;cmd&amp;quot; /&amp;gt;
+
+&amp;lt;xsl:template match=&amp;quot;/&amp;quot;&amp;gt;
+    &amp;lt;div&amp;gt;
+    &amp;lt;xsl:choose&amp;gt;
+        &amp;lt;xsl:when test=&amp;quot;/InternalMessage&amp;quot;&amp;gt;&amp;lt;xsl:call-template name=&amp;quot;app_message&amp;quot; /&amp;gt;&amp;lt;/xsl:when&amp;gt;
+
+        &amp;lt;xsl:otherwise&amp;gt;
+            &amp;lt;h1&amp;gt;Unknown Input&amp;lt;/h1&amp;gt;
+            &amp;lt;p&amp;gt;Command: &amp;lt;xsl:value-of select=&amp;quot;$cmd&amp;quot;/&amp;gt;&amp;lt;/p&amp;gt;
+            &amp;lt;p&amp;gt;Server Response:&amp;lt;/p&amp;gt;
+            &amp;lt;p&amp;gt;&amp;lt;textarea id=&amp;quot;RawServerResponse&amp;quot;&amp;gt;&amp;lt;xsl:copy-of select=&amp;quot;/&amp;quot; /&amp;gt;&amp;lt;/textarea&amp;gt;&amp;lt;/p&amp;gt;
+        &amp;lt;/xsl:otherwise&amp;gt;
+    &amp;lt;/xsl:choose&amp;gt;
+    &amp;lt;/div&amp;gt;
+&amp;lt;/xsl:template&amp;gt;
+
+&amp;lt;xsl:template name=&amp;quot;app_message&amp;quot;&amp;gt;
+    &amp;lt;h1&amp;gt;&amp;lt;xsl:value-of select=&amp;quot;//Header&amp;quot;/&amp;gt;&amp;lt;/h1&amp;gt;
+    &amp;lt;xsl:for-each select=&amp;quot;//Line&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;xsl:value-of select=&amp;quot;node()&amp;quot;/&amp;gt;&amp;lt;/p&amp;gt;
+    &amp;lt;/xsl:for-each&amp;gt;
+&amp;lt;/xsl:template&amp;gt;
+</code></pre>
+<p>&lt;/xsl:stylesheet&gt;</p>

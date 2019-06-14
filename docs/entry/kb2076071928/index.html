@@ -1,0 +1,41 @@
+<p>DECLARE @xml xml</p>
+<p>SET @xml =
+'
+&lt;Root&gt;
+&lt;Item1 /&gt;
+&lt;Item2 /&gt;
+&lt;Item3 /&gt;
+&lt;Item4 /&gt;
+&lt;Item5 /&gt;
+&lt;/Root&gt;
+'</p>
+<p>SET
+@xml.modify
+('
+insert text {&quot;Hello World&quot;} as first into (/Root/Item3)[1]
+')</p>
+<p>SELECT @xml</p>
+<p>/*
+This projection produces:</p>
+<pre><code>&amp;lt;Root&amp;gt;
+  &amp;lt;Item1 /&amp;gt;
+  &amp;lt;Item2 /&amp;gt;
+  &amp;lt;Item3&amp;gt;Hello World&amp;lt;/Item3&amp;gt;
+  &amp;lt;Item4 /&amp;gt;
+  &amp;lt;Item5 /&amp;gt;
+&amp;lt;/Root&amp;gt;
+
+Note that the modify() method
+uses Microsoft-specific XML DML.
+This is not part of the XQuery standard.
+
+For more information, see
+“Silent XQuery failures” by Denis Ruckebusch
+http://blogs.msdn.com/denisruc/archive/
+    2007/04/19/silent-xquery-failures.aspx
+
+For general information, see
+“Introduction to XQuery in SQL Server 2005”
+http://technet.microsoft.com/en-us/library/ms345122.aspx
+</code></pre>
+<p>*/</p>

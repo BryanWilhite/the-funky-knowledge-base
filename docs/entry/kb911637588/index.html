@@ -1,0 +1,37 @@
+<p>Public Function basScan() As Boolean</p>
+<pre><code>Dim strPath As String, strName As String
+
+On Error GoTo basScan_Err
+
+basScan = True    
+
+strPath = &amp;quot;C:&amp;bsol;&amp;bsol;&amp;quot;
+
+strName = VBA.Dir(strPath, vbDirectory)
+
+Do While strName &amp;lt;&amp;gt; Empty
+    'Ignore file system directories.
+    If strName &amp;lt;&amp;gt; &amp;quot;.&amp;quot; And strName &amp;lt;&amp;gt; &amp;quot;..&amp;quot; Then
+        ' Use bitwise comparison to make sure strName is a directory.
+        If (VBA.GetAttr(strPath &amp; strName) And vbDirectory) &amp;gt; 0 Then
+            Debug.Print &amp;quot;Directory: &amp;quot; &amp; strName
+        ' Use bitwise comparison to make sure strName is a file.
+        ElseIf (VBA.GetAttr(strPath &amp; strName) And vbDirectory) = 0 Then
+            Debug.Print &amp;quot;File: &amp;quot; &amp; strName
+        End If
+    End If
+    ' Get next entry for current path.
+    strName = VBA.Dir
+Loop
+</code></pre>
+<p>basScan_Exit:
+Exit Function</p>
+<p>basScan_Err:
+Select Case VBA.Err
+Case Else
+VBA.MsgBox VBA.Err &amp; &quot;: &quot; &amp; VBA.Err.Description, _<br>
+vbCritical, &quot;basScan Error&quot;
+basScan = False
+Resume basScan_Exit
+End Select
+End Function</p>

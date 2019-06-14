@@ -1,0 +1,36 @@
+<p>function jsWindow(vName,vValue,vFeatures,vIsHTML) {</p>
+<pre><code>if(vFeatures == '') {
+    vFeatures = &amp;quot;&amp;quot;
+        + &amp;quot;toolbar=1&amp;quot;
+        + &amp;quot;,location=0&amp;quot;
+        + &amp;quot;,scrollbars=1&amp;quot;
+        + &amp;quot;,resizable=1&amp;quot;
+        + &amp;quot;,directories=0&amp;quot;
+        + &amp;quot;,status=0&amp;quot;
+        + &amp;quot;,width=320&amp;quot;
+        + &amp;quot;,height=240&amp;quot;
+}
+
+if(vIsHTML) {
+    //Format HTML, adding the close method of the window object.
+    vValue = &amp;quot;&amp;lt;HTML&amp;gt;&amp;bsol;&amp;bsol;n&amp;quot;
+        + &amp;quot;&amp;lt;CENTER&amp;gt;&amp;bsol;&amp;bsol;n&amp;lt;BR&amp;gt;&amp;lt;BR&amp;gt;&amp;bsol;&amp;bsol;n&amp;quot;
+        + &amp;quot;&amp;lt;HEAD&amp;gt;&amp;lt;TITLE&amp;gt;Songhay System&amp;lt;/TITLE&amp;gt;&amp;lt;/HEAD&amp;gt;&amp;bsol;&amp;bsol;n&amp;quot;
+        + vValue
+    vValue += &amp;quot;&amp;bsol;&amp;bsol;n&amp;lt;FORM&amp;gt;&amp;lt;INPUT TYPE=button VALUE=&amp;bsol;&amp;bsol;&amp;quot;Close&amp;bsol;&amp;bsol;&amp;quot;&amp;quot;
+           +&amp;quot;OnClick=&amp;bsol;&amp;bsol;&amp;quot;window.close()&amp;bsol;&amp;bsol;&amp;quot;&amp;gt;&amp;lt;/FORM&amp;gt;&amp;quot;
+    vValue += &amp;quot;&amp;bsol;&amp;bsol;n&amp;lt;/CENTER&amp;gt;&amp;bsol;&amp;bsol;n&amp;lt;/HTML&amp;gt;&amp;quot;
+
+    //Open window.
+    vWindow = window.open('', vName, vFeatures)
+    with(vWindow.document) {
+        write(vValue)
+        close()
+    }
+}
+else {
+    //Open window.
+    vWindow = window.open(vValue, vName, vFeatures)
+}
+</code></pre>
+<p>}</p>

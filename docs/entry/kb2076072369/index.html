@@ -1,0 +1,13 @@
+<p>In App.OnStartup() have something like this:</p>
+<pre><code>ObjectFactory.Initialize(x =&amp;gt;
+    x
+    .ForRequestedType&amp;lt;ViewModel.IViewModelManager&amp;gt;()
+    .CacheBy(InstanceScope.Singleton)
+    .TheDefault.Is.OfConcreteType&amp;lt;ViewModel.ViewModelManager&amp;gt;()
+);
+</code></pre>
+<p>Use the requested type like this:</p>
+<pre><code>var manager = ObjectFactory.GetInstance&amp;lt;IViewModelManager&amp;gt;();
+manager.Register(this);
+</code></pre>
+<p>This pattern is most quick and most dirty.</p>

@@ -1,0 +1,15 @@
+<p>The Microsoft KB details how to attach to a Microsoft Outlook folder in &quot;ACC97: Sample Procedure to Attach a Microsoft Outlook Folder&quot; (Article ID Q161174). I found dealing with MSIE4's Outlook Express a different matter.</p>
+<p>Since I could not get the proper connection string, I resorted to exporting the desired folder to Windows Messaging (during this process Outlook Express should not be the default Simple MAPI client). I then attached to the folder using the following connection string:</p>
+<pre><code>'Source database type:
+strConn = &amp;quot;Exchange 4.0;&amp;quot;
+'Table name (MAPILEVEL=&amp;lt;storage|folders&amp;gt;):
+strConn = strConn &amp; &amp;quot;MAPILEVEL=Personal Folders|;&amp;quot;
+'Source table type (0 for folders, 1 for address books):
+strConn = strConn &amp; &amp;quot;TABLETYPE=0;&amp;quot;
+'Database name (DATABASE=&amp;lt;path&amp;gt;):
+strConn = strConn &amp; &amp;quot;DATABASE=&amp;quot; &amp; m_dbDAO.Name &amp; &amp;quot;;&amp;quot;
+'Profile name (optional):
+strConn = strConn &amp; &amp;quot;PROFILE=Bryan D. Wilhite;&amp;quot;
+'Password (optional):
+</code></pre>
+<p>The greatest challenge to getting a sucessful connection was setting MAPILEVEL correctly: &quot;MAPILEVEL=Personal Folders|;&quot;.</p>

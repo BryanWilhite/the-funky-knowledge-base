@@ -1,0 +1,11 @@
+<p>If you have ever wondered why a VBA design-time error is generated when passing arguments wrapped in parentheses to a Sub procedure, then you have forgotten about the importance of the Call keyword.</p>
+<p>For example,</p>
+<pre><code>MySub(arg1, arg2) 'will generate an error if this is a Sub
+
+Call MySub(arg1, arg2) 'will not generate an error.
+</code></pre>
+<p>The opinion here is the Call keyword should be used at all times. The temptation is too great to wrap Sub arguments in parentheses since it is done all the time for Function arguments.</p>
+<p>Another noteable feature of the Call keyword is that functions can have their return values discarded when the Call keyword is used in a statement of the form:</p>
+<pre><code>Call MyFunc(arg1, arg2)
+</code></pre>
+<p>where MyFunc() is a user-defined function.</p>

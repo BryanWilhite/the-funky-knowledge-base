@@ -1,0 +1,92 @@
+<p>Lesson 2: Using Windows Authentication</p>
+<p>The purpose of this lesson is to show the relationship between Windows (or NTLM) authentication and ASP.NET. This lesson also delves into the concept of impersonation.</p>
+<ul>
+<li>&quot;Windows authentication is the default authentication method when you create a new Web application project.&quot;</li>
+</ul>
+<p>This Web application configuration denies anonymous users:</p>
+<pre><code>&amp;lt;authentication mode=&amp;quot;Windows&amp;quot;/&amp;gt;
+&amp;lt;authorization&amp;gt;
+    &amp;lt;deny users=&amp;quot;?&amp;quot;/&amp;gt;
+    &amp;lt;!-- Deny unauthenticated users --&amp;gt;
+&amp;lt;/authorization&amp;gt;
+</code></pre>
+<p>For more information on authentication configuration see:</p>
+<pre><code>http://msdn.microsoft.com/library/en-us/
+    cpgenref/html/gngrfauthorizationsection.asp
+</code></pre>
+<ul>
+<li>&quot;If impersonation is enabled, the application executes using the permissions found in your user account. Otherwise, the application executes using the limited ASPNET user account... When a user is authorized, ASP.NET issues an authorization certificate in the form of a cookie that persists for the duration of the user's session.&quot;</li>
+</ul>
+<p>Keep in mind that the impersonated credentials must have the same rights as the &quot;limited&quot; ASPNET account otherwise lack of access to folders like \\Temporary ASP.NET Files will cause exceptions. For more details, see &quot;How To: Create a Custom Account to Run ASP.NET&quot; by J.D. Meier, Alex Mackman, Michael Dunner and Srinath Vasireddy here:</p>
+<pre><code>http://msdn.microsoft.com/library/en-us/dnnetsec/html/SecNetHT01.asp
+</code></pre>
+<ul>
+<li>&quot;When a user is authorized, ASP.NET issues a certificate in the form of a cookie that persists for the duration of the user's session.&quot;</li>
+</ul>
+<p>The speculation here suggests that this certificate &quot;persists&quot; elsewhere when cookie-less sessions are enabled.</p>
+<ul>
+<li>&quot;One of the key advantages of Windows authentication is that users who are logged on to the network don't have to log on again to access the Web application.&quot;</li>
+</ul>
+<p>This feature is best enjoyed in a domain-based Intranet setting using Microsoft Web browsers.</p>
+<ul>
+<li>&quot;To restrict access to specific users, list their names separated by commas in an &lt;allow&gt; element.&quot;</li>
+</ul>
+<p>This is the example:</p>
+<pre><code>&amp;lt;authorization&amp;gt;
+    &amp;lt;allow users=&amp;quot;contoso&amp;bsol;&amp;bsol;DeannaMeyer,contoso&amp;bsol;&amp;bsol;MichaelEmanuel&amp;quot; /&amp;gt;
+    &amp;lt;deny users=&amp;quot;*&amp;quot; /&amp;gt;
+&amp;lt;/authorization&amp;gt;
+</code></pre>
+<ul>
+<li>&quot;To allow or deny access to certain groups of users, add the &lt;roles&gt; element to the authorization list...&quot;</li>
+</ul>
+<p>This is the example:</p>
+<pre><code>&amp;lt;authorization&amp;gt;
+    &amp;lt;allow roles=&amp;quot;contoso&amp;bsol;&amp;bsol;Administrators&amp;quot; /&amp;gt;
+    &amp;lt;deny users=&amp;quot;*&amp;quot; /&amp;gt;
+&amp;lt;/authorization&amp;gt;
+</code></pre>
+<ul>
+<li>&quot;The Identity property returns an object that includes the user name and role information...&quot;</li>
+</ul>
+<p>The Identity property is a member of System.Web.UI.Page.User.</p>
+<ul>
+<li>&quot;These methods and properties can be used in conjunction with the Global module's AuthorizeRequest event to check user names against an external user file rather than use the list in Web.config.&quot;</li>
+</ul>
+<p>This topic seems to be connected with HTTP Modules such as in &quot;INFO: ASP.NET HTTP Modules and HTTP Handlers Overview&quot; at:</p>
+<pre><code>http://support.microsoft.com/default.aspx?scid=kb;EN-US;Q307985
+</code></pre>
+<ul>
+<li>&quot;If authorization is set both in Web.config and in IIS, the IIS setting is evaluated first...&quot;</li>
+</ul>
+<p>Because the &quot;most restrictive&quot; setting is used the order of events here seems irrelevant.</p>
+<ul>
+<li>&quot;Allowing IIS to control the password for the anonymous account is highly recommended, but this setting might need to be overridden if your application is deployed over multiple servers.&quot;</li>
+</ul>
+<p>This recommendation must also be weighed against the MSKB article &quot;Password Synchronization/Allow IIS to Control Password May Cause Problems&quot; at:</p>
+<pre><code>http://support.microsoft.com/default.aspx?scid=kb;en-us;Q216828
+</code></pre>
+<ul>
+<li>
+<p>&quot;...you can enable multiple authentication methods through IIS...you can detect which method was used to authenticate a user in code by using the Identity object's AuthenticationType method...&quot;</p>
+</li>
+<li>
+<p>&quot;...once a user is authenticated, the application runs under the identity of the ASP.NET user account by default.&quot;</p>
+</li>
+</ul>
+<p>This default behavior is changed by declaring the identity element with the form:</p>
+<pre><code>&amp;lt;configuration&amp;gt;
+    &amp;lt;system.web&amp;gt;
+        &amp;lt;identity impersonate=&amp;quot;true&amp;quot; /&amp;gt;
+    &amp;lt;/system.web&amp;gt;
+&amp;lt;/configuration&amp;gt;
+</code></pre>
+<p>The authenticated user that ASP.NET runs under must have the same (or more) security privileges as the ASP.NET user account. The WindowsIdentity.GetCurrent() method of System.Security.Principal can be used to verify the running account.</p>
+<p>ASP.NET can also run under a single, known account with a configuration like this:</p>
+<pre><code>&amp;lt;configuration&amp;gt;
+    &amp;lt;system.web&amp;gt;
+        &amp;lt;identity impersonate=&amp;quot;true&amp;quot; userName=&amp;quot;root&amp;quot; password=&amp;quot;jkdfjds#X5g&amp;quot; /&amp;gt;
+    &amp;lt;/system.web&amp;gt;
+&amp;lt;/configuration&amp;gt;
+</code></pre>
+<p>This configuration (in a file called Web.config) can be placed in a subfolder of the Web application to define certain areas of the application that run under impersonation.</p>

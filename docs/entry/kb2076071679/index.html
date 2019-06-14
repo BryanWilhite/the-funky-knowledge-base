@@ -1,0 +1,41 @@
+<p>Lesson 1: Using Exception Handling</p>
+<p>The purpose of this lesson is to introduce &quot;error&quot; or &quot;exception&quot; handling in ASP.NET.</p>
+<ul>
+<li>&quot;Errors that are not dealt with in code are called unhandled exceptions... There are three approaches to handling exceptions in a Web application...&quot;</li>
+</ul>
+<p>The three are: structured exception handling (SEH), error event procedures defined in the System.Web.UI.Page class and custom error pages declared in the @Page directive, its errorPage attribute.</p>
+<ul>
+<li>
+<p>&quot;You can combine approaches to effectively handle all possible exceptions within your application...&quot;</p>
+</li>
+<li>
+<p>&quot;Use exception handling structures to enclose statements that access nonmemory resources, such as files and database connections.&quot;</p>
+</li>
+</ul>
+<p>The use of the term &quot;nonmemory resources&quot; sounds strange. What is more perhaps is to say that try/catch/finally blocks are useful when crossing &quot;boundaries&quot; or &quot;layers&quot; in an application.</p>
+<ul>
+<li>&quot;Use the Finally/finally block to include statements that are always executed before leaving the exception-handling structure.&quot;</li>
+</ul>
+<p>The classic example for the above is closing a database connection when trying to connect to an external data source (and calling its Dispose() method).</p>
+<ul>
+<li>
+<p>&quot;The Microsoft .NET Framework includes specific exception types with the individual .NET Framework classes. This means that there is no single, comprehensive list of exception types in the .NET documentation. Instead, you must use the Visual Studio .NET Exceptions dialog box to view specific exception types...&quot;</p>
+</li>
+<li>
+<p>&quot;...you use the Throw/throw keyword to cause specific exceptions to occur.&quot;</p>
+</li>
+</ul>
+<p>The suggestion in the lesson is that exceptions can be used a primary form of communication instead of suggesting it for a secondary (or tertiary) form because of performance reasons. To the contrary, the lesson introduces the ApplicationException class to encourage us to define new exceptions based on this class.</p>
+<ul>
+<li>
+<p>&quot;The ApplicationException class provides the same features as the standard Exception class. It simply provides a way to differentiate between those exceptions defined in the .NET Framework and those defined in your application.&quot;</p>
+</li>
+<li>
+<p>&quot;When an unhandled exception occurs in a Web application, ASP.NET fires the error events...&quot;</p>
+</li>
+</ul>
+<p>These events are Page_Error, Global_Error and Application_Error. In the reality of Visual Studio .NET auto-generated code the Global_Error event procedure is not used.</p>
+<ul>
+<li>&quot;Error events let you handle exceptions for an entire object in a single, centralized location---the error event procedure... When handling exceptions in error events, use the Server object to get information about the exception that occurred.&quot;</li>
+</ul>
+<p>The Server.GetLastError() and Server.ClearError() methods gets &quot;the information&quot; and clears the error, respectively. The code samples suggest that a useful design pattern is to get the last error, store it in a Session variable, clear the error and use Server.Transfer() to re-load the page throwing the error.</p>

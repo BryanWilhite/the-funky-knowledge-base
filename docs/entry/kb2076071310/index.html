@@ -1,0 +1,16 @@
+<p>//The number we want to show.
+double dbl = 10000.0 / 3.0;</p>
+<p>//Get a Locale object from the java.util package.
+java.util.Locale locale = java.util.Locale.getDefault();</p>
+<p>//Format the number for a given Locale.
+java.text.NumberFormat nf = java.text.NumberFormat.getNumberInstance(locale.US);
+java.lang.String strUSnum = nf.format(dbl);</p>
+<p>//Format the number as Locale currency.
+java.text.NumberFormat cf = java.text.NumberFormat.getCurrencyInstance(locale.US);
+java.lang.String strUSD = cf.format(dbl);</p>
+<p>//Format the number with a custom format.
+java.text.DecimalFormat df = new java.text.DecimalFormat(&quot;,##0.000000 foobars&quot;);
+java.lang.String strCustomNum = df.format(dbl);</p>
+<p>java.lang.System.out.println(strUSnum);
+java.lang.System.out.println(strUSD);
+java.lang.System.out.println(strCustomNum);</p>

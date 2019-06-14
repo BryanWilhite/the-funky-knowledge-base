@@ -1,0 +1,42 @@
+<p>The last 10 minutes of the Franklins.net DotNetRocks! show with Andrew Brust on March 31, 2003 deals with a data binding &quot;bug&quot; that's actually a feature. Here's the feature: when you open a Windows Form and enter data into a TextBox or ComboBox control bound to a DataSet and then close the form without moving to a new record or pressing some kind of Save button you will lose your changes.</p>
+<p>This wonderful feature of the .NET Framework was stumbled upon by me while building my first WinForms project. In a fit of rage and panic, I wrote this code:</p>
+<pre><code>Public Sub RowJiggle(ByRef BindContext As BindingContext, _
+    ByRef TargetDataView As DataView)
+    'This subroutine makes sure that changes are recognized
+    'by moving off the row being edited and moving back. This hack sucks.
+    With BindContext(TargetDataView)
+        Try
+            If .Count &amp;gt; 1 Then
+                If .Position &amp;lt;= (.Count - 1) And .Position &amp;gt; 0 Then
+                    'Backward jiggle:
+                    .Position -= 1
+                    .Position += 1
+                ElseIf .Position &amp;lt; (.Count - 1) And .Position = 0 Then
+                    'Forward jiggle:
+                    .Position += 1
+                    .Position -= 1
+                End If
+            End If
+        Catch Ex As Exception
+            Call Me.SetStatusBar(StatusIcons.ClientError, MainMsg:=Ex.Message)
+            Call MessageBox.Show(Ex.Message)
+        End Try
+    End With
+End Sub
+</code></pre>
+<p>Unfortunately, this code will not work for a DataSet with one row. Fortunately, that DotNetRocks! show aforementioned was archived and listened to again. This private rebroadcast of the show inspired me to write this code:</p>
+<pre><code>Private Sub RowEndEdit(ByRef BindContext As BindingContext, _
+    ByRef TargetDataView As DataView)
+
+    Dim BindBase As BindingManagerBase
+    Try
+        BindBase = BindContext.Item(TargetDataView)
+        Call BindBase.EndCurrentEdit()
+
+    Catch ex As Exception
+        Call Me.SetStatusBar(StatusIcons.ClientError, MainMsg:=ex.Message)
+        Call MessageBox.Show(ex.Message)
+    End Try
+End Sub
+</code></pre>
+<p>This code rocks!</p>

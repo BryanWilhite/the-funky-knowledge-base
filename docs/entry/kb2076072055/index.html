@@ -1,0 +1,28 @@
+<p>SharePoint uses the BLOB data type in SQL Server to store files. SharePoint is the primordial ancestor of WinFS. It is tempting to see it as a full replacement for a traditional file system like NTFS. But there are limitations explored in “SharePoint vs. File Shares” here:</p>
+<pre><code>http://spsdreamjob.spaces.live.com
+    /blog/cns!D0B14C6B969D7501!131.entry
+</code></pre>
+<ul>
+<li>
+<p>“Long Paths—WebDav has a limit of 260 chars, and so does MOSS/WSS [or less].”</p>
+</li>
+<li>
+<p>“Weird files with inter-file references—the most common problem here includes Excel spreadsheets that are typically peppered with references to data stored in other excel files…”</p>
+</li>
+<li>
+<p>“Weird file names—Infrequently users will have filenames that are like test...txt or test#%.txt as a requirement of some application, or as part of a file naming standard.”</p>
+</li>
+</ul>
+<p>According to “Is the File Server Dead?” by Joel Oleson, these are valid uses of the File System over SharePoint:</p>
+<ul>
+<li>Product Distribution (Product packages like Office)</li>
+<li>SMS distribution point (desktop patches and hot fixes)</li>
+<li>NT Backups, Backup Servers and Desktop Backups</li>
+<li>Database Storage</li>
+<li>Large Audio/Video and Streaming Media and other large archive read only media such as DVDs, CDs storage (.iso, .wmv, .ram, .vhd)</li>
+<li>Developer Source Control</li>
+<li>Batch, Command Scripts, Executables (.exe, .vbs, .cmd, .bat)</li>
+<li>Application Server... Client Application Storage Linked Files and File Dependencies -  (.lnk, .lck)</li>
+<li>Archives and Dumps (.arj, .rar, .zip, .dmp, .bak)</li>
+</ul>
+<p>[http://blogs.msdn.com/sharepoint/archive/2007/01/02/is-the-file-server-dead.aspx]</p>

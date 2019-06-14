@@ -1,0 +1,58 @@
+<p>/*
+This form is based on what is extracted from SQL Enterprise Manager:
+*/</p>
+<p>/*
+Object:  Stored Procedure MyProc
+Script Date: 09/13/1999 8:59:44 AM
+*/
+IF EXISTS
+(SELECT * FROM sysobjects
+WHERE id = object_id('MyProc')
+AND sysstat &amp; 0xf = 4)
+DROP PROCEDURE MyProc
+GO</p>
+<p>CREATE PROCEDURE MyProc
+(
+@param1 float,
+@param2 datetime,
+@param3 datetime,
+@param4 float OUTPUT
+)
+AS
+/*
+Procedure: MyProc</p>
+<pre><code>Action: Description of MyProc goes here.
+</code></pre>
+<p>*/</p>
+<p>-- Procedure statements go here.</p>
+<p>GO</p>
+<p>/*
+This is an alternate form using the PRINT statement:
+*/
+IF OBJECT_ID('ProcName') IS NOT NULL
+BEGIN
+DROP PROCEDURE ProcName
+IF OBJECT_ID('ProcName') IS NOT NULL
+PRINT '&lt;&lt;&lt; FAILED DROPPING PROCEDURE ProcName &gt;&gt;&gt;'
+ELSE
+PRINT '&lt;&lt;&lt; DROPPED PROCEDURE ProcName &gt;&gt;&gt;'
+END
+;</p>
+<p>CREATE PROCEDURE ProcName
+(
+@param1 &lt;datatype&gt; = &lt;default value&gt;
+,   @param2 &lt;datatype&gt; = &lt;default value&gt;
+)
+AS</p>
+<p>-- Name:
+-- Description:
+-- Developer:</p>
+<p>--Enter procedure here.</p>
+<p>GO</p>
+<p>GRANT EXECUTE ON ProcName TO public
+GO</p>
+<p>IF OBJECT_ID('ProcName') IS NOT NULL
+PRINT '&lt;&lt;&lt; CREATED PROCEDURE ProcName &gt;&gt;&gt;'
+ELSE
+PRINT '&lt;&lt;&lt; FAILED CREATING PROCEDURE ProcName &gt;&gt;&gt;'
+GO</p>

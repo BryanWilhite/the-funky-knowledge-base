@@ -1,0 +1,49 @@
+<p>CREATE PROCEDURE NewHitLog
+AS</p>
+<p>-- Description: Inserts rows into tblLog from tblLogImport
+-- Developer: rasx</p>
+<p>SET NOCOUNT ON
+DECLARE
+@type     varchar(10)
+,   @date     datetime
+,   @address  varchar(255)
+,   @file     varchar(255)
+,   @logEntry varchar(1000)</p>
+<p>DECLARE tblLogImportCursor CURSOR FOR
+SELECT
+LogEntry
+FROM
+tblLogImport</p>
+<p>OPEN tblLogImportCursor</p>
+<p>FETCH NEXT FROM tblLogImportCursor
+INTO @logEntry</p>
+<p>WHILE @@FETCH_STATUS = 0
+BEGIN</p>
+<pre><code>SELECT
+    @type    = RTRIM(SUBSTRING(@logEntry,1,4))
+,   @date    = CONVERT(datetime,RTRIM(SUBSTRING(@logEntry,5,20)))
+,   @address = RTRIM(SUBSTRING(@logEntry,24,CHARINDEX('/',@logEntry,24) - 24))
+,   @file    = RTRIM(SUBSTRING(@logEntry,CHARINDEX('/',@logEntry,24),CHARINDEX(' ',@logEntry,CHARINDEX('/',@logEntry,24)) - CHARINDEX('/',@logEntry,24)))
+
+INSERT INTO
+    tblLog
+    (
+        type
+    ,   date
+    ,   address
+    ,   [file]
+    )
+VALUES
+    (
+        @type
+    ,   @date
+    ,   @address
+    ,   @file
+    )
+
+FETCH NEXT FROM tblLogImportCursor
+INTO @logEntry
+</code></pre>
+<p>END</p>
+<p>CLOSE tblLogImportCursor
+DEALLOCATE tblLogImportCursor</p>

@@ -1,0 +1,5 @@
+<p>Quite often the return value supplied by the Application object's SysCmd() Method is not needed. Instead of wasting a variable to store these values, use the Call keyword. Recall that when the Call keyword is used on a function (or a method that returns a value), its return value is discarded.</p>
+<p>For example, the following call to SysCmd() returns Empty if successful:</p>
+<pre><code>Call Application.SysCmd(acSysCmdClearStatus)
+</code></pre>
+<p>by using the Call statement, the value of Empty is ignored.</p>

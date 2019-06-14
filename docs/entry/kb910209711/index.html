@@ -1,0 +1,50 @@
+<p>Public Function basDataConnection(Optional CloseConn = False) As Boolean</p>
+<pre><code>On Error GoTo basDataConnection_Err
+
+If VBA.VarType(CloseConn) &amp;lt;&amp;gt; vbBoolean Then VBA.Err.Raise 450
+
+If CloseConn Then
+    If Not m_cnnADO Is Nothing Then
+        m_cnnADO.Close
+        Set m_cnnADO = Nothing
+    End If
+    GoTo basDataConnection_Exit
+End If
+
+basDataConnection = basFileExists(App.Path &amp; c_dbName)
+If Not basDataConnection Then VBA.Err.Raise 76
+
+Set m_cnnADO = New ADODB.Connection
+With m_cnnADO
+    .Open _
+    ConnectionString:=&amp;quot;Provider=Microsoft.Jet.OLEDB.3.51;&amp;quot; _
+        &amp; &amp;quot;Persist Security Info=False;&amp;quot; _
+        &amp; &amp;quot;User ID=Admin;&amp;quot; _
+        &amp; &amp;quot;Data Source=&amp;quot; &amp; VB.App.Path &amp; &amp;quot;&amp;bsol;&amp;bsol;DSAPL.mdb;&amp;quot; _
+        &amp; &amp;quot;Mode=Share Deny None;&amp;quot; _
+        &amp; &amp;quot;Extended Properties=&amp;quot;&amp;quot;;&amp;quot; _
+        &amp; &amp;quot;COUNTRY=0;&amp;quot; _
+        &amp; &amp;quot;CP=1252;&amp;quot; _
+        &amp; &amp;quot;LANGID=0x0409&amp;quot;&amp;quot;;&amp;quot; _
+        &amp; &amp;quot;Locale Identifier=1033;&amp;quot; _
+        &amp; &amp;quot;Jet OLEDB:System database=&amp;quot;&amp;quot;&amp;quot;&amp;quot;;&amp;quot; _
+        &amp; &amp;quot;Jet OLEDB:Registry Path=&amp;quot;&amp;quot;&amp;quot;&amp;quot;;&amp;quot; _
+        &amp; &amp;quot;Jet OLEDB:Database Password=&amp;quot;&amp;quot;&amp;quot;&amp;quot;;&amp;quot; _
+        &amp; &amp;quot;Jet OLEDB:Global Partial Bulk Ops=2&amp;quot;
+    .CursorLocation = adUseClient
+End With
+</code></pre>
+<p>basDataConnection_Exit:
+Exit Function</p>
+<p>basDataConnection_Err:
+Select Case Err
+Case 76 'Path not found
+MsgBox &quot;The Application Table file &quot; &amp; c_dbName &amp; &quot; cannot be found.&quot;, vbCritical
+basDataConnection = False
+Resume basDataConnection_Exit
+Case Else
+MsgBox Err &amp; &quot;: &quot; &amp; Err.Description, vbCritical, &quot;basDataConnection Error&quot;
+basDataConnection = False
+Resume basDataConnection_Exit
+End Select</p>
+<p>End Function</p>

@@ -1,0 +1,14 @@
+<p>When you use the Get-Credential cmdlet, you get a GUI dialog box to enter the credentials.  This is the &quot;Common Criteria Certified&quot; way of handling credentials.  It is also a pain in the butt at times.  If you are an admin, you can alter this and request credentials via the command line as follows:</p>
+<p>PS&gt; $key = &quot;HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\1\\ShellIds&quot;
+PS&gt; Set-ItemProperty $key ConsolePrompting True
+PS&gt; Get-Credential</p>
+<p>cmdlet Get-Credential at command pipeline position 1
+Supply values for the following parameters:
+Credential
+User: ntdev\\jsnover
+Password for user ntdev\\jsnover: **************</p>
+<p>UserName                                       Password</p>
+<hr>
+<p>ntdev\\jsnover                                  System.Security.SecureString</p>
+<p>[http://blogs.msdn.com/powershell/archive/2008/06/20/
+getting-credentials-from-the-command-line.aspx]</p>

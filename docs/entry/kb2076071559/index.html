@@ -1,0 +1,23 @@
+<p>Dim objRange As Range
+Set objRange = Application.ActiveDocument.Range
+With objRange.Find
+Call .ClearFormatting
+.Font.Bold = True
+.Format = True
+.Forward = True
+.Highlight = False
+.MatchAllWordForms = False
+.MatchCase = False
+.MatchSoundsLike = False
+.MatchWholeWord = True
+.MatchWildcards = True
+.NoProofing = False
+.Text = vbNullString
+.Wrap = wdFindContinue</p>
+<pre><code>With .Replacement
+    Call .ClearFormatting
+    .Text = &amp;quot;&amp;lt;strong&amp;gt;^&amp;&amp;lt;&amp;bsol;&amp;bsol;strong&amp;gt;&amp;quot;
+End With
+Call .Execute(Replace:=wdReplaceAll)
+</code></pre>
+<p>End With</p>

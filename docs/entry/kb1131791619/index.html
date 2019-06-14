@@ -1,0 +1,12 @@
+<p>Since Optional function arguments are variants, the VarType() function should be used to &quot;sub-type&quot; these arguments for a non-variant data type. The sample code fragment below illustrates the form:</p>
+<p>Public Sub OpenTextFile(FileName As String, _
+Optional OpenWrite = False)</p>
+<pre><code>On Error GoTo HandleErr
+
+'Check optional input.
+If VarType(OpenWrite) &amp;lt;&amp;gt; vbBoolean Then Err.Raise 450
+
+'More code may go here.
+</code></pre>
+<p>End Sub</p>
+<p>Note the use of the instrinsic constant vbBoolean. For a complete list of contants refer to the online help documentation.</p>

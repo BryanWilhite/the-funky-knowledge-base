@@ -1,0 +1,13 @@
+<p>I just started with PowerShell to do some complex scripting. As a beginner in this new language I will probably run into all the quirks that the language has, but hey thats the fun with learning something new. The first quirk: calling a function with parameters.</p>
+<pre><code>function f([string]$a, [string]$b)
+{
+    Write-Host &amp;quot;a:&amp;quot;, $a, &amp;quot; b:&amp;quot;, $b
+}
+
+f(&amp;quot;hello&amp;quot;, &amp;quot;world&amp;quot;) # Results in: a: hello world b:
+f &amp;quot;hello&amp;quot; &amp;quot;world&amp;quot; # Results in a: hello b: world
+</code></pre>
+<p>If you put something between parentheses, it is executed as an expression first.</p>
+<p>For more information on what you can do with functions, execute the following command in your PowerShell: Get-Help about_function</p>
+<p>[http://weblogs.asp.net/soever/archive/2006/11/29/
+powershell-calling-a-function-with-parameters.aspx]</p>

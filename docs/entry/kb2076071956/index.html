@@ -1,0 +1,10 @@
+<p>/*
+using System.IO;
+*/</p>
+<p>using ( FileStream fs = new FileStream( @&quot;C:\\File.txt&quot;, FileMode.Create ) )
+{
+using ( StreamWriter sw = new StreamWriter( fs ) )
+{
+sw.Write( &quot;My text.&quot; );
+}
+}</p>

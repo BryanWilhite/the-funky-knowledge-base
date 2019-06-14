@@ -1,0 +1,34 @@
+<p>Private | Public</p>
+<p>Use the Private and Public keywords to declare variables. This can be done at the module level only. At the module level, the keyword Private replaces keyword Dim. The old keyword Global is completely replaced by Public.</p>
+<p>VBA Naming Conventions</p>
+<p>Refer to Appendix C for Leszynski Naming conventions.</p>
+<p>Declaring Functions</p>
+<p>Procedures that return a value (functions) can be delcared and typed just like variables with the form:</p>
+<pre><code>Public Function MyFunction(intArg As Integer) As Long
+    &amp;lt;stuff&amp;gt;
+End Function
+</code></pre>
+<p>Passing by Value or by Reference</p>
+<p>By default, parameters are passed to functions by reference.</p>
+<p>Optional Function Arguments</p>
+<p>VBA's use of optional function arguments take the form:</p>
+<pre><code>Public Function MyFunction(intArg As Integer, _ 
+    Optional varOpt as Variant) As Long
+    &amp;lt;stuff&amp;gt;
+End Function
+</code></pre>
+<p>Optional parameters are always of type variant and are always last in the argument list.</p>
+<p>Parameterized Arrays</p>
+<p>Parameterized Arrays allow functions to take in any number of values and have the form:</p>
+<pre><code>Public Function MyFunction(ParamArray varMyArray() _
+     as Varaint) As Long
+    &amp;lt;stuff&amp;gt;
+End Function
+</code></pre>
+<p>The For Each...Next Structure</p>
+<p>The For Each...Next structure can be used to iterate over the members of a collection. This includes moving through standard Access object collections including controls and forms.</p>
+<p>References</p>
+<p>Use the References command in the Tools menu to add other object libraries to VBA running under Access. This command is available when viewing code. One great use of this feature is to add the RDO object library to Access, which will allow DSN-less connections to ODBC data sources.</p>
+<p>Named Function Parameters</p>
+<p>Specify named parameters when function arguments must be listed out of order. This has the form:</p>
+<p>ObjectName.MethodName Parameter:=expression, ParameterN: expression</p>

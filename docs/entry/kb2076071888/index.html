@@ -1,0 +1,66 @@
+<p>This is the output:</p>
+<p>MM/dd/yyyy ==&gt; 10/01/2007</p>
+<p>dddd, dd MMMM yyyy ==&gt; Monday, 01 October 2007</p>
+<p>MM/dd/yyyy HH:mm ==&gt; 10/01/2007 14:35</p>
+<p>MM/dd/yyyy hh:mm tt ==&gt; 10/01/2007 02:35 PM</p>
+<p>MM/dd/yyyy h:mm tt ==&gt; 10/01/2007 2:35 PM</p>
+<p>MM/dd/yyyy HH:mm:ss ==&gt; 10/01/2007 14:35:48</p>
+<p>MMMM dd ==&gt; October 01</p>
+<p>yyyy'-'MM'-'dd'T'HH':'mm':'ss.fffffffK ==&gt; 2007-10-01T14:35:48.7031250-07:00</p>
+<p>ddd, dd MMM yyyy HH':'mm':'ss 'GMT' ==&gt; Mon, 01 Oct 2007 14:35:48 GMT</p>
+<p>yyyy'-'MM'-'dd'T'HH':'mm':'ss ==&gt; 2007-10-01T14:35:48</p>
+<p>HH:mm ==&gt; 14:35</p>
+<p>hh:mm tt ==&gt; 02:35 PM</p>
+<p>HH:mm:ss ==&gt; 14:35:48</p>
+<p>yyyy'-'MM'-'dd HH':'mm':'ss'Z' ==&gt; 2007-10-01 14:35:48Z</p>
+<p>dddd, dd MMMM yyyy HH:mm:ss ==&gt; Monday, 01 October 2007 14:35:48</p>
+<p>yyyy MMMM ==&gt; 2007 October</p>
+<p>d ==&gt; 10/1/2007</p>
+<p>D ==&gt; Monday, October 01, 2007</p>
+<p>f ==&gt; Monday, October 01, 2007 2:35 PM</p>
+<p>F ==&gt; Monday, October 01, 2007 2:35:48 PM</p>
+<p>g ==&gt; 10/1/2007 2:35 PM</p>
+<p>G ==&gt; 10/1/2007 2:35:48 PM</p>
+<p>m ==&gt; October 01</p>
+<p>r ==&gt; Mon, 01 Oct 2007 14:35:48 GMT</p>
+<p>s ==&gt; 2007-10-01T14:35:48</p>
+<p>u ==&gt; 2007-10-01 14:35:48Z</p>
+<p>U ==&gt; Monday, October 01, 2007 9:35:48 PM</p>
+<p>y ==&gt; October, 2007</p>
+<p>This is the PowerShell script that produced the output:</p>
+<p>$d = [System.DateTime]::Now</p>
+<p>$s =
+&quot;MM/dd/yyyy&quot;,
+&quot;dddd, dd MMMM yyyy&quot;,
+&quot;MM/dd/yyyy HH:mm&quot;,
+&quot;MM/dd/yyyy hh:mm tt&quot;,
+&quot;MM/dd/yyyy h:mm tt&quot;,
+&quot;MM/dd/yyyy HH:mm:ss&quot;,
+&quot;MMMM dd&quot;,
+&quot;yyyy'-'MM'-'dd'T'HH':'mm':'ss.fffffffK&quot;,
+&quot;ddd, dd MMM yyyy HH':'mm':'ss 'GMT'&quot;,
+&quot;yyyy'-'MM'-'dd'T'HH':'mm':'ss&quot;,
+&quot;HH:mm&quot;,
+&quot;hh:mm tt&quot;,
+&quot;HH:mm:ss&quot;,
+&quot;yyyy'-'MM'-'dd HH':'mm':'ss'Z'&quot;,
+&quot;dddd, dd MMMM yyyy HH:mm:ss&quot;,
+&quot;yyyy MMMM&quot;,
+&quot;d&quot;,
+&quot;D&quot;,
+&quot;f&quot;,
+&quot;F&quot;,
+&quot;g&quot;,
+&quot;G&quot;,
+&quot;m&quot;,
+&quot;r&quot;,
+&quot;s&quot;,
+&quot;u&quot;,
+&quot;U&quot;,
+&quot;y&quot;</p>
+<p>foreach( $format in $s )
+{
+$output = [System.String]::Format(&quot;{0} ==&gt; {1}{2}&quot;,
+$format,$d.ToString( $format ), [System.Environment]::NewLine )
+Write-Host $output
+}</p>

@@ -1,0 +1,283 @@
+<p>Public Sub GetHTMLStyles()
+Dim objParagraph As Word.Paragraph
+Dim objStyle As Word.Style, blnHTMLStyleFound As Boolean</p>
+<pre><code>'Check for Word document with Word HTML Styles.
+With Application
+    If .Documents.Count = 0 Then
+        Call VBA.MsgBox(&amp;quot;There are no documents open to format.&amp;quot;)
+        Exit Sub
+    Else
+        For Each objStyle In Application.ActiveDocument.Styles
+            If objStyle.InUse And objStyle.NameLocal = &amp;quot;HTML Markup&amp;quot; Then
+                blnHTMLStyleFound = True
+                Exit For
+            End If
+        Next
+        
+        If Not (blnHTMLStyleFound) Then
+            Call VBA.MsgBox(&amp;quot;Word HTML Styles are not in use in this document.&amp;quot; _
+               &amp; VBA.Space(1) &amp; &amp;quot;Formatting cannot continue.&amp;quot;)
+            Exit Sub
+        End If
+        
+    End If
+End With
+
+'Select all.
+Call Application.ActiveDocument.Range.Select
+
+'Format all text.
+Call HTMLFormatAll
+
+
+'Format all headings.
+Call HTMLFormatHeading
+
+'Format body (avoid Word tables).
+For Each objParagraph In Application.ActiveDocument.Paragraphs
+    If Not (objParagraph.Style Like &amp;quot;H?&amp;quot;) And (Application.Selection.Cells.Count = 0) Then
+        Call objParagraph.Range.Select
+        Call HTMLFormatBody
+    End If
+Next
+
+Application.ActiveWindow.ActivePane.View.ShowAll = True
+Application.Selection.HomeKey Unit:=wdStory
+Call FindReset
+Call VBA.MsgBox(&amp;quot;Formatting complete.&amp;quot;)
+</code></pre>
+<p>End Sub</p>
+<p>Private Sub HTMLFormatAll()
+'Replace “ with “.
+Call FindReset
+With Selection.Find
+.Forward = True
+.Wrap = wdFindStop
+.Format = True
+.MatchCase = False
+.MatchWholeWord = False
+.MatchWildcards = False
+.MatchSoundsLike = False
+.MatchAllWordForms = False</p>
+<pre><code>    .Text = &amp;quot;“&amp;quot;
+    .Replacement.Text = &amp;quot;&amp;#8220;&amp;quot;
+    .Replacement.Style = ActiveDocument.Styles(&amp;quot;HTML Markup&amp;quot;)
+    
+    Call .Execute(Replace:=wdReplaceAll)
+End With
+
+'Replace ” with &amp;#8221;.
+Call FindReset
+With Selection.Find
+    .Forward = True
+    .Wrap = wdFindStop
+    .Format = True
+    .MatchCase = False
+    .MatchWholeWord = False
+    .MatchWildcards = False
+    .MatchSoundsLike = False
+    .MatchAllWordForms = False
+    
+    .Text = &amp;quot;”&amp;quot;
+    .Replacement.Text = &amp;quot;&amp;#8221;&amp;quot;
+    .Replacement.Style = ActiveDocument.Styles(&amp;quot;HTML Markup&amp;quot;)
+    
+    Call .Execute(Replace:=wdReplaceAll)
+End With
+
+'Replace ‘ with &amp;#8216;.
+Call FindReset
+With Selection.Find
+    .Forward = True
+    .Wrap = wdFindStop
+    .Format = True
+    .MatchCase = False
+    .MatchWholeWord = False
+    .MatchWildcards = False
+    .MatchSoundsLike = False
+    .MatchAllWordForms = False
+    
+    .Text = &amp;quot;‘&amp;quot;
+    .Replacement.Text = &amp;quot;&amp;#8216;&amp;quot;
+    .Replacement.Style = ActiveDocument.Styles(&amp;quot;HTML Markup&amp;quot;)
+    
+    Call .Execute(Replace:=wdReplaceAll)
+End With
+
+'Replace ’ with &amp;#8217;.
+Call FindReset
+With Selection.Find
+    .Forward = True
+    .Wrap = wdFindStop
+    .Format = True
+    .MatchCase = False
+    .MatchWholeWord = False
+    .MatchWildcards = False
+    .MatchSoundsLike = False
+    .MatchAllWordForms = False
+    
+    .Text = &amp;quot;’&amp;quot;
+    .Replacement.Text = &amp;quot;&amp;#8217;&amp;quot;
+    .Replacement.Style = ActiveDocument.Styles(&amp;quot;HTML Markup&amp;quot;)
+    
+    Call .Execute(Replace:=wdReplaceAll)
+End With
+
+'Replace - with &amp;#8212;.
+Call FindReset
+With Selection.Find
+    .Forward = True
+    .Wrap = wdFindStop
+    .Format = True
+    .MatchCase = False
+    .MatchWholeWord = False
+    .MatchWildcards = False
+    .MatchSoundsLike = False
+    .MatchAllWordForms = False
+    
+    .Text = &amp;quot;-&amp;quot;
+    .Replacement.Text = &amp;quot;&amp;#8212;&amp;quot;
+    .Replacement.Style = ActiveDocument.Styles(&amp;quot;HTML Markup&amp;quot;)
+    
+    Call .Execute(Replace:=wdReplaceAll)
+End With
+
+'Replace - with &amp;#8211;.
+Call FindReset
+With Selection.Find
+    .Forward = True
+    .Wrap = wdFindStop
+    .Format = True
+    .MatchCase = False
+    .MatchWholeWord = False
+    .MatchWildcards = False
+    .MatchSoundsLike = False
+    .MatchAllWordForms = False
+    
+    .Text = &amp;quot;-&amp;quot;
+    .Replacement.Text = &amp;quot;&amp;#8211;&amp;quot;
+    .Replacement.Style = ActiveDocument.Styles(&amp;quot;HTML Markup&amp;quot;)
+    
+    Call .Execute(Replace:=wdReplaceAll)
+End With
+
+'Replace … with &amp;#8230;.
+Call FindReset
+With Selection.Find
+    .Forward = True
+    .Wrap = wdFindStop
+    .Format = True
+    .MatchCase = False
+    .MatchWholeWord = False
+    .MatchWildcards = False
+    .MatchSoundsLike = False
+    .MatchAllWordForms = False
+    
+    .Text = &amp;quot;…&amp;quot;
+    .Replacement.Text = &amp;quot;&amp;#8230;&amp;quot;
+    .Replacement.Style = ActiveDocument.Styles(&amp;quot;HTML Markup&amp;quot;)
+    
+    Call .Execute(Replace:=wdReplaceAll)
+End With
+</code></pre>
+<p>End Sub</p>
+<p>Private Sub HTMLFormatHeading()
+'Replace Word .DOC Headings with Word HTML Headings.
+Call FindReset
+With Selection.Find
+.Forward = True
+.Wrap = wdFindStop
+.Format = True
+.MatchCase = False
+.MatchWholeWord = False
+.MatchWildcards = False
+.MatchSoundsLike = False
+.MatchAllWordForms = False</p>
+<pre><code>    .Style = ActiveDocument.Styles(&amp;quot;Heading 1&amp;quot;)
+    .Replacement.Style = ActiveDocument.Styles(&amp;quot;H1&amp;quot;)
+    Call .Execute(Replace:=wdReplaceAll)
+
+End With
+
+Call FindReset
+With Selection.Find
+    .Forward = True
+    .Wrap = wdFindStop
+    .Format = True
+    .MatchCase = False
+    .MatchWholeWord = False
+    .MatchWildcards = False
+    .MatchSoundsLike = False
+    .MatchAllWordForms = False
+    
+    .Style = ActiveDocument.Styles(&amp;quot;Heading 2&amp;quot;)
+    .Replacement.Style = ActiveDocument.Styles(&amp;quot;H2&amp;quot;)
+    Call .Execute(Replace:=wdReplaceAll)
+
+End With
+
+Call FindReset
+With Selection.Find
+    .Forward = True
+    .Wrap = wdFindStop
+    .Format = True
+    .MatchCase = False
+    .MatchWholeWord = False
+    .MatchWildcards = False
+    .MatchSoundsLike = False
+    .MatchAllWordForms = False
+    
+    .Style = ActiveDocument.Styles(&amp;quot;Heading 3&amp;quot;)
+    .Replacement.Style = ActiveDocument.Styles(&amp;quot;H3&amp;quot;)
+    Call .Execute(Replace:=wdReplaceAll)
+
+End With
+
+Call FindReset
+</code></pre>
+<p>End Sub</p>
+<p>Private Sub HTMLFormatBody()
+'Replace Bold formatting with Strong style.
+Call FindReset
+With Selection.Find
+.Forward = True
+.Wrap = wdFindStop
+.Format = True
+.MatchCase = False
+.MatchWholeWord = False
+.MatchWildcards = False
+.MatchSoundsLike = False
+.MatchAllWordForms = False</p>
+<pre><code>    .Font.Bold = True
+    .Replacement.Style = ActiveDocument.Styles(&amp;quot;Strong&amp;quot;)
+    
+    Call .Execute(Replace:=wdReplaceAll)
+End With
+
+'Replace Italic formatting with Emphasis style.
+Call FindReset
+With Selection.Find
+    .Forward = True
+    .Wrap = wdFindStop
+    .Format = True
+    .MatchCase = False
+    .MatchWholeWord = False
+    .MatchWildcards = False
+    .MatchSoundsLike = False
+    .MatchAllWordForms = False
+    
+    .Font.Italic = True
+    .Replacement.Style = ActiveDocument.Styles(&amp;quot;Emphasis&amp;quot;)
+    
+    Call .Execute(Replace:=wdReplaceAll)
+End With
+</code></pre>
+<p>End Sub</p>
+<p>Private Sub FindReset()
+With Selection.Find
+Call .ClearFormatting
+Call .Replacement.ClearFormatting
+.Text = vbNullString
+.Replacement.Text = vbNullString
+End With
+End Sub</p>

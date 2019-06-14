@@ -1,0 +1,119 @@
+<p>//Set event pointers.
+document.onkeydown = jsHandleKeyDown</p>
+<p>//Handle keystrokes.
+function jsHandleKeyDown() {
+vFrmName = &quot;&quot;
+vElementName = &quot;&quot;</p>
+<pre><code>if (window.name == &amp;quot;dataEmail&amp;quot;) {
+    //The keyCode property returns Unicode values.
+    switch(event.keyCode){
+        case 68://Ctrl + Shift + d
+            if(event.ctrlKey == false) return
+            window.document.frmEmailData.cmdDelete.click()
+            break
+        case 83://Ctrl + Shift + s
+            if(event.ctrlKey == false) return
+            window.document.frmEmailData.cmdSet.click()
+            break
+    }
+}
+
+if (window.name == &amp;quot;dataKB&amp;quot;) {
+    //The keyCode property returns Unicode values.
+    switch(event.keyCode){
+        case 68://Ctrl + Shift + d
+            if(event.ctrlKey == false) return
+            window.document.frmKBData.cmdDelete.click()
+            break
+        case 83://Ctrl + Shift + s
+            if(event.ctrlKey == false) return
+            window.document.frmKBData.cmdSet.click()
+            break
+    }
+}
+
+if (window.name == &amp;quot;dataKPages&amp;quot;) {
+    //The keyCode property returns Unicode values.
+    switch(event.keyCode){
+        case 68://Ctrl + Shift + d
+            if(event.ctrlKey == false) return
+            window.document.frmKPagesData.cmdDelete.click()
+            break
+        case 83://Ctrl + Shift + s
+            if(event.ctrlKey == false) return
+            window.document.frmKPagesData.cmdSet.click()
+            break
+    }
+}
+
+if (window.name == &amp;quot;dataKStyles&amp;quot;) {
+    //The keyCode property returns Unicode values.
+    switch(event.keyCode){
+        case 68://Ctrl + Shift + d
+            if(event.ctrlKey == false) return
+            window.document.frmKStylesData.cmdDelete.click()
+            break
+        case 83://Ctrl + Shift + s
+            if(event.ctrlKey == false) return
+            window.document.frmKStylesData.cmdSet.click()
+            break
+    }
+}
+
+if (window.name == &amp;quot;dataTable&amp;quot;) {
+    //The keyCode property returns Unicode values.
+    switch(event.keyCode){
+        case 37://Alt + Shift + [left arrow]
+            if(event.altKey == false) return
+            window.document.frmPage.cmdPagePrev.click()
+            break
+        case 38://Alt + Shift + [up arrow]
+            if(event.altKey == false) return
+            window.document.frmPage.cmdPageFirst.click()
+            break
+        case 39://Alt + Shift + [right arrow]
+            if(event.altKey == false) return
+            window.document.frmPage.cmdPageNext.click()
+            break
+        case 40://Alt + Shift + [down arrow]
+            if(event.altKey == false) return
+            window.document.frmPage.cmdPageLast.click()
+            break
+        case 78://Ctrl + Shift + n
+            if(event.ctrlKey == false) return
+            window.document.anchors(&amp;quot;aNew&amp;quot;).click()
+            break
+        case 80://Ctrl + Shift + p
+            if(event.ctrlKey == false) return
+            window.document.frmPage.lstPageNo.focus()
+            break
+        case 83://Ctrl + Shift + s
+            if(event.ctrlKey == false) return
+            window.document.anchors(&amp;quot;aSearch&amp;quot;).click()
+            break
+    }
+}
+
+if (window.name == &amp;quot;root&amp;quot;) {
+    switch(event.keyCode){
+        case 13://Enter
+            vFrmName = window.document.frm.lstForms.value
+            vElementName = vFrmName.replace(&amp;quot;frm&amp;quot;,&amp;quot;cmd&amp;quot;)
+            window.document.forms[vFrmName].elements[vElementName].click()
+            break
+        case 76://Ctrl + Shift + l
+            if(event.ctrlKey == false) return
+            window.document.frm.lstForms.focus()
+            break
+        case 78://Ctrl + Shift + n
+            if(event.ctrlKey == false) return
+            window.document.anchors(&amp;quot;a_&amp;quot; + window.document.frm.lstForms.value).click()
+            break
+        case 87://Ctrl + Shift + w
+            if(event.ctrlKey == false) return
+            window.document.anchors(&amp;quot;aWork&amp;quot;).click()
+            break
+    }
+}
+</code></pre>
+<p>}</p>

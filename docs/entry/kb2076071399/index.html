@@ -1,0 +1,20 @@
+<p>USE pubs
+;</p>
+<p>SELECT
+Customers.*
+,   Orders.*
+FROM
+Northwind.dbo.Customers AS Customers
+,   OPENROWSET(
+-- OLE DB Provider Name:
+'Microsoft.Jet.OLEDB.4.0'</p>
+<pre><code>    -- OLE DB Provider Source, ID and Password or Connection String:
+,   'C:&amp;bsol;&amp;bsol;Program Files&amp;bsol;&amp;bsol;Access97&amp;bsol;&amp;bsol;Office&amp;bsol;&amp;bsol;Samples&amp;bsol;&amp;bsol;northwind.mdb';'admin';''
+
+    -- OLE DB Provider Object (e.g. table name) or Pass-Through Query:
+,   Orders
+) AS Orders
+</code></pre>
+<p>WHERE
+Customers.CustomerID = Orders.CustomerID
+GO</p>

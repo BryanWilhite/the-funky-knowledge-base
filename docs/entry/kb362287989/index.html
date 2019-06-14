@@ -1,0 +1,18 @@
+<p>Using multiple conditions in the Do Loop structure with the Like operator do not always evaluate properly. In such cases, the use of Exit Do helps. For example, the following Do Loop condition is never true:</p>
+<pre><code>Do Until g_str Like &amp;quot;*PAGE*&amp;quot; Or g_str Like &amp;quot;*[#]*[#]*[#]*&amp;quot;
+    g_str = .ReadLine 'This method is inside a With block.
+
+    'Other stuff goes here.
+
+Loop
+</code></pre>
+<p>However, the following works as planned:
+Do
+g_str = .ReadLine 'This method is inside a With block.</p>
+<pre><code>    If g_str Like &amp;quot;*PAGE*&amp;quot; _ 
+        Or g_str Like &amp;quot;*[#]*[#]*[#]*&amp;quot; Then Exit Do
+
+    'Other stuff goes here.
+
+Loop
+</code></pre>

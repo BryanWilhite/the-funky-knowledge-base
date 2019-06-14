@@ -1,0 +1,9 @@
+<p>System.exit should be used with care. The normal method of terminating a program is to terminate all user threads.</p>
+<p>Cases in which System.exit is appropriate :</p>
+<pre><code>* utility scripts
+* GUI applications, in which the event dispatch user thread is created in the background. 
+</code></pre>
+<p>Here, the program may be terminated by calling System.exit, or, for example, by setting JFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE).</p>
+<p>From Sun’s Portability Cookbook :</p>
+<p>“The System.exit method forces termination of all threads in the Java virtual machine. This is drastic....System.exit should be reserved for a catastrophic error exit, or for cases when a program is intended for use as a utility in a command script that may depend on the program's exit code.”</p>
+<p>[http://www.javapractices.com/topic/TopicAction.do?Id=86]</p>

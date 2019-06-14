@@ -1,0 +1,25 @@
+<p>This is the form for mapping one or more Controller actions to a View:</p>
+<pre><code>class MyController extends Zend_Controller_Action
+{
+    public function preDispatch()
+    {
+        //Disable conventional calls to views for whole class:
+        $this-&amp;gt;_helper-&amp;gt;viewRenderer-&amp;gt;setNoRender();
+    }
+
+    public function myAction()
+    {
+        ...
+        $this-&amp;gt;render('myview');
+    }
+}
+</code></pre>
+<p>Alternatively, you can map an entire Controller class to one View:</p>
+<pre><code>class MyController extends Zend_Controller_Action
+{
+    public function preDispatch()
+    {
+        $this-&amp;gt;_helper-&amp;gt;viewRenderer('myview');
+    }
+}
+</code></pre>

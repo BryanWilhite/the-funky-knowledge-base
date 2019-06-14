@@ -1,0 +1,16 @@
+<p>/*
+Push dispatching into the service layer with a decorator pattern.
+*/</p>
+<p>public class MySvcDecorator : IMySvc
+{
+private readonly IMySvc _mysvc;
+private readonly Dispatcher _current = Dispatcher.CurrentDispatcher;</p>
+<pre><code>public MySvcDecorator(IMySvc mysvc){//set _mysvc here...;}
+public Event Action&amp;lt;T&amp;gt; HeyGui;
+void MySvcEventHandler(T mydata)
+{
+    Action dispatch = () =&amp;gt; { if(HeyGui != null) HeyGui(mydata); }
+    _current.BeginInvoke(DispatcherPriority.DataBind, dispatch);
+}
+</code></pre>
+<p>}</p>

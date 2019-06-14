@@ -1,0 +1,88 @@
+<p>It's easy to sort a list of strings or integers by just calling the List.Sort() method, but how can we sort two objects and based on what field?</p>
+<p>…</p>
+<p>Let's implement IComparable&lt;&gt; interface to our Employee class:</p>
+<p>class Employee : IComparable&lt;Employee&gt;
+{
+public string Name { get; set; }
+public int Salary { get; set; }</p>
+<pre><code> #region IComparable&amp;lt;Employee&amp;gt; Members
+   
+ public int CompareTo( Employee other )
+ {
+     if ( this.Salary &amp;lt; other.Salary ) return 1;
+     else if ( this.Salary &amp;gt; other.Salary ) return -1;
+     else return 0;
+ }
+    
+ #endregion
+</code></pre>
+<p>}</p>
+<p>In the above code, we are sorting objects based on salary of employee in descending order, by implementing CompareTo() method of IComparable interface which takes Employee reference as a parameter.
+Now, calling empList.Sort() gives no exception and empList is well sorted by salary.</p>
+<p>But sometimes, we may need to sort a list of objects when class does not implement IComparable&lt;&gt; interface and also we may need various kinds of sorting on that class like:</p>
+<ol>
+<li>Sort Employees by Salary in Ascending Order</li>
+<li>Sort Employees by Salary in Descending Order</li>
+<li>Sort Employees by Name</li>
+</ol>
+<p>To solve this problem, .NET provides a special interface called IComparer&lt;&gt; which has a method Compare(), takes two object parameters X, Y and returns an int.
+Use of IComparer&lt;&gt; interface tells List how exactly you want to sort.</p>
+<p>class Employee_SortBySalaryByAscendingOrder : IComparer&lt;Employee&gt;
+{
+#region IComparer&lt;Employee&gt; Members</p>
+<pre><code>public int Compare( Employee x, Employee y )
+{
+    if ( x.Salary &amp;gt; y.Salary ) return 1;
+    else if ( x.Salary &amp;lt; y.Salary ) return -1;
+    else return 0;
+}
+
+#endregion
+</code></pre>
+<p>}</p>
+<p>class Employee_SortBySalaryByDescendingOrder : IComparer&lt;Employee&gt;
+{
+#region IComparer&lt;Employee&gt; Members</p>
+<pre><code>public int Compare( Employee x, Employee y )
+{
+    if ( x.Salary &amp;lt; y.Salary ) return 1;
+    else if ( x.Salary &amp;gt; y.Salary ) return -1;
+    else return 0;
+}
+
+#endregion
+</code></pre>
+<p>}</p>
+<p>class Employee_SortByName : IComparer&lt;Employee&gt;
+{
+#region IComparer&lt;Employee&gt; Members</p>
+<pre><code>public int Compare( Employee x, Employee y )
+{
+    return string.Compare( x.Name, y.Name );
+}
+
+#endregion
+</code></pre>
+<p>}</p>
+<p>The above code introduces three classes by implementing Compare() method of IComparer interface.</p>
+<p>Now, how do we use this? We just have to pass the reference of these classes as a object parameter to Sort() method as shown below:</p>
+<p>// Use Collection Initializers( C# 3.0 ) to initialize the List
+List&lt;Employee&gt; empList = new List&lt;Employee&gt;()
+{ new Employee { Name = &quot;a&quot;, Salary = 14000 },
+new Employee { Name = &quot;b&quot;, Salary = 13000 }
+};</p>
+<p>Employee_SortBySalaryByAscendingOrder eAsc =
+new Employee_SortBySalaryByAscendingOrder();
+// Sort Employees by salary by ascending order.<br>
+empList.Sort( eAsc );</p>
+<p>Employee_SortBySalaryByDescendingOrder eDsc =
+new Employee_SortBySalaryByDescendingOrder();
+// Sort Employees by salary by descending order.
+empList.Sort( eDsc );</p>
+<p>Employee_SortByName eName = new Employee_SortByName();
+// Sort Employees by their names.<br>
+empList.Sort( eName );</p>
+<p>Conclusion</p>
+<p>Sorting Lists is simple as long as you sort basic elements like strings and integers for which comparison classes are defined.</p>
+<p>Usage of IComparable&lt;&gt; and IComparer&lt;&gt; interface helps to sort Lists of objects on custom classes easily.</p>
+<p>[http://www.codeproject.com/KB/cs/Sorting_Lists.aspx?display=Print]</p>

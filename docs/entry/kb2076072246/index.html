@@ -1,0 +1,33 @@
+<p>Creating a NotEqual Constraint</p>
+<p>The easiest way to exclude one set of pages from matching a particular route is to take advantage of the custom route constraint in Listing 2.</p>
+<p>Listing 2 – NotEqualConstraint.cs</p>
+<pre><code>using System;  
+using System.Web;  
+using System.Web.Routing;  
+
+public class NotEqual : IRouteConstraint  
+{  
+    private string _match = String.Empty;  
+
+    public NotEqual(string match)  
+    {  
+        _match = match;  
+    }  
+
+    public bool Match(HttpContextBase httpContext, Route route, string parameterName, RouteValueDictionary values, RouteDirection routeDirection)  
+    {  
+        return String.Compare(values[parameterName].ToString(), _match, true) != 0;  
+    }  
+}  
+</code></pre>
+<p>Here’s how you can use the NotEqual constraint to exclude the /Admin pages from the Default route:</p>
+<pre><code>routes.MapRoute(
+    &amp;quot;Default&amp;quot;,
+    &amp;quot;{controller}/{action}/{id}&amp;quot;,
+    new { controller = &amp;quot;Home&amp;quot;, action = &amp;quot;Index&amp;quot;, id = &amp;quot;&amp;quot; }, 
+    new { controller = new NotEqual(&amp;quot;Admin&amp;quot;) }
+);
+</code></pre>
+<p>This route won’t match any request when the controller parameter gets the value Admin. For example, this route won’t match the URLs /Admin/DeleteAll or /Admin/Index.</p>
+<p>[http://stephenwalther.com/blog/archive/
+2008/08/07/asp-net-mvc-tip-30-create-custom-route-constraints.aspx]</p>

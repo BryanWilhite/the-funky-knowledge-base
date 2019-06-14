@@ -1,0 +1,14 @@
+<p>To get your &lt;form&gt; result sent as an array to your PHP script you name the &lt;input&gt;, &lt;select&gt; or &lt;textarea&gt;  elements like this:</p>
+<pre><code>&amp;lt;input name=&amp;quot;MyArray[]&amp;quot; /&amp;gt;
+&amp;lt;input name=&amp;quot;MyArray[]&amp;quot; /&amp;gt;
+&amp;lt;input name=&amp;quot;MyArray[]&amp;quot; /&amp;gt;
+&amp;lt;input name=&amp;quot;MyArray[]&amp;quot; /&amp;gt;
+</code></pre>
+<p>It’s also possible to assign specific keys to your arrays:</p>
+<pre><code>&amp;lt;input name=&amp;quot;AnotherArray[]&amp;quot; /&amp;gt;
+&amp;lt;input name=&amp;quot;AnotherArray[]&amp;quot; /&amp;gt;
+&amp;lt;input name=&amp;quot;AnotherArray[email]&amp;quot; /&amp;gt;
+&amp;lt;input name=&amp;quot;AnotherArray[phone]&amp;quot; /&amp;gt;
+</code></pre>
+<p>he AnotherArray array will now contain the keys 0, 1, email and phone.</p>
+<p>[http://us3.php.net/manual/en/faq.html.php#faq.html.arrays]</p>

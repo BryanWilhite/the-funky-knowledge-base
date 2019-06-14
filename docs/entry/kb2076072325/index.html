@@ -1,0 +1,12 @@
+<p>[TestMethod]
+public void TinyTest()
+{
+var i = new Int32?();
+i = null;
+Assert.IsFalse(i.HasValue);
+}
+/*
+This test will pass because i.HasValue will <em>not</em> throw
+a null reference exception; a “nullable” has the ability
+to be null and <em>not</em> throw such exceptions.
+*/</p>

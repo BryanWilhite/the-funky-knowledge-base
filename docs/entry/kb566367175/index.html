@@ -1,0 +1,37 @@
+<p>I use the Properties Collection of the Connection object to enter custom log information during a database connection. For example the sub LogSession is called (repeatedly) during the ConnectComplete Event:</p>
+<p>Private Sub pADOcnn_ConnectComplete(ByVal pError As ADODB.Error, _
+adStatus As ADODB.EventStatusEnum, _
+ByVal pConnection As ADODB.Connection)</p>
+<pre><code>    If adStatus = adStatusOK Then
+        Call LogSession(&amp;quot;Data Connection established (&amp;quot; _
+            &amp; VBA.Now &amp; &amp;quot;)&amp;quot;)
+        Call LogSession(VBA.Space$(4) _
+            &amp; &amp;quot;User ID:                      &amp;quot; _
+            &amp; pConnection.Properties.Item(&amp;quot;User ID&amp;quot;))
+        If pConnection.Provider Like &amp;quot;SQLOLEDB*&amp;quot; Then _
+        Call LogSession(VBA.Space$(4) _
+            &amp; &amp;quot;Workstation ID:               &amp;quot; _
+            &amp; pConnection.Properties.Item(&amp;quot;Workstation ID&amp;quot;))
+        Call LogSession(VBA.Space$(4) _
+            &amp; &amp;quot;Data Source DBMS Name:        &amp;quot; _
+            &amp; pConnection.Properties.Item(&amp;quot;DBMS Name&amp;quot;))
+        Call LogSession(VBA.Space$(4) _
+            &amp; &amp;quot;Data Source DBMS Version:     &amp;quot; _
+            &amp; pConnection.Properties.Item(&amp;quot;DBMS Version&amp;quot;))
+        Call LogSession(VBA.Space$(4) _
+            &amp; &amp;quot;Data Source Current Catalog:  &amp;quot; _
+            &amp; pConnection.Properties.Item(&amp;quot;Current Catalog&amp;quot;))
+        Call LogSession(VBA.Space$(4) _
+            &amp; &amp;quot;Data Source Provider Name:    &amp;quot; _
+            &amp; pConnection.Properties.Item(&amp;quot;Provider Name&amp;quot;))
+        Call LogSession(VBA.Space$(4) _
+            &amp; &amp;quot;Data Source Provider Version: &amp;quot; _
+            &amp; pConnection.Properties.Item(&amp;quot;DBMS Version&amp;quot;))
+    ElseIf adStatus = adStatusErrorsOccurred Then
+        Call EnvironmentErr(pError)
+        Call LogSession(&amp;quot;ERROR (&amp;quot; &amp; VBA.Now &amp; &amp;quot;):&amp;quot; _
+            &amp; p_strErrMsg)
+    End If
+End Sub
+</code></pre>
+<p>The Key strings for the Properties Collection is based on MS KB article Q193135 (&quot;INFO: Initialization Properties for SQLOLEDB OLE DB Provider&quot;).</p>

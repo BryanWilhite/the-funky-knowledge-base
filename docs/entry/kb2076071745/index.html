@@ -1,0 +1,23 @@
+<p>private static bool ConnectionStringIsValid(SqlConnection SqlCnn,
+string ConnectionString)
+{
+/*
+FUNKYKB:
+The connection string is parsed immediately after being set.
+If errors in syntax are found when parsing, a runtime exception,
+such as ArgumentException, is generated.
+Other errors can be found only when an attempt is made
+to open the connection.</p>
+<pre><code>            In ADO.NET 2.0 this procedure is replaced by the
+            SqlConnectionStringBuilder.
+        */
+        bool success = false;
+
+        if (SqlCnn.State == ConnectionState.Open) return success;
+
+        SqlCnn.ConnectionString = ConnectionString;
+        success = true;
+
+        return success;
+    }
+</code></pre>

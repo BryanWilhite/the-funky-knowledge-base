@@ -1,0 +1,10 @@
+<p>Use the Val() function if you are contemplating using LTrim$() and CDbl() on a string literal. You only want the leftmost characters from this string. You want to separate the numeric values from the non-numeric values from this string---and the numeric values are leftmost. And, most importantly, you want to convert this value to data type Double.</p>
+<p>Without Val() you would have to use LTrim$() to find the leftmost numeric characters and then CDbl() to convert them. Please recall that CDbl() will return a Type Mismatch error in the following:</p>
+<pre><code>VBA.CDbl(&amp;quot;123Text&amp;quot;)
+</code></pre>
+<p>however,</p>
+<pre><code>VBA.Val(&amp;quot;123Text&amp;quot;) = 123
+</code></pre>
+<p>also consider this a warning:</p>
+<pre><code>VBA.Val(&amp;quot;1,234&amp;quot;) = 1
+</code></pre>

@@ -1,0 +1,12 @@
+<p>var countDown = new TimeSpan(DateTime.Now.Subtract(epsDate.Value).Ticks);</p>
+<p>data.DaysInterval = countDown.Days;
+data.IsDayOf = (countDown.Days == 0);
+data.IsPastDue = (countDown.Ticks &gt; 0);
+data.IsWithinTwoWeeks = (countDown.Days &lt;= -14);</p>
+<p>var acronym = GetSymbolDuePrefix(symbolType);
+var due = (data.IsPastDue &amp;&amp; (data.DaysInterval &gt; 1)) ? &quot;Past Due &quot;.ToUpper() : &quot;Due &quot;.ToUpper();
+var interval = &quot;Today&quot;;
+if (data.DaysInterval == 1) interval = &quot;1 Day&quot;;
+if ((Math.Abs(data.DaysInterval) &gt; 1) &amp;&amp; data.IsPastDue) interval = string.Format(&quot;{0} Days&quot;, Math.Abs(data.DaysInterval));
+if ((Math.Abs(data.DaysInterval) &gt; 1) &amp;&amp; !data.IsPastDue) interval = string.Format(&quot;in {0} Days&quot;, Math.Abs(data.DaysInterval));</p>
+<p>data.DisplayText = string.Concat(acronym, due, interval, &quot; (e)&quot;);</p>

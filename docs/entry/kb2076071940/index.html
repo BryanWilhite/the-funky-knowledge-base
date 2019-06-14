@@ -1,0 +1,21 @@
+<p>The relevant documentation is here:</p>
+<pre><code>http://www.apachefriends.org/en/xampp-linux.html
+</code></pre>
+<p>Stop any previous running version of XAMPP with this:</p>
+<pre><code>sudo /opt/lampp/lampp stop
+</code></pre>
+<p>It may be a best practice to uninstall any previous version of XAMPP for a “clean install” with this:</p>
+<pre><code>sudo rm -rf /opt/lampp
+</code></pre>
+<p>Install the new version from the archive with this:</p>
+<pre><code>sudo tar xvfz xampp-linux-1.6.6.tar.gz -C /opt
+</code></pre>
+<p>Start the new version of XAMPP and set the security with this:</p>
+<pre><code>sudo /opt/lampp/lampp start
+
+sudo /opt/lampp/lampp security
+</code></pre>
+<p>The practice here is to stop the FTP server (after setting a password) with this:</p>
+<pre><code>sudo /opt/lampp/lampp stopftp
+</code></pre>
+<p>The basics are now in place. From here MySQL databases are generated in loaded. And a script is run to generate symbolic links from /opt/lampp/htdocs to my local development web sites in my home directory (because XAMPP configures Apache to follow symbolic links by default).</p>

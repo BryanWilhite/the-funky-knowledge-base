@@ -1,0 +1,3 @@
+<p>Avoid using the DataGrid because it's customization story is not that compelling. The preference here is to use the Grid before resorting to the DataGrid (or the ListView with a DataGridView). The Grid allows the greatest degrees of freedom for customization; it has only one drawback: it has no declarative-syntax support for a flowing, variable number of rows.</p>
+<p>The explicit requirement to have this kind of “flow” is the sole reason why a DataGrid (or a ListView) should be considered. When fixed number of rows are defined in a “box” then then a Grid can be used.</p>
+<p>An experienced developer can use an ObservableCollection and declarative Binding to facilitate scrolling through a fixed number of rows without generating runtime binding errors.</p>

@@ -1,0 +1,10 @@
+<p>Private Sub Form_Unload(Cancel As Integer)
+'
+'This sub makes sure the user really wants to quit.
+'Note the use of the ProductName Property
+'of the App object of the VB Library.
+'
+Cancel = (VBA.MsgBox(&quot;Are you sure you want &quot; _
+&amp; &quot;to quit?&quot;,  vbYesNo + vbDefaultButton2 + _
+vbQuestion, VB.App.ProductName) = vbNo)
+End Sub</p>

@@ -1,0 +1,23 @@
+<p>Up until shortly before the writing if this article, I considered the use of table aliases just a matter of style. Since I enjoy writing (for humans) I preferred using table names instead of something like:</p>
+<pre><code>USE pubs
+SELECT
+    p.pub_id
+,   p.pub_name
+FROM
+    publishers AS p
+</code></pre>
+<p>I have no trouble writing out &quot;publishers.&quot; However, I find myself forced to use table aliases when I need to project two or more sets of data in the same table. This is related to the so-called &quot;self-join&quot; which can be used to, for example, find out the authors in Oakland, California who live in the same ZIP Code:</p>
+<p>USE pubs
+SELECT DISTINCT
+au1.au_fname
+,   au1.au_lname
+FROM
+authors au1
+,   authors au2
+WHERE
+au1.zip = au2.zip
+AND
+au1.city = 'Oakland'
+AND
+au1.au_id &lt;&gt; au2.au_id</p>
+<p>Note the AS clause is omitted from the FROM clause (just a matter of style).</p>

@@ -1,0 +1,12 @@
+<p>Private Sub Form_BeforeUpdate(Cancel As Integer)</p>
+<pre><code>Dim strMsg As String
+
+strMsg = &amp;quot;Are you sure you want to change this data?&amp;quot;
+
+If VBA.MsgBox(strMsg, vbYesNo + vbDefaultButton2 _
+    + vbQuestion) = vbNo Then
+    Me.Undo
+    Exit Sub
+End If
+</code></pre>
+<p>End Sub</p>

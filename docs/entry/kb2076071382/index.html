@@ -1,0 +1,29 @@
+<p>USE DatabaseName
+GO</p>
+<p>IF OBJECT_ID('StoredProcName') IS NOT NULL
+BEGIN
+DROP PROCEDURE StoredProcName
+IF OBJECT_ID('StoredProcName') IS NOT NULL
+PRINT '&lt;&lt;&lt; FAILED DROPPING PROCEDURE StoredProcName &gt;&gt;&gt;'
+ELSE
+PRINT '&lt;&lt;&lt; DROPPED PROCEDURE StoredProcName &gt;&gt;&gt;'
+END
+GO</p>
+<p>CREATE PROCEDURE StoredProcName
+(
+@param int = 0
+)
+AS</p>
+<p>-- Description: Stored proc' structure for SQL Server 7.0.
+-- Developer: rasx</p>
+<p>SET NOCOUNT ON</p>
+<p>-- This proc' takes advantage of the new security features in SQL Server 7.0.</p>
+<p>RETURN
+GO</p>
+<p>GRANT EXECUTE ON StoredProcName TO [Windows NT Group]
+GO</p>
+<p>IF OBJECT_ID('StoredProcName') IS NOT NULL
+PRINT '&lt;&lt;&lt; CREATED PROCEDURE StoredProcName &gt;&gt;&gt;'
+ELSE
+PRINT '&lt;&lt;&lt; FAILED CREATING PROCEDURE StoredProcName &gt;&gt;&gt;'
+GO</p>

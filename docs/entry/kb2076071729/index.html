@@ -1,0 +1,16 @@
+<p>From Eron Wright's Blog: &quot;You can convert local datetime values to UTC datetime values, and vice-versa, using the built-in GETUTCDATE() function:&quot;</p>
+<pre><code>DECLARE @LocalDate DATETIME
+SET @LocalDate = GETDATE()
+
+-- convert local date to utc date
+DECLARE @UTCDate DATETIME
+SET @UTCDate = DATEADD(Hour,DATEDIFF(Hour,GETUTCDATE(), GETDATE()),@LocalDate)
+
+-- convert utc date to local date
+DECLARE @LocalDate2 DATETIME
+SET @LocalDate2 = DATEADD(Hour, DATEDIFF(Hour, GETDATE(), GETUTCDATE()), @UTCDate)
+SELECT @LocalDate, @UTCDate, @LocalDate2
+</code></pre>
+<p>&quot;Note that GETUTCDATE() returns the current datetime in UTC. By comparing the value with GETDATE() we can determine the time zone, which can then be used to adjust any date.&quot; For more information see:</p>
+<pre><code>http://geekswithblogs.net/ewright/archive/2004/09/14/11180.aspx
+</code></pre>

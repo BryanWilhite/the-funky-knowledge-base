@@ -1,0 +1,16 @@
+<p>One of the very first things people notice about Windows PowerShell is this: PowerShell makes it very easy to create arrays and to add new items to arrays. With VBScript, these same tasks are a bit … challenging … to say the least: you either have to declare the array size in advance (leaving you with an array that can’t be resized), or you have to declare a dynamic array, then resize that array each time you add a new item. (Taking care, of course, to preserve all the existing items in the array.) Sure that sounds like a lot of fun. But, trust us: it’s not</p>
+<p>With Windows PowerShell, however, things are much different, and much easier. Want to create an array named $a, an array that contains the values 1, 2, and 3? Okey-doke:</p>
+<p>$a = 1, 2, 3</p>
+<p>That’s all you have to do: just separate the items using commas and add them all to the array in one fell swoop. Can you create an array of string values using this same approach? Of course you can; just make sure you enclose the string values in double quote marks:</p>
+<p>$a = &quot;one&quot;, &quot;two&quot;, &quot;three&quot;</p>
+<p>Ah, good question: what if you do want to add a new item to the array? No problem; this line of code will do the trick:</p>
+<p>$a = $a + 4</p>
+<p>If $a formerly contained the values 1, 2, and 3, what do you suppose $a will be equal to now? You’re absolutely right:</p>
+<p>1
+2
+3
+4</p>
+<p>So is this the easiest thing you’ll ever do in your entire life? Probably; we can’t think of too may things that are easier.</p>
+<p>Of course, because creating new arrays and adding items to existing arrays is so easy you might think you know everything there is to know about arrays in Windows PowerShell. Is that really true? Well, maybe; let’s find out for ourselves.</p>
+<p>[http://www.microsoft.com/technet/
+scriptcenter/resources/pstips/aug07/pstip0803.mspx]</p>

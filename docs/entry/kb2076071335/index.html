@@ -1,0 +1,58 @@
+<p>'I wrote this script (Go2FTP.scr) for an entertainment company.
+'This is a quick hack since they were not concerned about high security.</p>
+<p>Dim objShell
+Dim objFileSys
+Dim objOutStream
+Dim strCnn
+Dim strWrite
+Dim cnnADO
+Dim rsADO</p>
+<p>strCnn = &quot;Provider=SQLOLEDB.1;&quot; _
+&amp; &quot;Password=unsecured1;&quot; _
+&amp; &quot;Persist Security Info=False;&quot; _
+&amp; &quot;User ID=rasx;&quot; _
+&amp; &quot;Initial Catalog=Schedule;&quot; _
+&amp; &quot;Data Source=DB2HACK;&quot;</p>
+<p>Set cnnADO = WScript.CreateObject(&quot;ADODB.Connection&quot;)
+cnnADO.ConnectionString = strCnn
+cnnADO.Open
+Set rsADO = cnnADO.Execute(&quot;EXECUTE ListGo2Events&quot;, , adCmdText)</p>
+<p>Set objFileSys = WScript.CreateObject(&quot;Scripting.FileSystemObject&quot;)
+Set objOutStream = objFileSys.CreateTextFile(&quot;C:\\Go2FTP.txt&quot;)</p>
+<p>Do While Not rsADO.EOF
+strWrite = rsADO.Fields(&quot;EventID&quot;) _
+&amp; &quot;|&quot; &amp; rsADO.Fields(&quot;ArtistSummary&quot;) _
+&amp; &quot;|&quot; &amp; rsADO.Fields(&quot;ArtistExtended&quot;) _
+&amp; &quot;|&quot; &amp; rsADO.Fields(&quot;VenueID&quot;) _
+&amp; &quot;|&quot; &amp; rsADO.Fields(&quot;DoorDate&quot;) _
+&amp; &quot;|&quot; &amp; rsADO.Fields(&quot;DoorTime&quot;) _
+&amp; &quot;|&quot; &amp; rsADO.Fields(&quot;EventDate&quot;) _
+&amp; &quot;|&quot; &amp; rsADO.Fields(&quot;EventTime&quot;) _
+&amp; &quot;|&quot; &amp; rsADO.Fields(&quot;GenreID&quot;) _
+&amp; &quot;|&quot; &amp; rsADO.Fields(&quot;genre_name&quot;) _
+&amp; &quot;|&quot; &amp; rsADO.Fields(&quot;AgeRestriction&quot;) _
+&amp; &quot;|&quot; &amp; rsADO.Fields(&quot;SoldOutIndicator&quot;) _
+&amp; &quot;|&quot; &amp; rsADO.Fields(&quot;ChangedToDate&quot;) _
+&amp; &quot;|&quot; &amp; rsADO.Fields(&quot;ChangedToTime&quot;) _
+&amp; &quot;|&quot; &amp; rsADO.Fields(&quot;Canceled&quot;)
+Call objOutStream.WriteLine(strWrite)
+rsADO.MoveNext
+Loop</p>
+<p>rsADO.Close
+cnnADO.Close</p>
+<p>Set rsADO = Nothing
+Set cnnADO = Nothing</p>
+<p>Set objShell = WScript.CreateObject(&quot;WScript.Shell&quot;)
+Call objShell.Run(&quot;ftp -n -s:Go2FTP.scr.txt&quot;)
+Set objShell = Nothing</p>
+<p>'Note that Go2FTP.scr.txt contains the following:
+'    open 127.0.0.1
+'    user ftploser $pass$word
+'    ascii
+'    put C:\\Go2FTP.txt
+'    close
+'    open 127.0.0.2
+'    user ftploser $pass$word
+'    ascii
+'    put C:\\Go2FTP.txt
+'    bye</p>

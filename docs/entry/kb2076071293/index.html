@@ -1,0 +1,13 @@
+<p>Public Sub basSendMail()</p>
+<pre><code>Dim objMailItem As MailItem
+
+Set objMailItem = Application.CreateItem(olMailItem)
+
+With objMailItem
+    .To = &amp;quot;rasx@kintespace.com&amp;quot;
+    .Subject = &amp;quot;Is Haley's Comet for You?&amp;quot;
+    .Body = &amp;quot;This is the body text.&amp;quot;
+    .Send
+End With
+</code></pre>
+<p>End Sub</p>

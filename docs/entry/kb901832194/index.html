@@ -1,0 +1,23 @@
+<p>Public Function basGetDigits(ByVal Literal as String, _
+Optional ByVal InclDec = False) As String</p>
+<pre><code>Dim lngCount As Long
+Dim strChar As String
+Dim strRet As String
+Dim strCmp As String
+
+If InclDec Then
+    strCmp = &amp;quot;1234567890.&amp;quot;
+Else
+    strCmp = &amp;quot;1234567890&amp;quot;
+End If
+
+For lngCount = 1 To VBA.Len(str)
+    strChar = VBA.Mid$(str, lngCount, 1)
+    If VBA.InStr(strCmp, strChar) &amp;gt; 0 Then
+        strRet = strRet &amp; strChar
+    End If
+Next
+
+basGetDigits = strRet
+</code></pre>
+<p>End Function</p>

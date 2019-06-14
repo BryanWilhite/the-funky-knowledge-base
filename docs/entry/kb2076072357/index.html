@@ -1,0 +1,5 @@
+<p>The only issue is that it can take some time to load an external file so you can’t always run functions from within that file straight away. Thankfully there is a workaround for this using another jQuery method. You basically set all AJAX request to be synchronous before you run getScript() and then set AJAX requests to be asynchronous again after the script is loaded. If you end up loading like 20 files at the beginning of a page load this could take a while but hopefully you won’t be doing that :P</p>
+<p>$.ajaxSetup({async: false});
+$.getScript(MVCRoot+fileName+'.js');
+$.ajaxSetup({async: true});</p>
+<p>[http://colourgray.wordpress.com/2008/09/22/jquery-loading-external-javascript-files-using-getscript/]</p>

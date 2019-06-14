@@ -1,0 +1,49 @@
+<p>'**********************************************************************
+'  Visual Basic ActiveX Script
+'************************************************************************
+Function Main()
+Dim objFileSys : Set objFileSys = CreateObject(&quot;Scripting.FileSystemObject&quot;)
+Dim vPath : vPath = DTSGlobalVariables(&quot;gRootLogPath&quot;).Value
+Dim objInStream
+Dim objOutStream
+Dim vWrite, vLine</p>
+<pre><code>Set objInStream = objFileSys.OpenTextFile(vPath &amp; &amp;quot;raw.txt&amp;quot;)
+Set objOutStream = objFileSys.CreateTextFile(vPath &amp; &amp;quot;log.txt&amp;quot;)
+
+'
+'Apache &amp;quot;common&amp;quot; log file: host ident authuser date request status bytes
+'
+Do Until objInStream.AtEndOfStream
+    vWrite = false
+    vLine = objInStream.ReadLine
+
+    If Instr(1,vLine,&amp;quot;/ HTTP&amp;quot;) &amp;gt; 0 _
+        Or Instr(1,vLine,&amp;quot;.css HTTP&amp;quot;) &amp;gt; 0 _
+        Or Instr(1,vLine,&amp;quot;.exe HTTP&amp;quot;) &amp;gt; 0 _
+        Or Instr(1,vLine,&amp;quot;.html HTTP&amp;quot;) &amp;gt; 0 _
+        Or Instr(1,vLine,&amp;quot;.js HTTP&amp;quot;) &amp;gt; 0 _
+        Or Instr(1,vLine,&amp;quot;.mov HTTP&amp;quot;) &amp;gt; 0 _
+        Or Instr(1,vLine,&amp;quot;.mp3 HTTP&amp;quot;) &amp;gt; 0 _
+        Or Instr(1,vLine,&amp;quot;.pdf HTTP&amp;quot;) &amp;gt; 0 _
+        Or Instr(1,vLine,&amp;quot;.swf HTTP&amp;quot;) &amp;gt; 0 _
+        Then
+
+        If Instr(1,vLine,&amp;quot;not_found.html HTTP&amp;quot;) = 0 _
+            And Instr(1,vLine, &amp;quot;&amp;quot;&amp;quot;GET&amp;quot; &amp; Space(1)) &amp;gt; 0 _
+            Then vWrite = true
+
+    End If
+
+    If CBool(vWrite) Then objOutStream.WriteLine(vLine)
+Loop
+
+objInStream.Close
+objOutStream.Close
+
+Set objInStream = Nothing
+Set objOutStream = Nothing
+Set objFileSys = Nothing
+
+Main = DTSTaskExecResult_Success
+</code></pre>
+<p>End Function</p>

@@ -1,0 +1,6 @@
+<p>The Like operator is case sensitive when Option Compare Database is used (in my locale). This of course means that if strTest = &quot;foo&quot; then</p>
+<pre><code>(strTest Like &amp;quot;fo*&amp;quot;) = True
+</code></pre>
+<p>and</p>
+<pre><code>(strTest Like &amp;quot;Fo*&amp;quot;) = False
+</code></pre>

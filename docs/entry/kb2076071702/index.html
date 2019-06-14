@@ -1,0 +1,12 @@
+<p>Many an experienced Visual Studio .NET user who is an inexperienced XSD designer will be wont to take advantage of this path:</p>
+<pre><code>%ProgramFiles%&amp;bsol;&amp;bsol;Microsoft Visual Studio .NET 2003&amp;bsol;&amp;bsol;Common7&amp;bsol;&amp;bsol;Packages&amp;bsol;&amp;bsol;schemas&amp;bsol;&amp;bsol;xml&amp;bsol;&amp;bsol;
+</code></pre>
+<p>This path is involved in adding Intellisense support for user-defined schemas. An alternative to this approach would be to use the xsi:no­NamespaceSchemaLocation and xsi:schema­Location attributes instead. But Visual Studio .NET 2003 does not support this! This is corrected in Visual Studio .NET 2005. These attributes are discussed in general by Eric van der Vlist in &quot;Using W3C XML Schema&quot; here:</p>
+<pre><code>http://www.xml.com/pub/a/2000/11/29/schemas/part1.html?page=9
+</code></pre>
+<p>The
+x­mlns=&quot;http://example.org/ns/books/&quot;
+x­mlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+xsi:schemaLocation=&quot;http://example.org/ns/books/ file:library.xsd&quot;&gt;</p>
+<p>Note that &lt;book&gt; is the document element or root node and</p>
+<p>In the above example, the schema location URI used the file: protocol. Of course, the http: protocol is used as well.</p>

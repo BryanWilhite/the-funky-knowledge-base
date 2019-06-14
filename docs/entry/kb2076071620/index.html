@@ -1,0 +1,22 @@
+<p>Lesson 3: Where Does Processing Occur?</p>
+<p>The purpose of this lesson is to examine IIS, its definition of a Web application, to define the &quot;application domain&quot; and to distinguish IIS 6.0. This lesson ends with configuring Session duration.</p>
+<ul>
+<li>
+<p>&quot;IIS defines a Web application as any file that is executed within a set of folders on your Web site... The application boundary starts in the root application folder... The application ends at the last subordinate folder or when another root application folder is encountered.&quot;</p>
+</li>
+<li>
+<p>&quot;A start page is a page designated by Visual Studio as the first page to display in  your application.&quot;</p>
+</li>
+<li>
+<p>&quot;The IIS default document is the page that IIS displays...&quot; when the incoming request does not specify a page.</p>
+</li>
+<li>
+<p>&quot;...IIS specifies these default document file names: Default.htm, Default.asp, Index.htm, and Iisstart.asp.&quot;</p>
+</li>
+<li>
+<p>&quot;When IIS receives a request for a resource within a Web application, IIS uses aspnet_isapi.dll to call the ASP.NET worker process (aspnet_wp.exe).&quot;</p>
+</li>
+</ul>
+<p>The worker process then loads the compiled assembly into a process space called &quot;the application domain,&quot; which maintains process isolation for each Web application. (This is not the case for DLLHost.exe of ASP). IIS 6.0 uses w3wp.exe instead of aspnet_wp.exe. The process instances created by w3wp.exe can exist within multiple application pools.</p>
+<p>The lesson then goes on to describe the importance of Session states. The second reason, &quot;They determine when the application ends...,&quot; sounds strange to me. My first thought is, Ok does that mean that session-less web applications never end?</p>
+<p>The &lt;sessionState&gt; element, its timeout attribute, is used to determine when the Web application ends.</p>

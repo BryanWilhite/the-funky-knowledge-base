@@ -1,0 +1,16 @@
+<p>Routing requests</p>
+<p>Again, these rules direct all requests to index.php, except specified file types:</p>
+<p>RewriteEngine on
+RewriteBase /
+RewriteRule !\\.(js|ico|txt|gif|jpg|png|css)$ index.php</p>
+<p>Handling file and directory exceptions</p>
+<p>These rules (used immediately prior to the RewriteRule above) exclude real files and directories from the rewriting and lets them pass through unaffected:</p>
+<p>RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d</p>
+<p>You can also simply allow a specified group of files to pass through unaffected by using this line:</p>
+<p>RewriteRule  ^(foo|bar).*  - [L]</p>
+<p>In this case, files foo.* and bar.* will be accessed normally.</p>
+<p>[http://framework.zend.com/wiki/
+display/ZFDEV/Configuring+Your+URL+Rewriter]</p>
+<p>Also, see “Blueprint for PHP Applications: Bootstrapping” here:</p>
+<p>[http://devzone.zend.com/node/view/id/70]</p>

@@ -1,0 +1,6 @@
+<p>Dim vLogin : vLogin = Request.ServerVariables(&quot;LOGON_USER&quot;)</p>
+<p>Dim vLoginDomainName, vLoginUserName
+If InStr(1,vLogin,&quot;\\&quot;,vbTextCompare) &gt; 0 Then
+vLoginDomainName = Split(vLogin,&quot;\\&quot;,-1,vbTextCompare)(0)
+vLoginUserName = Split(vLogin,&quot;\\&quot;,-1,vbTextCompare)(1)
+End If</p>

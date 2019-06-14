@@ -1,0 +1,18 @@
+<p>By default, a new WSF file added as WinScript1.wsf looks like this:</p>
+<p>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;package xmlns=&quot;Windows Script Host&quot;&gt;
+&lt;job&gt;
+&lt;script language=&quot;VBscript&quot;&gt;</p>
+<pre><code>    &amp;lt;/script&amp;gt;
+&amp;lt;/job&amp;gt;
+</code></pre>
+<p>&lt;/package&gt;</p>
+<p>This file will generate schema errors against wshmeta.xsd in the Common7\\Packages\\schemas\\xml directory of your Visual Studio installation. To deal with this problem immediately, change the file to this:</p>
+<p>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;package xmlns=&quot;http://schemas.microsoft.com/WindowsScriptHost&quot;&gt;
+&lt;job&gt;
+&lt;script language=&quot;VBscript&quot;&gt;</p>
+<pre><code>    &amp;lt;/script&amp;gt;
+&amp;lt;/job&amp;gt;
+</code></pre>
+<p>&lt;/package&gt;</p>

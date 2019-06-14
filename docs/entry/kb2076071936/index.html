@@ -1,0 +1,17 @@
+<p>#!/bin/bash</p>
+<p>file=$2
+month=$1
+year=<code>date +%Y</code></p>
+<p>echo &quot;Searching $file for days in $month...&quot;</p>
+<p>for day in {1..31}
+do
+query=$(printf &quot;\\[%02d/%s/%s&quot; $day $month $year)
+outfile=$(printf &quot;out_%s_%s_%02d.gz&quot; $year $month $day)
+count=$(zgrep -c &quot;$query&quot; &quot;$file&quot;)
+if [ $count -gt 0 ]
+then
+printf &quot;Found %d entries for %s/%02d/%s...\\n&quot; $count $month $day $year
+zgrep &quot;$query&quot; &quot;$file&quot; | gzip &gt;&gt; &quot;$outfile&quot;
+fi
+done</p>
+<p>exit 0</p>

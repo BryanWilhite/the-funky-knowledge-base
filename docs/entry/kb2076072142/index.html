@@ -1,0 +1,59 @@
+<p>The XmlSerializer in .NET has many good qualities.  It creates output that is understandable and not overly verbose.  It works with many data types.  It has a simple, sensible policy -- it only serializes public properties and members.  It doesn't require special attributes.  The only thing that bothers me is that it doesn't serialize Hashtables or Dictionaries.  Here is some code that enables serializing and deserializing those types by using an intermediary List.  I haven't tried it using a non-generic ArrayList or array, but I believe that would work too.</p>
+<pre><code>using System.Collections.Generic;
+using System.Collections;
+using System.IO;
+using System.Xml.Serialization;
+using System.Xml;
+using System;
+
+public static void Serialize(TextWriter writer, IDictionary dictionary)
+{
+    List&amp;lt;Entry&amp;gt; entries = new List&amp;lt;Entry&amp;gt;(dictionary.Count);
+    foreach (object key in dictionary.Keys)
+    {
+        entries.Add(new Entry(key, dictionary[key]));
+    }
+
+    XmlSerializer serializer = new XmlSerializer(typeof(List&amp;lt;Entry&amp;gt;));
+    serializer.Serialize(writer, entries);
+}
+
+public static void Deserialize(TextReader reader, IDictionary dictionary)
+{
+    dictionary.Clear();
+    XmlSerializer serializer = new XmlSerializer(typeof(List&amp;lt;Entry&amp;gt;));
+    List&amp;lt;Entry&amp;gt; list = (List&amp;lt;Entry&amp;gt;)serializer.Deserialize(reader);
+
+    foreach (Entry entry in list)
+    {
+        dictionary[entry.Key] = entry.Value;
+    }
+}
+
+public class Entry
+{
+    public object Key;
+    public object Value;
+
+    public Entry() {}
+
+    public Entry(object key, object value)
+    {
+        Key = key;
+        Value = value;
+    }
+}
+</code></pre>
+<p>It generates output like the following, when the keys and values are strings.</p>
+<p>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;ArrayOfEntry x­mlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; x­mlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+&lt;Entry&gt;
+&lt;Key xsi:type=&quot;xsd:string&quot;&gt;MyKey&lt;/Key&gt;
+&lt;Value xsi:type=&quot;xsd:string&quot;&gt;MyValue&lt;/Value&gt;<br>
+&lt;/Entry&gt;
+&lt;Entry&gt;<br>
+&lt;Key xsi:type=&quot;xsd:string&quot;&gt;MyOtherKey&lt;/Key&gt;<br>
+&lt;Value xsi:type=&quot;xsd:string&quot;&gt;MyOtherValue&lt;/Value&gt;<br>
+&lt;/Entry&gt;
+&lt;/ArrayOfEntry&gt;</p>
+<p>[http://blogs.msdn.com/psheill/archive/2005/04/09/406823.aspx]</p>

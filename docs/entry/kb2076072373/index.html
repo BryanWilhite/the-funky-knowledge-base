@@ -1,0 +1,11 @@
+<p>var odataContext = new DataServiceContext(this._odataLink);
+odataContext.BeginExecute&lt;long&gt;(new Uri(&quot;./CustomerCount&quot;, UriKind.Relative),
+new AsyncCallback(
+(result) =&gt;
+{
+if(!result.IsCompleted) return;
+this.ListCustomersCount =
+odataContext.EndExecute&lt;long&gt;(result).FirstOrDefault();
+this.ListCustomersQuery(pageNumber);
+}),
+null);</p>

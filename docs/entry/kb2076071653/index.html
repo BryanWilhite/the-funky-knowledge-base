@@ -1,0 +1,10 @@
+<p>The following takes advantage of the System.DateTime.MaxValue property, making sure that your cookie will not expire for a large time:</p>
+<pre><code>// Create a cookie.
+HttpCookie cookUPrefs = new HttpCookie(&amp;quot;UPrefs&amp;quot;);
+cookUPrefs.Value = &amp;quot;English&amp;quot;;
+cookUPrefs.Expires = System.DateTime.MaxValue;
+</code></pre>
+<p>By the way, removing cookies can also involve System.DateTime static members:</p>
+<pre><code>// Delete the cookie by setting its expiration.
+Response.Cookies[&amp;quot;UPrefs&amp;quot;].Expires = System.DateTime.Now;
+</code></pre>

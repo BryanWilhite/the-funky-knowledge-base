@@ -1,0 +1,28 @@
+<p>Function basIsEmailValid(ByVal EmailAddr As String) As Boolean
+'This function checks for a valid email address.
+Dim lngPosAtSymbol As Long
+Dim lngPosPeriod As Long
+Dim lngPosSpace As Long
+Dim lngLength As Long</p>
+<pre><code>basIsEmailValid = False
+If VBA.Len(EmailAddr) = 0 Then Exit Function
+If VBA.InStr(1, EmailAddr, &amp;quot;@&amp;quot;, vbTextCompare) = 0 Then Exit Function
+
+lngPosAtSymbol = GetCharPos(EmailAddr, &amp;quot;@&amp;quot;, 1)
+lngPosPeriod = GetCharPos(EmailAddr, &amp;quot;.&amp;quot;)
+lngPosSpace = GetCharPos(EmailAddr, VBA.Space$(1), 1)
+lngLength = VBA.Len(EmailAddr)
+
+
+If (lngPosAtSymbol &amp;lt; 1) _
+    Or (lngPosAtSymbol = lngLength) _
+    Or (VBA.Mid$(EmailAddr, lngPosAtSymbol + 1, 1) = &amp;quot;.&amp;quot;) _
+    Or (VBA.Mid$(EmailAddr, lngPosAtSymbol - 1, 1) = &amp;quot;.&amp;quot;) _
+    Or (lngPosPeriod &amp;gt; lngLength - 2) _
+    Or (lngPosSpace &amp;gt; 0) Then
+    basIsEmailValid = False
+Else
+    basIsEmailValid = True
+End If
+</code></pre>
+<p>End Function</p>

@@ -1,0 +1,32 @@
+<p>In versions of the Zend Framework greater than 1.0.3, case sensitivity matters for Controller actions specified in configuration files (including XML configuration files). This means that the following declared route will throw an exception because the document Controller does not have a public method written as documentcode:</p>
+<pre><code>&amp;lt;routes&amp;gt;
+    &amp;lt;documentByCode&amp;gt;
+        &amp;lt;type&amp;gt;Zend_Controller_Router_Route_Regex&amp;lt;/type&amp;gt;
+        &amp;lt;route&amp;gt;document/code/(&amp;bsol;&amp;bsol;w+)&amp;lt;/route&amp;gt;
+        &amp;lt;defaults&amp;gt;
+            &amp;lt;controller&amp;gt;document&amp;lt;/controller&amp;gt;
+            &amp;lt;action&amp;gt;documentCode&amp;lt;/action&amp;gt;
+        &amp;lt;/defaults&amp;gt;
+        &amp;lt;map&amp;gt;
+            &amp;lt;documentCode&amp;gt;1&amp;lt;/documentCode&amp;gt;
+        &amp;lt;/map&amp;gt;
+    &amp;lt;/documentByCode&amp;gt;
+&amp;lt;/routes&amp;gt;
+</code></pre>
+<p>This is a correct form:</p>
+<pre><code>&amp;lt;routes&amp;gt;
+    &amp;lt;documentByCode&amp;gt;
+        &amp;lt;type&amp;gt;Zend_Controller_Router_Route_Regex&amp;lt;/type&amp;gt;
+        &amp;lt;route&amp;gt;document/code/(&amp;bsol;&amp;bsol;w+)&amp;lt;/route&amp;gt;
+        &amp;lt;defaults&amp;gt;
+            &amp;lt;controller&amp;gt;document&amp;lt;/controller&amp;gt;
+            &amp;lt;action&amp;gt;document-code&amp;lt;/action&amp;gt;
+        &amp;lt;/defaults&amp;gt;
+        &amp;lt;map&amp;gt;
+            &amp;lt;documentCode&amp;gt;1&amp;lt;/documentCode&amp;gt;
+        &amp;lt;/map&amp;gt;
+    &amp;lt;/documentByCode&amp;gt;
+&amp;lt;/routes&amp;gt;
+</code></pre>
+<p>Now the Framework will look for documentCode with the case sensitivity and find it without exceptions. For more information, see 10.13.3. “Migrating from 1.0.x to 1.5.0 or Newer”:</p>
+<p>http://framework.zend.com/manual/en/zend.controller.migration.html</p>

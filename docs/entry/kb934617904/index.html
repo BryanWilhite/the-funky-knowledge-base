@@ -1,0 +1,38 @@
+<p>Database management systems like those made by Sybase do not support what Microsoft calls the &quot;Immediate If&quot; or IIF() functions in their implementation of SQL. Sybase does have the System function isnull() which effectively the VBA equivalent of:</p>
+<pre><code>IIF(&amp;lt;expression&amp;gt; is null, &amp;lt;value if true&amp;gt;, &amp;lt;value if false&amp;gt;)
+</code></pre>
+<p>but there is little else in the way of in-line decision structures (functions that can be projected in a SELECT statement that make if-then decisions).</p>
+<p>One trick to get around using formal T-SQL if-then structures is to use what I call &quot;Charles Chen's Substring-Sign-Charindex Structure.&quot; Named after Charles Chen of Investlogic Systems. Here is how Charles constructs the CUSIP of a future (a CUSIP is a string of eight or nine characters used to identify a security; a future is a kind of security used in financial markets):</p>
+<pre><code>SELECT @cusip = &amp;quot;0000&amp;quot; + substring(@cusip_in, 2, 2)
++ substring(
+    &amp;quot;H&amp;quot;, 1, sign(
+        charindex(substring(@cusip_in, 4, 1), &amp;quot;FGH&amp;quot;)
+    )
+)
++ substring(
+    &amp;quot;M&amp;quot;, 1, sign(
+        charindex(substring(@cusip_in, 4, 1), &amp;quot;JKM&amp;quot;)
+    )
+)
++ substring(
+    &amp;quot;U&amp;quot;, 1, sign(
+        charindex(substring(@cusip_in, 4, 1), &amp;quot;NQU&amp;quot;)
+    )
+)
++ substring(
+    &amp;quot;Z&amp;quot;, 1, sign(
+        charindex(substring(@cusip_in, 4, 1), &amp;quot;VXZ&amp;quot;)
+    )
+)
++ substring(@cusip_in, 5, 1)
+
+SELECT cusip = @cusip
+</code></pre>
+<p>I am not going to try to explain what Charles is doing with the CUSIP coming into his stored procedure as the variable @cusip_in (just know that this is an heroic hack done in an emergency and [hint-hint] the letters H, M, U and Z represent the quarter when the future was issued---do not try this at home). The scope here focuses on the combination of substring(), sign() and charindex().</p>
+<p>The statement SELECT cusip = @cusip will project a string of eight characters where: the first four characters are &quot;0000&quot;; the fifth and sixth characters are extracted out of @cusip_in, its second and third char' positions; the seventh character is derived from Charles' decision structure; and the last character is in the fifth position of @cusip_in.</p>
+<p>Now the seventh character is either H, M, U or Z. The decision structure between the first and last substring() calls above says, &quot;If @cusip_in contains 'FGH' then return 'H'; else if @cusip_in contains 'JKM' then return 'M'; else if @cusip_in contains 'NQU' then return 'U'; else if @cusip_in contains 'VXZ' then return 'Z'.&quot;</p>
+<p>This entire structure depends on the following:</p>
+<pre><code>substring(&amp;lt;string literal&amp;gt;, 1, 0) = &amp;quot;&amp;quot;
+</code></pre>
+<p>which, in English, says,  &quot;Start at position one of the string literal and return a string of length zero.&quot; Fortunately Sybase 11.x Adaptive Server's implementation of substring() does not blow up when a zero is used for the length argument. (Also the Sybase Transact SQL Users Guide reminds us that 'one' + '' + 'two' = 'one two' where a space has been inserted in place of the zero-length string. But this does not seem to happen when, I assume, substring() returns a zero length string.) Beware...</p>
+<p>The zero can show up in the length argument of substring() because of Charles' brilliant use of the sign() function: if the charindex() function nested within the sign() function can't find the string it is looking for it will return 0. If the condition is true, sign() returns 1. When sign() returns 1, it allows the substring() function it is nested in to return one character.</p>

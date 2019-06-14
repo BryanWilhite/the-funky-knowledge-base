@@ -1,0 +1,35 @@
+<ul>
+<li>
+<p>Create a new Dynamic Web Project.</p>
+</li>
+<li>
+<p>Name the project MigrationNetAppSToEMC, leave the project defaults and select finish.</p>
+</li>
+<li>
+<p>Right-click on the newly created project and choose Team &gt; Share Project… Under Select a repository type: choose CVS. Click Next. Choose the predefined CVS repository (:extssh:bwilhite@vcvs01:/home/cvs).</p>
+</li>
+<li>
+<p>Under Enter Module Name, select Use specified module name: and enter PODS/PODS4/WORKSPACE/WEBSPHERE/MigrationNetAPPSToEMC.</p>
+</li>
+<li>
+<p>Under Select Tag, the list for Select tag to synchronize with: select HEAD.</p>
+</li>
+<li>
+<p>Right-click on the newly created project and choose Team &gt; Update… to get code from CVS.</p>
+</li>
+</ul>
+<p>DB2 Connection Info:</p>
+<ul>
+<li>Hostname: cerebrus.medctr.ucla.edu</li>
+<li>Port: 50001</li>
+<li>User: db2inst2</li>
+</ul>
+<p>Databases: PODS and MIGRDB</p>
+<ul>
+<li>db2 list node directory</li>
+<li>db2 catalog tcpip node cerebrus remote cerebrus.medctr.ucla.edu server 50001</li>
+<li>db2 catalog db pods as pods at node cerebrus</li>
+<li>db2 connect to pods user db2inst2</li>
+<li>db2 list tables</li>
+<li>db2 list tables for schema DB2INST1</li>
+</ul>

@@ -1,0 +1,27 @@
+<p>Here’s the resulting constraint class:</p>
+<p>using System;
+using System.Web;
+using System.Web.Routing;</p>
+<p>public class NotEqual : IRouteConstraint
+{
+private string[] _matches = null;</p>
+<p>public NotEqual(params string[] matches)
+{
+_matches = matches;
+}</p>
+<p>public bool Match(HttpContextBase httpContext, Route route,
+string parameterName, RouteValueDictionary values,
+RouteDirection routeDirection)
+{
+bool foundMatch = false;
+foreach (string match in _matches)
+if (String.Compare(values[parameterName].ToString(), match, true)
+== 0)
+foundMatch = true;</p>
+<pre><code>  return !foundMatch;//not matching!
+</code></pre>
+<p>}
+}</p>
+<p>This was a pretty simple fix, just changing the code to use params string[] instead of a single string argument. You can also use this in replace of Stephen’s code, since you can also pass in a single argument.</p>
+<p>[http://jamesewelch.wordpress.com/
+2008/08/11/custom-route-constraints-aspnet-mvc/]</p>

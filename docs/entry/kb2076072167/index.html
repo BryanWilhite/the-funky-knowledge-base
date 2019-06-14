@@ -1,0 +1,14 @@
+<p>I have seen many similar hacks on the Web, but all of them require you to edit WordPress core files to achieve the same result. Of course, editing WordPress core files is a very bad idea because then you would have to re-edit the files each time you upgrade your blog. Instead, this hack uses the add_filter() WordPress function to insert content into your RSS feed without editing any core files.</p>
+<pre><code>&amp;lt;?php
+function insertAds($content) {
+    $content = $content.
+    '&amp;lt;hr /&amp;gt;'.
+    '&amp;lt;a href=&amp;quot;http://www.wprecipes.com&amp;quot;&amp;gt;Link!&amp;lt;/a&amp;gt;&amp;lt;hr /&amp;gt;';
+    return $content;
+}
+add_filter('the_excerpt_rss', 'insertAds');
+add_filter('the_content_rss', 'insertAds');
+?&amp;gt;
+</code></pre>
+<p>[http://www.smashingmagazine.com/2008/
+12/02/10-useful-rss-hacks-for-wordpress/]</p>

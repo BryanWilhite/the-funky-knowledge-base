@@ -1,0 +1,15 @@
+<p>The strings 'true' and 'false' have no meaning for XPath functions. Please note that the following two lines are both true:</p>
+<pre><code>boolean('true')
+
+boolean('false')
+</code></pre>
+<p>Moreover, the following is a node test for a node called &quot;true&quot;:</p>
+<pre><code>boolean(true)
+</code></pre>
+<p>This function will return false when it cannot find an element called &quot;true&quot; in the current context.</p>
+<p>The Boolean functions false() and true() produce the expected results for our first example. So this is true:</p>
+<pre><code>boolean(true())
+</code></pre>
+<p>and this is false:</p>
+<pre><code>boolean(false())
+</code></pre>

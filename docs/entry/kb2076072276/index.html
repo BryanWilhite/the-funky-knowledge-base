@@ -1,0 +1,68 @@
+<p>A little while back a small debate has erupted over the if statement.  There is even and anti-if campaign going on.  If you read things wrong you would think that the ‘if’ needed to be banished from all languages.   And since I had so much fun with my “Refactoring a Switch statement”  (and the rebuttal), I thought I would see what damage I could do here.  (Come on Sean Timm, I double-dog dare you)</p>
+<p>This isn’t what is going on here – well, not as I read it.  People often make brash statements so people will reconsider their actions.  So we call things ‘evil’, compare them to the Vietnam war, say they cripple the mind, etc.</p>
+<p>What people are really after is the miss-use of the if statement, not the expulsion.  After all, I believe there is an if statement in virtually every computer language ever created – oh wait, assembly doesn’t have one, but do you really want to code in assembly?</p>
+<p>So how do you miss-use something as simple as an if?   There are several ways actually.  But the basic problem is nesting (see the Arrowhead Anti-pattern for an extreme example).  Nesting code can lead to confusion — regardless of container.</p>
+<p>Arrowhead Anti-pattern</p>
+<p>The Arrowhead anti-pattern, as written up by Chris Missal is a good place to start with this one.  The code ends up looking like this (code shamelessly stolen)</p>
+<pre><code>if
+    if
+        if
+            if
+                do something
+            endif
+        endif
+    endif
+endif
+</code></pre>
+<p>The issue comes from the nested if statements.  The farther the nesting goes, the harder the code is to follow.  Flatten the list as best you can.  Another tactic is to leave the method as soon as possible (return is your friend, or throw an exception).</p>
+<p>So the code could be refactored to look like this:</p>
+<pre><code>if not something
+    return;
+if not something
+    return;
+do something
+</code></pre>
+<p>When I started coding (1997-ish), we thought of that having multiple return statements as bad coding practice.  Now I can’t stand to do anything else.  But there are conditions on that.  First off, if you have multiple returns in a method, return out as early as possible, or at the end.  Try not do do this in the middle.  Also, I have no problem with a method that is nothing more than a series of small if statements with returns (as the code above does).</p>
+<p>As an aside, we are talking about code blocks here as well.  In C#, that would be any code between the { and } with a for/if/while preceding it.  I don’t like to see significant amounts of code inside of any of them.  If there is a lot of code there, move it to another method.
+Never-ending conditions Anti-Pattern</p>
+<p>You’ve all seen this type of code.  Where the distance between the ‘if’ and the ‘then’ can be measured by counting zip codes. Below is a simple example of the problem:</p>
+<pre><code>if (this and that and otherthing or something and not like-like-like ...)
+</code></pre>
+<p>If your ‘if conditions’ look like something that would come out of the mouth of a valley girl, you might be a bad developer.  How often have you looked at the if conditionals had had to spend five minutes to figure out WTF what going on?  Way too often for me.</p>
+<p>Any time you add an ‘AND’ (&amp;&amp;) or an ‘OR’ (||) to an if statement, please think about what you are trying to do.  Or better yet, do an extract to method.  Even as simple as this refactoring would be of help:</p>
+<pre><code>if (INeedSmackedUpSideTheHead(data)) {
+}
+
+bool INeedSmackedUpSideTheHead(data) {
+    return this and that and otherthing or something and not like-like-like...);
+}
+</code></pre>
+<p>Even better would be to break up the conditions into separate calls within the new method, and remove the OR entirely.</p>
+<pre><code>bool IsThisBetterNow(data) {
+    if (thisThing and that and otherthing) 
+    return true;
+    if (something and not like-like-like)
+    return true;
+    return false;
+}
+</code></pre>
+<p>You may disagree with me here, but in extended conditions, OR statements are a bit unnatural.  They break up the flow and the readability.  They cause the reader to have to go back and reevaluate what has been done, because it might not be relevant anymore – because of the OR.</p>
+<p>For-If Anti-Pattern</p>
+<p>This is a .net 3.5 specific anti-pattern (because of linq and lambda), so if you are using a lamba-less language, just ignore this for now.  But the For-If Anit-Pattern could be considered a functional development anti-pattern, so also consider this if you are entering the wonderful world of F# or Scala.</p>
+<p>Now some will call foul on this anti-pattern, mostly because the code looks simple enough, but the solution is still nicer.  First off, there is a simple for look with a nested if:</p>
+<pre><code>foreach(var data in list)
+{
+    if (data.IsTrue)
+    {
+        // do something
+    }
+}
+</code></pre>
+<p>With lambda you can now refactor this out a bit with what is essentially a custom iterator:</p>
+<pre><code>foreach(var data in list.Where(x=&amp;gt;x.IsTrue))
+{
+    // do something
+}
+</code></pre>
+<p>OK, that is all that comes to mind at this point.  But as you can see, I hope, there are ways to misuse something as simple as an ‘if’. Actually, it is often the simplest things that get misused the most, you rarely see an IoC library so grossly misused.  Anyway, hope you all have a good weekend.</p>
+<p>[http://elegantcode.com/2009/08/14/observations-on-the-if-statement/]</p>

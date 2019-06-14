@@ -1,0 +1,6 @@
+<p>Let's project Column1 in Table1 and look for duplicates. The SQL syntax for this is:</p>
+<pre><code>SELECT Column1 FROM Table1
+GROUP BY Column1
+HAVING Count(*) &amp;gt; 1
+</code></pre>
+<p>NOTE: the argument of Count() relates to the projections of GROUP BY.</p>

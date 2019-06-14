@@ -1,0 +1,30 @@
+<p>Function Toggle-Service([String] $name, [String[]] $dependents = @())
+{
+$s = Get-Service $name;</p>
+<pre><code>if ($s)
+{
+    Write-Host -BackgroundColor Green -ForegroundColor White &amp;quot;Service&amp;quot;$s.Name&amp;quot;found.&amp;quot;;
+    if ( $s.Status -eq &amp;quot;Stopped&amp;quot; )
+    {
+        Write-Host -BackgroundColor Gray -ForegroundColor White -NoNewline &amp;quot;Service is stopped.&amp;quot;;
+        Write-Host -BackgroundColor Green -ForegroundColor White &amp;quot; Starting service…&amp;quot;;
+        Start-Service -Name $s.Name;
+        foreach($dname in $dependents)
+        {
+            Write-Host -BackgroundColor Green -ForegroundColor White &amp;quot;Starting dependent Service&amp;quot;$dname&amp;quot;…&amp;quot;;
+            Start-Service -Name $dname;
+        }
+    }
+    else
+    {
+        Write-Host -BackgroundColor Green -ForegroundColor White -NoNewline &amp;quot;Service&amp;quot;$s.Name&amp;quot;is running.&amp;quot;;
+        Write-Host -BackgroundColor Gray -ForegroundColor White &amp;quot; Stopping service…&amp;quot;;
+        Stop-Service -Name $s.Name -Force;
+    }
+}
+else
+{
+    Write-Host -BackgroundColor Red -ForegroundColor White &amp;quot;Service not found.&amp;quot;;
+}
+</code></pre>
+<p>}</p>

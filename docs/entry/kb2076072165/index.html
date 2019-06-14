@@ -1,0 +1,12 @@
+<p>First, get the numeric ID of the category you want to exclude. If you don’t know how to get the ID of a particular category, you can learn how here. Once you have the ID of the category you want to exclude from your RSS feed, edit the functions.php file in your theme. Create the file if it doesn’t exist.</p>
+<pre><code>function myFilter($query) {
+    if ($query-&amp;gt;is_feed) {
+        $query-&amp;gt;set('cat','-5'); //Category ID
+    }
+    return $query;
+}
+
+add_filter('pre_get_posts','myFilter');
+</code></pre>
+<p>[http://www.smashingmagazine.com/2008/
+12/02/10-useful-rss-hacks-for-wordpress/]</p>

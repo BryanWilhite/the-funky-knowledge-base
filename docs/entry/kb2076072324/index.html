@@ -1,0 +1,54 @@
+<p>class Item
+{
+public int Number { get; set; }
+public int Sum { get; set; }
+}</p>
+<p>[TestMethod]
+public void TinyTest()
+{
+var set = new List&lt;Item&gt;
+{
+new Item{Number=1},
+new Item{Number=2},
+new Item{Number=3},
+new Item{Number=4},
+new Item{Number=5},
+new Item{Number=6},
+new Item{Number=7},
+new Item{Number=8},
+new Item{Number=9},
+new Item{Number=10},
+new Item{Number=11},
+new Item{Number=12},
+new Item{Number=13},
+new Item{Number=14},
+new Item{Number=15}
+};</p>
+<pre><code>set.ForEach(x =&amp;gt; x.Sum = x.Number + (set.Where(x2 =&amp;gt; x2.Number &amp;lt; x.Number).Sum(x3 =&amp;gt; x3.Number)));
+var sortedSet = set.OrderByDescending(x=&amp;gt;x.Number);
+
+foreach(var item in sortedSet)
+{
+    TestContext.WriteLine(&amp;quot;{0},{1}&amp;quot;, item.Number, item.Sum);
+}
+</code></pre>
+<p>}</p>
+<p>/*</p>
+<p>Test Results:</p>
+<p>15,120
+14,105
+13,91
+12,78
+11,66
+10,55
+9,45
+8,36
+7,28
+6,21
+5,15
+4,10
+3,6
+2,3
+1,1</p>
+<p>*/</p>
+<p>[http://en.wikipedia.org/wiki/Running_total]</p>

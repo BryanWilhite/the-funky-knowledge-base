@@ -1,0 +1,24 @@
+<p>Function Add-LocalUser([String]$userName, [String]$userDescription, [String]$password)
+{
+$path = [String]::Concat(&quot;WinNT://./&quot;,$userName,&quot;,user&quot;);
+$user = [ADSI]$path;
+if([String]::IsNullOrEmpty($user.Name))
+{
+$computer = [ADSI]&quot;WinNT://.&quot;;
+$user = $computer.Create(&quot;user&quot;, $userName);
+$user.SetPassword($password);
+$user.SetInfo();
+$user.Description = $userDescription;
+$user.SetInfo();
+$user.UserFlags += 65536
+#flag ADS_UF_DONT_EXPIRE_PASSWD = &amp;h10000</p>
+<pre><code>    $user.SetInfo();
+
+    Write-Host &amp;quot;User&amp;quot;$user.Name&amp;quot;added.&amp;quot;;
+}
+else
+{
+    Write-Host &amp;quot;User&amp;quot;$user.Name&amp;quot;already a Local User.&amp;quot;;
+}
+</code></pre>
+<p>}</p>

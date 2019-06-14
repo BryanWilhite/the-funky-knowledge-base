@@ -1,0 +1,30 @@
+<p>TextBlocks are a great control to use in Silverlight to display read only text. In Tip of the Day #45 I covered the basic usage of TextBlocks including formatting and text runs.</p>
+<p>For this tip I would like to show you how to make a TextBlock with wrapping text and line breaks.</p>
+<p>To make a TextBlock wrap its text you will need to set TextWrapping =&quot;Wrap&quot; on the TextBlock. The following example below shows a TextBlock in a ContentControl that is only 100 pixels wide. With TextWrapping set to “Wrap”, the TextBlock will wrap to a new line each time its contents reach 100 pixels in width.</p>
+<p>XAML:</p>
+<p>&lt;Canvas Margin=&quot;10&quot;&gt;
+&lt;ContentControl Width=&quot;100&quot;&gt;
+&lt;TextBlock TextWrapping=&quot;Wrap&quot;&gt;</p>
+<pre><code>        A lie can travel half way around the world while the truth is putting on its shoes.        
+
+        --Mark Twain
+    &amp;lt;/TextBlock&amp;gt;
+&amp;lt;/ContentControl&amp;gt;
+</code></pre>
+<p>&lt;/Canvas&gt;</p>
+<p>…</p>
+<p>As you may notice the text above does not include any of the line breaks seen in the XAML. To insert a line break all you need to do is insert a &lt;LineBreak&gt; tag within the text.</p>
+<p>Example:</p>
+<p>&lt;Canvas Margin=&quot;10&quot;&gt;
+&lt;ContentControl Width=&quot;100&quot;&gt;
+&lt;TextBlock TextWrapping=&quot;Wrap&quot;&gt;
+A lie can travel half way around the world while the truth is putting on its shoes.
+&lt;LineBreak&gt;&lt;/LineBreak&gt;
+&lt;LineBreak&gt;&lt;/LineBreak&gt;
+--Mark Twain
+&lt;/TextBlock&gt;
+&lt;/ContentControl&gt;</p>
+<p>&lt;/Canvas&gt;</p>
+<p>[http://blogs.silverlight.net/blogs/msnow/archive/2008/10/09/
+silverlight-tip-of-the-day-58-text-
+wrapping-and-line-breaks-in-textblocks.aspx]</p>

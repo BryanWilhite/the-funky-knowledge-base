@@ -1,0 +1,10 @@
+<p>using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;</p>
+<p>...</p>
+<p>DirectoryInfo di = new DirectoryInfo(@&quot;E:\\~shares\\util\\SysinternalsSuite&quot;);
+List&lt;FileSystemInfo&gt; files = Enumerable.ToList(di.GetFileSystemInfos());</p>
+<p>var output = from f in files
+select f;</p>
+<p>Console.WriteLine(output.Count(f =&gt; f.FullName.Contains(&quot;autoruns&quot;)));</p>

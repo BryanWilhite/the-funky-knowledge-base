@@ -1,0 +1,2 @@
+<p>The admintool failed to start returning a segmentation fault (and dumping its core) when I edited passwd and shadow by hand. To recover from this blunder (DO NOT edit these files by hand!), I ran pwconv to create and update /etc/shadow with data from /etc/passwd (/etc/oshadow and /etc/opasswd should not be forgotten as well).</p>
+<p>Hopefully running pwconv is the one and only solution to this problem. For more information on pwconv, see Sun man pages.</p>

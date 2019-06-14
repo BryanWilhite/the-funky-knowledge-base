@@ -1,0 +1,26 @@
+<p>Ubuntu, by default, is configured for DHCP. You can verify this by examining some configuration files related to networking:</p>
+<pre><code>less /etc/dhcp3/dhclient.conf
+less /etc/network/interfaces
+</code></pre>
+<p>In the default interfaces file, edit the last lines thusly:</p>
+<pre><code># The primary network interface
+auto eth0
+iface eth0 inet dhcp
+</code></pre>
+<p>where auto eth0 is the recommended change. Refresh the DHCP relationship by running</p>
+<pre><code>sudo ifdown eth0; sudo ifup eth0
+</code></pre>
+<p>In the Microsoft Windows world, this is equivalent to ipconfig /release; ipconfig /renew.</p>
+<p>Ensure that your machine can resolve IP addresses into DNS names by editing /etc/resolv.conf and making 'nameserver' entries.</p>
+<p>What also may be handy is to restart the network:</p>
+<pre><code>/etc/init.d/networking restart
+</code></pre>
+<p>A step-by-step Ubuntu server set up is at howtoforge.com, &quot;ISP Server Setup—Ubuntu 5.10 'Breezy Badger'&quot; here:</p>
+<pre><code>http://www.howtoforge.com/perfect_setup_ubuntu_5.10
+</code></pre>
+<p>You can display the IP address of the server by tacking on ifconfig in /etc/rc.local. This is useful for us unfortunates who cannot obtain a static IP address and we cannot use port forwarding.</p>
+<p>Another DHCP issue is that, by default, /etc/dhcp3/dhclient.conf requests a list of DNS servers (see the request line in dhclient.conf). This will automatically overwrite /etc/resolv.conf. You can specify a list of domain name servers by adding/uncommenting the prepend line in dhclient.conf:</p>
+<pre><code>prepend domain-name servers 127.0.0.1,127.0.0.2;
+</code></pre>
+<p>where the IP addresses of the domain name servers are separated by commas. Please compare editing resolv.conf manually to &quot;refreshing&quot; DHCP with ifdown eth0; ifup eth0.</p>
+<p>One possible solution to the problem related to the error message “No such device” (most likely on eth0), is to comment out the MAC address definition in /etc/iftab.</p>

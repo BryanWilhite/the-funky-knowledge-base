@@ -1,0 +1,14 @@
+<p>I've been playing with linq to entities also. It's got a long way to go before it catches up with linq to SQL. I've had to use linq to entities for the Table per Type Inheritance stuff. I found a good article recently which explains the whole 1 company 2 different ORM technologies thing here.</p>
+<p>However you can do lazy loading, in a way, by doing this:</p>
+<p>// Lazy Load Orders
+var alice2 = data.Customers.First(c =&gt; c.Name == &quot;Alice&quot;);</p>
+<p>// Should Load the Orders
+if (!alice2.Orders.IsLoaded)
+alice2.Orders.Load();</p>
+<p>or you could just include the Orders in the original query:</p>
+<p>// Include Orders in original query
+var alice = data.Customers.Include(&quot;Orders&quot;).First(c =&gt; c.Name == &quot;Alice&quot;);</p>
+<p>// Should already be loaded
+if (!alice.Orders.IsLoaded)
+alice.Orders.Load();</p>
+<p>[http://stackoverflow.com/questions/338986/linq-to-entities-and-lazy-loading]</p>

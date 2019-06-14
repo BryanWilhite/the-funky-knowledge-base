@@ -1,0 +1,17 @@
+<p>The form is:</p>
+<pre><code>vADOstr = &amp;quot;Driver={Sybase System 11};&amp;quot;
+vADOstr = vADOstr &amp; &amp;quot;SRVR=&amp;lt;your server name here&amp;gt;;&amp;quot;
+vADOstr = vADOstr &amp; &amp;quot;DB=&amp;lt;your database name here&amp;gt;;&amp;quot;
+vADOstr = vADOstr &amp; &amp;quot;UID=&amp;lt;your user ID here&amp;gt;;&amp;quot;
+vADOstr = vADOstr &amp; &amp;quot;SRVR=&amp;lt;your password here&amp;gt;;&amp;quot;
+</code></pre>
+<p>In my designs I pass user ID and password through Session-level scalar variables. It would follow that the form would change to:</p>
+<pre><code>vADOstr = &amp;quot;Driver={Sybase System 11};&amp;quot;
+vADOstr = vADOstr &amp; &amp;quot;SRVR=&amp;lt;your server name here&amp;gt;;&amp;quot;
+vADOstr = vADOstr &amp; &amp;quot;DB=&amp;lt;your database name here&amp;gt;;&amp;quot;
+vADOstr = vADOstr &amp; &amp;quot;UID=&amp;quot; &amp; Session(&amp;quot;dbUserID&amp;quot;)
+vADOstr = vADOstr &amp; &amp;quot;;&amp;quot;
+vADOstr = vADOstr &amp; &amp;quot;SRVR= &amp; Session(&amp;quot;dbPassword&amp;quot;)
+vADOstr = vADOstr &amp; &amp;quot;;&amp;quot;
+</code></pre>
+<p>where the values Session(&quot;dbUserID&quot;) and Session(&quot;dbPassword&quot;) are set before the value of vADOstr is set.</p>

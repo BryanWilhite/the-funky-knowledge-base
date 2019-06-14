@@ -1,0 +1,19 @@
+<p>The following message may require a look at the Registry:</p>
+<pre><code>'ipconfig' is not recognized as an internal or external command,
+operable program or batch file.
+</code></pre>
+<p>Look at these three keys:
+HKEY_LOCAL_MACHINE\\SYSTEM
+\\CURRENTCONTROLSET\\CONTROL
+\\SESSION MANAGER\\ENVIRONMENT
+HKEY_LOCAL_MACHINE\\SYSTEM
+\\CONTROLSET001\\CONTROL
+\\SESSION MANAGER\\ENVIRONMENT
+HKEY_LOCAL_MACHINE\\SYSTEM
+\\CONTROLSET002\\CONTROL
+\\SESSION MANAGER\\ENVIRONMENT</p>
+<p>If the Path value under any of these keys is of type STRING then the environment variable %SystemRoot% cannot &quot;expand&quot; to resolve to the &quot;real&quot; path where your system files are. It follows that ipconfig cannot be recognized by the system.</p>
+<p>To resolve this problem replace the Path environment variable under:</p>
+<pre><code>System Properties &amp;gt; Advanced &amp;gt; Environment Variables &amp;gt; System Variables
+</code></pre>
+<p>where the System Properties dialog can be found by right-clicking on the My Computer icon on the Desktop and selecting Properties. For more detailed instructions refer to MS KB article Q317206 (&quot;MMS Lotus Notes Plug-In Alters the Windows Path Environment&quot;).</p>

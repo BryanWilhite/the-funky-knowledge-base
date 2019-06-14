@@ -1,0 +1,9 @@
+<p>This is an old problem that keeps popping up over the years: Say I enter a semi-colon or /cmd for my shortcut to my office application file as described by KB article 209207 (&quot;ACC2000: How to Use Command-Line Switches in Microsoft Access&quot;). I have consistently neglected to include the full path of the office application since the shortcut is to the application file and not the application.</p>
+<p>In the case of Access 2000, this will not work:</p>
+<pre><code>&amp;bsol;&amp;bsol;&amp;bsol;&amp;bsol;MyShare&amp;bsol;&amp;bsol;C$&amp;bsol;&amp;bsol;Folder&amp;bsol;&amp;bsol;MySQL.adp ;My Command Parameter
+</code></pre>
+<p>However, this will:</p>
+<pre><code>&amp;quot;C:&amp;bsol;&amp;bsol;Program Files&amp;bsol;&amp;bsol;Microsoft Office&amp;bsol;&amp;bsol;Office10&amp;bsol;&amp;bsol;MSACCESS.EXE&amp;quot;
+    &amp;bsol;&amp;bsol;&amp;bsol;&amp;bsol;MyShare&amp;bsol;&amp;bsol;C$&amp;bsol;&amp;bsol;Folder&amp;bsol;&amp;bsol;MySQL.adp ;My Command Parameter
+</code></pre>
+<p>where, of course the above two lines should be one line.</p>

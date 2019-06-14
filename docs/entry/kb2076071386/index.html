@@ -1,0 +1,34 @@
+<p>Without much fanfare here it is: I depend on the Windows NT operating system to handle security features in my ASP solutions. I have no trouble creating a single point failure: the operating system itself. When something goes wrong in terms of security both Microsoft and myself can share the blame!</p>
+<p>The IIS user IUSR_&lt;Machine Name&gt; and the NTFS file system are the starting points in the quest for tight ASP security. Fore more details we have:</p>
+<pre><code>Implementing a Secure Site with ASP
+http://msdn.microsoft.com/library/backgrnd/html/msdn_implement.htm
+
+IIS: Authentication &amp; Security Features
+http://support.microsoft.com/support/kb/articles/Q142/8/68.ASP
+</code></pre>
+<p>When ASP pages connect to a SQL database, I avoid storing passwords in the ASP files by depending on ADO to connect via NT security. This implies that IUSR_&lt;Machine Name&gt; has the ability to connect to SQL server. This idea is based on reading the following:</p>
+<pre><code>Microsoft SQL Server 7.0 Security
+http://msdn.microsoft.com/library/techart/sql7security.htm
+
+HOWTO: Connect to the Microsoft SQL Server Through the Use of Named Pipes 
+http://support.microsoft.com/support/kb/articles/Q159/9/76.ASP
+
+INF: Authentication Methods for Connections to SQL Server in Active Server Pages
+http://support.microsoft.com/support/kb/articles/Q247/9/31.ASP
+</code></pre>
+<p>If I run into any problems while implementing security features, I should refer the following:</p>
+<pre><code>Users Cannot Access FTP or Web Site 
+http://support.microsoft.com/support/kb/articles/Q185/3/77.ASP
+
+List of NTFS Permissions Required for IIS Site to Work 
+http://support.microsoft.com/support/kb/articles/Q187/5/06.ASP
+
+Default NTFS Permissions in Windows NT
+http://support.microsoft.com/support/kb/articles/Q148/4/37.asp
+
+Cannot Create Object Error when Browsing ASP Pages 
+http://support.microsoft.com/support/kb/articles/Q201/7/40.ASP
+
+Using The Auditing Tool to Solve Authenticationess Issues
+http://www.15seconds.com/howto/pg003230.htm
+</code></pre>

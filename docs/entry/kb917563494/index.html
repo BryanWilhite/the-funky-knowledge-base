@@ -1,0 +1,57 @@
+<p>These are reflections on the SQL standards and guidelines derived through my direct experience in the field. Currently I am not aware of any popular &quot;manuals of style&quot; published by independent third parties.</p>
+<ul>
+<li>After the DBA Gives You a Database</li>
+</ul>
+<p>Once a database is available, the time has come to fill it up! SQL server databases can be described by SQL in a text file. The custom that I have acquired is to place the SQL in separate text files: a file for each table, view, data INSERT and stored procedure. These text files are then separated into directories. The directory structure is like this:</p>
+<pre><code>&amp;lt;root database folder&amp;gt;
+    tables
+    data
+    views
+    procs
+</code></pre>
+<p>These folders are checked into a code repository (e.g. MS SourceSafe) regularly. These files are managed by tools like Embarcadero's Rapid SQL.</p>
+<ul>
+<li>Code Presentation and Naming Conventions</li>
+</ul>
+<p>Without going into too much detail, I will be terse: capitalize SQL key words. Indent and line up code (with spaces) for readablity. View code with a fixed-width typeface. Place commas at the beginning of a line of code and line them up.</p>
+<p>Do not use plural table names. Do not use underscores in table names; use mixed case names (e.g. MyTable). Here are the conventions used for stored procedures and views:</p>
+<pre><code>Procedure: DELETE one or more rows
+Prefix: Del
+
+Procedure: INSERT one or more rows
+Prefix: New
+
+Procedure: INSERT many rows (e.g. from table to table)
+Prefix: Load
+
+Procedure: SELECT a row
+Prefix: Get
+
+Procedure: SELECT multiple rows
+Prefix: List
+
+Procedure: UPDATE or UPDATE/INSERT
+Prefix: Set
+</code></pre>
+<ul>
+<li>CREATE Database Objects by DROPping Them</li>
+</ul>
+<p>As it is very rare (for me) to create a database object correctly the first time, the SQL used to create it should include logic to drop it as well. This is a &quot;replace procedure&quot; that will &quot;overwrite&quot; any previous object of the same name. The following CREATE TABLE SQL illustrates this prudence:</p>
+<pre><code>IF EXISTS(SELECT * FROM sysobjects WHERE name = 'WebDomain' AND type = 'U')
+    DROP TABLE WebDomain
+</code></pre>
+<p>;</p>
+<pre><code>CREATE TABLE WebDomain
+(
+    WebDomainID NUMERIC(9,0) IDENTITY
+    , Name        VARCHAR(64)  NULL
+
+    , CONSTRAINT WebDomainPK
+    PRIMARY KEY CLUSTERED (WebDomainID)
+
+    , CONSTRAINT WebDomainIX00
+    UNIQUE NONCLUSTERED (Name)
+)
+</code></pre>
+<p>;</p>
+<p>The EXISTS keyword handles the chore of looking for the old object. This is a brutal but effective alternative to ALTER TABLE or sp_rename stuff.</p>

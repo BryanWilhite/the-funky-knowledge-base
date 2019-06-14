@@ -1,0 +1,23 @@
+<p>This is an example for building headers for a cURL call in PHP:</p>
+<pre><code>$ch = curl_init();
+$user_agent = 'Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)';
+
+…
+
+$headers = array();
+
+$headers[] = &amp;quot;POST &amp;quot; . $postPath . &amp;quot; HTTP/1.1&amp;quot;;
+$headers[] = &amp;quot;Host: &amp;quot; . $postHost;
+$headers[] = &amp;quot;Content-type: text/xml&amp;quot;;
+$headers[] = &amp;quot;Content-length: &amp;quot; . mb_strlen($content, &amp;quot;UTF-8&amp;quot;);
+$headers[] = &amp;quot;Connection: close&amp;quot;;
+
+…
+
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+curl_setopt($ch, CURLOPT_HEADER, 1);
+curl_setopt($ch, CURLOPT_USERAGENT, $user_agent);
+</code></pre>
+<p>The complete code sample is here:</p>
+<pre><code>http://www.tanguay.info/web/codeExample.php?id=993
+</code></pre>

@@ -1,0 +1,4 @@
+<p>Suppose you have a function bound to a field in a query or form. This function performs calculations and then returns the number as a string. This will be the case when you want to use the Format() function in the bound function or return custom text messages as well as numerical values.</p>
+<p>The subsequent column of data based on the bound function will now be sorted as String data. To make sure that numbers sort properly, format numerical output with leading zeros. This is not too unattractive with percentages. For example, when MyValue = 0.05,</p>
+<p>Format(MyValue, &quot;000.000%&quot;) = &quot;005.000%&quot;</p>
+<p>makes only two leading zeros. However to make numbers larger than Integer sort properly, this method is not recommended.</p>

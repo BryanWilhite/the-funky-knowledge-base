@@ -1,0 +1,15 @@
+<p>PS C:\\&gt; $key = [Microsoft.Win32.Registry]::LocalMachine</p>
+<p>PS C:\\&gt; $key.GetSubKeyNames()
+HARDWARE
+SAM
+SECURITY
+SOFTWARE
+SYSTEM</p>
+<p>PS C:\\&gt; $subKey = $key.OpenSubKey(&quot;SOFTWARE\\\\Microsoft\\\\ADs\\\\Provide
+rs&quot;)</p>
+<p>PS C:\\&gt; $subKey.GetSubKeyNames()
+IIS
+LDAP
+NDS
+NWCOMPAT
+WinNT</p>

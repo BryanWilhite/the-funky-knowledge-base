@@ -1,0 +1,21 @@
+<p>Public Sub basPopLstBox(ByRef LstBox As ListBox, _
+ByVal vArrayOrCollection As Variant)
+'
+'This sub takes the Items in a Collection (or the
+'elements in an array) and adds them to a ListBox
+'control. Of course we assume that vArrayOrCollection
+'contains string values.
+'
+Dim v As Variant</p>
+<pre><code>LstBox.Clear
+
+For Each v In vArrayOrCollection
+    
+    With LstBox
+        .AddItem (VBA.CStr(v))
+        .Refresh
+    End With
+
+Next
+</code></pre>
+<p>End Sub</p>

@@ -1,0 +1,11 @@
+<p>According to its KB article, Microsoft places caching (in the pre-.NET world) in the three contexts: the browser (client), the web server and the proxy server. The code appears with respect to these contexts as HTML:</p>
+<pre><code>&amp;lt;META HTTP-EQUIV=&amp;quot;PRAGMA CONTENT=&amp;quot;NO-CACHE&amp;quot;&amp;gt;
+</code></pre>
+<p>as IIS ASP:</p>
+<pre><code>&amp;lt;% Response.Expires = 0 %&amp;gt;
+</code></pre>
+<p>and as Proxy Server ASP:</p>
+<pre><code>&amp;lt;% Response.cachecontrol= &amp;quot;public&amp;quot; %&amp;gt;
+</code></pre>
+<p>For more details and explanations please see Q189409:
+http://support.microsoft.com/support/kb/articles/Q189/4/09.ASP</p>

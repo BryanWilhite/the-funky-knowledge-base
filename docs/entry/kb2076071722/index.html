@@ -1,0 +1,83 @@
+<p>function jsAnchorElement()
+{
+var vCount = arguments.length</p>
+<pre><code>var oElement = window.document.createElement('a')
+
+if(vCount &amp;gt; 0) oElement.href = arguments[0]
+if(vCount &amp;gt; 1) oElement.innerHTML = arguments[1]
+if(vCount &amp;gt; 2) oElement.id = arguments[2]
+if(vCount &amp;gt; 3) oElement.className = arguments[3]
+if(vCount &amp;gt; 4) oElement.title = arguments[4]
+
+return oElement
+</code></pre>
+<p>}</p>
+<p>function jsDivElement()
+{
+var vCount = arguments.length</p>
+<pre><code>var oElement = window.document.createElement('div')
+
+if(vCount &amp;gt; 0) oElement.innerHTML = arguments[0]
+if(vCount &amp;gt; 1) oElement.id = arguments[1]
+if(vCount &amp;gt; 2) oElement.className = arguments[2]
+
+return oElement
+</code></pre>
+<p>}</p>
+<p>function jsImageElement()
+{
+var vCount = arguments.length</p>
+<pre><code>var oElement = window.document.createElement('img')
+
+if(vCount &amp;gt; 0) oElement.src = arguments[0]
+if(vCount &amp;gt; 1) oElement.alt = arguments[1]
+if(vCount &amp;gt; 2) oElement.id = arguments[2]
+if(vCount &amp;gt; 3) oElement.className = arguments[3]
+
+return oElement
+</code></pre>
+<p>}</p>
+<p>/*</p>
+<p>function jsTableElement()
+{
+var vCount = arguments.length
+var oXmlRows = null
+var oTableFormatting = null</p>
+<pre><code>var oElement = window.document.createElement('table')
+
+if(vCount &amp;gt; 0) oXmlRows = arguments[0]
+if(vCount &amp;gt; 1) oElement.id = arguments[1]
+if(vCount &amp;gt; 2) oElement.className = arguments[2]
+if(vCount &amp;gt; 3) oTableFormatting = arguments[3]
+
+var oRow = null
+var oCell = null
+
+for(var y = 0;y &amp;lt; oXmlRows.length;y++)
+{
+    oRow = window.document.createElement('tr')
+    for(var x = 0;x &amp;lt; oXmlRows[y].childNodes.length;x++)
+    {
+        if(oXmlRows[y].childNodes[x].nodeType == 1)
+        {
+            oCell = window.document.createElement('td')
+            oCell.innerHTML = oXmlRows[y].childNodes[x].firstChild.nodeValue
+            oRow.appendChild(oCell)
+        }
+    }
+    oElement.appendChild(oRow)
+}
+
+return oElement
+</code></pre>
+<p>}</p>
+<p>function TableFormatting()
+{
+this.firstColumnIsHeader = null
+this.headerArray = null
+this.oddRowClassName = null
+this.useElementNames = null
+this.lastRowClassName = null
+this.columnArray = null
+}</p>
+<p>*/</p>

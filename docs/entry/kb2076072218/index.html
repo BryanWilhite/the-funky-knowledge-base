@@ -1,0 +1,38 @@
+<p>Now let's take the same XML however now defining all elements in the 'http://www.edankert.com/examples/' namespace.</p>
+<p>And instead of prefixing all the different elements (although this would cause the same problem), we're declaring a so-called default namespace at the root element.</p>
+<p>So the XML now looks like:</p>
+<p>&lt;catalog x­mlns=&quot;http://www.edankert.com/examples/&quot;&gt;
+&lt;cd&gt;
+&lt;artist&gt;Sufjan Stevens&lt;/artist&gt;
+&lt;title&gt;Illinois&lt;/title&gt;
+&lt;src&gt;http://www.sufjan.com/&lt;/src&gt;
+&lt;/cd&gt;
+&lt;cd&gt;
+&lt;artist&gt;Stoat&lt;/artist&gt;
+&lt;title&gt;Future come and get me&lt;/title&gt;
+&lt;src&gt;http://www.stoatmusic.com/&lt;/src&gt;
+&lt;/cd&gt;
+&lt;cd&gt;
+&lt;artist&gt;The White Stripes&lt;/artist&gt;
+&lt;title&gt;Get behind me satan&lt;/title&gt;
+&lt;src&gt;http://www.whitestripes.com/&lt;/src&gt;
+&lt;/cd&gt;
+&lt;/catalog&gt;</p>
+<p>When we now use the same XPath as above '//cd', we notice that nothing is returned. This is because the specified XPath returns all cd elements that have not been declared in a namespace and in the example above all the 'cd' elements are declared in the 'http://www.edankert.com/examples/' namespace.
+Namespace-Prefix mappings</p>
+<p>We need some kind of way to specify in our XPath expression that we are looking for all 'cd' elements in the 'http://www.edankert.com/examples/' namespace.</p>
+<p>To handle this, the XPath specification allows us to use a QName to specify an element or an attribute. A QName can be either a name on its own 'element' or a name with a prefix 'pre:element'. This prefix however needs to be mapped to a Namespace URI. So mapping the 'pre' prefix to the 'http://www.edankert.com/test' Namespace URI should allow us to find all 'element' elements defined in the 'http://www.edankert.com/test' namespace.</p>
+<p>In this case for instance we could use the 'edx' prefix and map this prefix to the 'http://www.edankert.com/examples/' namespace URI. This would result in the following XPath expression that should return all 'cd' elements that are declared in the 'http://www.edankert.com/examples/' namespace: '//edx:cd'.</p>
+<p>All XPath processors allow you to specify prefix-namespace mappings, however how depends on the specific implementation. See below for examples of how to map namespaces and prefixes using Jaxen (JDOM/dom4j/XOM), JAXP and XSLT.</p>
+<p>…</p>
+<p>XPath was originally designed to be used with XSLT, this (and maybe because XSLT is an XML vocabulary) might explain why declaring prefix namespace-uri mappings in XSLT seems very natural.</p>
+<p>&lt;xsl:stylesheet version=&quot;1.1&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+&lt;xsl:template match=&quot;//edx:cd&quot; xmlns:edx=&quot;http://www.edankert.com/examples/&quot;&gt;
+&lt;xsl:apply-templates/&gt;
+&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</p>
+<p>To specify the prefix namespace-uri we can simply specify a namespace-uri for the 'edx' prefix, using the normal XML mechanism.</p>
+<p>To get the same output as for the previous examples, we can use a xsl:template that matches our //edx:cd XPath expression.</p>
+<p>Conclusion</p>
+<p>So, to be able to use XPath expressions on XML content defined in a (default) namespace, we need to specify a namespace prefix mapping. As we have seen, it does not matter what prefix the namespace is mapped to.</p>
+<p>[http://www.edankert.com/defaultnamespaces.html]</p>

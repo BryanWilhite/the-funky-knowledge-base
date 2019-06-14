@@ -1,0 +1,19 @@
+<p>If you’ve been having problems copying large files over mapped drives, network disconnects, or having to reboot your router a lot more often than normal, then you can try out this fix to solve the problem.</p>
+<p>The problem stems from the new auto-tuning network, which changes the receive window on the fly. Thankfully we can easily turn it off from an administrative mode command prompt.</p>
+<p>Open Administrative Mode Command Prompt</p>
+<p>Either type cmd into the start menu and use Ctrl+Shift+Enter or right-click the Command Prompt shortcut and choose Run as Administrator.</p>
+<p>Turn Off Auto-Tuning</p>
+<pre><code>netsh int tcp set global autotuninglevel=disabled
+</code></pre>
+<p>You’ll have to reboot your system, but once you do, the problems should be resolved. If they are not you can always turn auto-tuning back on.</p>
+<p>Turn On Auto-Tuning</p>
+<pre><code>netsh int tcp set global autotuninglevel=normal
+</code></pre>
+<p>[http://www.howtogeek.com/howto/windows-vista/
+fix-problems-with-copying-large-files-in-windows-vista/]</p>
+<p>[http://blogs.msdn.com/wndp/archive/2007/07/05/
+receive-window-auto-tuning-on-vista.aspx]</p>
+<p>You might also disable another next-generation networking feature in Windows:</p>
+<pre><code>netsh interface tcp set global congestionprovider=none
+</code></pre>
+<p>[http://technet.microsoft.com/en-us/library/bb726965.aspx]</p>

@@ -1,0 +1,4 @@
+<p>The PHP fatal error “Allowed memory size of 8388608 bytes exhausted” is thrown when Simple XML opens a “large” XML document. This issue is resolved by setting memory_limit  in php.ini or as a statement:</p>
+<pre><code>ini_set('memory_limit', '64M');
+</code></pre>
+<p>This error can be a reminder that Simple XML opens entire documents into memory.</p>

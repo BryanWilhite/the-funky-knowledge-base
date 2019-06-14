@@ -1,0 +1,40 @@
+<p>Typically, you'd use a built-in layout control appropriate for your scenario (e.g. use a grid as a parent if you want scaling relative to the parent). If you want to do it with an arbitrary parent element, you can create a ValueConverter do it, but it probably won't be quite as clean as you'd like. However, if you absolutely need it, you could do something like this:</p>
+<p>public class PercentageConverter : IValueConverter
+{
+public object Convert(object value,
+Type targetType,
+object parameter,
+System.Globalization.CultureInfo culture)
+{
+return System.Convert.ToDouble(value) *
+System.Convert.ToDouble(parameter);
+}</p>
+<pre><code>public object ConvertBack(object value, 
+    Type targetType, 
+    object parameter, 
+    System.Globalization.CultureInfo culture)
+{
+    throw new NotImplementedException();
+}
+</code></pre>
+<p>}</p>
+<p>Which can be used like this, to get a child textbox 10% of the width of its parent canvas:</p>
+<p>&lt;Window x:Class=&quot;WpfApplication1.Window1&quot;
+xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+xmlns:local=&quot;clr-namespace:WpfApplication1&quot;
+Title=&quot;Window1&quot; Height=&quot;300&quot; Width=&quot;300&quot;&gt;
+&lt;Window.Resources&gt;
+&lt;local:PercentageConverter x:Key=&quot;PercentageConverter&quot;/&gt;
+&lt;/Window.Resources&gt;
+&lt;Canvas x:Name=&quot;canvas&quot;&gt;
+&lt;TextBlock Text=&quot;Hello&quot;
+Background=&quot;Red&quot;
+Width=&quot;{Binding
+Converter={StaticResource PercentageConverter},
+ElementName=canvas,
+Path=ActualWidth,
+ConverterParameter=0.1}&quot;/&gt;
+&lt;/Canvas&gt;
+&lt;/Window&gt;</p>
+<p>[http://stackoverflow.com/questions/717299/wpf-setting-the-width-and-height-as-a-percentage-value]</p>

@@ -1,0 +1,9 @@
+<p>You will find the methods .Skip() and .Take() very useful.</p>
+<p>I noticed you provided some code from your project, so here's an update on how you should implement these methods.</p>
+<p>In your method for getting the data, do the following:</p>
+<p>Dim query = (From st In db.students _
+Order By st.st_studentid Ascending _
+Select st).Skip((CurrentPage - 1) * PageSize).Take(PageSize)</p>
+<p>Then provide the CurrentPage and PageSize variables as arguments to the method. (You don't want to build them into the data access, as they could vary across different parts of your site...)</p>
+<p>[http://stackoverflow.com/questions/764364/datalist-paging-with-linq]</p>
+<p>Note that Skip and Take come from Haskel set operations.</p>

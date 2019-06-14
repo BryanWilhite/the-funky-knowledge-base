@@ -1,0 +1,15 @@
+<p>For some crazy reason you may want to avoid making a CREATE XML SCHEMA COLLECTION statement but still validate your XML. Here is an example to do this with XPath assertions in XQuery:</p>
+<pre><code>IF (@xmlInput.exist('//HostName') = 0)
+OR (@xmlInput.value('string-length((//HostName/text())[1])','int') = 0)
+BEGIN
+    SET @xmlOutput = '
+    &amp;lt;Header&amp;gt;Failed to Receive Device Data&amp;lt;/Header&amp;gt;
+    &amp;lt;Code&amp;gt;999&amp;lt;/Code&amp;gt;
+    &amp;lt;Line&amp;gt;XML element “HostName” was not found or is empty.&amp;lt;/Line&amp;gt;
+    '
+    GOTO RETURN_XML_MESSAGE
+END
+</code></pre>
+<p>This technique can be used in the discussion by Denis Ruckebusch filed under “Complementing XSD with CHECK constraints” here:</p>
+<pre><code>http://blogs.msdn.com/denisruc/archive/2006/08/22/713342.aspx
+</code></pre>

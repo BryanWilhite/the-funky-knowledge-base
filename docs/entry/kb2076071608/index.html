@@ -1,0 +1,30 @@
+<p>Windows Update produced the following error:</p>
+<pre><code>Windows Update has encountered an error.
+This may be due to a discrepancy
+in your computer's time setting.
+
+To check your date and time setting:
+
+    1. On the taskbar, double-click the time.
+    2. Verify that the date and time is correct.
+
+Send error number to Microsoft (0x800C0008)
+</code></pre>
+<p>This problem appears to be related to Microsoft's Windows 2003 team not being sufficiently intimate with the Windows Update Team and possibly the IE team. I suspect this because when I loaded windows update using this address:</p>
+<pre><code>https://v4.windowsupdate.microsoft.com/en/default.asp
+</code></pre>
+<p>The site works as expected. However, as of this writing, linking to the http version of this site still produces the error. This error should not happen at all. In my mind there is the following uninformed expectations:</p>
+<ul>
+<li>
+<p>Windows 2003 should &quot;secure&quot; Internet Explorer but should automatically place Windows Update site(s) on the list of &quot;trusted&quot; sites.</p>
+</li>
+<li>
+<p>Whenever there is an error, there should be a &quot;clean re-install&quot; option available for Windows Update. I cannot imagine that this is not possible.</p>
+</li>
+<li>
+<p>There should be a downloadable Windows Update utility that can verify that everything is working okay. Why do I feel like I am indulging in fantasy?</p>
+</li>
+<li>
+<p>How about this fantasy: there should be a Windows Update Server sold like an internet router sitting on the network pushing these updates to clients. It can be an &quot;x box&quot; for the rest of us.</p>
+</li>
+</ul>

@@ -1,0 +1,47 @@
+<p>Private Sub basReadTextFile()
+'
+'This sub reads a text file line by line.
+'It updates the progress meter as it reads the file.
+'The LOF() function is used as the known value
+'the progress meter refers to. The lineCounter variable
+'stores the total number of characters in the file.
+'The theory is that the total number of characters
+'in a text file (including carriage returns) equals
+'the value in bytes returned by LOF().
+'
+'Recall that 1 character is equal to 1 byte (8 bits).
+'
+Dim varReturn As Variant
+Dim lngCounter As Long
+Dim strData As String
+'
+'Note that varReturn is of datatype Variant since
+'SysCmd() returns numerical values (error values)
+'and the Null (indicating successful execution).
+'lngCounter is of datatype Long; its maximum
+' positive range is 2,147,483,647 which
+'implies that it can be used to read files as
+'large as 2 GB.
+'
+Open &quot;c:\\windows\\desktop\\pine_addressbook.txt&quot; _
+For Input Access Read As #1</p>
+<pre><code>varReturn = Application.SysCmd(acSysCmdInitMeter, _
+    &amp;quot;Reading File...&amp;quot;, VBA.LOF(1))
+
+Do Until VBA.EOF(1)
+    Line Input #1, strData
+    varReturn = Application.SysCmd(acSysCmdUpdateMeter, _
+        lngCounter)
+    lngCounter = VBA.Len(lineData) + lngCounter + 2
+    '
+    'We add 2 to lngCounter to account for the length
+    'of a carriage return: VBA.Len(vbCrLf) = 2
+    'where vbCrLf is sequentially ASCII char's 13 and 10.
+    '
+Loop
+
+varReturn = Application.SysCmd(acSysCmdRemoveMeter)
+
+Close #1
+</code></pre>
+<p>End Sub</p>

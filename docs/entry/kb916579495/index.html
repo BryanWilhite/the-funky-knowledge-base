@@ -1,0 +1,52 @@
+<p>&quot;Browser sniffing&quot; is scanning the userAgent property of the navigator object. The userAgent property is a text string that can be &quot;scanned&quot; with the indexOf() method of a String object variable. The indexOf() method can be applied directly to the userAgent property with the form:</p>
+<pre><code>navigator.userAgent.indexOf(&amp;lt;string&amp;gt;)
+</code></pre>
+<p>but, for the sake of designing efficiently, navigator.userAgent is usually set to a variable. A more elaborate but most compartmentalized design is to sniff for browsers with a class function. The following illustrates:</p>
+<pre><code>function jsAgent() {
+    
+    vAgent = window.navigator.userAgent
+
+    this.ms3x95 = (vAgent.indexOf(&amp;quot;MSIE 3.02&amp;quot;) != -1 &amp;&amp;
+        vAgent.indexOf(&amp;quot;Windows 95&amp;quot;) != -1) ? true:false
+
+    this.ms3xNT = (vAgent.indexOf(&amp;quot;MSIE 3.02&amp;quot;) != -1 &amp;&amp;
+        vAgent.indexOf(&amp;quot;Windows NT&amp;quot;) != -1) ? true:false
+
+    this.ieMac = (vAgent.indexOf(&amp;quot;Mac&amp;quot;) != -1 &amp;&amp;
+        vAgent.indexOf(&amp;quot;MSIE&amp;quot;) != -1) ? true:false
+                
+    this.ieold = (vAgent.indexOf(&amp;quot;Mozilla/1&amp;quot;) != -1 &amp;&amp;
+        vAgent.indexOf(&amp;quot;MSIE&amp;quot;) != -1) ? true:false
+                
+    this.ieX = (vAgent.indexOf(&amp;quot;MSIE&amp;quot;) != -1 &amp;&amp;
+        vAgent.indexOf(&amp;quot;Windows NT&amp;quot;) == -1 &amp;&amp;
+        vAgent.indexOf(&amp;quot;Windows 95&amp;quot;) == -1 &amp;&amp;
+        vAgent.indexOf(&amp;quot;Mac&amp;quot;) == -1) ? true:false
+
+    this.moz3or4 = (vAgent.indexOf(&amp;quot;Mozilla/3&amp;quot;) != -1 ||
+        vAgent.indexOf(&amp;quot;Mozilla/4&amp;quot;) != -1 ||
+        vAgent.indexOf(&amp;quot;Mozilla/5&amp;quot;) != -1) ? true:false
+
+    this.mozold = (vAgent.indexOf(&amp;quot;Mozilla/2&amp;quot;) != -1 &amp;&amp;
+        vAgent.indexOf(&amp;quot;MSIE&amp;quot;) == -1) ? true:false
+                
+    this.agentX = (vAgent.indexOf(&amp;quot;Mozilla&amp;quot;) == -1 &amp;&amp;
+        vAgent.indexOf(&amp;quot;MSIE&amp;quot;) == -1) ? true:false
+}
+</code></pre>
+<p>This &quot;class function,&quot; jsAgent(), is looking for two types of browsers: Microsoft Browsers and Mozilla-Standard browsers. Because of Microsoft's historical behavior, the assumption here is that their early browsers may not contain the word &quot;Mozilla&quot; while Netscape browsers (being very intimate with mozilla.org) can be found by looking for &quot;Mozilla.&quot;</p>
+<p>The sniffing takes place when jsAgent() is instantiated. Suppose a variable called objAgent is used to instantiate jsAgent(), we then have:</p>
+<pre><code>objAgent = new jsAgent()
+</code></pre>
+<p>Using objAgent, I will make a few remarks. Suppose the following:</p>
+<pre><code>objAgent.ieX == true
+</code></pre>
+<p>This means that we have found a Microsoft Internet Explorer browser on an operating system that is not Windows- or Macintosh-based. For more details on dealing with sniffing for other operating systems (and more), please search for the MS Word .DOC file &quot;Sniffing for Browsers, Java Virtual Machines, and Operating Systems&quot; by Michael Edwards (March 1998) at microsoft.com.</p>
+<p>Also suppose that:</p>
+<pre><code>objAgent.agentX == true
+</code></pre>
+<p>This means that we have a browser that is not from Microsoft nor Mozilla-based. This is truly a strange-smelling browser!</p>
+<p>Now suppose that:</p>
+<pre><code>objAgent.moz3or4 == true
+</code></pre>
+<p>This means that we have found a browser that can handle CSS1 and HTML 4.0 Transitional without too many problems. As of this writing, such a browser is the best one can reasonably hope for at this proprietary moment in time.</p>

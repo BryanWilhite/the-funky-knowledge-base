@@ -1,0 +1,21 @@
+<p>Lesson 3: Navigating Between Forms</p>
+<p>The purpose of this lesson is to detail the ways Web forms are linked together through client-side hyperlinking (with the Hyperlink control and the window.open() script method) and server-side HTTP-context-switching (with Response.Redirect(), Server.Transfer() and Server.Execute() methods).</p>
+<ul>
+<li>&quot;Hyperlink server controls respond to user click events by displaying the page specified in the control's NavigateURL property.&quot;</li>
+</ul>
+<p>Hyperlink server controls do not fire server-side events. This lesson offers LinkButton or ImageButton controls as a substitute for the Hyperlink control when server-side events are needed. However, this replacement implies that any equivalent to the NavigateURL property will be lost when using the LinkButton or ImageButton controls. The lesson suggests that using Response.Redirect() with the LinkButton or ImageButton controls is an adequate workaround to this design.</p>
+<ul>
+<li>&quot;Setting the Transfer method's preserveForm argument to True makes the form's QueryString, ViewState, and event procedure information available in the destination form... To be able to read one Web form's ViewState from another, you must first set the EnableViewStateMac attribute in the Web form's Page directive to False.&quot;</li>
+</ul>
+<p>The lesson goes on to warn us that implementing this design pattern is a security risk as ViewState information is no longer hashed and is as human-readable as HTML form POSTDATA.</p>
+<ul>
+<li>
+<p>&quot;The Server object's Transfer() and Execute() methods work exclusively with Web forms. Trying to navigate to an HTML page using one of these methods results in a run-time error.&quot;</p>
+</li>
+<li>
+<p>&quot;Use the Server object's Execute() method to process a second Web form without leaving the first Web form.&quot;</p>
+</li>
+</ul>
+<p>The Server.Execute() method treats an ASP.NET page like a static method returning void. By default any HTML output is added to the output of the calling Page. When the optional writer argument is used, the output is sent to a System.IO.StringWriter object.</p>
+<p>The Server.Execute() method effectively combines the calling Web form to another
+Web form. Any postbacks to the Web form being called will clear any postbacks in the calling Web form. So the lesson warns that, &quot;...combining Web forms is mainly useful when the second Web form does not contain controls that trigger postback events.&quot;</p>

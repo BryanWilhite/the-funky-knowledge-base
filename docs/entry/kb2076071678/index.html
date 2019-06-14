@@ -1,0 +1,30 @@
+<p>Lesson 3: Processing Transactions</p>
+<p>The purpose of this lesson is to recognize the existence of functionality in the .NET framework that can be considered transactional. However, it is clear that &quot;real&quot; (distributed) transactions are covered only by COM+ Enterprise Services. So the transaction features of ADO.NET 1.x are confined to a single connection object. The .NET Framework 2.0 context introduces the System.Transactions namespace. For more information please see &quot;ADO.NET and System.Transactions&quot; by John Papa here:</p>
+<pre><code>http://msdn.microsoft.com/msdnmag/issues/05/02/DataPoints/default.aspx
+</code></pre>
+<ul>
+<li>&quot;Database programmers determine what database commands belong in a transaction by using the ACID test...&quot;</li>
+</ul>
+<p>ACID stands for Atomic, Consistent, Isolated and Durable. For more details please see &quot;The ACID Test: A mini database tutorial for those that are interested...&quot; by John Parker here:</p>
+<pre><code>http://www.archwing.com/technet/technet_ACID.html
+</code></pre>
+<ul>
+<li>&quot;Transaction processing follows these steps: 1. Begin a transaction. 2. Process database commands. 3. Check for errors. 4. If errors occurred, restore the database to its state at the beginning of the transaction. If no errors occurred, commit the transaction to the database.&quot;</li>
+</ul>
+<p>ADO.NET 1.x handles transactions implicitly and explicitly. DataSet methods Update(), RejectChanges() and AcceptChanges() imply transactional processing. Use of the SqlTransaction, OracleTransaction and OleDbTransaction objects explicitly handle transactions against one database connection. These transaction objects are obtained from the BeginTransaction() method of the connection object. Once the transaction object is obtained, the Commit() and Rollback() methods are used to design a transaction.</p>
+<p>Command objects are associated with a connection. When a connection begins a transaction, all command objects referencing that connection must have their Transaction property set. An important quote from &quot;Best Practices for Using ADO.NET&quot; by Dennis Lu and Doug Rothaus: &quot;If the Command.Transaction property is not set to a Transaction that has been started for the associated Connection, the Command fails and an exception is thrown.&quot; For more information see:</p>
+<p>http://msdn.microsoft.com/library/en-us/dnadonet/html/adonetbest.asp</p>
+<ul>
+<li>
+<p>&quot;The transaction object determines how concurrent changes to a database are handled through the IsolationLevel property.&quot;</p>
+</li>
+<li>
+<p>&quot;SQL database connections provide one transaction capability that is unavailable for OLE database connections: the ability to create save points within a transaction.&quot;</p>
+</li>
+<li>
+<p>&quot;Because transactions can span multiple Web forms, or even multiple components within a distributed application, ASP.NET provides a way for Web forms to work with MS DTC.&quot;</p>
+</li>
+</ul>
+<p>The Transaction attribute of the @Page directive starts a new transaction. The static methods of the System.EnterpriseServices.ContextUtil class are used to commit or abort MTS (or MS DTS) transactions in ASP.NET pages. These static methods are SetComplete() and SetAbort() (which correspond to Page events CommitTransaction() and AbortTransaction() respectively). For more information see &quot;MTS Transactions&quot; here:</p>
+<pre><code>http://samples.gotdotnet.com/quickstart/aspplus/doc/mtstransactions.aspx
+</code></pre>

@@ -1,0 +1,5 @@
+<p>There may be the temptation to use the IsArray() function against the Split() function in some sort of data type validation test. However, the Split() function will always return True for such a test even when its required argument is a zero-length string.</p>
+<p>In such a case, Split() will return an &quot;empty array,&quot; an array where UBound() returns -1. This suggest that we should test empty arrays with a form like:</p>
+<pre><code>Dim vArray: vArray = Split(&amp;quot;one two&amp;quot;)
+If UBound(vArray) &amp;lt;&amp;gt; -1 Then True 'We have an array.
+</code></pre>

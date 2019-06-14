@@ -1,0 +1,24 @@
+<p>To unpack a standard .tar file, use the command</p>
+<pre><code>tar -xvf filename
+</code></pre>
+<p>The Command options of tar:</p>
+<pre><code>* x: decompress something
+* t: view contents
+* v: verbose mode
+* f: input from a file
+</code></pre>
+<p>…some versions of tar support inbuilt decompression of gzipped tar files. This requires the z option, transforming the command to:</p>
+<pre><code>tar -xvzf filename
+</code></pre>
+<p>To create a tarball, you can use</p>
+<pre><code>tar cf tarballname.tar files
+</code></pre>
+<p>If you just want to view the contents of a tar file instead of extracting it:</p>
+<pre><code>tar -tf filename
+</code></pre>
+<p>You can filter it through gzip or bunzip2 respectively:</p>
+<pre><code>tar -tzf filename
+tar -tjf filename
+</code></pre>
+<p>[http://wiki.linuxquestions.org/wiki/Tar]
+[http://unixhelp.ed.ac.uk/CGI/man-cgi?tar]</p>

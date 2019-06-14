@@ -1,0 +1,9 @@
+<p>In order for the following sub-routine to work, a custom menu must be assigned to the form with the DoMenuItem action Size Window to Fit Form.</p>
+<p>Sub Form_Load ()
+'
+'Among other things, this event uses the custom menu
+'to size the Window via old-fashioned SendKeys crap.
+'
+SendKeys &quot;%MW&quot;
+End Sub</p>
+<p>NOTE: In Access 97, there is the acCmdSizeToFitForm parameter of the RunCommand method of the DoCmd object.</p>

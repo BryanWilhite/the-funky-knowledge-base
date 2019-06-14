@@ -1,0 +1,45 @@
+<p>Sub SaveFolder()
+Dim FSO As New FileSystemObject
+Dim Folder As Folder
+Dim File As File
+Set Folder = FSO.GetFolder(&quot;C:\\MyDocs\\&quot;)
+For Each File In Folder.Files
+If InStr(1, File.Name, &quot;.wps&quot;) Then _
+Call FileSaveAs(Folder.Path &amp; &quot;\\&quot;, File.Name, &quot;.wps&quot;)
+Next
+End Sub</p>
+<p>Sub FileSaveAs(DirName As String, FileName As String, Extension As String)</p>
+<pre><code>ChangeFileOpenDirectory DirName
+
+Documents.Open _
+    FileName:=&amp;quot;&amp;quot;&amp;quot;&amp;quot; &amp; FileName &amp; &amp;quot;&amp;quot;&amp;quot;&amp;quot;, _
+    ConfirmConversions:=False, _
+    ReadOnly:=False, _
+    AddToRecentFiles:=False, _
+    PasswordDocument:=&amp;quot;&amp;quot;, _
+    PasswordTemplate:=&amp;quot;&amp;quot;, _
+    Revert:=False, _
+    WritePasswordDocument:=&amp;quot;&amp;quot;, _
+    WritePasswordTemplate:=&amp;quot;&amp;quot;, _
+    Format:=wdOpenFormatAuto
+
+'The ActiveDocument.SaveAs() method is hard-coded to format 112.
+'Use the Application.FileConverters.Item(&amp;quot;&amp;lt;Index&amp;gt;&amp;quot;).SaveFormat property
+'for other file formats and a more generic design.
+'
+ActiveDocument.SaveAs _
+    FileName:=DirName &amp; Replace(FileName, Extension, &amp;quot;.doc&amp;quot;), _
+    FileFormat:=112, _
+    LockComments:=False, _
+    Password:=&amp;quot;&amp;quot;, _
+    AddToRecentFiles:= _
+    True, WritePassword:=&amp;quot;&amp;quot;, _
+    ReadOnlyRecommended:=False, _
+    EmbedTrueTypeFonts:=False, _
+    SaveNativePictureFormat:=False, _
+    SaveFormsData:=False, _
+    SaveAsAOCELetter:=False
+
+ActiveDocument.Close
+</code></pre>
+<p>End Sub</p>

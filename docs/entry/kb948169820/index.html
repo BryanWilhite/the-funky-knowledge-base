@@ -1,0 +1,36 @@
+<p>Config.sys</p>
+<p>DOS=HIGH,UMB</p>
+<p>DEVICE=c:\\windows\\himem.sys
+rem DEVICE=c:\\windows\\emm386.exe 4096 RAM D=256 I=B000-B7FF</p>
+<p>rem for ProMovie Driver
+DEVICE=c:\\windows\\emm386.exe 4096 RAM D=256 I=B000-B7FF noems x=DD00-DDFF</p>
+<p>FILES=30
+BUFFERS=10
+STACKS=9,128
+LASTDRIVE=F</p>
+<p>rem Creative Labs DOS Compatibility Mode PNP Configuration Manager
+DEVICE=c:\\util\\awe32dos\\ctcm.exe</p>
+<p>rem Creative Labs CD-ROM DOS Mode Driver
+DEVICEHIGH=C:\\PROGRA~1\\SBCD\\DOSDRV\\SBIDE.SYS /D:MSCD001 /V /P:168,10,36e</p>
+<p>rem DriveSpace Driver (things get weird if these lines are not last!)
+DEVICEHIGH=C:\\WINDOWS\\COMMAND\\DRVSPACE.SYS /MOVE</p>
+<hr>
+<p>SET PATH=C:\\QTW\\BIN;C:\\WINDOWS;C:\\WINDOWS\\COMMAND;C:\\WINDOWS\\COMMAND\\CDROM;C:\\UTIL;C:\\KMOUSE</p>
+<p>rem ON prevents writing to bad sectors...
+VERIFY ON
+prompt $p$g</p>
+<p>rem Kensington Mouse Controls
+C:\\KMOUSE\\MOUSE -LC:\\KMOUSE\\VCI.OVL -TCPN
+C:\\KMOUSE\\CONTROL</p>
+<p>rem Windows 95 MSCDEX
+C:\\WINDOWS\\COMMAND\\MSCDEX /D:MSCD001 /V /M:8</p>
+<p>rem Sound Blaster AWE32 DOS Compatibility Mode
+SET MIDI=SYNTH:1 MAP:E MODE:0
+SET BLASTER=A220 I5 D1 H5 P330 E640 T6</p>
+<hr>
+<p>rem device=c:\\windows\\himem.sys</p>
+<p>rem X-Wing emm386:
+rem device=c:\\windows\\emm386.exe 4096 RAM D=256</p>
+<p>rem ProMovie emm386:
+rem device=c:\\windows\\emm386.exe 4096 RAM D=256 noems x=DD00-DDFF</p>
+<p>rem DEVICEHIGH=C:\\WINDOWS\\SETVER.EXE</p>

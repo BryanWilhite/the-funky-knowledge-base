@@ -1,0 +1,44 @@
+<p>Although the title of this article makes no mention of it, my remarks here will be flippant:</p>
+<p>You can target areas of an HTML page for writing by using a combination of the PlaceHolder Control (System.Web.UI.WebControls.PlaceHolder), the Literal Control (System.Web.UI.WebControls.Literal) and by running tags at the server (with the runat=&quot;server&quot; attribute). For efficiency, most controls can be accessed via the HtmlGenericControl class. The C# code below finds an HTML HEAD element with attributes id=&quot;Head&quot; and runat=&quot;server&quot; and formats its &quot;inner HTML&quot; with Regular Expressions:</p>
+<p>protected void FormatHead()
+{
+string HTML = &quot;&quot;;
+string str = &quot;&quot;;</p>
+<pre><code>Match RegMatch = null;
+
+GenControl = (HtmlGenericControl)this.FindControl(&amp;quot;Head&amp;quot;);
+if(GenControl != null)
+{
+    HTML = GenControl.InnerHtml;
+    //LINK tag:
+    str = String.Format(@&amp;quot;href=&amp;quot;&amp;quot;{0}&amp;quot;&amp;quot;&amp;quot;,p_webSummary.WebCss);
+    RegMatch = Regex.Match(HTML,@&amp;quot;&amp;lt;&amp;bsol;&amp;bsol;s*link&amp;bsol;&amp;bsol;s+.*(href=&amp;quot;&amp;quot;&amp;quot;&amp;quot;)+.*&amp;gt;&amp;quot;
+        ,RegexOptions.IgnoreCase);
+    if(RegMatch.Success) HTML = HTML.Replace(RegMatch.Groups[1].Value,str);
+
+    //SCRIPT tag:
+    str = String.Format(@&amp;quot;src=&amp;quot;&amp;quot;{0}&amp;quot;&amp;quot;&amp;quot;,p_webSummary.WebJs);
+    RegMatch = Regex.Match(HTML,@&amp;quot;&amp;lt;&amp;bsol;&amp;bsol;s*script&amp;bsol;&amp;bsol;s+.*(src=&amp;quot;&amp;quot;&amp;quot;&amp;quot;)+.*&amp;gt;&amp;quot;
+        ,RegexOptions.IgnoreCase);
+    if(RegMatch.Success) HTML = HTML.Replace(RegMatch.Groups[1].Value,str);
+
+    //TITLE tag:
+    str = String.Format(&amp;quot;&amp;lt;title&amp;gt;{0}&amp;lt;/title&amp;gt;&amp;quot;,p_webSummary.WebName);
+    HTML = HTML.Replace(&amp;quot;&amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;&amp;quot;,str);
+
+    GenControl.InnerHtml = HTML;
+}
+</code></pre>
+<p>}</p>
+<p>This technique is for people who really want a lot of control over their HTML and have an undying love for Regular Expressions. By the way, this is the targeted HTML for the example above:</p>
+<p>&lt;head id=&quot;Head&quot; runat=&quot;server&quot;&gt;
+&lt;link href=&quot;&quot; id=&quot;LinkCss&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+&lt;meta name=&quot;CODE_LANGUAGE&quot; content=&quot;C#&quot;&gt;
+&lt;meta name=&quot;GENERATOR&quot; content=&quot;Microsoft Visual Studio .NET 7.1&quot;&gt;
+&lt;meta name=&quot;vs_defaultClientScript&quot; content=&quot;JavaScript&quot;&gt;
+&lt;meta name=&quot;vs_targetSchema&quot; content=&quot;http://schemas.microsoft.com/intellisense/ie5&quot;&gt;
+&lt;script language=&quot;javascript&quot; src=&quot;&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;</p>
+<p>Note that you can't run LINK or SCRIPT tags at the server with empty strings or any kind of bogus place holders without causing an exception to be thrown. If you insist, you can try some kind of data-binging design but this violates my new principle of using only tags in my HTML pages.</p>
+<p>So, flippantly speaking, Regular Expressions are cool but right about now I am more attracted to using the PlaceHolder control to load *.ascx pages and then using Literal controls inside those pages to be targeted by an HtmlTextWriter in a code-behind design.</p>

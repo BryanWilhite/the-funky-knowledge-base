@@ -1,0 +1,28 @@
+<p>import mx.rpc.events.ResultEvent;</p>
+<pre><code>[Bindable]
+public var rockArtists:XMLList;
+
+// Define the namespace used in the rss feed for &amp;quot;itms&amp;quot;.  Note that the
+// namespace we define is &amp;quot;items&amp;quot; instead.  These values do not need
+// to be the same, but generally should be for readability purposes.
+namespace items = &amp;quot;http://phobos.apple.com/rss/1.0/modules/itms/&amp;quot;;
+
+private function onResult( event:ResultEvent ):void {  
+    var rss:XML = event.result as XML;  
+
+    // Filter the feed by the Rock category  
+    var rock:XMLList = rss.channel.item.(category == &amp;quot;Rock&amp;quot;);  
+
+    // Use &amp;quot;items&amp;quot; namespace prefix (corresponding to the namespace we  
+    // defined above) to access the artist elements  
+    //rockArtists = rock.items::artist;  
+    // Or, alternatively:  
+    use namespace items;  
+    rockArtists = rock.artist;  
+}
+</code></pre>
+<p>…</p>
+<p>The key here is that the artist element nodes are created with &lt;itms:artist&gt; in the RSS feed. In the XML, the &quot;itms&quot; namespace is defined as x­mlns:itms=&quot;http://phobos.apple.com/rss/1.0/modules/itms/&quot;. This namespace is re-created in ActionScript using the namespace keyword in ActionScript, but instead of calling it &quot;itms&quot; it is defined as &quot;items&quot;. In general, you'd want to keep the prefix the same for both, but for illustration purposes you can see that they're allowed to be different.</p>
+<p>Accessing the artist element nodes then is simply a matter of using the namespace via use namespace items and asking for just the artist (without the namespace prefix). Another approach is to omit the use namespace ... code and use the namespace prefix directly: rock.items::artist. In both cases, the namespace to use is the one defined in ActionScript, and not the one defined in the XML file (so &quot;items&quot; instead of &quot;itms&quot;).</p>
+<p>[http://www.darronschall.com/weblog/2006/04/
+using-xml-namespaces-with-e4x-and-actionscript-3.cfm]</p>

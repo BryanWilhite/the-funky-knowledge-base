@@ -1,0 +1,10 @@
+<p>DECLARE @cmd VARCHAR(512)
+DECLARE @lf CHAR(1)
+SET @lf = CHAR(10) --Unix line break
+SET @cmd='
+BULK INSERT LogImport
+FROM ''{0}''
+WITH
+(
+ROWTERMINATOR = '''+@lf+'''
+)</p>

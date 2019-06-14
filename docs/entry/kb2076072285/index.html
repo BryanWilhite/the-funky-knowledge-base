@@ -1,0 +1,21 @@
+<p>It is very possible that orphaned SIDs (security IDs for unknown users) will appear when a drive (virtual or physical) is moved to a new machine. What is worse is when the orphaned SID is the owner of the file/folder.</p>
+<p>Windows machines updated after the release of Vista have the TAKEOWN command for Administrators. This is the first command to use before any other permissions operations can be done (otherwise you may get strange permission-denied messages, even with root privileges).</p>
+<p>To take ownership of a directory root (c:\\root) and sub folders and files for the Administrators group, this is the form:</p>
+<pre><code>takeown /f c:&amp;bsol;&amp;bsol;root /a
+</code></pre>
+<p>The next thing to do is reset all privileges to defaults with the ICACLS command. This is done when you know you have not set any custom permissions on any files in the drive (or when you already have a script to rebuild custom permissions). This reset is important because it should remove all orphaned SIDs and ensure that default inheritance is in place. This is the form:</p>
+<pre><code>icacls c:&amp;bsol;&amp;bsol;root /reset /t
+</code></pre>
+<p>Evan Anderson at serverfault.com wrote a script to sketch out his view of this procedure:</p>
+<p>@echo off
+FOR /D %%i in (*) do (
+TAKEOWN /f &quot;%%i&quot; /r /d y
+ICACLS &quot;%%i&quot; /reset /T
+ICACLS &quot;%%i&quot; /grant:r &quot;DOMAIN\\%%i&quot;:(OI)(CI)F
+rem Unremark this line to set the owner to the user, if you like that
+rem ICACLS &quot;%%i&quot; /setowner &quot;DOMAIN\\%%i&quot; /T
+)</p>
+<p>[http://serverfault.com/questions/45251/
+script-to-reset-home-directory-permissons-on-a-windows-share]</p>
+<p>Icacls on Technet [http://technet.microsoft.com/en-us/library/cc753525%28WS.10%29.aspx].</p>
+<p>Some idea of what PowerShell can do about this issue is in “Hey, Scripting Guy! How Can I Use Windows PowerShell to Determine the Owner of a File?” [http://www.microsoft.com/technet/scriptcenter/resources/qanda/apr08/hey0415.mspx].</p>

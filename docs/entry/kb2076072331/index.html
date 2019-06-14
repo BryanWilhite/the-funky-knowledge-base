@@ -1,0 +1,19 @@
+<p>/// &lt;summary&gt;
+/// Interaction logic for App.xaml
+/// &lt;/summary&gt;
+public partial class App : Application
+{
+protected override void OnStartup(StartupEventArgs e)
+{
+base.OnStartup(e);</p>
+<pre><code>    this.DispatcherUnhandledException +=
+         new DispatcherUnhandledExceptionEventHandler(
+             (s, args) =&amp;gt;
+             {
+                 MessageBox.Show(string.Format(&amp;quot;An error occured: {0}&amp;quot;, 
+                 args.Exception.Message), &amp;quot;Error&amp;quot;);
+                 args.Handled = true;
+             });
+}
+</code></pre>
+<p>}</p>

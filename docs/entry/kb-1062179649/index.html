@@ -1,0 +1,12 @@
+<p>The online help for VBA has a topic called &quot;Data Type Summary.&quot; For those of us who are not computer scientists we should take note of the following with regard to floating point numbers:</p>
+<p>The use of scientific notation in the help file topic to denote range implies that floating point values are stored as exponents.</p>
+<p>The terms &quot;single precision&quot; and &quot;double precision&quot; refer to the numbers left of the decimal point that will not be rounded when VBA allocates memory between the exponent and the significant digits.</p>
+<p>Because floating point numbers are stored as exponents, their &quot;precision&quot; affects large numbers as well as small numbers. Large numbers exceeding the precision can be inadvertently rounded. For example,</p>
+<pre><code>CSng(&amp;quot;123,123,123&amp;quot;) = 1.231231E+08 = 123,123,100
+</code></pre>
+<p>because the Single data type is accurate to seven significant digits. This means that values (without decimals) greater than or equal to 10 million will be rounded. Also we can see that</p>
+<pre><code>CDbl(&amp;quot;123,123,123,123,123,123&amp;quot;) = 1.23123123123123E+17 = 123,123,123,123,123,000
+</code></pre>
+<p>because the Double data type is accurate up to 15 significant digits. This implies that values (without decimals) greater than 999 trillion will be rounded.</p>
+<p>The double precision may be safe to use for large numbers in &quot;real world&quot; applications but keep in mind the size of the number stored drops when decimal places in the original value need to be included. For example, suppose you want to store a value in a DAO database as type Currency. The Currency data type holds four decimal places. This implies that values greater than 99 billion will be rounded if CDbl() is used to prepare data for storage in the Currency field.</p>
+<p>In the &quot;real world&quot; of, say, financial applications, 99 billion is not an unusually high number.</p>

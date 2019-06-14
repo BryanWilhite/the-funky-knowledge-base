@@ -1,0 +1,30 @@
+<p>A delegate acts on behalf of a method. It is the representative of this method. The delegate below represents all methods that return a Boolean and have a single argument of type Integer:</p>
+<pre><code>delegate bool MathDelegate(int x);
+</code></pre>
+<p>To demonstrate this generality, we can create a void method that takes two arguments, the delegate itself and its single argument:</p>
+<pre><code>void AboutNumber(MathDelegate Func, int x)
+{
+    if (Func(x)) //Invoke the delegate.
+        Response.Write(&amp;quot; is &amp;quot;);
+    else
+        Response.Write(&amp;quot; is not &amp;quot;);
+}
+</code></pre>
+<p>Now AboutNumber() can run all of the following methods:</p>
+<pre><code>bool IsEven(int x) 
+{
+    if (x % 2 == 0) 
+        return true;
+    else
+        return false;
+}
+
+bool IsPrime(int x)
+{
+    for(int i = 2; i &amp;gt; (x /2); i++)
+        if (x % i == 0) 
+            return true;                                        
+        return false;
+}
+</code></pre>
+<p>So, because of delegates a variable number of methods can be funneled through one method.</p>

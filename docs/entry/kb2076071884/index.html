@@ -1,0 +1,42 @@
+<p>You can use this command-line tool:</p>
+<pre><code>%WinDir%&amp;bsol;&amp;bsol;Microsoft.NET&amp;bsol;&amp;bsol;Framework&amp;bsol;&amp;bsol;v2.0.50727&amp;bsol;&amp;bsol;aspnet_regiis.exe
+</code></pre>
+<p>Or you can do it inside a .NET process as described here:</p>
+<pre><code>http://davidhayden.com/blog/dave/archive/2005/11/17/2572.aspx
+</code></pre>
+<p>My preference today is to use this form in web.config:</p>
+<pre><code>&amp;lt;configSections&amp;gt;
+    &amp;lt;section
+          name=&amp;quot;MySecrets&amp;quot;
+          type=&amp;quot;System.Configuration.SingleTagSectionHandler&amp;quot;
+    /&amp;gt;
+&amp;lt;/configSections&amp;gt;
+
+&amp;lt;MySecrets
+   FavoriteMusic=&amp;quot;Disco&amp;quot;
+   FavoriteLanguage=&amp;quot;COBOL&amp;quot;
+   DreamJob=&amp;quot;Dancing in the opening ceremonies of the Olympics&amp;quot;
+/&amp;gt;
+</code></pre>
+<p>This allows me to target a specific Configuration Section by running this command from the directory in which web.config resides:</p>
+<pre><code>aspnet_regiis -pef MySecrets .
+</code></pre>
+<p>Note that the period (.) is shorthand for the relative location of web.config.</p>
+<p>Scott Guthrie introduces this pattern (by K. Scott Allen) here:</p>
+<pre><code>http://weblogs.asp.net/scottgu/archive/2006/01/09/434893.aspx
+</code></pre>
+<p>Download Robert Shelton’s video on this subject here:</p>
+<pre><code>http://channel9.msdn.com/Showpost.aspx?postid=134210
+</code></pre>
+<p>You may get an error like, “Error message from the provider: The RSA key container could not be opened.” This problem is covered in the Microsoft article, “Walkthrough: Encrypting Configuration Information Using Protected Configuration” here:</p>
+<pre><code>http://msdn2.microsoft.com/en-us/library/dtkwfdky.aspx
+</code></pre>
+<p>This RSA key container error is usually solved by this command (all on one line):</p>
+<pre><code> aspnet_regiis -pa
+    &amp;quot;NetFrameworkConfigurationKey&amp;quot; &amp;quot;YOURSERVER&amp;bsol;&amp;bsol;IUSR_YOURSERVER&amp;quot;
+</code></pre>
+<p>and</p>
+<pre><code> aspnet_regiis -pa
+    &amp;quot;NetFrameworkConfigurationKey&amp;quot; &amp;quot;NT AUTHORITY&amp;bsol;&amp;bsol;NETWORK SERVICE&amp;quot;
+</code></pre>
+<p>This command, however, may throw an error like, “The RSA key container was not found.” This means that you need to encrypt something first so you are in a bit of a chicken-or-egg thing.</p>

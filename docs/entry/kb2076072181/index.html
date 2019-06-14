@@ -1,0 +1,19 @@
+<p>One of the things you want to avoid when deploying an ASP.NET application into production is to accidentally (or deliberately) leave the &lt;compilation debug=&quot;true&quot;/&gt; switch on within the application’s web.config file.</p>
+<p>Doing so causes a number of non-optimal things to happen including:</p>
+<ol>
+<li>
+<p>The compilation of ASP.NET pages takes longer (since some batch optimizations are disabled)</p>
+</li>
+<li>
+<p>Code can execute slower (since some additional debug paths are enabled)</p>
+</li>
+<li>
+<p>Much more memory is used within the application at runtime</p>
+</li>
+<li>
+<p>Scripts and images downloaded from the WebResources.axd handler are not cached</p>
+</li>
+</ol>
+<p>[http://weblogs.asp.net/scottgu/archive/2006/04/11/Don_1920_t-run-
+production-ASP.NET-Applications-with-debug_3D001D20_true_1D20_-
+enabled.aspx]</p>

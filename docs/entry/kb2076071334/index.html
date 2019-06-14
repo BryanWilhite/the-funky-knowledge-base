@@ -1,0 +1,71 @@
+<p>//Form Validation Functions:
+function jsIsEmailValid(vFormName,vElementName) {</p>
+<pre><code>var vValue = ''
+var vValid  = false
+var vElement = document.forms[vFormName].elements[vElementName]
+var vPosAtSymbol = vElement.value.indexOf('@')
+var vPosPeriod = vElement.value.lastIndexOf('.')
+var vPosSpace  = vElement.value.indexOf(' ')
+var vLength = vElement.value.length - 1
+
+if (
+// '@' in first position
+(vPosAtSymbol &amp;lt; 1) ||
+
+// '@' in last position
+(vPosAtSymbol == vLength) ||                    
+
+// Not at least one valid char' between '@' and '.'
+(vElement.value.charAt(vPosAtSymbol + 1) == '.' ) ||
+(vElement.value.charAt(vPosAtSymbol - 1) == '.' ) ||
+
+// Must be at least two valid char's after last '.'
+(vPosPeriod &amp;gt;= vLength - 1) ||
+
+// No space char's permitted
+(vPosSpace  != -1)
+    ) {                   
+    vValue = 'Please enter a valid e-mail address.'
+        + '&amp;bsol;&amp;bsol;n&amp;bsol;&amp;bsol;nSample: YourName@aol.com'
+    window.alert(vValue)
+    vElement.focus()
+    return vValid
+}
+vValid = true
+return vValid
+</code></pre>
+<p>}</p>
+<p>function jsIsNotComplete(vElement, vMsg) {
+if (vElement.value == '' ) {
+vValue = 'Please complete the following:\\n\\n    ' + vMsg
+window.alert(vValue)
+vElement.focus()
+return true
+}
+else {
+return false
+}
+}</p>
+<p>function jsIsNotSelected(vElement, vMsg) {
+if (vElement.selectedIndex == 0 ) {
+vValue = 'Please complete the following:\\n\\n    ' + vMsg
+window.alert(vValue)
+vElement.focus()
+return true
+}
+else {
+return false
+}
+}</p>
+<p>function jsIsPasswordValid(vElement1, vElement2) {
+if (vElement1.value == '' || vElement2.value == '') return false</p>
+<pre><code>if (vElement1.value == vElement2.value ) {
+    return true
+}
+else {
+    window.alert('Please enter a valid password.')
+    vElement1.focus()
+    return false
+}
+</code></pre>
+<p>}</p>

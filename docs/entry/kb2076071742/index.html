@@ -1,0 +1,3 @@
+<p>Switching a root-level Web site over to ASP.NET 2.0 may cause this error: &quot;The current identity (NT AUTHORITY\\NETWORK SERVICE) does not have write access to 'C:\\WINDOWS\\Microsoft.NET\\Framework\\v2.0.50215\\Temporary ASP.NET Files'&quot;.</p>
+<p>This problem is usually resolved by defining the same Security Permissions for %SYSTEMROOT%\\Microsoft.NET\\Framework\\v1.1.4322\\Temporary ASP.NET Files for %SYSTEMROOT%\\Microsoft.NET\\Framework\\v2.0.50215\\Temporary ASP.NET Files---and the same permissions for \\wwwroot for the root directory of the Web site.</p>
+<p>This problem usually appears in Windows Server 2003 because of its tight security settings.</p>

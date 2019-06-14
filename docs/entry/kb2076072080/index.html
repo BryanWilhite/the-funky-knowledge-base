@@ -1,0 +1,64 @@
+<p>browser.exe is a &quot;Backdoor.Pahador&quot;</p>
+<p>seen here:
+...yesterday, my anti virus detected a pahador.f trojan in C:\\Windows\\Browser.exe I quarantined it immediately...</p>
+<p>It records key strokes and sends information back to a remote server</p>
+<p>Info here:</p>
+<p>Type: Trojan Horse</p>
+<p>Systems Affected: Windows 2000, Windows 95, Windows 98, Windows Me, Windows NT, Windows Server 2003, Windows XP</p>
+<p>Backdoor.Pahador is a Trojan horse that opens a back door on the compromised computer. It also sends system information to a remote server.</p>
+<p>Once executed, Backdoor.Pahador performs the following actions:</p>
+<ol>
+<li>Creates the following files:</li>
+</ol>
+<ul>
+<li>%CurrentFolder%\\tempst.exe</li>
+<li>C:\\Windows\\Browser.exe</li>
+</ul>
+<p>Note: %CurrentFolder% is a variable that refers to the folder where the risk was originally executed.</p>
+<ol start="2">
+<li>Adds the value:</li>
+</ol>
+<p>&quot;Shell&quot; = &quot;explorer.exe [NUMEROUS SPACES] C:\\Recycler\\services.exe&quot;</p>
+<p>to the registry subkey:</p>
+<p>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Wi... NT\\CurrentVersion\\Winlogon</p>
+<p>so that it is executed every time Windows starts.</p>
+<ol start="3">
+<li>Modifies the value:</li>
+</ol>
+<p>&quot;DisableTaskMgr&quot; = &quot;1&quot;</p>
+<p>in the registry subkey:</p>
+<p>HKEY_CURRENT_USER\\Software\\Microsoft\\Win...</p>
+<p>to disable the Task Manager.</p>
+<ol start="4">
+<li>Modifies the value:</li>
+</ol>
+<p>&quot;C:\\Recycler\\services.exe&quot; = &quot;C:\\Recycler\\services.exe:*:Enabled:serv...</p>
+<p>in the registry subkey:</p>
+<p>HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\...
+\\FirewallPolicy\\StandardProfile\\Authoriz...</p>
+<p>to change the firewall settings.</p>
+<ol start="5">
+<li>Attempts to delete entries under the following registry subkey:</li>
+</ol>
+<p>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Wi...</p>
+<ol start="6">
+<li>Connects to the following URL and sends system information to it:</li>
+</ol>
+<p>[http://]appmsg.gadu-gadu.pl/appsvc/appms...</p>
+<ol start="7">
+<li>
+<p>Terminates any process that has the following window title:
+PX22Xsgt6</p>
+</li>
+<li>
+<p>Opens a back door on the compromised computer and allows a remote attacker to perform the following actions:</p>
+</li>
+</ol>
+<ul>
+<li>Capture screen shots</li>
+<li>Log keystrokes</li>
+<li>Kill processes</li>
+<li>Uninstall itself</li>
+<li>View logs</li>
+</ul>
+<p>[http://answers.yahoo.com/question/index?qid=20080402145815AAnOfUc][Jeff]</p>

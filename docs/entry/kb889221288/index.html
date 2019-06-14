@@ -1,0 +1,3 @@
+<p>All replication synchronization data errors are stored in a hidden system table called MSysErrors. It has column (or field name) called RowGUID that can be used in joins with the table generating the error.</p>
+<p>The join between the MSysErrors and the table in question is between the fields RowGUID and s_GUID respectively. This information can be used to build temporary queries in the QDE.</p>
+<p>Recall that in order to see system tables like MSysErrors select Tools &gt; Options &gt; Show &gt; System Objects from the Menu Bar.</p>

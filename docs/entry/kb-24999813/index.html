@@ -1,0 +1,57 @@
+<p>Function RepairCompact (strDatabase As String) As Integer
+'
+'NOTE: This procedure contains line break characters
+'for readability. These characters are not supported
+'in Access Basic.
+'
+'
+'This function repairs databases. It is recommended to compact
+'them afterwards. Automating the compacting of databases
+'seems a bit risky but here we are:
+'
+Dim strTempFile As String, varReturn As Variant</p>
+<pre><code>On Error GoTo RepairCompact_Err
+
+varReturn = SysCmd(SYSCMD_SETSTATUS, &amp;quot;Looking for &amp;quot; _
+    &amp; strDatabase &amp; &amp;quot;...&amp;quot;)
+
+If Mid$(strDatabase, InStr(strDatabase, &amp;quot;.&amp;quot;), 4) = &amp;quot;.MDB&amp;quot; Then
+    strTempFile = strDatabase
+    Mid$(strTempFile, InStr(strTempFile, &amp;quot;.&amp;quot;), 4) = &amp;quot;.NEW&amp;quot;
+Else
+    MsgBox &amp;quot;Can't handle the filename of this file.&amp;quot;, 64,_
+        &amp;quot;Application Services&amp;quot;
+    varReturn = SysCmd(SYSCMD_CLEARSTATUS)
+    GoTo RepairCompact_Exit
+End If
+
+varReturn = SysCmd(SYSCMD_SETSTATUS, &amp;quot;Repairing &amp;quot; &amp; _
+    strDatabase &amp; &amp;quot;...&amp;quot;)
+
+DBEngine.RepairDatabase strDatabase
+
+varReturn = SysCmd(SYSCMD_SETSTATUS, &amp;quot;Compacting &amp;quot; &amp; _
+    strDatabase &amp; &amp;quot;...&amp;quot;)
+
+DBEngine.CompactDatabase strDatabase, strTempFile
+'
+'Here's the risky but necessary part:
+'
+Kill strDatabase: Name strTempFile As strDatabase
+
+varReturn = SysCmd(SYSCMD_CLEARSTATUS)
+RepairCompact = True
+</code></pre>
+<p>RepairCompact_Exit:</p>
+<pre><code>Exit Function
+</code></pre>
+<p>RepairCompact_Err:
+Select Case Err
+Case Else
+MsgBox Err &amp; &quot;: &quot; &amp; Error$(Err), 16, _
+&quot;RepairCompact Error&quot;
+m_varReturn = SysCmd(SYSCMD_SETSTATUS, Error$(Err))
+RepairCompact = False
+GoTo RepairCompact_Exit
+End Select
+End Function</p>

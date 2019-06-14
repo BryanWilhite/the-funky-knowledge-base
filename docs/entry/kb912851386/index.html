@@ -1,0 +1,14 @@
+<p>Windows NT may fail to start correctly because of an errant Registry setting. For example, disabling the Service that handles the keyboard is cruel and unusual punishment (trust me on this). In most of these software-related boot failures, disabled (or enabled) Services prevent NT from loading. In case of these fires, a &quot;satellite&quot; copy of Windows NT is useful. A compact (~70MB) install of NT can be used to revive the main install.</p>
+<p>The rescue procedure involves using REGEDT32.EXE from the compact install to load the appropriate Hive of the main install. For more details on loading Hives and the ideas surrounding this procedure, please see the following Microsoft Knowledge Base Article: &quot;How to Disable a Service or Device that Prevents NT from Booting&quot; (Q165748).</p>
+<p>I must say that it is unfortunate that upwards of 70MB of files are needed to load one Registry-editing utility. Surely, Microsoft, there must be a better way! In the mean time, I note some &quot;cryptic&quot; infromation that will &quot;make sense&quot; once the MSKB article is recalled:</p>
+<pre><code>HKEY_LOCAL_MACHINE
+    &amp;lt;name of loaded hive&amp;gt;&amp;bsol;&amp;bsol;ControlSet00?&amp;bsol;&amp;bsol;Services
+        &amp;lt;name of faulty service&amp;gt;
+</code></pre>
+<p>Summary of possible DWORDS:</p>
+<pre><code>Boot = 0x0
+System = 0x1
+Automatic = 0x2
+Manual = 0x3
+Disabled = 0x4
+</code></pre>

@@ -1,0 +1,16 @@
+<p>/// &lt;summary&gt;
+/// Returns the ASP.NET-generated key
+/// for a &lt;see cref=&quot;System.Web.UI.Control&quot;/&gt;
+/// in a &lt;see cref=&quot;System.Web.HttpRequest.Form&quot;/&gt;
+/// collection.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;Control&quot;&gt;
+/// The &lt;see cref=&quot;System.Web.UI.Control&quot;/&gt; to find.
+/// &lt;/param&gt;
+public static string RequestFormElement(System.Web.UI.Control Control)
+{
+string str =
+Control.ClientID.Replace(String.Format(&quot;_{0}&quot;,Control.ID),
+String.Format(&quot;:{0}&quot;,Control.ID));
+return str;
+}</p>

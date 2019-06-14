@@ -1,0 +1,18 @@
+<p>Sub txtCopies_Exit (Cancel As Integer)
+'
+'NOTE: This procedure contains line break characters
+'for readability. These characters are not supported
+'in Access Basic.
+'
+'
+'This sub checks txtCopies for smart-ass values.
+'We don't want txtCopies to have negative values
+'or fractional values.
+'
+If IsNumeric(Me![txtCopies]) Then
+If Me![txtCopies] &gt;=1 Then Me![txtCopies] = _
+CInt(Abs(Me![txtCopies]))
+Else
+Me![txtCopies] = 1
+End If
+End Sub</p>

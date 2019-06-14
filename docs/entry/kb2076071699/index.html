@@ -1,0 +1,21 @@
+<p>Lesson 1: Authenticating and Authorizing Users</p>
+<p>The purpose of this lesson is to provide basic security concepts and implementation guidance for ASP.NET Web applications running on IIS 5.x and versions earlier. This lesson introduces the concepts of authentication, authorization, impersonation and anonymous access.</p>
+<ul>
+<li>&quot;ASP.NET Web applications provide anonymous access to resources by impersonation.&quot;</li>
+</ul>
+<p>The local Windows account, named in the form IUSER_machinename, is used to &quot;impersonate&quot; users allowed anonymous access permissions. This account should belong to a security group with reduced privileges.</p>
+<ul>
+<li>&quot;Under the default settings, ASP.NET uses the ASPNET account to run the Web application.&quot;</li>
+</ul>
+<p>When impersonation is not enabled, the Web application uses the ASPNET account to access all resources. The ASPNET account can, say, have higher privileges than IUSER_machinename or lower ones for an authenticated administrative account. So when impersonation is enabled, security settings can be spread out among multiple Windows accounts.</p>
+<ul>
+<li>&quot;You restrict the access of anonymous users by setting Windows file permissions.&quot;</li>
+</ul>
+<p>This design requires NTFS file systems and error pages designed to capture security exceptions is optional.</p>
+<ul>
+<li>&quot;There are three major ways to authenticate and authorize users...&quot;</li>
+</ul>
+<p>Passport authentication stands apart from Windows authentication and forms authentication as Microsoft's &quot;single sign-on&quot; solution. All of these solutions depend on the System.Web.Security namespace. However, as of the publication of this lesson, Passport involves an SDK and redirection to a Microsoft Web site.</p>
+<ul>
+<li>&quot;If you want to authenticate users who access HTML pages from within your Web application using Windows, Forms, or Passport authentication modes, you must map those files to the ASP.NET executable.&quot;</li>
+</ul>

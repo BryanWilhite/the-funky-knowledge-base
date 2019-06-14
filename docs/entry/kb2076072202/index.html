@@ -1,0 +1,31 @@
+<p>The yield statement allows us to populate an instance implementing IEnumerable. Modifying the MSDN code sample for yield, this is an example without using yield:</p>
+<pre><code>public static List&amp;lt;int&amp;gt; Power(int number, int exponent)
+{
+    int counter = 0;
+    int result = 1;
+    var list = new List&amp;lt;int&amp;gt;();
+    while(counter++ &amp;lt; exponent)
+    {
+        result = result * number;
+        list.Add(result);
+    }
+    return list;
+}
+</code></pre>
+<p>Without yield we are forced to choose a class implementing IEnumerable. In the example above we must use List&lt;int&gt;. Now the example using yield:</p>
+<pre><code>public static IEnumerable&amp;lt;int&amp;gt; Power(int number, int exponent)
+{
+    int counter = 0;
+    int result = 1;
+    while(counter++ &amp;lt; exponent)
+    {
+        result = result * number;
+        yield return result;
+    }
+}
+</code></pre>
+<p>The opinion here is that yield is harder to understand when the purpose of IEnumerable is not understood. One reminder is that IEnumerable requires sequential access through, say, the foreach loop. The IEnumerable interface does not define a member for random-access.</p>
+<p>More information: “Using C# Yield for Readability and Performance”</p>
+<pre><code>http://www.ytechie.com/2009/02/
+    using-c-yield-for-readability-and-performance.html
+</code></pre>

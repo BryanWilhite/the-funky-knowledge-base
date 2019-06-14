@@ -1,5 +1,4 @@
 module.exports = function(config) {
-   
     config.addCollection('entries', collection => {
       return collection.getFilteredByGlob('entry/*.md');
     });

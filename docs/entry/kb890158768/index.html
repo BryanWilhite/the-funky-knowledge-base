@@ -1,0 +1,62 @@
+<p>Songhay 3</p>
+<p>Install Hardware:
+&gt; ATX Class Minitower
+&gt;&gt; Cirrus Logic PCI Graphics Card
+&gt;&gt; CL-GD5440-J-QC-B; 63391-596BG; 9645 A; TAIWAN-D
+&gt;&gt; Intel Advanced/ML Motherboard
+&gt;&gt; BIOS Version 1.00.08.D130
+&gt;&gt; Intel Pentium 133
+&gt;&gt; A80502133 SY022; ICOMP 2#=111; L6485005-0332
+&gt;&gt; INTEL <code>92</code>93
+&gt;&gt; Fujitsu 4.42 GB Hard Drive
+&gt;&gt; MODEL: MPB3043AT
+&gt;&gt; 4.32 GB; CYL: 8940; H: 15; S: 63
+&gt;&gt; PART#: CA01630-B341
+&gt;&gt; SERIAL#: 05007777
+&gt;&gt; DATE: 1997-11
+&gt;&gt; G.S.E.: 97103862
+&gt;&gt; DNA: 1398-33885
+&gt;&gt; Panasonic 24X CD-ROM
+&gt;&gt; 7Y14CSB96907 CK; MANUFACTURED: NOV 1997; BWB
+&gt;&gt; MODEL#: CR-585-B
+&gt;&gt; ATAPI
+&gt;&gt; Had trouble with cable.
+&gt;&gt; Sony 3.5 Floppy Disk
+&gt;&gt; 9712 1/31; MPF920-1; 50835011
+&gt;&gt; 34-pin cable (floppy end is &quot;twisted&quot;; controller end has 3rd hole missing)
+&gt;&gt; SB AWE32 Sound Card
+&gt; External Modem
+&gt; Samsung Synchmaster 17&quot; Monitor</p>
+<p>Tweak Motherboard Settings and Review Jumpers</p>
+<p>Format Hard Drive:
+&gt; Boot from DOS 6.x Floppy
+&gt; Use FDISK with the following partitions:
+&gt;&gt; 800MB primary DOS partition
+&gt;&gt; 800MB extended DOS partition
+&gt;&gt; 800MB extended DOS partition
+&gt;&gt; make an extended DOS partition of the remaining space
+&gt; FORMAT /s the primary DOS partition
+&gt; FORMAT the rest of the partitions</p>
+<p>Install real-mode ATAPI CD-ROM driver
+&gt; Download driver from Panasonic (ftp.panasonic.com)</p>
+<p>Build a DOS 6.22 AUTOEXEC.BAT and CONFIG.SYS</p>
+<p>Install Windows 95 Upgrade
+&gt; Use the Windows NT setup disk for a &quot;qualifying product&quot;
+&gt; Install Direct Cable Connection
+&gt; Install Quarterdeck Cleansweep on logical D: drive
+&gt;&gt; Cleansweep will monitor all installations where possible
+&gt; Install service packs and OEM downloadable components
+&gt; Install Microsoft Plus! to D: drive.
+&gt; Install Soundblaster AWE drivers
+&gt;&gt; Windows 95 setup will detect the sound card and install lowest-level drivers
+&gt;&gt; Use the Creative CD-ROM to install the AWE Control Panel (find the installation files by exploring the CD-ROM; do not let the AutoPlay install take place)
+&gt; Install all software that will not run in Windows NT to the D: drive (e.g. Quake)
+&gt; Establish direct cable connection with Songhay 2 and get user files, major application directories and recent downloads.</p>
+<p>Install Windows NT Workstation
+&gt; Place the WINNT directory in the same partition as the Windows 95 directory.
+&gt; Install Service Pack 3 (this is available on the IE4 CD)
+&gt; Move all of the files in D: to E: and turn D: into an NTFS partition
+&gt; Move the &quot;major application directories&quot; back to D: from E:
+&gt; Install Quarterdeck Cleansweep to drive D: (again)
+&gt;&gt; When Windows 95 starts up again (choose &quot;DOS&quot; during the NT boot) it will see what's on drive E: as drive D: (the NTFS partition will be invisible. This means Cleansweep must be installed twice for both NT and 95.
+&gt; Reinstall all of the &quot;major applications&quot; using Cleansweep watch. Point the install paths to the existing directories in D:</p>

@@ -1,0 +1,22 @@
+<p>This article describes how to set up a share from a Linux box to a Windows box. Samba has to be installed.</p>
+<p>To test if your Linux machine sees the shares on the Windows box:</p>
+<pre><code>smbclient -L &amp;lt;windows-box&amp;gt; -U &amp;lt;username&amp;gt;
+</code></pre>
+<ol>
+<li>
+<p>Make a directoy for the mountpoint:</p>
+<p>mkdir /mnt/&lt;name-of-mount-point&gt;</p>
+</li>
+<li>
+<p>Mount the share:</p>
+<p>mount -t smbfs -o username=&lt;username&gt;, password=&lt;password&gt; //&lt;win-box&gt;/&lt;share&gt; /mnt/&lt;name-of-mountpoint&gt;</p>
+</li>
+</ol>
+<p>Note: The syntax -username=&lt;username&gt;,password=&lt;password&gt; saves the password.</p>
+<ol start="3">
+<li>
+<p>Create a symbolic link to the mounted drive:</p>
+<p>ln -s /mnt/&lt;name-of-mount-point&gt; /&lt;path-of-symlink&gt;</p>
+</li>
+</ol>
+<p>[http://cri.ch/linux/docs/sk0001.html]</p>

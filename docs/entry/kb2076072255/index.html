@@ -1,0 +1,23 @@
+<p>public static object ToType&lt;T&gt;(this object obj, T type)
+{</p>
+<pre><code>//create instance of T type object:
+var tmp = Activator.CreateInstance(Type.GetType(type.ToString())); 
+
+//loop through the properties of the object you want to covert:          
+foreach (PropertyInfo pi in obj.GetType().GetProperties()
+{
+  try 
+  {   
+
+    //get the value of property and try 
+    //to assign it to the property of T type object:
+    tmp.GetType().GetProperty(pi.Name).SetValue(tmp, 
+                              pi.GetValue(obj, null), null)
+  }
+  catch { }
+ }  
+</code></pre>
+<p>//return the T type object:<br>
+return tmp;
+}</p>
+<p>[http://www.codeproject.com/KB/linq/AnonymousTypeTransform.aspx]</p>

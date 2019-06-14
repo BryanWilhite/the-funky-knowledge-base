@@ -1,0 +1,10 @@
+<p>Replace the IsLoaded() function that was available from Microsoft since Access 2.x with the Visible property of the default instance of an Access 97 form. For example, if the form frmMain has a module and is open then</p>
+<pre><code>Form_frmMain.Visible = True
+</code></pre>
+<p>Suppose frmMain does not have a module and is open, now frmMain has no default instance because it has no class module. However the Application object is available wherein lies the Forms Collection. It follows that:</p>
+<pre><code>Application.Forms(&amp;quot;frmKB&amp;quot;).Visible = True
+</code></pre>
+<p>This syntax is preferable but the older &quot;bang&quot; syntax still applies:</p>
+<pre><code>Forms!frmKB.Visible = True
+</code></pre>
+<p>WARNING: It has been my experience that accessing the Visible property through the Application of object is more reliable than via the default instance of a form. I recommend using the Immediate Window to test both objects (one may return False while the other returns True). I am sure Microsoft is working on this.</p>

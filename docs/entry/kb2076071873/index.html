@@ -1,0 +1,16 @@
+<p>private static DbParameter[] ConvertAllToDbParameter
+( IDataParameter[] p_idata )
+{
+DbParameter[] p =
+Array.ConvertAll&lt;IDataParameter, DbParameter&gt;( p_idata,</p>
+<pre><code>       delegate( IDataParameter from )
+       {
+           DbParameter to = from as DbParameter;
+           return to;
+       }
+
+   );
+
+return p;
+</code></pre>
+<p>}</p>

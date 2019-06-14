@@ -1,0 +1,15 @@
+<p>Today's tidbit revolves around enabling the ASP.NET user to generate entries into the event log.  In an ideal world (hint, hint Microsoft designers), this would be a relatively straightforward process.  Or at least one that didn't require a direct hack into the registry.  But that is not the case at the moment.  So without further ado, here are the steps involved in enabling the ASP.NET user to create event log entries.</p>
+<ol>
+<li>Launch RegEdit</li>
+<li>Navigate to HKEY_LOCAL_MACHINE\\SYSTEM\\
+CurrentControlSet\\Services\\EventLog\\</li>
+<li>From the menu, select Edit-&gt;Permissions</li>
+<li>Click the Add button and write ASPNET.  (if ASP.NET is running under a different user id, use that id instead)</li>
+<li>Click OK.</li>
+<li>Select the newly added user from the list (ASP.NET Machine User by default).</li>
+<li>Click on Full Control in the Allow column.</li>
+<li>Click OK.</li>
+</ol>
+<p>It is usually a good idea at this point to restart IIS with the IISReset command (Start | Run | IISReset).</p>
+<p>For those concerned with the security hole that has been opened up.  Once these changes are implemented, the ASP.NET user has full control over the Application event log.  Worst case scenario, a bad process could fill up the event log or delete existing log entries.  However, as far as security breaches go, these are fairly minor, especially when compared to the benefits of being able to view log entries.</p>
+<p>[http://blogs.objectsharp.com/cs/blogs/bruce/archive/2003/11/03/180.aspx]</p>

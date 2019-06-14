@@ -1,0 +1,5 @@
+<p>The xsl:include include element needs no special security procedure associated with it. It should behave as expected when an XSLT file is including another file on the same server---especially one in the same application domain.</p>
+<p>'No special security procedure' essentially means using XslTransform.Load() to load an XSLT file without providing a XmlUrlResolver as a parameter. According to the MSDN documentation, &quot;For overloads of XslTransform.Load() that do not take a resolver parameter, a default XmlUrlResolver with no credentials is created for the user by XslTransform.&quot; More information is here:</p>
+<pre><code>&amp;quot;Secure XSL Transformations in Microsoft .NET&amp;quot;
+http://msdn2.microsoft.com/en-us/library/ms950792.aspx
+</code></pre>

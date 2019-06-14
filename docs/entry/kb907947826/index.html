@@ -1,0 +1,9 @@
+<p>When running an X-Window application from a command prompt the GUI never shows and the following message is returned:</p>
+<pre><code>Xlib: connection to &amp;quot;&amp;lt;name&amp;gt;:0.0&amp;quot; refused by server
+Xlib: Client is not authorized to connect to Server
+Error: Can't open display: &amp;lt;name&amp;gt;:0.0
+</code></pre>
+<p>where &lt;name&gt; is a machine or user name (or it could be blank indicating some kind of root access). This error message is most likely due to the DISPLAY environment variable not being set. This variable should refer to the machine's X-Server. From the command line this variable can be set with the csh/tcsh form:</p>
+<pre><code>setenv DISPLAY &amp;lt;name&amp;gt;:0.0
+</code></pre>
+<p>where &lt;name&gt; is the name of the machine providing X graphical services. In csh, for example, this line could be in the .cshrc file.</p>

@@ -1,0 +1,8 @@
+<p>By making your form fully trusted, you can avoid the annoying &quot;ADO Security Warning&quot; messages that suggest a communication problem among development teams at Microsoft. You can make your form Fully Trusted by selecting Tools &gt; Form Options &gt; Security. You will then see that you have to sign your form with a Digital Signature. This may be a show stopper but you can generate one just for your machine/domain with the Digital Certificate for VBA Projects tool. For more information about this tool please see:</p>
+<pre><code>http://support.microsoft.com/kb/q217221/
+</code></pre>
+<p>and</p>
+<pre><code>&amp;quot;Using SelfCert to Create Digital Certificates in a Network Environment&amp;quot;
+http://pubs.logicalexpressions.com/Pub0009/LPMArticle.asp?ID=194
+</code></pre>
+<p>After you sign the form then go to Tools &gt; Options &gt; General &gt; Security Options and check &quot;Allow fully trusted forms to have access to files and settings on my computer.&quot; This should stop ADO error messages but other security messages (especially ones from Internet Explorer) are still out there... lurking...</p>

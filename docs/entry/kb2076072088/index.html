@@ -1,0 +1,30 @@
+<p>&lt;form method=&quot;post&quot; action=&quot;#&quot; name=&quot;frmEmail&quot; style=&quot;visibility: hidden&quot;&gt;</p>
+<p>&lt;input type=&quot;hidden&quot; name=&quot;recipient&quot; value=&quot;rasx@songhaysystem.com&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;subject&quot; value=&quot;Songhay Mail&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;redirect&quot; value=&quot;{$rootUri}mail/sent&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;required&quot; value=&quot;email,body&quot; /&gt;</p>
+<p>&lt;div class=&quot;MailerPageFormText&quot;&gt;
+&lt;div&gt;Please Enter Your Name:&lt;/div&gt;
+&lt;input name=&quot;realname&quot; type=&quot;text&quot; /&gt;
+&lt;/div&gt;
+&lt;div class=&quot;MailerPageFormText&quot;&gt;
+&lt;div&gt;Please Enter Your E-Mail Address:&lt;/div&gt;
+&lt;input name=&quot;email&quot; type=&quot;text&quot; /&gt;
+&lt;/div&gt;
+&lt;div id=&quot;MailerPageComments&quot;&gt;
+&lt;div&gt;Comments:&lt;/div&gt;
+&lt;textarea name=&quot;body&quot; onfocus=&quot;this.wrap='soft'&quot;&gt;&lt;/textarea&gt;
+&lt;/div&gt;</p>
+<p>&lt;ul id=&quot;MailerPageFormButtons&quot;&gt;
+&lt;li&gt;
+&lt;input class=&quot;InputButton&quot; type=&quot;button&quot; onclick=&quot;{$onClickStatement}&quot; value=&quot;Cancel&quot; /&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;input class=&quot;InputButton&quot; type=&quot;reset&quot; value=&quot;Clear&quot; /&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;input class=&quot;InputButton&quot; id=&quot;SendMail&quot; type=&quot;button&quot; value=&quot;Send Message!&quot; /&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style=&quot;clear:both;&quot;&gt;&lt;/div&gt;</p>
+<p>&lt;/form&gt;</p>

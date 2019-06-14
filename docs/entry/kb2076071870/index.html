@@ -1,0 +1,16 @@
+<p>@ECHO OFF
+REM    This command runs PowerShell
+REM    with a different execution policy
+REM    than the default Restricted mode
+REM    and restores the default mode upon exit.
+ECHO This command will start PowerShell in RemoteSigned mode.
+ECHO Are you sure you want to continue? (Press Ctrl C to quit.)
+PAUSE
+@CLS
+powershell -NoExit -Command &quot;&amp; {Set-ExecutionPolicy RemoteSigned}&quot;
+ECHO Stopping PowerShell in Restricted mode...
+powershell -Command &quot;&amp; {Set-ExecutionPolicy Restricted}&quot;
+ECHO Verifying policy status...
+powershell -Command &quot;&amp; {Get-ExecutionPolicy}&quot;</p>
+<p>REM For a more formal approach, see “Signing PowerShell Scripts” here:
+REM http://www.hanselman.com/blog/SigningPowerShellScripts.aspx</p>

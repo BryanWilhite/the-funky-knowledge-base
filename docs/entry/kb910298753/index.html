@@ -1,0 +1,14 @@
+<p>Private Sub fsDevice_Change()
+'fsDevice is the DriveListBox.
+'fsRoot is the DirListBox.
+'fsFile is the FileListBox.
+With Me
+.fsRoot.Path = fsDevice.List(.fsDevice.ListIndex)
+.fsFile.Path = .fsRoot.Path
+End With
+End Sub</p>
+<p>Private Sub fsRoot_Change()
+With Me
+.fsFile.Path = .fsRoot.Path
+End With
+End Sub</p>

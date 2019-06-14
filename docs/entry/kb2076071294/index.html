@@ -1,0 +1,6 @@
+<p>'Deny anonymous access.
+If Request.ServerVariables(&quot;LOGON_USER&quot;) = Empty Then
+Response.Status = &quot;401 Access Denied&quot;
+End If</p>
+<p>'For the converse of this issue please see MS KB article Q188717
+'&quot;PRB: Request.ServerVariables(&quot;LOGON_USER&quot;) Returns Empty String&quot;</p>

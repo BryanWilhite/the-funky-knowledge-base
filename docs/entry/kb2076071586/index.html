@@ -1,0 +1,29 @@
+<p>Please see MSDN article &quot;Creating a Custom Spell-Checker with Word 2003 and Visual Basic .NET&quot; last seen here:</p>
+<pre><code>http://www.msdn.microsoft.com/office/understanding/word
+    /articles/default.aspx?pull=/library/en-us
+    /odc_wd2003_ta/html/odc_wdspellchkr.asp
+</code></pre>
+<p>Pros:</p>
+<ul>
+<li>
+<p>You don't have to pay more for a third-party spelling package.</p>
+</li>
+<li>
+<p>You don't have to wait for a user-friendly, Windows Forms version of an open source spelling package to get its ASP-centric act together.</p>
+</li>
+<li>
+<p>You can use leverage the investment made in custom dictionaries of MS Word.</p>
+</li>
+<li>
+<p>Nothing extra to install on machines running MS Office.</p>
+</li>
+</ul>
+<p>Cons:</p>
+<ul>
+<li>
+<p>Loading an instance of MS-Word takes several seconds and upwards of 30MB of memory by default. It is best to open Word on a separate thread.</p>
+</li>
+<li>
+<p>You can't be sure which version of Office this stuff works on: either Office XP or Office System 2003. You have carry around PIMs (Primary Interop Assemblies) for both.</p>
+</li>
+</ul>

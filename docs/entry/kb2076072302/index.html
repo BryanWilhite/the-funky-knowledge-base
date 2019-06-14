@@ -1,0 +1,16 @@
+<p>A view provides several benefits.</p>
+<ol>
+<li>Views can hide complexity</li>
+</ol>
+<p>If you have a query that requires joining several tables, or has complex logic or calculations, you can code all that logic into a view, then select from the view just like you would a table.</p>
+<ol start="2">
+<li>Views can be used as a security mechanism</li>
+</ol>
+<p>A view can select certain columns and/or rows from a table, and permissions set on the view instead of the underlying tables. This allows surfacing only the data that a user needs to see.</p>
+<ol start="3">
+<li>Views can simplify supporting legacy code</li>
+</ol>
+<p>If you need to refactor a table that would break a lot of code, you can replace the table with a view of the same name. The view provides the exact same schema as the original table, while the actual schema has changed. This keeps the legacy code that references the table from breaking, allowing you to change the legacy code at your leisure.</p>
+<p>These are just some of the many examples of how views can be useful.</p>
+<p>[http://stackoverflow.com/questions/1278521/
+why-do-you-create-a-view-in-a-database]</p>

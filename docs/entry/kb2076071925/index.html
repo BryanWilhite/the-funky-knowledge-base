@@ -1,0 +1,41 @@
+<p>DECLARE @xml xml</p>
+<p>SET @xml = '
+&lt;Root&gt;
+&lt;Item1 /&gt;
+&lt;Item2 /&gt;
+&lt;Item3 /&gt;
+&lt;Item4 /&gt;
+&lt;Item5 /&gt;
+&lt;/Root&gt;
+'</p>
+<p>SELECT
+Temp.Items.query('.') AS [Items]
+FROM
+@xml.nodes('//Root/*') AS Temp(Items)</p>
+<p>/*
+The SELECT form avoids an error like:</p>
+<pre><code>“The column 'Items' that was returned
+from the nodes() method cannot be used directly.
+It can only be used with one
+of the four xml data type methods,
+exist(), nodes(), query(), and value(),
+or in IS NULL and IS NOT NULL checks.”
+
+The table alias (with columns) avoids this error:
+
+“The table (and its columns) returned
+by a table-valued method need to be aliased.”
+
+These two errors imply that:
+
+     * The nodes() method returns a table.
+     * The table returned from the nodes() has XML columns.
+
+It follows that one may never persist a table with XML columns
+but temporary XML columns are very likely to be used.
+
+For general information, see
+“Introduction to XQuery in SQL Server 2005”
+http://technet.microsoft.com/en-us/library/ms345122.aspx
+</code></pre>
+<p>*/</p>

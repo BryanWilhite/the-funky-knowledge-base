@@ -1,0 +1,48 @@
+<p>Installing VMware Tools from the Command Line with the Tar Installer</p>
+<p>The first steps are performed on the host, within Workstation menus:</p>
+<ol>
+<li>
+<p>Power on the virtual machine.</p>
+</li>
+<li>
+<p>After the guest operating system has started, prepare your virtual machine to install VMware Tools.</p>
+</li>
+</ol>
+<p>Choose VM &gt; Install VMware Tools.</p>
+<p>The remaining steps take place inside the virtual machine.</p>
+<ol start="3">
+<li>As root (su -), mount the VMware Tools virtual CD-ROM image, change to a working directory (for example, /tmp), uncompress the installer, then unmount the CD-ROM image.</li>
+</ol>
+<p>Note: Some Linux distributions automatically mount CD-ROMs. If your distribution uses automounting, do not use the mount and umount commands below. You still must untar the VMware Tools installer to /tmp.</p>
+<p>Some Linux distributions use different device names or organize the /dev directory differently. If your CD-ROM drive is not /dev/cdrom or if the mount point for a CD-ROM is not /mnt/cdrom, you must modify the following commands to reflect the conventions used by your distribution.</p>
+<p>mount /dev/cdrom /mnt/cdrom</p>
+<p>cd /tmp</p>
+<p>Note: If you have a previous installation, delete the previous vmware-distrib directory before installing. The default location of this directory is
+/tmp/vmware-tools-distrib.</p>
+<ol start="4">
+<li>Untar the VMware Tools tar file:</li>
+</ol>
+<p>tar zxpf /mnt/cdrom/VMwareTools-5.0.0-&lt;xxxx&gt;.tar.gz</p>
+<p>umount /dev/cdrom</p>
+<p>Where &lt;xxxx&gt; is the build/revision number of the VMware Workstation release.</p>
+<p>Note: If you attempt to install a tar installation over an rpm installation — or the reverse — the installer detects the previous installation and must convert the installer database format before continuing.</p>
+<ol start="5">
+<li>Run the VMware Tools tar installer:</li>
+</ol>
+<p>cd vmware-tools-distrib</p>
+<p>./vmware-install.pl</p>
+<p>Respond to the configuration questions on the screen. Press Enter to accept the default value.</p>
+<ol start="6">
+<li>Log off of the root account.</li>
+</ol>
+<p>exit</p>
+<ol start="7">
+<li>
+<p>Start X and your graphical environment.</p>
+</li>
+<li>
+<p>In an X terminal, launch the VMware Tools background application.</p>
+</li>
+</ol>
+<p>vmware-toolbox &amp;</p>
+<p>Note: You may run VMware Tools as root or as a normal user. To shrink virtual disks, you must run VMware Tools as root (su -).</p>

@@ -1,0 +1,16 @@
+<p>The ConnectionStringSettings Class means that database connection strings are recognized by app.config conventions and definitions in .NET 2.0. This class is documented here:</p>
+<pre><code>http://msdn2.microsoft.com/en-us/library/
+    system.configuration.connectionstringsettings.aspx
+</code></pre>
+<p>The use of connection strings is documented in “Storing and Retrieving Connection Strings” here:</p>
+<pre><code>http://msdn2.microsoft.com/en-us/library/
+    system.configuration.connectionstringsettings.aspx
+</code></pre>
+<p>You will notice that it is possible to store connection string data in an external file with this form:</p>
+<p>&lt;configuration&gt;
+&lt;connectionStrings
+configSource=&quot;externalConfig/connectionStrings.config&quot;
+/&gt;
+&lt;/configuration&gt;</p>
+<p>However, in “Unraveling the Mysteries of .NET 2.0 Configuration” Jon Rista warns, “The downfall of using the configSource attribute is that it requires all configuration settings to be placed in the external file. No inheritance or overriding is possible, which in some cases makes it useless. All external configuration files used with the configSource attribute must also reside in a relative child path to the main .config file. I believe this is in regards to security concerns with storing the file in a relative parent path in a web environment.”</p>
+<p>The flippant remarks here may sufficiently explain why my preference is to use custom, external XML configuration files that serialize into a native .NET object. This move does make a security hole when in the wrong hands.</p>

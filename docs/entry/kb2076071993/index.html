@@ -1,0 +1,9 @@
+<p>Most of the information here comes from biasecurities.com:</p>
+<pre><code>http://biasecurities.com/blog/2008/
+    how-to-enable-pretty-urls-with-asp-net-mvc-and-iis6/
+</code></pre>
+<p>“When it comes to deploying an Asp.Net MVC app to IIS6, you have two options. 1. You can either setup a wildcard mapping. 2. You can add an isapi mapping and have an extension (.mvc) use the asp.net runtime.”</p>
+<p>“My solution is to use Isapi_rewrite to transparently rewrite all nice urls to *.mvc file extension requests. So, the user sees http://localhost/Home/About, while the webserver (after the isapi_rewrite filter has been applied) sees http://localhost/Home.mvc/About.  Isapi_rewrite is fast (written in c/c++), so you don't have to worry about the performance, and your static files (scripts, images, etc) do not go through the pipeline.  Best of all, your users (and Google) see pretty urls.  It's a win win setup, for IIS6.”</p>
+<p>Isapi_rewrite is $99. “ISAPI_Rewrite is a powerful URL manipulation engine based on regular expressions. It acts mostly like Apache's mod_Rewrite, but is designed specifically for Microsoft's Internet Information Server (IIS). ISAPI_Rewrite is an ISAPI filter written in pure C/C++ so it is extremely fast. ISAPI_Rewrite gives you the freedom to go beyond the standard URL schemes and develop your own scheme.”</p>
+<p>[http://www.isapirewrite.com/]</p>
+<p>Scott Guthrie on URL Rewriting: “The MVC framework will work on both IIS6 and IIS7. You’ll be able to get extension-less URLs out of the box with IIS7. For IIS6 you’d need to also register an ISAPI filter to have them be extension-less. We’ll also support the ability to use file extensions with the MVC framework—so if you want to avoid using an ISAPI filter with IIS6 you can easily use this approach.” The biasecurities.com information above merely details what Scott is talking about here.</p>

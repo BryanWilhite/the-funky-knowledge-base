@@ -1,0 +1,6 @@
+<p>This was the error message that started it all: &quot;The data was added to the database but the data won't be displayed in the form because it doesn't satisfy the criteria in the underlying record source.&quot; I was getting this error when I set the RecordSource property of an Access Data Project Form to the name of a SQL Server view that contained joins.</p>
+<p>This problem is similar to the problem resolved by KB article 248095 (&quot;ACC2000: Error When You Add Record to a Form That Is Based on a Stored Procedure&quot;) which leans heavily toward rolling one's own ResyncCommand string.</p>
+<p>Before resorting this, I recommend setting the UniqueTable property of the form to see if Access can create a ResyncCommand string for you. Entering the name of one table is far less work than trying to create a ResyncCommand value.</p>
+<p>For more philosophy, the details can be found at MSDN, the article &quot;Chapter 3: Building Microsoft Access 2000 Client/Server Applications&quot; at:</p>
+<pre><code>http://msdn.microsoft.com/library/en-us/dnapg/html/apg03.asp
+</code></pre>

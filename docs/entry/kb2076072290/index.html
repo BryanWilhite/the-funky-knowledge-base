@@ -1,0 +1,28 @@
+<p>Understanding Action Results</p>
+<p>A controller action returns something called an action result. An action result is what a controller action returns in response to a browser request.</p>
+<p>The ASP.NET MVC framework supports several types of action results including:</p>
+<ol>
+<li>ViewResult – Represents HTML and markup.</li>
+<li>EmptyResult – Represents no result.</li>
+<li>RedirectResult – Represents a redirection to a new URL.</li>
+<li>JsonResult – Represents a JavaScript Object Notation result that can be used in an AJAX application.</li>
+<li>JavaScriptResult – Represents a JavaScript script.</li>
+<li>ContentResult – Represents a text result.</li>
+<li>FileContentResult – Represents a downloadable file (with the binary content).</li>
+<li>FilePathResult – Represents a downloadable file (with a path).</li>
+<li>FileStreamResult – Represents a downloadable file (with a file stream).</li>
+</ol>
+<p>All of these action results inherit from the base ActionResult class.</p>
+<p>…you call one of the following methods of the Controller base class:</p>
+<ol>
+<li>View – Returns a ViewResult action result.</li>
+<li>Redirect – Returns a RedirectResult action result.</li>
+<li>RedirectToAction – Returns a RedirectToRouteResult action result.</li>
+<li>RedirectToRoute – Returns a RedirectToRouteResult action result.</li>
+<li>Json – Returns a JsonResult action result.</li>
+<li>JavaScriptResult – Returns a JavaScriptResult.</li>
+<li>Content – Returns a ContentResult action result.</li>
+<li>File – Returns a FileContentResult, FilePathResult, or FileStreamResult depending on the parameters passed to the method.</li>
+</ol>
+<p>So, if you want to return a View to the browser, you call the View() method. If you want to redirect the user from one controller action to another, you call the RedirectToAction() method.</p>
+<p>[http://www.asp.net/Learn/mvc/tutorial-03-cs.aspx]</p>

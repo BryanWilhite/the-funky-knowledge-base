@@ -1,0 +1,9 @@
+<p>A DataGrid bound &quot;directly&quot; to a DataTable is actually using the DefaultView property of the DataTable. It follows that the RowFilter, RowStateFilter and Sort properties of the DefaultView suddenly become very important in the explanation of why new rows added to your DataGrid suddenly disappear as soon as they are left out of focus.</p>
+<p>To insure that the grid behaves somewhat predictably, this static member helps:</p>
+<pre><code>internal static void DataDefaultView(DataView TargetDefaultView)
+{
+    TargetDefaultView.RowFilter = String.Empty;
+    TargetDefaultView.RowStateFilter = DataViewRowState.CurrentRows;
+    TargetDefaultView.Sort = String.Empty;
+}
+</code></pre>

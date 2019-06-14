@@ -1,0 +1,54 @@
+<p>&lt;%@ EnableSessionState=False LANGUAGE=VBScript %&gt;
+&lt;%Option Explicit%&gt;
+&lt;!--#include virtual=&quot;./INC/ADOVBS.asp&quot;--&gt;
+&lt;!--#include virtual=&quot;./INC/Classes/HTMLPage.asp&quot;--&gt;
+&lt;%
+Dim objFileSys,vPath
+Dim objRS,vFieldArray,vArray</p>
+<pre><code>'Get root folder.    
+Set objFileSys = Server.CreateObject(&amp;quot;Scripting.FileSystemObject&amp;quot;)
+
+'Create and disconnect Recordset object.
+Set objRS = Server.CreateObject(&amp;quot;ADODB.Recordset&amp;quot;)
+Set objRS.ActiveConnection = Nothing
+objRS.CursorType = adOpenKeyset
+objRS.LockType = adLockOptimistic
+objRS.CursorLocation = adUseClient
+    
+vPath = Server.MapPath(&amp;quot;./&amp;quot;) &amp; &amp;quot;&amp;bsol;&amp;bsol;dirADO.xml&amp;quot;
+If objFileSys.FileExists(vPath) Then
+    'Strange but true: open the persisted XML file
+    'and then delete it to save a new one.
+    Call objRS.Open(vPath,,,,adCmdFile)
+    objFileSys.DeleteFile(vPath)
+    'This technique is suggested in MS KB article Q245367.
+    'Note: because of this, the IIS Anonymous user must have
+    'Change permissions to the root documents folder.
+    'This creates a security hole and therefore sucks.
+
+    vFieldArray = Array(&amp;quot;rootFolder&amp;quot;,&amp;quot;subFolder&amp;quot;,&amp;quot;fileName&amp;quot;,&amp;quot;fileDescription&amp;quot;)
+    vArray = Array(&amp;quot;docs&amp;quot;,&amp;quot;issues&amp;quot;,&amp;quot;file.pdf&amp;quot;,&amp;quot;PDF file&amp;quot;)
+    Call objRS.AddNew(vFieldArray,vArray)
+
+    Call objRS.Update
+Else
+    Call basCreateRS(objRS)
+    Call objRS.Open
+End If
+
+Call objRS.Save(vPath,adPersistXML)
+
+'Clean up.
+Call objRS.Close
+Set objRS = Nothing
+Set objFileSys = Nothing
+
+Sub basCreateRS(objRS)
+    'Define Field objects.
+    Call objRS.Fields.Append(&amp;quot;rootFolder&amp;quot;,adBSTR,256,adFldMayBeNull)
+    Call objRS.Fields.Append(&amp;quot;subFolder&amp;quot;,adBSTR,256,adFldMayBeNull)
+    Call objRS.Fields.Append(&amp;quot;fileName&amp;quot;,adBSTR,256,adFldMayBeNull)
+    Call objRS.Fields.Append(&amp;quot;fileDescription&amp;quot;,adBSTR,1024,adFldMayBeNull)
+End Sub
+</code></pre>
+<p>%&gt;</p>

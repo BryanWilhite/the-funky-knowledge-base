@@ -1,0 +1,19 @@
+<p>DECLARE @xml xml</p>
+<p>SET @xml = '
+&lt;Root&gt;
+&lt;Item&gt;one&lt;/Item&gt;
+&lt;Item&gt;two&lt;/Item&gt;
+&lt;Item&gt;three&lt;/Item&gt;
+&lt;Item&gt;four&lt;/Item&gt;
+&lt;Item&gt;five&lt;/Item&gt;
+&lt;/Root&gt;
+'</p>
+<p>SELECT
+Temp.Items.value('.','varchar(16)') AS [Items]
+FROM
+@xml.nodes('//Item') AS Temp(Items)</p>
+<p>/*
+For general information, see
+“Introduction to XQuery in SQL Server 2005”
+http://technet.microsoft.com/en-us/library/ms345122.aspx
+*/</p>

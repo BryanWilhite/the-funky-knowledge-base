@@ -1,0 +1,21 @@
+<p>/*
+This works well when commandHTML is of type=&quot;submit&quot; or &quot;image&quot;.
+According to the strategies table under &quot;Handling a Click Event in
+Client and Server Code&quot; in &quot;ASP.NET Server Control Event Model&quot;
+under &quot;Visual Basic and Visual C# Concepts.&quot;
+*/
+protected System.Web.UI.WebControls.Button commandServer;
+protected System.Web.UI.HtmlControls.HtmlInputButton commandHTML;</p>
+<p>private void commandHTML_ServerClick(object Source, EventArgs e)
+{
+Response.Write(&quot;commandHTML_ServerClick&quot;);
+}
+private void commandServer_Click(object Source, EventArgs e)
+{
+Response.Write(&quot;commandServer_Click&quot;);
+}
+private void Page_Load(object sender, System.EventArgs e)
+{
+commandHTML.ServerClick +=new EventHandler(commandHTML_ServerClick);
+commandServer.Click +=new EventHandler(commandServer_Click);
+}</p>

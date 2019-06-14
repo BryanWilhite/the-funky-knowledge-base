@@ -1,0 +1,29 @@
+<p>The yield keyword is used only inside of a for loop and with an IEnumerable&lt;&gt; generic type to form a pattern like this:</p>
+<pre><code>class Program
+{
+    static void Main(string[] args)
+    {
+        IEnumerable&amp;lt;int&amp;gt; integers = Program.YieldList( 1, 10, 2 );
+    }
+
+    public static IEnumerable&amp;lt;int&amp;gt; YieldList( int start,
+        int end, int increment )
+    {
+        for (int current = start;
+            current &amp;lt;= end; current += increment)
+        {
+            yield return current;
+        }
+    }
+}
+</code></pre>
+<p>The variable current is the same type as that specified in IEnumerable&lt;int&gt; and the yield keyword fills IEnumerable&lt;int&gt; until the loop is finished. Without yield, the loop would return after one pass (actually the code won’t compile!).</p>
+<p>For more information, see:</p>
+<pre><code>“yield (C# Reference)”
+http://msdn2.microsoft.com/en-us/library/9k7k7cf0(VS.80).aspx
+
+“Drop the temporary lists and leverage yield”
+http://www.jpboodhoo.com/blog/
+    DropTheTemporaryListsAndLeverageYield.aspx
+</code></pre>
+<p>As elegant as this pattern appears, note that, as of this writing, setting a breakpoint inside of YieldList() and getting the Debugger to stop on it is “problematic” (just not possible). Targeting .NET 3.5 from Visual Studio 2008 provides a debugging visualizer for IEnumerable&lt;&gt;.</p>

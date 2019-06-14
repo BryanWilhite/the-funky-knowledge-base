@@ -1,0 +1,31 @@
+<p>This statement used with ExecuteScalar() will truncate at 2033 characters:</p>
+<pre><code>SELECT
+    *
+FROM
+    Segment
+,   [Document]
+WHERE
+    Segment.SegmentId = [Document].SegmentId
+FOR XML AUTO, ELEMENTS, ROOT('SegmentTreeSet')
+</code></pre>
+<p>Solve this problem with this design:</p>
+<pre><code>DECLARE @xml XML
+
+SET @xml = 
+    (
+        SELECT
+            *
+        FROM
+            Segment
+        ,   [Document]
+        WHERE
+            Segment.SegmentId = [Document].SegmentId
+        FOR XML AUTO, ELEMENTS, ROOT('SegmentTreeSet')
+    )
+
+SELECT @xml
+</code></pre>
+<p>As of this writing, DbCommand.ExecuteScalar() returns a String object of the appropriate length.</p>
+<p>This problem is chronicled in detail (for SQL Server 2000 and 2005) here:</p>
+<pre><code>http://www.aspnetresources.com/blog/executescalar_truncates_xml.aspx
+</code></pre>
