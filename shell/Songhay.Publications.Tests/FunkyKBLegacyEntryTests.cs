@@ -9,14 +9,15 @@ using Xunit.Abstractions;
 
 namespace Songhay.Publications.Tests
 {
-    public class FunkyKBTests
+    public class FunkyKBLegacyEntryTests
     {
-        public FunkyKBTests(ITestOutputHelper helper)
+        public FunkyKBLegacyEntryTests(ITestOutputHelper helper)
         {
             this._testOutputHelper = helper;
         }
 
-        [Theory, InlineData("../../../../../_data/kb/entries/", "../../../../../posts/")]
+        [Theory(Skip="🚜 see https://github.com/BryanWilhite/the-funky-knowledge-base/issues/7"),
+            InlineData("../../../../../_data/kb/entries/", "../../../../../posts/")]
         public void ShouldLoadEntries(string entriesRoot, string postsRoot)
         {
             entriesRoot = FrameworkAssemblyUtility.GetPathFromAssembly(this.GetType().Assembly, entriesRoot);
@@ -41,9 +42,10 @@ namespace Songhay.Publications.Tests
             }
         }
 
-        [Theory, ProjectFileData(typeof(FunkyKBTests),
-            "../../../../../_data/kb/entries/kb904850341.json",
-            "../../../../../posts/kb904850341.md")]
+        [Theory(Skip="🚜 see https://github.com/BryanWilhite/the-funky-knowledge-base/issues/7"),
+            ProjectFileData(typeof(FunkyKBLegacyEntryTests),
+                "../../../../../_data/kb/entries/kb904850341.json",
+                "../../../../../posts/kb904850341.md")]
         public void ShouldLoadEntry(FileInfo entryInfo, FileInfo mdInfo)
         {
             var jsonString = GetJsonString(File.ReadAllText(entryInfo.FullName));
