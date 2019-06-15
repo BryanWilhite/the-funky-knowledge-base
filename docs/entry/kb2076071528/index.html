@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>T-SQL Code: Correlated Sub-Queries in the SELECT Projection List - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>T-SQL Code: Correlated Sub-Queries in the SELECT Projection List</h3>
+
+<pre>
 <p>Microsoft readily reminds us that &quot;correlated subqueries&quot; can be included in the WHERE clause:</p>
 <pre><code>SELECT au_lname, au_fname
 FROM authors
@@ -26,3 +43,16 @@ FROM
     titleauthor AS t
 </code></pre>
 <p>It is an error to use a sub-query that returns more than one row of data. This form is discussed in detaail in &quot;The Practical SQL Handbook&quot; (a link to the book should be listed on this page at songhaysystem.com).</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 8/11/2003 4:44:17 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

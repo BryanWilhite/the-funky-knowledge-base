@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>PHP: “Validating XML files within PHP 4 applications”; Xmllint; Raphael Stolt - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>PHP: “Validating XML files within PHP 4 applications”; Xmllint; Raphael Stolt</h3>
+
+<pre>
 <p>Today I ran into a small problem, validating import XML data against a DTD(Document Type Definition), and discovered a neat way to solve this without PHP4's own means, as the PHP 4 version on the running system wasn't supporting the DOM XML Functions.</p>
 <p>Xmllint, a command line XML tool, parses provided XML files and can be used to verify that these files are well formed and are satisfying an associated DTD/XML Schema.</p>
 <p>The following method body shows an example call of the xmllint tool for validating a given XML file against a DTD. The location of the DTD file is wrapped inside a DOCTYPE definition of the import file and will be automatically resolved by xmllint.</p>
@@ -31,3 +48,16 @@ function isValidImportFile($filename) {
 <p>In addition xmllint is also very helpfull when writing custom DTDs or XML Schema, as you get an immediate reply regarding the correctness of the definition rules and their 'impact' on the associated XML files.</p>
 <p>[http://raphaelstolt.blogspot.com/2007/04/validating-xml-files-within-php-4.html]</p>
 <p>[http://infohost.nmt.edu/tcc/help/xml/lint.html]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 9/19/2009 10:06:15 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

@@ -1,5 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>SQL Server 2000: Flippant Remarks about Designing for Portability - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>SQL Server 2000: Flippant Remarks about Designing for Portability</h3>
+
+<pre>
 <p>Microsoft Access has the MDB file to represent its &quot;classic&quot; IISAM data stores in the OS file system; and we can't forget about its associated LDB file that appears when the MDB is opened and vanishes when closed. I see something similar in the SQL Server world: the MDF and LDF files. These two files make up the SQL Server database. In the SQL Server Enterprise Manager MMC Snap-in user the Databases folder you will find graphical representations of the state and contents of these files.</p>
 <p>What was not apparent to me was a brute force way to move these files around when 100% database uptime is not a concern: Right click on the database in the Enterprise Manager select All Tasks &gt; Take Offline. Now the files are just like Access files and are free to be moved around. (If you don't know where your SQL Server database files are then right-click on the database in the Enterprise Manager and select Properties. You will find the path(s) to your files under the Data Files tab and the Transaction Log tab.) Of course, the Take Offline command toggles into the Bring Online command. Finally, to move the files from server to server, we have the Detach Database... and Attach Database... Enterprise Manager commands in the same drop down list as the previously mentioned commands. The only caveats that I am aware of---besides the uptime issue---are making sure that the bizarre file incompatibility problems don't come up (like differences among SQL Server 2000 (at various Service Pack levels) and SQL 7 servers and Collation issues).</p>
 <p>One of my major conceptual departures from the MS Access world was dealing with powerful Data Transformation Services local packages. These local packages do not move with databases as they are at the server-level. I have two ways of moving these files from server to server under the Save DTS Package dialog in the Enterprise Manager: one is to select Package &gt; Save As... &gt; Location &gt; SQL Server &gt; Server: and change the server to another server; the other method is to select Package &gt; Save As... &gt; Location &gt; Structured Storage File &gt; File name: and choose a path and the file name of the Structured Storage File. The latter method is useful for brute-force backups.</p>
 <p>The brute-force backup is very useful for the SQL Server developer with no real operations support and a Zip Disk or CD burner. We can see that all we need to do is to take our database offline, save some Structured Storage Files and copy or burn to disk. We must remember to bring the database back online so our demos will work.</p>
 <p>One of my biggest show stoppers (when the demo embarrassingly stalls) is having permissions problems with Stored Procedures moved to a new server. I &quot;try&quot; to deal with this problem by writing stored procedures in a script form where the end of the script grants Execute permissions to a database role that I define. When moving from server to I make sure that each server has this role. I then assign this role to the appropriate users (which changes from server to server and/or network domain). It follows that I have role to many servers where many servers have many users. Makes sense to me.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 1/15/2002 12:26:20 AM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

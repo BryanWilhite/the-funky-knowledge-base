@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>PowerShell and ADSI: Searching the Registry to Find All Available Providers on Windows with PSDrive - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>PowerShell and ADSI: Searching the Registry to Find All Available Providers on Windows with PSDrive</h3>
+
+<pre>
 <p>PS C:\\&gt; Set-Location HKLM:\\SOFTWARE\\Microsoft\\ADs\\Providers</p>
 <p>PS HKLM:\\SOFTWARE\\Microsoft\\ADs\\Providers&gt; Get-ChildItem | format-list</p>
 <p>Hive: Microsoft.PowerShell.Core\\Registry::HKEY_LOCAL_MACHINE\\SOFTWARE\\Micros
@@ -22,3 +39,16 @@ SubKeyCount : 0</p>
 ValueCount  : 1
 Property    : {(default)}
 SubKeyCount : 1</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 9/28/2007 4:11:11 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

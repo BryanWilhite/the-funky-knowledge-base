@@ -1,2 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>System Design: Multiple Installs of Windows NT; FAT and NTFS Partitions - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>System Design: Multiple Installs of Windows NT; FAT and NTFS Partitions</h3>
+
+<pre>
 <p>Multiple copies of Windows NT should be installed when there is ample drive space. This disk should have a bootable drive C: as FAT with a Compact install of NT. The balance of drive space should be NTFS. The very first logical reason to have NTFS is for its security features (setting permissions per user per path).</p>
 <p>The FAT NT install serves as a maintenance copy of NT. This &quot;meta&quot; system can be useful for, say, starting a service that prevents the NTFS copy of NT from starting (via loading the appropriate NTFS hive in the FAT copy of REGEDT32.EXE).</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 11/26/1998 8:18:17 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

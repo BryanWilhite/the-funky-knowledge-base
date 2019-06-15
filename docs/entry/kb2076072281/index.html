@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Windows 7: “Fix Problems With Copying Large Files in Windows Vista”; netsh - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Windows 7: “Fix Problems With Copying Large Files in Windows Vista”; netsh</h3>
+
+<pre>
 <p>If you’ve been having problems copying large files over mapped drives, network disconnects, or having to reboot your router a lot more often than normal, then you can try out this fix to solve the problem.</p>
 <p>The problem stems from the new auto-tuning network, which changes the receive window on the fly. Thankfully we can easily turn it off from an administrative mode command prompt.</p>
 <p>Open Administrative Mode Command Prompt</p>
@@ -17,3 +34,16 @@ receive-window-auto-tuning-on-vista.aspx]</p>
 <pre><code>netsh interface tcp set global congestionprovider=none
 </code></pre>
 <p>[http://technet.microsoft.com/en-us/library/bb726965.aspx]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 10/14/2009 2:45:44 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

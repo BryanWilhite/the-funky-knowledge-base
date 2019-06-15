@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>System.Xml.Xsl.XslTransform PROBLEM: Document Type Declarations Are Ignored; xsl:output Element; DOCTYPE; .NET Framework 1.1 - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>System.Xml.Xsl.XslTransform PROBLEM: Document Type Declarations Are Ignored; xsl:output Element; DOCTYPE; .NET Framework 1.1</h3>
+
+<pre>
 <p>The xsl:output element is supported by the .NET Framework. The xsl:output element is ignored when the output of the XslTransform.Transform method is an XmlReader or XmlWriter. These types are not byte-stream-based, using .NET-native UTF-16 encoded strings to store data.</p>
 <p>The following sketch uses the MemoryStream type to represent data as bytes instead of UTF-16 strings:</p>
 <pre><code>XslTransform xslt = new XslTransform();
@@ -13,3 +30,16 @@ xhtml = Encoding.UTF8.GetString(ms.GetBuffer());
 <pre><code>http://msdn.microsoft.com/library/
     en-us/cpguide/html/cpconInputsOutputsToXslTransform.asp
 </code></pre>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 10/28/2005 3:43:41 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

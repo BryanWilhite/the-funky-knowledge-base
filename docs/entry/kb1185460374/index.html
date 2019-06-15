@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>JavaScript: The Significance of setTimeout() and clearTimeout() - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>JavaScript: The Significance of setTimeout() and clearTimeout()</h3>
+
+<pre>
 <p>Many designs using a for or while loop structure may instead have needed the setTimeout() method of the window object calling a function recursively. The general form of this structure is:</p>
 <pre><code>function MyFunc() {
     //code here
@@ -5,3 +22,16 @@
 }
 </code></pre>
 <p>where timeoutID is a script-global variable. After MyFunc() is called, this structure then recursively calls MyFunc() every second until clearTimeout(timeoutID) is used. Unlike a for or while loop, this &quot;loop&quot; is time based.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 2/9/1999 6:16:55 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Windows NT Registry: Changing the Default Location of the Windows NT Setup Folder - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Windows NT Registry: Changing the Default Location of the Windows NT Setup Folder</h3>
+
+<pre>
 <p>The path to the Windows NT 4.0 Setup folder usually contains the letter of the CD-ROMdrive and &quot;I386&quot; for &quot;Wintel&quot; machines. So, for example, if drive D: is the CD-ROM drive, then D:\\I386 would be the Setup path.</p>
 <p>To change the default location of the setup files, edit the string value SourcePath found at:</p>
 <pre><code>HKEY_LOCAL_MACHINE
@@ -5,3 +22,16 @@
         &amp;bsol;&amp;bsol;Windows NT&amp;bsol;&amp;bsol;CurrentVersion&amp;bsol;&amp;bsol;Setup
 </code></pre>
 <p>So, for example, if the Windows NT setup directory changes to G:\\I386, set SourcePath to &quot;G:&quot; (do not be tempted to enter &quot;G:\\I386&quot;).</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 12/24/2000 2:27:37 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

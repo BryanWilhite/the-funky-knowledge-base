@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>“XML Serializing a Hashtable or generic Dictionary” by Pete Sheill - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>“XML Serializing a Hashtable or generic Dictionary” by Pete Sheill</h3>
+
+<pre>
 <p>The XmlSerializer in .NET has many good qualities.  It creates output that is understandable and not overly verbose.  It works with many data types.  It has a simple, sensible policy -- it only serializes public properties and members.  It doesn't require special attributes.  The only thing that bothers me is that it doesn't serialize Hashtables or Dictionaries.  Here is some code that enables serializing and deserializing those types by using an intermediary List.  I haven't tried it using a non-generic ArrayList or array, but I believe that would work too.</p>
 <pre><code>using System.Collections.Generic;
 using System.Collections;
@@ -57,3 +74,16 @@ public class Entry
 &lt;/Entry&gt;
 &lt;/ArrayOfEntry&gt;</p>
 <p>[http://blogs.msdn.com/psheill/archive/2005/04/09/406823.aspx]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 7/19/2009 10:52:20 AM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

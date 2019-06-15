@@ -1,4 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Java SE 6: “Getting to Know System Tray” by John Zukowski - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Java SE 6: “Getting to Know System Tray” by John Zukowski</h3>
+
+<pre>
 <p>The Java SE 6 release introduced several new capabilities to the Abstract Window Toolkit (AWT). Users are no longer limited to Swing and enhancing the graphical user interface (GUI) components. With Java SE 6, you have new access to things such as desktop applications through what used to be called the JDesktop Integration Components (JDIC), described in a previous tip: Communicating With Native Applications Using JDIC. Although its package changed to just java.awt, the API remains much as described in that tip. You also now have the ability to add applications to the Microsoft Windows taskbar, the Gnome notification area, or KDE's system tray. That is what this tip is all about.</p>
 <p>Access to the system tray requires only two new classes: SystemTray to represent the desktop's system tray and TrayIcon for its icon. Why not use Image or Icon for that? TrayIcon has an attached PopupMenu and tool tip text. Here's how all the pieces fit together.</p>
 <p>The SystemTray class builds on the concept of the platform having a single instance of the tray. Calling the getSystemTray() method of SystemTray will return that instance. But some platforms might not support a system tray, so it is best to check first through the isSupported() method. Otherwise, an UnsupportedOperationException will be thrown if the platform does not support a system tray.</p>
 <p>[http://blogs.sun.com/CoreJavaTechTips/entry/getting_to_know_system_tray]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 7/31/2009 2:07:04 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

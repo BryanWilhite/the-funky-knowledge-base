@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Core Data Services for DAO; Migration to ADO from DAO; Access 2000 - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Core Data Services for DAO; Migration to ADO from DAO; Access 2000</h3>
+
+<pre>
 <p>Every application that I build means to reflect the three-tier abstract model within Microsoft's software design guidelines. One of those tiers is Data Services. With Access 2000 and ADO in mind, I have distilled the core data services of a DAO (native ISAM) Access application.</p>
 <p>Here are the current tools:</p>
 <p>One Private, module-level, Recordset Object Variable</p>
@@ -10,3 +27,16 @@
 <p>This function replaces the Dlookup() method of the Application object. It takes a SQL WHERE clause among its arguments and returns a Variant.</p>
 <p>One Function, Returning String from tblStrings</p>
 <p>All of my Visual Basic applications store their String Literals in a DAO table called tblStrings. I built a &quot;special&quot; function that is optimized to read from this table. This function features the Seek method of the DAO.Recordset object.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 11/30/1998 8:38:59 AM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

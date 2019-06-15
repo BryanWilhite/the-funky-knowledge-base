@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Review of the Data Type Summary: Floating Point Numbers - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Review of the Data Type Summary: Floating Point Numbers</h3>
+
+<pre>
 <p>The online help for VBA has a topic called &quot;Data Type Summary.&quot; For those of us who are not computer scientists we should take note of the following with regard to floating point numbers:</p>
 <p>The use of scientific notation in the help file topic to denote range implies that floating point values are stored as exponents.</p>
 <p>The terms &quot;single precision&quot; and &quot;double precision&quot; refer to the numbers left of the decimal point that will not be rounded when VBA allocates memory between the exponent and the significant digits.</p>
@@ -10,3 +27,16 @@
 <p>because the Double data type is accurate up to 15 significant digits. This implies that values (without decimals) greater than 999 trillion will be rounded.</p>
 <p>The double precision may be safe to use for large numbers in &quot;real world&quot; applications but keep in mind the size of the number stored drops when decimal places in the original value need to be included. For example, suppose you want to store a value in a DAO database as type Currency. The Currency data type holds four decimal places. This implies that values greater than 99 billion will be rounded if CDbl() is used to prepare data for storage in the Currency field.</p>
 <p>In the &quot;real world&quot; of, say, financial applications, 99 billion is not an unusually high number.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 6/12/1998 11:03:15 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

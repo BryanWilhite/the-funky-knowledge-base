@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>E4X and ActionScript: “Using XML Namespaces with E4X and ActionScript 3” by Darron Schall - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>E4X and ActionScript: “Using XML Namespaces with E4X and ActionScript 3” by Darron Schall</h3>
+
+<pre>
 <p>import mx.rpc.events.ResultEvent;</p>
 <pre><code>[Bindable]
 public var rockArtists:XMLList;
@@ -26,3 +43,16 @@ private function onResult( event:ResultEvent ):void {
 <p>Accessing the artist element nodes then is simply a matter of using the namespace via use namespace items and asking for just the artist (without the namespace prefix). Another approach is to omit the use namespace ... code and use the namespace prefix directly: rock.items::artist. In both cases, the namespace to use is the one defined in ActionScript, and not the one defined in the XML file (so &quot;items&quot; instead of &quot;itms&quot;).</p>
 <p>[http://www.darronschall.com/weblog/2006/04/
 using-xml-namespaces-with-e4x-and-actionscript-3.cfm]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 7/27/2009 10:08:55 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

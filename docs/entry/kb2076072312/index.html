@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>“When to use RenderAction vs RenderPartial with ASP.NET MVC” - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>“When to use RenderAction vs RenderPartial with ASP.NET MVC”</h3>
+
+<pre>
 <p>At first glance, RenderAction and RenderPartial both do a very similar thing – they load ‘some other content’ into the view being rendered at the place they are called. Personally, I think they should be used for different scenarios so these are my thoughts on where each one should be used and why.</p>
 <p>First though, a quick recap on what they do:</p>
 <pre><code>* RenderPartial renders a control with some model passed to it.
@@ -11,3 +28,16 @@
 <p>For example, I may have a PersonController responsible for CRUD operations on the Person class including a Display action and view but I do not want either of these to have any responsibility for anything to do with the display of Projects that the person is working on. If I want to display a list of assigned projects within the Person Display view then I would use RenderAction to add it but the responsibility and knowledge of how to do this resides with the ProjectController and it’s views.</p>
 <p>[http://blogs.intesoft.net/post/2009/02/
 renderaction-versus-renderpartial-aspnet-mvc.aspx]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 10/14/2009 7:21:40 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

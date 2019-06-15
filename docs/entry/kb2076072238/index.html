@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>C#: “Direct casting vs ‘as’ operator?”; stackoverflow.com - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>C#: “Direct casting vs ‘as’ operator?”; stackoverflow.com</h3>
+
+<pre>
 <p>void Handler(object o, EventArgs e)
 {
 // I swear o is a string
@@ -22,3 +39,16 @@ string s = o.ToString(); // 3
 <p>Use 1 for most conversions - it's simple and straightforward. I tend to almost never use 2 since if something is not the right type, I usually expect an exception to occur. I have only seen a need for this return-null type of functionality with badly designed libraries which use error codes (e.g. return null = error, instead of using exceptions).</p>
 <p>3 is not a cast and is just a method invocation. Use it for when you need the string representation of a non-string object.</p>
 <p>*/</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 9/7/2009 8:16:46 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

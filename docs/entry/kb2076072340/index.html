@@ -1,3 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>LINQ to XML: “…use XPathEvaluate() instead of XPathSelectElement[s]()” - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>LINQ to XML: “…use XPathEvaluate() instead of XPathSelectElement[s]()”</h3>
+
+<pre>
 <p>First, the documentation for all the XPath extension methods from LINQ to XML is already available online at http://msdn2.microsoft.com/en-us/library/system.xml.xpath.extensions_methods(VS.90).aspx</p>
 <p>Regarding the evaluation of XPath expressions returning XAttribute, you probably want to use XPathEvaluate() instead of XPathSelectElement<a href="">s</a>. XPathSelectElements() and XPathSelectElement() are specialized versions of XPathEvaluate() that return either a sequence of XElement or one XElement respectively. They are provided as properly typed convenience methods given that quering for elements is such a common task.</p>
 <p>[http://connect.microsoft.com/VisualStudio/feedback/details/289519/xpathselectelement-s-invalidoperationexception-query-other-node-types]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 3/13/2010 6:12:37 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

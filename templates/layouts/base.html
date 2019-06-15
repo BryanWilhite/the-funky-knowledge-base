@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% if title %}{{ title }} - {% endif %}{{ settings.siteName }}</title>
     <link rel="stylesheet" href="/style.css">
+    <title>{% if title %}{{ title }} - {% endif %}{{ settings.siteName }}</title>
 </head>
 <body>
+    <h1>{{ settings.siteName }}</h1>
+    <h2>{{ settings.description }}</h2>
 
 {{ content }}
 
 <footer>
-        &copy; {{ "now" | date: "%Y" }} {{ settings.siteName }}
+        &copy; {{ "now" | date: "%Y" }} {{ settings.author.name }}
+        <a href="https://twitter.com/{{ settings.author.twitter }}">@{{ settings.author.twitter }}</a>
 </footer>
 </body>
 </html>

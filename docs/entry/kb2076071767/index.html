@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Ubuntu Linux Network Connectivity - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Ubuntu Linux Network Connectivity</h3>
+
+<pre>
 <p>Ubuntu, by default, is configured for DHCP. You can verify this by examining some configuration files related to networking:</p>
 <pre><code>less /etc/dhcp3/dhclient.conf
 less /etc/network/interfaces
@@ -24,3 +41,16 @@ iface eth0 inet dhcp
 </code></pre>
 <p>where the IP addresses of the domain name servers are separated by commas. Please compare editing resolv.conf manually to &quot;refreshing&quot; DHCP with ifdown eth0; ifup eth0.</p>
 <p>One possible solution to the problem related to the error message “No such device” (most likely on eth0), is to comment out the MAC address definition in /etc/iftab.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 10/11/2007 3:42:31 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

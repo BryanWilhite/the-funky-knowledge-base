@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>SQL Server 2005 t-SQL: Linking an Orphaned Database User to a Server Login - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>SQL Server 2005 t-SQL: Linking an Orphaned Database User to a Server Login</h3>
+
+<pre>
 <p>/*
 A user gets often gets orphaned (or broken)
 when attaching a database to a new server.</p>
@@ -11,3 +28,16 @@ sp_change_users_login
 @UserNamePattern='my_orphaned_user',
 @Password='myS3curePassw0rd'</p>
 <p>-- This command is available in SQL Server 2000.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 9/17/2007 1:16:37 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

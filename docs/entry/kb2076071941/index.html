@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>bash script: a script that generates symbolic links based on subdirectory names in a target folder - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>bash script: a script that generates symbolic links based on subdirectory names in a target folder</h3>
+
+<pre>
 <p>#!/bin/bash</p>
 <p>echo &quot;Removing any existing symbolic links...&quot;
 rm /opt/lampp/htdocs/dev_*</p>
@@ -7,3 +24,16 @@ echo &quot;Linking to $folder...&quot;
 ln -s $folder /opt/lampp/htdocs/<code>basename $folder</code>
 done</p>
 <p>exit 0</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 2/21/2008 2:46:10 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

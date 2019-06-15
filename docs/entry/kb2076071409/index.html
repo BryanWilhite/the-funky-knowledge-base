@@ -1,6 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>VB: ADO; Using SQL Wildcards Against Access Databases; Access 2000 - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>VB: ADO; Using SQL Wildcards Against Access Databases; Access 2000</h3>
+
+<pre>
 <p>If you should ever have the misfortune of opening an Access database from ADO you will run into problems that Microsoft recognizes as bugs and has even released fixes in response to them. The main problem is trying to use the LIKE predicate and wildcard characters. There are quite a few Microsoft Knowledgebase articles that deal with the problem. Search it yourself.</p>
 <p>As of this writing, there are only two things that effectively deal with this issue: using ADO 2.5 or above and understanding that ADO can use the wildcards (and character string delimiters) for SQL Server on Access databases. Using ADO 2.5 and above implies that you have all of the known bug fixes. Using SQL Server wildcards on Access databases, I assume, is a poorly communicated design goal of the &quot;ADO team&quot;: the effort in translating ADO, dynamic SQL for Access to SQL Server (and vice versa) is reduced if the wildcards and character string delimiters are the same.</p>
 <p>Microsoft deals with the issue in the most up-to-date detail in &quot;Intermediate Microsoft Jet SQL for Access 2000&quot; at:</p>
 <pre><code>http://msdn.microsoft.com/library/en-us/dnacc2k/html/acintsql.asp
 </code></pre>
 <p>After a table of possible wildcards, you should find the words, &quot;The '%' and '_' wildcard characters in the previous table can be executed only through the Jet OLE DB provider and ADO. They will yield an empty result set if used through the Access SQL View user interface.&quot; This implication here should be clear.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 7/23/2001 6:37:36 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>SQL Server 2005 PROBLEM: Using the ADO.NET DbCommand.ExecuteScalar() Method Truncates at 2033 Characters - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>SQL Server 2005 PROBLEM: Using the ADO.NET DbCommand.ExecuteScalar() Method Truncates at 2033 Characters</h3>
+
+<pre>
 <p>This statement used with ExecuteScalar() will truncate at 2033 characters:</p>
 <pre><code>SELECT
     *
@@ -29,3 +46,16 @@ SELECT @xml
 <p>This problem is chronicled in detail (for SQL Server 2000 and 2005) here:</p>
 <pre><code>http://www.aspnetresources.com/blog/executescalar_truncates_xml.aspx
 </code></pre>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 1/16/2007 3:16:13 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

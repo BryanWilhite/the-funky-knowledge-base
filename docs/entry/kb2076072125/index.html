@@ -1,3 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>“TimeZone vs. TimeZoneInfo in .Net”; Dan Rigsby, danrigsby.com - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>“TimeZone vs. TimeZoneInfo in .Net”; Dan Rigsby, danrigsby.com</h3>
+
+<pre>
 <p>The TimeZone data type was introduced in .Net 1.0 as a mechanism for retrieving information about the current time zone, and to convert times from local time to Coordinated Universal Time (UTC) or vice versa.  The down side is that you cannot use this to represent any other time zone other than the local zone.  It also can’t be used to convert one date time to another zone.  This is a pretty sever limitation and something that .Net has been lacking for some time.</p>
 <p>In .Net 3.5, Microsoft finally introduced a replacement for TimeZone.  The TimeZoneInfo class fills in all of the gaps where TimeZone left off.  You can represent any time zone and perform various calculations.  Many people have yet to hear of this class, but it is crucial if you are working with applications that need to perform calculations on dates and times which may originate from differet time zones.</p>
 <p>[http://www.danrigsby.com/blog/index.php/2008/08/24/timezone-vs-timezoneinfo-in-net/]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 4/22/2009 3:39:47 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

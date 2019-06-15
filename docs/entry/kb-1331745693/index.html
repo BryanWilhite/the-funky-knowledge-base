@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Notes on the Val() Function - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Notes on the Val() Function</h3>
+
+<pre>
 <p>Use the Val() function if you are contemplating using LTrim$() and CDbl() on a string literal. You only want the leftmost characters from this string. You want to separate the numeric values from the non-numeric values from this string---and the numeric values are leftmost. And, most importantly, you want to convert this value to data type Double.</p>
 <p>Without Val() you would have to use LTrim$() to find the leftmost numeric characters and then CDbl() to convert them. Please recall that CDbl() will return a Type Mismatch error in the following:</p>
 <pre><code>VBA.CDbl(&amp;quot;123Text&amp;quot;)
@@ -8,3 +25,16 @@
 <p>also consider this a warning:</p>
 <pre><code>VBA.Val(&amp;quot;1,234&amp;quot;) = 1
 </code></pre>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 5/18/1999 8:02:41 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

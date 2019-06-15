@@ -1,4 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Windows Server 2008: “What happens if the owner cannot change the permissions on a file?”; win2k8 - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Windows Server 2008: “What happens if the owner cannot change the permissions on a file?”; win2k8</h3>
+
+<pre>
 <p>Windows Server 2008 has provisions for this situation. Basically any users including an admin can lock themselves out of any object; however, users who are also members of the administrators group can assign ownership back to the domain administrators group, allowing any member (including the original owner) to modify the ownership of the object.</p>
 <p>If you are a member of the administrators group, even though you can lock yourself out of being able to change permissions or see an object, your other rights will allow you to correct the action.</p>
 <p>With these new features, it is likely that business policy and IT security policy will become a bit more closely related and work a little better for everyone.</p>
 <p>[http://blogs.techrepublic.com.com/networking/?p=1379]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 9/27/2009 9:58:30 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

@@ -1,4 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>PHP: readfile() Problem with content-disposition in FireFox - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>PHP: readfile() Problem with content-disposition in FireFox</h3>
+
+<pre>
 <p>I saw in previous contributed notes that in content-disposition the file is not a quoted-string, there is no problem if the filename have no spaces but if it has in IE it works but in Firefox not. The RFC 2616 puts as an example this: Content-Disposition: attachment; filename=&quot;fname.ext&quot; You can see http://www.faqs.org/rfcs/rfc2616.html section &quot;19.5.1 Content-Disposition&quot; for more details. The correct header then is this:</p>
 <pre><code>header(&amp;quot;Content-Disposition: attachment; filename=&amp;bsol;&amp;bsol;&amp;quot;$filename&amp;bsol;&amp;bsol;&amp;quot;&amp;quot;);
 </code></pre>
 <p>[http://us.php.net/readfile]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 8/17/2009 5:18:57 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

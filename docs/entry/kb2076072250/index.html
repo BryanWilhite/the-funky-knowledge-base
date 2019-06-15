@@ -1,6 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>PowerShell and Team Foundation Server: “Team Foundation Server Project Browser PowerPack” - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>PowerShell and Team Foundation Server: “Team Foundation Server Project Browser PowerPack”</h3>
+
+<pre>
 <p>The edit work item dialog is not functional due to a Multithreaded Apartment/Single-threaded Apartment issue. Powershell runs in MTA mode and the TFS work item editor control requires STA mode. Currently there doesn't seem to be any nice way of launching a STA thread from Powershell.</p>
 <ul>
 <li>The move work item iteration functionality seems to update the local work item instance, but the change doesn't flush to the server.</li>
 <li>I haven't been able to successfully load the TFS assemblies from within Powershell on a 64bit install of Windows.</li>
 </ul>
 <p>[http://www.powergui.org/entry.jspa?externalID=1852&amp;categoryID=21]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 9/15/2009 6:09:42 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>ASP, VBScript and ADSI: ADSI Authentication Function; basADSILogin - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>ASP, VBScript and ADSI: ADSI Authentication Function; basADSILogin</h3>
+
+<pre>
 <p>Function basADSILogin(vDomain,vUser,vPwd)
 Dim vADsPath
 vADsPath = &quot;WinNT://&quot; &amp; vDomain &amp; &quot;/&quot; &amp; vUser &amp; &quot;,user&quot;</p>
@@ -21,3 +38,16 @@ Set objADSI = Nothing
 Set objADSINamespace = Nothing
 </code></pre>
 <p>End Function</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 2/6/2003 11:19:32 AM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

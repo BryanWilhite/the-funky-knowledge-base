@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>C# 2.0 Design Notes: default Keyword in Generic Code - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>C# 2.0 Design Notes: default Keyword in Generic Code</h3>
+
+<pre>
 <p>From the C# Programming Guide:</p>
 <p>&quot;Given a variable t of a parameterized type T, the statement t = null is only valid if T is a reference type and t = 0 will only work for numeric value types but not for structs. The solution is to use the default keyword, which will return null for reference types and zero for numeric value types.&quot;</p>
 <pre><code>public T GetNext()
@@ -16,3 +33,16 @@
 <p>For more information, see:</p>
 <pre><code>http://msdn2.microsoft.com/en-us/library/xwth0h0d.aspx
 </code></pre>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 7/12/2006 4:22:21 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

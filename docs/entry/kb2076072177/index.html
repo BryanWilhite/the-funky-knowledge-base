@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>“Generic Delegates”; MSDN - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>“Generic Delegates”; MSDN</h3>
+
+<pre>
 <p>A  delegate can define its own type parameters. Code that references the generic delegate can specify the type argument to create a closed constructed type, just like when instantiating a generic class or calling a generic method, as shown in the following example:</p>
 <p>public delegate void Del&lt;T&gt;(T item);
 public static void Notify(int i) { }</p>
@@ -42,3 +59,16 @@ SampleClass o = new SampleClass();
 s.stackEvent += o.HandleStackChange;
 }</p>
 <p>[http://msdn.microsoft.com/en-us/library/sx2bwtw7(VS.80).aspx]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 8/10/2009 8:40:07 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

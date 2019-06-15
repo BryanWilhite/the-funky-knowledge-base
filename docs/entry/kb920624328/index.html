@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>PROBLEM: RecordCount = 1 for a DAO Recordset with More than One Record - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>PROBLEM: RecordCount = 1 for a DAO Recordset with More than One Record</h3>
+
+<pre>
 <p>If the .RecordCount property of DAO Recordset is equal to 1 and opens without error, then most likely this Recordset is based on Parameters. In order to get an accurate count you will have to resort to using .MoveLast and .MoveFirst in the following manner:</p>
 <pre><code>With m_rsDAO
     .MoveLast
@@ -7,3 +24,16 @@
 End With
 </code></pre>
 <p>This may be very costly on Recordsets with many rows. If you find this move too expensive, resort to a separate SQL query (or, if you are in a hurry, a Domain Aggregate Function) to return the count.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 3/5/1999 9:07:10 AM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

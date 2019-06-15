@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>SQL Server CLR: “Regular Expressions in MS SQL Server 2005/2008”; CodeProject.com - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>SQL Server CLR: “Regular Expressions in MS SQL Server 2005/2008”; CodeProject.com</h3>
+
+<pre>
 <p>Reqular expressions in MS SQL Server 2005/2008. You can use all .Net Framework Regular Expressions stuff via MS Server CLR Integration. By the way you can use not only Regular Expressions from FCL.</p>
 <p>This article describe how to create and use extension for LIKE (Transact-SQL) clause that supports regular expressions. Just for demo we also have created text parser that extracts tokens from text by given regular expression pattern. Also there is an overview of the namespaces and libraries required to compile database objects using the Microsoft SQL Server integration with the aid of .NET Framework common language runtime (CLR) as a whole.
 Background</p>
@@ -58,3 +75,16 @@ select * from titles
 where 1 = dbo.RegExpLike(title, '\\b(A\\S+)')</p>
 <p>[http://www.codeproject.com/KB/database/
 SqlRegularExpressions.aspx?display=Print]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 10/6/2009 8:57:54 AM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

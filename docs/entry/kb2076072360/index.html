@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>WPF: “Setting the Width (and Height) as a Percentage Value” - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>WPF: “Setting the Width (and Height) as a Percentage Value”</h3>
+
+<pre>
 <p>Typically, you'd use a built-in layout control appropriate for your scenario (e.g. use a grid as a parent if you want scaling relative to the parent). If you want to do it with an arbitrary parent element, you can create a ValueConverter do it, but it probably won't be quite as clean as you'd like. However, if you absolutely need it, you could do something like this:</p>
 <p>public class PercentageConverter : IValueConverter
 {
@@ -38,3 +55,16 @@ ConverterParameter=0.1}&quot;/&gt;
 &lt;/Canvas&gt;
 &lt;/Window&gt;</p>
 <p>[http://stackoverflow.com/questions/717299/wpf-setting-the-width-and-height-as-a-percentage-value]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 3/22/2010 1:35:14 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

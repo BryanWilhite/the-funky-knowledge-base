@@ -1,5 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Windows XP/2003 PROBLEM: Accessing Share on a Remote Machine Shows only Guest Prompt; Group Policy; gpedit.msc - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Windows XP/2003 PROBLEM: Accessing Share on a Remote Machine Shows only Guest Prompt; Group Policy; gpedit.msc</h3>
+
+<pre>
 <p>Run the Group Policy snap-in (gpedit.msc). Under Local Computer Policy &gt; Computer Configuration &gt; Windows Settings &gt; Security Settings &gt; Security Options set “Network access: Sharing and security model for local accounts” to “Classic on the Windows Server 2003 family and Windows XP.”</p>
 <p>Run gpupdate. This program is described here:</p>
 <pre><code>http://www.microsoft.com/resources/documentation/windows/xp/
     all/proddocs/en-us/refrgp.mspx?mfr=true
 </code></pre>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 3/9/2009 9:54:27 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

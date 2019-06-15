@@ -1,2 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>PROBLEM: Linked SQL Server Tables Pad Spaces at the End of Text Values - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>PROBLEM: Linked SQL Server Tables Pad Spaces at the End of Text Values</h3>
+
+<pre>
 <p>Linked SQL Server Tables in Microsoft Access 97 represent the SQL definition of the table defined in the remote database. This implies that if a column is defined with type char(10), Access will show in Datasheet View 10 characters per row in the column. This in turn implies that when there are only two characters of &quot;useful&quot; data in the row, Access will &quot;pad&quot; 8 spaces after the two characters.</p>
 <p>There are two ways to deal with this problem: (i) use the more expensive varchar() data type on the tables in the remote database; or (ii) use the VBA.Trim() (or VBA.RTrim()) function on values taken out of the column.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 3/27/1999 10:53:53 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

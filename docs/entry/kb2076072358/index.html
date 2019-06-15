@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>LINQ: “LINQ To Entities and Lazy Loading”; Include() - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>LINQ: “LINQ To Entities and Lazy Loading”; Include()</h3>
+
+<pre>
 <p>I've been playing with linq to entities also. It's got a long way to go before it catches up with linq to SQL. I've had to use linq to entities for the Table per Type Inheritance stuff. I found a good article recently which explains the whole 1 company 2 different ORM technologies thing here.</p>
 <p>However you can do lazy loading, in a way, by doing this:</p>
 <p>// Lazy Load Orders
@@ -12,3 +29,16 @@ var alice = data.Customers.Include(&quot;Orders&quot;).First(c =&gt; c.Name == &
 if (!alice.Orders.IsLoaded)
 alice.Orders.Load();</p>
 <p>[http://stackoverflow.com/questions/338986/linq-to-entities-and-lazy-loading]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 3/21/2010 4:30:49 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

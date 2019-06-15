@@ -1,2 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>SPARCstation 5; PROBLEM: admintool Fails to Start Returning a Segmentation Fault - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>SPARCstation 5; PROBLEM: admintool Fails to Start Returning a Segmentation Fault</h3>
+
+<pre>
 <p>The admintool failed to start returning a segmentation fault (and dumping its core) when I edited passwd and shadow by hand. To recover from this blunder (DO NOT edit these files by hand!), I ran pwconv to create and update /etc/shadow with data from /etc/passwd (/etc/oshadow and /etc/opasswd should not be forgotten as well).</p>
 <p>Hopefully running pwconv is the one and only solution to this problem. For more information on pwconv, see Sun man pages.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 10/6/1998 12:47:28 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

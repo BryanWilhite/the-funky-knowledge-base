@@ -1,3 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Hibernate in Action Notes: Chapter 2; Introducing and
+integrating Hibernate; 2.2 Understanding the architecture - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Hibernate in Action Notes: Chapter 2; Introducing and
+integrating Hibernate; 2.2 Understanding the architecture</h3>
+
+<pre>
 <p>2.2 Understanding the architecture</p>
 <p>&quot;The programming interfaces are the first thing you have to learn about Hibernate in order to use it in the persistence layer of your application.&quot; There are about four types of interfaces:</p>
 <p>i) The Session, Transaction, and Query interfaces perform basic CRUD and querying operations.</p>
@@ -16,3 +35,16 @@ v) Query (and Criteria)</p>
 <p>&quot;The Lifecycle and Validatable interfaces allow a persistent object to react to events relating to its own persistence lifecycle... The Interceptor interface was introduced to allow the application to process
 callbacks without forcing the persistent classes to implement Hibernate-specific APIs. Implementations of the Interceptor interface are passed to the persistent instances as parameters.&quot;</p>
 <p>&quot;A fundamental and very powerful element of the architecture is Hibernate’s notion of a Type. A Hibernate Type object maps a Java type to a database column type (actually, the type may span multiple columns)... Even better, Hibernate supports user-defined custom types. The interfaces UserType and CompositeUserType are provided to allow you to add your own types.&quot;</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 4/10/2007 6:30:47 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

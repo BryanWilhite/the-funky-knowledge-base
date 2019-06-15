@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>.NET Framework: Runtime Security Policy for Local Intranet Zone; Internet Explorer Internet Properties - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>.NET Framework: Runtime Security Policy for Local Intranet Zone; Internet Explorer Internet Properties</h3>
+
+<pre>
 <p>As of the create date of this writing, I am slowly but slowly migrating &quot;classic&quot; ASP to .NET solutions. In the mean time, each IIS Server on my Local Intranet has a Visual Studio .NET Solution assigned to the entire web server built from the New Project in Existing Folder Template. I am not sure that this is the most elegant way to go, but  what I end up with is a Solution file with a Visual Basic.NET project covering the entire IIS server accompanied by Database Projects respective of each subfolder of the VB.NET project file (where each subfolder is actually an IIS web site but if I explain my reasoning behind this I will digress too far).</p>
 <p>The bottom line is that I end up with one Visual Studio .NET Solution per machine in my Intranet. Now, since I do not want to edit these solutions on each machine, I have a single workstation pulling these files using the ancient file:/// protocol. By default, VS.NET on my workstation does not trust these solutions so I get my familiar &quot;The project location is not fully trusted by the .NET runtime…&quot; message. The quick and dirty way to avoid this message is to open .NET Configuration and select:</p>
 <pre><code>My Computer &amp;gt; Runtime Security Policy &amp;gt; Machine &amp;gt; Code Groups
@@ -5,3 +22,16 @@
 </code></pre>
 <p>and create a Child Code Group with Membership Condition type set to Zone where Zone is set to Local Intranet and Permission Set is FullTrust. Unfortunately, if you are in a large enterprise you many not want to trust every machine in the Local Intranet Zone.</p>
 <p>You can redefine your Local Intranet Zone under Internet Explorer Internet Properties, the Security tab. Select Local Intranet and push the Sites… button. Uncheck Include all local…, Include all sites…, Include all network paths… and click on the Advanced… button. Under Add this Web site to the zone: enter the Intranet boxes you need; e.g. enter \\\\MyDevServer as file://MyDevServer.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 2/12/2003 11:30:40 AM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

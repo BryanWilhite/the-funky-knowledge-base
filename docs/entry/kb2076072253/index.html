@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>SQL Server 2005: “Understanding &quot;login failed&quot; (Error 18456) error messages” - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>SQL Server 2005: “Understanding &quot;login failed&quot; (Error 18456) error messages”</h3>
+
+<pre>
 <p>In continuing with the theme of understanding error messages I'll discuss the &quot;login failed&quot; messages that are surfaced by the client and written to the server's error log (if the auditlevel is set to log failures on login which is the default) in the event of an error during the login process.</p>
 <p>If the server encounters an error that prevents a login from succeeding, the client will display the following error mesage.</p>
 <p>Msg 18456, Level 14, State 1, Server &lt;server name&gt;, Line 1
@@ -7,3 +24,16 @@ Login failed for user '&lt;user name&gt;'</p>
 <p>2006-02-27 00:02:00.34 Logon     Login failed for user '&lt;user name&gt;'. [CLIENT: &lt;ip address&gt;]</p>
 <p>The key to the message is the 'State' which the server will accurately set to reflect the source of the problem.  In the example above, State 8 indicates that the authentication failed because the user provided an incorrect password.</p>
 <p>[http://blogs.msdn.com/sql_protocols/archive/2006/02/21/536201.aspx]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 9/17/2009 8:08:16 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

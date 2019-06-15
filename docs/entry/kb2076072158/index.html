@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>ActionScript: “TextField.text Gotcha: &bsol;&bsol;n becomes &bsol;&bsol;r” by Colin Moock - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>ActionScript: “TextField.text Gotcha: &bsol;&bsol;n becomes &bsol;&bsol;r” by Colin Moock</h3>
+
+<pre>
 <p>TextField.text Gotcha: \\n becomes \\r</p>
 <p>Here's a little TextField quirk: when you assign the string &quot;\\n&quot; (newline) to a TextField's text variable, ActionScript automatically converts it to a &quot;\\r&quot; character. For example,</p>
 <p>var t:TextField = new TextField()
@@ -8,3 +25,16 @@ trace(t.text.indexOf(&quot;\\n&quot;)); // -1</p>
 <p>&quot;Lines are separated by the carriage return character ('\\r', ASCII 13).&quot;</p>
 <p>But the docs fail to mention that &quot;\\n&quot; is converted to &quot;\\r&quot;.</p>
 <p>[http://www.moock.org/blog/archives/000281.html]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 7/31/2009 2:05:35 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

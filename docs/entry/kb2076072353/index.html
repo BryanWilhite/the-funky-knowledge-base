@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Silverlight 2.x: “Silverlight Tips, Tricks, and Best Practices” - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Silverlight 2.x: “Silverlight Tips, Tricks, and Best Practices”</h3>
+
+<pre>
 <p>Use CreateFromXaml to Reduce XAML Size</p>
 <p>Another takeaway from the sample application is how it uses CreateFromXaml to create XAML Image objects dynamically rather than cluttering the XAML file with scores of nearly identical Image declarations. The XAML file you see in Figure 4, Scene.xaml, is nearly empty. It declares a couple of Canvases and Rectangles, a Storyboard, and a ScaleTransform, but it doesn't declare a single Image object. Instead, a for loop in Default.html.js creates 105 Image objects—one per image in the animation—and initializes them with image bits from the downloader (see Figure 5).</p>
 <p>…</p>
@@ -5,3 +22,16 @@
 <p>One of the coolest features of Silverlight is its rich support for animations. You can make objects fade in and out, zoom across the page, and pop in and out of view with a few lines of XAML. But you can't animate just anything, at least not declaratively. You can easily animate numeric properties, Color properties, and Point properties. But if you want to, say, animate an image by varying its Source property over time (swapping one image for another on each tick), you'll have to write some code, and the way you structure that code will affect the quality of the animation.</p>
 <p>Silverlight 1.0 lacks an explicit timer object, and window.setTimeout is less than ideal for animations. That's why savvy Silverlight developers use Storyboard objects when they need programmable timers.</p>
 <p>[http://msdn.microsoft.com/en-us/magazine/cc164249.aspx]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 3/19/2010 5:52:54 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

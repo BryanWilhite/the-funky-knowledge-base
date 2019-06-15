@@ -1,5 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Firefox 3.x: Using the SQLite Databases to Get Bookmark Data - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Firefox 3.x: Using the SQLite Databases to Get Bookmark Data</h3>
+
+<pre>
 <p>This is a sample SQLite query to get all bookmark data in a folder with ID 69826:</p>
 <pre><code>select * from moz_places where id
     in(select fk from moz_bookmarks where parent=69826);
 </code></pre>
 <p>These tables are in the places.sqlite file.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 2/25/2010 9:08:42 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

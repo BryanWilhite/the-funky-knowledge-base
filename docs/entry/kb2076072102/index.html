@@ -1,2 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>AWK/GAWK and UTF-8; billposer.org - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>AWK/GAWK and UTF-8; billposer.org</h3>
+
+<pre>
 <p>GAWK is 8-bit clean, so any single-byte encoding can be used. If locale support is enabled, the locale correctly set, and the encoding one known to gawk, gawk will handle it correctly. However, GAWK presently (2004/06/21) supports Unicode only in part. Since gawk is 8-bit clean, UTF-8 text is processed correctly provided that gawk does not need to know how byte sequences are parsed into characters or to recognize particular codepoints. This means that UTF-8 text can be read and printed out correctly and that the basic parsing mechanisms will work so long as the field and record separators are ASCII characters. Searches for fixed strings will also work. The length() function, on the other hand, does not work correctly on UTF-8 text; it returns the number of bytes in the string rather than the number of characters. An important exception is that regular expression matching does work on UTF-8 text.</p>
 <p>[http://billposer.org/Linguistics/Computation/LectureNotes/AWK.html]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 2/19/2009 7:53:52 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

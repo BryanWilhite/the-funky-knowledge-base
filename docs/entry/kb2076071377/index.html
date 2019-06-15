@@ -1,3 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Windows NT Workstation PROBLEM: Manually Sweeping for File Buildup; Temporary Internet Files; .TMP files - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Windows NT Workstation PROBLEM: Manually Sweeping for File Buildup; Temporary Internet Files; .TMP files</h3>
+
+<pre>
 <p>When the %SystemDrive% (commonly drive C:) starts to fill up &quot;by attrition&quot; the culprit is usually two things: temporary Internet files and files left in the C:\\TEMP directory.</p>
 <p>Temporary Internet files are not always removed from the General &gt; Temporary Internet Files tab under Properties. Files may need to be manually removed from %SystemRoot%\\Temporary Internet Files and %SystemRoot%\\Profiles\\[UserName]\\Temporary Internet Files, where [UserName] is the logged in NT user. (NOTE: removing these files is not encouraged by Microsoft; remove these files at your own risk).</p>
 <p>More obscure zero-byte .TMP file may appear in (or under) the %SystemRoot% directory. Workstations with a Personal Web Server installation may also have .LOG files build up in the %SystemRoot%\\system32\\LogFiles\\W3SVC1 directory.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 2/17/2001 10:28:12 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

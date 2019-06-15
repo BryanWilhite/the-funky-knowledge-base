@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>SQL Server 2005 t-SQL: Flippant Remarks about Using XPath Assertions Instead of XML Schema - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>SQL Server 2005 t-SQL: Flippant Remarks about Using XPath Assertions Instead of XML Schema</h3>
+
+<pre>
 <p>For some crazy reason you may want to avoid making a CREATE XML SCHEMA COLLECTION statement but still validate your XML. Here is an example to do this with XPath assertions in XQuery:</p>
 <pre><code>IF (@xmlInput.exist('//HostName') = 0)
 OR (@xmlInput.value('string-length((//HostName/text())[1])','int') = 0)
@@ -13,3 +30,16 @@ END
 <p>This technique can be used in the discussion by Denis Ruckebusch filed under “Complementing XSD with CHECK constraints” here:</p>
 <pre><code>http://blogs.msdn.com/denisruc/archive/2006/08/22/713342.aspx
 </code></pre>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 12/11/2007 12:57:09 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

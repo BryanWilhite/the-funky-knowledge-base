@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Windows Server 2008: “Rsync error ‘socket operation on non-socket’”; cwRsync; Windows Data Execution Prevention (DEP) - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Windows Server 2008: “Rsync error ‘socket operation on non-socket’”; cwRsync; Windows Data Execution Prevention (DEP)</h3>
+
+<pre>
 <p>Some of our users have recently reported seeing the following error in their rsync logs:</p>
 <pre><code>rsync: Failed to dup/close: Socket operation on non-socket (108)
 rsync error: error in IPC code (code 14) at pipe.c(72) [sender=3.0.3]
@@ -15,3 +32,16 @@ rsync error: error in IPC code (code 14) at io.c(803) [sender=3.0.3]
 <p>Either change the DEP setting to “essential Windows programs and services only”, or add exceptions for the three programs required for rsync: rsync.exe, ssh.exe and ssh-keygen.exe. These programs are located in &quot;C:\\ProgramData\\BackupAssist v5\\temp\\Rsync&quot; on Windows Vista and Server 2008, or in &quot;C:\\Documents and Settings\\All Users\\Application Data\\BackupAssist v5\\temp\\Rsync&quot; on earlier versions of Windows.</p>
 <p>[http://www.backupassist.com/blog/support/
 rsync-error-socket-operation-on-non-socket/]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 9/23/2009 8:36:17 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

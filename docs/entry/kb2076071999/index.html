@@ -1,4 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>PHP and Simple XML: “Allowed memory size of 8388608 bytes exhausted”; simplexml - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>PHP and Simple XML: “Allowed memory size of 8388608 bytes exhausted”; simplexml</h3>
+
+<pre>
 <p>The PHP fatal error “Allowed memory size of 8388608 bytes exhausted” is thrown when Simple XML opens a “large” XML document. This issue is resolved by setting memory_limit  in php.ini or as a statement:</p>
 <pre><code>ini_set('memory_limit', '64M');
 </code></pre>
 <p>This error can be a reminder that Simple XML opens entire documents into memory.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 8/24/2008 5:36:39 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

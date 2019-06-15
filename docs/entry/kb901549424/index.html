@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Filter by Form Events; VBA Filter Property; Order of Events; Constants - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Filter by Form Events; VBA Filter Property; Order of Events; Constants</h3>
+
+<pre>
 <p>Filter by Form (applying the filter):
 Filter Event; FilterType = acFilterByForm = 0
 Apply Filter Event; ApplyType = acApplyFilter = 1
@@ -21,3 +38,16 @@ Current Event</p>
 Apply Filter Event; ApplyType = 1
 Current Event</p>
 <p>Setting Cancel = True inside the ApplyFilter event with VBA prevents the Filter by Form window from &quot;closing.&quot; This is not very useful. Setting the FilterOn property to False (and setting the TimerInterval property &gt; 0) during the ApplyFilter event may prove to be very useful. One caveat: we have seen that changing the FilterOn property against a valid filter causes the Current event to fire.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 7/29/1998 1:48:50 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>E4X and ActionScript: “Descendant accessors and namespaces in AS3.0” by Jodie O’Rourke - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>E4X and ActionScript: “Descendant accessors and namespaces in AS3.0” by Jodie O’Rourke</h3>
+
+<pre>
 <p>I recently encountered a problem, and with it, the lack of documentation around the use of the descendant accessor (double dot ..) in ActionScript 3.0. I was writing a web service adapter that would obviously need to traverse various XML namespaces (such as soap: and wsdl:), but found the shorthand notation wasn’t working as expected.</p>
 <p>Problem:</p>
 <p>You’re trying to use the double dot (..) descendant accessor with an XML document that declares one for more namespaces. When you try to use var myTags:XMLList = myXML..ElementName nothing appears to happen.</p>
@@ -7,3 +24,16 @@
 <p>In addition to using the (..) descendant accessor, because you’re now working with XML namespaces, you need to indicate that the tag you’re trying to access (at any depth) can belong to any (*) namespace. Normally to declare a namespace when traversing XML, you’d use myXML..ns::Tag, but by using the wildcard * it will pick-up the specified tags belonging to any namespace in the document.</p>
 <p>The clear limitation here is that if you only want to pick-up tags from a particular namespace inside your XML, such as wsdl or soap, you would need to specify these as a qualified Namespace object in the place of the wildcard.</p>
 <p>[http://www.jodieorourke.com/view.php?blog=news&amp;id=76]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 7/27/2009 10:14:46 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

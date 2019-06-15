@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>PHP 5.x: “How to sort an array of objects in PHP?”; stackoverflow.com - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>PHP 5.x: “How to sort an array of objects in PHP?”; stackoverflow.com</h3>
+
+<pre>
 <p>Here is a working code with a static method. It also uses the fact that the static method can access private ivars :) It also uses PHP awesome reflexivity &lt;3.</p>
 <p>The good point about that code is that Person is the class to provide the sort method, which is better on an OOP point of view. Only the class Person should be the one to know how to sort other Person. Neither People or another indepent function should.</p>
 <p>Note: not using is_callable(), as it only verifies if the parameter can be called as a function, but does not check if it's actually callable with the current visibility (public, private, protected)</p>
@@ -83,3 +100,16 @@ usort($people, array('People', 'comparePeople'));
 <p>As you can see, it looks very similar. I would not recommend you use the static approach. It's messier and violates the single responsibility principle.</p>
 <p>[http://stackoverflow.com/questions/1528561/
 how-to-sort-an-array-of-objects-in-php]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 10/6/2009 5:28:27 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

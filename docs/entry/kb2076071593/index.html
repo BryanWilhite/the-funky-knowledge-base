@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Windows Forms Databinding: Andrew Brust on the Importance of the EndCurrentEdit() Method; DotNetRocks!; RowJiggle() Hack; VB.NET; C# - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Windows Forms Databinding: Andrew Brust on the Importance of the EndCurrentEdit() Method; DotNetRocks!; RowJiggle() Hack; VB.NET; C#</h3>
+
+<pre>
 <p>The last 10 minutes of the Franklins.net DotNetRocks! show with Andrew Brust on March 31, 2003 deals with a data binding &quot;bug&quot; that's actually a feature. Here's the feature: when you open a Windows Form and enter data into a TextBox or ComboBox control bound to a DataSet and then close the form without moving to a new record or pressing some kind of Save button you will lose your changes.</p>
 <p>This wonderful feature of the .NET Framework was stumbled upon by me while building my first WinForms project. In a fit of rage and panic, I wrote this code:</p>
 <pre><code>Public Sub RowJiggle(ByRef BindContext As BindingContext, _
@@ -40,3 +57,16 @@ End Sub
 End Sub
 </code></pre>
 <p>This code rocks!</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 6/29/2004 8:57:14 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

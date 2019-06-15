@@ -1,3 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>ByVal and ByRef; Functions and Classes - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>ByVal and ByRef; Functions and Classes</h3>
+
+<pre>
 <p>When a variable is passed to a function, by default (since VB 4.0) it is passed by reference. If the variable is local to the procedure calling the function, an error will be generated if the function does not use the ByVal keyword in the argument list. However, module-level or Public variables can be passed.</p>
 <p>The opinion here is that the explicit use of ByRef against variables that are not object variables ultimately means that there will be several Public or module variables having their values changed in many different procedures. Logically managing these variables seems more difficult than using the Classes available in any OLE Automation object hosting VBA 5.0 and above (e.g. VB 4.0 and above or Access 95 and above).</p>
 <p>Before the advent of Visual Basic objects (in VB 3.x) ByVal was the default method of passing a variable to a function. To make the use of object variables &quot;easier,&quot; I suppose Microsoft was led to switch over to ByRef being default in the object-oriented world of Visual Basic.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 1/11/1999 9:34:33 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

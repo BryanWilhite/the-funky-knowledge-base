@@ -1,4 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>ASMX Web Services PROBLEM: Server Error; &quot;Cannot declare a namespace and a type&quot; Error; Strange Compilation Error - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>ASMX Web Services PROBLEM: Server Error; &quot;Cannot declare a namespace and a type&quot; Error; Strange Compilation Error</h3>
+
+<pre>
 <p>Description: &quot;An error occurred during the compilation of a resource required to service this request. Please review the following specific error details and modify your source code appropriately.&quot;</p>
 <p>Compiler Error Message: &quot;CS0010: Cannot declare a namespace and a type both named&quot; 'foo.bar'...</p>
 <p>This error occurs in Web Service projects referencing external assemblies. In my particular case these are Project references. The Solution will compile without errors or warnings. The server seems to throw when the ASMX files are unchanged but the referenced project code changes.</p>
 <p>The error goes away when an ASMX file is purposely modified and the solution is recompiled. In my particular case, I have the misfortune of compiling/running these ASMX files on IIS for Windows 2000 Workstation.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 7/28/2005 9:22:50 AM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

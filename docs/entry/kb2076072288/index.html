@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>“ASP.NET NTLM Authentication—is it worth it?”; Jeff Atwood - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>“ASP.NET NTLM Authentication—is it worth it?”; Jeff Atwood</h3>
+
+<pre>
 <p>At work, we have the luxury of assuming that everyone's on an intranet. So when it comes to identity management on our ASP.NET websites, NTLM authentication is the go-to solution. Why trouble the user with Yet Another Login Dialog when you can leverage the built in NTLM functionality of IIS and Internet Explorer? Just reach in and grab one of these Request.ServerVariables passed in through the HTTP headers:</p>
 <p>LOGON_USER  = HOMESERVER\\Jeff
 AUTH_USER   = HOMESERVER\\Jeff
@@ -19,3 +36,16 @@ REMOTE_USER = HOMESERVER\\Jeff</p>
 </code></pre>
 <p>I used to be a big believer in NTLM authentication in ASP.NET. However, after living with it for the last two years, I'm starting to wonder if we wouldn't all be better off with Yet Another Login Dialog.</p>
 <p>[http://www.codinghorror.com/blog/archives/000263.html]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 10/1/2009 9:15:26 AM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

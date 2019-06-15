@@ -1,4 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Windows 2000 PROBLEM: Domain Controller Does Not Allow Domain Users to Log on Locally; secedit
+ - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Windows 2000 PROBLEM: Domain Controller Does Not Allow Domain Users to Log on Locally; secedit
+</h3>
+
+<pre>
 <p>By default only account operators, administrators, backup operators, print operators, server operators, Internet guest account, and Terminal Services user account are assigned the right to log on locally to a Windows-based domain controller.</p>
 <p>Microsoft describes in detail how to edit the Default Domain Controllers Policy from the Microsoft Management Console in &quot;Assign 'Log On locally' Rights to Windows Domain Controller&quot; (MS KB Article Q234237). But what escaped me was to make the changes take effect immediately. This console command makes the changes take effect immediately:</p>
 <pre><code>secedit /refreshpolicy machine_policy
 </code></pre>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 7/29/2002 2:27:23 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

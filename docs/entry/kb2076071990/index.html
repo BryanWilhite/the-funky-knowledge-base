@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>OpenXML: Flippant Remarks about OpenXML - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>OpenXML: Flippant Remarks about OpenXML</h3>
+
+<pre>
 <p>No more shall the SDK for OpenXML be confused with the Word 2007 Content Control Toolkit.</p>
 <p>The strong word “Part” used throughout the OpenXML API, starting with the abstraction OpenXmlPart, represents a location in the ZIP OpenXmlPackage. In the same manner that an XML document contains nodes (or a database store contains tables), an OpenXML Package contains parts. The OpenXmlPart, as of today, does not define anything (useful to me) inside of an XML file.</p>
 <p>The SDK for OpenXML APIs do not define anything of significance inside of an XML file. This is most important piece of information I need about this SDK. It follows that the OpenXmlPart.GetStream() and OpenXmlPart.FeedData() methods are the most important members of the entire SDK for OpenXML. So, for example, silly me would be looking for a class called “DocumentPart” or (“GlossaryDocumentEntry”) in the OpenXML API which would correspond to the &lt;w:docPart&gt; element. As of today these types to do exist.</p>
@@ -8,3 +25,16 @@
 <p>[http://openxmldeveloper.org/archive/2008/03/13/OpenXMLSDK.aspx]</p>
 <p>“You need to remember following keywords as these are used more often in the world: Package, Parts, Relations…”</p>
 <p>[http://www.codeproject.com/KB/office/OpenXML_Very_Basics.aspx]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 8/19/2008 4:14:36 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

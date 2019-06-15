@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>WPF MVVM: “Rockford Lhotka—Initial thoughts on MVVM” - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>WPF MVVM: “Rockford Lhotka—Initial thoughts on MVVM”</h3>
+
+<pre>
 <p>It turns out that there are various ways of thinking about the role of a ViewModel. I think there are two broad approaches worth considering.
 ViewModel as Sole Data Source</p>
 <p>You can set up the ViewModel to be the sole data source for the View. In this case the ViewModel exposes all the properties and methods necessary to make the View function. This can work well with an anemic Model, where the Model is composed of a bunch of dumb data container objects (think DataTable, DTO and most entity objects).</p>
@@ -11,3 +28,16 @@ ViewModel as Sole Data Source</p>
 <p>Instead, have the ViewModel expose the Model as a property, alongside any additional methods or properties exposed purely by the ViewModel itself.</p>
 <p>Again, this presupposes the Model is powerful enough to support direct data binding to the View, which is the case with CSLA .NET business objects, but may not be the case with simpler DTO or entity objects (which probably don’t implement IEditableObject, etc).</p>
 <p>[http://www.lhotka.net/weblog/InitialThoughtsOnMVVM.aspx]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 3/24/2010 7:49:37 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

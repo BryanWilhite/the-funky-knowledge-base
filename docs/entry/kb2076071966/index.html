@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>UriBuilder Inserts Multiple Question Marks in Query Strings; C# Cookbook - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>UriBuilder Inserts Multiple Question Marks in Query Strings; C# Cookbook</h3>
+
+<pre>
 <p>From Jay Hilyard and Stephen Teilhet (C# Cookbook): “Every time you set the Query property, the UriBuilder class appends a ? to the front of the query string information.” This move should solve the problem:</p>
 <pre><code>Uri u = new Uri(&amp;quot;http://contoso.com/mypage.html?foo=0&amp;quot;);
 
@@ -39,3 +56,16 @@ builder.Query = queryString;
     }
 }
 </code></pre>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 6/25/2008 3:55:08 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

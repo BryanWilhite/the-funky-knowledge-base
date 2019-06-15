@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>ASP.NET: Security Issues Surrounding Writing to the Event Log - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>ASP.NET: Security Issues Surrounding Writing to the Event Log</h3>
+
+<pre>
 <p>By default, the ASPNET user does not have permissions to write to default event logs---even the Application log. One way to address this issue is to let your web application impersonate a user with the correct permissions by entering the impersonate element in the system.web element of the Web.config file:</p>
 <pre><code>&amp;lt;system.web&amp;gt;
     ...
@@ -9,3 +26,16 @@
 <pre><code>HKEY_LOCAL_MACHINE&amp;bsol;&amp;bsol;System&amp;bsol;&amp;bsol;CurrentControlSet&amp;bsol;&amp;bsol;Services&amp;bsol;&amp;bsol;EventLog
 </code></pre>
 <p>Add the ASPNET account and grant Full Control.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 9/21/2003 3:43:38 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

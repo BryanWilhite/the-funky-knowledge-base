@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>ASP.NET: Flippant Remarks about SQL Server Session State - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>ASP.NET: Flippant Remarks about SQL Server Session State</h3>
+
+<pre>
 <p>This is a sessionState element configured for SQL Server Session State:</p>
 <pre><code>&amp;lt;sessionState
     cookieless=&amp;quot;true&amp;quot;
@@ -8,3 +25,16 @@
 <p>In order for the server MyDBServer to be ready for this configuration, the InstallSqlState.sql script needs to run. This script creates a dependency on tempdb in SQL Server 2000 and permissions need to be set for ASPNET. And some of us may forget that tempdb is cleared and recreated every time SQL Server starts. This can be a management irritant for developers. It should not be a problem for operations staff supporting servers with large uptimes.</p>
 <p>SQL Server Session state can only persist objects that can be serialized. One way to get around this limitation is to load an array of the non-serializeable objects into Application memory and store index references to them in Session State.</p>
 <p>SQL Server Session state is more reliable but is not as fast as the alternatives.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 8/22/2005 1:01:19 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

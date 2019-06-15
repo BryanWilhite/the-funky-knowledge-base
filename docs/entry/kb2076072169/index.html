@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Silverlight: “Silverlight Tip of the Day #60—How to load a XAML Control From a File or String”; Mike Snow - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Silverlight: “Silverlight Tip of the Day #60—How to load a XAML Control From a File or String”; Mike Snow</h3>
+
+<pre>
 <p>If you have a control written in XAML that is included in your project you can load and create it directly from file by using the method:</p>
 <p>System.Windows.Markup.XamlReader.Load().This method can also be used to directly create a Silverlight control from a string.</p>
 <p>To demonstrate this I have created two functions called LoadFromXAML(). The first function takes takes as a parameter a URI that points to the XAML file in your project you want to load. The second takes as a parameter a string representation of the control.</p>
@@ -35,3 +52,16 @@ Button myButton = (Button) LoadFromXaml(buttonXAML);
 </code></pre>
 <p>[http://silverlight.net/blogs/msnow/archive/2008/10/09/
 silverlight-tip-of-the-day-60-how-to-load-a-control-straight-from-xaml.aspx]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 8/9/2009 9:19:00 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

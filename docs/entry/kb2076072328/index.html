@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>C# Code: An Example of Subtracting DateTime; Making the Future a Negative Number - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>C# Code: An Example of Subtracting DateTime; Making the Future a Negative Number</h3>
+
+<pre>
 <p>var countDown = new TimeSpan(DateTime.Now.Subtract(epsDate.Value).Ticks);</p>
 <p>data.DaysInterval = countDown.Days;
 data.IsDayOf = (countDown.Days == 0);
@@ -10,3 +27,16 @@ if (data.DaysInterval == 1) interval = &quot;1 Day&quot;;
 if ((Math.Abs(data.DaysInterval) &gt; 1) &amp;&amp; data.IsPastDue) interval = string.Format(&quot;{0} Days&quot;, Math.Abs(data.DaysInterval));
 if ((Math.Abs(data.DaysInterval) &gt; 1) &amp;&amp; !data.IsPastDue) interval = string.Format(&quot;in {0} Days&quot;, Math.Abs(data.DaysInterval));</p>
 <p>data.DisplayText = string.Concat(acronym, due, interval, &quot; (e)&quot;);</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 2/23/2010 4:27:34 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

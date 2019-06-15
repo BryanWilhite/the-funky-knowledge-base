@@ -1,6 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>VBScript and ASP Code Snippet: LOGON_USER Split(); vLoginDomainName, vLoginUserName  - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>VBScript and ASP Code Snippet: LOGON_USER Split(); vLoginDomainName, vLoginUserName </h3>
+
+<pre>
 <p>Dim vLogin : vLogin = Request.ServerVariables(&quot;LOGON_USER&quot;)</p>
 <p>Dim vLoginDomainName, vLoginUserName
 If InStr(1,vLogin,&quot;\\&quot;,vbTextCompare) &gt; 0 Then
 vLoginDomainName = Split(vLogin,&quot;\\&quot;,-1,vbTextCompare)(0)
 vLoginUserName = Split(vLogin,&quot;\\&quot;,-1,vbTextCompare)(1)
 End If</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 5/28/2002 2:36:23 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

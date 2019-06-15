@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Windows 2000 PROBLEM: Error: Trust Relationship between this workstation and the Domain Controller Failed - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Windows 2000 PROBLEM: Error: Trust Relationship between this workstation and the Domain Controller Failed</h3>
+
+<pre>
 <p>The following taken from Microsoft Certified Professional Magazine Online:</p>
 <pre><code>http://www.mcpmag.com/Features/article.asp?EditorialsID=187
 </code></pre>
@@ -7,3 +24,16 @@
 <p>If the problem still exists, it could be a timing issue. Go to the client, open a command prompt window, and enter this command:</p>
 <p>net time \\\\domaincontroller /set</p>
 <p>where &quot;domaincontroller&quot; is a valid DC name that can be used to synchronize time on the client. Remember that Kerberos requires that the time difference between the two systems be less than five minutes.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 2/11/2003 8:25:02 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

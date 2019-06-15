@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>“Filters in ASP.NET MVC CodePlex Preview 4”; Phil Haack 08/2008 - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>“Filters in ASP.NET MVC CodePlex Preview 4”; Phil Haack 08/2008</h3>
+
+<pre>
 <p>In CodePlex Preview 4 of ASP.NET MVC, we split out our action filters into four types of filters, each of which is an interface.</p>
 <pre><code>* IAuthorizationFilter
 * IActionFilter
@@ -19,3 +36,16 @@ IExceptionFilter</p>
 <p>One interesting thing to note is that exception filters run after result filters. So what can you do from an exception filter? Well we give you one last ditch chance to render something to the user by allowing you to set the action result in the exception filter. If that action result throws an exception, you’re SOL and the exception filter does not handle that exception. Well, you’re not totally SOL. The normal ASP.NET web.config settings for custom errors will kick in if you set them.</p>
 <p>[http://haacked.com/archive/2008/08/14/aspnetmvc-filters.aspx]</p>
 <p>[http://www.asp.net/LEARN/mvc/tutorial-14-cs.aspx]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 10/4/2009 7:50:23 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

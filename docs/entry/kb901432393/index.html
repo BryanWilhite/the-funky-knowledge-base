@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Access to VB: Use the Visible Property Instead of IsLoaded() - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Access to VB: Use the Visible Property Instead of IsLoaded()</h3>
+
+<pre>
 <p>Replace the IsLoaded() function that was available from Microsoft since Access 2.x with the Visible property of the default instance of an Access 97 form. For example, if the form frmMain has a module and is open then</p>
 <pre><code>Form_frmMain.Visible = True
 </code></pre>
@@ -8,3 +25,16 @@
 <pre><code>Forms!frmKB.Visible = True
 </code></pre>
 <p>WARNING: It has been my experience that accessing the Visible property through the Application of object is more reliable than via the default instance of a form. I recommend using the Immediate Window to test both objects (one may return False while the other returns True). I am sure Microsoft is working on this.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 7/28/1998 5:18:33 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>JavaScript: “Why does instanceof return false for some literals?”; stackoverflow.com - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>JavaScript: “Why does instanceof return false for some literals?”; stackoverflow.com</h3>
+
+<pre>
 <p>&quot;foo&quot; instanceof String //=&gt; false
 &quot;foo&quot; instanceof Object //=&gt; false
 true instanceof Boolean //=&gt; false
@@ -11,3 +28,16 @@ false instanceof Object //=&gt; false
 <p>…</p>
 <p>That’s because those things are primitives, and unless they need to be used as objects (when you are calling methods on them, for example) they remain so. The only time they “become” objects is when they need to be wrapped. If you are familiar with the concept of “boxing” in .NET, then think of it in that way.</p>
 <p>[http://stackoverflow.com/questions/203739/why-does-instanceof-return-false-for-some-literals]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 3/2/2010 2:41:39 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

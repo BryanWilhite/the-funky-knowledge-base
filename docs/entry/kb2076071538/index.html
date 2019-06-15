@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>C# and ASP.NET: Capturing All HTML Output from a Web Forms Page; ASPX; Respecting HTML/XHTML Standards with ASP.NET - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>C# and ASP.NET: Capturing All HTML Output from a Web Forms Page; ASPX; Respecting HTML/XHTML Standards with ASP.NET</h3>
+
+<pre>
 <p>The number one reason here to capture all HTML output during the life cycle of an ASPX page is to intercept any glaring HTML violations that Web Server controls currently produce. By default, we should find that ASP.NET server controls render something between XHTML and HTML 4.x which is effectively nothing that can be validated under any W3C standard.</p>
 <p>This problem is discussed in detail here:</p>
 <pre><code>http://www.liquid-internet.co.uk/content/dynamic/pages/series1article1.aspx
@@ -22,3 +39,16 @@
 }
 </code></pre>
 <p>We can see that the string HTML is replacing any substring &quot;foo&quot; with &quot;bar.&quot; Of course, more complex stuff can be done featuring Regular Expresssions. Thanks to Greg McCarty (gmccarty@bizmat.com) for the original design.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 9/30/2003 2:31:30 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

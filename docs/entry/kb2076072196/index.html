@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>PowerShell: “Getting Credentials From The Command Line”; Jeffrey Snover; Get-Credential - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>PowerShell: “Getting Credentials From The Command Line”; Jeffrey Snover; Get-Credential</h3>
+
+<pre>
 <p>When you use the Get-Credential cmdlet, you get a GUI dialog box to enter the credentials.  This is the &quot;Common Criteria Certified&quot; way of handling credentials.  It is also a pain in the butt at times.  If you are an admin, you can alter this and request credentials via the command line as follows:</p>
 <p>PS&gt; $key = &quot;HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\1\\ShellIds&quot;
 PS&gt; Set-ItemProperty $key ConsolePrompting True
@@ -12,3 +29,16 @@ Password for user ntdev\\jsnover: **************</p>
 <p>ntdev\\jsnover                                  System.Security.SecureString</p>
 <p>[http://blogs.msdn.com/powershell/archive/2008/06/20/
 getting-credentials-from-the-command-line.aspx]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 8/17/2009 5:07:20 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

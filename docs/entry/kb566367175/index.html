@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>VB: ADO; Using the Properties Collection of the Connection Object - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>VB: ADO; Using the Properties Collection of the Connection Object</h3>
+
+<pre>
 <p>I use the Properties Collection of the Connection object to enter custom log information during a database connection. For example the sub LogSession is called (repeatedly) during the ConnectComplete Event:</p>
 <p>Private Sub pADOcnn_ConnectComplete(ByVal pError As ADODB.Error, _
 adStatus As ADODB.EventStatusEnum, _
@@ -35,3 +52,16 @@ ByVal pConnection As ADODB.Connection)</p>
 End Sub
 </code></pre>
 <p>The Key strings for the Properties Collection is based on MS KB article Q193135 (&quot;INFO: Initialization Properties for SQLOLEDB OLE DB Provider&quot;).</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 2/9/2000 10:51:03 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

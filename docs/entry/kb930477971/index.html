@@ -1,3 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Design Note: An ASP &quot;Data Environment&quot;; Code-Only Equivalents to Visual Studio Designers - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Design Note: An ASP &quot;Data Environment&quot;; Code-Only Equivalents to Visual Studio Designers</h3>
+
+<pre>
 <p>As far as I am concerned, the Data Environment (and its Designer) associated with VB6 is a graphical representation of a concept that can be designed entirely in code. I am sure that historically the code came first then Microsoft built this GUI in order to &quot;help&quot; me. But, as usual, I am working backwards: the Data Environment Designer has shown me how to build a similar solution in code. The advantage of building a code-only Data Environment is portability. I can easily transfer this solution to from VB to ASP:</p>
 <p>The Data Environment stores all of the data access objects (stored procedures and T-SQL) in one logical location for my convenience. In the world of ASP, I use an ASP include file to store all such &quot;objects&quot; as string literals in the Session object.</p>
 <p>The Data Environment uses several dialogs (Property Pages) as a generic way to handle parameterized queries. In the world of ASP, I use the '?' character and the Replace method of the VBA Library in my own generic functions.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 3/31/2001 8:04:49 AM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

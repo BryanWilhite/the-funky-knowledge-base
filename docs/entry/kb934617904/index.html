@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>T-SQL: Implicit Descision Structures Using substring(), sign() and charindex(); the Sybase isnull() System Function - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>T-SQL: Implicit Descision Structures Using substring(), sign() and charindex(); the Sybase isnull() System Function</h3>
+
+<pre>
 <p>Database management systems like those made by Sybase do not support what Microsoft calls the &quot;Immediate If&quot; or IIF() functions in their implementation of SQL. Sybase does have the System function isnull() which effectively the VBA equivalent of:</p>
 <pre><code>IIF(&amp;lt;expression&amp;gt; is null, &amp;lt;value if true&amp;gt;, &amp;lt;value if false&amp;gt;)
 </code></pre>
@@ -36,3 +53,16 @@ SELECT cusip = @cusip
 </code></pre>
 <p>which, in English, says,  &quot;Start at position one of the string literal and return a string of length zero.&quot; Fortunately Sybase 11.x Adaptive Server's implementation of substring() does not blow up when a zero is used for the length argument. (Also the Sybase Transact SQL Users Guide reminds us that 'one' + '' + 'two' = 'one two' where a space has been inserted in place of the zero-length string. But this does not seem to happen when, I assume, substring() returns a zero length string.) Beware...</p>
 <p>The zero can show up in the length argument of substring() because of Charles' brilliant use of the sign() function: if the charindex() function nested within the sign() function can't find the string it is looking for it will return 0. If the condition is true, sign() returns 1. When sign() returns 1, it allows the substring() function it is nested in to return one character.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 8/15/1999 9:56:33 AM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

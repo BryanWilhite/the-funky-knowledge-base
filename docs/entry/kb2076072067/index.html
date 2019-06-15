@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>XSLT 1.0: Flippant Remarks about xsl:template match=&quot;node()|@*&quot;; Copying All Nodes to Edit One Node; Understanding xsl:template priority; Doug Tidwell - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>XSLT 1.0: Flippant Remarks about xsl:template match=&quot;node()|@*&quot;; Copying All Nodes to Edit One Node; Understanding xsl:template priority; Doug Tidwell</h3>
+
+<pre>
 <p>This declaration</p>
 <pre><code>xsl:template match=&amp;quot;node()|@*&amp;quot;
 </code></pre>
@@ -33,3 +50,16 @@
 &amp;lt;/xsl:template&amp;gt;
 </code></pre>
 <p>This move permits any other template next to the one above to be invoked upon a successful match especially when its priority is greater than -10. The awesome power in the xsl:apply-templates element lies in the fact that it is the only XSLT element (apart from xsl:apply-imports) that can call multiple templates—‘any other template next to the one above.’</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 11/10/2008 11:48:46 AM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

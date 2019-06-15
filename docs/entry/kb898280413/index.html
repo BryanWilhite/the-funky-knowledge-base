@@ -1,4 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>PROBLEM: a Column with &quot;Numbers&quot; And Text Is Not Sorting Correctly - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>PROBLEM: a Column with &quot;Numbers&quot; And Text Is Not Sorting Correctly</h3>
+
+<pre>
 <p>Suppose you have a function bound to a field in a query or form. This function performs calculations and then returns the number as a string. This will be the case when you want to use the Format() function in the bound function or return custom text messages as well as numerical values.</p>
 <p>The subsequent column of data based on the bound function will now be sorted as String data. To make sure that numbers sort properly, format numerical output with leading zeros. This is not too unattractive with percentages. For example, when MyValue = 0.05,</p>
 <p>Format(MyValue, &quot;000.000%&quot;) = &quot;005.000%&quot;</p>
 <p>makes only two leading zeros. However to make numbers larger than Integer sort properly, this method is not recommended.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 6/19/1998 11:32:12 AM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

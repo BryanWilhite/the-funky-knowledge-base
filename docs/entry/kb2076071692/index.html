@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>XSLT Markup: Flippant Remarks for Procedural Developers Writing XSL Templates; XSLT variables - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>XSLT Markup: Flippant Remarks for Procedural Developers Writing XSL Templates; XSLT variables</h3>
+
+<pre>
 <p>An XSL transformation is an XML document of declarations about how to rearrange the elements and attribute of another, source XML document. An XSL transformation might be seen as a &quot;type&quot; that derives from XML in the same way that any class definition ultimately extends the Object type.</p>
 <p>An XSL transformation is made up of templates. Remember they are called &quot;templates&quot;; they are not functions. Templates always have a contextual relationship with the source document.</p>
 <p>XSLT variables can only be assigned a value once. By chaining together declarations of variables/parameters based on values of other variables you can simulate mutability. It follows that incrementing a variable in the XSL equivalent of the for-next loop is obtained through a template 'chained' to itself (recursion). For more details about this, please see &quot;Tip: Loop with recursion in XSLT&quot; at:</p>
@@ -18,3 +35,16 @@
 &amp;lt;/xsl:variable&amp;gt;
 </code></pre>
 <p>In procedural terms, the xsl:choose element above is part of an &quot;anonymous template&quot; that returns a value to the variable @has_supported_property. Note that contents of the xsl:when and xsl:otherwise elements are &quot;result tree fragments.&quot; The example above should include xsl:text elements to really show this. This means that XSLT variables can be assigned fragments of XML.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 7/21/2005 12:43:11 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

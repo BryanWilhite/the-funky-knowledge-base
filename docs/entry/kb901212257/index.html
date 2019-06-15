@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>PROBLEM: Tab Control Does Not Recognize Alt-Key Combinations - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>PROBLEM: Tab Control Does Not Recognize Alt-Key Combinations</h3>
+
+<pre>
 <p>Using Alt-key combinations for the Tab Control may not work all the time in Access 97. What I have noticed is when the access keys are pressed, the focus does not change but the application &quot;beeps.&quot; This problem is intermittent. It appears to work correctly for tabs with fewer controls on them (three controls or less perhaps).</p>
 <p>One work-around for this problem is responding to the KeyDown event:</p>
 <pre><code>Private Sub Form_KeyDown(KeyCode As Integer, _
@@ -22,3 +39,16 @@ End Sub
 </code></pre>
 <p>Using this code, the beeps eventually stop while the Alt-key combinations are pressed.</p>
 <p>MSKB Article Q156222 (&quot;ACC95: Access Keys Do Not Work with Tabs on TabStrip Control&quot;) states &quot;Microsoft has confirmed this to be a problem in Microsoft Access 7.0. This problem no longer occurs in Microsoft Access 97.&quot;</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 4/28/1999 6:39:44 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

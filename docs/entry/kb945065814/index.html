@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>VBScript and ASP Design: Minimizing the Size of Script Blocks - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>VBScript and ASP Design: Minimizing the Size of Script Blocks</h3>
+
+<pre>
 <p>I use the Variant vHTML in my VBScript for ASP. This variable appears at the top of the script and concatenates itself and new HTML along the way to end of the script passing decision structures (and even calls to external functions in Include (.INC) files). Any HTML to be rendered by ASP is stored in this variable. This is one (of many) ways to render HTML in a script block:</p>
 <pre><code>&amp;lt;%@ LANGUAGE=&amp;quot;VBSCRIPT&amp;quot; %&amp;gt;
 &amp;lt;%
@@ -49,3 +66,16 @@
 </code></pre>
 <p>where the file adovbs.inc is the ADO constants file provided by Microsoft. Note that each file referenced by the #include directive may contain additional script blocks. The reason why the Option Explicit statement needs its own script block is that it must be the first line in the VBScript code. The assumption here is that the files referenced by #include contain VBScript blocks. The #include directive is the only server-side directive supported by .ASP pages (ASP.DLL); the others, by the way, are supported by SSINC.DLL (.SHTML or .STM pages by default).</p>
 <p>The main reasons to minimize script blocks is to increase runtime compilation speed and to reduce CPU usage. For more information please see &quot;Compiling Large ASP Pages Can Take 100% of CPU Time&quot; (Q193831) in the Microsoft Knowledge Base.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 12/12/1999 10:17:14 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

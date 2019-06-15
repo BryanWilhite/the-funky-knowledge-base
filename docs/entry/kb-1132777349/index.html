@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>COM Ports and Interrupts - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>COM Ports and Interrupts</h3>
+
+<pre>
 <p>There are three COM ports: COM1, COM2, COM3 and COM4. Two of these ports are physical (usually COM1 and COM2) and the other two are logical. Windows 95 deals with physical and logical ports much easier than Windows NT 4.0. NT tends to be closely tied to the hardware and thereby more closely tied to COM1 and COM2. For example, my default Windows NT installation only sees COM1 and COM2 in the Ports Control Panel Applet.</p>
 <p>Usually, COM1 shares interrupt 4 (IRQ4) with COM3; COM2 shares interrupt 3 (IRQ3) with COM4. Here is the summary of typical COM port addresses and interrupts:</p>
 <pre><code>COM1 03F8 - 03FF IRQ4
@@ -22,3 +39,16 @@ COM4 02E8 - 02EF IRQ3
 14 IDE Controller 
 </code></pre>
 <p>Note that interrupts 10 and 11 are generally not used.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 11/28/1998 5:31:50 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

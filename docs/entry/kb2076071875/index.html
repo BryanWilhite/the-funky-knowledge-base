@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>C# 2.0 Code: Using a Generic List&lt;T&gt; to Build an Array from a Generic Dictionary&lt;String, Object&gt; - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>C# 2.0 Code: Using a Generic List&lt;T&gt; to Build an Array from a Generic Dictionary&lt;String, Object&gt;</h3>
+
+<pre>
 <p>One of the many, many ways to use Generics in C# 2.0 is to build a strongly-typed Array from a Generic Dictionary&lt;String, Object&gt;. This form of Dictionary is useful for generating parameters for data commands. The challenge is to get this general-purpose collection of parameters into a “real” array of parameters that can be used by the .NET Framework:</p>
 <pre><code>List&amp;lt;IDataParameter&amp;gt; list =
     new List&amp;lt;IDataParameter&amp;gt;( parameterCollection.Count );
@@ -8,3 +25,16 @@ foreach ( KeyValuePair&amp;lt;String, Object&amp;gt; kvp in parameterCollection 
 return list.ToArray();
 </code></pre>
 <p>The GetParameter() member generates an object that implements IDataParameter.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 8/29/2007 12:37:28 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

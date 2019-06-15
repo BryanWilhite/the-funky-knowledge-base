@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>“Custom XML Serialization of a .NET class”; Robert Bogue [MVP] - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>“Custom XML Serialization of a .NET class”; Robert Bogue [MVP]</h3>
+
+<pre>
 <p>I love serialization -- right up to the point where it breaks. I have always found that it's difficult to get right if the out of the box stuff breaks. However, I may have changed my mind. I had to do some of my own serialization because some of the properties that I was working with in my class didn't serialize well. After a long and drawn out look at the problem here's my input:</p>
 <ol>
 <li>Implement the IXmlSerializable interface. It contains three methods</li>
@@ -9,3 +26,16 @@
 <p>That's all there is to writing your custom Xml Serialization interface. This way you don't have to worry about the dynamic assemblies.</p>
 <p>[http://thorprojects.com/blog/archive/2009/07/16/
 custom-xml-serialization-of-a-net-class.aspx]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 8/18/2009 6:48:49 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

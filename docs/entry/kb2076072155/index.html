@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>XAMPP: Disabling Perl and CGI - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>XAMPP: Disabling Perl and CGI</h3>
+
+<pre>
 <p>CGI:</p>
 <p>Comment out these modules in /opt/lampp/etc/httpd.conf:</p>
 <p>#LoadModule suexec_module modules/mod_suexec.so
@@ -8,3 +25,16 @@
 <p>#LoadModule perl_module        modules/mod_perl.so</p>
 <p>Also, keep this warning from /opt/lampp/htdocs/xampp/status.php:</p>
 <p>“Some changes to the configuration sometime may cause false negative status reports.”</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 7/30/2009 10:32:42 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>SQL Server 2005 PROBLEM: “Unable to determine if the owner (DOMAIN&bsol;&bsol;xxx) of job &lt;JOB_Name&gt; has server access (reason: error code 0x534. [SQLSTATE 42000] (Error 15404))”; Andrew Calvett - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>SQL Server 2005 PROBLEM: “Unable to determine if the owner (DOMAIN&bsol;&bsol;xxx) of job &lt;JOB_Name&gt; has server access (reason: error code 0x534. [SQLSTATE 42000] (Error 15404))”; Andrew Calvett</h3>
+
+<pre>
 <p>SQL Server Agent jobs can revert back to their previous owner. This can produce the error: “Unable to determine if the owner (DOMAIN\\xxx) of job &lt;JOB_Name&gt; has server access (reason: error code 0x534. [SQLSTATE 42000] (Error 15404))”</p>
 <p>Ultimately the sysdtspackages90 table might need updating. The following SQL statements help:</p>
 <p>--See who owns which packages
@@ -20,3 +37,16 @@ OWNERSID = SUSER_SID('YOUR_DOMAIN\\OLD_ACCOUNT')</p>
 <pre><code>http://sqlblogcasts.com/blogs/acalvett/
     archive/2007/12/30/the-job-whose-owner-kept-coming-back.aspx
 </code></pre>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 9/1/2008 8:28:56 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

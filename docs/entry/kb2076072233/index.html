@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>SOLID: “The Liskov Substitution Principle—Agile Software Development Principles Patterns and Practices” - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>SOLID: “The Liskov Substitution Principle—Agile Software Development Principles Patterns and Practices”</h3>
+
+<pre>
 <p>Liskov Substitution Principle</p>
 <p>“What is wanted is something like the following substitution property: If for each object o1 of type S there is an object o2 of type T such that for all programs P defined in terms of T, the behavior of P is unchanged when o1 is substituted for o2, then S is a subtype of T. [Liskov88]“</p>
 <p>Is it me, or is that painful to read?  Robert Martin puts it a bit simpler:</p>
@@ -62,3 +79,16 @@ Rectangle r = new Square();</p>
 <p>If you look at the test above, it will fail because a square is being substituted for a rectangle and the area won't be 10 as expected.  It will actually be 4 because “unexpectedly” in this case, both height and width are being set to each other when the width or height is set on a square.  Therefore, if this behavior by Square is unacceptable and unexpected, Square should not be a subclass of Rectangle (at least not coded like this with these expectations anyway).</p>
 <p>This is the whole point of the Liskov Substitution Principle.  It basically wants you to think clearly about the expected behavior and expectations of a class before you derive new classes from it.  It could turn out that when subclasses are substituted for a base class, you may get unexpected results.  This is where unit tests can really be handy.  The unit tests essentially describe and test for the expected behavior of objects (design by contract, if you will).</p>
 <p>[http://codebetter.com/blogs/david.hayden/archive/2005/06/11/64477.aspx]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 8/28/2009 10:20:40 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

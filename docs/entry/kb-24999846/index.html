@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Code: Passing Data between SQL And Access Tables - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Code: Passing Data between SQL And Access Tables</h3>
+
+<pre>
 <p>I have had problems using stored delete/update queries that involve changing data in SQL tables. The query would run without returning any error. It would also indicate SQL table rows have been deleted or changed. But when the SQL table is re-opened the records would reappear or revert to their original state.</p>
 <p>To avoid this issue entirely I have  written code that uses DAO objects instead of stored queries (other than SELECT queries). The following is a sketch of this technique:</p>
 <p>Module Level:
@@ -78,3 +95,16 @@ Resume DailyCalc_CleanSQLtbls_Exit</p>
 <pre><code>End Select
 </code></pre>
 <p>End Sub</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 9/9/1999 3:25:59 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

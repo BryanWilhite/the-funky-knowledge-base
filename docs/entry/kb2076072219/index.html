@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>XSLT: “Using Multiple URIResolvers for the Same Stylesheet” - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>XSLT: “Using Multiple URIResolvers for the Same Stylesheet”</h3>
+
+<pre>
 <p>A URIResolver, an interface defined in the javax.xml.transform package, is used to process a URI and create a Source object out of it. All Java developers working with XSLT have to decide which URIResolver they're going to use to resolve the URI.</p>
 <p>In small examples and code snippets this is very simple. However, when working with large systems that are styling dynamic content, the decision on which URIResolver to use can be a very important one that will help create a more flexible and scalable application. This article will show how a URIResolver is utilized to resolve a URI and how to create a URIResolver that will allow these references to be resolved differently within the same stylesheet.</p>
 <p>When we develop with Java and XSLT, a URIResolver is used to perform this function on the XSLT elements xsl:import and xsl:include as well as the XSL function document(). Commonly, relative URIs are used in these pieces of XSLT to reference other stylesheets or node sets. This will work beautifully if the developer is always aware of the base URI for the context in which he or she is currently developing. Keeping track of this can become complicated as more stylesheets are added to a system in different paths. For example, consider the folder structure shown in Figure 1.</p>
@@ -32,3 +49,16 @@ factory.setURIResolver(newServletContextURIResolver
 <p>This implementation is very simple, straightforward, and ready for immediate use. If the DelimitedKeyParser or the BuilderURIResolverFactory implementations do not meet the needs of an application, developers may choose to implement their own implementations. This is made possible by the use of the IKeyParser and IURIResolverFactory interfaces within the DispatchingURIResolver. While the provided BuilderURIResolverFactory and DelimiterKeyParser should meet the needs of most situations, the solution is flexible enough to take other forms because of the use of these interfaces (see Figure 6).</p>
 <p>The use of the DispatchingURIResolver gives developers creating applications using XSLT the flexibility to use more than one URIResolver for a Transformer. This opens up the door for many possibilities, including pulling stylesheets from different sources and generating dynamic stylesheets.</p>
 <p>[http://xml.sys-con.com/node/40655]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 8/27/2009 10:26:52 AM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>C# LINQ to XML: “Empty Elements and Self-Closing Tags”; XElement - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>C# LINQ to XML: “Empty Elements and Self-Closing Tags”; XElement</h3>
+
+<pre>
 <p>Last January, I blogged about an approach to normalizing LINQ to XML trees.  That post is based on another post, Manually Cloning LINQ to XML Trees.  In those posts, my code to clone an element would clone a self-closing element (&lt;Tag/&gt;) as self-closing, and an empty element with a start and end tag (&lt;Tag&gt;&lt;/Tag&gt;) as an element with start and end tag.</p>
 <p>But, in fact, this was not necessary – empty elements can be always serialized as self-closing elements – the XML specification states, “The representation of an empty element is either a start-tag immediately followed by an end-tag, or an empty-element tag.&quot;</p>
 <p>Further, per the specification, “the empty-element tag SHOULD be used, and SHOULD only be used, for elements which are declared EMPTY”.  This means that it’s always safe to serialize an empty element as a self-closing element, but sometimes it’s not correct to serialize an empty element with a start and end tag.</p>
@@ -75,3 +92,16 @@ Console.WriteLine(rootClone);
 <p>&lt;Root /&gt;</p>
 <p>[http://blogs.msdn.com/ericwhite/archive/
 2009/07/08/empty-elements-and-self-closing-tags.aspx]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 9/20/2009 9:30:05 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

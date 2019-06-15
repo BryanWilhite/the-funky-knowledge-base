@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Windows Server 2008: Notes on Moving a Hard Drive to a New Machine; Orphaned SIDs; TAKEOWN.EXE; ICACLS.EXE; Get-Acl; Set-Acl - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Windows Server 2008: Notes on Moving a Hard Drive to a New Machine; Orphaned SIDs; TAKEOWN.EXE; ICACLS.EXE; Get-Acl; Set-Acl</h3>
+
+<pre>
 <p>It is very possible that orphaned SIDs (security IDs for unknown users) will appear when a drive (virtual or physical) is moved to a new machine. What is worse is when the orphaned SID is the owner of the file/folder.</p>
 <p>Windows machines updated after the release of Vista have the TAKEOWN command for Administrators. This is the first command to use before any other permissions operations can be done (otherwise you may get strange permission-denied messages, even with root privileges).</p>
 <p>To take ownership of a directory root (c:\\root) and sub folders and files for the Administrators group, this is the form:</p>
@@ -19,3 +36,16 @@ rem ICACLS &quot;%%i&quot; /setowner &quot;DOMAIN\\%%i&quot; /T
 script-to-reset-home-directory-permissons-on-a-windows-share]</p>
 <p>Icacls on Technet [http://technet.microsoft.com/en-us/library/cc753525%28WS.10%29.aspx].</p>
 <p>Some idea of what PowerShell can do about this issue is in “Hey, Scripting Guy! How Can I Use Windows PowerShell to Determine the Owner of a File?” [http://www.microsoft.com/technet/scriptcenter/resources/qanda/apr08/hey0415.mspx].</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 9/28/2009 10:02:03 AM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

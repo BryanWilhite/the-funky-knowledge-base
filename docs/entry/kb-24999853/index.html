@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>MS-SQL and T-SQL: Deleting Records Not in Another Table - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>MS-SQL and T-SQL: Deleting Records Not in Another Table</h3>
+
+<pre>
 <p>Suppose Table1 has records that are not in Table2. Also suppose that Table1 and Table2 have a column named &quot;IndexColumn&quot; which can be used for an outer join.</p>
 <p>We want an outer join because we want to delete the records in Table1 that are not in Table2. In MS-SQL we have:</p>
 <pre><code>DELETE Table1.*
@@ -10,3 +27,16 @@ WHERE ((Table2.IndexColumn Is Null));
 WHERE IndexColumn
 NOT IN (SELECT IndexColumn FROM Table2)
 </code></pre>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 2/9/1999 11:36:41 AM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

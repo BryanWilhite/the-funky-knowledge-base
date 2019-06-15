@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Windows Forms: A DataGrid Bound &quot;Directly&quot; to a DataTable Is Actually Using the DefaultView; Disappearing New Rows - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Windows Forms: A DataGrid Bound &quot;Directly&quot; to a DataTable Is Actually Using the DefaultView; Disappearing New Rows</h3>
+
+<pre>
 <p>A DataGrid bound &quot;directly&quot; to a DataTable is actually using the DefaultView property of the DataTable. It follows that the RowFilter, RowStateFilter and Sort properties of the DefaultView suddenly become very important in the explanation of why new rows added to your DataGrid suddenly disappear as soon as they are left out of focus.</p>
 <p>To insure that the grid behaves somewhat predictably, this static member helps:</p>
 <pre><code>internal static void DataDefaultView(DataView TargetDefaultView)
@@ -7,3 +24,16 @@
     TargetDefaultView.Sort = String.Empty;
 }
 </code></pre>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 7/11/2004 12:56:22 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>“An explanation of the new /C and /I Switches that are available to use with Chkdsk.exe” - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>“An explanation of the new /C and /I Switches that are available to use with Chkdsk.exe”</h3>
+
+<pre>
 <p>Chkdsk.exe is the command-line interface for the CHKDSK program, which verifies the logical integrity of a file system. If CHKDSK encounters logical inconsistencies in file system data, CHKDSK performs actions that repair the file system data (assuming that the data is not in read-only mode).</p>
 <p>The /C and /I switches are valid only for a drive that is formatted in the NTFS file system. Each of the new switches directs the CHKDSK routine to bypass certain actions that CHKDSK would otherwise take to validate the integrity of NTFS data structures.</p>
 <p>…</p>
@@ -18,3 +35,16 @@ When disk corruption is detected on a volume, there are three basic options for 
 <p>Note however that running an abbreviated CHKDSK does not repair all of the corruption that might exist. You still need to run a full CHKDSK at some future time to guarantee that all recoverable data has in fact been recovered.</p>
 <p>Note also that NTFS does not guarantee the integrity of user data after an instance of disk corruption, even if you immediately run a full CHKDSK operation. There might be files that CHKDSK cannot recover, and files that CHKDSK does recover might still be internally corrupted. It remains vitally important that you protect mission-critical data by performing periodic backups or by using some other robust method of data recovery.</p>
 <p>[http://support.microsoft.com/?id=314835]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 8/17/2009 4:48:46 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

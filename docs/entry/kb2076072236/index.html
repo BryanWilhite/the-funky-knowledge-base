@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>“Basic Unit Testing Guidelines” by Chris Eargle - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>“Basic Unit Testing Guidelines” by Chris Eargle</h3>
+
+<pre>
 <p>When I recently started looking through a certain project’s tests, I was struck by how difficult it was for me to read and understand. The tests were laid out haphazardly, and the code contained enough logic to make me wonder if it would be easier to analyze the functional code. Tests don’t do anyone good if they require that much analysis. In contrast, one of my favorite open source projects contains tests that allow me to learn the functionality of the system without looking at any functional code.</p>
 <p>The intent of this post isn’t to describe advanced unit testing techniques but to describe a few guidelines that I feel should be implemented regardless if you’re mocking objects, using test driven development, or just want to ensure your code works. I am using Microsoft’s unit testing framework, but these same guidelines apply in most other unit testing frameworks.</p>
 <p>Name Code Files Sensibly</p>
@@ -48,3 +65,16 @@ Assert.IsFalse(account.Activated);
 <p>There are many more things you can do to create effective unit tests, but if you follow the few guidelines I have listed you will benefit immediately. It is important that it is easy for anyone looking at your tests to know how the system is supposed to behave. There is additional benefit in that you can harvest fixture and test names to create functional documentation for your software.</p>
 <p>[http://www.kodefuguru.com/post/2009/07/23/
 Basic-Unit-Testing-Guidelines.aspx]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 8/28/2009 11:24:42 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

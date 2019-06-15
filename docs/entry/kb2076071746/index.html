@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>C# Code: Loading A Bunch of Files - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>C# Code: Loading A Bunch of Files</h3>
+
+<pre>
 <p>#region Unpack server log files and combine:</p>
 <p>string root = Environment.ExpandEnvironmentVariables(@&quot;C:\\data\\raw_logs&quot;);
 if (Directory.Exists(root))
@@ -44,3 +61,16 @@ this.WriteToLog(String.Format(&quot;{0}{1}&quot;, Diagnostics.RunConsoleCommand(
 <p>this.WriteToLog(String.Format(&quot;Clearing archive temp folder…{0}&quot;, Environment.NewLine));
 this.WriteToLog(String.Format(&quot;{0}{1}&quot;, Diagnostics.RunConsoleCommand(String.Format(@&quot;del /q {0}\\access*&quot;, archiveTmpFolder)), Environment.NewLine));</p>
 <p>#endregion</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 6/2/2006 9:46:42 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

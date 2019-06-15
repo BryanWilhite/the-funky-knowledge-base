@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>T-SQL Code: Adding/Refreshing Login and User Metadata; CreateUsers.sql; Troubleshooting Orphaned Users - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>T-SQL Code: Adding/Refreshing Login and User Metadata; CreateUsers.sql; Troubleshooting Orphaned Users</h3>
+
+<pre>
 <p>/*</p>
 <p>This script is inspired by two MS KB articles:</p>
 <p>&quot;PRB: 'Troubleshooting Orphaned Users' Topic in Books Online is Incomplete&quot;</p>
@@ -28,3 +45,16 @@ END
 BEGIN
 EXECUTE sp_change_users_login 'update_one','myLogin','myLogin'
 END</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 3/27/2005 9:11:45 AM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

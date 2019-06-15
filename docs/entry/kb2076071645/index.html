@@ -1,4 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Web Service Exception: &quot;The type System.Collections.Hashtable is not supported because it implements IDictionary.&quot;; System.NotSupportedException - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Web Service Exception: &quot;The type System.Collections.Hashtable is not supported because it implements IDictionary.&quot;; System.NotSupportedException</h3>
+
+<pre>
 <p>Over two years ago, Dare Obasanjo explained to us why an ASMX exception can occur when a type implements IDictionary. In &quot;XML Serialization in the .NET Framework&quot; Dare writes, &quot;The XmlSerializer cannot process classes implementing the IDictionary interface. This was partly due to schedule constraints and partly due to the fact that a hashtable does not have a counterpart in the XSD type system. The only solution is to implement a custom hashtable that does not implement the IDictionary interface.&quot; The rest of this article, as of this writing, is here:</p>
 <pre><code>http://msdn.microsoft.com/library/en-us/dnexxml/html/xml01202003.asp
 </code></pre>
 <p>Using the [NonSerialized()] attribute to hide members that cannot be serialized does not appear to avoid this problem.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 2/13/2005 9:07:58 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

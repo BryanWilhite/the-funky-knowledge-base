@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>JavaServer Faces in Action Notes: Chapter 1; Introducing JavaServer Faces; 1.5.4 Configuration with faces-config.xml; 1.5.5 Configuration with web.xml - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>JavaServer Faces in Action Notes: Chapter 1; Introducing JavaServer Faces; 1.5.4 Configuration with faces-config.xml; 1.5.5 Configuration with web.xml</h3>
+
+<pre>
 <p>1.5.4 Configuration with faces-config.xml</p>
 <p>&quot;Technically, JSF supports multiple configuration files, but we'll keep things simple for now.&quot;</p>
 <p>&quot;...a JSF configuration file is an XML document whose root node is &lt;faces-config&gt;...&quot;</p>
@@ -7,3 +24,16 @@
 <p>1.5.5 Configuration with web.xml</p>
 <p>&quot;All J2EE web applications are configured with a web.xml deployment descriptor; Faces applications are no different.&quot; However, JSF deployment descriptors require that the &lt;servlet&gt; element contain a &lt;servlet-class&gt; declaration referencing the FacesServlet (javax.faces.webapp.FacesServlet).</p>
 <p>With the &lt;servlet&gt; declaration, a &lt;servlet-mapping&gt; declaration must follow. In Eclipse running a Tomcat-based Dynamic Web Project, the auto-generated &lt;url-pattern&gt; element contains *.faces. This implies that your faces markup in hello.jsp can only be called with hello.faces. This does not imply that the &lt;welcome-file-list&gt; should contain &lt;welcome-file&gt; elements with hello.jsp or hello.faces.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 3/12/2007 3:15:33 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

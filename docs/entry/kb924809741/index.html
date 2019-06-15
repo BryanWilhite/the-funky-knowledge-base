@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>VB Code: The &quot;Are You Sure?&quot; Message Box During Form_Unload - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>VB Code: The &quot;Are You Sure?&quot; Message Box During Form_Unload</h3>
+
+<pre>
 <p>Private Sub Form_Unload(Cancel As Integer)
 '
 'This sub makes sure the user really wants to quit.
@@ -8,3 +25,16 @@ Cancel = (VBA.MsgBox(&quot;Are you sure you want &quot; _
 &amp; &quot;to quit?&quot;,  vbYesNo + vbDefaultButton2 + _
 vbQuestion, VB.App.ProductName) = vbNo)
 End Sub</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 4/22/1999 8:40:49 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

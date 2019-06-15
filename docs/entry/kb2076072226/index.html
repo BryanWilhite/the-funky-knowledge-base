@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Java SE: “Sorting Strings” by John Zukowski - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Java SE: “Sorting Strings” by John Zukowski</h3>
+
+<pre>
 <p>Sorting strings with the Java platform can be thought of as an easy task, but there is much more thought that should be put into it when developing programs for an international market. If you're stuck in the English-only mindset, and you think your program works fine because it shows that the string tomorrow comes after today, you might think all is great. But, once you have a Spanish user who wants mañana to be sorted properly, if all you use is the default compare() method of String for sorting, the ñ character will come after the z character and will not be the natural Spanish ordering, between the n character and o character. That's where the Collator class of the java.text package comes into play.</p>
 <p>Imagine a list of words</p>
 <pre><code>* first
@@ -71,3 +88,16 @@ EventQueue.invokeLater (runner);
 }
 }</p>
 <p>[http://blogs.sun.com/CoreJavaTechTips/entry/sorting_strings]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 8/27/2009 9:24:44 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

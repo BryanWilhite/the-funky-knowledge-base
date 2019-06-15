@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>“What does ‘yield break;’ do in C#?”; StackOverflow.com - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>“What does ‘yield break;’ do in C#?”; StackOverflow.com</h3>
+
+<pre>
 <p>It specifies that an iterator has come to an end. You can think of yield break as return statement which does not return value.</p>
 <p>For example, if you define a function as iterator, a body of the function may look like this:</p>
 <p>for (int i = 0; i &lt; 5; i++) {
@@ -19,3 +36,16 @@ i++;
 <p>Console.Out.WriteLine(&quot;Won't see me&quot;);</p>
 <p>In this case last statement is never executed because we left function early.</p>
 <p>[http://stackoverflow.com/questions/231893/what-does-yield-break-do-in-c]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 8/17/2009 11:22:42 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

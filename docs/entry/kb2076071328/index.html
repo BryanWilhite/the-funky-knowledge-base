@@ -1,2 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>VBScript, ADO and ASP: Preventing Error 3001 by Avoiding the Split() Function - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>VBScript, ADO and ASP: Preventing Error 3001 by Avoiding the Split() Function</h3>
+
+<pre>
 <p>Avoid using the Split() function to pass an array to ADO objects (such as the Command object). Use the Array() function instead. The Split() function and the Array() function both return arrays but they must not be of the same &quot;type&quot; (internally?) with respect to ADO.</p>
 <p>Recall this issue when faced with this error while using ADO: &quot;Error 3001: The application is using arguments that are of the wrong type, are out of acceptable range, or are in conflict with one another.&quot;</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 11/7/2000 8:02:00 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

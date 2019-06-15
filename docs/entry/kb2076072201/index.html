@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>“yield (C# Reference)”; MSDN - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>“yield (C# Reference)”; MSDN</h3>
+
+<pre>
 <p>Used in an  iterator block to provide a value to the enumerator object or to signal the end of iteration. It takes one of the following forms:</p>
 <pre><code>yield return &amp;lt;expression&amp;gt;;
 
@@ -13,3 +30,16 @@ yield break;
 <p>A yield statement can not be used in body of finally block.</p>
 <p>Using  try/finally blocks with yield return statement inside them is unsafe if iteration performed using MoveNext/Current methods. Execution of statements inside finally block is not guaranteed. They will be executed only after all values before block will be iterated and next one requested OR IDisposable.Dispose method called on IEnumerator. Finally statements will not be executed during garbage collection as compiler generated iterator class have no finalizer. Using with foreach is safe as compiler will generate call to Dispose.</p>
 <p>[http://msdn.microsoft.com/en-us/library/9k7k7cf0(VS.80).aspx]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 8/17/2009 10:03:18 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

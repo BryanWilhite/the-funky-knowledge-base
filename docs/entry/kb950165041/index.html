@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>The Differences among Empty, Nothing, vbNull, vbNullChar, vbNullString and the Zero-Length String - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>The Differences among Empty, Nothing, vbNull, vbNullChar, vbNullString and the Zero-Length String</h3>
+
+<pre>
 <p>Back in the days of VB 5.0, Keith Pleas in &quot;Avoid Programming Pitfalls&quot; (currently at http://msdn.microsoft.com/library/periodic/period98/kp0398.htm) writes:</p>
 <p>[begin quote]</p>
 <p>To keep from being embarrassed, you should know these terms:</p>
@@ -12,3 +29,16 @@
 <p>[end quote]</p>
 <p>From the above I draw the following conclusions: The Zero-length string is old-fashioned and used for backward compatibility with previous versions of VB; use of vbNullString is recommended. The Empty string should be used in statements with Variants. The Nothing keyword should be used in statements with object variables. The vbNull constant is used to determine if a Variant contains Null via the VarType() function; this is used in procedures involving database result sets. The vbNullChar and vbNullString constants are primarily for communicating with APIs written in C or C++.</p>
 <p>For more information please see MSDN library article &quot;The meaning of zero&quot; (http://msdn.microsoft.com/library/books/advnvb5/Ch07_31.htm).</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 3/1/2000 7:31:45 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

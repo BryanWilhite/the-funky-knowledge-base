@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>IIS 6.0: Anonymous Access and Sub-Authentication; IISSUBA.DLL - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>IIS 6.0: Anonymous Access and Sub-Authentication; IISSUBA.DLL</h3>
+
+<pre>
 <p>In IIS 5.x and below we may remember the Allow IIS to control password check box under Properties &gt; Directory Security &gt; Edit &gt; Authentication Methods &gt; Anonymous User Account. In IIS 6.0, this check box is not available and the functionality behind this check box is not enabled by default.</p>
 <p>This technology is called &quot;sub-authentication&quot; and it is not good because it reduces the level of security of IIS 6.0 and forces IIS 6.0 to run in the INETINFO process and forces the local SYSTEM account to impersonate the account specified for anonymous access. This is because when IIS is allowed to &quot;control&quot; the Anonymous User password, it actually completely ignoring it.</p>
 <p>The reason why IIS 6.0 does this is to prevent a user account from logging on to a domain controller, which does not allow users to log on locally be default. Unfortunately this exposes the local SYSTEM account to the network.</p>
@@ -7,3 +24,16 @@
 <p>and the IIS Metabase:</p>
 <pre><code>AnonymousPasswordSynch=True
 </code></pre>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 10/6/2003 7:11:54 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

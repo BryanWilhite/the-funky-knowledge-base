@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>T-SQL: Values Stored in Sybase/Microsoft Sysobjects Table - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>T-SQL: Values Stored in Sybase/Microsoft Sysobjects Table</h3>
+
+<pre>
 <p>When browsing a Microsoft or Sybase SQL Server database, looking for system objects, use a query of form:</p>
 <pre><code>SELECT name FROM sysobjects
 WHERE type = '&amp;lt;type&amp;gt;'
@@ -16,3 +33,16 @@ TR - Trigger
 U - User table
 V - View
 X - Extended stored procedure</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 2/9/1999 11:37:47 AM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>VB PROBLEM: Cannot Get My Code to &quot;Wait&quot; on a Form When the Form is Designed to Be a Custom Dialog Box - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>VB PROBLEM: Cannot Get My Code to &quot;Wait&quot; on a Form When the Form is Designed to Be a Custom Dialog Box</h3>
+
+<pre>
 <p>Suppose that the form frmDialog is meant to be a custom dialog that is called from code. The form takes values (like a user name and a password) and returns them to the calling procedure. The problem is the calling procedure does not &quot;wait&quot; for the values returned from the form.</p>
 <p>To stop execution of code while the frmDialog is visible, open frmDialog modally with the form:</p>
 <pre><code>Call frmDialog.Show(Modal:=vbModal, _
@@ -26,3 +43,16 @@ Else
 End If
 </code></pre>
 <p>where the Unload() Method of the VB Object removes the frmDialog UI from memory. Setting frmDialog = Nothing removes the frmDialog code from memory such that when it is called again, its variables wil be reinitialized.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 3/1/1999 1:47:08 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

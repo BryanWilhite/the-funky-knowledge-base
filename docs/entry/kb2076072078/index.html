@@ -1,5 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Flippant Remarks about the Java application launcher - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Flippant Remarks about the Java application launcher</h3>
+
+<pre>
 <p>An overview of the Java application launcher is here:</p>
 <pre><code>http://java.sun.com/j2se/1.4.2/docs/tooldocs/windows/java.html
 </code></pre>
 <p>The most important thing someone from the Microsoft Windows world needs to understand about the Java application launcher is that we can execute a class with its fully qualified name—and this class does not correspond to a dedicated file on disk. Rather, this class can exist in any of the locations on the class path. It follows that you are not required to use a physical *.class or *.jar file in the class argument.</p>
 <p>The second most important thing to understand is that when the -jar option is used, “the JAR file is the source of all user classes, and other user class path settings are ignored.” This is why one would rarely use the -jar option. One would place *.jar references in the -classpath option and call out class names instead.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 12/2/2008 1:30:26 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

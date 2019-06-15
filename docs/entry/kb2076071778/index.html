@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>SQL Server 2005 t-SQL: Bulk Insert Operation - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>SQL Server 2005 t-SQL: Bulk Insert Operation</h3>
+
+<pre>
 <p>DECLARE @cmd VARCHAR(512)
 DECLARE @lf CHAR(1)
 SET @lf = CHAR(10) --Unix line break
@@ -8,3 +25,16 @@ WITH
 (
 ROWTERMINATOR = '''+@lf+'''
 )</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 10/20/2006 4:00:35 AM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

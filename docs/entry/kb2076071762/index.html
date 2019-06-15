@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Ubuntu Linux: Flippant Remarks about Setting Up Ubuntu Server in Virtual PC 2004 - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Ubuntu Linux: Flippant Remarks about Setting Up Ubuntu Server in Virtual PC 2004</h3>
+
+<pre>
 <p>Allocating 48MB of RAM for an Ubuntu Server VM running a LAMP image is reasonable. 96MB seems more than enough for a single-user development environment. The VM hard drive image should be about 1GB.</p>
 <p>The foremost issue is getting the console display to appear correctly in Virtual PC 2004. Edit /boot/grub/menu.lst to change the first entry in the list of Automagic Kernels such that:</p>
 <pre><code>kernel /boot/vmlinuz-2.6.10-5-386 root=/dev/hda1 ro quiet splash
@@ -23,3 +40,16 @@
 <pre><code>http://www.microsoft.com/windowsserversystem/
     virtualserver/evaluation/linuxguestsupport/default.mspx
 </code></pre>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 9/28/2006 1:08:05 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

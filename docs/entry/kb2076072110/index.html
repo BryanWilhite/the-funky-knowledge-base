@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Zend Framework PROBLEM: Configured Routes with Camel-Casing Throw ‘Action Not Found’ Exceptions - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Zend Framework PROBLEM: Configured Routes with Camel-Casing Throw ‘Action Not Found’ Exceptions</h3>
+
+<pre>
 <p>In versions of the Zend Framework greater than 1.0.3, case sensitivity matters for Controller actions specified in configuration files (including XML configuration files). This means that the following declared route will throw an exception because the document Controller does not have a public method written as documentcode:</p>
 <pre><code>&amp;lt;routes&amp;gt;
     &amp;lt;documentByCode&amp;gt;
@@ -30,3 +47,16 @@
 </code></pre>
 <p>Now the Framework will look for documentCode with the case sensitivity and find it without exceptions. For more information, see 10.13.3. “Migrating from 1.0.x to 1.5.0 or Newer”:</p>
 <p>http://framework.zend.com/manual/en/zend.controller.migration.html</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 3/21/2009 10:07:15 AM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>SQL Server 2000: UTC datetime values; GETUTCDATE() - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>SQL Server 2000: UTC datetime values; GETUTCDATE()</h3>
+
+<pre>
 <p>From Eron Wright's Blog: &quot;You can convert local datetime values to UTC datetime values, and vice-versa, using the built-in GETUTCDATE() function:&quot;</p>
 <pre><code>DECLARE @LocalDate DATETIME
 SET @LocalDate = GETDATE()
@@ -14,3 +31,16 @@ SELECT @LocalDate, @UTCDate, @LocalDate2
 <p>&quot;Note that GETUTCDATE() returns the current datetime in UTC. By comparing the value with GETDATE() we can determine the time zone, which can then be used to adjust any date.&quot; For more information see:</p>
 <pre><code>http://geekswithblogs.net/ewright/archive/2004/09/14/11180.aspx
 </code></pre>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 1/14/2006 9:52:53 AM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

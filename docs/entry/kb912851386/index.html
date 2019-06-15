@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Windows NT Registry: Starting a Disabled Copy of NT from a &quot;Satellite&quot; Copy of NT - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Windows NT Registry: Starting a Disabled Copy of NT from a &quot;Satellite&quot; Copy of NT</h3>
+
+<pre>
 <p>Windows NT may fail to start correctly because of an errant Registry setting. For example, disabling the Service that handles the keyboard is cruel and unusual punishment (trust me on this). In most of these software-related boot failures, disabled (or enabled) Services prevent NT from loading. In case of these fires, a &quot;satellite&quot; copy of Windows NT is useful. A compact (~70MB) install of NT can be used to revive the main install.</p>
 <p>The rescue procedure involves using REGEDT32.EXE from the compact install to load the appropriate Hive of the main install. For more details on loading Hives and the ideas surrounding this procedure, please see the following Microsoft Knowledge Base Article: &quot;How to Disable a Service or Device that Prevents NT from Booting&quot; (Q165748).</p>
 <p>I must say that it is unfortunate that upwards of 70MB of files are needed to load one Registry-editing utility. Surely, Microsoft, there must be a better way! In the mean time, I note some &quot;cryptic&quot; infromation that will &quot;make sense&quot; once the MSKB article is recalled:</p>
@@ -12,3 +29,16 @@ Automatic = 0x2
 Manual = 0x3
 Disabled = 0x4
 </code></pre>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 12/24/2000 2:29:34 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

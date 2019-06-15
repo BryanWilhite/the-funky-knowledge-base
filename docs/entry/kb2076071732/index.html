@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Word 2003 Problem: Word Loads VSTO Projects with Latest .NET Runtime by Default for Debugging; Visual Studio Tools for Office 2003 - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>Word 2003 Problem: Word Loads VSTO Projects with Latest .NET Runtime by Default for Debugging; Visual Studio Tools for Office 2003</h3>
+
+<pre>
 <p>Ken Laws of Microsoft writes the following: &quot;Once Visual Studio 2005 is installed you may encounter problems debugging your VSTO 2003 project from within Visual Studio 2003. This is again a result of Microsoft Office loading the project in the 2.0 Framework. A couple of options that you have for debugging would be to convert the project to a VSTO 2005 project and you could then debug using Visual Studio 2005 or you could also implement an app config file to force Microsoft Office to load the project in the 1.1. Framework.&quot;</p>
 <p>This is the format of the configuration file:</p>
 <pre><code>&amp;lt;configuration&amp;gt;
@@ -13,3 +30,16 @@
 <pre><code>http://msdn.microsoft.com/library/
     en-us/cpguide/html/cpcontargetingnetframeworkversion.asp
 </code></pre>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 1/25/2006 10:59:07 AM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

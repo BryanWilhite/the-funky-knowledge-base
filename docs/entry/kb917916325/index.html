@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>T-SQL: Renaming a Table Containing Data; Saving/Restoring Data from a Dropped Table; SELECT INTO - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>T-SQL: Renaming a Table Containing Data; Saving/Restoring Data from a Dropped Table; SELECT INTO</h3>
+
+<pre>
 <p>Sometimes is is better to DROP a table instead of using the ALTER TABLE or sp_rename commands. If the table has data in it, use the SELECT INTO syntax to create a temporary table. For example:</p>
 <pre><code>SELECT *
 INTO tmpTable
@@ -9,3 +26,16 @@ SELECT (Col1, Col2, Col3)
 FROM tmpTable
 </code></pre>
 <p>Column lists are used here as omitting column lists may not be supported on all servers. Once the table (&quot;MyTable&quot;) gets its data back, we would then DROP &quot;tmpTable.&quot;</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 12/24/2000 2:57:04 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

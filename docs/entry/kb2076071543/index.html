@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>C# and ASP.NET: Writing HTML Targeted from Code-Behind Designs; Using Regular Expressions to Write HTML - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>C# and ASP.NET: Writing HTML Targeted from Code-Behind Designs; Using Regular Expressions to Write HTML</h3>
+
+<pre>
 <p>Although the title of this article makes no mention of it, my remarks here will be flippant:</p>
 <p>You can target areas of an HTML page for writing by using a combination of the PlaceHolder Control (System.Web.UI.WebControls.PlaceHolder), the Literal Control (System.Web.UI.WebControls.Literal) and by running tags at the server (with the runat=&quot;server&quot; attribute). For efficiency, most controls can be accessed via the HtmlGenericControl class. The C# code below finds an HTML HEAD element with attributes id=&quot;Head&quot; and runat=&quot;server&quot; and formats its &quot;inner HTML&quot; with Regular Expressions:</p>
 <p>protected void FormatHead()
@@ -42,3 +59,16 @@ if(GenControl != null)
 &lt;/head&gt;</p>
 <p>Note that you can't run LINK or SCRIPT tags at the server with empty strings or any kind of bogus place holders without causing an exception to be thrown. If you insist, you can try some kind of data-binging design but this violates my new principle of using only tags in my HTML pages.</p>
 <p>So, flippantly speaking, Regular Expressions are cool but right about now I am more attracted to using the PlaceHolder control to load *.ascx pages and then using Literal controls inside those pages to be targeted by an HtmlTextWriter in a code-behind design.</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 10/30/2003 1:02:08 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

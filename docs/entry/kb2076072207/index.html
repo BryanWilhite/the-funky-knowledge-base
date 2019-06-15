@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>WPF: Implementing a Notify Icon without Windows Forms; Philipp Sumi; CodeProject.com - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>WPF: Implementing a Notify Icon without Windows Forms; Philipp Sumi; CodeProject.com</h3>
+
+<pre>
 <p>I discovered that there’s no built-in NotifyIcon available within the WPF namespace—I had to fall back to the component of the Windows Forms namespace. So far so good, but I quickly started to miss quite a few features, including:</p>
 <pre><code>* Rich ToolTips rather than text
 * WPF context menus and popups
@@ -9,3 +26,16 @@
 <p>Just like the WinForms NotifyIcon, this control is basically a wrapper around the Shell_NotifyIcon function of the Windows API. It does, however, support the latest improvements (up to Vista), including richer ToolTips (with a fallback mechanism for Windows xp) and custom icons for balloon messages.</p>
 <p>In case you want to start your own implementation (be it WPF or not), you can basically take the code of the Interop namespace along with the helper methods in the Util class and you should be good to go: The classes and enums there provide you with a clean and well documented façade to Shell_NotifyIcon and related classes.</p>
 <p>[http://www.codeproject.com/KB/WPF/wpf_notifyicon.aspx]</p>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 8/18/2009 6:57:32 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>

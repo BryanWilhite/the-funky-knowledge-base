@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>MCAD/MCSD Notes: Chapter 5, Lesson 3; Processing Transactions - the funky knowledge base</title>
+</head>
+<body>
+    <h1>the funky knowledge base</h1>
+    <h2>personal notes from way, _way_ back and maybe today</h2>
+
+<section class="entry">
+    <h3>MCAD/MCSD Notes: Chapter 5, Lesson 3; Processing Transactions</h3>
+
+<pre>
 <p>Lesson 3: Processing Transactions</p>
 <p>The purpose of this lesson is to recognize the existence of functionality in the .NET framework that can be considered transactional. However, it is clear that &quot;real&quot; (distributed) transactions are covered only by COM+ Enterprise Services. So the transaction features of ADO.NET 1.x are confined to a single connection object. The .NET Framework 2.0 context introduces the System.Transactions namespace. For more information please see &quot;ADO.NET and System.Transactions&quot; by John Papa here:</p>
 <pre><code>http://msdn.microsoft.com/msdnmag/issues/05/02/DataPoints/default.aspx
@@ -28,3 +45,16 @@
 <p>The Transaction attribute of the @Page directive starts a new transaction. The static methods of the System.EnterpriseServices.ContextUtil class are used to commit or abort MTS (or MS DTS) transactions in ASP.NET pages. These static methods are SetComplete() and SetAbort() (which correspond to Page events CommitTransaction() and AbortTransaction() respectively). For more information see &quot;MTS Transactions&quot; here:</p>
 <pre><code>http://samples.gotdotnet.com/quickstart/aspplus/doc/mtstransactions.aspx
 </code></pre>
+
+</pre>
+
+    <span class="date"> <strong>mod date:</strong> 5/24/2005 1:49:19 PM </span>
+</section>
+
+
+<footer>
+        &copy; 2019 Bryan D. Wilhite
+        <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+</footer>
+</body>
+</html>
