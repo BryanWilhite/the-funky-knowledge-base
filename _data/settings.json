@@ -1,3 +1,9 @@
 {
-    "siteName": "the funky knowledge base"
+    "siteName": "the funky knowledge base",
+    "url": "",
+    "description": "personal notes from way, _way_ back and maybe today",
+    "author": {
+        "name": "Bryan D. Wilhite",
+        "twitter": "@BryanWilhite"
+    }
 }
