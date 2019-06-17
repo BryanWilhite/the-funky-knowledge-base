@@ -1,0 +1,19 @@
+---
+layout: layouts/base.html
+pagination:
+    alias: entries
+    data: collections.entries
+    size: 100
+---
+<div class="pagination">
+    <a href="{{ pagination.firstPageHref }}">«</a>
+    <a href="{{ pagination.previousPageHref }}">‹</a>
+    <span class="position">{{ pagination.pageNumber }} / {{ pagination.hrefs.length }}</span>
+    <a href="{{ pagination.nextPageHref }}">›</a>
+    <a href="{{ pagination.lastPageHref }}">»</a>
+</div>
+<ol>
+    {%- for entry in entries %}
+    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+    {% endfor -%}
+</ol>
