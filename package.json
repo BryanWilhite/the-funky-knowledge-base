@@ -1,8 +1,15 @@
 {
     "name": "the-funky-knowledge-base",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/BryanWilhite/the-funky-knowledge-base"
+    },
     "version": "0.0.1",
     "scripts": {
-        "build": "eleventy",
-        "start": "eleventy --serve"
+        "build": "npx eleventy",
+        "start": "npx eleventy --serve"
+    },
+    "devDependencies": {
+        "@11ty/eleventy": "^0.8.3"
     }
 }
