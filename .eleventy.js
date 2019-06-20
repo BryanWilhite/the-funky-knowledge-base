@@ -13,8 +13,8 @@ module.exports = function(config) {
           output: "docs",
           includes: "templates"
         },
-        templateFormats : ["html", "md", "css"],
         htmlTemplateEngine : "liquid",
-        markdownTemplateEngine : "liquid"
+        markdownTemplateEngine : "liquid",
+        templateFormats : ["html", "md", "css"]
       };
 };
