@@ -13,7 +13,7 @@ pagination:
     <a href="{{ pagination.lastPageHref }}">»</a>
 </div>
 <ol>
-    {%- for entry in entries %}
+    {%- for entry in entries | reverse %}
     <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
     {% endfor -%}
 </ol>
