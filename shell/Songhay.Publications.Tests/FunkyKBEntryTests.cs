@@ -37,13 +37,19 @@ namespace Songhay.Publications.Tests
                     .Trim();
 
                 var jO = JObject.Parse(frontMatterJson);
-                var date = jO["date"]?.Value<DateTime>();
 
-                Assert.NotNull(date);
+                string getUtcDate(string propertyName)
+                {
+                    var date = jO[propertyName]?.Value<DateTime>();
+                    Assert.NotNull(date);
 
-                jO["date"] = date.Value
-                    .ToUniversalTime()
-                    .ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fff'Z'");
+                    var utcDate = date.Value
+                        .ToUniversalTime()
+                        .ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fff'Z'");
+                    return utcDate;
+                }
+
+                new [] { "date", "modificationDate" }.ForEachInEnumerable(i => jO[i] = getUtcDate(i));
 
                 frontMatterJson = jO.ToString();
 
@@ -51,7 +57,7 @@ namespace Songhay.Publications.Tests
 
                 this._testOutputHelper.WriteLine($"{nameof(frontMatter)}:{Environment.NewLine}{frontMatter}");
 
-                var md = $"{frontMatter}{Environment.NewLine}{lines.SkipWhile(i => !i.EqualsInvariant("---")).Skip(1).Aggregate((a, i) => $"{a}{i}")}";
+                var md = $"{frontMatter}{Environment.NewLine}{lines.SkipWhile(i => !i.EqualsInvariant("---")).Skip(1).Aggregate((a, i) => $"{a}{Environment.NewLine}{i}")}";
 
                 File.WriteAllText(entryInfo.FullName, md);
             }
