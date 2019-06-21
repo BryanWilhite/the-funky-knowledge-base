@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Text;
 using Newtonsoft.Json.Linq;
 using Songhay.Extensions;
 using Songhay.Tests;
@@ -57,9 +58,14 @@ namespace Songhay.Publications.Tests
 
                 this._testOutputHelper.WriteLine($"{nameof(frontMatter)}:{Environment.NewLine}{frontMatter}");
 
-                var md = $"{frontMatter}{Environment.NewLine}{lines.SkipWhile(i => !i.EqualsInvariant("---")).Skip(1).Aggregate((a, i) => $"{a}{Environment.NewLine}{i}")}";
+                var builder = new StringBuilder();
+                builder.AppendLine(frontMatter);
+                builder.AppendLine(lines
+                    .SkipWhile(i => !i.EqualsInvariant("---"))
+                    .Skip(1)
+                    .Aggregate((a, i) => $"{a}{Environment.NewLine}{i}"));
 
-                File.WriteAllText(entryInfo.FullName, md);
+                File.WriteAllText(entryInfo.FullName, builder.ToString());
             }
         }
 
