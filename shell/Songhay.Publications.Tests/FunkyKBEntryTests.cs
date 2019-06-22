@@ -17,7 +17,8 @@ namespace Songhay.Publications.Tests
             this._testOutputHelper = helper;
         }
 
-        [Theory, InlineData("../../../../../entry/")]
+        [Theory(Skip="⚠ running this again should be redundant or even destructive"),
+            InlineData("../../../../../entry/")]
         public void ShouldEditEntryDates(string entryRoot)
         {
             entryRoot = FrameworkAssemblyUtility.GetPathFromAssembly(this.GetType().Assembly, entryRoot);
@@ -69,7 +70,8 @@ namespace Songhay.Publications.Tests
             }
         }
 
-        [Theory, ProjectFileData(typeof(FunkyKBEntryTests), "../../../../../entry/kb904850341.md")]
+        [Theory(Skip="⚠ running this again should be redundant or even destructive"),
+            ProjectFileData(typeof(FunkyKBEntryTests), "../../../../../entry/kb904850341.md")]
         public void ShouldLoadEntry(FileInfo mdInfo)
         {
             var mdFrontMatterLines = File
