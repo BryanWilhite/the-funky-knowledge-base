@@ -1,9 +1,7 @@
 using System;
 using System.IO;
 using System.Linq;
-using System.Text;
 using Newtonsoft.Json.Linq;
-using Songhay.Extensions;
 using Songhay.Tests;
 using Xunit;
 using Xunit.Abstractions;
@@ -27,11 +25,11 @@ namespace Songhay.Publications.Tests
             foreach (var groupInfo in groupRootInfo.GetFiles("*.json"))
             {
                 var jO = JObject.Parse(File.ReadAllText(groupInfo.FullName));
-                var jA = jO["ChildSegments"]?.Value<JArray>();
+                var jA = jO["Documents"]?.Value<JArray>();
 
                 Assert.NotNull(jA);
                 Assert.True(jA.Any());
-                jO["ChildSegments"] = JArray.FromObject(jA.OrderByDescending(i => i["CreateDate"].Value<DateTime>()));
+                jO["Documents"] = JArray.FromObject(jA.OrderByDescending(i => i["CreateDate"].Value<DateTime>()));
 
                 File.WriteAllText(groupInfo.FullName, jO.ToString());
             }
