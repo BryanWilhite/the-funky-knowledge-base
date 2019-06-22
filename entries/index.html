@@ -7,18 +7,18 @@ pagination:
     reverse: true
 ---
 <div class="pagination mdc-typography--headline3">
-    <a class="material-icons" href="./{{ pagination.firstPageHref }}" title="first page">first_page</a>
+    <a class="material-icons" href="{{ settings.url }}{{ pagination.firstPageHref }}" title="first page">first_page</a>
     {%- if pagination.pageNumber != null -%}
-    <a class="material-icons" href="./{{ pagination.previousPageHref }}" title="previous page">arrow_back_ios</a>
+    <a class="material-icons" href="{{ settings.url }}{{ pagination.previousPageHref }}" title="previous page">arrow_back_ios</a>
     {%- endif -%}
     {%- assign pageNumber = pagination.pageNumber -%}
     {%- assign pageCount = pagination.hrefs.length -%}
     <span class="position">{{ pageNumber }} / {{ pageCount }}</span>
-    <a class="material-icons" href="./{{ pagination.nextPageHref }}" title="next page">arrow_forward_ios</a>
-    <a class="material-icons" href="./{{ pagination.lastPageHref }}" title="last page">last_page</a>
+    <a class="material-icons" href="{{ settings.url }}{{ pagination.nextPageHref }}" title="next page">arrow_forward_ios</a>
+    <a class="material-icons" href="{{ settings.url }}{{ pagination.lastPageHref }}" title="last page">last_page</a>
 </div>
 <ol class="pagination mdc-list mdc-typography--headline4">
     {%- for entry in entries %}
-    <li class="mdc-list-item"><a href="./entry/kb{{ entry.data.documentId }}">{{ entry.data.title }}</a></li>
+    <li class="mdc-list-item"><a href="{{ settings.url }}entry/kb{{ entry.data.documentId }}">{{ entry.data.title }}</a></li>
     {% endfor -%}
 </ol>
