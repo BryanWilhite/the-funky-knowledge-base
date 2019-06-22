@@ -19,6 +19,6 @@ pagination:
 </div>
 <ol class="pagination mdc-list mdc-typography--headline4">
     {%- for entry in entries %}
-    <li class="mdc-list-item"><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+    <li class="mdc-list-item"><a href="./entry/kb{{ entry.data.documentId }}">{{ entry.data.title }}</a></li>
     {% endfor -%}
 </ol>
