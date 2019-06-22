@@ -4,17 +4,6 @@ pagination:
     data: kb.index.ChildSegments
     size: 1
 ---
-<div class="pagination mdc-typography--headline3">
-    <a href="{{ pagination.firstPageHref }}" title="first page">«</a>
-    {%- if pagination.pageNumber != null -%}
-    <a href="{{ pagination.previousPageHref }}" title="previous page">‹</a>
-    {%- endif -%}
-    {%- assign pageNumber = pagination.pageNumber -%}
-    {%- assign pageCount = pagination.hrefs.length -%}
-    <span class="position">{{ pageNumber }} / {{ pageCount }}</span>
-    <a href="{{ pagination.nextPageHref }}" title="next page">›</a>
-    <a href="{{ pagination.lastPageHref }}" title="last page">»</a>
-</div>
 {%- assign groupMeta = pagination.items[0] -%}
 {%- assign group = kb.group[groupMeta.SegmentId] -%}
 <h3>“{{ pagination.items[0].SegmentName }}” has {{ group.Documents.length }} entries.</h3>

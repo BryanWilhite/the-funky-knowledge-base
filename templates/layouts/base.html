@@ -23,7 +23,7 @@
         <header class="mdc-top-app-bar mdc-top-app-bar--short">
             <div class="mdc-top-app-bar__row">
                 <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-                    <a href="{{ settings.url }}" class="material-icons mdc-top-app-bar__navigation-icon">arrow_back_ios</a>
+                    <a href="{{ settings.url }}" class="material-icons mdc-top-app-bar__navigation-icon">first_page</a>
                     <span class="mdc-top-app-bar__title">{{ settings.siteName }}</span>
                 </section>
                 <section class="description mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
@@ -35,7 +35,7 @@
             {{ content }}
         </main>
         <footer>
-            <span class="home"><a href="./">[home]</a></span>
+            <span class="home"><a href="{{ settings.url }}">[home]</a></span>
             <span class="index"><a href="./entries/">[index]</a></span>
             <span class="copyright">&copy; {{ "now" | date: "%Y" }} {{ settings.author.name }}</span>
             <span class="twitter"><a href="https://twitter.com/{{ settings.author.twitter }}">@{{ settings.author.twitter }}</a></span>
