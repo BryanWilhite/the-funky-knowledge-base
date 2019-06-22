@@ -4,4 +4,6 @@ This repo stores in static files notes taken since the 1990s. I started taking n
 
 This _feels_ like the final resting place of my funky notes.
 
+<https://bryanwilhite.github.io/the-funky-knowledge-base/>
+
 @[BryanWilhite](https://twitter.com/BryanWilhite)
