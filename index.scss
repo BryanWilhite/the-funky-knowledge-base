@@ -22,8 +22,9 @@ body {
   .mdc-top-app-bar {
     background-color: $color-bg;
 
-    section.description {
+    & section.description {
       font-size: small;
+      padding-right: 2rem;
     }
   }
 
@@ -33,28 +34,28 @@ body {
   }
 
   main {
-    margin-top: 2rem;
-    padding: 1rem;
+    margin-top: 2rem !important;
+    padding: 1rem !important;
 
-    .entry {
+    & > .entry {
       background-color: #cfc;
       color: #000080;
       font-family: Consolas, Monaco, "Andale Mono", "DejaVu Sans Mono",
         monospace;
       padding: 1rem;
     }
-    .meta {
+    & > .meta {
       color: #cfc;
     }
   }
 
   footer {
-    span {
+    & > span {
       display: inline-block;
       font-size: small;
       margin-right: 1em;
     }
-    .copyright {
+    & > .copyright {
       font-size: x-small;
     }
   }
