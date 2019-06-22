@@ -2074,10 +2074,13 @@ body {
     text-decoration-color: #66cdaa; }
   body .mdc-top-app-bar {
     background-color: #363636; }
+    body .mdc-top-app-bar section.description {
+      font-size: small; }
   body main,
   body footer {
     margin: 1rem; }
   body main {
+    margin-top: 2rem;
     padding: 1rem; }
     body main .entry {
       background-color: #cfc;

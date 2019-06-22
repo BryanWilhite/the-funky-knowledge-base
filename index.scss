@@ -21,6 +21,10 @@ body {
 
   .mdc-top-app-bar {
     background-color: $color-bg;
+
+    section.description {
+      font-size: small;
+    }
   }
 
   main,
@@ -29,6 +33,7 @@ body {
   }
 
   main {
+    margin-top: 2rem;
     padding: 1rem;
 
     .entry {
