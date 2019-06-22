@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>MCAD/MCSD Notes: Chapter 2, Lesson 2; Responding to Events</h3>
 <section class="entry">
-    <h3>MCAD/MCSD Notes: Chapter 2, Lesson 2; Responding to Events</h3>
 
-<pre>
-<p>Lesson 2: Responding to Events</p>
+    <p>Lesson 2: Responding to Events</p>
 <p>The purpose of this lesson is detail Web application events from the page level to the application level. Dino Esposito further details the sequential, cyclical process of page-level events in &quot;The ASP.NET Page Object Model: One Day in the Life of an ASP.NET Web Page&quot; here:</p>
 <pre><code>http://msdn.microsoft.com/library/en-us
     /dnaspp/html/aspnet-pageobjectmodel.asp
@@ -91,16 +98,19 @@ Validation events (solely of the validation server controls)
 <p>The lesson refers to &quot;Cached events&quot; for the sake of completeness but not clarity. This term should not be confused with &quot;cache events&quot;: Cache events are not really .NET Framework events but are a design pattern featuring the CacheItemRemovedCallback delegate. This is discussed in detail in Chapter 12, &quot;Optimizing Web Applications with Caching&quot; under &quot;Responding to Cache Events.&quot;</p>
 <p>Cached events reveal the design goal of the ASP.NET team to try as much as possible to replicate Windows Forms eventing by &quot;postponing&quot; events on the client and processing them later on the server.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2004-11-18T01:21:57.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

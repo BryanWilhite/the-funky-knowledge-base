@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>PowerShell: Using Windows PowerShell “Here-Strings”; Windows PowerShell Tip of the Week; TechNet</h3>
 <section class="entry">
-    <h3>PowerShell: Using Windows PowerShell “Here-Strings”; Windows PowerShell Tip of the Week; TechNet</h3>
 
-<pre>
-<p>We want to assign our string value to a variable named $x; that’s why we started things off with $x = followed by @&quot;, the syntax that represents the start of our here-string. (Which, we should add, needs to be on a line all by itself.) We then indicate the end of the here-string by typing the construction &quot;@, also on a line by itself.</p>
+    <p>We want to assign our string value to a variable named $x; that’s why we started things off with $x = followed by @&quot;, the syntax that represents the start of our here-string. (Which, we should add, needs to be on a line all by itself.) We then indicate the end of the here-string by typing the construction &quot;@, also on a line by itself.</p>
 <p>The cool part, however, is what lies in-between the beginning and the end of the here-string. In between the opening line and the closing line all we have to do is type the string value exactly the way we want it assigned; in turn, PowerShell will respect any line breaks, double and single quote marks, and blank spaces we type in. Suppose we wanted to type each word and punctuation mark on a separate line. In that case, our here-string (or at least the first part of it) would look like this:</p>
 <p>$x = @&quot;
 &quot;
@@ -53,16 +60,19 @@ exactly as shown here.</p>
 <p>[http://www.microsoft.com/technet/scriptcenter/resources/
 pstips/jun07/pstip0629.mspx]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-08-19T01:46:53.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

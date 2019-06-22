@@ -1,0 +1,56 @@
+$color-bg: #363636;
+$color-fg: #fefff1;
+$color-link: #66cdaa;
+
+body {
+  background-color: $color-bg;
+  color: $color-fg;
+
+  a {
+    &:active,
+    &:link,
+    &:visited {
+      color: $color-link;
+      text-decoration: none;
+    }
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: $color-link;
+    }
+  }
+
+  .mdc-top-app-bar {
+    background-color: $color-bg;
+  }
+
+  main,
+  footer {
+    margin: 1rem;
+  }
+
+  main {
+    padding: 1rem;
+
+    .entry {
+      background-color: #cfc;
+      color: #000080;
+      font-family: Consolas, Monaco, "Andale Mono", "DejaVu Sans Mono",
+        monospace;
+      padding: 1rem;
+    }
+    .meta {
+      color: #cfc;
+    }
+  }
+
+  footer {
+    span {
+      display: inline-block;
+      font-size: small;
+      margin-right: 1em;
+    }
+    .copyright {
+      font-size: x-small;
+    }
+  }
+}

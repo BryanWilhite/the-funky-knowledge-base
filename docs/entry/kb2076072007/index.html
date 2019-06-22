@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,30 +20,39 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Nullable&lt;T&gt; Usage Guidelines; Krzysztof Cwalina</h3>
 <section class="entry">
-    <h3>Nullable&lt;T&gt; Usage Guidelines; Krzysztof Cwalina</h3>
 
-<pre>
-<p>CONSIDER using Nullable&lt;T&gt; to represent values that might not be present (i.e. optional values).</p>
+    <p>CONSIDER using Nullable&lt;T&gt; to represent values that might not be present (i.e. optional values).</p>
 <p>Do NOT use Nullable&lt;T&gt; unless you would use a reference type in a similar manner, taking advantage of the fact that reference type values can be null.</p>
 <p>AVOID using Nullable&lt;bool&gt; to represent a general three-state value.</p>
 <p>AVOID using System.DBNull. Prefer Nullable&lt;T&gt; instead.</p>
 <p>Nullable&lt;T&gt; is in general a better representation of optional database values. One thing to consider though it that while Nullable&lt;T&gt; gives you the ability to represent null values, you don’t get database null operational semantics. Specifically, you don’t get null propagation through operators and functions. If you deeply care about the propagation semantics, consider sticking with DBNull.</p>
 <p>[http://blogs.msdn.com/kcwalina/archive/2008/07/16/Nullable.aspx]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2008-08-25T02:16:46.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

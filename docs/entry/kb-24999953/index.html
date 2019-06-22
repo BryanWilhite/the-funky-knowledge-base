@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,28 +20,37 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Iomega; Zip Drive; Windows 95 Plug And Play Procedure for Turning on And Off</h3>
 <section class="entry">
-    <h3>Iomega; Zip Drive; Windows 95 Plug And Play Procedure for Turning on And Off</h3>
 
-<pre>
-<p>Since the Zip's AC adapter gets hot if left on (and the drive is not needed all the time) it should be turned off.</p>
+    <p>Since the Zip's AC adapter gets hot if left on (and the drive is not needed all the time) it should be turned off.</p>
 <p>The straight-forward method involves turning the drive off, and rebooting Windows 95. Because the drive is turned off, Windows 95 fails to detect the drive and disables the driver with a &quot;device not functioning properly&quot; message in the Device Manager. Unfortunately, turning the drive on after Win95 has deemed the driver function invalid generates more errors and the Zip will not function.</p>
 <p>To turn the Zip drive off (and on) without errors, the driver must be disabled in the Device Manager by unchecking the Original Configuration box under Device Usage in the Properties... section of the Device Manager while the Zip is powered on. After Windows 95 disables the driver the Zip drive can be powered off.</p>
 <p>To activate the driver and the drive, turn the Zip on, put in a disk and check the Original Configuration box in the Device Manager.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 1998-11-29T01:09:34.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

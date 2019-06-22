@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Windows 2000 Server: Flippant Remarks about Building a Virtual Router</h3>
 <section class="entry">
-    <h3>Windows 2000 Server: Flippant Remarks about Building a Virtual Router</h3>
 
-<pre>
-<p>I saved a few hundred dollars by avoiding purchasing additional services from my broadband provider by connecting multiple computers to one Internet connection. With the purchase and installation of an additional NIC, my Windows 2000 server was ready to become a software-based router.</p>
+    <p>I saved a few hundred dollars by avoiding purchasing additional services from my broadband provider by connecting multiple computers to one Internet connection. With the purchase and installation of an additional NIC, my Windows 2000 server was ready to become a software-based router.</p>
 <p>The entire journey to this goal was difficult. I really can't remember what I did to get it to work but at least I remember where the miserable journey started. First I realized that my broadband provider might be clever enough to figure out that I wanted to connect to their network with a &quot;real&quot; router and charge me more per month. With that in mind, I discovered the following article, &quot;Using Windows 2000 as a Home or Small Business Gateway,&quot; at:</p>
 <pre><code>http://www.microsoft.com/serviceproviders/
     columns/windows_2000_home_office_gateway.asp
@@ -37,16 +44,19 @@
 </code></pre>
 <p>I hope I never have to refer to this document within the context of trying to set up RRAS again. Networking has never been my strong suit.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2002-01-15T08:43:15.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

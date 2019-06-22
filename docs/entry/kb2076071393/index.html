@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,26 +20,35 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>MERCURY POISONING</h3>
 <section class="entry">
-    <h3>MERCURY POISONING</h3>
 
-<pre>
-<p>While fish is an important source of protein and other essential nutrients, there is a danger of mercury poisoning associated with eating too much of a certain type of fish. The level of methyl mercury found in fish varies, depending on the type of fish. For the top-ten seafood species (canned tuna, shrimp, pollock, salmon, cod, catfish, clams, flatfish, crabs, and scallops), the level of mercury is low, weighing in at less than 0.2 ppm (parts per million). However, for shark and swordfish, the level of mercury jumps to 1.0 ppm.</p>
+    <p>While fish is an important source of protein and other essential nutrients, there is a danger of mercury poisoning associated with eating too much of a certain type of fish. The level of methyl mercury found in fish varies, depending on the type of fish. For the top-ten seafood species (canned tuna, shrimp, pollock, salmon, cod, catfish, clams, flatfish, crabs, and scallops), the level of mercury is low, weighing in at less than 0.2 ppm (parts per million). However, for shark and swordfish, the level of mercury jumps to 1.0 ppm.</p>
 <p>To prevent mercury poisoning, the U.S. Food and Drug Administration advises pregnant women and women of childbearing age to limit their consumption of shark and swordfish to no more than one serving per month. Everyone else should limit their consumption of these two types of fish to one serving, or seven ounces, per week.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2001-05-27T01:06:32.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>ASP.NET: “Comparing Web Site Projects and Web Application Projects”; MSDN</h3>
 <section class="entry">
-    <h3>ASP.NET: “Comparing Web Site Projects and Web Application Projects”; MSDN</h3>
 
-<pre>
-<p>The new Web application project model provides the same Web project semantics as Visual Studio .NET 2003 Web projects. This includes a structure based on project files and a build model where all code in the project is compiled into a single assembly. However, the new project type makes available all the new features of Visual Studio 2005 (refactoring, class diagrams, test development, generics, and so on) and of ASP.NET 2.0 (master pages, data controls, membership and login, role management, Web Parts, personalization, site navigation, themes, and so on).</p>
+    <p>The new Web application project model provides the same Web project semantics as Visual Studio .NET 2003 Web projects. This includes a structure based on project files and a build model where all code in the project is compiled into a single assembly. However, the new project type makes available all the new features of Visual Studio 2005 (refactoring, class diagrams, test development, generics, and so on) and of ASP.NET 2.0 (master pages, data controls, membership and login, role management, Web Parts, personalization, site navigation, themes, and so on).</p>
 <p>The Web application project model in Visual Studio 2005 also removes two requirements from Visual Studio .NET 2003:</p>
 <pre><code>* Using FrontPage Server Extensions (FPSE). These are no longer required, but they are supported if your site already uses them.
 
@@ -36,16 +43,19 @@
 <p>The following table lists Web project options or tasks and indicates which project model best implements those options.</p>
 <p>[http://msdn.microsoft.com/en-us/library/aa730880(VS.80).aspx#wapp_topic5]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-08-10T04:47:04.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

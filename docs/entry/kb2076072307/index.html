@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,27 +20,36 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>ASP.NET: “Data Paging in ASP.NET”; DataPager Control</h3>
 <section class="entry">
-    <h3>ASP.NET: “Data Paging in ASP.NET”; DataPager Control</h3>
 
-<pre>
-<p>Custom paging with GridView is great, but the problem is you must use GridView to use it. ASP.NET introduces new DataPager control, which works with ListView control (but will not work with DataList or Repeater controls). The using of DataPager control is simple. After you configured data source for ListView control, you simply drag DataPager from the menu and drop it on web form. After that you only need to set PagerControlID property to ID of ListView control and DataPager will work! You can customize its page size and look if you need.</p>
+    <p>Custom paging with GridView is great, but the problem is you must use GridView to use it. ASP.NET introduces new DataPager control, which works with ListView control (but will not work with DataList or Repeater controls). The using of DataPager control is simple. After you configured data source for ListView control, you simply drag DataPager from the menu and drop it on web form. After that you only need to set PagerControlID property to ID of ListView control and DataPager will work! You can customize its page size and look if you need.</p>
 <p>The problem with DataPager control is that DataPager uses all data from data source to work with. It cannot select only current page to save up web server resources, but simply uses ListView's data source which is not efficient. If your data set has more than 100 or 200 pages or even more, this is unacceptable.</p>
 <p>[http://www.beansoftware.com/ASP.NET-Tutorials/Using-Data-Paging.aspx]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-10-11T01:49:03.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

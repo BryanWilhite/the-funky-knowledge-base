@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Word 2007 Fluent Ribbon: “Ahem… but I am actually customizing Word 2007…”</h3>
 <section class="entry">
-    <h3>Word 2007 Fluent Ribbon: “Ahem… but I am actually customizing Word 2007…”</h3>
 
-<pre>
-<p>And to further contradict my previous rants, it is possible to write a macro to load Word Document Parts. However, none of these contradictions hold comfortable solutions. First, you can see the XML file, customUI.xml, in my Normal.dotm template. All I had to do was to edit this file to customize the Word 2007 “Fluent” Ribbon. This is what I did:</p>
+    <p>And to further contradict my previous rants, it is possible to write a macro to load Word Document Parts. However, none of these contradictions hold comfortable solutions. First, you can see the XML file, customUI.xml, in my Normal.dotm template. All I had to do was to edit this file to customize the Word 2007 “Fluent” Ribbon. This is what I did:</p>
 <ol>
 <li>
 <p>Use the Custom UI Editor Tool to generate the proper OpenXML parts in the Normal.dotm template to get me started writing raw XML against the Word 2007 application. I could have done this by hand using the tool mentioned in step 2 but was too “lazy.”</p>
@@ -41,16 +48,19 @@
 <p>Okay: and now the macro thing. This is the important call in the important line of code that makes loading Quick Parts (or Custom Quick Parts) automatable: Call Application.NormalTemplate.BuildingBlockEntries.Add(). So what’s my problem? The problem is that a Range containing my custom XML does not get saved properly. Sometimes elements named “unknown” come out from the Quick Part Gallery. You don’t understand what I am talking about? I can sympathize. It would take days upon days to explain to a Microsoft employee—even one on the Word 2007 team—what the hell I am talking about… My guess is that this “edge case” will be fixed by accident in a future release.</p>
 <p>[http://kintespace.com/rasxlog/?p=928]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-08-28T17:31:54.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

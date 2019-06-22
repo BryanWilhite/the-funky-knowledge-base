@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>C# and ASP.NET: Writing HTML Targeted from Code-Behind Designs; Using Regular Expressions to Write HTML</h3>
 <section class="entry">
-    <h3>C# and ASP.NET: Writing HTML Targeted from Code-Behind Designs; Using Regular Expressions to Write HTML</h3>
 
-<pre>
-<p>Although the title of this article makes no mention of it, my remarks here will be flippant:</p>
+    <p>Although the title of this article makes no mention of it, my remarks here will be flippant:</p>
 <p>You can target areas of an HTML page for writing by using a combination of the PlaceHolder Control (System.Web.UI.WebControls.PlaceHolder), the Literal Control (System.Web.UI.WebControls.Literal) and by running tags at the server (with the runat=&quot;server&quot; attribute). For efficiency, most controls can be accessed via the HtmlGenericControl class. The C# code below finds an HTML HEAD element with attributes id=&quot;Head&quot; and runat=&quot;server&quot; and formats its &quot;inner HTML&quot; with Regular Expressions:</p>
 <p>protected void FormatHead()
 {
@@ -71,16 +78,19 @@ if(GenControl != null)
 <p>Note that you can't run LINK or SCRIPT tags at the server with empty strings or any kind of bogus place holders without causing an exception to be thrown. If you insist, you can try some kind of data-binging design but this violates my new principle of using only tags in my HTML pages.</p>
 <p>So, flippantly speaking, Regular Expressions are cool but right about now I am more attracted to using the PlaceHolder control to load *.ascx pages and then using Literal controls inside those pages to be targeted by an HtmlTextWriter in a code-behind design.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2003-10-30T21:02:08.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

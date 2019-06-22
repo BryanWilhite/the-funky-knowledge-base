@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Windows Forms Databinding: Andrew Brust on the Importance of the EndCurrentEdit() Method; DotNetRocks!; RowJiggle() Hack; VB.NET; C#</h3>
 <section class="entry">
-    <h3>Windows Forms Databinding: Andrew Brust on the Importance of the EndCurrentEdit() Method; DotNetRocks!; RowJiggle() Hack; VB.NET; C#</h3>
 
-<pre>
-<p>The last 10 minutes of the Franklins.net DotNetRocks! show with Andrew Brust on March 31, 2003 deals with a data binding &quot;bug&quot; that's actually a feature. Here's the feature: when you open a Windows Form and enter data into a TextBox or ComboBox control bound to a DataSet and then close the form without moving to a new record or pressing some kind of Save button you will lose your changes.</p>
+    <p>The last 10 minutes of the Franklins.net DotNetRocks! show with Andrew Brust on March 31, 2003 deals with a data binding &quot;bug&quot; that's actually a feature. Here's the feature: when you open a Windows Form and enter data into a TextBox or ComboBox control bound to a DataSet and then close the form without moving to a new record or pressing some kind of Save button you will lose your changes.</p>
 <p>This wonderful feature of the .NET Framework was stumbled upon by me while building my first WinForms project. In a fit of rage and panic, I wrote this code:</p>
 <pre><code>Public Sub RowJiggle(ByRef BindContext As BindingContext, _
     ByRef TargetDataView As DataView)
@@ -69,16 +76,19 @@ End Sub
 </code></pre>
 <p>This code rocks!</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2004-06-30T03:57:14.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

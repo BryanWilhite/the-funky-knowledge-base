@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,28 +20,37 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>SKINNY AS A STICK OF LICORICE</h3>
 <section class="entry">
-    <h3>SKINNY AS A STICK OF LICORICE</h3>
 
-<pre>
-<p>How many of the jellybean eaters you know leave the black ones? Just watching someone eat those black jellybeans or licorice makes me cringe. Yet, a recent study has found that licorice may help reduce your body fat!</p>
+    <p>How many of the jellybean eaters you know leave the black ones? Just watching someone eat those black jellybeans or licorice makes me cringe. Yet, a recent study has found that licorice may help reduce your body fat!</p>
 <p>The study concluded that consuming 3.5 grams of licorice per day reduced body fat by up to four percent. What is it about licorice that reduces body fat? The answer lies within the licorice itself. It is believed that the strong taste of the licorice suppresses the appetite. Another explanation is that eating licorice makes you feel
 full, resulting in your eating fewer calories.</p>
 <p>More research needs to be conducted, but don't forget that a balanced diet with whole grains, fruits, and vegetables is still the best way to go.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2004-05-21T18:54:43.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>CSS: Linking to an External Style Sheet; LINK; @import; Using Style Sheets Locally</h3>
 <section class="entry">
-    <h3>CSS: Linking to an External Style Sheet; LINK; @import; Using Style Sheets Locally</h3>
 
-<pre>
-<p>At this proprietary moment in time, it is better to use LINK HTML markup instead of W3C's @import to refer to external style sheets. My tests show that Netscape browsers ignore the following W3C-recommended syntax:</p>
+    <p>At this proprietary moment in time, it is better to use LINK HTML markup instead of W3C's @import to refer to external style sheets. My tests show that Netscape browsers ignore the following W3C-recommended syntax:</p>
 <pre><code>&amp;lt;STYLE&amp;gt;&amp;lt;!--
     @import url(&amp;quot;http://server/root.css&amp;quot;);
 //--&amp;gt;
@@ -40,16 +47,19 @@
 </code></pre>
 <p>where the HREF value is a relative URI.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 1999-01-13T17:32:15.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

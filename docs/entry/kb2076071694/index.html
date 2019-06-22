@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>System.Xml.Xsl.XslTransform PROBLEM: Document Type Declarations Are Ignored; xsl:output Element; DOCTYPE; .NET Framework 1.1</h3>
 <section class="entry">
-    <h3>System.Xml.Xsl.XslTransform PROBLEM: Document Type Declarations Are Ignored; xsl:output Element; DOCTYPE; .NET Framework 1.1</h3>
 
-<pre>
-<p>The xsl:output element is supported by the .NET Framework. The xsl:output element is ignored when the output of the XslTransform.Transform method is an XmlReader or XmlWriter. These types are not byte-stream-based, using .NET-native UTF-16 encoded strings to store data.</p>
+    <p>The xsl:output element is supported by the .NET Framework. The xsl:output element is ignored when the output of the XslTransform.Transform method is an XmlReader or XmlWriter. These types are not byte-stream-based, using .NET-native UTF-16 encoded strings to store data.</p>
 <p>The following sketch uses the MemoryStream type to represent data as bytes instead of UTF-16 strings:</p>
 <pre><code>XslTransform xslt = new XslTransform();
 XPathDocument xml = new XPathDocument(&amp;quot;data.xml&amp;quot;);
@@ -42,16 +49,19 @@ xhtml = Encoding.UTF8.GetString(ms.GetBuffer());
     en-us/cpguide/html/cpconInputsOutputsToXslTransform.asp
 </code></pre>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2005-10-28T22:43:41.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

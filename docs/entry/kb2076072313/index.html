@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,27 +20,36 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>“Are Partial Methods Some Form Of AOP (Aspect Oriented Programming)?”; Scott Wisniewski</h3>
 <section class="entry">
-    <h3>“Are Partial Methods Some Form Of AOP (Aspect Oriented Programming)?”; Scott Wisniewski</h3>
 
-<pre>
-<p>Are Partial Methods Some Form Of AOP (Aspect Oriented Programming)?</p>
+    <p>Are Partial Methods Some Form Of AOP (Aspect Oriented Programming)?</p>
 <p>No. Partial methods do share some things in common with Aspect Oriented Programming in that partial methods offer a way of associating &quot;hooks&quot; with custom code. However, unlike AOP systems partial methods require extension points to be explicitly defined by the customer. AOP systems allow developers to &quot;weave in&quot; functionality into code that hasn't had explicit hooks defined. Usually they do this by specifying some declarative search strings that describes the places where the hooks should be applied. The compiler is then responsible for finding all the appropriate &quot;extension points&quot; to apply the hooks to and injecting any necessary method calls. Partial methods in VB do not do this.</p>
 <p>[http://blogs.msdn.com/vbteam/archive/2007/03/27/partial-methods.aspx]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-10-15T02:56:39.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

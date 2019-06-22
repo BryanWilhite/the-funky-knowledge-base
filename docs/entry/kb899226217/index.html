@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Protecting Type Conversion Functions From Null Values</h3>
 <section class="entry">
-    <h3>Protecting Type Conversion Functions From Null Values</h3>
 
-<pre>
-<p>To avoid Run-time Error 94 (Invalid Use of Null) when using type conversion functions, &quot;protect&quot; them by concatenating &quot;default&quot; values where logically possible. Suppose that g_varReturn is a variant. We can use type conversion functions on g_varReturn with the forms:</p>
+    <p>To avoid Run-time Error 94 (Invalid Use of Null) when using type conversion functions, &quot;protect&quot; them by concatenating &quot;default&quot; values where logically possible. Suppose that g_varReturn is a variant. We can use type conversion functions on g_varReturn with the forms:</p>
 <pre><code>&amp;lt;variable of type Double&amp;gt; = CDbl(0 &amp; g_varReturn)
 
 &amp;lt;variable of type String&amp;gt; = CStr(g_varReturn &amp; &amp;quot;&amp;quot;)
@@ -35,16 +42,19 @@
 </code></pre>
 <p>Note that in the CDbl() example above the zero is concatenated in front of g_varReturn. Do not concatenate the zero after g_varReturn!</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 1998-06-30T17:12:05.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

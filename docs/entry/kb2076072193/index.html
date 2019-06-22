@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>“An explanation of the new /C and /I Switches that are available to use with Chkdsk.exe”</h3>
 <section class="entry">
-    <h3>“An explanation of the new /C and /I Switches that are available to use with Chkdsk.exe”</h3>
 
-<pre>
-<p>Chkdsk.exe is the command-line interface for the CHKDSK program, which verifies the logical integrity of a file system. If CHKDSK encounters logical inconsistencies in file system data, CHKDSK performs actions that repair the file system data (assuming that the data is not in read-only mode).</p>
+    <p>Chkdsk.exe is the command-line interface for the CHKDSK program, which verifies the logical integrity of a file system. If CHKDSK encounters logical inconsistencies in file system data, CHKDSK performs actions that repair the file system data (assuming that the data is not in read-only mode).</p>
 <p>The /C and /I switches are valid only for a drive that is formatted in the NTFS file system. Each of the new switches directs the CHKDSK routine to bypass certain actions that CHKDSK would otherwise take to validate the integrity of NTFS data structures.</p>
 <p>…</p>
 <p>Introducing the /C and /I switches
@@ -47,16 +54,19 @@ When disk corruption is detected on a volume, there are three basic options for 
 <p>Note also that NTFS does not guarantee the integrity of user data after an instance of disk corruption, even if you immediately run a full CHKDSK operation. There might be files that CHKDSK cannot recover, and files that CHKDSK does recover might still be internally corrupted. It remains vitally important that you protect mission-critical data by performing periodic backups or by using some other robust method of data recovery.</p>
 <p>[http://support.microsoft.com/?id=314835]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-08-17T23:48:46.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

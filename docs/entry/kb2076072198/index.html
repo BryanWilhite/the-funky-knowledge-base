@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>WSS 3.0:  MOSS 2007 and WSS 2007 Server Setup; The call to SearchServiceInstance.Provision (server 'YourServerName') failed.; Sahil Malik</h3>
 <section class="entry">
-    <h3>WSS 3.0:  MOSS 2007 and WSS 2007 Server Setup; The call to SearchServiceInstance.Provision (server 'YourServerName') failed.; Sahil Malik</h3>
 
-<pre>
-<p>So I turn on diagnostic logging (which was off by default), on the same page, and here is the rather uninformative error I found deep inside sharepoint logs.</p>
+    <p>So I turn on diagnostic logging (which was off by default), on the same page, and here is the rather uninformative error I found deep inside sharepoint logs.</p>
 <p>The call to SearchServiceInstance.Provision (server 'YourServerName') failed. Setting back to previous status 'Disabled'. System.ComponentModel.Win32Exception: OSearch ('YourSearchAcct')     at Microsoft.SharePoint.Win32.SPAdvApi32.ChangeServiceConfiguration(String strServiceName, String strAccountName, SecureString sstrPassword, IdentityType identityType, Boolean bDontRestartService)     at Microsoft.SharePoint.Administration.SPProvisioningAssistant.ProvisionProcessIdentity(String strUserName, SecureString secStrPassword, IdentityType identityType, Boolean isAdminProcess, Boolean isWindowsService, String strServiceName, Boolean dontRestartService)     at Microsoft.SharePoint.Administration.SPProcessIdentity.ProvisionInternal(SecureString sstrPassword, Boolean isRunningInTimer)     at Microsoft....</p>
 <p>I swear - what the hell is the above error message useful for? Not much if you'd ask me. And no I didn't truncate the above error message - Thats about all that got logged. :-/</p>
 <p>So what is the solution?</p>
@@ -34,16 +41,19 @@
 <p>[http://blah.winsmarts.com/2006-10-MOSS_2007_and_WSS_2007_-
 _Server_setup_tip.aspx?postID=113]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-08-18T00:13:45.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

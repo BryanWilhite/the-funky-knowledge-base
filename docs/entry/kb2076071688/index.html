@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>MCAD/MCSD Notes: Chapter 7, Lesson 2; Using Unmanaged Code</h3>
 <section class="entry">
-    <h3>MCAD/MCSD Notes: Chapter 7, Lesson 2; Using Unmanaged Code</h3>
 
-<pre>
-<p>Lesson 2: Using Unmanaged Code</p>
+    <p>Lesson 2: Using Unmanaged Code</p>
 <p>The purpose of this lesson is to highlight the backwards-compatibility features of the .NET Framework, it's ability to create static entry points into Win32 COM interfaces. This lesson is quite forthcoming about the limitations of these features.</p>
 <ul>
 <li>&quot;The process of executing native code from within a .NET assembly is called platform invoke, or pinvoke for short.&quot;</li>
@@ -93,16 +100,19 @@ switch (Marshal.GetLastWin32Error())
 </ul>
 <p>This performance limitation seems to be most surprising limitation of p-invoke. The others, &quot;type safety,&quot; &quot;versioning&quot; and &quot;code security&quot; are to be expected.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2005-06-30T00:20:27.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

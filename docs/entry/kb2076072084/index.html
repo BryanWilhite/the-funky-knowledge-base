@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>“Sharepoint Orphans Explained”; blogs.technet.com/corybu/</h3>
 <section class="entry">
-    <h3>“Sharepoint Orphans Explained”; blogs.technet.com/corybu/</h3>
 
-<pre>
-<p>Orphans have been coined the name for objects in a SharePoint schema that live without a parent or child relationship in the database. In effect these database inconsistencies can be created due to many different reasons.</p>
+    <p>Orphans have been coined the name for objects in a SharePoint schema that live without a parent or child relationship in the database. In effect these database inconsistencies can be created due to many different reasons.</p>
 <p>…</p>
 <p>You can only detect orphans through SQL, there is no real out of the box way to detect them from the web UI.</p>
 <p>…</p>
@@ -39,16 +46,19 @@
 <p>Remind users that creating and deleting a site can be a sometimes several minute process.  Regardless of how long it takes let the application finish what it is doing.  If it times out then try again but never click back, stop, or close the window when performing these types of administration tasks.  Network Latency, Web front end performance and SQL backend performance can all attribute to a slow create or delete statement.  Be patient :).</p>
 <p>[http://blogs.technet.com/corybu/archive/2007/05/31/sharepoint-orphans-explained.aspx]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2008-12-02T22:23:22.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

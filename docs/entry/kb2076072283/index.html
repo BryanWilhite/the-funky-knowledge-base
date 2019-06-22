@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,28 +20,37 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Windows Server 2008: “What happens if the owner cannot change the permissions on a file?”; win2k8</h3>
 <section class="entry">
-    <h3>Windows Server 2008: “What happens if the owner cannot change the permissions on a file?”; win2k8</h3>
 
-<pre>
-<p>Windows Server 2008 has provisions for this situation. Basically any users including an admin can lock themselves out of any object; however, users who are also members of the administrators group can assign ownership back to the domain administrators group, allowing any member (including the original owner) to modify the ownership of the object.</p>
+    <p>Windows Server 2008 has provisions for this situation. Basically any users including an admin can lock themselves out of any object; however, users who are also members of the administrators group can assign ownership back to the domain administrators group, allowing any member (including the original owner) to modify the ownership of the object.</p>
 <p>If you are a member of the administrators group, even though you can lock yourself out of being able to change permissions or see an object, your other rights will allow you to correct the action.</p>
 <p>With these new features, it is likely that business policy and IT security policy will become a bit more closely related and work a little better for everyone.</p>
 <p>[http://blogs.techrepublic.com.com/networking/?p=1379]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-09-28T04:58:30.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

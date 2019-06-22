@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Windows NT Registry: Making An X-Window-Like Mouse Pointer</h3>
 <section class="entry">
-    <h3>Windows NT Registry: Making An X-Window-Like Mouse Pointer</h3>
 
-<pre>
-<p>By editing the Registry, you can make an X-Window-like Mouse Pointer that will get the focus of any window under its &quot;pointing pixel.&quot; The following Registry Key must be Merged from a properly formatted *.REG file:</p>
+    <p>By editing the Registry, you can make an X-Window-like Mouse Pointer that will get the focus of any window under its &quot;pointing pixel.&quot; The following Registry Key must be Merged from a properly formatted *.REG file:</p>
 <pre><code>HKEY_CURRENT_USER
     &amp;bsol;&amp;bsol;Control Panel&amp;bsol;&amp;bsol;Mouse            &amp;quot;ActiveWindowTracking&amp;quot;=&amp;quot;1&amp;quot;
 </code></pre>
@@ -39,16 +46,19 @@
     library/periodic/period99/html/ewn9915.htm
 </code></pre>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2000-12-24T22:28:21.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

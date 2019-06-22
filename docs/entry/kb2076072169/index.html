@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Silverlight: “Silverlight Tip of the Day #60—How to load a XAML Control From a File or String”; Mike Snow</h3>
 <section class="entry">
-    <h3>Silverlight: “Silverlight Tip of the Day #60—How to load a XAML Control From a File or String”; Mike Snow</h3>
 
-<pre>
-<p>If you have a control written in XAML that is included in your project you can load and create it directly from file by using the method:</p>
+    <p>If you have a control written in XAML that is included in your project you can load and create it directly from file by using the method:</p>
 <p>System.Windows.Markup.XamlReader.Load().This method can also be used to directly create a Silverlight control from a string.</p>
 <p>To demonstrate this I have created two functions called LoadFromXAML(). The first function takes takes as a parameter a URI that points to the XAML file in your project you want to load. The second takes as a parameter a string representation of the control.</p>
 <p>public static object LoadFromXaml(Uri uri)
@@ -64,16 +71,19 @@ Button myButton = (Button) LoadFromXaml(buttonXAML);
 <p>[http://silverlight.net/blogs/msnow/archive/2008/10/09/
 silverlight-tip-of-the-day-60-how-to-load-a-control-straight-from-xaml.aspx]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-08-10T04:19:00.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,26 +20,35 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>A REMEDY FOR URINARY TRACT INFECTIONS</h3>
 <section class="entry">
-    <h3>A REMEDY FOR URINARY TRACT INFECTIONS</h3>
 
-<pre>
-<p>Cranberry juice, like orange and grape juice, has been identified for its medicinal effect on urinary tract infections in women. In a six-month study, 150 women with existing urinary tract infections were asked to consume either cranberry juice or a milk drink containing the bacterium lactobacillus (considered a &quot;healthy&quot; bacterium that promotes intestinal tract functioning). The study found that cranberry juice was most effective in preventing the recurrence of urinary tract infection in the women. That's good news for all you women who choke down yogurt as a treatment.</p>
+    <p>Cranberry juice, like orange and grape juice, has been identified for its medicinal effect on urinary tract infections in women. In a six-month study, 150 women with existing urinary tract infections were asked to consume either cranberry juice or a milk drink containing the bacterium lactobacillus (considered a &quot;healthy&quot; bacterium that promotes intestinal tract functioning). The study found that cranberry juice was most effective in preventing the recurrence of urinary tract infection in the women. That's good news for all you women who choke down yogurt as a treatment.</p>
 <p>It is recommended that women drink approximately 50 to 100 milliliters of cranberry juice every day to hamper a urinary tract infection.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2004-05-21T18:54:43.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

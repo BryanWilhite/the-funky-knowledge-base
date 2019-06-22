@@ -1,6 +1,6 @@
-module.exports = function(config) {
+module.exports = function (config) {
     config.addCollection('entries', collection => {
-      return collection.getFilteredByGlob('entry/*.md');
+        return collection.getFilteredByGlob('entry/*.md');
     });
 
     config.addFilter("slice", require("./filters/slice.js"));
@@ -9,12 +9,12 @@ module.exports = function(config) {
 
     return {
         dir: {
-          input: ".",
-          output: "docs",
-          includes: "templates"
+            input: ".",
+            output: "docs",
+            includes: "templates"
         },
-        htmlTemplateEngine : "liquid",
-        markdownTemplateEngine : "liquid",
-        templateFormats : ["html", "md", "css"]
-      };
+        htmlTemplateEngine: "liquid",
+        markdownTemplateEngine: "liquid",
+        templateFormats: ["html", "md", "css"]
+    };
 };

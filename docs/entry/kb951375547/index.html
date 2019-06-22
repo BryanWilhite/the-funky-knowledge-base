@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>WHEN AND WHAT TO EAT AROUND YOUR EXERCISE SCHEDULE</h3>
 <section class="entry">
-    <h3>WHEN AND WHAT TO EAT AROUND YOUR EXERCISE SCHEDULE</h3>
 
-<pre>
-<p>By Lindsay Edwards</p>
+    <p>By Lindsay Edwards</p>
 <p>Did you know that eating too much food and eating the wrong food before exercising can interfere with your performance, causing indigestion, weakness, nausea, and vomiting? Timing when and what to eat around your exercise schedule is very important for maximizing the benefits of exercise.</p>
 <p>The main goal of good nutrition is to consume foods that provide benefits to the body. When you add exercise to the equation of healthy living, keep the following pointers in mind.</p>
 <p>Prior to your exercise workout:</p>
@@ -48,16 +55,19 @@
 <li>Add solid foods one to three hours later, preferably a protein meal to repair and build muscle tissue.</li>
 </ul>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2004-05-21T18:54:43.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

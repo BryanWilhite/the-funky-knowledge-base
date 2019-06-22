@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>WPF MVVM: “Rockford Lhotka—Initial thoughts on MVVM”</h3>
 <section class="entry">
-    <h3>WPF MVVM: “Rockford Lhotka—Initial thoughts on MVVM”</h3>
 
-<pre>
-<p>It turns out that there are various ways of thinking about the role of a ViewModel. I think there are two broad approaches worth considering.
+    <p>It turns out that there are various ways of thinking about the role of a ViewModel. I think there are two broad approaches worth considering.
 ViewModel as Sole Data Source</p>
 <p>You can set up the ViewModel to be the sole data source for the View. In this case the ViewModel exposes all the properties and methods necessary to make the View function. This can work well with an anemic Model, where the Model is composed of a bunch of dumb data container objects (think DataTable, DTO and most entity objects).</p>
 <p>With an anemic data-centric Model it is common to reshape the Model to fit the needs of the View. And since the Model is anemic, something needs to apply any business, validation and authorization rules and it surely won’t be the Model itself.</p>
@@ -40,16 +47,19 @@ ViewModel as Sole Data Source</p>
 <p>Again, this presupposes the Model is powerful enough to support direct data binding to the View, which is the case with CSLA .NET business objects, but may not be the case with simpler DTO or entity objects (which probably don’t implement IEditableObject, etc).</p>
 <p>[http://www.lhotka.net/weblog/InitialThoughtsOnMVVM.aspx]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2010-03-25T02:49:37.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

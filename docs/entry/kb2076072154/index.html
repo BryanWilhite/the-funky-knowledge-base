@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>E4X and ActionScript: “Descendant accessors and namespaces in AS3.0” by Jodie O’Rourke</h3>
 <section class="entry">
-    <h3>E4X and ActionScript: “Descendant accessors and namespaces in AS3.0” by Jodie O’Rourke</h3>
 
-<pre>
-<p>I recently encountered a problem, and with it, the lack of documentation around the use of the descendant accessor (double dot ..) in ActionScript 3.0. I was writing a web service adapter that would obviously need to traverse various XML namespaces (such as soap: and wsdl:), but found the shorthand notation wasn’t working as expected.</p>
+    <p>I recently encountered a problem, and with it, the lack of documentation around the use of the descendant accessor (double dot ..) in ActionScript 3.0. I was writing a web service adapter that would obviously need to traverse various XML namespaces (such as soap: and wsdl:), but found the shorthand notation wasn’t working as expected.</p>
 <p>Problem:</p>
 <p>You’re trying to use the double dot (..) descendant accessor with an XML document that declares one for more namespaces. When you try to use var myTags:XMLList = myXML..ElementName nothing appears to happen.</p>
 <p>…</p>
@@ -36,16 +43,19 @@
 <p>The clear limitation here is that if you only want to pick-up tags from a particular namespace inside your XML, such as wsdl or soap, you would need to specify these as a qualified Namespace object in the place of the wildcard.</p>
 <p>[http://www.jodieorourke.com/view.php?blog=news&amp;id=76]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-07-28T05:14:46.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

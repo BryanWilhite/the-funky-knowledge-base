@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,29 +20,38 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>ASP: Performance Hits When Using the Application Object?</h3>
 <section class="entry">
-    <h3>ASP: Performance Hits When Using the Application Object?</h3>
 
-<pre>
-<p>Yes. I have heard many many times about not using the Session object for performance and load-balancing reasons, but no one seems to talk about these things when it comes to the Application object.</p>
+    <p>Yes. I have heard many many times about not using the Session object for performance and load-balancing reasons, but no one seems to talk about these things when it comes to the Application object.</p>
 <p>In fact, Microsoft demos its VB6 WebClass by plugging it directly into the Application.Contents() collection as an Object variable! (BTW: when I try to do this with a VB ActiveX DLL it fails when loaded a second time but that is another story.) Isn't this a performance hit? This is not a rhetorical question. Tom Baastad answers (from tek-tips.com):</p>
 <p>&quot;The main reason for not using the Application object is that it forces IIS into single thread mode for the time consumed starting with locking the application object, manipulating the variable, etc until the object is unlocked.&quot;</p>
 <p>&quot;Another potential problem is the scope of an object in application mode, where it has been known to create both memory leaks and weird crashes of the IIS application.&quot;</p>
 <p>&quot;As a rule of thumb one should open an object on the same page that is being used and close it before that page is exited. This should help you steer clear of the dreaded ASP0115 error that is often associated with objects not being properly closed, etc.&quot;</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2002-01-05T16:57:32.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

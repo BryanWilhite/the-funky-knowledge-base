@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>HTML: Notes on the TABLE Element</h3>
 <section class="entry">
-    <h3>HTML: Notes on the TABLE Element</h3>
 
-<pre>
-<p>HTML 4.0 Transitional allows TABLE to have the attributes BORDER, CELLPADDING, CELLSPACING and WIDTH (among others). When a TABLE is being used for layout (not for presenting tabular data), a good &quot;default&quot; markup is</p>
+    <p>HTML 4.0 Transitional allows TABLE to have the attributes BORDER, CELLPADDING, CELLSPACING and WIDTH (among others). When a TABLE is being used for layout (not for presenting tabular data), a good &quot;default&quot; markup is</p>
 <pre><code>&amp;lt;TABLE
     BORDER=0
     CELLPADDING=0
@@ -40,16 +47,19 @@
 <p>where the attributes set to 0 are prevented from rendering unexpected results when, say, setting &quot;margins&quot; with TD elements and transparent GIFs.</p>
 <p>Tables can be nested inside tables. This is very useful when you want to make your own buttons using tables instead of those provided by the INPUT element. Also, table nesting, used with BGCOLOR attributes in TD and TH elements, is currently the safest way to format a block of text as a callout or sidebar. I have noticed that Netscape 4.x browsers place background colors (and borders) in TABLE elements far better than in P, DIV and other block-level tags.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2000-03-10T06:24:38.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,28 +20,37 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Web Service Exception: &quot;The type System.Collections.Hashtable is not supported because it implements IDictionary.&quot;; System.NotSupportedException</h3>
 <section class="entry">
-    <h3>Web Service Exception: &quot;The type System.Collections.Hashtable is not supported because it implements IDictionary.&quot;; System.NotSupportedException</h3>
 
-<pre>
-<p>Over two years ago, Dare Obasanjo explained to us why an ASMX exception can occur when a type implements IDictionary. In &quot;XML Serialization in the .NET Framework&quot; Dare writes, &quot;The XmlSerializer cannot process classes implementing the IDictionary interface. This was partly due to schedule constraints and partly due to the fact that a hashtable does not have a counterpart in the XSD type system. The only solution is to implement a custom hashtable that does not implement the IDictionary interface.&quot; The rest of this article, as of this writing, is here:</p>
+    <p>Over two years ago, Dare Obasanjo explained to us why an ASMX exception can occur when a type implements IDictionary. In &quot;XML Serialization in the .NET Framework&quot; Dare writes, &quot;The XmlSerializer cannot process classes implementing the IDictionary interface. This was partly due to schedule constraints and partly due to the fact that a hashtable does not have a counterpart in the XSD type system. The only solution is to implement a custom hashtable that does not implement the IDictionary interface.&quot; The rest of this article, as of this writing, is here:</p>
 <pre><code>http://msdn.microsoft.com/library/en-us/dnexxml/html/xml01202003.asp
 </code></pre>
 <p>Using the [NonSerialized()] attribute to hide members that cannot be serialized does not appear to avoid this problem.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2005-02-14T05:07:58.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

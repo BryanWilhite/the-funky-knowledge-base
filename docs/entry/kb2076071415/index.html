@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,28 +20,37 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Microsoft Internet Explorer PROBLEM: Explorer Appears to Stop Responding When Started</h3>
 <section class="entry">
-    <h3>Microsoft Internet Explorer PROBLEM: Explorer Appears to Stop Responding When Started</h3>
 
-<pre>
-<p>Internet Explorer 5.x may appear to stop responding (hang) when opened but the animated globe in the upper-right corner of the browser window may continue to spin and you may receive a &quot;Detecting proxy settings...&quot; message in the status bar. This issue can occur if Internet Explorer is trying to locate a proxy server.</p>
+    <p>Internet Explorer 5.x may appear to stop responding (hang) when opened but the animated globe in the upper-right corner of the browser window may continue to spin and you may receive a &quot;Detecting proxy settings...&quot; message in the status bar. This issue can occur if Internet Explorer is trying to locate a proxy server.</p>
 <p>In Internet Explorer 5, Proxy Auto-Discovery is enabled by default, and this feature may make it appear as if Internet Explorer is not responding.</p>
 <p>For more details please see MS KB article Q220902:</p>
 <p>http://support.microsoft.com/support/kb/articles/q220/9/02.asp</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2001-10-29T00:52:49.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

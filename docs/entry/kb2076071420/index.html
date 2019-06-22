@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,28 +20,37 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>IIS and MS Office Applications: Flippant Remarks</h3>
 <section class="entry">
-    <h3>IIS and MS Office Applications: Flippant Remarks</h3>
 
-<pre>
-<p>Eventually some under-informed bozo may suggest using a web server to automate Microsoft Office applications. I used to summarily dismiss this talk as another Homer Simpson overdosing on the doughnuts. However, as I get older and more tolerant I realize that I must explore the possibility that this so-called bozo is suggesting that we stream IIS responses back to the client using MIME types based on Microsoft Office formats. In a low-traffic Intranet environment it may not be such a &quot;stupid&quot; idea to stream an Excel spreadsheet into a web browser.</p>
+    <p>Eventually some under-informed bozo may suggest using a web server to automate Microsoft Office applications. I used to summarily dismiss this talk as another Homer Simpson overdosing on the doughnuts. However, as I get older and more tolerant I realize that I must explore the possibility that this so-called bozo is suggesting that we stream IIS responses back to the client using MIME types based on Microsoft Office formats. In a low-traffic Intranet environment it may not be such a &quot;stupid&quot; idea to stream an Excel spreadsheet into a web browser.</p>
 <p>The MS KB article &quot;INFO: Considerations for Server-Side Automation of Office&quot; (Q257757) goes into more detail:</p>
 <pre><code>http://support.microsoft.com/support/kb/articles/q257/7/57.asp
 </code></pre>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2002-03-10T17:25:30.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

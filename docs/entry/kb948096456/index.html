@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>WHY DO YOU SKIP BREAKFAST?</h3>
 <section class="entry">
-    <h3>WHY DO YOU SKIP BREAKFAST?</h3>
 
-<pre>
-<p>By Lindsay Edwards</p>
+    <p>By Lindsay Edwards</p>
 <p>We've all heard that you shouldn't skip breakfast because it's the most important meal of the day. Some say they don't eat breakfast because they don't have time. Others say they don't eat breakfast because it makes them sick. Regardless of the reasons, it's remarkable how many people actually do not eat breakfast. Women, especially, choose not to eat breakfast as a method of losing weight. But skipping breakfast in order to lose weight is not a wise choice.</p>
 <p>When you do not eat in the morning, your metabolism actually slows down. As a result, you burn fewer calories than you would have burned had you eaten a light, sensible meal. Instead of not eating at all, eat a light meal with food that sticks with you throughout the morning. Limiting yourself to carbohydrates, such as toast, only leaves you starving by lunchtime. Eat foods that are rich in protein, such as milk, yogurt, or peanut butter. Foods such as these take longer to digest and leave you feeling satisfied longer.</p>
 <p>For those of you who consider breakfast a time-consuming chore, consider these quick ideas. With a little ingenuity, you too can eat breakfast, in spite of your busy schedule. Try the following for breakfast:</p>
@@ -36,16 +43,19 @@
 <li>Yogurt with a fruit-filled breakfast bar</li>
 </ul>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2004-05-21T18:54:43.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

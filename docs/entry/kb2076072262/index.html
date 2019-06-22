@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>PHP: “Validating XML files within PHP 4 applications”; Xmllint; Raphael Stolt</h3>
 <section class="entry">
-    <h3>PHP: “Validating XML files within PHP 4 applications”; Xmllint; Raphael Stolt</h3>
 
-<pre>
-<p>Today I ran into a small problem, validating import XML data against a DTD(Document Type Definition), and discovered a neat way to solve this without PHP4's own means, as the PHP 4 version on the running system wasn't supporting the DOM XML Functions.</p>
+    <p>Today I ran into a small problem, validating import XML data against a DTD(Document Type Definition), and discovered a neat way to solve this without PHP4's own means, as the PHP 4 version on the running system wasn't supporting the DOM XML Functions.</p>
 <p>Xmllint, a command line XML tool, parses provided XML files and can be used to verify that these files are well formed and are satisfying an associated DTD/XML Schema.</p>
 <p>The following method body shows an example call of the xmllint tool for validating a given XML file against a DTD. The location of the DTD file is wrapped inside a DOCTYPE definition of the import file and will be automatically resolved by xmllint.</p>
 <p>&lt;?php</p>
@@ -60,16 +67,19 @@ function isValidImportFile($filename) {
 <p>[http://raphaelstolt.blogspot.com/2007/04/validating-xml-files-within-php-4.html]</p>
 <p>[http://infohost.nmt.edu/tcc/help/xml/lint.html]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-09-20T05:06:15.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

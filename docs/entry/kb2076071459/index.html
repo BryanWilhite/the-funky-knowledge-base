@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Microsoft Office Outlook: Tips and Tricks; Minimizing to System Tray; Clearing Find a Contact Box</h3>
 <section class="entry">
-    <h3>Microsoft Office Outlook: Tips and Tricks; Minimizing to System Tray; Clearing Find a Contact Box</h3>
 
-<pre>
-<p>From http://www.slipstick.com/outlook/usertips.htm:</p>
+    <p>From http://www.slipstick.com/outlook/usertips.htm:</p>
 <p>To make Outlook 2002 go to the Windows system tray when you minimize it edit this key:</p>
 <pre><code>HKEY_CURRENT_USER&amp;bsol;&amp;bsol;Software&amp;bsol;&amp;bsol;Microsoft&amp;bsol;&amp;bsol;Office&amp;bsol;&amp;bsol;10.0&amp;bsol;&amp;bsol;Outlook&amp;bsol;&amp;bsol;Preferences
 </code></pre>
@@ -37,16 +44,19 @@
 </code></pre>
 <p>You can also modify the QuickFindMRU value to a zero-length binary value.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2002-03-10T17:32:10.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

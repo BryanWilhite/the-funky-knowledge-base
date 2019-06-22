@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>C#: Flippant Introductory Remarks; CSharp</h3>
 <section class="entry">
-    <h3>C#: Flippant Introductory Remarks; CSharp</h3>
 
-<pre>
-<p>C# is Microsoft's &quot;innovation&quot; of Java. It is a hybrid of Java, C++ and a few true innovations. But like everyone else that indulges in bashing Microsoft, I will overlook the true innovations and talk about the negative stuff. Okay, one true innovation worth mentioning is the use of the concept embodied in the Common Language Runtime and the schema-based wonders of Intellisense. Very cool, but the memorable stuff, day to day, is not so praiseworthy:</p>
+    <p>C# is Microsoft's &quot;innovation&quot; of Java. It is a hybrid of Java, C++ and a few true innovations. But like everyone else that indulges in bashing Microsoft, I will overlook the true innovations and talk about the negative stuff. Okay, one true innovation worth mentioning is the use of the concept embodied in the Common Language Runtime and the schema-based wonders of Intellisense. Very cool, but the memorable stuff, day to day, is not so praiseworthy:</p>
 <ul>
 <li>
 <p>Every case statement in a switch() structure must have a break statement.</p>
@@ -53,16 +60,19 @@
 <pre><code>http://msdn.microsoft.com/howto/c.asp
 </code></pre>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2004-04-27T18:43:27.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

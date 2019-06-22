@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,26 +20,35 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>ASP.NET MVC: “MVC and App_Code folder - ASP.NET Forums”; forums.asp.net</h3>
 <section class="entry">
-    <h3>ASP.NET MVC: “MVC and App_Code folder - ASP.NET Forums”; forums.asp.net</h3>
 
-<pre>
-<p>All MVC project by default are Web Application Projects (WAP) instead of Web Site projects. This means that there's no need for an App_Code folder since WAPs always get compiled anyway. That means that all *.cs files in your project will get compiled, as opposed to Web Site projects where only *.cs files in your App_Code folder would get compiled.</p>
+    <p>All MVC project by default are Web Application Projects (WAP) instead of Web Site projects. This means that there's no need for an App_Code folder since WAPs always get compiled anyway. That means that all *.cs files in your project will get compiled, as opposed to Web Site projects where only *.cs files in your App_Code folder would get compiled.</p>
 <p>[http://forums.asp.net/t/1315143.aspx]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-04-22T03:44:00.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

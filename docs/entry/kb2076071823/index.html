@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,28 +20,37 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>XSLT Problem: The String &quot;x­mlns&quot; Can Mangle Output</h3>
 <section class="entry">
-    <h3>XSLT Problem: The String &quot;x­mlns&quot; Can Mangle Output</h3>
 
-<pre>
-<p>By simply typing the string &quot;x­mlns&quot; in an XSLT file, or inserting this string into an XSLT source XML file, XSL processing can mangle output in the PHP environments and on the .NET 2.x platform (and below).</p>
+    <p>By simply typing the string &quot;x­mlns&quot; in an XSLT file, or inserting this string into an XSLT source XML file, XSL processing can mangle output in the PHP environments and on the .NET 2.x platform (and below).</p>
 <p>The string &quot;x­mlns&quot; refers to declaring/registering a namespace in an XML document. So it is clear that this character combination has significant meaning. This mangling problem persists even when &quot;x­mlns&quot; appears in a CDATA block.</p>
 <p>One horrid hack to deal with this problem (when you must deal with this problem) is to search character data and replace &quot;x­mlns&quot; with something like &quot;x[invisible character]mns&quot; where the invisible character can be, say, a soft-hyphen (­ or ­ or ­).</p>
 <p>By the way, Microsoft Word users can enter Ctrl+- (control hyphen) to enter a soft hyphen. The Windows key combination is Alt+0173.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2007-05-03T06:37:57.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

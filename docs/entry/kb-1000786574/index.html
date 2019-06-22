@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,27 +20,36 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>InvestLogic Systems: Overview of the Buy-Side Enterprise</h3>
 <section class="entry">
-    <h3>InvestLogic Systems: Overview of the Buy-Side Enterprise</h3>
 
-<pre>
-<p>The buy-side of the financial management business should be compared to banking. Where banking is more predictable and stable (which lends itself readily to turnkey software products), the IT enterprise of the buy-side business is experimental and individual. The buy-side of the enterprise is made up of fixed income and equity data.</p>
+    <p>The buy-side of the financial management business should be compared to banking. Where banking is more predictable and stable (which lends itself readily to turnkey software products), the IT enterprise of the buy-side business is experimental and individual. The buy-side of the enterprise is made up of fixed income and equity data.</p>
 <p>As the fixed income data requires a great deal of mathematics, the equity portion of this enterprise is considered relatively &quot;easy&quot; to deal with as it requires extensive research more than lengthy calculation. There are exceptions to this assertion. For example, while prices for equities are set for an entire market, bond prices can come from multiple sources and is often placed in a hierarchy. Finding all of these prices surely is matter of research and not computation!</p>
 <p>The buy-side enterprise database has three major entities: security, portfolio and position. The position entity is the many-to-many relationship between securities and portfolios. Many of the tables in this database are devoted to these three entities. Usually tables devoted to security attributes are in the majority.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 1999-08-12T02:34:01.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

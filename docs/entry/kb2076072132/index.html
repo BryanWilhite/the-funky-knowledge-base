@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,26 +20,35 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>ActionScript 3.x: “Measuring Drawing API 2.0 performance”; Actionscript 3 Experiments (bytearray.org); Thibault Imbert</h3>
 <section class="entry">
-    <h3>ActionScript 3.x: “Measuring Drawing API 2.0 performance”; Actionscript 3 Experiments (bytearray.org); Thibault Imbert</h3>
 
-<pre>
-<p>So the final conclusion is that drawPath or drawTriangles gives better performance than traditional moveTo, lineTo in terms of ActionScript code execution. So you will get nice improvements with the new Graphics methods if most of the time you were wasting was sending the commands to the renderer. Otherwise in terms of rendering performance, the new Graphics methods does not really bring any performance improvements.</p>
+    <p>So the final conclusion is that drawPath or drawTriangles gives better performance than traditional moveTo, lineTo in terms of ActionScript code execution. So you will get nice improvements with the new Graphics methods if most of the time you were wasting was sending the commands to the renderer. Otherwise in terms of rendering performance, the new Graphics methods does not really bring any performance improvements.</p>
 <p>[http://www.bytearray.org/?p=423]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-06-11T19:18:42.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

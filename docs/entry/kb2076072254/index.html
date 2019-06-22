@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>“WPF Multithreading with BackgroundWorker”; Pavan Podila</h3>
 <section class="entry">
-    <h3>“WPF Multithreading with BackgroundWorker”; Pavan Podila</h3>
 
-<pre>
-<p>UI libraries in general have always been single-threaded. This means that you can access the UI controls only from the thread that created it (thread-affinity). When running long-running operations you would typically use a background thread to do that job. However progress needs to be reported on the UI and the user needs to have a way to cancel the operation. Doing that from a background thread is not possible and hence you have to jump threads, ie. from the  background-thread to the ui-thread.</p>
+    <p>UI libraries in general have always been single-threaded. This means that you can access the UI controls only from the thread that created it (thread-affinity). When running long-running operations you would typically use a background thread to do that job. However progress needs to be reported on the UI and the user needs to have a way to cancel the operation. Doing that from a background thread is not possible and hence you have to jump threads, ie. from the  background-thread to the ui-thread.</p>
 <p>In WPF you can do that with the Dispatcher using Dispather.BeginInvoke(). This allows a background-task to put a delegate on the Dispatcher queue which will be then invoked on the UI thread. However this approach by itself does not allow reporting progress or user-cancellations. You will have to build a component that uses the Dispatcher.BeginInvoke() to provide this functionality, using a technique described in this MSDN article.</p>
 <p>The good news is that you really don’t have to write such a component since one is available already: the BackgroundWorker class introduced in .Net Framework 2.0. Programmers who are familiar with WinForms 2.0 may have already used this component. But BackgroundWorker works equally well with WPF because it is completely agnostic to the threading model. BackgroundWorker provides the facilities that I mentioned  before: progress reporting and user-cancellation and makes it very convenient to use. If you are not familiar with this class, have a look at this article.</p>
 <p>The internals</p>
@@ -36,16 +43,19 @@
 <p>So with this powerful combination of classes, multithreading in WPF only got so much easier ;-) . I have attached a simple project that demonstrates the use of BackgroundWorker with WPF.</p>
 <p>[http://blog.pixelingene.com/?p=36]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-09-18T03:13:10.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

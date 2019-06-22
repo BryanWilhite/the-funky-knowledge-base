@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>SharePoint Portal Server 2003: “Using Folders in document libraries”</h3>
 <section class="entry">
-    <h3>SharePoint Portal Server 2003: “Using Folders in document libraries”</h3>
 
-<pre>
-<p>Funny enough these things always come together the same time. Edward Ferron is talking about when using folders in document libraries and when not to use them. Same thing I discussed with a customer yesterday. I mentioned better to use meta data to group or order documents instead of folders. Edward describes the reasons why:</p>
+    <p>Funny enough these things always come together the same time. Edward Ferron is talking about when using folders in document libraries and when not to use them. Same thing I discussed with a customer yesterday. I mentioned better to use meta data to group or order documents instead of folders. Edward describes the reasons why:</p>
 <p>&quot;When using document libraries in SharePoint try to avoid the temptation of creating nested folders.  There are several reasons you do not want ot create folders more than one level deep if you need to create them at all.</p>
 <ol>
 <li>You are just recreating the problem you had in file severs when you created nested folders</li>
@@ -42,16 +49,19 @@
 <p>[http://blogs.tamtam.nl/mart/
 SharePointTipUsingFoldersInDocumentLibraries.aspx]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-08-27T20:19:10.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

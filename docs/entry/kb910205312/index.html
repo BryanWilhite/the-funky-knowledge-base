@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>SQL: When to Use Dynamic SQL and When to Use Stored Procedures; Views and SELECT Stored Procedures</h3>
 <section class="entry">
-    <h3>SQL: When to Use Dynamic SQL and When to Use Stored Procedures; Views and SELECT Stored Procedures</h3>
 
-<pre>
-<ul>
+    <ul>
 <li>Dynamic SQL and Stored Procedures</li>
 </ul>
 <p>Fundamentally, use Dynamic SQL (that is, SQL built &quot;on the fly&quot; in code) when it is impossible to use Stored Procedures. Many SQL servers cannot use late binding on database objects. In such servers, stored procedures cannot represent table names or column names as variables. When the tables and columns change on the fly, Dynamic SQL is the way to display or affect data.</p>
@@ -78,16 +85,19 @@ PRINT '&amp;lt;&amp;lt;&amp;lt; FAILED CREATING PROCEDURE rpt_get_field_names &a
 GO
 </code></pre>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2007-11-19T23:15:47.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

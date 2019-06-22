@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>SMPTE (Society of Motion Picture and Television Engineers): Timecodes; &quot;By the Numbers&quot; by Jay Rose; DV April 1997</h3>
 <section class="entry">
-    <h3>SMPTE (Society of Motion Picture and Television Engineers): Timecodes; &quot;By the Numbers&quot; by Jay Rose; DV April 1997</h3>
 
-<pre>
-<p>SMPTE timecodes developed more out of historical/political necessity than by pure engineering. The ancient black-and-white TVs of the golden age of North American television scanned at 30 frames per second (fps) because of the ease of synching to the 60Hz power lines running through U.S. homes. When color TVs arrived the broadcast signals had to be &quot;backwards compatible&quot; with the old b/w sets while transmitting extra color information. It followed that the NTSC standard established 29.97fps for broadcast television.</p>
+    <p>SMPTE timecodes developed more out of historical/political necessity than by pure engineering. The ancient black-and-white TVs of the golden age of North American television scanned at 30 frames per second (fps) because of the ease of synching to the 60Hz power lines running through U.S. homes. When color TVs arrived the broadcast signals had to be &quot;backwards compatible&quot; with the old b/w sets while transmitting extra color information. It followed that the NTSC standard established 29.97fps for broadcast television.</p>
 <p>When SMPTE developed timecode, they had to accommodate the NTSC standard. They created the concept of the &quot;dropped&quot; frame to make sure that timecode agreed with the clock on the wall. We have these common frame rates:</p>
 <pre><code>* 24fps (film; count 23 frames, then 1 second 0 frames)
 * 25fps (PAL/SECAM; count 25 frames, then 1 second 0 frames)
@@ -36,16 +43,19 @@
 </code></pre>
 <p>The PAL/SECAM 25fps standard evolves from the 50Hz power lines in Europe, its former colonies and commonwealth lands.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2005-02-12T09:33:39.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

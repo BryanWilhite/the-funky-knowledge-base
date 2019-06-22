@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,28 +20,37 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>“Enable Copy and Paste from Ubuntu VMware Guest”; howtogeek.com</h3>
 <section class="entry">
-    <h3>“Enable Copy and Paste from Ubuntu VMware Guest”; howtogeek.com</h3>
 
-<pre>
-<p>VMware includes the ability to copy and paste to and from your virtual machine window. To enable this, you will need to install the VMware tools inside your virtual machine.</p>
+    <p>VMware includes the ability to copy and paste to and from your virtual machine window. To enable this, you will need to install the VMware tools inside your virtual machine.</p>
 <p>Once your VMware tools are installed, you will want to launch the vmware toolbox utility, which must be running if you want copy and paste to work.</p>
 <p>[http://www.howtogeek.com/howto/ubuntu/
 enable-copy-and-paste-from-ubuntu-vmware-guest/]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-04-22T03:37:53.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

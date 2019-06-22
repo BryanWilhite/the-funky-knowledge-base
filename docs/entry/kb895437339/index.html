@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>The &quot;Full Duplex&quot; Sound Card; Creative Labs AWE32</h3>
 <section class="entry">
-    <h3>The &quot;Full Duplex&quot; Sound Card; Creative Labs AWE32</h3>
 
-<pre>
-<p>A &quot;Full Duplex&quot; sound card has the ability to record and play digital audio simultaneously. Some sound cards compromise on sample rates when they go into full duplex mode. In such a case, full duplex mode is marketed as a telephony feature. The AWE32, however, was not marketed as a device with telephony features but it does drop down into 8-bit mode when it is &quot;forced&quot; to record and play at the same time.</p>
+    <p>A &quot;Full Duplex&quot; sound card has the ability to record and play digital audio simultaneously. Some sound cards compromise on sample rates when they go into full duplex mode. In such a case, full duplex mode is marketed as a telephony feature. The AWE32, however, was not marketed as a device with telephony features but it does drop down into 8-bit mode when it is &quot;forced&quot; to record and play at the same time.</p>
 <p>To verify this, I used Digital Orchestrator Plus (DOP) to play digital audio (along with MIDI data) and Cool Edit to record input from a microphone. In order for the AWE32 to record sound at all, I had to prevent DOP from taking control of the input. This means that Device Driver is set to &quot;(None)&quot; under Options &gt; Digital Audio Port Setup &gt; Digital Audio Input &gt; Port(1).</p>
 <p>DOP had control of digital audio playback because Device Driver is set to &quot;SB16 Wave Out 220&quot; under Options &gt; Digital Audio Port Setup &gt; Digital Audio Output &gt; Port(1). Setting these two options are not enough. Additionally, we have the following:</p>
 <pre><code>Options &amp;gt; Stereo Playback (checked)
@@ -37,16 +44,19 @@ Options &amp;gt; Record Buffer Seconds (4)
 Options &amp;gt; Default Sample Rate (44100)
 </code></pre>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 1999-03-03T23:13:25.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

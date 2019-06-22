@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,27 +20,36 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Microsoft Windows NT 4.0: Selective Backup of the NT Installation</h3>
 <section class="entry">
-    <h3>Microsoft Windows NT 4.0: Selective Backup of the NT Installation</h3>
 
-<pre>
-<p>Financial resources do not permit me to have a tape backup system as well as all the other toys I need. It follows that I need to be &quot;surgical&quot; when I back up data. The principle driving this surgery is that operating system, application files and even registry entries are not to be worried about. They can easily be replaced on demand, where my core system is the Windows NT operating system, Microsoft Access, Microsoft Money and Microsoft Word---everything else can appear as needed.</p>
+    <p>Financial resources do not permit me to have a tape backup system as well as all the other toys I need. It follows that I need to be &quot;surgical&quot; when I back up data. The principle driving this surgery is that operating system, application files and even registry entries are not to be worried about. They can easily be replaced on demand, where my core system is the Windows NT operating system, Microsoft Access, Microsoft Money and Microsoft Word---everything else can appear as needed.</p>
 <p>What is paramount is saving the data created by users (my data). Following the lead of unix directory structures, all of the user data produced by each user will be under one respective directory. Currently, Microsoft does not allow all the data stored per user in %SystemRoot%\\Profiles to be relocated under my special directory. For example, the Address Book or the Favorites folder cannot be moved without a fight. So before back up, I have written CMD scripts to copy the Profiles user data to my central directory.</p>
 <p>With all these words I say, Backing up data per user involves one folder!</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 1998-11-27T04:08:06.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

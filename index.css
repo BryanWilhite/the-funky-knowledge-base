@@ -1,0 +1,29 @@
+body {
+  background-color: #363636;
+  color: #fefff1; }
+  body a:active, body a:link, body a:visited {
+    color: #66cdaa;
+    text-decoration: none; }
+  body a:hover {
+    text-decoration: underline;
+    text-decoration-color: #66cdaa; }
+  body .mdc-top-app-bar {
+    background-color: #363636; }
+  body main,
+  body footer {
+    margin: 1rem; }
+  body main {
+    padding: 1rem; }
+    body main .entry {
+      background-color: #cfc;
+      color: #000080;
+      font-family: Consolas, Monaco, "Andale Mono", "DejaVu Sans Mono", monospace;
+      padding: 1rem; }
+    body main .meta {
+      color: #cfc; }
+  body footer span {
+    display: inline-block;
+    font-size: small;
+    margin-right: 1em; }
+  body footer .copyright {
+    font-size: x-small; }

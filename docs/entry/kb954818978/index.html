@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>THE IMPORTANCE OF CALCIUM</h3>
 <section class="entry">
-    <h3>THE IMPORTANCE OF CALCIUM</h3>
 
-<pre>
-<p>By Lindsay Edwards</p>
+    <p>By Lindsay Edwards</p>
 <p>You hear a lot about the need for calcium these days. Though we know that calcium is required for healthy bones and teeth, three out of four women still fail to meet the current recommended daily intake for calcium. Part of the problem may be that many people believe the foods that contain the most calcium are the very foods that contain the most fat. While it's true that milk, yogurt, and cheese are the foods highest in calcium, keep in mind that they're all available now in low-fat versions. You can also get calcium from green leafy vegetables like kale, broccoli, and bok choy; most fruit juices; soy milk; and sardines and salmon (with bones). Be sure to choose foods that are vitamin D fortified, since vitamin D helps the body absorb calcium in food and deposit it in your bones and teeth.</p>
 <p>The American Dietetic Association suggests ways to boost the calcium content of your meals and snacks. They are:</p>
 <ul>
@@ -41,16 +48,19 @@ calcium.&quot;</li>
 pick-me-up.</li>
 </ul>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2000-04-04T03:30:10.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

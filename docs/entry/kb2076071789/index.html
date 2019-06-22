@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,30 +20,39 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>JavaServer Faces in Action Notes: Chapter 1; Introducing JavaServer Faces; 1.2.4 JavaBeans; 1.2.5 JSP</h3>
 <section class="entry">
-    <h3>JavaServer Faces in Action Notes: Chapter 1; Introducing JavaServer Faces; 1.2.4 JavaBeans; 1.2.5 JSP</h3>
 
-<pre>
-<p>1.2.4 JavaBeans</p>
+    <p>1.2.4 JavaBeans</p>
 <p>&quot;JavaBeans is a full-fledged component architecture designed with tool support in mind... JavaBeans is the technology that enables Swing... JavaBeans also includes a powerful event model (the same one used with Swing and JSF components), persistence services, and other neat features.&quot;</p>
 <p>1.2.5 JSP</p>
 <p>&quot;Servlets are great low-level building blocks for web development, but they don't adequately simplify the task of displaying dynamic content... JavaServer Pages look like an HTML page, but they have special tags that do custom processing or display JavaBean values... Ultimately, they behave like a servlet...&quot;</p>
 <p>JSP supports custom tags (or custom actions). &quot;...there's a useful set of standard tags called the JavaServer Pages Standard Tag Library (JSTL) [Sun, JSTL]. The idea is that you can define the UI with HTML-like tags, not Java code.&quot;</p>
 <p>&quot;One of the key design goals of JSF was to avoid relying on a particular display technology... Faces comes with a JSP implementation (via custom tags) right out of the box.&quot;</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2007-02-27T23:37:22.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

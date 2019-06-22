@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>SQL Server 2005: “Understanding &quot;login failed&quot; (Error 18456) error messages”</h3>
 <section class="entry">
-    <h3>SQL Server 2005: “Understanding &quot;login failed&quot; (Error 18456) error messages”</h3>
 
-<pre>
-<p>In continuing with the theme of understanding error messages I'll discuss the &quot;login failed&quot; messages that are surfaced by the client and written to the server's error log (if the auditlevel is set to log failures on login which is the default) in the event of an error during the login process.</p>
+    <p>In continuing with the theme of understanding error messages I'll discuss the &quot;login failed&quot; messages that are surfaced by the client and written to the server's error log (if the auditlevel is set to log failures on login which is the default) in the event of an error during the login process.</p>
 <p>If the server encounters an error that prevents a login from succeeding, the client will display the following error mesage.</p>
 <p>Msg 18456, Level 14, State 1, Server &lt;server name&gt;, Line 1
 Login failed for user '&lt;user name&gt;'</p>
@@ -36,16 +43,19 @@ Login failed for user '&lt;user name&gt;'</p>
 <p>The key to the message is the 'State' which the server will accurately set to reflect the source of the problem.  In the example above, State 8 indicates that the authentication failed because the user provided an incorrect password.</p>
 <p>[http://blogs.msdn.com/sql_protocols/archive/2006/02/21/536201.aspx]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-09-18T03:08:16.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

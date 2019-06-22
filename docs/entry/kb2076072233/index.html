@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>SOLID: “The Liskov Substitution Principle—Agile Software Development Principles Patterns and Practices”</h3>
 <section class="entry">
-    <h3>SOLID: “The Liskov Substitution Principle—Agile Software Development Principles Patterns and Practices”</h3>
 
-<pre>
-<p>Liskov Substitution Principle</p>
+    <p>Liskov Substitution Principle</p>
 <p>“What is wanted is something like the following substitution property: If for each object o1 of type S there is an object o2 of type T such that for all programs P defined in terms of T, the behavior of P is unchanged when o1 is substituted for o2, then S is a subtype of T. [Liskov88]“</p>
 <p>Is it me, or is that painful to read?  Robert Martin puts it a bit simpler:</p>
 <p>Subtypes must be substitutable for their base types</p>
@@ -91,16 +98,19 @@ Rectangle r = new Square();</p>
 <p>This is the whole point of the Liskov Substitution Principle.  It basically wants you to think clearly about the expected behavior and expectations of a class before you derive new classes from it.  It could turn out that when subclasses are substituted for a base class, you may get unexpected results.  This is where unit tests can really be handy.  The unit tests essentially describe and test for the expected behavior of objects (design by contract, if you will).</p>
 <p>[http://codebetter.com/blogs/david.hayden/archive/2005/06/11/64477.aspx]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-08-29T05:20:40.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

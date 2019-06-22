@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,29 +20,38 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Flippant Remarks about Canceling BackgroundWorker Operations</h3>
 <section class="entry">
-    <h3>Flippant Remarks about Canceling BackgroundWorker Operations</h3>
 
-<pre>
-<p>In “Creating a better BackgroundWorker: CancelImmediately and other goodies,” Roy Osherove introduces my problem, “Right now BackgroundWorker has only one way to cancel: &quot;CancelAsync()&quot;. The feature I was missing was &quot;CancelImmediately()&quot;.  I've even gotten to talk a little with Mark Rideout, Program Manager for the .NET Client who supported my claim that this is not possible with the current version of BackgroundWorker.”</p>
+    <p>In “Creating a better BackgroundWorker: CancelImmediately and other goodies,” Roy Osherove introduces my problem, “Right now BackgroundWorker has only one way to cancel: &quot;CancelAsync()&quot;. The feature I was missing was &quot;CancelImmediately()&quot;.  I've even gotten to talk a little with Mark Rideout, Program Manager for the .NET Client who supported my claim that this is not possible with the current version of BackgroundWorker.”</p>
 <p>What this means is that one of the design goals behind BackgroundWorker cancellation is to stop a background process that performs the same, ‘small’ operation that runs and returns to a loop. It follows that the problem of canceling one ‘big’ operation is not really solved by BackgroundWorker. This is because once the BackgroundWorker process runs it really cannot be stopped until it returns. I find this very counterintuitive.</p>
 <p>The Roy Osherove article is here:</p>
 <pre><code>http://weblogs.asp.net/rosherove/pages/BackgroundWorkerEx.aspx
 </code></pre>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2007-10-01T22:42:54.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

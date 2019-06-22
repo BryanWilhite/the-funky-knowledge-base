@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,28 +20,37 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>DAZ Studio 0.9.7.8: Alpha Flippant Remarks</h3>
 <section class="entry">
-    <h3>DAZ Studio 0.9.7.8: Alpha Flippant Remarks</h3>
 
-<pre>
-<p>DAZ Studio runs on a smaller memory footprint than Poser 4.x. It feels faster and smoother and it addresses a more &quot;professional&quot; amateur market, while Poser is locked in a strange world where a &quot;friendly&quot; pictographic interface is superior to a literate one. Poser is a great program but quite inflexible.</p>
+    <p>DAZ Studio runs on a smaller memory footprint than Poser 4.x. It feels faster and smoother and it addresses a more &quot;professional&quot; amateur market, while Poser is locked in a strange world where a &quot;friendly&quot; pictographic interface is superior to a literate one. Poser is a great program but quite inflexible.</p>
 <p>DAZ Studio opens data files from Poser 4.x and below. These files can be read directly from the %ProgramFiles%\\Curious Labs\\Poser4 folder where the Runtime folder and POSER.EXE are at the root. This folder will appear in the Content Window after it is specified by the Edit &gt; Preferences &gt; Directories &gt; Poser Content Directories &gt; Add... command.</p>
 <p>The DAZ Studio equivalent of the Conform to... command is the Fit to... command in the Parameters Window.</p>
 <p>The Scene Window is the best way to select parts of an object. It is a first-class window unlike Poser, its tacked on Hierarchy Editor and its Current Figure/Current Element menus.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2004-12-24T07:08:32.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

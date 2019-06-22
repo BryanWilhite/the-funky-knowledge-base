@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>HTML: Notes on Relative URIs</h3>
 <section class="entry">
-    <h3>HTML: Notes on Relative URIs</h3>
 
-<pre>
-<p>T. Berners-Lee and others (of The Internet Society) write of URIs: &quot;A Uniform Resource Identifier (URI) is a compact string of characters for identifying an abstract or physical resource.&quot; The URL is considered a &quot;subset&quot; of the URI, by the way. The syntax for relative URIs have escaped my understanding for a large time.</p>
+    <p>T. Berners-Lee and others (of The Internet Society) write of URIs: &quot;A Uniform Resource Identifier (URI) is a compact string of characters for identifying an abstract or physical resource.&quot; The URL is considered a &quot;subset&quot; of the URI, by the way. The syntax for relative URIs have escaped my understanding for a large time.</p>
 <p>What I see now centers upon understanding what the period ('.') and the double period ('..') means to Microsoft- or certain Unix-based command line syntax. In such syntax, the single period means &quot;the current directory&quot; and the double period means &quot;the directory immediately above this directory.&quot; When I apply this syntax to the relative URI, they begin make sense to me.</p>
 <p>In the relative URI, the forward slash '/' is used as a delimeter, marking the number of directories above the current directory. The forward slash is the obvious choice because of its use in Unix shells.</p>
 <p>Now with the single period, double periods, and the forward slash, I have a &quot;relatively&quot; complete understanding of URIs. The following are examples of &quot;Normal&quot; URIs:</p>
@@ -41,16 +48,19 @@ SRC=&amp;quot;../../bitmaps/foo.gif&amp;quot; ---the source is the GIF image &am
 <p>The single period should only be used once so that &quot;././foo.gif&quot; would also be very abnormal. There can only be one current directory!</p>
 <p>For a formal study, see &quot;Request for Comments: 2396&quot; (rfc2396) by the Internet Society. As of this writing, this document is located at http://info.internet.isi.edu/in-notes/rfc/files/rfc2396.txt.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 1999-01-14T03:07:07.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

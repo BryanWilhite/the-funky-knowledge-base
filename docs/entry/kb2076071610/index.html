@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,30 +20,39 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>MCAD/MCSD Notes: Chapter 1, Lesson 1; Developing Web Applications</h3>
 <section class="entry">
-    <h3>MCAD/MCSD Notes: Chapter 1, Lesson 1; Developing Web Applications</h3>
 
-<pre>
-<p>Lesson 1: Types of Applications</p>
+    <p>Lesson 1: Types of Applications</p>
 <p>The purpose of this lesson is to introduce ASP.NET and its supporting technologies (IIS, Visual Studio.NET, ADO.NET, the System.Web namespaces, The .NET Framework, etc.).</p>
 <p>ASP.NET is used to build a specific type of application, the Web Application, which is distinguished from Web Service, Internet-enabled and Peer-to-peer applications. The suggestion is to visualize a number of clients receiving and sending messages into a cloud that represents the Internet and this cloud simultaneously is receiving and sending messages from a server where the ASP.NET application resides, running on IIS.</p>
 <p>It follows that ASP.NET is featured in a client-server system design sending and receiving messages using the HTTP protocol and rendering UI in HTML. ASP.NET renders HTML dynamically and interactively opposed to &quot;traditional&quot; static HTML.</p>
 <p>Visual Studio.NET features two languages to support the development of web applications: C# and VB.NET. This does not mean that VS.NET does not support other languages. All this implies is that, as of the writing of this lesson, only C# and VB.NET are directly targeted by VS.NET productivity tools (e.g. Wizard commands).</p>
 <p>One of the stated goals of this lesson was to describe the advantages ASP.NET has over less platform-specific technologies like CGI (the Common Gateway Interface). Outside of the subjective context of the popularity of Microsoft products, this goal was not achieved. This is not stated to suggest that such a goal is not achievable.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2004-11-18T01:20:44.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

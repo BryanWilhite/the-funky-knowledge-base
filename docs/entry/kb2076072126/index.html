@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>“Brain reads word-by-word”; Tina Hesman Saey; sciencenews.org</h3>
 <section class="entry">
-    <h3>“Brain reads word-by-word”; Tina Hesman Saey; sciencenews.org</h3>
 
-<pre>
-<p>Reading may be fundamental, but how the brain gives meaning to letters on a page has been fundamentally a mystery. Two new studies fill in some details on how the brains of proficient readers handle words.</p>
+    <p>Reading may be fundamental, but how the brain gives meaning to letters on a page has been fundamentally a mystery. Two new studies fill in some details on how the brains of proficient readers handle words.</p>
 <p>One of the studies, published in the April 30 Neuron, suggests that a visual-processing area of the brain recognizes common words as whole units. Another study, published online April 27 in PLoS ONE, reveals that the brain operates two fast parallel systems for reading, linking visual recognition of words to speech.</p>
 <p>Maximilian Riesenhuber, a neuroscientist at Georgetown University in Washington, D.C., wanted to know whether the brain reads words letter by letter or recognizes words as whole objects. He and his colleagues showed sets of real words or nonsense words to volunteers undergoing fMRI scans. The words differed in only one letter, such as “farm” and “form” and “soat” and “poat,” or were completely different, such as “farm” and “coat” or “poat” and “hime.”</p>
 <p>The researchers were particularly interested in what happens in the visual word form area, or VWFA, an area on the left side of the brain just behind the ear that is involved in recognizing words.</p>
@@ -41,16 +48,19 @@
 <p>The speed at which the VWFA becomes active supports the idea that the area recognizes whole words, Riesenhuber says. “It really argues for this being one shot to the system,” he says.</p>
 <p>[http://www.sciencenews.org/view/generic/id/43348/title/Brain_reads_word-by-word]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-05-01T20:55:13.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

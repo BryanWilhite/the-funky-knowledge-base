@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Windows Server 2008: Notes on Moving a Hard Drive to a New Machine; Orphaned SIDs; TAKEOWN.EXE; ICACLS.EXE; Get-Acl; Set-Acl</h3>
 <section class="entry">
-    <h3>Windows Server 2008: Notes on Moving a Hard Drive to a New Machine; Orphaned SIDs; TAKEOWN.EXE; ICACLS.EXE; Get-Acl; Set-Acl</h3>
 
-<pre>
-<p>It is very possible that orphaned SIDs (security IDs for unknown users) will appear when a drive (virtual or physical) is moved to a new machine. What is worse is when the orphaned SID is the owner of the file/folder.</p>
+    <p>It is very possible that orphaned SIDs (security IDs for unknown users) will appear when a drive (virtual or physical) is moved to a new machine. What is worse is when the orphaned SID is the owner of the file/folder.</p>
 <p>Windows machines updated after the release of Vista have the TAKEOWN command for Administrators. This is the first command to use before any other permissions operations can be done (otherwise you may get strange permission-denied messages, even with root privileges).</p>
 <p>To take ownership of a directory root (c:\\root) and sub folders and files for the Administrators group, this is the form:</p>
 <pre><code>takeown /f c:&amp;bsol;&amp;bsol;root /a
@@ -48,16 +55,19 @@ script-to-reset-home-directory-permissons-on-a-windows-share]</p>
 <p>Icacls on Technet [http://technet.microsoft.com/en-us/library/cc753525%28WS.10%29.aspx].</p>
 <p>Some idea of what PowerShell can do about this issue is in “Hey, Scripting Guy! How Can I Use Windows PowerShell to Determine the Owner of a File?” [http://www.microsoft.com/technet/scriptcenter/resources/qanda/apr08/hey0415.mspx].</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-09-28T17:02:03.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

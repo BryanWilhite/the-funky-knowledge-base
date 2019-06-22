@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Ubuntu: “Terminator—Multiple GNOME terminals in one window”; ubuntugeek.com</h3>
 <section class="entry">
-    <h3>Ubuntu: “Terminator—Multiple GNOME terminals in one window”; ubuntugeek.com</h3>
 
-<pre>
-<p>This is a project to produce an efficient way of filling a large area of screen space with terminals. This is done by splitting the window into a resizeable grid of terminals. As such, you can produce a very flexible arrangements of terminals for different tasks.</p>
+    <p>This is a project to produce an efficient way of filling a large area of screen space with terminals. This is done by splitting the window into a resizeable grid of terminals. As such, you can produce a very flexible arrangements of terminals for different tasks.</p>
 <p>At the moment, Terminator is available for Ubuntu Hardy and you can install from source in Feisty,Gutsy etc</p>
 <p>You can download Terminator source code from here this is only for who is using ubuntu 7.10 and below version users</p>
 <p>If you are using hardy use the following command to install</p>
@@ -36,16 +43,19 @@
 <p>[http://www.ubuntugeek.com/terminator-multiple-gnome-
 terminals-in-one-window.html]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-09-20T04:28:09.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

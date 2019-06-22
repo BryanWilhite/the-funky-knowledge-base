@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Windows Server 2003 PROBLEM: IIS Throws 404 Errors for ASP.NET 2.0 Applications; ASP.NET 2.x Web Service Extension Not Installed</h3>
 <section class="entry">
-    <h3>Windows Server 2003 PROBLEM: IIS Throws 404 Errors for ASP.NET 2.0 Applications; ASP.NET 2.x Web Service Extension Not Installed</h3>
 
-<pre>
-<p>Internet Information Server in Windows Server 2003 will throw 404 errors when ASP.NET 2.0 is not installed but the server is configured for ASP.NET 2.x under Properties &gt; ASP.NET &gt; ASP.NET version in the IIS management console (MMC). Setting this value to ASP.NET 2.x will not install the ASP.NET Web Service Extension.</p>
+    <p>Internet Information Server in Windows Server 2003 will throw 404 errors when ASP.NET 2.0 is not installed but the server is configured for ASP.NET 2.x under Properties &gt; ASP.NET &gt; ASP.NET version in the IIS management console (MMC). Setting this value to ASP.NET 2.x will not install the ASP.NET Web Service Extension.</p>
 <p>To install ASP.NET 2.x, open the Console to this location:</p>
 <pre><code>%systemRoot%&amp;bsol;&amp;bsol;Microsoft.NET&amp;bsol;&amp;bsol;Framework&amp;bsol;&amp;bsol;v2.0.50727&amp;bsol;&amp;bsol;
 </code></pre>
@@ -37,16 +44,19 @@
 <pre><code>http://msdn2.microsoft.com/en-us/library/k6h9cz8h(VS.80).aspx
 </code></pre>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2007-04-12T21:22:45.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

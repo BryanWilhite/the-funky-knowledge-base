@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,29 +20,38 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>JavaServer Faces in Action Notes: Chapter 1; Introducing JavaServer Faces; 1.5.2 Dissecting goodbye.jsp; 1.5.3 Examining the HelloBean class</h3>
 <section class="entry">
-    <h3>JavaServer Faces in Action Notes: Chapter 1; Introducing JavaServer Faces; 1.5.2 Dissecting goodbye.jsp; 1.5.3 Examining the HelloBean class</h3>
 
-<pre>
-<p>1.5.2 Dissecting goodbye.jsp</p>
+    <p>1.5.2 Dissecting goodbye.jsp</p>
 <p>&quot;One of the HtmlOutputText components references the same helloBean object as the previous page. This works fine because the object lives in the application's session and consequently lives between page requests.&quot;</p>
 <p>1.5.3 Examining the HelloBean class</p>
 <p>&quot;Unlike a lot of other frameworks, JSF backing beans don't have to inherit from a specific class. They simply need to expose their properties using ordinary JavaBean conventions and use specific signatures for their event-handling methods.&quot;</p>
 <p>&quot;Because goodbye doesn't perform any processing... we could have achieved the same effect by hardcoding the text &quot;success&quot; in the button's action property. This is because the navigation system will either use the literal value of an HtmlCommandButton's action property or the outcome of an action method...&quot;</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2007-03-08T23:30:12.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

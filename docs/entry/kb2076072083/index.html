@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Java Fundamentals: “Comparison of Java and C Sharp”; C#; Anders Hejlsberg; Borland; wikipedia.org</h3>
 <section class="entry">
-    <h3>Java Fundamentals: “Comparison of Java and C Sharp”; C#; Anders Hejlsberg; Borland; wikipedia.org</h3>
 
-<pre>
-<p>C# allows restricted use of pointers. …Java does not allow pointers or pointer-arithmetic to be used.</p>
+    <p>C# allows restricted use of pointers. …Java does not allow pointers or pointer-arithmetic to be used.</p>
 <p>…</p>
 <p>C# allows the programmer to create user-defined value types, using the struct keyword.</p>
 <p>…</p>
@@ -41,16 +48,19 @@
 <p>By contrast, C# is a relatively new language. Microsoft has studied existing languages such as Java and Object Pascal, and has changed some aspects of the language and runtime environment in response to perceived failures and difficulties with its predecessors. C# accommodates constructs more commonly found in languages such as C++, Delphi (designing which was Anders Hejlsberg's principal job when he was at Borland), and, in recent C# versions, borrows from dynamic scripting languages such as Ruby.</p>
 <p>[http://en.wikipedia.org/wiki/Comparison_of_C_Sharp_and_Java]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2008-12-02T21:59:02.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

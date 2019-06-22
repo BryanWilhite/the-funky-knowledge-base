@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>iTunes 7.x: iTunes Ignores ID3 version 1.x Tag Information and Embedded Images in MP3 files</h3>
 <section class="entry">
-    <h3>iTunes 7.x: iTunes Ignores ID3 version 1.x Tag Information and Embedded Images in MP3 files</h3>
 
-<pre>
-<p>iTunes ignores ID3 version 1.x tag information and embedded images in MP3 files. For those of us who wrote 1.x tags first and then used 2.x tags for “long string” support, we must use a tool like MP3 Tag Tools (on Windows) to copy 1.x tags to the 2.x fields (use the F6 key in MP3 Tag Tools).</p>
+    <p>iTunes ignores ID3 version 1.x tag information and embedded images in MP3 files. For those of us who wrote 1.x tags first and then used 2.x tags for “long string” support, we must use a tool like MP3 Tag Tools (on Windows) to copy 1.x tags to the 2.x fields (use the F6 key in MP3 Tag Tools).</p>
 <p>Album cover art is another problem with iTunes. According to onetipaday.com, “The problem is though, iTunes doesn’t add the artwork to the actual ID3 tag within the file that is read when other applications play your mp3s, so the artwork is only visible to iTunes.” For more information, see:</p>
 <pre><code>http://www.onetipaday.com/2006/12/31/
     how-to-add-itunes-artwork-to-mp3-id3-tags-using-itunes/
@@ -35,16 +42,19 @@
 <pre><code>http://docs.info.apple.com/article.html?artnum=88186
 </code></pre>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2008-03-19T22:46:54.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

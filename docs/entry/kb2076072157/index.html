@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,29 +20,38 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>SQL Server: “An Introduction to Clustered and Non-Clustered Index Data Structures” by G. Vijayakumar</h3>
 <section class="entry">
-    <h3>SQL Server: “An Introduction to Clustered and Non-Clustered Index Data Structures” by G. Vijayakumar</h3>
 
-<pre>
-<p>When you first create a new table, there is no index created by default. In technical terms, a table without an index is called a “heap”. We can confirm the fact that this new table doesn’t have an index by taking a look at the sysindexes system table, which contains one for this table with an of indid = 0. The sysindexes table, which exists in every database, tracks table and index information. “Indid” refers to Index ID, and is used to identify indexes. An indid of 0 means that a table does not have an index, and is stored by SQL Server as a heap.</p>
+    <p>When you first create a new table, there is no index created by default. In technical terms, a table without an index is called a “heap”. We can confirm the fact that this new table doesn’t have an index by taking a look at the sysindexes system table, which contains one for this table with an of indid = 0. The sysindexes table, which exists in every database, tracks table and index information. “Indid” refers to Index ID, and is used to identify indexes. An indid of 0 means that a table does not have an index, and is stored by SQL Server as a heap.</p>
 <p>…</p>
 <p>It is really useful to have a clustered index when [we] retrieve many rows of data, ranges of data, and when BETWEEN is used in the WHERE clause. Because, the leaf level of the clustered index is the data. It should be used to save many I/Os. So, it is better to use clustered indexes to solve queries asking for ranges of data, not one row.</p>
 <p>[http://www.sql-server-performance.com/articles/
 per/index_data_structures_p1.aspx]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-07-31T20:59:44.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

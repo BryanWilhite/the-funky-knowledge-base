@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,28 +20,37 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>&quot;OUT OF BREATH&quot;</h3>
 <section class="entry">
-    <h3>&quot;OUT OF BREATH&quot;</h3>
 
-<pre>
-<p>The feeling of being &quot;out of breath&quot; is not due to a lack of oxygen but to the inability of the heart to pump enough blood to the muscle cells. The cells of the body need more oxygen during vigorous exercise. The result is an increase of waste products from the cells.</p>
+    <p>The feeling of being &quot;out of breath&quot; is not due to a lack of oxygen but to the inability of the heart to pump enough blood to the muscle cells. The cells of the body need more oxygen during vigorous exercise. The result is an increase of waste products from the cells.</p>
 <p>The circulatory system works harder to increase the blood flow to the cells and to remove the level of carbon dioxide and lactic acid in the body. The heart responds by pumping faster and increasing its stroke volume--that is, its volume for each beat.</p>
 <p>In some people, the heart is unable to pump the large amounts of blood necessary to keep the muscle cells working during exercise. The stroke volume is insufficient. Waste products begin to build up in the muscle tissues, and the lack of oxygen causes the muscles to become fatigued.</p>
 <p>The feeling of being &quot;out of breath&quot; is the result.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 1999-10-15T05:53:55.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

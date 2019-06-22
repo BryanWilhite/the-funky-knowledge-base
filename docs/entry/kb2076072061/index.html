@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,28 +20,37 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Firefox/Mozilla PROBLEM: “OK button grayed out / inactive / not working when trying to download a file”</h3>
 <section class="entry">
-    <h3>Firefox/Mozilla PROBLEM: “OK button grayed out / inactive / not working when trying to download a file”</h3>
 
-<pre>
-<p>“I always click on a link to download a file and wait for a firefox window to appear. This window contains two options: &quot;Open with &quot; and &quot;Save to Disk&quot;, and three buttons: &quot;Browse...&quot;, &quot;OK&quot; and &quot;Cancel&quot;.”</p>
+    <p>“I always click on a link to download a file and wait for a firefox window to appear. This window contains two options: &quot;Open with &quot; and &quot;Save to Disk&quot;, and three buttons: &quot;Browse...&quot;, &quot;OK&quot; and &quot;Cancel&quot;.”</p>
 <p>“The problem is that &quot;OK&quot; button is playing up. Very often it's inactive. Sometimes clicking on the &quot;Browse...&quot; button or shuffling between &quot;Open with&quot; and &quot;Save to Disk&quot; or closing the window and trying to click on the link again magically makes it active. Sometimes it remains dead forever, though. See the picture attached.”</p>
 <p>For me this problem went away when the window containing the buttons is not a pop-up window.</p>
 <p>[http://support.mozilla.com/tiki-view_forum_thread.php?locale=en-US&amp;comments_parentId=4507&amp;forumId=1]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2008-10-23T21:15:21.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

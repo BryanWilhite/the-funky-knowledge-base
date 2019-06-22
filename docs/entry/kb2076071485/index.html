@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Flippant Remarks about the Mighty HOSTS File</h3>
 <section class="entry">
-    <h3>Flippant Remarks about the Mighty HOSTS File</h3>
 
-<pre>
-<p>First, a quote from http://www.accs-net.com/hosts/what_is_hosts.html:</p>
+    <p>First, a quote from http://www.accs-net.com/hosts/what_is_hosts.html:</p>
 <p>The &quot;Hosts&quot; file in Windows and other operating systems is used to associate host names with IP addresses. Host names are the www.yahoo.com addresses that you see every day. IP addresses are numbers that mean the same thing as the www words - the computers use the numbers to actually find the sites, but we have words like www.yahoo.com so humans do not need to remember the long strings of numbers when they want to visit a site.</p>
 <p>For instance, the host name for Yahoo! is www.yahoo.com, while its IP address is 204.71.200.67 Either address will take you to Yahoo!'s site, but the www address will first have to be translated into the IP address. If you type in the IP address directly, your computer will not have to look it up.</p>
 <p>A series of steps are used when searching for IP addresses that go with these host names. The first step, and the one that concerns us here, is the hosts file on your local computer. The Hosts file tells your computer what the name is in numbers so the computer can go find it. If the IP address is found in your Hosts file, the computer will stop looking and go to that site, but if it is not it will ask a DNS computer (domain name server) for the information. Since the search ends once a match is found, that provides us with a mechanism to block sites we have no interest in. You may block sites that serve advertisements, sites that serve objectionable content, or any other site that you choose to block.</p>
@@ -36,16 +43,19 @@
 </code></pre>
 <p>I have created a Shortcut to my HOSTS file with NOTEPAD.EXE for quick and easy access. Any IP address that is exposed to the public Internet can be entered into the HOSTS file and subsequently resolved. This is a big deal to a non-networking guy like me. In theory I can leave my computer on at home, jot down my IP address and later resolve it from a remote location (unfortunately/fortunately my firewall may have a few things to say about that).</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2002-06-21T21:44:44.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

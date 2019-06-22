@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>VBScript and ASP Design: Minimizing the Size of Script Blocks</h3>
 <section class="entry">
-    <h3>VBScript and ASP Design: Minimizing the Size of Script Blocks</h3>
 
-<pre>
-<p>I use the Variant vHTML in my VBScript for ASP. This variable appears at the top of the script and concatenates itself and new HTML along the way to end of the script passing decision structures (and even calls to external functions in Include (.INC) files). Any HTML to be rendered by ASP is stored in this variable. This is one (of many) ways to render HTML in a script block:</p>
+    <p>I use the Variant vHTML in my VBScript for ASP. This variable appears at the top of the script and concatenates itself and new HTML along the way to end of the script passing decision structures (and even calls to external functions in Include (.INC) files). Any HTML to be rendered by ASP is stored in this variable. This is one (of many) ways to render HTML in a script block:</p>
 <pre><code>&amp;lt;%@ LANGUAGE=&amp;quot;VBSCRIPT&amp;quot; %&amp;gt;
 &amp;lt;%
     Option Explicit
@@ -78,16 +85,19 @@
 <p>where the file adovbs.inc is the ADO constants file provided by Microsoft. Note that each file referenced by the #include directive may contain additional script blocks. The reason why the Option Explicit statement needs its own script block is that it must be the first line in the VBScript code. The assumption here is that the files referenced by #include contain VBScript blocks. The #include directive is the only server-side directive supported by .ASP pages (ASP.DLL); the others, by the way, are supported by SSINC.DLL (.SHTML or .STM pages by default).</p>
 <p>The main reasons to minimize script blocks is to increase runtime compilation speed and to reduce CPU usage. For more information please see &quot;Compiling Large ASP Pages Can Take 100% of CPU Time&quot; (Q193831) in the Microsoft Knowledge Base.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 1999-12-13T06:17:14.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

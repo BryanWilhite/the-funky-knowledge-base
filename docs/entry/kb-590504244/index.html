@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>GETTING VITAMIN C FROM FOODS, NOT PILLS</h3>
 <section class="entry">
-    <h3>GETTING VITAMIN C FROM FOODS, NOT PILLS</h3>
 
-<pre>
-<p>Although there is current discussion to more than double the current 60 milligram recommendation for vitamin C to help protect against some diseases and degenerative effects of aging, you should turn to fruits and vegetables instead of supplements to bump up your intake.</p>
+    <p>Although there is current discussion to more than double the current 60 milligram recommendation for vitamin C to help protect against some diseases and degenerative effects of aging, you should turn to fruits and vegetables instead of supplements to bump up your intake.</p>
 <p>Many fruits and vegetables are naturally rich in vitamin C, as well as other important vitamins, minerals, and fiber. So go natural--make consuming five servings of fruits and vegetables a daily commitment.</p>
 <p>Foods naturally rich in vitamin C:</p>
 <p>Strawberries: 1 cup, sliced; 95 mg
@@ -46,16 +53,19 @@ Grapefruit: 1/2 medium; 40 mg
 Grapefruit juice: 1/2 cup; 35 mg</p>
 <p>In addition to easily providing between 100 to 200 milligrams of vitamin C, consuming five servings of fruits and vegetables each day provides other important and disease-fighting vitamins, minerals, and fiber. Studies have shown that people who consume diets providing 200 milligrams of vitamin C per day through fruits and vegetables have a lower incidence of some cancers, especially cancers of the oral cavity, esophagus, stomach, colon, and lung. However, people who simply consume vitamin C supplements do not appear to experience the same protective effect.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2004-05-22T00:23:55.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

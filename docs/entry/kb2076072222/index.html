@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Ubuntu: “How to Clean Up Your Ubuntu Installation”; Faraz Ahmed</h3>
 <section class="entry">
-    <h3>Ubuntu: “How to Clean Up Your Ubuntu Installation”; Faraz Ahmed</h3>
 
-<pre>
-<p>Windows installations get messed up pretty easy. If you use Windows for long enough you will find out that the performance of yousystem is not what it used to be, it has become slower. The solution would be to use cleanup tools such as registry cleaner and crap cleaner. Thiswould clean all of the registry problems and delete unneccesary and unwanted files in the temp folder.</p>
+    <p>Windows installations get messed up pretty easy. If you use Windows for long enough you will find out that the performance of yousystem is not what it used to be, it has become slower. The solution would be to use cleanup tools such as registry cleaner and crap cleaner. Thiswould clean all of the registry problems and delete unneccesary and unwanted files in the temp folder.</p>
 <p>When I switched over to Ubuntu, I thought I did not have to worry about Temp files and &quot;crap cleaning&quot; but it turns out that I was wrong. Although Ubuntu installations handle temporary files way better than Windows does, we still have to clean up our installation from time to time to keep our system running smooth.</p>
 <p>Cleanup Residual Config Packages</p>
 <p>Residual config packages are dependency packages that are left behind after youuninstall n application from your Ubuntu installation. Since we don't need these packages anymore they are just taking up space. Time to get rid of them.</p>
@@ -51,16 +58,19 @@
 <p>Your system is now a whole lot cleaner and will perform better than before also. :)</p>
 <p>[http://hubpages.com/hub/How-to-Clean-Up-Your-Ubuntu-Installation]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-08-27T20:22:13.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

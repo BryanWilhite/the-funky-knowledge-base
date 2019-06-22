@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,29 +20,38 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>THE NUTRITION EVOLUTION</h3>
 <section class="entry">
-    <h3>THE NUTRITION EVOLUTION</h3>
 
-<pre>
-<p>We're in the middle of a nutrition evolution that's making many of the recommended dietary allowance (RDA) tables available on the Web
+    <p>We're in the middle of a nutrition evolution that's making many of the recommended dietary allowance (RDA) tables available on the Web
 obsolete.</p>
 <p>That's because the Food and Nutrition Board (FNB) of the National Academy of Sciences updates its recommendations for all known nutrients on a regular basis. As part of the current cycle of revisions, the recommendations for calcium, phosphorus, magnesium, vitamin D, fluoride, thiamin, riboflavin, niacin, vitamin B-6, folate, vitamin B-12, pantothenic acid, biotin, and choline were evaluated and updated last year. Currently, the FNB and its advisors are assessing human needs for the antioxidant nutrients, such as vitamin C.</p>
 <p>During this update cycle, the FNB is also replacing the RDAs, which
 were set at levels to prevent nutritional deficiencies, with a new set of standards called the Dietary Reference Intakes, or DRIs. The DRIs are expected to differ from the RDAs in that they will also address the role of nutrients in reducing the risk of chronic diseases, such as osteoporosis, cancer, and cardiovascular disease. Also being established are standards of tolerance, called the Upper Limit, or UL, which will be set at a level to guard against nutrient overload and toxicity from concentrated sources, such as supplements.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 1999-09-21T03:59:11.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

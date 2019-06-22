@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,27 +20,36 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Actually Treating a Form (with HasModule = True) as a Class</h3>
 <section class="entry">
-    <h3>Actually Treating a Form (with HasModule = True) as a Class</h3>
 
-<pre>
-<p>It was difficult for me to unify my understanding of my user-defined classes with the idea of a Form as a class. I used to draw a blank when I saw that Access calls a form code module a &quot;Class Module.&quot; But now I have an understanding:</p>
+    <p>It was difficult for me to unify my understanding of my user-defined classes with the idea of a Form as a class. I used to draw a blank when I saw that Access calls a form code module a &quot;Class Module.&quot; But now I have an understanding:</p>
 <p>The code behind forms is not only continually compliled (assuming Compile on Demand is enabled under Tools &gt; Options... &gt; Coding Options) but it is also continually instantiated. User defined classes are not so lucky as they must be Set with the keyword New before they create objects.</p>
 <p>An unbound text box control in a form with a Class Module should be thought of as a class Property of type Variant. This implies that this Form is the graphical interface of an instantiated class. So an unbound text box in a form without a class module (HasModule = False) is truly unbound. But a form that has a module implicitly &quot;binds&quot; its text boxes to referable memory locations for the duration of its instance.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 1998-11-30T16:47:07.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

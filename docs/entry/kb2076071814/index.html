@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -20,30 +21,39 @@ integrating Hibernate; 2.3 Basic configuration - the funky knowledge base</title
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
-<section class="entry">
-    <h3>Hibernate in Action Notes: Chapter 2; Introducing and
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Hibernate in Action Notes: Chapter 2; Introducing and
 integrating Hibernate; 2.3 Basic configuration</h3>
+<section class="entry">
 
-<pre>
-<p>2.3 Basic configuration</p>
+    <p>2.3 Basic configuration</p>
 <p>&quot;Hibernate can be configured to run in almost any Java application and development environment... It’s important to understand the difference in configuring Hibernate for managed and non-managed environments...&quot;</p>
 <p>Tomcat is considered an unmanaged environment because it only provides &quot;basic concurrency management via thread pooling.&quot;</p>
 <p>&quot;A J2EE application server such as JBoss, BEA WebLogic, or IBM WebSphere implements the standard (J2EE-specific) managed environment for Java.&quot; A managed environment provides resource pooling (like database connections), transaction and security functionality.</p>
 <p>&quot;Hibernate attempts to abstract the environment in which it’s deployed. In the case of a non-managed environment, Hibernate handles transactions and JDBC connections (or delegates to application code that handles these concerns). In managed environments, Hibernate integrates with container-managed transactions and datasources. Hibernate can be configured for deployment in both environments.&quot;</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2007-04-11T01:38:47.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

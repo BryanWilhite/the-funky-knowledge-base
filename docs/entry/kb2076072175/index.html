@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>ASP.NET: “Web Site vs. Web Application”; Stephen M. Redd</h3>
 <section class="entry">
-    <h3>ASP.NET: “Web Site vs. Web Application”; Stephen M. Redd</h3>
 
-<pre>
-<p>A few years ago, when I first got a look at asp.net 2.0, it was clear to me that there must have been some serious changes inside the development team at Microsoft. ASP.NET 1.x was a huge leap forward in server side web application frameworks, but it was also geared to an object oriented audience. While it did support direct data access from web pages and everything-in-one-file styles, Visual Studio's use of asp.net encouraged a more tiered design with clean separation of presentation, business, and data access. It also encouraged OO  design by making inheritance, namespaces, and assemblies all obvious, simple, and the default way of things.</p>
+    <p>A few years ago, when I first got a look at asp.net 2.0, it was clear to me that there must have been some serious changes inside the development team at Microsoft. ASP.NET 1.x was a huge leap forward in server side web application frameworks, but it was also geared to an object oriented audience. While it did support direct data access from web pages and everything-in-one-file styles, Visual Studio's use of asp.net encouraged a more tiered design with clean separation of presentation, business, and data access. It also encouraged OO  design by making inheritance, namespaces, and assemblies all obvious, simple, and the default way of things.</p>
 <p>By the time asp.net 2.0 was coming out,  more agile languages were getting all the buzz. PHP was still relevant and Ruby on Rails was shaping up to be the next big contender. By that time Java's JSP, the only other heavy OO platform that still mattered, had fallen flat on its face. So it wasn't exactly a surprise that there was a focus within asp.net 2.0 towards the &quot;less is more&quot; philosophy of quick, dirty, do-what-I-mean design. Codeless databinding, master pages, skins, themes, and configuration driven providers for common stuff like membership, profiles, personalization, etc. were all expected.</p>
 <p>But what make several of us step back was the new compilation model and the &quot;project-less&quot; web site... er... project. Aside from being one of the most impossible to name mechanisms, it was also a breaking change in how asp.net was done. The new compilation model threw out the visual studio project file itself, took asp.net back to the &quot;compile-on-the-fly&quot; concept, all but eliminated the use of namespaces within a web site, and radically altered the way UI template and the associated code-behind were arranged.</p>
 <p>But for those of us doing serious web frameworks in large or complex environments, the web site model had some serious drawbacks. The biggest for me was having to manually deal with namespaces, which the UI and code designers would fight every step of the way (until you finally gave up and just let it pile up in one big default namespace). The loss of the visual studio project files was also painful, and it lead to an awkward &quot;exclude from project&quot; mechanism where the only way to get Visual Studio to ignore a file was to physically rename it. Large web sites with lots of code suffered horribly in performance because so many helpful visual studio features, like refactoring and the verification compiler had to sift through every file in the project with no guidance from project configuration.</p>
@@ -106,16 +113,19 @@
 <p>I can't say that web sites are inferior to web applications overall. There are cases where web sites do work very well, especially with smaller and simpler projects. I just personally don't find that having on-the-fly compilation is really much extra value, while more control over the application's compilation is always a good thing.</p>
 <p>[http://reddnet.net/code/asp-net-web-site-vs-web-application-project-part-2/]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-08-10T05:02:38.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

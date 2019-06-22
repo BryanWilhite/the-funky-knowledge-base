@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,29 +20,38 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>CSS: border-radius and -moz-border-radius; CSS3; Firefox; Mozilla; the-art-of-web.com; text-shadow, -moz-box-shadow, -moz-column-rule; ajaxian.com</h3>
 <section class="entry">
-    <h3>CSS: border-radius and -moz-border-radius; CSS3; Firefox; Mozilla; the-art-of-web.com; text-shadow, -moz-box-shadow, -moz-column-rule; ajaxian.com</h3>
 
-<pre>
-<p>“As with many CSS properties relating to margins, padding and borders, there are four individual properties - one for each corner of a box element - and one shorthand property. Each attribute is mean to accept either one or two values, but the Mozilla implementation is slightly different from the standard…At this time the CSS3 properties above do not work in Internet Explorer. The 'Mozilla' versions however work very well in Firefox 1.5 and presumably in other Mozilla-based browsers.”</p>
+    <p>“As with many CSS properties relating to margins, padding and borders, there are four individual properties - one for each corner of a box element - and one shorthand property. Each attribute is mean to accept either one or two values, but the Mozilla implementation is slightly different from the standard…At this time the CSS3 properties above do not work in Internet Explorer. The 'Mozilla' versions however work very well in Firefox 1.5 and presumably in other Mozilla-based browsers.”</p>
 <p>[http://www.the-art-of-web.com/css/border-radius/]</p>
 <p>There are other ‘crazy’ Firefox CSS properties like text-shadow, -moz-box-shadow and -moz-column-rule.</p>
 <p>[http://ajaxian.com/archives/
 firefox-implements-3-css-properties-text-shadow-moz-box-shadow-and-moz-column-rule]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-02-20T04:29:47.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

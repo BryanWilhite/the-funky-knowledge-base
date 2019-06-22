@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Joyce Franklin, CPA on Home Loans, etc.</h3>
 <section class="entry">
-    <h3>Joyce Franklin, CPA on Home Loans, etc.</h3>
 
-<pre>
-<p>&quot;Points, also known as loan origination or loan discount fees, are paid up front when you purchase a home. Paying points reduces the interest rate on your loan. Each point is equivalent to one percent of the loan amount and each point paid usually reduces your interest rate by 1/8, or .125 of a percentage point. For example, if you pay two points at closing on a $100,000 loan ($2,000) at 7.5 percent, you could lower your interest rate from 7.5 percent to 7.25 percent. Points are tax deductible in the year you pay them.&quot;</p>
+    <p>&quot;Points, also known as loan origination or loan discount fees, are paid up front when you purchase a home. Paying points reduces the interest rate on your loan. Each point is equivalent to one percent of the loan amount and each point paid usually reduces your interest rate by 1/8, or .125 of a percentage point. For example, if you pay two points at closing on a $100,000 loan ($2,000) at 7.5 percent, you could lower your interest rate from 7.5 percent to 7.25 percent. Points are tax deductible in the year you pay them.&quot;</p>
 <hr>
 <p>“How large of a monthly mortgage payment can you afford? The guideline is that your household should spend a maximum of 28 percent of its gross monthly income (income before taxes) on monthly housing expenses. Your monthly income includes salary, bonus, dividends, and interest. Monthly housing expenses include mortgage principal and interest, real estate taxes, and homeowners insurance.</p>
 <p>&quot;A second guideline is that your monthly housing expenses plus other long-term debts (including educational loans, car loans, alimony and child support, and other loans) should not exceed 36 percent of your gross monthly income. These factors are flexible, so if you are currently paying more than 28 percent of your gross salary for rent, you may be able to qualify for a loan that would require you to pay more than 28 percent in monthly mortgage expenses.</p>
@@ -37,16 +44,19 @@
 <p>&quot;When mulling over how much you'll put down, remember to earmark funds for an emergency cash reserve and for upcoming expenses (for example, college education, moving expenses, and home-decorating costs). You'll also need cash for closing costs, including transfer and recording taxes, attorney fees, title insurance, and document preparation fees.</p>
 <p>&quot;You can ballpark closing costs by calling a real estate agent and asking what typical closing costs are for your area. The average closing costs run 3 percent to 6 percent of your mortgage loan amount.&quot;</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2004-05-22T00:23:55.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

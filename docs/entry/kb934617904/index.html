@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>T-SQL: Implicit Descision Structures Using substring(), sign() and charindex(); the Sybase isnull() System Function</h3>
 <section class="entry">
-    <h3>T-SQL: Implicit Descision Structures Using substring(), sign() and charindex(); the Sybase isnull() System Function</h3>
 
-<pre>
-<p>Database management systems like those made by Sybase do not support what Microsoft calls the &quot;Immediate If&quot; or IIF() functions in their implementation of SQL. Sybase does have the System function isnull() which effectively the VBA equivalent of:</p>
+    <p>Database management systems like those made by Sybase do not support what Microsoft calls the &quot;Immediate If&quot; or IIF() functions in their implementation of SQL. Sybase does have the System function isnull() which effectively the VBA equivalent of:</p>
 <pre><code>IIF(&amp;lt;expression&amp;gt; is null, &amp;lt;value if true&amp;gt;, &amp;lt;value if false&amp;gt;)
 </code></pre>
 <p>but there is little else in the way of in-line decision structures (functions that can be projected in a SELECT statement that make if-then decisions).</p>
@@ -65,16 +72,19 @@ SELECT cusip = @cusip
 <p>which, in English, says,  &quot;Start at position one of the string literal and return a string of length zero.&quot; Fortunately Sybase 11.x Adaptive Server's implementation of substring() does not blow up when a zero is used for the length argument. (Also the Sybase Transact SQL Users Guide reminds us that 'one' + '' + 'two' = 'one two' where a space has been inserted in place of the zero-length string. But this does not seem to happen when, I assume, substring() returns a zero length string.) Beware...</p>
 <p>The zero can show up in the length argument of substring() because of Charles' brilliant use of the sign() function: if the charindex() function nested within the sign() function can't find the string it is looking for it will return 0. If the condition is true, sign() returns 1. When sign() returns 1, it allows the substring() function it is nested in to return one character.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 1999-08-15T16:56:33.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

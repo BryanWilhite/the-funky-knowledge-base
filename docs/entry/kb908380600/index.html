@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,30 +20,39 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>JavaScript: Testing for an Instantiated Object; Constructor Functions</h3>
 <section class="entry">
-    <h3>JavaScript: Testing for an Instantiated Object; Constructor Functions</h3>
 
-<pre>
-<p>Because of low-bandwidth loading problems, a variable may be declared but not yet set to a &quot;new&quot; instance of a Constructor Function's object. In such a limbo state the variable will be null. As a precaution, test for null. For example,</p>
+    <p>Because of low-bandwidth loading problems, a variable may be declared but not yet set to a &quot;new&quot; instance of a Constructor Function's object. In such a limbo state the variable will be null. As a precaution, test for null. For example,</p>
 <pre><code>if (objAgent != null) {
     if (objAgent.cool) { //do stuff }
 }
 </code></pre>
 <p>checks for the instantiation of objAgent before its &quot;cool&quot; property is tested. This often happens while a page is loading and the page has an OnLoad event that binds one or more variables to an object. (Recall that the OnLoad event does not fire until all elements on the page are completely loaded.) If an element on the loading page refers to an object that is not yet instantiated (because the OnLoad event has not fired yet) and no precautions are taken, a &quot;not an object&quot; error will occur.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 1999-02-10T02:15:19.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,29 +20,38 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>YOUR CHILD'S NUTRITION</h3>
 <section class="entry">
-    <h3>YOUR CHILD'S NUTRITION</h3>
 
-<pre>
-<p>By Lindsay Edwards</p>
+    <p>By Lindsay Edwards</p>
 <p>Parents have many opinions on how and what to feed their children, most of which stem from how they were raised. In fact, most parents believe that they must control their children's eating habits. It's up to them to decide what foods to buy and even how these foods are prepared and served. However, research suggests that children are naturally able to regulate how they eat, without intervention from adults. How?</p>
 <p>First, research suggests that children whose parents are less controlling of how much they eat are better able to control their own weight. When you tell your children how much to eat, you are telling them to ignore their own body signals, such as a growling belly. Teach your children to listen to their bodies and eat as much or as little as necessary to be satisfied.</p>
 <p>Second, it has been proven that children are more likely to try new foods when they exist in an environment that is free of pressure from their parents. As a result, they will learn to like new foods more easily.</p>
 <p>So, parents, take note. Trust your children to know how much to eat and give them the opportunity to learn to like new foods without pressuring them.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2000-01-17T08:12:16.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

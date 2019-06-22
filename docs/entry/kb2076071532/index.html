@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Microsoft JScript and MSHTML: The HTML Editor Application; HTA; MSDHTML</h3>
 <section class="entry">
-    <h3>Microsoft JScript and MSHTML: The HTML Editor Application; HTA; MSDHTML</h3>
 
-<pre>
-<p>Users of AOL mail and MSN Hotmail have been enjoying the one thing that makes the Microsoft Internet Explorer Web browser necessary: the ability to edit HTML in place. This was one of the original specifications Tim Berners-Lee (http://www.w3.org/People/Berners-Lee/) demanded in a web browser and Netscape failed to deliver. Microsoft on the other hand has it lurking about but its not really recognized as a feature worth heavily marketing let alone documenting.</p>
+    <p>Users of AOL mail and MSN Hotmail have been enjoying the one thing that makes the Microsoft Internet Explorer Web browser necessary: the ability to edit HTML in place. This was one of the original specifications Tim Berners-Lee (http://www.w3.org/People/Berners-Lee/) demanded in a web browser and Netscape failed to deliver. Microsoft on the other hand has it lurking about but its not really recognized as a feature worth heavily marketing let alone documenting.</p>
 <p>In fact, the opinion here is that Microsoft would rather have you know about the HTML Application (featuring HTA files) before you learn about the MSDHTML (JScript) behind HTML Editing. This appears to be the case in MSDN's &quot;How to Create an HTML Editor Application&quot;:</p>
 <pre><code>http://msdn.microsoft.com/
     library/default.asp?
@@ -43,16 +50,19 @@
 </code></pre>
 <p>And the most important caveat: never forget that this editor is based on MSHTML, Microsoft's implementation of HTML which has nothing to do with the wonderful standards set by the W3C. I was forced to use a lot of complex regular expressions to parse MSHTML into &quot;real&quot; HTML 4.x markup.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2003-08-26T00:49:31.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

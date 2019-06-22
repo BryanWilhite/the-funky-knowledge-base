@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>“Delegates Explained in Plain English”; Simon Pickersgill</h3>
 <section class="entry">
-    <h3>“Delegates Explained in Plain English”; Simon Pickersgill</h3>
 
-<pre>
-<p>Delegates are fundamental to the .NET Framework (events and callbacks wouldn't work without them) and can be extremely powerful to the .NET Developer once they come to grasps with exactly what they are and how to use them. In this blog I will consider aspects of a real world situation in which delegates are useful, after which I will explain, in illustrative terms exactly what delegates are all about. You will see how delegates are an intrinsic part of the events structure in the .NET framework, but also why they are useful in their own right. First, though, we need to understand a little about the origins of delgates in the .NET framework.</p>
+    <p>Delegates are fundamental to the .NET Framework (events and callbacks wouldn't work without them) and can be extremely powerful to the .NET Developer once they come to grasps with exactly what they are and how to use them. In this blog I will consider aspects of a real world situation in which delegates are useful, after which I will explain, in illustrative terms exactly what delegates are all about. You will see how delegates are an intrinsic part of the events structure in the .NET framework, but also why they are useful in their own right. First, though, we need to understand a little about the origins of delgates in the .NET framework.</p>
 <p>…</p>
 <p>Where one class may wants to be represented within another class it can use a delegate. This is a lot more efficient that passing itself to the other class in its entirety, and is a lot more flexible. The delegate has to conform to certain limitations, though, just as the real world delegate does.</p>
 <p>When a delegate is declared it is declared much along the lines of a method/sub/function declaration. For example, in C#, a delegate declaration might look like:</p>
@@ -46,16 +53,19 @@
 Delegates-Explained-in-Plain-English.aspx]</p>
 <p>Note that this article does not recognize the role generics play with delegates.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-08-11T03:37:01.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

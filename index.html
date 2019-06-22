@@ -1,7 +1,13 @@
 ---
 layout: layouts/base.html
 ---
-
-{{ kb.group['64'].Documents.length }}
-
-<p>More entries can be found in <a href="{{ '/entries/' | url }}">the index</a>.</p>
+<ul class="mdc-list mdc-typography--headline4">
+    {%- for group in kb.index.ChildSegments %}
+    {% case forloop.index0 %}
+    {% when 0 %}
+    <li class="mdc-list-item"><a href="./group/">{{ group.SegmentName }}</a></li>
+    {% else %}
+    <li class="mdc-list-item"><a href="./group/{{ forloop.index0 }}">{{ group.SegmentName }}</a></li>
+    {% endcase %}
+    {% endfor -%}
+</ul>

@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>ASP: Notes on Implementing Security in ASP Projects</h3>
 <section class="entry">
-    <h3>ASP: Notes on Implementing Security in ASP Projects</h3>
 
-<pre>
-<p>Without much fanfare here it is: I depend on the Windows NT operating system to handle security features in my ASP solutions. I have no trouble creating a single point failure: the operating system itself. When something goes wrong in terms of security both Microsoft and myself can share the blame!</p>
+    <p>Without much fanfare here it is: I depend on the Windows NT operating system to handle security features in my ASP solutions. I have no trouble creating a single point failure: the operating system itself. When something goes wrong in terms of security both Microsoft and myself can share the blame!</p>
 <p>The IIS user IUSR_&lt;Machine Name&gt; and the NTFS file system are the starting points in the quest for tight ASP security. Fore more details we have:</p>
 <pre><code>Implementing a Secure Site with ASP
 http://msdn.microsoft.com/library/backgrnd/html/msdn_implement.htm
@@ -61,16 +68,19 @@ Using The Auditing Tool to Solve Authenticationess Issues
 http://www.15seconds.com/howto/pg003230.htm
 </code></pre>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2001-04-08T02:38:13.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

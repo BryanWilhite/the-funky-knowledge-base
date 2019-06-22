@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Ubuntu Linux: Flippant Remarks about Setting Up Ubuntu Server in Virtual PC 2004</h3>
 <section class="entry">
-    <h3>Ubuntu Linux: Flippant Remarks about Setting Up Ubuntu Server in Virtual PC 2004</h3>
 
-<pre>
-<p>Allocating 48MB of RAM for an Ubuntu Server VM running a LAMP image is reasonable. 96MB seems more than enough for a single-user development environment. The VM hard drive image should be about 1GB.</p>
+    <p>Allocating 48MB of RAM for an Ubuntu Server VM running a LAMP image is reasonable. 96MB seems more than enough for a single-user development environment. The VM hard drive image should be about 1GB.</p>
 <p>The foremost issue is getting the console display to appear correctly in Virtual PC 2004. Edit /boot/grub/menu.lst to change the first entry in the list of Automagic Kernels such that:</p>
 <pre><code>kernel /boot/vmlinuz-2.6.10-5-386 root=/dev/hda1 ro quiet splash
 </code></pre>
@@ -52,16 +59,19 @@
     virtualserver/evaluation/linuxguestsupport/default.mspx
 </code></pre>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2006-09-28T20:08:05.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

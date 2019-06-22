@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,27 +20,36 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>SHOULD I EXERCISE AFTER EATING?</h3>
 <section class="entry">
-    <h3>SHOULD I EXERCISE AFTER EATING?</h3>
 
-<pre>
-<p>Most experts recommend decreasing or eliminating exercise for two to three hours after a big meal. After eating, a major amount of blood is needed in the digestive tract, reducing the amount of oxygenated blood available for the muscles. It may be more difficult to exercise at this time. It would depend on the amount of food, the amount of time since the meal, and how hard you are exercising.</p>
+    <p>Most experts recommend decreasing or eliminating exercise for two to three hours after a big meal. After eating, a major amount of blood is needed in the digestive tract, reducing the amount of oxygenated blood available for the muscles. It may be more difficult to exercise at this time. It would depend on the amount of food, the amount of time since the meal, and how hard you are exercising.</p>
 <p>Most athletes plan to eat at least three or four hours before an event so that the food will have digested and the stomach will not be full. Although the exact cause of a side-stitch (pain below the rib) is not known, it could result from trapped gas in the digestive tract created when you exercise soon after eating. If you do get side-stitches after eating, it's probably a good idea to wait 30 to 90 minutes before exercising.</p>
 <p>A benefit of eating before exercise is the possibility of weight loss. Studies show that exercise helps reduce the appetite, so this could be helpful to you in your weight loss program.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 1999-09-21T04:00:19.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>WiFi: “General Wireless-N Question—Why am I only getting 65mbps?”; dslreports.com</h3>
 <section class="entry">
-    <h3>WiFi: “General Wireless-N Question—Why am I only getting 65mbps?”; dslreports.com</h3>
 
-<pre>
-<p>[stevech0:]</p>
+    <p>[stevech0:]</p>
 <p>Wireless Air Link bit rate: with 11g: 54Mbps max. With 11n: same. These rates are achieved only with short distances, few walls, and ideal interference conditions.</p>
 <p>With 11n AND channel-pair-bonding: 108Mbps. But channel pair bonding is (a) rude as it uses 2/3 of the entire shared band and (b) is often automatically disabled if there are any non-11n networks on any of the 12 affected channel numbers. So 11n is great for hermits.</p>
 <p>Windows normally reports the Wireless Air Link in the WiFi status. As it will with an ethernet, say, 1Gbps connection but few PCs can push more than 75% of that speed.</p>
@@ -35,16 +42,19 @@
 <p>[http://www.dslreports.com/forum/
 r21412426-General-WirelessN-Question-Why-am-I-only-getting-65mbps]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-03-27T01:22:20.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

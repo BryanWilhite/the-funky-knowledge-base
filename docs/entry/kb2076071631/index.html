@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Open Source Office Applications: Flippant Remarks about AbiWord 2.014</h3>
 <section class="entry">
-    <h3>Open Source Office Applications: Flippant Remarks about AbiWord 2.014</h3>
 
-<pre>
-<p>I am a Microsoft guy for historical and practical reasons---not for ideological reasons. When some Oracle guy has a smart remark, I say, Hey, smarty slacks, back in the early 1990s when I was learning SQL I could not walk into an Office Depot and pick up a $99 Oracle database (with that special, software-laundering, anti-trusting &quot;competitive upgrade&quot; price). But I could get my hands on Microsoft products and this got me hooked---the MS Borg assimilated another victim.</p>
+    <p>I am a Microsoft guy for historical and practical reasons---not for ideological reasons. When some Oracle guy has a smart remark, I say, Hey, smarty slacks, back in the early 1990s when I was learning SQL I could not walk into an Office Depot and pick up a $99 Oracle database (with that special, software-laundering, anti-trusting &quot;competitive upgrade&quot; price). But I could get my hands on Microsoft products and this got me hooked---the MS Borg assimilated another victim.</p>
 <p>Now that my Office Depot days are over, here comes MSDN Universal Subscriptions via my W2 labors---so now I'm on the harder stuff and from my W2 point of view, I am getting Microsoft software &quot;for free.&quot; So why would I care to write about AbiWord, this Open Source fledgling?</p>
 <p>Well, Microsoft employees can console themselves by considering my flippant remarks a minority opinion (in every sense of the term) but I don't think I am suffering from a terminal case of brown-eyed myopia when I say that MS Office is a bloated nebula of COM objects---composed of balls of strange orange gas and truly stellar objects. The gassy part of MS Office is really starting to stink when I think of my data as cross-platform XML data sets---and I am writing this sentence being fully aware of InfoPath and the XML features in Word 2003. So when I hear that AbiWord can read and write XHTML, I sit up and take notice. Unfortunately, these are the first few AbiWord bullets flying past my head:</p>
 <ul>
@@ -48,16 +55,19 @@
 </ul>
 <p>The main point of this rant is that I am completely unaware of a tool that is as convenient as a Word processor but it also is a built for rich data interchange. With MS InfoPath the price of entry is having a definite schema in mind. With MS Word 2003 you don't need to have a definite schema to get started (you can add that later), but the formatting of your document effectively---by default---belongs to Microsoft. Out of the box, Microsoft Word 2003 will allow you to interchange your raw text data with a custom schema but it will not let you interchange your formatting information with a custom schema---and I say this with the letters WORDML dancing in my head. I suppose you can &quot;schema-tize&quot; your formatting but the temptation to write your own code is not far away (and I am well beyond tempted). This limitation is unacceptable and as long as Microsoft pays little or no attention to this &quot;minority problem&quot; I will keep my brown eyes on tools like AbiWord.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2005-01-13T02:03:43.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

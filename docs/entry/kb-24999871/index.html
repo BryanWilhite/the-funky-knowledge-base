@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Windows 95: Setting the System-level Parameters for Direct Cable Connection</h3>
 <section class="entry">
-    <h3>Windows 95: Setting the System-level Parameters for Direct Cable Connection</h3>
 
-<pre>
-<p>Direct cable connection is very complicated. It involves only two Control Panel Applets (Network and perhaps Passwords) but has several variables to be dealt with. This is the sketch of how to get it to work based on the assumption that we have two computers not connected to a network:</p>
+    <p>Direct cable connection is very complicated. It involves only two Control Panel Applets (Network and perhaps Passwords) but has several variables to be dealt with. This is the sketch of how to get it to work based on the assumption that we have two computers not connected to a network:</p>
 <p>Use the Network applet to install the Microsoft Networks client, the Microsoft File and Printer Sharing service and the IPX/SPX-compatible protocol on both the host and guest computer.</p>
 <p>For the Microsoft Networks client select Quick logon under Properties &gt; Network logon options.</p>
 <p>For the IPX/SPX-compatible protocol select Client for Microsoft Networks and File and printer sharing for Microsoft Networks under the Bindings tab.</p>
@@ -36,16 +43,19 @@
 <p>In the Passwords applet, on the Remote Administration page make sure Enable Remote Administration of this server is selected for both the host and guest computers. Also (this might be overkill) use the same password on both computers.</p>
 <p>On the host computer make sure that folders are being shared, not entire disk volumes (I'm not sure if this helps).</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2003-07-31T21:46:29.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

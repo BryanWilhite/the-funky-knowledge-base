@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Microsoft Word 2007: Flippant Remarks about Building Blocks</h3>
 <section class="entry">
-    <h3>Microsoft Word 2007: Flippant Remarks about Building Blocks</h3>
 
-<pre>
-<p>From the Word team: “As mentioned in my first post, building blocks are essentially parts of a document that can be reused. All building blocks are contained in galleries in the UI for easy use. Where are these building blocks stored? The simple answer is that the contents of all building block galleries are stored in templates. Specifically, there are several locations you can save your building block content in: 1. Word's building blocks template 2. Word's Normal template 3. Any custom template…” More of this is here:</p>
+    <p>From the Word team: “As mentioned in my first post, building blocks are essentially parts of a document that can be reused. All building blocks are contained in galleries in the UI for easy use. Where are these building blocks stored? The simple answer is that the contents of all building block galleries are stored in templates. Specifically, there are several locations you can save your building block content in: 1. Word's building blocks template 2. Word's Normal template 3. Any custom template…” More of this is here:</p>
 <pre><code>http://blogs.msdn.com/microsoft_office_word/
     archive/2007/02/20/deploying-building-blocks.aspx
 </code></pre>
@@ -34,16 +41,19 @@
 <pre><code>http://msdn.microsoft.com/en-us/library/bb243303.aspx
 </code></pre>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2008-09-02T04:08:51.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

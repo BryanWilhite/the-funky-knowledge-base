@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,29 +20,38 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>PROBLEM: Linked Table from Remote Database Can't Show Records; Rows with &quot;#Error&quot; Shown</h3>
 <section class="entry">
-    <h3>PROBLEM: Linked Table from Remote Database Can't Show Records; Rows with &quot;#Error&quot; Shown</h3>
 
-<pre>
-<p>When an Access .MDB is linked to a table from a remote database (e.g. SQL MS Server) that is known to be valid (not dropped or locked) and the rows in the table are full of &quot;#Error&quot; strings then try to SELECT * from the table via an Access Pass-Through Query. If you get an error like &quot;Record too large&quot; then the table you are linking to has columns that exceed the 2K limit reserved for the &quot;data page.&quot;</p>
+    <p>When an Access .MDB is linked to a table from a remote database (e.g. SQL MS Server) that is known to be valid (not dropped or locked) and the rows in the table are full of &quot;#Error&quot; strings then try to SELECT * from the table via an Access Pass-Through Query. If you get an error like &quot;Record too large&quot; then the table you are linking to has columns that exceed the 2K limit reserved for the &quot;data page.&quot;</p>
 <p>To avoid this problem, delete the linked table and use a Pass-Through Query that shows the only fields you need. For more information, as of this writing, Microsoft touches upon this issue in their Knowledge Base article &quot;DOC: Additional Jet Database Record Size Information&quot; (Q198660):</p>
 <pre><code>http://support.microsoft.com
     /support/kb/articles/Q198/6/60.ASP
 </code></pre>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 1999-09-08T05:06:05.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

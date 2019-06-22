@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,29 +20,38 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>PHP 5.0.4 Installation Notes</h3>
 <section class="entry">
-    <h3>PHP 5.0.4 Installation Notes</h3>
 
-<pre>
-<p>The &quot;advanced&quot; installation option allows the php 'root' folder to be selected among other bits.</p>
+    <p>The &quot;advanced&quot; installation option allows the php 'root' folder to be selected among other bits.</p>
 <p>upload_tmp_dir and session.save_path values may need to be enclosed in quotes to prevent parsing errors for unexpected characters.</p>
 <p>the \\ext folder under the php root needs to be installed by hand after the automated install from the compressed archive php-pecl-5.0.4-Win32. For MySQL use, libmysql.dll and ntwdblib.dll libraries need to be in the php root folder.</p>
 <p>PECL stands for &quot;PHP Extension Community Library&quot; and is maintained at http://pecl.php.net but can be downloaded with the installer at http://php.net.</p>
 <p>The extensions currently used by Songhay System are: php_mysql.dll, php_mysqli.dll, php_soap.dll, php_sockets.dll, php_tidy.dll and php_xsl.dll. (These modules are loaded by extension_dir = &quot;./ext&quot; in php.ini.)</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2005-09-20T19:30:56.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

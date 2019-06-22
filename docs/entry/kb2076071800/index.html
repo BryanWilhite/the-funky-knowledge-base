@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>JavaServer Faces in Action Notes: Chapter 2; JSF Fundamentals; 2.1.2 Renderers; 2.1.3 Validators</h3>
 <section class="entry">
-    <h3>JavaServer Faces in Action Notes: Chapter 2; JSF Fundamentals; 2.1.2 Renderers; 2.1.3 Validators</h3>
 
-<pre>
-<p>2.1.2 Renderers</p>
+    <p>2.1.2 Renderers</p>
 <p>&quot;When components render themselves, it's called the direct implementation model, but JSF also supports the delegated implementation model...&quot; The classes that implement these implementation models are called &quot;renderers.&quot; All of the standard JSF components use the delegated implementation model.</p>
 <p>&quot;Renderers are organized into render kits... JSF ships with a standard render kit for HTML 4.01...&quot;</p>
 <p>It is important to understand that renderers implement encoding and decoding for the response and the request, respectively. &quot;Because all encoding and encoding is handled by a single entity... the visual representation of the component and the underlying protocol for translating between request parameters and objects on the server are nicely self-contained.&quot;</p>
@@ -39,16 +46,19 @@
 &amp;lt;/h:inputText&amp;gt;
 </code></pre>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2007-03-13T20:00:21.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

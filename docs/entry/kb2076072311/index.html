@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>“Configuring explicit Run As on Windows Server 2008”; Rick Vanover</h3>
 <section class="entry">
-    <h3>“Configuring explicit Run As on Windows Server 2008”; Rick Vanover</h3>
 
-<pre>
-<p>Default installations of Windows Server 2008 provide the User Account Control (UAC) security component to manage contexts in which applications run. The default configuration is to Run As the logged in user or simply to Run As Administrator. The issues with the latter option are that it does not specify any username in particular, and it only refers to local administrative permission. Don’t bother pressing [Shift] and needlessly exploring various right-click menus. To get the explicit Run As functionality that you need for best practice permission assignment, you need to go to the SysInternals bag of tricks.</p>
+    <p>Default installations of Windows Server 2008 provide the User Account Control (UAC) security component to manage contexts in which applications run. The default configuration is to Run As the logged in user or simply to Run As Administrator. The issues with the latter option are that it does not specify any username in particular, and it only refers to local administrative permission. Don’t bother pressing [Shift] and needlessly exploring various right-click menus. To get the explicit Run As functionality that you need for best practice permission assignment, you need to go to the SysInternals bag of tricks.</p>
 <p>ShellRunas version 1.01 from Sysinternals (which is now part of TechNet) will get the job done. Downloading ShellRunas is straightforward and performing the following one-liner enables the tool:</p>
 <p>shellrunas /reg</p>
 <p>This command will install the Run As option on the Start Menu for use in the Windows Shell. Figure A shows a Windows Server 2008 server with the Sysinternals tool installed.</p>
@@ -35,16 +42,19 @@
 <p>Having the ability to pass explicit credentials is really a no-brainer in any good practice of administration. This is especially important for accounts that have domain administrator group membership. The ShellRunas command will allow organizations to keep much of their security practices intact as they transition to Windows Server 2008.</p>
 <p>[http://blogs.techrepublic.com.com/datacenter/?p=557]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-10-15T02:17:17.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

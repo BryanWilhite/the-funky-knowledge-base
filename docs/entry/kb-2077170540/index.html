@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>SHEDDING LIGHT ON LONG-TERM WEIGHT LOSS</h3>
 <section class="entry">
-    <h3>SHEDDING LIGHT ON LONG-TERM WEIGHT LOSS</h3>
 
-<pre>
-<p>The National Weight Control Registry (NWCR) has been tracking
+    <p>The National Weight Control Registry (NWCR) has been tracking
 successful &quot;losers&quot; since 1993.</p>
 <p>The registry is a database, not a treatment plan, established and
 maintained by researchers at the University of Colorado Health Science Center and the University of Pittsburgh School of Medicine. It is designed to gather insight and information from individuals who have successfully maintained a significant weight loss.</p>
@@ -35,16 +42,19 @@ maintained by researchers at the University of Colorado Health Science Center an
 about 30 percent of their body weight. Many had been overweight since childhood, and more than 90 percent report multiple weight gains and losses (to the tune of 270 pounds per person) before finding what permanently works for them. About half report being involved in some type of organized weight-management program, while the remainder has gone it alone.</p>
 <p>If you're a successful &quot;loser&quot; and would like to be involved in this worthwhile, ongoing project, contact the NWCR at 1-800-606-6927. To qualify, you must have lost a minimum of 30 pounds and kept it off for at least a year.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 1999-10-26T15:37:28.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

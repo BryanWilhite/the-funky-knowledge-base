@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>“A summary of OO Priciples” by Nigel-Findlater</h3>
 <section class="entry">
-    <h3>“A summary of OO Priciples” by Nigel-Findlater</h3>
 
-<pre>
-<p>Introduction</p>
+    <p>Introduction</p>
 <p>OO Design is more than just using an OO language. Over the years many bright programmers have built up a collection of rules that help to build well designed maintainable code. This article lists the main rules of OO programming. The intention is to inspire the reader to think about these rules and make further reading. There is a lot of material on the web that drills down into more details with plenty of examples.</p>
 <p>Ivar Jacabson said “All systems change during their life cycles. This must be borne in mind when developing systems expected to last longer than the first version”. In other words software requirements change with time. The goal of Object Orientated Design is to program in such a way that such changes to the software are predictable and do not make a large impact in the program. In other words it should be stable in the presence of change</p>
 <p>Bad design is characterized by</p>
@@ -86,16 +93,19 @@ Polyad vs Monad</p>
 <p>There is a backward force applied by clients upon interfaces. For example a user may wish to add a trivial extra function that cannot be exactly positioned in existing interfaces.</p>
 <p>[http://www.codeproject.com/KB/architecture/nfOORules.aspx]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-08-29T05:47:12.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,27 +20,36 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>WPF XAML: “Binding to the Current Item in WPF”; Binding to the Current Item in in a Collection; ObservableCollection&lt;T&gt;</h3>
 <section class="entry">
-    <h3>WPF XAML: “Binding to the Current Item in WPF”; Binding to the Current Item in in a Collection; ObservableCollection&lt;T&gt;</h3>
 
-<pre>
-<p>You may be wondering what the weird '/' is for in the binding. We couldn't just use {Binding} here and specify no Path (the default property in a binding markup extension) as the binding wouldn't 'fallback' as we described above, it would just bind to the collection. No good, we want the current item.</p>
+    <p>You may be wondering what the weird '/' is for in the binding. We couldn't just use {Binding} here and specify no Path (the default property in a binding markup extension) as the binding wouldn't 'fallback' as we described above, it would just bind to the collection. No good, we want the current item.</p>
 <p>Fortunately, there is this forward slash syntax which effectively takes the form &lt;collection&gt;/&lt;current-item-property&gt;.</p>
 <p>[http://www.thejoyofcode.com/Binding_to_the_Current_Item_in_WPF.aspx]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2010-03-25T17:24:26.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Flex/ActionScript 3: “About SWC files” and “Using Runtime Shared Libraries”; Adobe Help Resource Center</h3>
 <section class="entry">
-    <h3>Flex/ActionScript 3: “About SWC files” and “Using Runtime Shared Libraries”; Adobe Help Resource Center</h3>
 
-<pre>
-<p>A SWC file is an archive file, sometimes also referred to as a class library, for Flex components and other assets. SWC files contain a SWF file and a catalog.xml file, in addition to properties files and other uncompiled assets such as CSS files. The SWF file implements the compiled component or group of components and includes embedded resources as symbols. Flex applications extract the SWF file from a SWC file and use the SWF file's contents when the application refers to resources in that SWC file. The catalog.xml file lists of the contents of the component package and its individual components.</p>
+    <p>A SWC file is an archive file, sometimes also referred to as a class library, for Flex components and other assets. SWC files contain a SWF file and a catalog.xml file, in addition to properties files and other uncompiled assets such as CSS files. The SWF file implements the compiled component or group of components and includes embedded resources as symbols. Flex applications extract the SWF file from a SWC file and use the SWF file's contents when the application refers to resources in that SWC file. The catalog.xml file lists of the contents of the component package and its individual components.</p>
 <p>In most cases, the symbols defined in the SWF file that are referenced by the application are embedded in the Flex application at compile-time. This is known as static linking. The application compiler only includes those classes that are used by your application, and dependent classes, in the final SWF file.</p>
 <p>You can also dynamically link the contents of SWC files. Dynamic linking is when the entire SWF file is loaded at run time. To achieve dynamic linking of the SWF file, you must use the SWC file as a Runtime Shared Library, or RSL.</p>
 <p>[http://livedocs.adobe.com/flex/3/html/help.html?content=compilers_30.html]</p>
@@ -35,16 +42,19 @@
 <p>You can also use the external-library-path, externs, or load-externs compiler options to specify the files to dynamically link into an application. These options instruct the compiler to exclude classes and libraries from the application, but to check links against them and prepare to load them at run time. The external-library-path option specifies SWC files or directories for dynamic linking. The externs option specifies individual classes or symbols for dynamic linking. The load-externs option specifies an XML file that describes what classes to use for dynamic linking. These options are most often used when externalizing assets from modules so that the module and the application do not contain overlapping class definitions. The runtime-shared-library-path option provides all the arguments to use external libraries as RSLs.</p>
 <p>[http://livedocs.adobe.com/flex/3/html/help.html?content=compilers_30.html]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-07-27T00:47:05.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

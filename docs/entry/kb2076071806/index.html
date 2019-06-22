@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>JavaServer Faces in Action Notes: Chapter 2; JSF Fundamentals; 2.2 The Request Processing Lifecycle</h3>
 <section class="entry">
-    <h3>JavaServer Faces in Action Notes: Chapter 2; JSF Fundamentals; 2.2 The Request Processing Lifecycle</h3>
 
-<pre>
-<p>2.2 The Request Processing Lifecycle</p>
+    <p>2.2 The Request Processing Lifecycle</p>
 <p>The Request Processing Lifecycle has 10 parts in six &quot;primary phases&quot;: Restore View, Apply Request Values, Process Events, Process Validations, Process Events, Update Model Values, Process Events, Invoke Application, Process Events and Render Response. Note how 'Process Events' occurs multiple times. To avoid this redundancy, see the six-part diagram by IBM in &quot;JSF for nonbelievers: The JSF application lifecycle&quot; here:</p>
 <pre><code>http://www-128.ibm.com/developerworks/java/library/j-jsf2/
 </code></pre>
@@ -34,16 +41,19 @@
 <p>&quot;The main idea behind this whole process is that by the time the Invoke Application stage has been reached, there is a fully populated component tree, all validations have been completed, and any backing beans or model objects have been completely updated.&quot; It is clear that JSF realizes all of these application-centric concepts 'for free' over a primal HTTP request and response adding most or even all of the abstraction needed to implement a web application.</p>
 <p>&quot;Once JSF receives this HTTP request, it creates and populates an instance of javax.faces.context.FacesContext. This class represents the current state of the request...&quot;</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2007-03-22T23:16:02.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

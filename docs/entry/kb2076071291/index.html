@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Core Java 1.1 Volume I --- Fundamentals: Chapter 4, Objects and Classes</h3>
 <section class="entry">
-    <h3>Core Java 1.1 Volume I --- Fundamentals: Chapter 4, Objects and Classes</h3>
 
-<pre>
-<p>Objects</p>
+    <p>Objects</p>
 <p>Data is encapsulated in an object. The data is stored inside the object as &quot;instance variables&quot; or &quot;instance fields.&quot; If the access modifier &quot;private&quot; is used when creating instance fields, then the principle of &quot;encapsulation&quot; is enforced. The particular values of the instance fields in an object constitutes the &quot;state&quot; of the object.</p>
 <p>To enforce encapsulation, object methods should be used to handle data. Object methods are used to associate &quot;behavior&quot; with an object. Methods are defined with respect to their relationship to object data (instance fields). It follows that there are &quot;mutator methods&quot; and &quot;accessor methods,&quot; where, respectively, object data is changed and object data is retrieved. The convention in Java is to use the lowercase prefix &quot;get&quot; for accessor methods and &quot;set&quot; for mutator methods.</p>
 <p>Classes</p>
@@ -37,16 +44,19 @@
 <p>A class can have &quot;static&quot; methods. These methods &quot;belong to the class&quot; and not to any particluar instance of the class. It follows that static methods can only access the static fields of an object. Recall that the main() method is static. Becuase of this, it is not uncommon for main() to create an object of its own class to access its instance fields via an object variable (see p. 137).</p>
 <p>When a class has method called &quot;finalize()&quot; this method will be called whenever the Java system decides to perform &quot;garbage collection.&quot;</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2000-09-16T14:28:00.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

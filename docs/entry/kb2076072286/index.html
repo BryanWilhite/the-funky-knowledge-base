@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Ubuntu: “Find Out Your Ubuntu Version Name”; Nicole Hernandez</h3>
 <section class="entry">
-    <h3>Ubuntu: “Find Out Your Ubuntu Version Name”; Nicole Hernandez</h3>
 
-<pre>
-<p>Feisty will be released around the end of Spring 2007 (April I believe). So at the time of this writing, Edgy is the most current stable version to have. For many things in Ubuntu, particularly any time you are tinkering with adding repositories, you need to know your version. If nothing else, it can make you feel a little bit more like you know what’s going on if someone asks you and you actually know what your computer is running ;)</p>
+    <p>Feisty will be released around the end of Spring 2007 (April I believe). So at the time of this writing, Edgy is the most current stable version to have. For many things in Ubuntu, particularly any time you are tinkering with adding repositories, you need to know your version. If nothing else, it can make you feel a little bit more like you know what’s going on if someone asks you and you actually know what your computer is running ;)</p>
 <p>It’s easy enough to do.</p>
 <ol>
 <li>Applications -&gt; Accessories -&gt; Terminal</li>
@@ -42,16 +49,19 @@ DISTRIB_DESCRIPTION=&quot;Ubuntu 6.10&quot;</li>
 <p>[http://blog.websitestyle.com/index.php/
 2007/01/18/how-to-find-out-your-ubuntu-version-name/]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-09-28T20:41:21.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

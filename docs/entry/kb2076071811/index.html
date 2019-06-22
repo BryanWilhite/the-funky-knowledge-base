@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,29 +20,38 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Hibernate in Action Notes: Chapter 1; Understanding object/relational persistence; 1.4 Object/relational mapping</h3>
 <section class="entry">
-    <h3>Hibernate in Action Notes: Chapter 1; Understanding object/relational persistence; 1.4 Object/relational mapping</h3>
 
-<pre>
-<p>1.4 Object/relational mapping</p>
+    <p>1.4 Object/relational mapping</p>
 <p>&quot;Now that we’ve looked at the alternative techniques for object persistence, it’s time to introduce the solution we feel is the best, and the one we use with Hibernate: ORM.&quot;</p>
 <p>&quot;Isn’t ORM a Visio plugin? The acronym ORM can also mean object role modeling, and this term was invented before object/relational mapping became relevant. It describes a method for information analysis, used in database modeling, and is primarily supported by Microsoft Visio, a graphical modeling tool. Database specialists use it as a replacement or as an addition to the more popular entity-relationship modeling. However, if you talk to Java developers about ORM, it’s usually in the context of object/relational mapping.&quot;</p>
 <p>The research of Mark Fussel produced four kinds of ORM: Pure relational, Light object mapping, Medium object mapping and Full object mapping. These four kinds are increasing levels of granularity addressing the paradigm mismatch between the relational database and objects in an Application domain. Only the &quot;full object mapping&quot; solution solves the &quot;O/R mapping problems&quot; detailed in the book (1.4.2).</p>
 <p>Section 1.4.3 supports the use of ORM with benefits that include productivity, maintainability, performance and vendor independence. To support the performance argument the book asserts that &quot;the people who implemented your ORM software probably had much more time to investigate performance optimizations than you have...&quot; (1.4.3)</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2007-04-10T00:53:52.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

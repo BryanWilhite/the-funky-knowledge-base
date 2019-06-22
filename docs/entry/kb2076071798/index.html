@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,29 +20,38 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>JavaServer Faces in Action Notes: Chapter 2; JSF Fundamentals; 2.1 The key pieces of the pie</h3>
 <section class="entry">
-    <h3>JavaServer Faces in Action Notes: Chapter 2; JSF Fundamentals; 2.1 The key pieces of the pie</h3>
 
-<pre>
-<p>2.1 The key pieces of the pie</p>
+    <p>2.1 The key pieces of the pie</p>
 <p>&quot;Eight core terms come into play when you're developing JSF applications...&quot;: (i) UI component (control or component); (ii) Renderer; (iii) Validator; (iv) Backing beans; (v) Converter; (vi) Events and listeners; (vii) Messages; (viii) Navigation.</p>
 <p>JSF uses the JavaBeans event/listener model, the same used by Swing.</p>
 <p>&quot;Backing beans contain event listeners and action methods, which are event listeners that are specialized for navigation.&quot;</p>
 <p>&quot;You may have noticed that events, messages, and model objects are passive from the perspective of JSF... This is an important point for model objects, because it means that the model doesn't know about the user interface. This is part of how JSF enforces an MVC-style architecture.&quot;</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2007-03-12T23:18:38.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

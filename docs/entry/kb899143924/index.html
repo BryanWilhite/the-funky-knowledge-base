@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>PROBLEM: the Default Instance of a Form Is Not Found</h3>
 <section class="entry">
-    <h3>PROBLEM: the Default Instance of a Form Is Not Found</h3>
 
-<pre>
-<p>If the default instance of a form is not found, this most likely means that it does not have a Class Module. For example, suppose you have two forms in a database, frmMain and fsubOther, where frmMain has a module and fsubOther does not. Also suppose that this database has no user-defined classes. In this example, only one class (besides globals) will appear in the Object Browser for the Project/Library defined for the current database. This class will be called Form_frmMain.</p>
+    <p>If the default instance of a form is not found, this most likely means that it does not have a Class Module. For example, suppose you have two forms in a database, frmMain and fsubOther, where frmMain has a module and fsubOther does not. Also suppose that this database has no user-defined classes. In this example, only one class (besides globals) will appear in the Object Browser for the Project/Library defined for the current database. This class will be called Form_frmMain.</p>
 <p>This implies that fsubOther cannot be manipulated programmatically. Any attempts to manipulate fsubOther directly will generate run-time errors. If, however, fsubOther is a sub-form of frmMain then it can be manipulated through code. Suppose that the Name property of the Sub Form is fsubOther. We can make sure its FilterOn property is False with the line</p>
 <pre><code>Form_frmMain.fsubOther.Form.FilterOn = False
 </code></pre>
@@ -44,16 +51,19 @@ End With
 </code></pre>
 <p>Note that VBA does not &quot;know&quot; whether this particular member of the Controls collection has a ControlSource property. The use of the Controls collection may noticeably reduce performance due to late-binding issues. If this is the case simply set the Has Module property of the form to Yes and refer to the default instance of the form directly.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 1998-06-30T01:02:51.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

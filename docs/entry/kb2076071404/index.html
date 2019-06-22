@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>ASP and XML/XSL: Flippant Remarks About XML-Based Designs</h3>
 <section class="entry">
-    <h3>ASP and XML/XSL: Flippant Remarks About XML-Based Designs</h3>
 
-<pre>
-<p>The main idea behind incorporating XML into ASP solutions (besides vacuous fashion trends labeled &quot;cool&quot;) is to reduce dependency on Microsoft-specific components (while simultaneously being vendor-compliant). In keeping with this realistic goal, the first Microsoft-specific target is the ADO Recordset. The second major target is the use of ASP scripting languages to render HTML.</p>
+    <p>The main idea behind incorporating XML into ASP solutions (besides vacuous fashion trends labeled &quot;cool&quot;) is to reduce dependency on Microsoft-specific components (while simultaneously being vendor-compliant). In keeping with this realistic goal, the first Microsoft-specific target is the ADO Recordset. The second major target is the use of ASP scripting languages to render HTML.</p>
 <p>First target: the ADO Recordset. Replace the ADO Recordset with the ADO Stream in ADO 2.5 and above:</p>
 <p>&quot;HOWTO: Obtain an ADO Recordset from XML&quot;
 http://support.microsoft.com/support/kb/articles/Q263/2/47.ASP</p>
@@ -38,16 +45,19 @@ http://msdn.microsoft.com/library/periodic/period99/xml.htm</p>
 <p>&quot;'DXML': Taking a TOC from XML to DHTML&quot;
 http://msdn.microsoft.com/workshop/Author/dhtml/corner042699.asp</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2005-09-16T21:37:00.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

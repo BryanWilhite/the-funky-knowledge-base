@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>sudo and su; combining sudo and su for Ubuntu/Debian systems; FOSSwire.com</h3>
 <section class="entry">
-    <h3>sudo and su; combining sudo and su for Ubuntu/Debian systems; FOSSwire.com</h3>
 
-<pre>
-<p>You’ve probably seen one of these commands. Ubuntu users have seen more of sudo, while SUSE, Fedora, and Debian have used su more often. What exactly is the difference? Both of the commands enable you to gain root access. The major difference is in how privileges are obtained.</p>
+    <p>You’ve probably seen one of these commands. Ubuntu users have seen more of sudo, while SUSE, Fedora, and Debian have used su more often. What exactly is the difference? Both of the commands enable you to gain root access. The major difference is in how privileges are obtained.</p>
 <p>su</p>
 <p>Su is a command that enables you to open a shell or login as another user. Run without any parameters, su assumes that you want to become root. When run, you will be prompted for a password. This password is the password of whoever you want to switch to. For example, if I want to become root, running su at a terminal will ask me for root’s password. If I run su bill, I will need to type in bill’s password.</p>
 <p>Once a password has been entered, a shell will open as if you had logged in as the su’d user. Anything you run from it will appear to come from that user.</p>
@@ -45,16 +52,19 @@ Combining the Two</p>
 <p>There are a few more tricks out there that can be accomplished with sudo and su, but that’s up for you to discover.</p>
 <p>[http://fosswire.com/2008/02/03/sudo-vs-su/]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2008-12-02T20:59:40.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

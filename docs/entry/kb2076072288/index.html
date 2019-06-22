@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>“ASP.NET NTLM Authentication—is it worth it?”; Jeff Atwood</h3>
 <section class="entry">
-    <h3>“ASP.NET NTLM Authentication—is it worth it?”; Jeff Atwood</h3>
 
-<pre>
-<p>At work, we have the luxury of assuming that everyone's on an intranet. So when it comes to identity management on our ASP.NET websites, NTLM authentication is the go-to solution. Why trouble the user with Yet Another Login Dialog when you can leverage the built in NTLM functionality of IIS and Internet Explorer? Just reach in and grab one of these Request.ServerVariables passed in through the HTTP headers:</p>
+    <p>At work, we have the luxury of assuming that everyone's on an intranet. So when it comes to identity management on our ASP.NET websites, NTLM authentication is the go-to solution. Why trouble the user with Yet Another Login Dialog when you can leverage the built in NTLM functionality of IIS and Internet Explorer? Just reach in and grab one of these Request.ServerVariables passed in through the HTTP headers:</p>
 <p>LOGON_USER  = HOMESERVER\\Jeff
 AUTH_USER   = HOMESERVER\\Jeff
 REMOTE_USER = HOMESERVER\\Jeff</p>
@@ -48,16 +55,19 @@ REMOTE_USER = HOMESERVER\\Jeff</p>
 <p>I used to be a big believer in NTLM authentication in ASP.NET. However, after living with it for the last two years, I'm starting to wonder if we wouldn't all be better off with Yet Another Login Dialog.</p>
 <p>[http://www.codinghorror.com/blog/archives/000263.html]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-10-01T16:15:26.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

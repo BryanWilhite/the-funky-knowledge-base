@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Flippant Remarks about the ConnectionStringSettings Class</h3>
 <section class="entry">
-    <h3>Flippant Remarks about the ConnectionStringSettings Class</h3>
 
-<pre>
-<p>The ConnectionStringSettings Class means that database connection strings are recognized by app.config conventions and definitions in .NET 2.0. This class is documented here:</p>
+    <p>The ConnectionStringSettings Class means that database connection strings are recognized by app.config conventions and definitions in .NET 2.0. This class is documented here:</p>
 <pre><code>http://msdn2.microsoft.com/en-us/library/
     system.configuration.connectionstringsettings.aspx
 </code></pre>
@@ -43,16 +50,19 @@ configSource=&quot;externalConfig/connectionStrings.config&quot;
 <p>However, in “Unraveling the Mysteries of .NET 2.0 Configuration” Jon Rista warns, “The downfall of using the configSource attribute is that it requires all configuration settings to be placed in the external file. No inheritance or overriding is possible, which in some cases makes it useless. All external configuration files used with the configSource attribute must also reside in a relative child path to the main .config file. I believe this is in regards to security concerns with storing the file in a relative parent path in a web environment.”</p>
 <p>The flippant remarks here may sufficiently explain why my preference is to use custom, external XML configuration files that serialize into a native .NET object. This move does make a security hole when in the wrong hands.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2007-09-07T20:35:17.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

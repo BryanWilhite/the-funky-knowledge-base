@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,26 +20,35 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>HTML: The Difference between DIV and SPAN</h3>
 <section class="entry">
-    <h3>HTML: The Difference between DIV and SPAN</h3>
 
-<pre>
-<p>Both DIV and SPAN are &quot;Generic Containers&quot; as they do not apply any visible formatting without the use of the CLASS attribute and Cascading Style Sheets (CSS). The difference between DIV and SPAN is that the former is a block-level element and the latter is an in-line element.</p>
+    <p>Both DIV and SPAN are &quot;Generic Containers&quot; as they do not apply any visible formatting without the use of the CLASS attribute and Cascading Style Sheets (CSS). The difference between DIV and SPAN is that the former is a block-level element and the latter is an in-line element.</p>
 <p>The use of DIV and SPAN with CSS is quite successful with many web browsers. Using SPAN---and especially DIV---with client-side scripting is not very successful with many web browsers at this proprietary moment in time.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 1999-01-13T17:58:37.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

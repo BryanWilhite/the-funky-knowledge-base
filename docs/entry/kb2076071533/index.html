@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,30 +20,39 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>.NET Framework: Flippant Remarks about XPathNavigator and XPathDocument; Don Box Loves All Instances of XPathNavigator</h3>
 <section class="entry">
-    <h3>.NET Framework: Flippant Remarks about XPathNavigator and XPathDocument; Don Box Loves All Instances of XPathNavigator</h3>
 
-<pre>
-<p>Don Box loves XPathNavigator because it is based on XPath (http://www.w3.org/TR/xpath) instead of an XML data model.</p>
+    <p>Don Box loves XPathNavigator because it is based on XPath (http://www.w3.org/TR/xpath) instead of an XML data model.</p>
 <p>Don very articulately and humanely explores XPathNavigator in &quot;Passing XML Data Inside the CLR&quot; on MSDN TV at:</p>
 <pre><code>http://msdn.microsoft.com/msdntv/episode.aspx
     ?xml=episodes/en/20030603XMLDB/manifest.xml
 </code></pre>
 <p>He goes on to explain that instances of XPathNavigator comes from XPathDocument. This is important to me because XPathDocument objects can be passed to Transform() method of an instance of XslTransform.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2004-07-01T18:51:20.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

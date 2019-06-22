@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,27 +20,36 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>PowerShell 1.0: Uninstalling PowerShell; “Howto: Uninstall Powershell 1.0”; geekzguru.wordpress.com</h3>
 <section class="entry">
-    <h3>PowerShell 1.0: Uninstalling PowerShell; “Howto: Uninstall Powershell 1.0”; geekzguru.wordpress.com</h3>
 
-<pre>
-<p>When you try to install Powershell 2.0, you are prompted to uninstall other versions of Powershells before going ahead with the installation. But neither does powershell appear in Add/Remove programs nor is there an uninstall shortcut in the programs menu.</p>
+    <p>When you try to install Powershell 2.0, you are prompted to uninstall other versions of Powershells before going ahead with the installation. But neither does powershell appear in Add/Remove programs nor is there an uninstall shortcut in the programs menu.</p>
 <p>To uninstall powershell 1.0 run add/remove programs (appwiz.cpl from Win+R) and click the “show updates” checkbox. Powershell will now be shown.</p>
 <p>[http://geekzguru.wordpress.com/2008/02/16/howto-uninstall-powershell-10/]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-03-27T01:24:46.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

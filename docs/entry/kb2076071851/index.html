@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>ASP.NET: “The Global.asax file does not raise events in an ASP.NET 2.0 application”; KB Article 937095</h3>
 <section class="entry">
-    <h3>ASP.NET: “The Global.asax file does not raise events in an ASP.NET 2.0 application”; KB Article 937095</h3>
 
-<pre>
-<p>KB Article 937095 “The Global.asax file does not raise events in an ASP.NET 2.0 application” addresses a possible problem that is likely to occur in my little ASP.NET corner of the world but has not happened yet.</p>
+    <p>KB Article 937095 “The Global.asax file does not raise events in an ASP.NET 2.0 application” addresses a possible problem that is likely to occur in my little ASP.NET corner of the world but has not happened yet.</p>
 <pre><code>http://support.microsoft.com/kb/937095
 </code></pre>
 <p>“The Global.asax file does not raise events in a Microsoft ASP.NET 2.0 application. Additionally, the App_global.asax.dll file is not generated in the temporary ASP.NET folder… This behavior occurs because the Global.asax file is not precompiled.”</p>
@@ -35,16 +42,19 @@
 </code></pre>
 <p>“The updatable attribute that is set to the true value applies to ASP.NET pages (.aspx files) and to user controls (.ascx files). The value does not apply to ASP.NET 2.0 application files (.asax files). Therefore, the Global.asax file is compiled, and the Global.asax file is not updatable.”</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2007-06-30T03:19:13.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

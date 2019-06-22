@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Book: Access 97 Power Programming; Chapter 3 Highlights (3/3): &quot;Working with Application Collections And Data Access Objects&quot;</h3>
 <section class="entry">
-    <h3>Book: Access 97 Power Programming; Chapter 3 Highlights (3/3): &quot;Working with Application Collections And Data Access Objects&quot;</h3>
 
-<pre>
-<p>DAO: Data Access Object</p>
+    <p>DAO: Data Access Object</p>
 <p>A DAO is an automation interface for Accessing the Jet Database engine. In fact Access is an IDE/GUI for Jet. DAO is described by a containment hierarchy beginning with the DBEngine object. The DAO object hierarchy is shown on page 91.</p>
 <p>CurrentDb() Makes a Comeback</p>
 <p>CurrentDb() returns a second instance of the database found by DBEngine.Workspaces(0).Databases(0) or DBEngine(0)(0). Use of this previously &quot;obsolete&quot; function has been found useful in multi-user scenarios.</p>
@@ -35,16 +42,19 @@
 <p>Listing All the Select Queries in a Database</p>
 <p>Listing 3.10 on page 94 features the use of the Type property of the QueryDef object. In this example, only queries of Type = dbQSelect are printed to the Debug window.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 1998-10-01T20:42:36.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

@@ -2,12 +2,12 @@
 layout: layouts/base.html
 templateClass: tmpl-post
 ---
+<h3>{{ title }}</h3>
 <section class="entry">
-    <h3>{{ title }}</h3>
 
-<pre>
-{{ content }}
-</pre>
+    {{ content }}
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> {{ modificationDate }} </span>
 </section>

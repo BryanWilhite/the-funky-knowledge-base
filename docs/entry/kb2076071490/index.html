@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,29 +20,38 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>ASP: Flippant Remarks about Server.Execute() and Server.Transfer()</h3>
 <section class="entry">
-    <h3>ASP: Flippant Remarks about Server.Execute() and Server.Transfer()</h3>
 
-<pre>
-<p>Since Microsoft is characteristically silent about their own shortcomings, these flippant remarks about Server.Execute() and Server.Transfer() are extremely flippant: these new features suck; they are almost completely useless---okay, they are useless.</p>
+    <p>Since Microsoft is characteristically silent about their own shortcomings, these flippant remarks about Server.Execute() and Server.Transfer() are extremely flippant: these new features suck; they are almost completely useless---okay, they are useless.</p>
 <p>Ignoring the subtle nuance of those lovers of ASP 3.0, I say that you can't use QueryString values with Server.Execute() and Server.Transfer(). Strange or unexpected things happen to relative links when Server.Transfer() is used and just think of a really bad call to a subroutine when you think of using Server.Transfer().</p>
 <p>These new features were quickly tacked on the tail-end of ASP (probably to address the power of PHP 4.x) and were abandoned in favor of ASP.NET stuff. For more details (written in a more pleasant manner for the perfumed ears of King Lear) please see:</p>
 <pre><code>http://www.15seconds.com/issue/010220.htm
 </code></pre>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2002-08-27T23:10:43.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

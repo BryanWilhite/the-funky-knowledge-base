@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>SQL Server: “How to shrink the tempdb database in SQL Server”</h3>
 <section class="entry">
-    <h3>SQL Server: “How to shrink the tempdb database in SQL Server”</h3>
 
-<pre>
-<p>Method 3 to Shrink Tempdb</p>
+    <p>Method 3 to Shrink Tempdb</p>
 <p>Use the command DBCC SHRINKFILE to shrink the individual tempdb files. DBCC SHRINKFILE provides more flexibility than DBCC SHRINKDATABASE because you can use it on a single database file without affecting other files that belong to the same database. DBCC SHRINKFILE receives the target size parameter, which is the desired final size for the database file.</p>
 <p>IMPORTANT: You must run DBCC SHRINKFILE command while no other activity occurs in the tempdb database. To make sure that other processes cannot use tempdb while DBCC SHRINKFILE executes, you must restart SQL Server in the single user mode. For more information about DBCC SHRINKFILE, see the Effects of Execution of DBCC SHRINKDATABASE or DBCCSHRINKFILE While Tempdb Is In Use section of this article.</p>
 <ol>
@@ -49,16 +56,19 @@ go
 <p>In SQL Server 7.0 a transaction log shrink is a deferred operation and you must issue a log truncation and backup to help the shrink operation in a database. However, by default, tempdb has the trunc log on chkpt option set ON; therefore, there you do not need to issue a log truncation for that database.</p>
 <p>[http://support.microsoft.com/kb/307487]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-08-27T00:30:42.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

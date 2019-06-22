@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Microsoft Windows NT 4.0: Core Installation</h3>
 <section class="entry">
-    <h3>Microsoft Windows NT 4.0: Core Installation</h3>
 
-<pre>
-<p>Context: DOS 6.22 is required to install Windows 95; Windows 95 is required to install Windows NT.</p>
+    <p>Context: DOS 6.22 is required to install Windows 95; Windows 95 is required to install Windows NT.</p>
 <p>Install Windows NT from Windows 95 command prompt:</p>
 <p>E:\\i386\\WINNT /B</p>
 <p>Choose C:\\WINNT for installation directory. Select a Custom installation. Computer Name is &quot;Songhay.&quot; Do not make an Emergency Repair Disk.</p>
@@ -50,16 +57,19 @@ Set a Home Directory for the new user.</p>
 <p>Apply SP3 from MSIE4 CD-ROM. Select Install from PNPISA.INF; PNP will load Diamond SupraExpress 56i Voice V.90 with modem jumpers set to COM1 (03F8, IRQ4); PNP will install Creative Labs AWE 32 (IRQ5, DMA 1, DMA 5, 0220-022F, 0330-0331, 0388-038B); PNP will attempt to install IDE CD-ROM Controller on AWE 32 card (Do not install a driver); PNP will install Creative Labs Advanced Wave Effects Synthesis (0620-0623, 0A20-0A23, 0E20-0E23); PNP will install Microsoft Joystick Port Enabler (0200-0207).</p>
 <p>REGEDT32.EXE: set Registry to clear log in user name and swap file.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 1998-11-27T04:06:56.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

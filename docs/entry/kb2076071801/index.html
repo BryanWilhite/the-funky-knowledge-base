@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>JavaServer Faces in Action Notes: Chapter 2; JSF Fundamentals; 2.1.4 Backing beans</h3>
 <section class="entry">
-    <h3>JavaServer Faces in Action Notes: Chapter 2; JSF Fundamentals; 2.1.4 Backing beans</h3>
 
-<pre>
-<p>2.1.4 Backing beans</p>
+    <p>2.1.4 Backing beans</p>
 <p>In the MVC world backing beans play the part of the controller, the interaction between the UI and the model. &quot;Backing beans generally contain properties you want to retrieve from users and event listener methods... that process those properties and either manipulate the UI or perform some sort of application processing.&quot;</p>
 <p>&quot;You associate a component with a backing bean via the JSF expression language (EL), which is similar to the JSP 2.0 and JSTL expression languages.&quot; The expression for the rendered attribute in the &lt;panelGrid&gt; declaration below says, 'Do not render the component unless the backing bean counts more than 0 controls':</p>
 <pre><code>&amp;lt;h:panelGrid
@@ -39,16 +46,19 @@
 </code></pre>
 <p>&quot;Here, the component's binding property uses a JSF EL expression to associate it with the HelloBean property controlPanel, which is of type HtmlPanelGrid.&quot; One difference between a backing bean and a &quot;Model Object&quot; is that the Model Object would not define types like HtmlPanelGrid. Model Objects should &quot;know nothing&quot; about the UI. It follows that, in our example above, you cannot use the binding property with Model Objects.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2007-03-13T21:24:29.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

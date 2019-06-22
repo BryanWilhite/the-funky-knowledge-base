@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,27 +20,36 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>HOUSE PLANTS CAN CONTRIBUTE TO GOOD HEALTH</h3>
 <section class="entry">
-    <h3>HOUSE PLANTS CAN CONTRIBUTE TO GOOD HEALTH</h3>
 
-<pre>
-<p>By Brigitte Mars, for healthshop.com</p>
+    <p>By Brigitte Mars, for healthshop.com</p>
 <p>Houseplants can help filter environmental toxins out of the air. Ideally, you should have one or two medium-sized plants for every 100 square feet of space. Some of the best plants for this purpose include the Areca Palm, Dracaena, Peace lily, Rubber plant, and Spider plant.</p>
 <p>Areca Palms can clean toluene emitted from gasoline, permanent markers, perfume, and nail polish out of the air. Dracaenas help cleanse the carcinogen trichloroethylene, which is emitted from photocopiers, printers, correction fluid, and dry cleaning. Peace lilies help remove benzene, which is emitted through gasoline, oil-based paints, and dry-cleaned clothing. Rubber plants help remove formaldehyde emitted from new carpets, particle board, acrylic paints, and dry-cleaned clothing. Spider plants help remove carbon dioxide, which accumulates around poorly ventilated heaters and appliances.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2000-08-15T03:54:00.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>OLE Automation: Using Fully Qualified References for Libraries Considered &quot;Default&quot;</h3>
 <section class="entry">
-    <h3>OLE Automation: Using Fully Qualified References for Libraries Considered &quot;Default&quot;</h3>
 
-<pre>
-<p>I have decided to use fully qualified references to OLE Automation Libraries---even those considered &quot;default&quot; like the VB, VBA and Application objects. I do this because Microsoft says it does not hurt (it may improve performance slightly) and it allows me to take advantage of the &quot;Intelligent&quot; features of my IDEs. It is also an ongoing educational tool.</p>
+    <p>I have decided to use fully qualified references to OLE Automation Libraries---even those considered &quot;default&quot; like the VB, VBA and Application objects. I do this because Microsoft says it does not hurt (it may improve performance slightly) and it allows me to take advantage of the &quot;Intelligent&quot; features of my IDEs. It is also an ongoing educational tool.</p>
 <p>So in my Visual Basic 6.0 code, something like following will not be uncommon:</p>
 <pre><code>If VBA.VarType(StartCol) &amp;lt;&amp;gt; vbLong Then
     VBA.Err.Raise 450
@@ -34,16 +41,19 @@ End If
 </code></pre>
 <p>By using fully qualified references, I can also see some of the &quot;mystery&quot; objects out there. For example, Debug is not a VBA object. And I thought for sure that the Open statement for file access was VBA method. But this does not seem to be the case.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 1999-02-05T17:59:32.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

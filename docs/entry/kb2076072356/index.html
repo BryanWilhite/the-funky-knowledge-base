@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>C#: “What is the second meaning of a single ampersand in C#?”; StackOverflow.com</h3>
 <section class="entry">
-    <h3>C#: “What is the second meaning of a single ampersand in C#?”; StackOverflow.com</h3>
 
-<pre>
-<p>As has been said, &quot;&amp;&quot; is a bitwise AND. &quot;&amp;&amp;&quot; is a logical AND. &amp; performs an AND operation on its operands bit by bit, and in general functions exactly like plus or times or any arithmetic operator. &amp;&amp; is more complex. If compares each of its operands against zero. If the first operand is zero, it assumes the value FALSE and short-circuits the rest of the expression, i.e. it does not evaluate any remaining operands. If the first value is non-zero, it examines the second value. If this is zero it assumes the value of false, otherwise it assumes the value of true. In either case it continues to evaluate the expression.</p>
+    <p>As has been said, &quot;&amp;&quot; is a bitwise AND. &quot;&amp;&amp;&quot; is a logical AND. &amp; performs an AND operation on its operands bit by bit, and in general functions exactly like plus or times or any arithmetic operator. &amp;&amp; is more complex. If compares each of its operands against zero. If the first operand is zero, it assumes the value FALSE and short-circuits the rest of the expression, i.e. it does not evaluate any remaining operands. If the first value is non-zero, it examines the second value. If this is zero it assumes the value of false, otherwise it assumes the value of true. In either case it continues to evaluate the expression.</p>
 <p>That is, there are two crucial differences between &amp; and &amp;&amp;:</p>
 <ol>
 <li>
@@ -39,16 +46,19 @@
 <p>That's why we almost always use &amp;&amp; for things that really are logical operations, and limit use of &amp; to when we truly want a bit-wise operation. But there are times when you DON'T want the short-circuit to happen, and in that case &amp; may be a good choice. But if you're using it to operate &quot;logically&quot;, be very careful with operands that can have any values other than 0 or 1. 1 &amp;&amp; 2 is true, but 1 &amp; 2 is false.</p>
 <p>[http://stackoverflow.com/questions/1537713/what-is-the-second-meaning-of-a-single-ampersand-in-c]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2010-03-21T23:24:47.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

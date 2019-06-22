@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>PowerShell: “Even More Things You Can Do With Arrays”</h3>
 <section class="entry">
-    <h3>PowerShell: “Even More Things You Can Do With Arrays”</h3>
 
-<pre>
-<p>One of the very first things people notice about Windows PowerShell is this: PowerShell makes it very easy to create arrays and to add new items to arrays. With VBScript, these same tasks are a bit … challenging … to say the least: you either have to declare the array size in advance (leaving you with an array that can’t be resized), or you have to declare a dynamic array, then resize that array each time you add a new item. (Taking care, of course, to preserve all the existing items in the array.) Sure that sounds like a lot of fun. But, trust us: it’s not</p>
+    <p>One of the very first things people notice about Windows PowerShell is this: PowerShell makes it very easy to create arrays and to add new items to arrays. With VBScript, these same tasks are a bit … challenging … to say the least: you either have to declare the array size in advance (leaving you with an array that can’t be resized), or you have to declare a dynamic array, then resize that array each time you add a new item. (Taking care, of course, to preserve all the existing items in the array.) Sure that sounds like a lot of fun. But, trust us: it’s not</p>
 <p>With Windows PowerShell, however, things are much different, and much easier. Want to create an array named $a, an array that contains the values 1, 2, and 3? Okey-doke:</p>
 <p>$a = 1, 2, 3</p>
 <p>That’s all you have to do: just separate the items using commas and add them all to the array in one fell swoop. Can you create an array of string values using this same approach? Of course you can; just make sure you enclose the string values in double quote marks:</p>
@@ -43,16 +50,19 @@
 <p>[http://www.microsoft.com/technet/
 scriptcenter/resources/pstips/aug07/pstip0803.mspx]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-08-27T00:34:25.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

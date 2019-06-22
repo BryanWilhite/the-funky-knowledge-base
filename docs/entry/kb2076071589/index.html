@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Native Instruments KONTAKT: Installation Journal</h3>
 <section class="entry">
-    <h3>Native Instruments KONTAKT: Installation Journal</h3>
 
-<pre>
-<p>Version 1.5.3: Installed without incident.</p>
+    <p>Version 1.5.3: Installed without incident.</p>
 <p>Version 1.5.x:</p>
 <p>This version was purchased and promptly forgotten about by this procrastinator (it was burned to a CD and &quot;stored&quot;). This memory lapse allowed me to overlook the new elaborate registration process that involves identifying the machine running KONTAKT with the Registration Tool. Once this was sorted out, the 1.5.1.x update was downloaded and applied. This update brought Direct from Disk (DFD) back to the interface. Configuration settings highlights:</p>
 <ul>
@@ -43,16 +50,19 @@
 <li>The WAV volume slider controls the volume of KONTAKT, its SPDIF output.</li>
 </ul>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2004-06-14T22:33:55.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

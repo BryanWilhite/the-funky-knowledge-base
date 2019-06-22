@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,29 +20,38 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Windows 2000 PROBLEM: Event logs are empty; &quot;Event logs are corrupted&quot; (MSKB 829246)</h3>
 <section class="entry">
-    <h3>Windows 2000 PROBLEM: Event logs are empty; &quot;Event logs are corrupted&quot; (MSKB 829246)</h3>
 
-<pre>
-<p>The assumption here is that, during Microsoft's reactionary quest to address security flaws, someone broke EVENTLOG.DLL. I suspect that my event logs began to disappear after an automatic update from Windows Update. Some guy named Matt posted this on bmonday(dot)com:</p>
+    <p>The assumption here is that, during Microsoft's reactionary quest to address security flaws, someone broke EVENTLOG.DLL. I suspect that my event logs began to disappear after an automatic update from Windows Update. Some guy named Matt posted this on bmonday(dot)com:</p>
 <p>&quot;I had this problem and it only reared its ugly head when I changed the log files to 'Overwrite as needed' because I got fed up of deleting them. So this supports your theory.&quot;</p>
 <p>So what I did was set all of my logs to Properties &gt; General &gt; Log size &gt; Do not overwrite events (clear log manually). Microsoft recognizes this problem in MSKB article 829246 (&quot;Event logs are corrupted&quot;) here:</p>
 <pre><code>http://support.microsoft.com/?kbid=829246
 </code></pre>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2004-11-04T22:36:59.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

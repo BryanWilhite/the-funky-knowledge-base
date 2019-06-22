@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Creative Labs AWE32: Using the Digital Output on the Sound Blaster AWE32; Sony/Phillips Digital Interface (SP-DIF)</h3>
 <section class="entry">
-    <h3>Creative Labs AWE32: Using the Digital Output on the Sound Blaster AWE32; Sony/Phillips Digital Interface (SP-DIF)</h3>
 
-<pre>
-<p>The AWE32 was the first consumer-level sound card to include a Sony/Philips Digital Interface (SP-DIF) output. The output from this interface can go directly to DAT, DCC (Digital Compact Cassette) or even a digital-signal-ready amplifier. SP-DIF is an internationally recognized standard for audio I/O.</p>
+    <p>The AWE32 was the first consumer-level sound card to include a Sony/Philips Digital Interface (SP-DIF) output. The output from this interface can go directly to DAT, DCC (Digital Compact Cassette) or even a digital-signal-ready amplifier. SP-DIF is an internationally recognized standard for audio I/O.</p>
 <p>There are, however, two major drawbacks to Creative Labs' implementation of AWE32 SP-DIF output:</p>
 <p>(i) Only the data from the E-mu8000 synthesizer chip is output via SP-DIF. This implies that digitized audio samples (not loaded into Sound Fonts) or CD audio are not output.</p>
 <p>(ii) The physical output port is not easily accessible from a closed system unit. This implies that you must open the case of your computer to get to the SP-DIF pins on your installed AWE32 sound card.</p>
@@ -34,16 +41,19 @@
 <p>(i) Increase the 36-pin memory capacity on your soundcard. This will allow larger Sound Fonts to be loaded into AWE32 memory. By composing only with Sound Fonts and MIDI messages you can successfully use the SP-DIF port as a key component in a high quality sample playback system. There should be an enhanced clarity and sharpness in the music, almost no white noise and a significantly larger dynamic range.</p>
 <p>(ii) Mount your own female RCA jack into a &quot;back plane&quot; plate at the back of your PC. The female RCA  jack should be connected to a 0.1&quot; header connector. This connector will be connected to the SP-DIF connection (JP8). The AWE32 SP-DIF connection has two jumper pins labeled 0 (signal) and 1 (ground). The details of this assembly are beyond the scope of this document. The opinion here is that you will have to familiar with a solder gun.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 1999-02-10T16:29:48.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

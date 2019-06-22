@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,27 +20,36 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>GOOD NEWS FOR PASTA LOVERS</h3>
 <section class="entry">
-    <h3>GOOD NEWS FOR PASTA LOVERS</h3>
 
-<pre>
-<p>By Lindsay Edwards</p>
+    <p>By Lindsay Edwards</p>
 <p>Pasta, one of America's favorite and most commonly eaten foods, is now rich in folic acid, the synthetic form of folate. The change comes with the Food and Drug Administration's recent regulation to add appropriate amounts of folic acid to grain products like pasta, rice, and breads. One cup of cooked pasta supplies 25 percent of the recommended daily value for folate. Both men and women can benefit from including folate in their diet, especially women planning to have children.</p>
 <p>Folic acid is a B vitamin that is essential for women of childbearing age. It helps reduce the risk of developing certain birth defects, such as spina bifida. New studies show that folic acid may also reduce the risk of heart disease in both men and women.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2000-08-15T03:42:00.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

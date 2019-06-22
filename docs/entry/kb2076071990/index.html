@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>OpenXML: Flippant Remarks about OpenXML</h3>
 <section class="entry">
-    <h3>OpenXML: Flippant Remarks about OpenXML</h3>
 
-<pre>
-<p>No more shall the SDK for OpenXML be confused with the Word 2007 Content Control Toolkit.</p>
+    <p>No more shall the SDK for OpenXML be confused with the Word 2007 Content Control Toolkit.</p>
 <p>The strong word “Part” used throughout the OpenXML API, starting with the abstraction OpenXmlPart, represents a location in the ZIP OpenXmlPackage. In the same manner that an XML document contains nodes (or a database store contains tables), an OpenXML Package contains parts. The OpenXmlPart, as of today, does not define anything (useful to me) inside of an XML file.</p>
 <p>The SDK for OpenXML APIs do not define anything of significance inside of an XML file. This is most important piece of information I need about this SDK. It follows that the OpenXmlPart.GetStream() and OpenXmlPart.FeedData() methods are the most important members of the entire SDK for OpenXML. So, for example, silly me would be looking for a class called “DocumentPart” or (“GlossaryDocumentEntry”) in the OpenXML API which would correspond to the &lt;w:docPart&gt; element. As of today these types to do exist.</p>
 <p>For more details on this rant, see:</p>
@@ -37,16 +44,19 @@
 <p>“You need to remember following keywords as these are used more often in the world: Package, Parts, Relations…”</p>
 <p>[http://www.codeproject.com/KB/office/OpenXML_Very_Basics.aspx]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2008-08-19T23:14:36.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

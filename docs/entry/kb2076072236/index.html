@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>“Basic Unit Testing Guidelines” by Chris Eargle</h3>
 <section class="entry">
-    <h3>“Basic Unit Testing Guidelines” by Chris Eargle</h3>
 
-<pre>
-<p>When I recently started looking through a certain project’s tests, I was struck by how difficult it was for me to read and understand. The tests were laid out haphazardly, and the code contained enough logic to make me wonder if it would be easier to analyze the functional code. Tests don’t do anyone good if they require that much analysis. In contrast, one of my favorite open source projects contains tests that allow me to learn the functionality of the system without looking at any functional code.</p>
+    <p>When I recently started looking through a certain project’s tests, I was struck by how difficult it was for me to read and understand. The tests were laid out haphazardly, and the code contained enough logic to make me wonder if it would be easier to analyze the functional code. Tests don’t do anyone good if they require that much analysis. In contrast, one of my favorite open source projects contains tests that allow me to learn the functionality of the system without looking at any functional code.</p>
 <p>The intent of this post isn’t to describe advanced unit testing techniques but to describe a few guidelines that I feel should be implemented regardless if you’re mocking objects, using test driven development, or just want to ensure your code works. I am using Microsoft’s unit testing framework, but these same guidelines apply in most other unit testing frameworks.</p>
 <p>Name Code Files Sensibly</p>
 <p>You should be able to find your test, which may be difficult to do if you name your file “MyTests.cs.” Naming the file after the class you’re testing is a guideline many people use. Alternatively, you can name it after a functional area if you have more than one fixture per file. Yes, generally speaking you should have one class per file, but I admit to relaxing this rule because you are going to experience class explosion if you’re striving for 100% coverage. I prefer to name my class files after the class just as I do in functional development.</p>
@@ -77,16 +84,19 @@ Assert.IsFalse(account.Activated);
 <p>[http://www.kodefuguru.com/post/2009/07/23/
 Basic-Unit-Testing-Guidelines.aspx]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-08-29T06:24:42.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

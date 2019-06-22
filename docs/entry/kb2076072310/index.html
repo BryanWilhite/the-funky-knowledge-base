@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,30 +20,39 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>VMware: “Turning off the PC speaker for all virtual machines”</h3>
 <section class="entry">
-    <h3>VMware: “Turning off the PC speaker for all virtual machines”</h3>
 
-<pre>
-<p>To disable the speaker emulation for virtual machines, add the following line to Workstation's global configuration file:</p>
+    <p>To disable the speaker emulation for virtual machines, add the following line to Workstation's global configuration file:</p>
 <p>mks.noBeep = &quot;TRUE&quot;</p>
 <p>The global configuration file should exist in ~/.vmware/config on a Linux host, and \\Documents and Settings\\All Users\\Application Data\\VMware\\VMware Workstation\\config.ini on a Windows host.</p>
 <p>If the file does not exist, create a new text file and add the mks.noBeep line to it. Also see &quot;Creating and Editing config.ini&quot; (for Windows hosts) at http://kb.vmware.com/kb/1754.</p>
 <p>[http://kb.vmware.com/selfservice/microsites/search.do?
 language=en_US&amp;cmd=displayKC&amp;externalId=1664]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-10-14T05:06:31.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

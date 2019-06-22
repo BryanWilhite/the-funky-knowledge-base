@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>“yield (C# Reference)”; MSDN</h3>
 <section class="entry">
-    <h3>“yield (C# Reference)”; MSDN</h3>
 
-<pre>
-<p>Used in an  iterator block to provide a value to the enumerator object or to signal the end of iteration. It takes one of the following forms:</p>
+    <p>Used in an  iterator block to provide a value to the enumerator object or to signal the end of iteration. It takes one of the following forms:</p>
 <pre><code>yield return &amp;lt;expression&amp;gt;;
 
 yield break;
@@ -42,16 +49,19 @@ yield break;
 <p>Using  try/finally blocks with yield return statement inside them is unsafe if iteration performed using MoveNext/Current methods. Execution of statements inside finally block is not guaranteed. They will be executed only after all values before block will be iterated and next one requested OR IDisposable.Dispose method called on IEnumerator. Finally statements will not be executed during garbage collection as compiler generated iterator class have no finalizer. Using with foreach is safe as compiler will generate call to Dispose.</p>
 <p>[http://msdn.microsoft.com/en-us/library/9k7k7cf0(VS.80).aspx]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-08-18T05:03:18.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

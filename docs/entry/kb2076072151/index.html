@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,28 +20,37 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Zend Framework:  “Zend Framework models auto-loading” by Chris Cornutt</h3>
 <section class="entry">
-    <h3>Zend Framework:  “Zend Framework models auto-loading” by Chris Cornutt</h3>
 
-<pre>
-<p>From the PHPMag.ru site comes a recent post looking at a technique for creating auto-loading models in your Zend Framework application.</p>
+    <p>From the PHPMag.ru site comes a recent post looking at a technique for creating auto-loading models in your Zend Framework application.</p>
 <p>“When it comes to MVC, ZF handles almost everything—your action controllers are triggered, your views are loaded, w/o you having to worry about them. Not the same with models. If you comply to directory layout advised by ZF, you have “models” folder, but framework doesn't interact with it in any way.”</p>
 <p>There’s a three step process he includes to make your models autoload—extend the Zend_Controller_action for the controller you’re working with, put loadModel() method into the controller (what will actually load the models) and an optional third step of adding in class autoloading. A few alternatives are also mentioned: Zend_Load_PluginLoader, Zend_Load subclassing and a controller plugin.</p>
 <p>[http://www.phpdeveloper.org/news/12273]</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2009-07-20T23:58:46.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

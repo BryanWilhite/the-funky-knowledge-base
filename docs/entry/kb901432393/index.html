@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>Access to VB: Use the Visible Property Instead of IsLoaded()</h3>
 <section class="entry">
-    <h3>Access to VB: Use the Visible Property Instead of IsLoaded()</h3>
 
-<pre>
-<p>Replace the IsLoaded() function that was available from Microsoft since Access 2.x with the Visible property of the default instance of an Access 97 form. For example, if the form frmMain has a module and is open then</p>
+    <p>Replace the IsLoaded() function that was available from Microsoft since Access 2.x with the Visible property of the default instance of an Access 97 form. For example, if the form frmMain has a module and is open then</p>
 <pre><code>Form_frmMain.Visible = True
 </code></pre>
 <p>Suppose frmMain does not have a module and is open, now frmMain has no default instance because it has no class module. However the Application object is available wherein lies the Forms Collection. It follows that:</p>
@@ -37,16 +44,19 @@
 </code></pre>
 <p>WARNING: It has been my experience that accessing the Visible property through the Application of object is more reliable than via the default instance of a form. I recommend using the Immediate Window to test both objects (one may return False while the other returns True). I am sure Microsoft is working on this.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 1998-07-29T00:18:33.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 

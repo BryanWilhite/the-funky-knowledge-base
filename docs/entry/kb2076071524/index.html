@@ -12,6 +12,7 @@
 
         <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
         <script src="./index.min.js"></script>
 
@@ -19,14 +20,20 @@
     </head>
 
     <body class="mdc-typography">
-        <h1>the funky knowledge base</h1>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <span class="mdc-top-app-bar__title">the funky knowledge base</span>
+                </section>
+            </div>
+        </header>
         <h2>personal notes from way, _way_ back and maybe today</h2>
-        <main>
+        <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
+            <h3>ASP.NET: Flippant Remarks about Server Controls; C# Code</h3>
 <section class="entry">
-    <h3>ASP.NET: Flippant Remarks about Server Controls; C# Code</h3>
 
-<pre>
-<p>Server Controls in ASP.NET mean to be an improved alternative to ASP include files. These provide the means to &quot;control&quot; where dynamic HTML appears among static HTML. The simplest Server Control is any HTML tag with the runat attribute set to &quot;server.&quot; So we can, for example, set the TITLE tag to run at the server like this:</p>
+    <p>Server Controls in ASP.NET mean to be an improved alternative to ASP include files. These provide the means to &quot;control&quot; where dynamic HTML appears among static HTML. The simplest Server Control is any HTML tag with the runat attribute set to &quot;server.&quot; So we can, for example, set the TITLE tag to run at the server like this:</p>
 <pre><code>&amp;lt;title id=&amp;quot;TitleDefault&amp;quot; runat=&amp;quot;server&amp;quot;&amp;gt;&amp;lt;title&amp;gt;
 </code></pre>
 <p>where the ID attribute must be set so ASP.NET can handle this element programmatically. My first instict was to look for a HTML TITLE class in the System.Web.UI.HtmlControls or System.Web.UI.WebControls name spaces. But I did not find such a class.</p>
@@ -44,16 +51,19 @@ PlaceDocSearch.Controls.Add(ascxFile);
 </code></pre>
 <p>I use the lightweight Literal Control when there is the need to generate HTML with an HtmlTextWriter object. When people call ASP.NET &quot;powerful&quot; I assume they are thinking of designs based Literal controls and HtmlTextWriter objects. But my assumption is probably wrong and we should be amazed at how we can drag and drop controls on our web forms.</p>
 
-</pre>
 
+</section>
+<section class="meta">
     <span class="date"> <strong>mod date:</strong> 2003-11-10T23:10:38.000Z </span>
 </section>
 
         </main>
 
         <footer>
-            &copy; 2019 Bryan D. Wilhite
-            <a href="https://twitter.com/BryanWilhite">@BryanWilhite</a>
+            <span class="home"><a href="./">[home]</a></span>
+            <span class="index"><a href="/entries/">[index]</a></span>
+            <span class="copyright">&copy; 2019 Bryan D. Wilhite</span>
+            <span class="twitter"><a href="https://twitter.com/BryanWilhite">@BryanWilhite</a></span>
         </footer>
     </body>
 
