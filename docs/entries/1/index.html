@@ -10,7 +10,7 @@
 
         <base href="/" />
 
-        <link rel="canonical" href="http://the-funky-knowledge-base.github.io/" />
+        <link rel="canonical" href="http://bryanwilhite.github.io/the-funky-knowledge-base/" />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="./index.min.css" />
@@ -20,10 +20,10 @@
     </head>
 
     <body class="mdc-typography">
-        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+        <header class="mdc-top-app-bar mdc-top-app-bar--short">
             <div class="mdc-top-app-bar__row">
                 <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">menu</a>
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" onclick="window.history.back()">arrow_back_ios</a>
                     <span class="mdc-top-app-bar__title">the funky knowledge base</span>
                 </section>
             </div>
@@ -31,11 +31,10 @@
         <h2>personal notes from way, _way_ back and maybe today</h2>
         <main class="mdc-drawer-app-content mdc-layout-grid" id="main-content">
             <div class="pagination mdc-typography--headline3">
-    <a href="/entries/" title="first page">«</a>
-    <a href="/entries/" title="previous page">‹</a>
-    <span class="position">1 / 13</span>
-    <a href="/entries/2/" title="next page">›</a>
-    <a href="/entries/12/" title="last page">»</a>
+    <a class="material-icons" href="/entries/" title="first page">first_page</a>
+    <a class="material-icons" href="/entries/" title="previous page">arrow_back_ios</a><span class="position">1 / 13</span>
+    <a class="material-icons" href="/entries/2/" title="next page">arrow_forward_ios</a>
+    <a class="material-icons" href="/entries/12/" title="last page">last_page</a>
 </div>
 <ol class="pagination mdc-list mdc-typography--headline4">
     <li class="mdc-list-item"><a href="/entry/kb2076072274/">CMD: “Using command redirection operators”; technet</a></li>

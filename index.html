@@ -2,12 +2,12 @@
 layout: layouts/base.html
 ---
 <ul class="mdc-list mdc-typography--headline4">
-    {%- for group in kb.index.ChildSegments %}
-    {% case forloop.index0 %}
-    {% when 0 %}
+    {%- for group in kb.index.ChildSegments -%}
+    {%- case forloop.index0 -%}
+    {%- when 0 -%}
     <li class="mdc-list-item"><a href="./group/">{{ group.SegmentName }}</a></li>
-    {% else %}
+    {%- else -%}
     <li class="mdc-list-item"><a href="./group/{{ forloop.index0 }}">{{ group.SegmentName }}</a></li>
-    {% endcase %}
-    {% endfor -%}
+    {%- endcase -%}
+    {%- endfor -%}
 </ul>
