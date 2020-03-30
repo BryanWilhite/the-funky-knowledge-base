@@ -15,16 +15,16 @@
         "start": "npx eleventy --serve"
     },
     "devDependencies": {
-        "@11ty/eleventy": "^0.8.3",
+        "@11ty/eleventy": "^0.10.0",
         "concat": "^1.0.3",
-        "node-sass": "^4.12.0"
+        "node-sass": "^4.13.1"
     },
     "dependencies": {
         "@material/layout-grid": "^0.41.0",
         "@material/list": "^2.3.0",
         "@material/top-app-bar": "^2.3.0",
         "@material/typography": "^2.3.0",
-        "clean-css": "^4.2.1",
+        "clean-css": "^4.2.3",
         "normalize.css": "^8.0.1"
     }
 }
