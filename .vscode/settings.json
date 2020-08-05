@@ -1,5 +1,8 @@
 {
     "markdownlint.config": {
         "MD041": false // first line in file should be a top level heading
-    }
+    },
+    "cSpell.words": [
+        "foremothers"
+    ]
 }
