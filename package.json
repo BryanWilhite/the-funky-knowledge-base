@@ -17,7 +17,7 @@
     "devDependencies": {
         "@11ty/eleventy": "^0.12.1",
         "concat": "^1.0.3",
-        "node-sass": "^6.0.0"
+        "node-sass": "^7.0.0"
     },
     "dependencies": {
         "@material/layout-grid": "^11.0.0",
