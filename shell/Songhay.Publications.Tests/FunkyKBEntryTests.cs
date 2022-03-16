@@ -21,7 +21,7 @@ namespace Songhay.Publications.Tests
             InlineData("../../../../../entry/")]
         public void ShouldEditEntryDates(string entryRoot)
         {
-            entryRoot = FrameworkAssemblyUtility.GetPathFromAssembly(this.GetType().Assembly, entryRoot);
+            entryRoot = ProgramAssemblyUtility.GetPathFromAssembly(this.GetType().Assembly, entryRoot);
             this._testOutputHelper.WriteLine($"loading entries from `{entryRoot}`");
 
             var entriesRootInfo = new DirectoryInfo(entryRoot);

@@ -20,10 +20,10 @@ namespace Songhay.Publications.Tests
             InlineData("../../../../../_data/kb/entries/", "../../../../../posts/")]
         public void ShouldLoadEntries(string entriesRoot, string postsRoot)
         {
-            entriesRoot = FrameworkAssemblyUtility.GetPathFromAssembly(this.GetType().Assembly, entriesRoot);
+            entriesRoot = ProgramAssemblyUtility.GetPathFromAssembly(this.GetType().Assembly, entriesRoot);
             this._testOutputHelper.WriteLine($"loading entries from `{entriesRoot}`");
 
-            postsRoot = FrameworkAssemblyUtility.GetPathFromAssembly(this.GetType().Assembly, postsRoot);
+            postsRoot = ProgramAssemblyUtility.GetPathFromAssembly(this.GetType().Assembly, postsRoot);
             this._testOutputHelper.WriteLine($"writing entries to `{postsRoot}`");
 
             var entriesRootInfo = new DirectoryInfo(entriesRoot);
@@ -35,7 +35,7 @@ namespace Songhay.Publications.Tests
 
                 var md = GetMarkdown(jO);
 
-                var mdPath = FrameworkFileUtility.GetCombinedPath(postsRoot, entryInfo.Name.Replace(".json", ".md"));
+                var mdPath = ProgramFileUtility.GetCombinedPath(postsRoot, entryInfo.Name.Replace(".json", ".md"));
 
                 this._testOutputHelper.WriteLine($"writing `{mdPath}`...");
                 File.WriteAllText(mdPath, md);

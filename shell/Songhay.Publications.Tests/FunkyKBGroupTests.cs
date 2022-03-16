@@ -18,7 +18,7 @@ namespace Songhay.Publications.Tests
         [Theory, InlineData("../../../../../_data/kb/group")]
         public void ShouldSortGroupsByInceptDate(string groupRoot)
         {
-            groupRoot = FrameworkAssemblyUtility.GetPathFromAssembly(this.GetType().Assembly, groupRoot);
+            groupRoot = ProgramAssemblyUtility.GetPathFromAssembly(this.GetType().Assembly, groupRoot);
             this._testOutputHelper.WriteLine($"loading entries from `{groupRoot}`");
 
             var groupRootInfo = new DirectoryInfo(groupRoot);
